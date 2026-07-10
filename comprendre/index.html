@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="Comprendre les modèles de langage, les systèmes prédictifs et le management algorithmique sans mystifier leur fonctionnement." name="description"/><meta content="Dr Charles Broutin" name="author"/><meta content="index,follow,max-image-preview:large" name="robots"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="#EADDC6" name="theme-color"/><link href="https://www.iasantetravail.com/comprendre/" rel="canonical"/><link href="https://www.iasantetravail.com/comprendre/" hreflang="fr" rel="alternate"/><link href="https://www.iasantetravail.com/en/understand/" hreflang="en" rel="alternate"/><link href="https://www.iasantetravail.com/comprendre/" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="IA &amp; Santé au Travail" property="og:site_name"/><meta content="Comprendre l’IA — IA &amp; Santé au Travail" property="og:title"/><meta content="Comprendre les modèles de langage, les systèmes prédictifs et le management algorithmique sans mystifier leur fonctionnement." property="og:description"/><meta content="https://www.iasantetravail.com/comprendre/" property="og:url"/><meta content="https://www.iasantetravail.com/assets/images/og-comprendre.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Comprendre l’IA — IA &amp; Santé au Travail" name="twitter:title"/><meta content="Comprendre les modèles de langage, les systèmes prédictifs et le management algorithmique sans mystifier leur fonctionnement." name="twitter:description"/><title>Comprendre l’IA — IA &amp; Santé au Travail</title><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Comprendre l’IA", "url": "https://www.iasantetravail.com/comprendre/", "inLanguage": "fr-FR", "description": "Comprendre les modèles de langage, les systèmes prédictifs et le management algorithmique sans mystifier leur fonctionnement.", "dateModified": "2026-07-11", "author": {"@type": "Person", "name": "Dr Charles Broutin", "jobTitle": "Médecin du travail", "sameAs": ["https://www.linkedin.com/in/charles-broutin-a03932201"]}, "publisher": {"@type": "Person", "name": "Dr Charles Broutin"}}</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link as="image" href="../assets/images/savage-state-1280.webp" rel="preload" type="image/webp"/><link href="../assets/css/site.css" rel="stylesheet"/></head><body class="inner-page page-comprendre" data-page="comprendre" data-root="../">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<nav aria-label="Navigation principale" class="nav glass">
+<a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+<div class="nav-links" id="navLinks"><a aria-current="page" class="is-active" href="../comprendre/">Comprendre</a><a href="../usages-terrain/">Usages &amp; terrain</a><a href="../evaluer/">Évaluer</a><a href="../risques-prevention/">Risques &amp; prévention</a><a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
+<details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu">
+<a href="../ressources/modeles/">Panorama des modèles</a><a href="../a-propos/">À propos et publications</a><a href="../mentions-legales/">Mentions légales</a>
+</div></details></div>
+<div class="nav-tools"><button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+<div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="../comprendre/" hreflang="fr" lang="fr">FR</a><a href="../en/understand/" hreflang="en" lang="en">EN</a></div>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
+<a class="nav-cta" href="../#newsletter">Newsletter</a></div>
+</nav><main id="main-content" tabindex="-1"><section class="page active" id="page-comprendre">
+<header class="page-hero">
+<div class="wrap">
+<div class="hero-frame">
+<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="../assets/images/savage-state-640.webp 640w, ../assets/images/savage-state-960.webp 960w, ../assets/images/savage-state-1280.webp 1280w, ../assets/images/savage-state-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'État sauvage, 1836" decoding="async" fetchpriority="high" loading="eager" src="../assets/images/savage-state-1800.jpg"/></picture>
+<div class="veil"></div>
+<p class="hero-credit">Thomas Cole, The Savage State, 1836</p>
+<div class="hero-inner">
+<span class="stage-tag glass glass--dark"><span class="roman">I.</span> L'État sauvage</span>
+<h1>Comprendre l'IA <em>sans la mystifier</em></h1><p class="hero-descriptor">Modèles de langage, systèmes prédictifs et management algorithmique.</p>
+<div class="hero-card glass glass--dark">Comprendre ce qu’un système produit, ce qu’il ne garantit pas et les conditions dans lesquelles son usage demeure acceptable. La compétence centrale n’est pas le « prompt », mais l’analyse du travail réel.</div>
+<div class="hero-actions">
+<a class="btn btn-solid" href="#comprendre-fondamentaux">Lire les fondamentaux
+              <svg aria-hidden="true" fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
+<a class="btn btn-glassy glass glass--dark" href="#comprendre-sources">Voir les sources</a>
+</div>
+</div>
+</div>
+</div>
+</header><section aria-labelledby="resume-page" class="page-summary-section">
+<div class="wrap">
+<div class="page-summary glass">
+<div class="page-summary-main">
+<span class="mini-kicker">En 30 secondes</span>
+<h2 id="resume-page">Les repères essentiels</h2>
+<ul><li>Le terme « IA » recouvre ici trois réalités distinctes : IA générative, systèmes prédictifs ou décisionnels, et management algorithmique.</li><li>Un modèle de langage produit une suite plausible de mots ; il ne vérifie pas spontanément la vérité, la légalité ou la pertinence clinique de sa réponse.</li><li>La question utile n’est pas seulement ce que l’outil sait faire, mais ce qu’il transforme dans le travail, les décisions et les responsabilités.</li></ul>
+<div aria-label="Légende des niveaux de preuve" class="status-legend"><span class="proof proof--consensus" title="Texte, consensus ou recommandation institutionnelle">Cadre établi</span><span class="proof proof--emergent" title="Résultat récent ou décision encore susceptible d’évoluer">Émergent</span><span class="proof proof--expert" title="Interprétation experte ou éditoriale explicitement présentée comme telle">Analyse</span></div></div>
+<aside aria-label="Informations de lecture" class="page-summary-side">
+<dl>
+<div><dt>Public</dt><dd>Professionnels de santé au travail, prévention, RH, représentants du personnel et lecteurs non spécialistes</dd></div>
+<div><dt>Temps de lecture</dt><dd>Environ 9 minutes</dd></div>
+<div><dt>Dernière vérification</dt><dd>11 juillet 2026</dd></div>
+</dl>
+</aside>
+<nav aria-label="Sommaire de la page" class="page-toc"><span>Sur cette page</span><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#donner-une-culture-commune-avant-tout-projet-d-ia">Donner une culture commune avant tout projet d'IA</a></li><li><a href="#six-notions-pour-lire-correctement-un-projet-d-ia">Six notions pour lire correctement un projet d'IA</a></li><li><a href="#comment-un-llm-produit-une-reponse">Comment un LLM produit une réponse</a></li><li><a href="#ce-qu-un-modele-peut-faire-et-ce-qu-il-ne-faut-pas-lui-attribuer">Ce qu'un modèle peut faire — et ce qu'il ne faut pas lui attribuer</a></li><li><a href="#traduire-la-technique-en-questions-de-prevention">Traduire la technique en questions de prévention</a></li><li><a href="#prompting-professionnel-utile-mais-jamais-suffisant">Prompting professionnel : utile, mais jamais suffisant</a></li><li><a href="#a-retenir">À retenir</a></li></ol></nav></div>
+</div>
+</section><details class="mobile-toc"><summary>Sur cette page</summary><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#donner-une-culture-commune-avant-tout-projet-d-ia">Donner une culture commune avant tout projet d'IA</a></li><li><a href="#six-notions-pour-lire-correctement-un-projet-d-ia">Six notions pour lire correctement un projet d'IA</a></li><li><a href="#comment-un-llm-produit-une-reponse">Comment un LLM produit une réponse</a></li><li><a href="#ce-qu-un-modele-peut-faire-et-ce-qu-il-ne-faut-pas-lui-attribuer">Ce qu'un modèle peut faire — et ce qu'il ne faut pas lui attribuer</a></li><li><a href="#traduire-la-technique-en-questions-de-prevention">Traduire la technique en questions de prévention</a></li><li><a href="#prompting-professionnel-utile-mais-jamais-suffisant">Prompting professionnel : utile, mais jamais suffisant</a></li><li><a href="#a-retenir">À retenir</a></li></ol></details>
+<section class="section">
+<div class="wrap">
+<div class="meta-line reveal">
+<span class="chip">Mis à jour : juillet 2026</span>
+<span class="chip">Niveau : fondamentaux professionnels</span>
+<span class="chip">Public : médecins du travail · IDEST · préventeurs · directions</span>
+</div>
+<div class="section-head reveal">
+<span class="kicker">Objectif pédagogique</span>
+<h2 id="donner-une-culture-commune-avant-tout-projet-d-ia">Donner une culture commune avant tout projet d'IA</h2>
+<p>
+          Cette section sert de socle : elle donne le vocabulaire minimal, explique les
+          mécanismes des modèles génératifs, puis traduit ces notions en réflexes de
+          prévention. L'enjeu est simple : ne pas confondre performance apparente,
+          fiabilité métier, conformité juridique et utilité réelle pour le travail.
+        </p>
+</div>
+<div aria-label="Parcours pédagogique" class="learning-map reveal">
+<article class="learning-step glass">
+<div>
+<div class="idx">1</div>
+<h3>Définir</h3>
+<p>Distinguer IA, algorithme, machine learning, IA générative et système à haut risque.</p>
+</div>
+</article>
+<article class="learning-step glass">
+<div>
+<div class="idx">2</div>
+<h3>Comprendre</h3>
+<p>Voir comment un modèle apprend des régularités et produit une sortie plausible.</p>
+</div>
+</article>
+<article class="learning-step glass">
+<div>
+<div class="idx">3</div>
+<h3>Questionner</h3>
+<p>Identifier les biais, angles morts, hallucinations, limites de contexte et limites de preuve.</p>
+</div>
+</article>
+<article class="learning-step glass">
+<div>
+<div class="idx">4</div>
+<h3>Évaluer</h3>
+<p>Tester l'outil sur une tâche réelle, une langue donnée, un risque donné et un seuil d'acceptabilité.</p>
+</div>
+</article>
+<article class="learning-step glass">
+<div>
+<div class="idx">5</div>
+<h3>Encadrer</h3>
+<p>Définir supervision humaine, confidentialité, traçabilité, règles d'usage et conditions d'arrêt.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="comprendre-fondamentaux" style="padding-top:0">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="kicker">Fondamentaux</span>
+<h2 id="six-notions-pour-lire-correctement-un-projet-d-ia">Six notions pour lire correctement un projet d'IA</h2>
+<p>
+          Ces repères évitent les deux erreurs les plus fréquentes : surestimer l'IA parce
+          qu'elle parle bien, ou la réduire à un gadget parce qu'elle se trompe encore.
+        </p>
+</div>
+<div class="concept-grid">
+<article class="concept-card glass reveal">
+<span class="label">01 · IA</span>
+<h3>Un système d'inférence, pas une intelligence humaine</h3>
+<p>
+            Un système d'IA produit des prédictions, contenus, recommandations ou décisions
+            à partir d'entrées et d'objectifs. Il peut être autonome à différents degrés,
+            mais il n'a pas d'intention, de responsabilité morale ou de compréhension clinique.
+          </p>
+<ul>
+<li>Question à poser : que produit exactement le système ?</li>
+<li>Sortie possible : score, texte, tri, alerte, décision, recommandation.</li>
+</ul>
+</article>
+<article class="concept-card glass reveal">
+<span class="label">02 · Apprentissage</span>
+<h3>Apprendre signifie ajuster des paramètres</h3>
+<p>
+            Le machine learning ne “comprend” pas comme un humain. Il ajuste des paramètres
+            pour réduire une erreur statistique sur des données d'entraînement. Sa qualité
+            dépend donc fortement des données, du choix de la tâche et des conditions de test.
+          </p>
+<ul>
+<li>Supervisé : apprendre à partir d'exemples annotés.</li>
+<li>Non supervisé : repérer des structures ou regroupements.</li>
+<li>Renforcement : optimiser une action via récompense.</li>
+</ul>
+</article>
+<article class="concept-card glass reveal">
+<span class="label">03 · IA générative</span>
+<h3>Produire du contenu plausible</h3>
+<p>
+            L'IA générative crée du texte, des images, du code ou des synthèses. Sa force
+            est de produire vite une forme cohérente ; sa limite est que la cohérence de la
+            forme ne garantit pas la vérité du fond.
+          </p>
+<ul>
+<li>Bon usage : reformulation, extraction, structuration, synthèse vérifiée.</li>
+<li>Mauvais usage : décision non supervisée ou citation non contrôlée.</li>
+</ul>
+</article>
+<article class="concept-card glass reveal">
+<span class="label">04 · LLM</span>
+<h3>Un modèle de langage prédit des tokens</h3>
+<p>
+            Un LLM transforme le texte en unités appelées tokens, puis calcule la suite la
+            plus probable en fonction du contexte. L'architecture transformer permet de
+            pondérer les relations entre de nombreux éléments du texte.
+          </p>
+<ul>
+<li>Il peut raisonner en apparence, mais reste vulnérable aux erreurs.</li>
+<li>Il ne cite correctement ses sources que si le système l'y oblige et si les sources sont accessibles.</li>
+</ul>
+</article>
+<article class="concept-card glass reveal">
+<span class="label">05 · RAG</span>
+<h3>Connecter le modèle à des documents contrôlés</h3>
+<p>
+            Le RAG, ou retrieval augmented generation, consiste à faire rechercher au modèle
+            des passages dans une base documentaire avant de rédiger. Cela peut réduire les
+            inventions, mais ne supprime pas le besoin de vérifier les sources et le contexte.
+          </p>
+<ul>
+<li>Indispensable pour la veille réglementaire ou documentaire.</li>
+<li>Insuffisant si la base documentaire est obsolète, incomplète ou mal indexée.</li>
+</ul>
+</article>
+<article class="concept-card glass reveal">
+<span class="label">06 · Agents</span>
+<h3>Automatiser une chaîne d'actions augmente le risque</h3>
+<p>
+            Un agent combine un modèle, des outils, une mémoire et parfois la capacité
+            d'agir dans des logiciels. Plus l'outil agit seul, plus il faut renforcer
+            gouvernance, logs, validation humaine et conditions d'interruption.
+          </p>
+<ul>
+<li>Lire est moins risqué qu'écrire dans un dossier.</li>
+<li>Suggérer est moins risqué que décider.</li>
+<li>Tester est indispensable avant tout déploiement.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="schema-panel reveal">
+<div class="schema-head">
+<span class="kicker" style="color:var(--lavande)">Schéma mental</span>
+<h2 class="serif" id="comment-un-llm-produit-une-reponse">Comment un LLM produit une réponse</h2>
+<p>
+            L'objectif n'est pas de devenir ingénieur en IA, mais d'avoir un modèle mental
+            fiable. Un LLM n'ouvre pas une “base de vérités”. Il transforme une consigne en
+            probabilités successives, influencées par ses données, son alignement, son contexte
+            et les outils auxquels il a accès.
+          </p>
+</div>
+<div aria-label="Chaîne de production d'une réponse par un LLM" class="schema-flow">
+<article class="schema-step">
+<span>1</span>
+<h3>Données massives</h3>
+<p>Textes, codes, images ou documents utilisés pour apprendre des régularités.</p>
+</article>
+<article class="schema-step">
+<span>2</span>
+<h3>Pré-entraînement</h3>
+<p>Le modèle apprend à prédire des fragments de langage à très grande échelle.</p>
+</article>
+<article class="schema-step">
+<span>3</span>
+<h3>Tokenisation</h3>
+<p>La consigne est découpée en unités que le modèle peut traiter.</p>
+</article>
+<article class="schema-step">
+<span>4</span>
+<h3>Attention</h3>
+<p>Le transformer pondère les relations utiles entre les éléments du contexte.</p>
+</article>
+<article class="schema-step">
+<span>5</span>
+<h3>Alignement</h3>
+<p>Des consignes et évaluations humaines orientent le style et les comportements attendus.</p>
+</article>
+<article class="schema-step">
+<span>6</span>
+<h3>Inférence</h3>
+<p>La réponse est générée progressivement, avec une probabilité, pas une certitude.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="kicker">Lecture critique</span>
+<h2 id="ce-qu-un-modele-peut-faire-et-ce-qu-il-ne-faut-pas-lui-attribuer">Ce qu'un modèle peut faire — et ce qu'il ne faut pas lui attribuer</h2>
+<p>
+          La maturité d'usage commence par cette distinction. Un modèle peut être utile
+          sans être fiable pour décider. Il peut accélérer une tâche sans être autorisé à
+          traiter des données sensibles. Il peut réussir un benchmark et échouer sur une
+          situation locale mal formulée.
+        </p>
+</div>
+<div class="compare-grid">
+<article class="compare-card glass reveal">
+<h3>Ce que l'IA peut apporter</h3>
+<ul>
+<li>Structurer une masse documentaire et proposer un plan de lecture.</li>
+<li>Reformuler un document pour différents publics, avec validation humaine.</li>
+<li>Repérer des incohérences ou points à vérifier dans un texte.</li>
+<li>Aider à préparer une veille, une synthèse ou un support pédagogique.</li>
+<li>Standardiser une première grille d'analyse, sans remplacer l'arbitrage métier.</li>
+</ul>
+</article>
+<article class="compare-card glass warn reveal">
+<h3>Ce qu'elle ne garantit pas</h3>
+<ul>
+<li>La vérité d'une affirmation, surtout sans source consultable.</li>
+<li>La conformité RGPD ou AI Act du dispositif dans son contexte réel.</li>
+<li>L'absence de biais dans les données, les sorties ou les usages.</li>
+<li>La pertinence d'une décision médicale, sociale ou juridique individualisée.</li>
+<li>L'effet réel sur le travail : gain, intensification, perte d'autonomie ou déplacement de charge.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="kicker">Santé au travail</span>
+<h2 id="traduire-la-technique-en-questions-de-prevention">Traduire la technique en questions de prévention</h2>
+<p>
+          Pour un SPST, comprendre l'IA consiste surtout à savoir quelles questions poser
+          avant son déploiement en entreprise. La bonne unité d'analyse n'est pas le modèle
+          seul, mais le système complet : outil, données, utilisateurs, organisation,
+          objectifs, indicateurs, marges de manœuvre et effets sur le travail réel.
+        </p>
+</div>
+<div class="article-grid">
+<article class="article glass reveal">
+<span class="proof proof--consensus">Question 1</span>
+<h3>Quelle tâche est transformée ?</h3>
+<p>
+            Le risque dépend de la tâche : aide documentaire, tri de dossiers, scoring de
+            candidatures, surveillance de performance, génération de comptes rendus ou
+            préconisation. Chaque tâche modifie différemment les responsabilités et les expositions.
+          </p>
+<span class="src"><strong>Réflexe :</strong> décrire le travail avant et après l'outil, pas seulement les fonctionnalités.</span>
+</article>
+<article class="article glass reveal">
+<span class="proof proof--consensus">Question 2</span>
+<h3>Quelles données sont utilisées ?</h3>
+<p>
+            Données personnelles, données de santé, données RH, traces d'activité, messagerie,
+            documents internes : la nature des données conditionne le niveau de risque, les
+            obligations RGPD et la légitimité de l'usage.
+          </p>
+<span class="src"><strong>Réflexe :</strong> vérifier minimisation, finalité, base légale, accès, durée de conservation et sécurité.</span>
+</article>
+<article class="article glass reveal">
+<span class="proof proof--emergent">Question 3</span>
+<h3>Qui garde la main ?</h3>
+<p>
+            Une supervision humaine n'a de valeur que si la personne dispose du temps, de
+            la compétence, de l'autorité et des informations nécessaires pour contester ou
+            arrêter la sortie du système.
+          </p>
+<span class="src"><strong>Réflexe :</strong> distinguer validation réelle, validation formelle et simple responsabilisation a posteriori.</span>
+</article>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="duo">
+<div class="duo-block glass litt reveal">
+<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><path d="M9 2.5c-2.2-1.3-5-1.3-7 0v12c2-1.3 4.8-1.3 7 0 2.2-1.3 5-1.3 7 0v-12c-2-1.3-4.8-1.3-7 0Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path><path d="M9 2.5v12" stroke="currentColor" stroke-width="1.5"></path></svg></span>Ce que dit la littérature</h3>
+<p>
+            Les modèles de fondation et grands modèles de langage constituent un changement
+            d'échelle : ils sont entraînés sur de vastes corpus, peuvent être adaptés à de
+            nombreuses tâches et présentent des capacités générales utiles. Mais cette généralité
+            crée aussi une homogénéisation du risque : une erreur, un biais ou une limite du
+            modèle peut se diffuser dans de nombreux usages dérivés.
+          </p>
+<p>
+            En santé, les organisations internationales insistent sur la gouvernance, la
+            transparence, l'évaluation, la protection des données et la surveillance après
+            déploiement. La performance d'un modèle ne suffit pas à justifier un usage clinique
+            ou préventif autonome.
+          </p>
+</div>
+<div class="duo-block glass analyse reveal">
+<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M9 5.5V9l2.5 2" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></span>Notre lecture pour la santé au travail</h3>
+<p>
+            Le bon niveau d'analyse n'est pas “ce modèle est-il intelligent ?”, mais :
+            “dans cette entreprise, sur cette tâche, avec ces données, pour ces salariés,
+            quelles expositions nouvelles crée-t-il, quelles marges de manœuvre retire-t-il
+            ou ajoute-t-il, et comment le SPST peut-il intervenir en amont ?”
+          </p>
+<p>
+            C'est précisément pour cela que la médecine du travail doit être sollicitée
+            avant le déploiement des projets d'IA, et non seulement après l'apparition de
+            difficultés individuelles ou collectives.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="kicker">Méthode pratique</span>
+<h2 id="prompting-professionnel-utile-mais-jamais-suffisant">Prompting professionnel : utile, mais jamais suffisant</h2>
+<p>
+          Un prompt améliore la formulation de la demande ; il ne transforme pas un modèle
+          en expert infaillible. En contexte professionnel, la qualité d'un prompt se juge
+          à la vérifiabilité de la sortie, pas à son élégance.
+        </p>
+</div>
+<div class="checklist-grid">
+<article class="check-card glass reveal">
+<h3>1. Définir la tâche</h3>
+<p><strong>À écrire :</strong> “Résume ce document pour un médecin du travail”, plutôt que “explique-moi”.</p>
+</article>
+<article class="check-card glass reveal">
+<h3>2. Donner le contexte utile</h3>
+<p><strong>À préciser :</strong> public cible, pays, cadre réglementaire, niveau de détail, objectif de prévention.</p>
+</article>
+<article class="check-card glass reveal">
+<h3>3. Imposer les sources</h3>
+<p><strong>À exiger :</strong> distinguer ce qui vient du document fourni, de connaissances générales et d'une hypothèse.</p>
+</article>
+<article class="check-card glass reveal">
+<h3>4. Forcer l'incertitude</h3>
+<p><strong>À demander :</strong> signaler les points douteux, incomplets, obsolètes ou nécessitant vérification humaine.</p>
+</article>
+<article class="check-card glass reveal">
+<h3>5. Encadrer les données</h3>
+<p><strong>À proscrire :</strong> coller des données identifiantes, médicales ou RH sensibles dans un outil non validé.</p>
+</article>
+<article class="check-card glass reveal">
+<h3>6. Valider par échantillonnage</h3>
+<p><strong>À faire :</strong> tester plusieurs cas, repérer les erreurs récurrentes, documenter la configuration retenue.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="takeaway glass reveal">
+<h2 id="a-retenir">À retenir</h2>
+<p>
+          Une IA est un système probabiliste inscrit dans une organisation. Sa valeur ne
+          se mesure pas seulement à la qualité d'une démonstration, mais à sa fiabilité
+          située, à son impact sur le travail réel, à sa conformité et à la capacité des
+          professionnels à garder une maîtrise effective.
+        </p>
+<div class="mini">
+<div>
+<strong>Comprendre</strong>
+<span>Identifier le type de système, la tâche et les données.</span>
+</div>
+<div>
+<strong>Évaluer</strong>
+<span>Tester sur des cas métiers, documenter les erreurs et les limites.</span>
+</div>
+<div>
+<strong>Prévenir</strong>
+<span>Associer les acteurs du travail avant déploiement, puis suivre les effets.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="comprendre-sources" style="padding-top:0">
+<div class="wrap">
+<div class="sources glass reveal">
+<h3>Références de la section</h3>
+<div class="source-grid">
+<article class="source-card">
+<a href="https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=OJ:L_202401689" rel="noopener noreferrer" target="_blank">Règlement (UE) 2024/1689 — AI Act</a>
+<p>Définition d'un système d'IA, approche par les risques, systèmes à haut risque, dont certains usages en emploi et gestion des travailleurs.</p>
+</article>
+<article class="source-card">
+<a href="https://www.oecd.org/en/topics/sub-issues/ai-principles.html" rel="noopener noreferrer" target="_blank">OCDE — Principes sur l'IA, révisés en 2024</a>
+<p>Cadre international pour une IA digne de confiance, respectueuse des droits humains et des valeurs démocratiques.</p>
+</article>
+<article class="source-card">
+<a href="https://arxiv.org/abs/1706.03762" rel="noopener noreferrer" target="_blank">Vaswani et al. — Attention Is All You Need, 2017</a>
+<p>Article fondateur de l'architecture transformer, base technique des grands modèles de langage modernes.</p>
+</article>
+<article class="source-card">
+<a href="https://crfm.stanford.edu/report.html" rel="noopener noreferrer" target="_blank">Stanford CRFM — Foundation Models, 2021</a>
+<p>Rapport de référence sur les modèles de fondation, leurs capacités, leurs risques et leur nature sociotechnique.</p>
+</article>
+<article class="source-card">
+<a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" rel="noopener noreferrer" target="_blank">NIST — Generative AI Profile, 2024</a>
+<p>Profil de gestion des risques spécifique à l'IA générative : gouvernance, cartographie, mesure et maîtrise des risques.</p>
+</article>
+<article class="source-card">
+<a href="https://www.who.int/publications/i/item/9789240084759" rel="noopener noreferrer" target="_blank">OMS — Ethics and governance of AI for health, 2024</a>
+<p>Recommandations sur la gouvernance des grands modèles multimodaux en santé : transparence, responsabilité, sécurité et évaluation.</p>
+</article>
+<article class="source-card">
+<a href="https://www.cnil.fr/fr/ia-et-rgpd-la-cnil-publie-ses-nouvelles-recommandations-pour-accompagner-une-innovation-responsable" rel="noopener noreferrer" target="_blank">CNIL — IA et RGPD, recommandations 2025</a>
+<p>Recommandations pour développer et utiliser des systèmes d'IA en respectant les données personnelles et les droits des personnes.</p>
+</article>
+<article class="source-card">
+<a href="https://www.inrs.fr/media.html?refINRS=PV%2019" rel="noopener noreferrer" target="_blank">INRS — IA et santé-sécurité au travail</a>
+<p>Prospective sur les opportunités, menaces et conditions d'usage de l'IA en prévention des risques professionnels.</p>
+</article>
+<article class="source-card">
+<a href="https://www.laboria.ai/wp-content/uploads/2024/05/Rapport-denquete-LaborIA-Explorer.pdf" rel="noopener noreferrer" target="_blank">LaborIA Explorer — impacts de l'IA sur le travail</a>
+<p>Enquête sur les transformations du travail, les conditions d'intégration capacitante et le dialogue social autour de l'IA.</p>
+</article>
+<article class="source-card">
+<a href="https://osha.europa.eu/en/tools-and-publications/infographics/osh-pulse-2025-digitalisation-work" rel="noopener noreferrer" target="_blank">EU-OSHA — digitalisation et santé au travail</a>
+<p>Données européennes sur la numérisation du travail, la surveillance, l'algorithmic management et les enjeux de prévention.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cycle-nav reveal"><a class="cycle-card glass next" href="../usages-terrain/"><div><div class="lbl">Suivant — Usages et terrain</div><div class="ttl">Voir les usages et les déploiements</div></div><svg aria-hidden="true" fill="none" height="18" viewbox="0 0 16 16" width="18"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a></div></div></section></section></main>
+<footer><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
+<div><h4>Parcours</h4><ul><li><a href="../comprendre/">Comprendre</a></li><li><a href="../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../evaluer/">Évaluer</a></li><li><a href="../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
+<div><h4>Ressources</h4><ul><li><a href="../ressources/modeles/">Panorama des modèles</a></li><li><a href="../a-propos/">À propos et publications</a></li><li><a href="../#mises-a-jour">Dernières mises à jour</a></li></ul></div>
+<div><h4>Contact</h4><ul><li><a href="../#newsletter">Souscrire aux mises à jour</a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../confidentialite/">Confidentialité</a></li></ul></div>
+</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span><span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span></div></div></footer>
+<button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
+<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, hallucinations, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog><script defer="" src="../assets/js/search-index.js"></script><script defer="" src="../assets/js/config.js"></script><script defer="" src="../assets/js/site.js"></script></body></html>
