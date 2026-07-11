@@ -1,0 +1,607 @@
+                                   CLAPCLOPCL
+
+CLAPCLO
+CL AP
+AU TRAVAIL
+LE BRUIT,
+ON EN PARLE ?
+Stress, irritabilité, fatigue...
+Le bruit paraît anodin,
+                                            - Visuels générés avec l’intelligence artiﬁcielle
+
+
+
+
+mais ses effets ne le sont pas.
+Plus d’informations sur :
+www.bruitautravail.fr
+                                            Conception : Agence
+VU DU TERRAIN                                                                                                           TF 335
+
+
+
+
+L’intelligence artificielle
+en santé au travail : évaluation
+de son potentiel pour renforcer
+la précision et la clarté des
+préconisations médicales*
+                  AUTEUR :
+                  C. Broutin, Lille
+
+
+
+
+                                                                                L
+  EN
+  RÉSUMÉ
+
+
+
+Dans une étude menée dans                    MOTS CLÉS                                      a qualité de la formu-
+les Hauts-de-France, 78 % des               Intelligence                        lation et la précision des préco-
+préconisations rédigées par les             artificielle – IA /                 nisations des médecins du travail
+                                            Surveillance
+médecins du travail présentaient                                                favorisent le maintien en emploi
+                                            médicale / Suivi
+au moins un défaut de qualité               médical                             des salariés, évitent les risques
+susceptible d’en altérer la                                                     d’interprétation erronée ainsi
+compréhension et, in fine, de nuire                                             que les conséquences juridiques
+au maintien en emploi. Face à ce                                                associées. Cet article rend compte
+constat, une expérimentation a été          * Cet article résulte d’un          d’une étude sur la capacité d’une
+                                            mémoire soutenu en octobre
+conduite afin d’évaluer la capacité du      2025 (L’intelligence artificielle   intelligence artificielle à évaluer
+modèle de raisonnement o1 d’OpenAI,         en santé au travail : un levier     les préconisations des médecins
+l’entreprise à l’origine de ChatGPT,        pour accroître la précision et      du travail selon plusieurs critères.
+                                            la clarté des préconisations
+à détecter ces défauts, selon cinq          médicales ? Mémoire pour le         Cette étude fait suite à la thèse du
+critères, en comparaison avec un            diplôme d’état de spécialité        Dr N’Guessan (« Analyse critique
+consensus multidisciplinaire. Après         en médecine du travail.             de la rédaction actuelle des préco-
+                                            Lille : Université de Lille,
+une optimisation itérative du prompt,       Faculté de Médecine Henri           nisations chez les médecins du tra-
+l’analyse de 385 préconisations tirées      Warembourg ; 2025. Lien vers        vail en Hauts-de-France ») [1] qui
+au sort dans une base de données            le mémoire complet : https://       avait pour objectif d’examiner et
+                                            www.iasantetravail.com/ia-
+a montré 74,6 % de concordances,            préconisations). Les modèles        de catégoriser les préconisations
+10,5 % de discordances justifiées,          d’intelligence artificielle         formulées par les médecins du tra-
+13,2 % de discordances par excès et         présentés correspondent à           vail à l’intention des employeurs,
+                                            l’état des connaissances au
+1,5 % de discordances par défaut,           moment du recueil et de             en s’appuyant sur cinq critères de
+sans aucune hallucination. Ces              l’analyse des données ainsi         mauvaise qualité :
+résultats suggèrent que l’utilisation       que de la rédaction, réalisés       ● imprécisions, difficultés de
+                                            entre la fin de l’année 2024 et
+d’o1 pourrait constituer un outil           le début de l’année 2025.           compréhension       et     d’applica-
+prometteur d’aide à la relecture.                                               tion pour l’employeur (critère 1) :
+
+
+
+JUIN 2026 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — N° 186                                                                              51
+VU DU TERRAIN
+
+L’intelligence artificielle en santé au travail : évaluation
+de son potentiel pour renforcer la précision et la clarté
+des préconisations médicales
+
+
+
+
+                          préconisations comportant des im-        du travail). Ensuite, les analyses      (636 917 préconisations formulées
+                          précisions sur la temporalité, avec      respectives étaient confrontées         en 2022), peut s’expliquer notam-
+                          une fin imprécise dans le temps ou       avec l’expertise de trois profes-       ment par le délai de contestation
+                          avec une mention « renouvelable »        sionnels de la médecine du travail      limité à 15 jours par l’employeur
+                          sans périodicité indiquée ;              afin d’identifier et comprendre les     ou le salarié ainsi que par la durée
+                          ● induction d’un doute sur la            écarts d’interprétation entre les       moyenne des litiges, estimée à 13
+                          force d’obligation de l’avis médical     deux évaluateurs initiaux, per-         mois [2]. Au-delà des éventuelles
+                          (critère 2) : préconisations utilisant   mettant ainsi une harmonisation         répercussions juridiques, une ré-
+                          le conditionnel ou des termes in-        de la lecture et de l’application des   daction imprécise peut fragiliser
+                          troduisant un choix, une marge de        critères. Enfin, une nouvelle phase     la communication et entamer le
+                          manœuvre ou un doute quant à             de cotation en double aveugle, fon-     lien de confiance avec l’employeur.
+                          leur mise en place par l’employeur ;     dée sur cette harmonisation, per-       Or cette confiance est essentielle
+                          ● informations ne relevant pas           mettait d’atteindre le consensus        pour favoriser une collaboration
+          1. Annexe 4 :   de l’annexe 41 et posant des diffi-      multidisciplinaire (CM).                efficace, améliorer les conditions
+    document établi       cultés juridiques (critère 3) : avis     Cette étude avait permis d’analy-       de travail, prévenir les risques pro-
+   par le médecin du
+   travail proposant      comportant des informations rele-        ser 4 217 préconisations formulées      fessionnels et assurer le maintien
+          des mesures     vant d’échanges avec l’employeur         en septembre 2023 dans les Hauts-       en santé et en emploi des salariés.
+    d’aménagement,        ou avec le salarié ou des commen-        de-France. Parmi elles, 3 776 ont       Des recommandations mal for-
+     d’adaptation ou
+  de transformation       taires sans formulation de préco-        fait l’objet d’un CM : seules 22 %      mulées ou percues comme inap-
+      du poste, ou du     nisations à proprement parler ;          ne répondaient à aucun critère de       plicables risquent d’entraîner une
+    temps de travail,     ● changements de postes ou               mauvaise qualité. L’analyse de la       incompréhension, un défaut d’ap-
+   en application de
+l’article L. 4624-3 du    inaptitudes médicales déguisées          répartition des critères, portant       plication ou encore une impres-
+     Code du travail.     (critère 4) : avis préconisant un        sur les 2 947 préconisations res-       sion de manque de rigueur. Cela
+                          autre poste pour le salarié ou com-      tantes (78 %), a montré que :           peut non seulement nuire à la cré-
+                          portant des aménagements mani-           ● 53 % présentaient des impré-          dibilité du médecin du travail mais
+                          festement trop importants pour           cisions ou des difficultés de com-      aussi inciter l’employeur à ignorer
+                          permettre le maintien à son poste        préhension et d’application pour        ou minimiser les préconisations,
+                          antérieur ;                              l’employeur (critère 1) ;               voire à limiter sa collaboration
+                          ● rupture du secret médical ou           ● 28 % comportaient des informa-        avec le SPST.
+                          atteinte à la vie privée du salarié      tions ne relevant pas de l’annexe 4     Améliorer la qualité rédaction-
+                          (critère 5) : préconisations men-        (critère 3) ;                           nelle des préconisations présente
+                          tionnant l’invalidité, le bénéfice de    ● 9,7 % laissaient un doute quant       donc plusieurs bénéfices majeurs :
+                          la reconnaissance de la qualité de       à leur mise en œuvre (critère 2) ;      assurer une bonne compréhension
+                          travailleur handicapé (RQTH), une        ● 6,2 % impliquaient une rupture        et une meilleure application des
+                          sollicitation de Cap emploi, une         du secret médical (critère 5) ;         mesures de prévention ; faciliter
+                          maladie ou toute information sur         ● 1,7 % faisaient état d’un chan-       les relations entre l’employeur et le
+                          la santé du salarié.                     gement de poste ou d’aménage-           salarié ainsi qu’entre l’employeur
+                          Douze services de prévention et de       ments jugés excessifs (critère 4).      et le médecin du travail ; éviter une
+                          santé au travail interentreprises        Malgré ces taux élevés de préco-        perte de temps dans les échanges
+                          (SPSTI), constituant avec l’Insti-       nisations de mauvaise qualité, les      entre les différentes parties ; ré-
+                          tut de santé au travail du Nord          avis des médecins du travail sont       duire le risque de contentieux
+                          de la France (ISTNF) le groupe de        en réalité rarement contestés ju-       prud’homal ou ordinal ; préserver
+                          travail « Prévention de la désinser-     ridiquement. Une étude visant à         et valoriser l’image du médecin
+                          tion professionnelle », ont fourni       recenser le nombre de contesta-         du travail. La rédaction des préco-
+                          les préconisations rédigées du-          tions des avis depuis la réforme        nisations doit ainsi reposer sur la
+                          rant le mois de septembre 2023.          de 2016 a, en effet, identifié 207      clarté, la précision et la pertinence,
+                          Celles-ci étaient d’abord cotées en      arrêts rendus par les cours d’ap-       afin de renforcer la transparence,
+                          double aveugle selon les critères        pel, dont seuls 22 % concernaient       la confiance et la portée de la dé-
+                          ci-dessus, par deux évaluateurs          des mesures d’aménagement. Ce           marche de prévention [1]. Le tra-
+                          (une stagiaire en master 2 de droit      chiffre, quasiment négligeable          vail présenté ici étudie la capaci-
+                          social et un interne en médecine         par rapport au nombre total d’avis      té d’une intelligence artificielle à
+
+
+
+52                                                                                      N° 186 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — JUIN 2026
+évaluer, selon les critères énoncés    virtuelle, ils peuvent fournir des      discernement et de les compléter
+ci-dessus, les préconisations des      réponses automatisées et interac-       par une supervision humaine, en
+médecins du travail.                   tives aux utilisateurs, susceptibles    particulier dans des domaines
+                                       de contribuer à l’amélioration de       sensibles comme la médecine ou
+                                       l’expérience client [6]. En traduc-     le droit.
+                                       tion automatique, ils peuvent           L’utilisation d’un LLM nécessite
+LES GRANDS MODÈLES                     convertir du texte d’une langue à       la formulation d’un prompt. Il
+DE LANGAGE                             une autre avec un niveau de pré-        s’agit d’une instruction ou une
+                                       cision souvent élevé, mais inégal       question formulée par l’utilisa-
+Les grands modèles de langage          selon les langues, les domaines         teur pour orienter le modèle dans
+(large language models, LLMs) sont     et la complexité des contenus, ce       la génération de sa réponse. La
+des systèmes d’intelligence artifi-    qui peut néanmoins faciliter la         qualité et la précision du prompt
+cielle (IA) conçus pour comprendre,    communication multilingue. Pour         influencent directement la per-
+interpréter et générer du texte        la création de contenu, les LLMs        tinence des réponses produites.
+en langage naturel. Ils reposent       peuvent générer des articles, des       Parmi les bonnes pratiques de
+sur des réseaux de neurones, une       rapports et des scripts, offrant ain-   conception de prompts figurent la
+architecture inspirée du cerveau       si un appui aux créateurs dans la       définition claire du rôle du modèle,
+humain, composée de couches in-        production de matériel original,        le détail des attentes, l’utilisation
+terconnectées de « neurones » arti-    sans garantir pour autant une adé-
+ficiels qui traitent et transmettent   quation parfaite aux attentes ini-
+l’information. Contrairement aux       tiales. Dans l’analyse de données,
+programmes traditionnels qui           ils peuvent aider à interpréter et
+                                                                               ↓ Encadré 1
+suivent des instructions expli-        résumer de vastes ensembles de
+cites, les LLMs apprennent à partir    données textuelles, bien que la
+d’énormes quantités de données         pertinence des informations ex-
+                                                                                 > LES HALLUCINATIONS
+textuelles, identifiant des motifs,    traites dépende fortement de la
+                                                                                 Les hallucinations dans
+des structures grammaticales et        qualité des entrées et du cadrage         les LLMs désignent des
+des contextes sémantiques pour         de la tâche. Enfin, dans le domaine       situations où le modèle
+prédire et générer des séquences       de l’éducation, les LLMs peuvent          affirme des informations qui,
+de mots cohérentes [3].                assister l’apprentissage et l’en-         bien que syntaxiquement et
+Un aspect clé des LLMs est leur        seignement en fournissant des             sémantiquement correctes,
+caractère non déterministe, ce         explications et des réponses per-         sont factuellement fausses [8].
+qui signifie que, pour une même        sonnalisées aux étudiants [7], avec       Sur les benchmarks SimpleQA
+entrée, le modèle peut produire        toutefois des résultats qui peuvent       et PersonQA, conçus pour
+des réponses différentes à chaque      différer selon les besoins péda-          évaluer la fiabilité factuelle
+                                                                                 des modèles de langage,
+exécution [4, 5]. Cette variabilité    gogiques et le niveau de fiabilité
+                                                                                 SimpleQA mesure la précision
+est due aux mécanismes de pro-         attendu.
+                                                                                 sur des connaissances générales
+babilité intégrés dans leur fonc-      Cependant, malgré leurs capaci-           simples et la capacité du modèle
+tionnement, où chaque mot gé-          tés avancées, les LLMs présentent         à éviter les hallucinations,
+néré est sélectionné en fonction       certaines limites. Ils peuvent gé-        tandis que PersonQA évalue
+de sa probabilité conditionnelle,      nérer des réponses factuellement          l’exactitude biographique,
+permettant ainsi une diversité de      incorrectes ou biaisées, voire des        la désambiguïsation entre
+réponses et une créativité accrue      hallucinations (encadré 1), reflé-        individus portant des noms
+dans la génération de contenu [5].     tant les données sur lesquelles ils       similaires et la robustesse face
+Les LLMs peuvent trouver des ap-       ont été entraînés [8]. De plus, leur      aux erreurs d’attribution ou
+plications variées dans de nom-        compréhension du contexte est             aux informations inventées.
+                                                                                 Sur ces deux tests, o1 utilisé
+breux domaines, même si leurs          limitée à l’information présente
+                                                                                 pour cette étude hallucine dans
+performances restent variables se-     dans les données d’entraînement,
+                                                                                 respectivement 44 % et 16 % des
+lon les contextes d’usage, les don-    ce qui peut engendrer des inter-          cas, ce qui est inacceptable dans
+nées disponibles et les attentes       prétations erronées. Il est donc es-      un contexte médical [9].
+des utilisateurs. Dans l’assistance    sentiel d’utiliser ces modèles avec
+
+
+
+JUIN 2026 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — N° 186                                                                    53
+VU DU TERRAIN
+
+L’intelligence artificielle en santé au travail : évaluation
+de son potentiel pour renforcer la précision et la clarté
+des préconisations médicales
+
+
+
+
+              d’exemples illustratifs (« few-shot   obtenaient des scores significati-      renforcement à grande échelle [17].
+              prompting »), l’optimisation de la    vement plus élevés que ceux uti-        Cette méthode d’entraînement
+              longueur du prompt et l’intégra-      lisant uniquement les ressources        permet au modèle d’apprendre à
+              tion de la chaîne de raisonnement     conventionnelles. Aucune diffé-         prendre des décisions en recevant
+              [10 à 13]. La performance de rai-     rence significative n’a été observée    des récompenses pour les actions
+              sonnement des LLMs tend à dimi-       entre les performances des méde-        correctes et des pénalités pour les
+              nuer à mesure que la longueur du      cins assistés par GPT-4 et celles       erreurs, optimisant ainsi ses per-
+              prompt augmente [13].                 de GPT-4 seul, ce qui suggère que       formances en affinant ses capaci-
+              Les LLMs ont également démon-         l’assistance par un LLM peut amé-       tés de prise de décision et en amé-
+              tré une efficacité notable dans       liorer le raisonnement des méde-        liorant sa chaîne de raisonnement.
+              le domaine médical. Des études        cins dans des tâches de gestion         La chaîne de raisonnement (chain
+              indiquent que certains systèmes       clinique complexes [16].                of thought, COT) fait référence au
+              égalent, voire surpassent, les mé-                                            processus interne par lequel le
+              decins humains dans des com-                                                  modèle décompose et analyse les
+              pétences essentielles telles que                                              informations pour générer une
+              le raisonnement clinique et les       LE MODÈLE O1 :                          réponse cohérente et pertinente
+              connaissances médicales. Par          UNE AVANCÉE EN                          [18]. En améliorant cette chaîne
+              exemple, une étude a révélé que       RAISONNEMENT                            de raisonnement, o1 est capable
+              GPT-4 d’OpenAI, sans ajustement       COMPLEXE                                de structurer ses réponses de ma-
+              spécifique, dépasse le score de                                               nière logique et de résoudre des
+              passage de l’examen de licence        Le modèle o1 d’OpenAI, l’entreprise     problèmes complexes plus effica-
+              médicale des États-Unis (United       américaine à l’origine de ChatGPT       cement. L’approche de chaîne de
+              States medical licensing examina-     et des différents modèles de la sé-     raisonnement renforce également
+              tion, USMLE) de plus de 20 points,    rie GPT, se distingue par ses per-      son alignement éthique en inté-
+              surpassant à la fois les modèles      formances avancées en matière de        grant des politiques de sécurité
+              généralistes antérieurs et ceux       raisonnement complexe. Comme            directement dans le processus de
+              spécifiquement entraînés sur des      ses prédécesseurs, o1 est basé sur      raisonnement, minimisant ainsi
+              connaissances médicales [14]. Il      l’architecture Transformer, une         les risques de comportements in-
+              convient toutefois de préciser que    structure innovante qui utilise des     désirables [9]. Les performances
+              ces résultats portent sur des tests   mécanismes d’attention pour gé-         du modèle o1 dans des bench-
+              standardisés et ne signifient pas     rer efficacement les dépendances,       marks rigoureux et son architec-
+              que les LLMs surpassent les mé-       c’est-à-dire les relations entre des    ture avancée indiquent qu’il pos-
+              decins dans la pratique clinique      mots ou concepts qui peuvent être       sède les capacités nécessaires pour
+              globale.                              éloignés dans une phrase ou dans        égaler, voire dépasser, les systèmes
+              De plus, GPT-4 a démontré une         le texte mais dont le lien est essen-   actuels tels que GPT-4 dans le do-
+              capacité à générer des réponses       tiel à la compréhension du sens         maine médical.
+              perçues comme empathiques lors        global. Cette architecture permet       En tirant parti de ces capacités
+              d’interactions avec des patients.     au modèle de traiter et de com-         avancées, l’objectif de ce travail est
+              Une revue systématique l’a éva-       prendre des contextes étendus,          d’évaluer dans quelle mesure le
+              lué sur des questions liées aux       améliorant ainsi la qualité et la       modèle o1 peut identifier, dans les
+              compétences relationnelles dans       pertinence des réponses générées        préconisations médicales formu-
+              l’USMLE, où GPT-4 a répondu cor-      [9]. Introduite par Vaswani et al.      lées par les médecins du travail,
+              rectement à 90 % des questions,       en 2017, l’architecture Transformer     les erreurs potentielles répondant
+              suggérant une aptitude à simuler      a révolutionné le traitement du         aux cinq critères de mauvaise
+              certaines facettes de l’empathie      langage naturel en se passant des       qualité précédemment cités (et le
+              humaine [15]. Une autre étude a       réseaux récurrents, s’appuyant          critère 0 d’absence d’erreur), avant
+              évalué l’impact de l’assistance de    uniquement sur des mécanismes           leur transmission à l’employeur.
+              GPT-4 sur le raisonnement des         d’attention pour traiter les sé-        L’exploitation du potentiel de re-
+              médecins en matière de gestion        quences de données [5].                 formulation ou de génération inté-
+              clinique. Les résultats ont montré    L’un des aspects clés du modèle         grale d’une préconisation n’a pas
+              que les médecins ainsi assistés       o1 est son apprentissage par            été retenue et testée, le rôle de l’IA
+
+
+
+54                                                                       N° 186 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — JUIN 2026
+étant ici considéré comme un outil      lorsqu’il considère l’expression        résultats ont été confrontés aux
+d’accompagnement et d’assistan-         « RV médical » comme relevant du        évaluations du CM à chaque ité-
+ce aux professionnels dans leurs        critère 1 au motif que l’abréviation    ration. Le prompt final attribue
+tâches, sans substitution à leur        « RV » serait jugée imprécise ;         au modèle le rôle d’un médecin
+expertise.                              ● discordance par défaut : o1 ne        du travail, lui demande d’analyser
+                                        repère pas une erreur qui aurait dû     chaque préconisation de manière
+                                        être détectée et qui a été identifiée   exhaustive selon les cinq critères
+                                        par le CM ;                             prédéfinis, en procédant étape par
+MATÉRIELS                               ● hallucination : o1 invente une        étape (intégration de la chaîne de
+ET MÉTHODES                             réponse de toute pièce, sans rap-       raisonnement) et en se concen-
+                                        port avec la question posée.            trant uniquement sur les infor-
+POPULATION D’ÉTUDE                                                              mations fournies, sans ajout d’in-
+ET RÉFÉRENCE                            OPTIMISATION                            formations extérieures. Ce prompt
+Afin d’évaluer les capacités d’ana-     DU PROMPT                               validé a ensuite été retesté sur 50
+lyse du modèle o1, ses résultats        Afin d’atténuer ces hallucinations      nouvelles préconisations tirées au
+ont été confrontés à ceux de pré-       et d’obtenir des réponses plus pré-     hasard de la base de données afin
+conisations ayant déjà fait l’objet     cises, des prompts clairs et bien       de confirmer son efficacité.
+d’une évaluation dans le cadre          structurés ont été fournis au mo-
+de la thèse du Dr N’Guessan [1].        dèle. De plus, la performance de        CALCUL DE L’EFFECTIF
+L’analyse comparative a porté spé-      raisonnement des LLMs tendant           ET ANALYSE STATISTIQUE
+cifiquement sur les préconisations      à diminuer à mesure que la lon-         Le test de McNemar a été utilisé
+ayant donné lieu à un consensus         gueur du prompt augmente, des           afin de comparer les proportions
+multidisciplinaire (CM) dans ce         instructions concises mais ex-          d’erreurs identifiées par le CM et
+travail antérieur.                      haustives ont été privilégiées.         celles identifiées par le modèle o1.
+                                        Le prompt a été testé et affiné ité-    Les intervalles de confiance des
+CATÉGORISATION                          rativement sur une centaine de          proportions ont été calculés se-
+DES DISCORDANCES                        préconisations tirées au hasard         lon la méthode de Wilson. Afin
+Chaque préconisation a été étu-         et équitablement réparties dans         d’obtenir une précision d’environ
+diée en fonction des cinq critères      la base de données, afin d’éviter       ± 5 % (IC 95 %), l’effectif mini-
+de mauvaise qualité précédem-           le surentraînement. En effet, la        mal garantissant une puissance
+ment cités. En cas de discordance       base de données n’était pas consti-     suffisante pour détecter d’éven-
+entre le modèle o1 et le CM, celle-ci   tuée de manière aléatoire, ce qui       tuelles différences significatives
+a été classée dans l’une des caté-      entraînait la présence d’un style       a été calculé selon la formule :
+gories suivantes par l’auteur avec      d’écriture homogène et d’erreurs        n = z² × p (1 – p) / e², avec z = 1,96
+l’aide d’un professeur en santé au      récurrentes provenant d’un même         (intervalle de confiance à 95 %),
+travail :                               auteur sur plusieurs préconisa-         p = 0,5 (variance maximale) et
+● pas de discordance : les ré-          tions successives. Autrement dit,       e = 0,05 (marge d’erreur), soit
+ponses du modèle o1 et du CM sont       il y avait un risque de surajuster le   n = 385 préconisations.
+concordantes ;                          prompt aux biais de formulation         Le prompt validé a ensuite été ap-
+● discordance justifiée : o1 donne      de quelques médecins seulement.         pliqué à ces 385 nouvelles préco-
+un avis différent du CM, mais qui       Sans une sélection véritablement        nisations, extraites aléatoirement
+a été validé comme correct après        aléatoire couvrant l’ensemble de        de la base de données. Les résul-
+réévaluation. Il peut s’agir, par       la base, il devenait impossible de      tats obtenus ont été soumis à une
+exemple, d’une rupture du secret        savoir si les performances obte-        analyse comparative avec ceux is-
+médical non détectée initialement       nues auraient été généralisables à      sus de la thèse du Dr N’Guessan.
+par le CM et identifiée par le mo-      d’autres utilisateurs.                  Le niveau d’accord entre les deux
+dèle, relevant ainsi d’une erreur du    Cinq itérations successives ont         approches a été évalué à l’aide du
+jugement initial ;                      été nécessaires avant d’obtenir un      coefficient kappa de Cohen, qui
+● discordance par excès : o1 dé-        prompt permettant des taux de           mesure la concordance entre deux
+tecte une erreur en raison d’un         discordance par défaut et d’hal-        observateurs au-delà du simple ef-
+jugement trop sévère, par exemple       lucinations proches de 0 %. Les         fet du hasard. Son interprétation
+
+
+
+JUIN 2026 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — N° 186                                                                      55
+VU DU TERRAIN
+
+L’intelligence artificielle en santé au travail : évaluation
+de son potentiel pour renforcer la précision et la clarté
+des préconisations médicales
+
+
+
+
+                     a suivi les seuils proposés par              plus fréquemment les critères                   ANALYSE DESCRIPTIVE
+                     Landis et Koch : k < 0,20 (accord            d’imprécision (critère 1), de doute             PAR CRITÈRE
+                     faible), k = 0,21–0,40 (accord faible        sur l’obligation (critère 2), d’infor-          Les taux de concordance entre le
+                     à modéré), k = 0,41–0,60 (accord             mations hors annexe 4 (critère 3) et            CM et le modèle o1 varient sensi-
+                     modéré), k = 0,61–0,80 (accord               de changement de poste (critère 4)              blement selon les critères. Pour le
+                     substantiel) et k > 0,80 (accord             que le CM. Les différences sont sta-            critère 1 (imprécision), la concor-
+                     presque parfait). Une analyse des-           tistiquement significatives et tra-             dance est de 61,3 %, mais accompa-
+                     criptive par critère a également été         duisent une tendance du modèle                  gnée d’un taux non négligeable de
+                     réalisée.                                    à multiplier la détection d’erreurs.            discordances par excès, traduisant
+                     Aucune des préconisations entrées            À l’inverse, l’absence d’erreurs (cri-          une tendance du modèle à suréva-
+                     dans le modèle ne comportait d’in-           tère 0) est plus fréquemment ob-
+                                                                                                                  luer les erreurs. Le critère 2 (doute
+                     formations permettant d’identifier           servée dans les évaluations du CM
+                                                                                                                  sur obligation) présente un taux
+                     le salarié, l’entreprise, l’employeur,       que dans celles du modèle, confir-
+                                                                                                                  de concordance de 45,5 %, avec des
+                     le médecin du travail ou le SPSTI            mant la propension de ce dernier
+                                                                                                                  discordances par excès particu-
+                     émetteur de la préconisation.                à surestimer les anomalies. Le cri-
+                                                                                                                  lièrement marquées, confirmant
+                                                                  tère 5, correspondant à la rupture
+                                                                                                                  cette même tendance. À l’inverse,
+                                                                  du secret médical, se distingue par
+                                                                  des résultats plus proches entre le             les critères 3 à 5 se distinguent par
+                     RÉSULTATS                                    CM et o1, bien qu’il reste aussi plus           des taux de concordance plus éle-
+                                                                  élevé avec le modèle (tableau I).               vés : 77,1 % pour le critère 3, plus
+                     ANALYSE COMPARATIVE                          L’analyse de concordance confirme               de 90 % pour le critère 4, et 96 %
+                     GLOBALE ENTRE LE CM ET                       ces constats : l’accord mesuré par              pour le critère 5. Les discordances
+                     O1                                           le kappa de Cohen demeure faible                y restent marginales, sans aucune
+                     Parmi les 385 préconisations étu-            pour les critères 0 à 3, atteint un             discordance par défaut pour les
+                     diées, des écarts notables sont              niveau modéré pour le critère 4 et              critères 4 et 5. Il est à noter égale-
+                     observés entre le CM et le modèle            devient presque parfait pour le cri-            ment l’absence complète d’halluci-
+                     o1. Globalement, le modèle détecte           tère 5 (tableau I).                             nations détectées (tableau II).
+↓ Tableau I
+
+> COMPARAISON DU TAUX DE DÉTECTION DES DIFFÉRENTS TYPES D’ERREURS ENTRE LE CONSENSUS
+MULTIDISCIPLINAIRE (CM) ET LE MODÈLE O1 : POURCENTAGES, INTERVALLES DE CONFIANCE (MÉTHODE
+DE WILSON), SIGNIFICATIVITÉ (TEST DE MCNEMAR) ET NIVEAUX D’ACCORD (KAPPA DE COHEN, SEUILS DE
+LANDIS ET KOCH).
+                                     CM                                     o1                     Significativité            Accord CM / o1
+
+                                                                                                                                       Interprétation
+                                                                                                                        Kappa de
+       Critère          n (%)                IC 95%            n (%)                 IC95%            valeur-p                           (Landis &
+                                                                                                                         Cohen
+                                                                                                                                           Koch)
+
+     0 (Absence                                                                                                                         Accord faible
+                     83 (21,56 %)         (17,74 - 25,94)   18 (4,68 %)           (2,98 - 7,27)      5,42×10⁻²⁰            0,13
+      d'erreur)                                                                                                                         (0,00 – 0,20)
+                                                                                                                                        Accord faible
+ 1 (Imprécision)     236 (61,30 %)        (56,34 - 66,03)   355 (92,21 %)        (89,09 - 94,49)     3,01×10⁻³⁶            0,10
+                                                                                                                                        (0,00 – 0,20)
+     2 (Doute sur                                                                                                                       Accord faible
+                     68 (17,66 %)         (14,18 - 21,79)   273 (70,91 %)        (66,18 - 75,22)     3,89×10⁻⁶²            0,14
+      obligation)                                                                                                                       (0,00 – 0,20)
+     3 (Infos hors                                                                                                                      Accord faible
+                      32 (8,31 %)          (5,95 - 11,50)   95 (24,68 %)         (20,63 - 29,22)     2,17×10⁻¹⁹            0,13
+      annexe 4)                                                                                                                         (0,00 – 0,20)
+ 4 (Changement                                                                                                                         Accord modéré
+                      12 (3,12 %)          (1,79 - 5,37)    35 (9,09 %)           (6,61 - 12,38)     2,38×10⁻⁰⁷            0,48
+    de poste)                                                                                                                           (0,41 – 0,60)
+                                                                                                                                       Accord presque
+   5 (Rupture
+                     50 (12,99 %)          (9,99 - 16,71)   63 (16,36 %)         (13,00 - 20,39)     2,44×10⁻⁰⁴            0,82            parfait
+ secret médical)
+                                                                                                                                        (0,81 – 1,00)
+
+
+
+
+56                                                                                            N° 186 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — JUIN 2026
+↓ Tableau II
+
+> POURCENTAGE DE DISTRIBUTION DES CONCORDANCES ET DIVERGENCES ENTRE LE CONSENSUS
+MULTIDISCIPLINAIRE ET O1 PAR CRITÈRE.
+                           Concordance               Divergence         Divergence justifiée       Divergence              Hallucination
+        Critère
+                              n (%)                 par excès n (%)            n (%)             par défaut n (%)              n (%)
+
+    1 (Imprécision)         236 (61,3%)                75 (19,5%)             65 (16,9%)              9 (2,3%)               0 (0,0%)
+      2 (Doute sur
+                            175 (45,5%)               117 (30,4%)             90 (23,4%)              3 (0,8%)               0 (0,0%)
+       obligation)
+      3 (Infos hors
+                            297 (77,1%)                38 (9,9%)              34 (8,8%)              16 (4,2%)               0 (0,0%)
+       annexe 4)
+    4 (Changement
+                            358 (93,0%)                17 (4,4%)              10 (2,6%)              0 (0,0%)                0 (0,0%)
+       de poste)
+   5 (Rupture secret
+                            370 (96,1%)                11 (2,9%)               4 (1,0%)              0 (0,0%)                0 (0,0%)
+       médical)
+         Total                74,60%                    13,20%                 10,54%                  1,45%                    0%
+
+
+
+                                          92,21 % des cas, contre 61,30 % pour     divergence par excès est observée
+DISCUSSION                                le CM. Le faible accord témoigne         dans 13,2 % des cas, ce qui sug-
+                                          d’une possible sensibilité du mo-        gère que le modèle a appliqué des
+L’analyse de la classification du CM      dèle à l’imprécision syntaxique.         critères de détection plus stricts,
+et du modèle o1 sur 385 préconisa-        Une tendance comparable se re-           voire excessifs. On retrouve 10,54 %
+tions a permis d’évaluer la capaci-       trouve pour les critères 2 et 3.         de désaccords considérés comme
+té du modèle à détecter différents        Pour le critère 2, o1 l’identifie dans   justifiés, reflétant des différences
+types d’erreurs dans la rédaction         70,91 % des cas contre 17,66 % pour      d’interprétation acceptables qui
+des préconisations médicales              le CM, avec un accord faible. Pour       peuvent favoriser une meilleure
+en santé au travail. Les résultats        le critère 3, les taux sont respecti-    communication et une approche
+mettent en évidence des diver-            vement de 24,68 % et 8,31 %, avec        plus nuancée des recommanda-
+gences statistiquement significa-         un accord faible également.              tions médicales. À noter que la
+tives entre l’évaluation humaine          Concernant le critère 4, o1 le dé-       différence observée entre le taux
+et celle effectuée par le modèle o1.      tecte dans 9,09 % des cas contre         d’accord global relativement éle-
+Concernant le critère 0, qui corres-      3,12 % pour le CM, cette fois avec       vé (74,6 %) et les valeurs faibles à
+pond à l’absence totale d’erreurs         un accord modéré. Ces résultats          modérées du Kappa de Cohen s’ex-
+dans les préconisations, le CM a          suggèrent qu’o1 applique des             plique principalement par la prise
+identifié 21,56 % des préconisa-          filtres plus stricts dans la détection   en compte du hasard et la distri-
+tions comme étant correctement            de ces critères.                         bution déséquilibrée des critères
+rédigées, contre seulement 4,68 %         Pour le critère 5, qui touche à la       évalués. En effet, le Kappa mesure
+pour o1. Cette différence s’accom-        rupture du secret médical ou à           l’accord au-delà de ce qui pourrait
+pagne d’un accord faible entre les        la divulgation d’informations            survenir par hasard. Ainsi, des di-
+deux évaluateurs (o1 et CM). Cela         confidentielles, les résultats sont      vergences même minimes, parti-
+suggère que o1 a tendance à consi-        plus convergents : 16,36 % pour o1       culièrement sur des critères rares
+dérer comme imparfaites des pré-          contre 12,99 % pour le CM. Le kap-       ou très fréquents, impactent for-
+conisations que l’humain juge ac-         pa atteint ici 0,82, traduisant un       tement le Kappa sans nécessaire-
+ceptables, probablement en raison         accord presque parfait entre les         ment réduire significativement le
+d’une interprétation plus stricte         deux évaluateurs. Ce critère, plus       taux d’accord global. L’approche
+des critères de mauvaise qualité.         objectif à évaluer, est moins sujet      « rigoureuse » d’o1, qui applique des
+Pour le critère 1, qui porte sur les      à interprétation.                        critères de détection souvent plus
+formulations imprécises ou dif-           L’analyse      descriptive     montre    stricts que l’évaluateur humain,
+ficilement applicables pour l’em-         malgré tout un taux d’accord de          accentue ces divergences. Cela ex-
+ployeur, o1 détecte des erreurs dans      74,6 % entre les évaluations. Une        plique pourquoi un pourcentage
+
+
+
+JUIN 2026 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — N° 186                                                                                        57
+VU DU TERRAIN
+
+L’intelligence artificielle en santé au travail : évaluation
+de son potentiel pour renforcer la précision et la clarté
+des préconisations médicales
+
+
+
+
+              d’accord brut élevé ne garantit pas    suffisante. Aussi, plusieurs méde-      benchmarks [19]. Cette dynamique
+              nécessairement un Kappa élevé.         cins du travail ont évalué les pré-     implique que les résultats obtenus
+              Enfin, 1,45 % des divergences ont      conisations afin de diminuer les        doivent être réévalués périodique-
+              été identifiées comme de véri-         biais de subjectivité, d’information    ment à mesure que les capacités
+              tables erreurs de o1. Cependant,       et de disponibilité. Les préconisa-     des LLMs évoluent.
+              aucune de ces erreurs ne concerne      tions ont également été prélevées
+              le critère 5 relatif à la rupture du   de la base de données de 12 SPSTI       PERSPECTIVES
+              secret médical, ce qui souligne la     permettant de diminuer un poten-        Les résultats probants de cette
+              fiabilité du modèle sur les aspects    tiel effet centre.                      étude peuvent présupposer de
+              les plus sensibles des préconisa-                                              la pertinence de l’utilisation des
+              tions. En revanche, o1 a également     LIMITES DE L’ÉTUDE                      LLMs dans d’autres aspects de la
+              détecté, à raison, de véritables       La principale limite de cette étude     santé au travail et notamment
+              ruptures du secret médical qui         réside dans le fait que l’analyse est   l’aide à l’évaluation des risques
+              n’avaient pas été détectées par le     influencée par l’interprétation des     professionnels ou l’accompagne-
+              CM. Ces préconisations avaient         évaluateurs et que certains élé-        ment dans la rédaction et le suivi
+              sûrement fait l’objet d’un consen-     ments contextuels ne sont pas pris      des dossiers médicaux des sala-
+              sus immédiat entre les deux étu-       en compte. En effet, les informa-       riés. Au vu de la démographie mé-
+              diants et n’ont donc pas été réé-      tions précises sur le poste occupé      dicale en berne en médecine du
+              valuées par des séniors. De plus,      par le salarié et sur les contraintes   travail, il pourrait alors être perti-
+              aucune hallucination n’a été ob-       spécifiques de son environnement        nent d’intégrer cette technologie
+              servée dans les réponses générées      de travail ne sont pas disponibles.     dans les pratiques des SPST afin
+              par l’IA, démontrant la qualité du     Il est donc possible que certaines      de gagner en efficacité et propo-
+              prompt utilisé et la capacité de o1    préconisations, bien que détectées      ser un meilleur suivi aux salariés.
+              à fournir des analyses cohérentes      comme problématiques, aient en          Pour y parvenir, il serait nécessaire
+              et conformes aux attentes.             réalité été adaptées à des situa-       d’évaluer rigoureusement les dif-
+              Ainsi, les divergences observées       tions particulières que o1 et les       férents LLMs disponibles, à travers
+              entre o1 et le CM dans cette étude     évaluateurs humains ne pouvaient        un benchmark dédié, testant spé-
+              semblent principalement résul-         pas connaître. Une autre limite         cifiquement leurs connaissances
+              ter de l’approche « rigoureuse » de    est que le modèle utilisé, o1, est      théoriques en santé au travail,
+              o1, qui privilégie la détection des    un modèle de raisonnement qui           leur raisonnement clinique et leur
+              incohérences et des erreurs po-        a ses capacités spécifiques de par      capacité à prendre en compte les
+              tentielles par excès de précaution.    les données et le mode d’entraîne-      particularités françaises. Cette
+              Cette prudence favorise une meil-      ment qui lui sont propres. Les ré-      démarche permettrait de vérifier
+              leure identification des erreurs       sultats de cette étude ne sont donc     leurs performances ainsi que leur
+              dans les préconisations médicales      pas extrapolables à d’autres mo-        innocuité avant d’en envisager une
+              et offre un cadre structuré pour       dèles. Une autre limite concerne la     diffusion à plus grande échelle.
+              leur amélioration, sans nuire à        rapidité d’évolution des LLMs. Bien
+              l’indépendance du médecin du           que le modèle utilisé dans cette
+              travail.                               étude soit l’un des plus avancés
+                                                     au moment de l’analyse des don-         CONCLUSION
+              FORCES DE L’ÉTUDE                      nées (novembre 2024), les progrès
+              Une des forces de cette étude est      dans ce domaine sont exponen-           Les performances d’o1 dans cette
+              qu’elle est la première à explorer     tiels. Ainsi, de nouveaux modèles       étude montrent une capacité no-
+              le potentiel des grands modèles de     de raisonnement, tels que GPT-5.4,      table à identifier les erreurs de for-
+              langages à renforcer la précision      Claude Opus 4.6 (développé par          mulation dans les préconisations
+              et la rigueur des préconisations       Anthropic), Grok-4.1 (développé         médicales, grâce à une rigueur éle-
+              en médecine du travail. Elle a été     par xAI), Gemini 3 (développé par       vée dans leur détection. Bien que
+              réalisée sur un échantillon de pré-    Google) sont déjà parus depuis          o1 ait commis des erreurs d’appré-
+              conisations suffisamment grand,        l’analyse statistique réalisée pour     ciation, leur faible fréquence, la
+              garantissant une représentativi-       cette étude et surpassent déjà les      faible portée de ces erreurs ainsi
+              té et une robustesse statistique       capacités d’o1 sur de nombreux          que l’absence d’hallucination
+
+
+
+58                                                                        N° 186 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — JUIN 2026
+confirment la fiabilité du modèle
+                                              POINTS À RETENIR
+et son potentiel en tant qu’outil
+d’aide à la rédaction des préconi-              Évaluées par un consensus multidisciplinaire (CM), 78 %
+sations en médecine du travail. Le            des préconisations des médecins du travail en Hauts-
+modèle a également détecté des                de-France présentent au moins un critère de mauvaise
+erreurs que le CM n’avait pas dé-             qualité.
+tectées au préalable. Ces résultats
+                                                Le modèle de langage (LLM) o1 a évalué 385
+démontrent, via l’exemple d’o1,               préconisations et ses résultats ont été comparés à ceux
+que les LLMs peuvent constituer               du CM.
+un atout précieux pour améliorer
+la clarté et la pertinence des re-               Le taux d’accord global entre o1 et le CM a atteint 74,6 %.
+commandations médicales, tout                   Aucune hallucination n’a été détectée sur l’ensemble
+en renforçant la communication                des préconisations analysées.
+avec l’employeur, et donc la portée             L’accord est presque parfait (k = 0,82) pour la détection
+de la démarche de prévention, tout            des ruptures du secret médical.
+en réduisant les risques juridiques
+pour le médecin et les SPSTI. Par               Le modèle tend à surévaluer les erreurs (13,2 % de
+                                              discordances par excès).
+ailleurs, l’utilisation des LLMs
+pourrait s’avérer prometteuse                   Des erreurs initialement non détectées par le CM ont
+pour des applications en santé au             été identifiées à raison par le modèle.
+travail, telles que l’automatisation            Le taux de discordances par défaut reste faible (1,45 %),
+partielle des consultations, l’éva-           sans aucune erreur sur le critère « rupture du secret médical
+luation des risques professionnels            ou atteinte à la vie privée du salarié ».
+ou encore le suivi des dossiers mé-
+                                                 Les LLMs représentent un outil d’aide prometteur pour
+dicaux. Cela nécessite toutefois au
+                                              la relecture des préconisations en santé au travail.
+préalable une évaluation rigou-
+reuse de leurs performances en                  Un benchmark dédié en santé au travail est nécessaire
+santé au travail via l’élaboration            pour évaluer rigoureusement les performances des
+d’un benchmark dédié.                         différents LLMs pour d’autres applications.
+
+
+
+
+BIBLIOGRAPHIE
+
+ 1 | N’Guessan C – Analyse              3 | Telenti A, Auli M, Hie BL,           6 | Sajjadi Mohammadabadi SM,
+ critique de la rédaction actuelle de   Maher C et al. – Large language          Kara BC, Eyupoglu C, Uzay C
+ préconisations chez les médecins       models for science and medicine. Eur     et al. – A Survey of Large Language
+ du travail en Hauts de France. Thèse   J Clin Invest. 2024 ; 54 (6) : e14183.
+                                                                                 Models: Evolution, Architectures,
+ pour le diplôme d’État de docteur      4 | Ouyang S, Zhang JM,
+                                                                                 Adaptation, Benchmarking,
+ en médecine. Lille : Université de
+                                        Harman M, Wang M – An
+                                        Empirical Study of the Non-              Applications, Challenges, and
+ Lille, Faculté de Médecine Henri
+                                        determinism of ChatGPT in Code           Societal Implications. Electronics.
+ Warembourg ; 2024 : 46 p.
+                                        Generation. ACM Trans Softw Eng          2025 ; 14 (18) : 3580.
+ 2 | Un premier bilan mitigé du
+                                        Methodol. 2025 ; 34 (2) : 1-28.          7 | Sharma S, Mittal P,
+ contentieux des avis du médecin
+                                        5 | Vaswani A, Shazeer N,
+ du travail. Communiqué de presse.                                               Kumar M, Bhardwaj V – The
+                                        Parmar N, Uszkoreit J et al. –
+ AvoSial, LexisNexis, 2022 (https://                                             role of large language models in
+                                        Attention Is All You Need. In:
+ www.avosial.fr/medias/org-1522/        ArXiv. Cornell University (Cornell       personalized learning: a systematic
+                                                                                                                              FIN DE LA
+ shared/inaptitude-au-travail-etude-    Tech), 2017 (https://arxiv.org/          review of educational impact. Discov   BIBLIOGRAPHIE
+ avosial-20.02.2022.pdf).               abs/1706.03762).                         Sustain. 2025 ; 6 : 243.               PAGE SUIVANTE
+
+
+
+
+JUIN 2026 — RÉFÉRENCES EN SANTÉ AU TRAVAIL — N° 186                                                                                 59
+
