@@ -1,14 +1,2 @@
-MISE À JOUR DE LA RUBRIQUE « ÉVALUER »
-
-1. À la racine du dépôt GitHub, remplacez le dossier « evaluer » actuel par le dossier « evaluer » contenu dans ce paquet.
-2. Remplacez également le fichier « sitemap.xml » situé à la racine du dépôt.
-3. Conservez exactement l’arborescence des sous-dossiers et les noms de fichiers.
-4. Validez avec « Commit changes ».
-
-NOUVELLES ADRESSES
-- /evaluer/ : page de choix entre les deux parcours
-- /evaluer/benchmark/ : explication des benchmarks et statut de publication
-- /evaluer/impact/ : évaluation initiale d’impact
-- /evaluer/impact/suivi.html : suivi daté après déploiement
-
-Le dossier contient uniquement les fichiers nouveaux ou modifiés nécessaires à cette mise à jour.
+Remplace uniquement le fichier evaluer/index.html de ton dépôt par celui fourni ici.
+Les pages benchmark et questionnaires restent inchangées.
