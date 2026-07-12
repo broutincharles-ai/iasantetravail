@@ -57,14 +57,14 @@
 <div class="intro-copy">
 <span class="eyebrow">Avant le déploiement · outil exploratoire</span>
 <h1>Évaluer un projet d’IA <em>avant sa mise en place</em></h1>
-<p class="intro-lead">Décrivez l’usage prévu, répondez à une série de questions ciblées et obtenez immédiatement un profil de vigilance accompagné de priorités de prévention.</p>
+<p class="intro-lead">Repérez les effets potentiels du projet à partir des six facteurs de risques psychosociaux du cadre Gollac et de trois mécanismes propres à l’IA.</p>
 <div class="intro-actions">
 <button class="btn btn-primary" id="heroStart" type="button">Commencer l’évaluation</button>
 <a class="btn btn-ghost" href="#methodologie">Voir le cadre d’analyse</a>
 </div>
 <div aria-label="Informations pratiques" class="intro-facts">
-<span><strong>15–20 min</strong><small>durée indicative</small></span>
-<span><strong>26 à 32</strong><small>questions adaptées</small></span>
+<span><strong>10 min</strong><small>durée indicative</small></span>
+<span><strong>18</strong><small>questions</small></span>
 <span><strong>PDF</strong><small>rapport archivable</small></span>
 <span><strong>Local</strong><small>aucun nom demandé</small></span>
 </div>
@@ -73,14 +73,14 @@
 <span class="panel-kicker">À la fin</span>
 <h2>Un résultat directement exploitable</h2>
 <ul>
-<li><span>01</span><div><strong>Profil de vigilance</strong><small>Dix dimensions comparables.</small></div></li>
+<li><span>01</span><div><strong>Profil de vigilance</strong><small>Six facteurs Gollac et trois axes propres à l’IA.</small></div></li>
 <li><span>02</span><div><strong>Signaux critiques</strong><small>Les situations qui ne doivent pas être diluées dans une moyenne.</small></div></li>
 <li><span>03</span><div><strong>Plan d’action</strong><small>Des priorités avant le pilote ou la généralisation.</small></div></li>
 </ul>
 <a href="suivi.html">Le système est déjà déployé ? Ouvrir le suivi →</a>
 </aside>
 </div>
-<div class="status-note"><span aria-hidden="true">i</span><p><strong>Questionnaire exploratoire.</strong> Cette grille experte n’est ni une certification, ni un diagnostic, ni une preuve de conformité. Elle sert à structurer l’analyse et le dialogue autour du travail réel.</p></div>
+<div class="status-note"><span aria-hidden="true">i</span><p><strong>Outil empirique.</strong> Il est élaboré à partir d’un cadre de lecture reconnu des risques psychosociaux — les six facteurs du rapport Gollac — puis orienté vers l’intelligence artificielle et la santé au travail. Cette adaptation n’est pas un questionnaire psychométrique validé.</p></div>
 </div>
 </section>
 
@@ -201,7 +201,7 @@
 <div class="critical-alerts" hidden="" id="criticalAlerts"></div>
 <div class="result-grid">
 <article class="chart-card glass-soft">
-<div class="card-head"><div><span class="mini-kicker">Cartographie</span><h3>Dix dimensions</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">Voir les valeurs</button></div>
+<div class="card-head"><div><span class="mini-kicker">Cartographie</span><h3>Neuf axes de lecture</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">Voir les valeurs</button></div>
 <div aria-label="Graphique radar des dimensions de risque" class="radar-wrap" id="radarWrap"></div>
 <div class="dimension-table" hidden="" id="dimensionTable"></div>
 </article>
@@ -266,15 +266,15 @@
 <div class="wrap">
 <div class="reference-head"><span class="eyebrow">Cadre de lecture</span><h2>Un repérage structuré, pas un verdict automatique</h2></div>
 <div class="reference-grid">
-<article><span>01</span><h3>Dix dimensions</h3><p>Six dimensions du cadre Gollac complétées par la gouvernance, les données, la fiabilité et le déploiement.</p></article>
-<article><span>02</span><h3>Deux niveaux de lecture</h3><p>Un profil dimensionnel pour hiérarchiser les sujets et des signaux critiques traités séparément.</p></article>
+<article><span>01</span><h3>Six facteurs Gollac</h3><p>Intensité, exigences émotionnelles, autonomie, rapports sociaux, conflits de valeurs et insécurité de la situation de travail.</p></article>
+<article><span>02</span><h3>Trois axes propres à l’IA</h3><p>Opacité et contestabilité, charge cognitive de supervision et érosion des compétences.</p></article>
 <article><span>03</span><h3>Associer la santé au travail en amont</h3><p>Le SPST et le médecin du travail peuvent aider à analyser la tâche, les marges de manœuvre, la charge et les critères d’arrêt avant généralisation.</p></article>
 </div>
-<details class="sources-details"><summary>Voir les références et les limites méthodologiques</summary><div><p>La grille s’appuie notamment sur le cadre Gollac, les ressources de l’INRS, de l’EU-OSHA, de l’OIT et de la CNIL. Elle reste empirique, révisable et non validée psychométriquement.</p><p><a href="https://www.inrs.fr/risques/psychosociaux/facteurs-risques.html" rel="noopener noreferrer" target="_blank">INRS · facteurs de RPS</a> · <a href="https://healthy-workplaces.osha.europa.eu/en/publications/worker-management-through-ai-implications-occupational-safety-and-health" rel="noopener noreferrer" target="_blank">EU-OSHA · gestion algorithmique</a> · <a href="https://www.cnil.fr/fr/thematiques/travail-et-donnees-personnelles" rel="noopener noreferrer" target="_blank">CNIL · travail et données</a></p></div></details>
+<details class="sources-details"><summary>Voir les références et les limites méthodologiques</summary><div><p>La grille reprend les six facteurs du rapport Gollac, cadre de lecture reconnu des risques psychosociaux, puis les applique aux transformations du travail liées à l’IA. Les trois axes spécifiques à l’IA sont issus d’une construction empirique et experte. L’ensemble reste révisable et cette adaptation n’est pas validée psychométriquement.</p><p><a href="https://www.inrs.fr/risques/psychosociaux/facteurs-risques.html" rel="noopener noreferrer" target="_blank">INRS · facteurs de RPS</a> · <a href="https://healthy-workplaces.osha.europa.eu/en/publications/worker-management-through-ai-implications-occupational-safety-and-health" rel="noopener noreferrer" target="_blank">EU-OSHA · gestion algorithmique</a> · <a href="https://www.cnil.fr/fr/thematiques/travail-et-donnees-personnelles" rel="noopener noreferrer" target="_blank">CNIL · travail et données</a></p></div></details>
 </div>
 </section></main>
 
-<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="../../"><span aria-hidden="true" class="brand-mark"></span><span>IA &amp; Santé au Travail</span></a><p>Évaluer les projets d’IA à partir du travail réel.</p></div><div><strong>Évaluer</strong><a href="../">Vue d’ensemble</a><a href="../benchmark/">Comprendre les benchmarks</a><a href="#evaluation">Évaluation initiale</a><a href="suivi.html">Suivi daté</a></div><div><strong>Cadre</strong><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a><a href="../../confidentialite/">Confidentialité</a></div></div><div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Questionnaire exploratoire · version 0.5</span></div></footer>
+<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="../../"><span aria-hidden="true" class="brand-mark"></span><span>IA &amp; Santé au Travail</span></a><p>Évaluer les projets d’IA à partir du travail réel.</p></div><div><strong>Évaluer</strong><a href="../">Vue d’ensemble</a><a href="../benchmark/">Comprendre les benchmarks</a><a href="#evaluation">Évaluation initiale</a><a href="suivi.html">Suivi daté</a></div><div><strong>Cadre</strong><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a><a href="../../confidentialite/">Confidentialité</a></div></div><div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Outil empirique Gollac–IA · version 0.6</span></div></footer>
 <noscript><div class="noscript">JavaScript est nécessaire pour utiliser cette évaluation interactive.</div></noscript>
 <script src="assets/js/impact-config.js"></script>
 <script src="assets/js/impact-assessment.js"></script>
