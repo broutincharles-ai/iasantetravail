@@ -6,6 +6,6 @@
 window.IAHT_CONFIG = {
   aggregateEndpoint: "",
   contactEmail: "santetravailia@gmail.com",
-  appVersion: "0.4.0",
+  appVersion: "0.7.3",
   privacyPolicyUrl: "../../confidentialite/"
 };

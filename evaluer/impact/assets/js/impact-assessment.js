@@ -6,17 +6,23 @@
   const CONTACT_EMAIL = (CONFIG.contactEmail || "santetravailia@gmail.com").trim();
   const MAX_LOCAL_RECORDS = 50;
 
+  const REPORT_EXPORT_CSS = `
+:root{--report-ink:#17140F;--report-muted:#625E56;--report-line:#DDD5C8;--report-paper:#FFFDF9;--report-warm:#F5EDE0;--report-green:#3D5B52;--report-orange:#C05F2B}
+*{box-sizing:border-box}html{background:#F0ECE5}body{margin:0;font-family:"Instrument Sans",Arial,sans-serif;color:var(--report-ink);background:#F0ECE5;line-height:1.5;-webkit-font-smoothing:antialiased}.generated-report{width:min(920px,calc(100% - 32px));margin:28px auto;padding:44px;border:1px solid var(--report-line);border-radius:22px;background:var(--report-paper);box-shadow:0 25px 70px -45px rgba(23,20,15,.45)}h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:520}.report-cover{padding-bottom:24px;border-bottom:1px solid var(--report-line)}.report-brandline{display:flex;align-items:center;gap:10px;margin-bottom:28px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--report-green)}.report-brandmark{width:18px;height:18px;border-radius:50%;background:var(--report-orange)}.report-type{margin-left:auto;padding:6px 10px;border:1px solid var(--report-line);border-radius:999px;color:var(--report-muted);letter-spacing:.07em;background:#fff}.report-cover-grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:34px;align-items:end}.report-eyebrow{margin:0 0 8px;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--report-orange)}.report-cover h1{max-width:720px;margin:0 0 12px;font-size:50px;line-height:1.02;letter-spacing:-.035em}.report-subtitle{max-width:720px;margin:0;font-size:14px;line-height:1.55;color:var(--report-muted)}.report-id-card{padding:16px;border:1px solid var(--report-line);border-radius:16px;background:linear-gradient(145deg,#fff,var(--report-warm));font-size:11px;line-height:1.55;color:var(--report-muted)}.report-id-card strong{display:block;margin-bottom:5px;font-size:13px;color:var(--report-ink)}.report-section{margin-top:28px}.report-section-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:15px}.report-section-number{width:32px;min-width:32px;height:32px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 32px;background:var(--report-ink);color:#fff;font-size:10px;font-weight:850;line-height:1;text-align:center;font-variant-numeric:tabular-nums;overflow:hidden}.report-section-heading h2{margin:1px 0 0;font-size:28px;line-height:1.08}.report-section-heading p{margin:0 0 3px;font-size:10px;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:var(--report-orange)}.report-section>p,.report-section li{font-size:12.5px;line-height:1.55;color:var(--report-muted)}.report-section ul,.report-section ol{padding-left:19px}.report-summary-grid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px}.report-score-card{--report-accent:var(--report-orange);display:flex;flex-direction:column;justify-content:space-between;min-height:164px;padding:18px;border-radius:17px;background:var(--report-ink);color:#fff;overflow:hidden;position:relative}.report-score-card::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-34px;top:-42px;background:var(--report-accent);opacity:.28}.report-score-card>span{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.64)}.report-score-card strong{position:relative;z-index:1;font-family:"Fraunces",Georgia,serif;font-size:54px;line-height:.95}.report-score-card strong small{font-family:"Instrument Sans",Arial,sans-serif;font-size:12px;color:rgba(255,255,255,.55)}.report-score-card b{position:relative;z-index:1;font-size:12px}.report-decision-card{padding:18px 20px;border:1px solid var(--report-line);border-radius:17px;background:#fff}.report-decision-card>strong{display:block;margin-bottom:7px;font-size:16px}.report-decision-card p{margin:0;font-size:12.5px;line-height:1.58;color:var(--report-muted)}.report-decision-card.warning{border-color:rgba(143,37,48,.35);background:#FFF7F5}.report-critical-list{margin-top:12px;padding:13px 15px;border-left:4px solid #8F2530;border-radius:0 12px 12px 0;background:#FFF3F1}.report-critical-list strong{display:block;margin-bottom:4px;font-size:11px;color:#8F2530;text-transform:uppercase;letter-spacing:.08em}.report-critical-list ul{margin:0}.report-context-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.report-context-item{padding:11px 12px;border:1px solid var(--report-line);border-radius:12px;background:#fff}.report-context-item strong{display:block;margin-bottom:3px;font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--report-muted)}.report-context-item span{display:block;font-size:12px;font-weight:720;line-height:1.35}.report-profile-note{margin-bottom:14px}.report-score-list{display:grid;gap:8px}.report-score-row{padding:10px 12px;border:1px solid var(--report-line);border-radius:12px;background:#fff}.report-score-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px}.report-score-head strong{font-size:11.5px}.report-score-head span{font-family:"Fraunces",Georgia,serif;font-size:16px;color:var(--score-color,var(--report-orange))}.report-score-bar{height:6px;border-radius:999px;background:#EEE9E1;overflow:hidden}.report-score-bar i{display:block;height:100%;border-radius:inherit;background:var(--score-color,var(--report-orange))}.report-priority-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 14px;padding:0;counter-reset:priority;list-style:none}.report-priority-list li{position:relative;padding:12px 12px 12px 42px;border:1px solid var(--report-line);border-radius:12px;background:#fff}.report-priority-list li::before{counter-increment:priority;content:counter(priority);position:absolute;left:12px;top:12px;width:22px;height:22px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--report-warm);font-size:10px;font-weight:850;line-height:1;text-align:center;font-variant-numeric:tabular-nums;color:var(--report-orange)}.report-priority-list strong{display:block;margin-bottom:3px;color:var(--report-ink)}.report-actions-title{margin:15px 0 8px;font-family:"Instrument Sans",Arial,sans-serif;font-size:10.5px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--report-muted)}.report-keep-together{break-inside:avoid;page-break-inside:avoid}.action-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.action-column{padding:14px;border:1px solid var(--report-line);border-radius:13px;background:#fff}.action-column:nth-child(1){border-top:4px solid #8F2530}.action-column:nth-child(2){border-top:4px solid var(--report-orange)}.action-column:nth-child(3){border-top:4px solid var(--report-green)}.action-column h3{margin:0 0 8px;font-size:18px;line-height:1.08}.action-column ul{margin:0;padding-left:17px}.action-column li{margin-bottom:4px;font-size:11px;line-height:1.45}.report-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.report-role-card{padding:12px;border:1px solid var(--report-line);border-radius:12px;background:#fff}.report-role-card strong{display:block;margin-bottom:4px;font-size:11.5px}.report-role-card p{margin:0;font-size:11px;line-height:1.48;color:var(--report-muted)}.report-callout{padding:13px 15px;border-radius:12px;margin-top:13px;background:#F0F5F2;border:1px solid #D2E0D8;font-size:12px}.report-callout.warning{background:#FFF2EC;border-color:#EBC3AE}.report-callout p{margin:3px 0 0;font-size:11.5px;line-height:1.5;color:var(--report-muted)}.report-check-list{display:grid;gap:6px;margin:0;padding:0;list-style:none}.report-check-list li{position:relative;padding:9px 11px 9px 35px;border:1px solid var(--report-line);border-radius:11px;background:#fff}.report-check-list li::before{content:"";position:absolute;left:11px;top:50%;width:17px;height:17px;border-radius:50%;background:#E4EEE8;transform:translateY(-50%)}.report-check-list li::after{content:"";position:absolute;left:17px;top:50%;width:4px;height:7px;border:solid var(--report-green);border-width:0 1.7px 1.7px 0;transform:translateY(-64%) rotate(45deg);transform-origin:center}.report-contribution{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:14px}.report-contact-card{padding:13px;border-radius:12px;background:var(--report-ink);color:#fff;font-size:11px;line-height:1.45;overflow-wrap:anywhere}.report-contact-card span{display:block;margin-bottom:4px;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.55)}.report-legal{margin-top:28px;padding:15px 17px;border-top:1px solid var(--report-line);background:#F8F5EF;border-radius:12px;color:var(--report-muted);font-size:10.5px;line-height:1.52}.report-legal strong{color:var(--report-ink)}.timeline-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 10px}.timeline-meta div{border:1px solid var(--report-line);border-radius:12px;padding:11px;background:#fff}.timeline-meta strong{display:block;margin-bottom:3px;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--report-muted)}.timeline-meta span{font-size:11.5px;font-weight:750}
+@media(max-width:760px){.generated-report{width:calc(100% - 18px);margin:9px auto;padding:20px}.report-cover-grid,.report-summary-grid,.report-contribution{grid-template-columns:1fr}.report-context-grid,.report-priority-list,.report-role-grid,.action-timeline{grid-template-columns:1fr}.report-type{display:none}.report-cover h1{font-size:34px}}
+@media print{@page{size:A4;margin:12mm 13mm 14mm}html,body{background:#fff!important}body{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.generated-report{width:auto;margin:0;padding:0;border:0;border-radius:0;box-shadow:none}.report-cover,.report-summary-grid,.report-context-item,.report-score-row,.report-priority-list li,.action-column,.report-role-card,.report-callout,.report-check-list li,.report-contact-card,.report-legal,.timeline-meta div{break-inside:avoid;page-break-inside:avoid}.report-section{break-inside:auto}.report-section.report-keep-together{break-inside:avoid!important;page-break-inside:avoid!important}.report-section-heading{break-after:avoid;page-break-after:avoid}p,li,h1,h2,h3{orphans:3;widows:3}}
+`;
+
   const dimensions = {
-    intensity: { label: "Intensité & temps", short: ["Intensité", "& temps"], weight: 1.1, description: "Charge, accélération, délais et travail de correction." },
-    emotional: { label: "Exigences émotionnelles", short: ["Exigences", "émotionnelles"], weight: 0.8, description: "Exposition émotionnelle, conflits et régulation des affects." },
-    autonomy: { label: "Autonomie", short: ["Autonomie"], weight: 1.1, description: "Marges de manœuvre, reprise en main et capacité de contestation." },
-    social: { label: "Rapports sociaux", short: ["Rapports", "sociaux"], weight: 0.9, description: "Soutien, coopération, responsabilité et qualité du dialogue." },
-    values: { label: "Conflits de valeurs", short: ["Conflits", "de valeurs"], weight: 0.9, description: "Qualité empêchée, éthique et sens du travail." },
-    insecurity: { label: "Insécurité", short: ["Insécurité"], weight: 0.9, description: "Évolution de l’emploi, des compétences et dépendance au système." },
-    governance: { label: "Gouvernance algorithmique", short: ["Gouvernance", "algorithmique"], weight: 1.15, description: "Finalité, explicabilité, recours et responsabilité décisionnelle." },
-    privacy: { label: "Données & surveillance", short: ["Données", "& surveillance"], weight: 1.15, description: "Minimisation, confidentialité et granularité du suivi." },
-    reliability: { label: "Fiabilité & sécurité", short: ["Fiabilité", "& sécurité"], weight: 1.2, description: "Validation, erreurs, biais d’automatisation et solutions de repli." },
-    deployment: { label: "Déploiement préventif", short: ["Déploiement", "préventif"], weight: 1.0, description: "Participation, pilote, formation et suivi des effets." }
+    intensity: { label: "Intensité & temps de travail", short: ["Intensité", "& temps"], weight: 1, description: "Charge, rythme, délais, interruptions et débordements liés au projet." },
+    emotional: { label: "Exigences émotionnelles", short: ["Exigences", "émotionnelles"], weight: 1, description: "Situations difficiles, régulation émotionnelle et exposition aux conséquences des erreurs." },
+    autonomy: { label: "Autonomie", short: ["Autonomie"], weight: 1, description: "Marges de manœuvre, possibilité de corriger, de déroger ou d’interrompre l’usage." },
+    social: { label: "Rapports sociaux", short: ["Rapports", "sociaux"], weight: 1, description: "Coopération, soutien, participation et répartition des responsabilités." },
+    values: { label: "Conflits de valeurs", short: ["Conflits", "de valeurs"], weight: 1, description: "Qualité empêchée, éthique professionnelle et sens du travail." },
+    insecurity: { label: "Insécurité de la situation de travail", short: ["Insécurité", "du travail"], weight: 1, description: "Incertitude sur les rôles, l’emploi, l’organisation et les trajectoires professionnelles." },
+    opacity: { label: "Opacité & contestabilité", short: ["Opacité &", "contestation"], weight: 1, description: "Compréhension des sorties, traçabilité, recours humain et possibilité de discuter une recommandation." },
+    supervision: { label: "Charge cognitive de supervision", short: ["Charge de", "supervision"], weight: 1, description: "Vigilance, vérification, correction et responsabilité liées au contrôle des productions de l’IA." },
+    skills: { label: "Érosion des compétences", short: ["Érosion des", "compétences"], weight: 1, description: "Perte de pratique, dépendance à l’outil et réduction des possibilités d’apprentissage." }
   };
 
   const scales = {
@@ -47,283 +53,83 @@
       { label: "Inégal ou incomplet", score: 2 },
       { label: "Peu clair", score: 3 },
       { label: "Opaque ou non défini", score: 4 }
-    ],
-    validation: [
-      { label: "Validé de façon robuste", score: 0 },
-      { label: "Validé sur un échantillon", score: 1 },
-      { label: "Tests partiels", score: 2 },
-      { label: "Démonstration seulement", score: 3 },
-      { label: "Aucune validation", score: 4 }
     ]
   };
 
   const coreQuestions = [
-    {
-      id: "Q01", dims: { intensity: 1.2 }, scale: "impact", category: "Gollac · Intensité",
-      title: "Le système devrait-il augmenter le volume de travail attendu ou accélérer les cadences ?",
-      help: "Pensez aux objectifs relevés après un gain de productivité, aux délais raccourcis et à la multiplication des tâches."
-    },
-    {
-      id: "Q02", dims: { intensity: 1 }, scale: "frequency", category: "Gollac · Intensité",
-      title: "L’IA créera-t-elle des sollicitations en temps réel, des priorités changeantes ou des délais plus serrés ?",
-      help: "Incluez les alertes, recommandations permanentes, files de tâches dynamiques et réaffectations automatiques."
-    },
-    {
-      id: "Q03", dims: { intensity: .8 }, scale: "impact", category: "Gollac · Temps de travail",
-      title: "Le projet risque-t-il d’étendre la disponibilité attendue au-delà des horaires habituels ?",
-      help: "Par exemple : demandes nocturnes, réponse immédiate, continuité numérique ou frontière plus floue entre travail et repos."
-    },
-    {
-      id: "Q04", dims: { intensity: 1.1, reliability: .35 }, scale: "impact", category: "Travail invisible",
-      title: "Quelle charge de vérification, correction ou reprise des productions de l’IA est anticipée ?",
-      help: "Une automatisation peut déplacer le travail vers la détection d’erreurs, la justification ou le nettoyage des données."
-    },
-    {
-      id: "Q05", dims: { emotional: 1 }, scale: "impact", category: "Gollac · Exigences émotionnelles",
-      title: "Le système exposera-t-il davantage les travailleurs à des situations humaines difficiles ou conflictuelles ?",
-      help: "Exemples : annonces sensibles, réclamations, détresse, agressivité, contestation d’une décision ou réparation d’une erreur."
-    },
-    {
-      id: "Q06", dims: { emotional: .9, values: .25 }, scale: "impact", category: "Gollac · Exigences émotionnelles",
-      title: "L’IA imposera-t-elle une manière de communiquer ou d’exprimer ses émotions qui peut être vécue comme artificielle ?",
-      help: "Pensez aux scripts, scores de tonalité, injonctions à sourire, à rassurer ou à suivre une réponse standardisée."
-    },
-    {
-      id: "Q07", dims: { autonomy: 1.25, governance: .45 }, scale: "control", category: "Gollac · Autonomie",
-      title: "Les travailleurs pourront-ils ignorer, corriger ou interrompre une recommandation de l’IA sans être pénalisés ?",
-      help: "La reprise en main doit être réelle, praticable et compatible avec les objectifs de performance."
-    },
-    {
-      id: "Q08", dims: { autonomy: 1 }, scale: "impact", category: "Gollac · Autonomie",
-      title: "Dans quelle mesure l’outil réduira-t-il la liberté de choisir la méthode, l’ordre ou le rythme du travail ?",
-      help: "Évaluez la prescription implicite ou explicite créée par les scores, recommandations et workflows."
-    },
-    {
-      id: "Q09", dims: { autonomy: .5, governance: 1 }, scale: "clarity", category: "Compréhension",
-      title: "Les utilisateurs comprendront-ils les critères principaux qui produisent les recommandations ou décisions ?",
-      help: "Une explication utile doit permettre de détecter une erreur et d’argumenter une contestation, pas seulement décrire le produit."
-    },
-    {
-      id: "Q10", dims: { deployment: 1.15, social: .5 }, scale: "control", category: "Participation",
-      title: "Les travailleurs concernés et leurs représentants ont-ils été associés à la définition de l’usage ?",
-      help: "Cela inclut l’analyse des besoins, les tests, les critères de réussite, les risques et les conditions d’arrêt."
-    },
-    {
-      id: "Q11", dims: { social: 1, deployment: .5 }, scale: "control", category: "Soutien & formation",
-      title: "Une formation pratique, du temps d’apprentissage et un support humain sont-ils réellement prévus ?",
-      help: "La formation doit couvrir les limites, les erreurs probables, la protection des données et les situations où ne pas utiliser l’outil."
-    },
-    {
-      id: "Q12", dims: { social: .8, governance: .8 }, scale: "clarity", category: "Responsabilités",
-      title: "La responsabilité en cas d’erreur, de contestation ou d’incident est-elle clairement répartie ?",
-      help: "Évitez qu’un travailleur supporte seul la responsabilité d’une décision fortement orientée par un système qu’il ne maîtrise pas."
-    },
-    {
-      id: "Q13", dims: { values: 1.1, intensity: .25 }, scale: "impact", category: "Gollac · Conflits de valeurs",
-      title: "L’IA risque-t-elle de privilégier la vitesse ou la quantité au détriment de la qualité du travail ?",
-      help: "Incluez la qualité relationnelle, la sécurité, la précision, la personnalisation et le temps nécessaire pour bien faire."
-    },
-    {
-      id: "Q14", dims: { values: 1.15, emotional: .2 }, scale: "impact", category: "Éthique professionnelle",
-      title: "Le projet peut-il placer les travailleurs en conflit avec leurs règles professionnelles, leur éthique ou le sens de leur métier ?",
-      help: "Par exemple : recommandation injuste, standardisation excessive, refus de service, déshumanisation ou décision difficile à assumer."
-    },
-    {
-      id: "Q15", dims: { insecurity: 1.15, social: .25 }, scale: "clarity", category: "Gollac · Insécurité",
-      title: "Les effets du projet sur les emplois, les rôles et les parcours professionnels sont-ils expliqués de façon crédible ?",
-      help: "Une communication uniquement promotionnelle ou changeante augmente l’incertitude et les rumeurs."
-    },
-    {
-      id: "Q16", dims: { insecurity: 1, autonomy: .25 }, scale: "impact", category: "Compétences",
-      title: "Le système risque-t-il d’appauvrir les compétences ou de créer une dépendance difficilement réversible ?",
-      help: "Pensez à la perte de pratique, à l’oubli des procédures, à la réduction de l’apprentissage et à l’incapacité de fonctionner sans l’outil."
-    },
-    {
-      id: "Q17", dims: { governance: 1, deployment: .35 }, scale: "clarity", category: "Gouvernance IA",
-      title: "La finalité, les usages autorisés, les usages interdits et les limites du système sont-ils formalisés ?",
-      help: "Le cadrage doit empêcher l’extension progressive de l’usage vers des fonctions non évaluées."
-    },
-    {
-      id: "Q18", dims: { governance: 1.2, autonomy: .3 }, scale: "control", category: "Recours humain",
-      title: "Une personne affectée par le système dispose-t-elle d’un recours humain rapide et effectif ?",
-      help: "Le recours doit pouvoir modifier la décision et ne pas se réduire à une boîte de contact sans délai ni pouvoir d’action."
-    },
-    {
-      id: "Q19", dims: { deployment: 1 }, scale: "control", category: "Expérimentation",
-      title: "Un pilote limité, réversible et comparé à la situation antérieure est-il prévu avant généralisation ?",
-      help: "Le pilote doit tester la charge, la qualité, la sécurité, les contournements, les inégalités et l’acceptabilité."
-    },
-    {
-      id: "Q20", dims: { deployment: 1.15, social: .2 }, scale: "control", category: "Suivi des effets",
-      title: "Le déploiement fera-t-il l’objet d’un suivi de la charge de travail, des incidents, de la qualité du travail et des usages réels ?",
-      help: "Le suivi de la seule productivité ne permet pas d’identifier les difficultés d’usage, les contournements, les erreurs ou une dégradation du travail réel."
-    },
-    {
-      id: "Q21", dims: { privacy: 1.15, governance: .2 }, scale: "control", category: "Minimisation des données",
-      title: "Le projet limite-t-il les données collectées au strict nécessaire, avec des durées et accès définis ?",
-      help: "Incluez les prompts, journaux, métadonnées, enregistrements, historiques et données produites par inférence."
-    },
-    {
-      id: "Q22", dims: { privacy: 1.2, autonomy: .25 }, scale: "impact", category: "Surveillance",
-      title: "Quel niveau de suivi individualisé de l’activité ou du comportement le système introduit-il ?",
-      help: "Évaluez la fréquence, la granularité, la possibilité de croiser les données et l’usage des résultats pour comparer des personnes."
-    },
-    {
-      id: "Q23", dims: { privacy: 1, governance: .25 }, scale: "clarity", category: "Fournisseur & réutilisation",
-      title: "Les transferts, sous-traitants, réutilisations et conditions d’entraînement sur les données sont-ils maîtrisés ?",
-      help: "La confidentialité contractuelle ne suffit pas si les flux techniques, les accès et les paramètres ne sont pas connus."
-    },
-    {
-      id: "Q24", dims: { reliability: 1.2 }, scale: "validation", category: "Validation située",
-      title: "Le système a-t-il été évalué sur des cas représentatifs du métier, de la population et du contexte local ?",
-      help: "Une performance générale ou une démonstration du fournisseur ne remplace pas une validation sur les cas d’usage réels."
-    },
-    {
-      id: "Q25", dims: { reliability: 1.2, governance: .3 }, scale: "impact", category: "Conséquences des erreurs",
-      title: "Quelle serait la gravité d’une erreur non détectée ou d’une confiance excessive dans la sortie de l’IA ?",
-      help: "Tenez compte des conséquences humaines, professionnelles, juridiques, financières, sanitaires et de sécurité."
-    },
-    {
-      id: "Q26", dims: { reliability: 1.05, deployment: .4 }, scale: "control", category: "Continuité & repli",
-      title: "Une procédure de repli testée permet-elle de travailler en sécurité si l’IA est indisponible ou incohérente ?",
-      help: "Incluez l’arrêt du système, le retour à une procédure manuelle, la récupération des données et la gestion des incidents."
-    }
-  ];
+    { id: "Q01", dims: { intensity: 1 }, scale: "impact", category: "Gollac 1 · Intensité", title: "Le projet risque-t-il d’augmenter le volume de travail attendu ou d’accélérer les cadences ?", help: "Tenez compte des objectifs relevés après les gains de temps annoncés et du temps réel nécessaire pour terminer le travail." },
+    { id: "Q02", dims: { intensity: 1 }, scale: "frequency", category: "Gollac 1 · Intensité", title: "L’IA créera-t-elle davantage d’interruptions, d’alertes, de priorités changeantes ou de débordements horaires ?", help: "Incluez les sollicitations en temps réel et les corrections réalisées dans l’urgence." },
 
-  const conditionalQuestions = [
-    {
-      id: "C01", use: "management", dims: { intensity: .9, autonomy: 1.1, governance: .35 }, category: "Question ciblée · Organisation", conditional: true,
-      title: "Comment l’IA influencera-t-elle l’attribution des tâches et le rythme quotidien ?",
-      help: "Choisissez le niveau le plus proche de l’usage réellement prévu.",
-      options: [
-        { label: "Information non prescriptive, sans effet sur le rythme", score: 0 },
-        { label: "Suggestion ajustable avec marge de manœuvre", score: 1 },
-        { label: "Priorisation généralement suivie mais contestable", score: 2 },
-        { label: "Attribution automatique avec objectifs dynamiques", score: 3 },
-        { label: "Pilotage continu du rythme avec faible possibilité de dérogation", score: 4 }
-      ]
-    },
-    {
-      id: "C02", use: "rh", dims: { governance: 1.3, insecurity: 1, social: .35 }, category: "Question ciblée · Emploi", conditional: true,
-      title: "Quel rôle l’IA jouera-t-elle dans une décision concernant l’emploi ou la carrière ?",
-      help: "Recrutement, évaluation, rémunération, promotion, mobilité, sanction ou rupture.",
-      options: [
-        { label: "Aucune décision individuelle ; analyse globale uniquement", score: 0 },
-        { label: "Aide documentaire, décision humaine indépendante", score: 1 },
-        { label: "Recommandation expliquée, systématiquement réexaminée", score: 2 },
-        { label: "Recommandation suivie par défaut avec contrôle limité", score: 3 },
-        { label: "Décision entièrement ou quasi entièrement automatisée", score: 4 }
-      ],
-      critical: score => score >= 3 ? "Décision relative à l’emploi fortement déterminée par l’IA avec contrôle humain insuffisant." : null
-    },
-    {
-      id: "C03", use: "monitoring", dims: { privacy: 1.4, autonomy: .65, emotional: .45 }, category: "Question ciblée · Surveillance", conditional: true,
-      title: "Quel type de suivi individuel ou d’inférence le système réalisera-t-il ?",
-      help: "Retenez la fonction la plus intrusive, même si elle n’est activée que pour une partie des travailleurs.",
-      options: [
-        { label: "Aucun suivi individuel ; données agrégées et minimisées", score: 0 },
-        { label: "Données individuelles ponctuelles, finalité limitée", score: 1 },
-        { label: "Suivi régulier avec information et garanties de recours", score: 2 },
-        { label: "Surveillance individuelle continue ou comparaison permanente", score: 3 },
-        { label: "Inférence d’émotions, d’intentions ou d’état psychologique", score: 4 }
-      ],
-      critical: score => score === 4
-        ? "Inférence d’émotions, d’intentions ou d’état psychologique dans le contexte de travail."
-        : score === 3 ? "Surveillance individuelle continue ou comparaison permanente des travailleurs." : null
-    },
-    {
-      id: "C04", use: "health", dims: { reliability: 1.3, privacy: 1.25, governance: .7 }, category: "Question ciblée · Santé", conditional: true,
-      title: "Comment l’IA traitera-t-elle les données ou décisions liées à la santé et à la sécurité ?",
-      help: "Incluez les données médicales, signaux de santé, aptitudes, risques, alertes et recommandations de prise en charge.",
-      options: [
-        { label: "Aucune donnée de santé ni décision individuelle", score: 0 },
-        { label: "Données agrégées ou anonymisées à visée de prévention", score: 1 },
-        { label: "Aide professionnelle validée, sécurisée et supervisée", score: 2 },
-        { label: "Données sensibles dans un outil insuffisamment validé ou maîtrisé", score: 3 },
-        { label: "Décision automatisée sur la santé, la sécurité ou l’aptitude", score: 4 }
-      ],
-      critical: score => score === 4
-        ? "Décision automatisée susceptible d’affecter la santé, la sécurité ou l’aptitude d’une personne."
-        : score === 3 ? "Traitement de données sensibles dans un environnement insuffisamment validé ou maîtrisé." : null
-    },
-    {
-      id: "C05", use: "physical", dims: { reliability: 1.5, deployment: .55 }, category: "Question ciblée · Système physique", conditional: true,
-      title: "Quel niveau de contrôle l’IA exercera-t-elle sur une machine, un véhicule ou un procédé dangereux ?",
-      help: "Prenez en compte l’exposition réelle, le temps de réaction et la capacité d’arrêt en sécurité.",
-      options: [
-        { label: "Aucun contrôle physique ; information seulement", score: 0 },
-        { label: "Fonction auxiliaire à faible conséquence", score: 1 },
-        { label: "Contrôle partiel avec protections indépendantes", score: 2 },
-        { label: "Contrôle important avec reprise humaine possible", score: 3 },
-        { label: "Contrôle d’une situation dangereuse sans fail-safe indépendant", score: 4 }
-      ],
-      critical: score => score === 4 ? "Contrôle d’un système physique dangereux sans dispositif de sécurité indépendant et testé." : null
-    },
-    {
-      id: "C06", use: "genai", dims: { reliability: 1.1, privacy: .65, intensity: .35 }, category: "Question ciblée · IA générative", conditional: true,
-      title: "Comment les productions générées seront-elles vérifiées avant d’être utilisées ?",
-      help: "Incluez les textes, synthèses, codes, recommandations, traductions et recherches documentaires.",
-      options: [
-        { label: "Vérification systématique, sources contrôlées, aucune donnée sensible", score: 0 },
-        { label: "Relecture structurée sur tous les usages importants", score: 1 },
-        { label: "Contrôle variable selon les équipes et les délais", score: 2 },
-        { label: "Usage fréquent avec relecture minimale", score: 3 },
-        { label: "Sorties à fort impact non vérifiées ou données confidentielles exposées", score: 4 }
-      ],
-      critical: score => score === 4 ? "Production générative à fort impact utilisée sans vérification suffisante ou exposition de données confidentielles." : null
-    }
+    { id: "Q03", dims: { emotional: 1 }, scale: "impact", category: "Gollac 2 · Exigences émotionnelles", title: "Le système exposera-t-il davantage les travailleurs à des situations humaines difficiles ou conflictuelles ?", help: "Par exemple : contestation d’une décision, réclamation, détresse, agressivité ou réparation d’une erreur produite par l’IA." },
+    { id: "Q04", dims: { emotional: 1 }, scale: "impact", category: "Gollac 2 · Exigences émotionnelles", title: "L’outil imposera-t-il des scripts, tonalités ou réponses standardisées difficiles à concilier avec la relation humaine ?", help: "Évaluez le risque de devoir afficher ou contenir des émotions de façon artificielle." },
+
+    { id: "Q05", dims: { autonomy: 1 }, scale: "control", category: "Gollac 3 · Autonomie", title: "Les travailleurs pourront-ils corriger, ignorer ou interrompre une recommandation sans être pénalisés ?", help: "La reprise en main doit être réelle dans les délais et objectifs habituels.", critical: score => score >= 4 ? "Absence de reprise en main effective ou pénalisation des dérogations." : null },
+    { id: "Q06", dims: { autonomy: 1 }, scale: "impact", category: "Gollac 3 · Autonomie", title: "Dans quelle mesure le système réduira-t-il la liberté de choisir la méthode, l’ordre ou le rythme du travail ?", help: "Pensez aux workflows imposés, scores, recommandations permanentes ou attributions automatiques." },
+
+    { id: "Q07", dims: { social: 1 }, scale: "control", category: "Gollac 4 · Rapports sociaux", title: "Les travailleurs concernés et leurs représentants sont-ils réellement associés à la définition et aux essais de l’usage ?", help: "La participation doit pouvoir modifier le projet, pas seulement informer une fois la décision prise." },
+    { id: "Q08", dims: { social: 1 }, scale: "clarity", category: "Gollac 4 · Rapports sociaux", title: "Le soutien, la formation et la répartition des responsabilités en cas de difficulté sont-ils clairement organisés ?", help: "Évitez qu’un utilisateur supporte seul une erreur issue d’un système qu’il ne maîtrise pas." },
+
+    { id: "Q09", dims: { values: 1 }, scale: "impact", category: "Gollac 5 · Conflits de valeurs", title: "L’IA risque-t-elle de privilégier la vitesse ou la quantité au détriment de la qualité du travail ?", help: "Incluez la qualité relationnelle, la précision, la sécurité et le temps nécessaire pour bien faire." },
+    { id: "Q10", dims: { values: 1 }, scale: "impact", category: "Gollac 5 · Conflits de valeurs", title: "Le projet peut-il placer les travailleurs en conflit avec leur éthique, leurs règles professionnelles ou le sens de leur métier ?", help: "Pensez aux recommandations injustes, à la standardisation excessive et aux décisions difficiles à assumer." },
+
+    { id: "Q11", dims: { insecurity: 1 }, scale: "clarity", category: "Gollac 6 · Insécurité", title: "Les effets attendus sur les rôles, les emplois et l’organisation sont-ils expliqués de façon crédible et stable ?", help: "Une communication uniquement promotionnelle ou changeante entretient l’incertitude." },
+    { id: "Q12", dims: { insecurity: 1 }, scale: "impact", category: "Gollac 6 · Insécurité", title: "Le projet risque-t-il de créer une incertitude durable sur l’avenir professionnel ou les critères d’évaluation ?", help: "Incluez les réorganisations, suppressions de tâches, changements de rôle et comparaisons automatisées." },
+
+    { id: "Q13", dims: { opacity: 1 }, scale: "clarity", category: "Axe IA 1 · Opacité", title: "Les utilisateurs comprendront-ils suffisamment les critères, limites et incertitudes des recommandations produites ?", help: "Une explication utile doit permettre d’identifier une erreur et d’argumenter une contestation." },
+    { id: "Q14", dims: { opacity: 1 }, scale: "control", category: "Axe IA 1 · Contestabilité", title: "Une personne affectée par une sortie de l’IA disposera-t-elle d’un recours humain rapide et capable de modifier la décision ?", help: "Le recours ne doit pas se réduire à une boîte de contact sans délai ni pouvoir d’action.", critical: score => score >= 4 ? "Absence de recours humain effectif pour contester une sortie de l’IA." : null },
+
+    { id: "Q15", dims: { supervision: 1 }, scale: "impact", category: "Axe IA 2 · Supervision", title: "Quelle charge de vérification, de correction et de justification des productions de l’IA est anticipée ?", help: "Intégrez les erreurs plausibles, les omissions, le nettoyage des données et les reprises manuelles." },
+    { id: "Q16", dims: { supervision: 1 }, scale: "impact", category: "Axe IA 2 · Supervision", title: "Le contrôle de l’IA exigera-t-il une vigilance cognitive soutenue difficilement compatible avec le temps disponible ?", help: "Pensez à la fatigue attentionnelle, au biais d’automatisation et à la responsabilité de détecter une erreur rare.", critical: score => score >= 4 ? "Charge de supervision cognitive très importante sans temps ou moyens suffisants." : null },
+
+    { id: "Q17", dims: { skills: 1 }, scale: "impact", category: "Axe IA 3 · Compétences", title: "Le système risque-t-il de réduire la pratique, l’apprentissage ou la transmission des compétences du métier ?", help: "Incluez les tâches retirées aux débutants, la perte de raisonnement et la raréfaction des situations formatrices." },
+    { id: "Q18", dims: { skills: 1 }, scale: "control", category: "Axe IA 3 · Compétences", title: "Le projet prévoit-il de maintenir la capacité à travailler de façon compétente lorsque l’outil est absent ou erroné ?", help: "Évaluez les exercices sans l’outil, la formation continue et la conservation des savoir-faire.", critical: score => score >= 4 ? "Dépendance complète à l’outil sans dispositif de maintien des compétences." : null }
   ];
 
   const actionLibrary = {
     intensity: {
-      immediate: "Geler toute hausse d’objectifs fondée uniquement sur le gain de temps théorique de l’IA.",
-      short: "Mesurer charge réelle, temps de correction, interruptions et débordement horaire pendant le pilote.",
-      follow: "Réviser objectifs, effectifs, délais et droit à la déconnexion à partir des données de terrain."
+      immediate: "Ne pas augmenter les objectifs sur la seule base du gain de temps théorique de l’IA.",
+      short: "Mesurer charge réelle, interruptions, temps de correction et débordements pendant le pilote.",
+      follow: "Ajuster objectifs, ressources, délais et règles de disponibilité à partir du travail observé."
     },
     emotional: {
-      immediate: "Identifier les situations émotionnellement difficiles déplacées vers les travailleurs par le système.",
-      short: "Prévoir soutien managérial, espaces de discussion et possibilité de sortir des scripts automatiques.",
-      follow: "Suivre conflits, incivilités, fatigue émotionnelle et qualité de la relation avec les usagers."
+      immediate: "Identifier les situations humaines difficiles déplacées vers les travailleurs par le système.",
+      short: "Prévoir soutien, espaces de discussion et possibilité de sortir des scripts automatiques.",
+      follow: "Suivre fatigue émotionnelle, conflits et qualité de la relation avec les usagers."
     },
     autonomy: {
-      immediate: "Garantir un bouton d’arrêt, une dérogation et une possibilité de correction sans sanction implicite.",
-      short: "Tester avec les utilisateurs si la reprise en main est réellement compatible avec les objectifs et délais.",
-      follow: "Auditer les écarts entre autonomie affichée et pratiques réelles de management."
+      immediate: "Rendre la correction, la dérogation et l’arrêt possibles sans pénalisation.",
+      short: "Tester la reprise en main dans les conditions réelles de délai et de performance.",
+      follow: "Auditer l’écart entre autonomie annoncée et autonomie réellement exercée."
     },
     social: {
-      immediate: "Nommer les responsables du système, du support, de l’incident et de la décision finale.",
-      short: "Former les équipes et organiser des retours d’expérience collectifs incluant les difficultés d’usage.",
-      follow: "Suivre coopération, conflits de responsabilité, isolement et qualité du soutien."
+      immediate: "Clarifier qui décide, qui assiste, qui traite l’incident et qui assume la décision finale.",
+      short: "Associer les travailleurs et leurs représentants aux essais et aux corrections.",
+      follow: "Suivre coopération, isolement, conflits de responsabilité et qualité du soutien."
     },
     values: {
       immediate: "Définir les critères de qualité qui ne peuvent pas être sacrifiés à la productivité.",
-      short: "Documenter les situations où un professionnel doit pouvoir refuser une recommandation contraire à son métier.",
+      short: "Documenter les situations où une recommandation doit pouvoir être refusée.",
       follow: "Organiser des discussions régulières sur la qualité empêchée, l’éthique et le sens du travail."
     },
     insecurity: {
-      immediate: "Expliquer de façon transparente les effets attendus sur les rôles, les emplois et les compétences.",
-      short: "Établir un plan de maintien et de développement des compétences, y compris sans l’outil.",
-      follow: "Suivre mobilité, départs, dépendance technologique et évolution réelle des tâches."
+      immediate: "Expliquer les effets attendus sur les rôles, l’emploi et l’organisation sans promesse excessive.",
+      short: "Mettre en place un accompagnement des transformations et des trajectoires professionnelles.",
+      follow: "Suivre l’évolution réelle des tâches, des rôles et du sentiment d’insécurité."
     },
-    governance: {
-      immediate: "Suspendre toute décision à fort impact dépourvue de supervision, d’explication et de recours effectif.",
-      short: "Formaliser finalité, périmètre, responsables, usages interdits, journalisation et procédure de contestation.",
-      follow: "Réexaminer périodiquement les usages réels, dérives de finalité et décisions renversées après recours."
+    opacity: {
+      immediate: "Suspendre les usages à fort impact qui ne peuvent être expliqués ou contestés efficacement.",
+      short: "Formaliser les limites connues, la traçabilité et la procédure de recours humain.",
+      follow: "Analyser les contestations, les décisions modifiées et les situations incompréhensibles."
     },
-    privacy: {
-      immediate: "Supprimer les données non indispensables et interdire les données sensibles dans les outils non validés.",
-      short: "Cartographier flux, accès, conservation, sous-traitants, réutilisation et mesures de sécurité.",
-      follow: "Auditer la proportionnalité du suivi, les accès et les usages secondaires des données."
+    supervision: {
+      immediate: "Allouer explicitement du temps et des moyens à la vérification des sorties.",
+      short: "Tester la charge attentionnelle, les erreurs rares et le biais d’automatisation en situation réelle.",
+      follow: "Suivre le temps de correction, la fatigue cognitive et les erreurs non détectées."
     },
-    reliability: {
-      immediate: "Limiter l’usage aux situations dont les conséquences d’erreur sont maîtrisables et réversibles.",
-      short: "Valider le système sur des cas locaux, documenter les erreurs et tester la procédure de repli.",
-      follow: "Surveiller dérive, taux d’erreur, faux positifs, faux négatifs, incidents et confiance excessive."
-    },
-    deployment: {
-      immediate: "Rendre le pilote réversible et définir à l’avance des critères d’arrêt.",
-      short: "Associer utilisateurs, représentants, prévention, sécurité, DPO et fonctions métier à l’évaluation.",
-      follow: "Intégrer les résultats au DUERP et réévaluer après chaque évolution importante du système ou de l’organisation."
+    skills: {
+      immediate: "Identifier les compétences menacées par l’automatisation et préserver les tâches formatrices.",
+      short: "Prévoir apprentissage, exercices sans l’outil et transmission des savoir-faire.",
+      follow: "Réévaluer la dépendance au système et la capacité à travailler en mode dégradé."
     }
   };
 
@@ -389,9 +195,8 @@
     window.scrollTo({ top: cardTop, behavior: "smooth" });
   }
 
-  function buildQuestionSet(useTypes) {
-    const conditional = conditionalQuestions.filter(q => useTypes.includes(q.use));
-    return [...coreQuestions, ...conditional];
+  function buildQuestionSet() {
+    return [...coreQuestions];
   }
 
   function selectedUseTypes() {
@@ -430,8 +235,7 @@
     const progress = ((state.currentIndex + 1) / state.questions.length) * 100;
 
     els.progressLabel.textContent = `Question ${state.currentIndex + 1} sur ${state.questions.length}`;
-    const conditionalCount = state.questions.filter(item => item.conditional).length;
-    els.adaptiveLabel.textContent = conditionalCount ? `26 questions de base + ${conditionalCount} ciblée${conditionalCount > 1 ? "s" : ""}` : "26 questions de base";
+    els.adaptiveLabel.textContent = "18 questions · 9 axes";
     els.progressBar.style.width = `${progress}%`;
 
     els.questionShell.innerHTML = `
@@ -489,15 +293,15 @@
       }
     });
 
-    // Cross-question critical rules.
-    if ((state.answers.Q18?.score ?? 0) >= 4 && ((state.answers.Q25?.score ?? 0) >= 3 || state.context.useTypes.includes("rh") || state.context.useTypes.includes("health"))) {
-      criticalFlags.push("Absence de recours humain effectif pour un usage susceptible d’avoir des conséquences importantes.");
+    // Règles transversales centrées sur les trois axes propres à l’IA.
+    if ((state.answers.Q14?.score ?? 0) >= 4 && ["rh", "health", "management"].some(type => state.context.useTypes.includes(type))) {
+      criticalFlags.push("Absence de recours humain effectif pour un usage susceptible d’affecter une décision importante.");
     }
-    if ((state.answers.Q21?.score ?? 0) >= 4 && (state.context.useTypes.includes("health") || state.context.useTypes.includes("monitoring"))) {
-      criticalFlags.push("Collecte de données insuffisamment minimisée dans un usage sensible ou de surveillance.");
+    if ((state.answers.Q15?.score ?? 0) >= 3 && (state.answers.Q16?.score ?? 0) >= 3) {
+      criticalFlags.push("Charge importante de vérification associée à une vigilance cognitive soutenue.");
     }
-    if ((state.answers.Q26?.score ?? 0) >= 4 && ((state.answers.Q25?.score ?? 0) >= 3 || state.context.useTypes.includes("physical"))) {
-      criticalFlags.push("Absence de procédure de repli alors que les conséquences d’une défaillance peuvent être importantes.");
+    if ((state.answers.Q17?.score ?? 0) >= 3 && (state.answers.Q18?.score ?? 0) >= 4) {
+      criticalFlags.push("Risque élevé d’érosion des compétences et de dépendance opérationnelle à l’outil.");
     }
 
     const dimensionScores = {};
@@ -520,7 +324,7 @@
       id: createId(),
       completedAt: new Date().toISOString(),
       month: (state.context.assessmentDate || new Date().toISOString().slice(0, 10)).slice(0, 7),
-      appVersion: CONFIG.appVersion || "0.4.0",
+      appVersion: CONFIG.appVersion || "0.7.3",
       context: { ...state.context },
       overall,
       baseLevel: baseLevel.key,
@@ -637,62 +441,59 @@
     const top = sorted.slice(0, 4);
     const priorityKeys = unique([
       ...top.map(([key]) => key),
-      ...(result.criticalFlags.length ? ["governance", "reliability", "deployment"] : [])
+      ...(result.criticalFlags.length ? ["opacity", "supervision", "skills"] : [])
     ]).slice(0, 6);
     const contextLabels = formatContext(result.context);
     const involvement = buildOccupationalHealthGuidance(result);
+    const decisionTitle = result.criticalFlags.length ? "Ne pas généraliser en l’état" : "Poursuivre sous conditions";
+    const decisionText = result.criticalFlags.length
+      ? "Les signaux critiques doivent être levés, documentés et réévalués avant toute extension du projet."
+      : "Les mesures prioritaires doivent être intégrées au cadrage, au pilote et au suivi du déploiement.";
 
     return `
       <header class="report-cover">
-        <div>
-          <span class="mini-kicker">IA & Santé au Travail</span>
-          <h1>Rapport d’évaluation d’impact IA & travail</h1>
-          <p>Questionnaire empirique et exploratoire conçu par le Dr Charles Broutin.</p>
-        </div>
-        <div class="report-meta">
-          <strong>Référence ${escapeHtml(result.id.slice(0, 8).toUpperCase())}</strong><br>
-          Date de l’évaluation : ${formatDateFr(result.context.assessmentDate)}<br>
-          Rapport généré : ${new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(new Date(result.completedAt))}<br>
-          Version ${escapeHtml(result.appVersion)}
+        <div class="report-brandline"><span class="report-brandmark" aria-hidden="true"></span><span>IA & Santé au Travail</span><span class="report-type">Évaluation initiale</span></div>
+        <div class="report-cover-grid">
+          <div>
+            <p class="report-eyebrow">Rapport d’aide à la décision</p>
+            <h1>Évaluation d’impact d’un projet d’IA sur le travail</h1>
+            <p class="report-subtitle">Outil empirique élaboré par le Dr Charles Broutin à partir des six facteurs du cadre Gollac, recontextualisés pour analyser les transformations du travail liées à l’intelligence artificielle et les risques psychosociaux susceptibles d’en résulter pour les salariés.</p>
+          </div>
+          <div class="report-id-card"><strong>Référence ${escapeHtml(result.id.slice(0, 8).toUpperCase())}</strong>Date de l’évaluation<br>${formatDateFr(result.context.assessmentDate)}<br><br>Rapport généré<br>${new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(new Date(result.completedAt))}<br><br>Version ${escapeHtml(result.appVersion)}</div>
         </div>
       </header>
 
       <section class="report-section">
-        <h2>1. Synthèse décisionnelle</h2>
-        <p>Le projet obtient un score global de <strong>${result.overall}/100</strong>, correspondant au niveau <strong>${escapeHtml(result.levelLabel)}</strong>. ${escapeHtml(result.levelSummary)}</p>
-        <div class="report-callout ${result.criticalFlags.length ? "warning" : ""}">
-          <strong>${result.criticalFlags.length ? "Décision suggérée : ne pas généraliser en l’état." : "Décision suggérée : poursuivre sous conditions."}</strong>
-          <p>${result.criticalFlags.length ? "Les signaux critiques doivent être levés et documentés avant toute extension du projet." : "Les mesures prioritaires ci-dessous doivent être intégrées au cadrage, au pilote et au suivi."}</p>
+        <div class="report-section-heading"><span class="report-section-number">01</span><div><p>Lecture immédiate</p><h2>Synthèse décisionnelle</h2></div></div>
+        <div class="report-summary-grid">
+          <div class="report-score-card" style="--report-accent:${escapeHtml(result.levelColor)}"><span>Score global</span><strong>${result.overall}<small>/100</small></strong><b>${escapeHtml(result.levelLabel)}</b></div>
+          <div class="report-decision-card ${result.criticalFlags.length ? "warning" : ""}"><strong>${decisionTitle}</strong><p>${escapeHtml(result.levelSummary)} ${decisionText}</p></div>
         </div>
-        ${result.criticalFlags.length ? `<h3>Signaux critiques</h3><ul>${result.criticalFlags.map(flag => `<li>${escapeHtml(flag)}</li>`).join("")}</ul>` : ""}
+        ${result.criticalFlags.length ? `<div class="report-critical-list"><strong>Signaux critiques</strong><ul>${result.criticalFlags.map(flag => `<li>${escapeHtml(flag)}</li>`).join("")}</ul></div>` : ""}
       </section>
 
       <section class="report-section">
-        <h2>2. Contexte déclaré</h2>
-        <ul>
-          <li><strong>Secteur :</strong> ${escapeHtml(contextLabels.sector)}</li>
-          <li><strong>Taille :</strong> ${escapeHtml(contextLabels.orgSize)}</li>
-          <li><strong>Stade :</strong> ${escapeHtml(contextLabels.projectStage)}</li>
-          <li><strong>Population exposée :</strong> ${escapeHtml(contextLabels.population)}</li>
-          <li><strong>Date de l’évaluation :</strong> ${formatDateFr(result.context.assessmentDate)}</li>
-          <li><strong>Usages :</strong> ${contextLabels.useTypes.map(escapeHtml).join(", ")}</li>
-        </ul>
-      </section>
-
-      <section class="report-section">
-        <h2>3. Profil par dimension</h2>
-        <p>Un score élevé indique que les réponses décrivent davantage de facteurs de risque ou moins de garde-fous. Il ne mesure pas un état de santé individuel.</p>
-        <div class="report-score-grid">
-          ${Object.entries(result.dimensions).map(([key, score]) => `<div><strong>${escapeHtml(dimensions[key].label)}</strong><span style="color:${getLevel(score).color}">${score}</span></div>`).join("")}
+        <div class="report-section-heading"><span class="report-section-number">02</span><div><p>Périmètre analysé</p><h2>Contexte déclaré</h2></div></div>
+        <div class="report-context-grid">
+          <div class="report-context-item"><strong>Secteur</strong><span>${escapeHtml(contextLabels.sector)}</span></div>
+          <div class="report-context-item"><strong>Taille</strong><span>${escapeHtml(contextLabels.orgSize)}</span></div>
+          <div class="report-context-item"><strong>Stade</strong><span>${escapeHtml(contextLabels.projectStage)}</span></div>
+          <div class="report-context-item"><strong>Population exposée</strong><span>${escapeHtml(contextLabels.population)}</span></div>
+          <div class="report-context-item"><strong>Date</strong><span>${formatDateFr(result.context.assessmentDate)}</span></div>
+          <div class="report-context-item"><strong>Usages</strong><span>${contextLabels.useTypes.map(escapeHtml).join(", ")}</span></div>
         </div>
       </section>
 
       <section class="report-section">
-        <h2>4. Priorités de prévention</h2>
-        <ol>
-          ${top.map(([key, score]) => `<li><strong>${escapeHtml(dimensions[key].label)} — ${score}/100.</strong> ${escapeHtml(dimensions[key].description)}</li>`).join("")}
-        </ol>
-        <div class="action-timeline">
+        <div class="report-section-heading"><span class="report-section-number">03</span><div><p>Neuf dimensions</p><h2>Profil des facteurs de risque</h2></div></div>
+        <p class="report-profile-note">Un score élevé indique davantage de facteurs de risque déclarés ou moins de garde-fous. Il ne mesure pas un état de santé individuel.</p>
+        <div class="report-score-list">${Object.entries(result.dimensions).map(([key, score]) => `<div class="report-score-row" style="--score-color:${getLevel(score).color}"><div class="report-score-head"><strong>${escapeHtml(dimensions[key].label)}</strong><span>${score}/100</span></div><div class="report-score-bar"><i style="width:${score}%"></i></div></div>`).join("")}</div>
+      </section>
+
+      <section class="report-section">
+        <div class="report-section-heading"><span class="report-section-number">04</span><div><p>Actions prioritaires</p><h2>Plan de prévention</h2></div></div>
+        <ol class="report-priority-list">${top.map(([key, score]) => `<li><strong>${escapeHtml(dimensions[key].label)} - ${score}/100</strong>${escapeHtml(dimensions[key].description)}</li>`).join("")}</ol>
+        <h3 class="report-actions-title">Mesures par échéance</h3><div class="action-timeline">
           <div class="action-column"><h3>Avant de poursuivre</h3><ul>${priorityKeys.map(key => `<li>${escapeHtml(actionLibrary[key].immediate)}</li>`).join("")}</ul></div>
           <div class="action-column"><h3>Pendant le pilote</h3><ul>${priorityKeys.map(key => `<li>${escapeHtml(actionLibrary[key].short)}</li>`).join("")}</ul></div>
           <div class="action-column"><h3>Après déploiement</h3><ul>${priorityKeys.map(key => `<li>${escapeHtml(actionLibrary[key].follow)}</li>`).join("")}</ul></div>
@@ -700,13 +501,13 @@
       </section>
 
       <section class="report-section">
-        <h2>5. Implication de la santé au travail</h2>
+        <div class="report-section-heading"><span class="report-section-number">05</span><div><p>Prévention collective</p><h2>Implication de la santé au travail</h2></div></div>
         ${involvement}
       </section>
 
-      <section class="report-section">
-        <h2>6. Gouvernance et traçabilité minimales</h2>
-        <ul>
+      <section class="report-section report-keep-together">
+        <div class="report-section-heading"><span class="report-section-number">06</span><div><p>Socle commun</p><h2>Conditions minimales de prévention</h2></div></div>
+        <ul class="report-check-list">
           <li>Documenter la finalité, le responsable, les populations concernées, les données utilisées et les usages interdits.</li>
           <li>Conserver les résultats du pilote, les erreurs observées, les décisions de correction et les critères d’arrêt.</li>
           <li>Prévoir un recours humain effectif, une procédure d’incident et une solution de repli.</li>
@@ -715,15 +516,7 @@
         </ul>
       </section>
 
-      <section class="report-section">
-        <h2>7. Contribution volontaire et anonyme</h2>
-        <p>Après vérification de l’absence de toute donnée permettant d’identifier une entreprise, une personne ou un fournisseur, ce rapport peut être transmis volontairement à <strong>${escapeHtml(CONTACT_EMAIL)}</strong> afin de contribuer à faire émerger des tendances et à améliorer la démarche.</p>
-        <p>Aucun envoi n’est automatique. La décision de transmettre le document et son anonymisation relèvent entièrement de son détenteur.</p>
-      </section>
-
-      <section class="report-section">
-        <p class="report-disclaimer"><strong>Statut et limites.</strong> Ce questionnaire, conçu par le Dr Charles Broutin, repose sur une construction empirique et experte et n’a pas fait l’objet d’une validation scientifique, psychométrique ou prédictive. Le rapport est produit automatiquement à partir de réponses déclaratives. Il ne constitue ni un diagnostic, ni une certification, ni une preuve de conformité et ne remplace pas l’observation du travail, la consultation des travailleurs et de leurs représentants, ni les évaluations réglementaire, médicale, ergonomique, technique, de sécurité ou de protection des données adaptées au projet.</p>
-      </section>
+      <footer class="report-legal"><strong>Statut et limites.</strong> Cet outil empirique reprend les six facteurs de risques psychosociaux du rapport Gollac, recontextualisés pour analyser les transformations du travail liées à l’intelligence artificielle et les risques psychosociaux susceptibles d’en résulter pour les salariés. Il les complète par trois axes propres aux usages de l’IA : opacité et contestabilité, charge cognitive de supervision et érosion des compétences. Cette adaptation n’a pas elle-même fait l’objet d’une validation psychométrique ou prédictive. Le rapport est produit automatiquement à partir de réponses déclaratives. Il ne constitue ni un diagnostic, ni une certification, ni une preuve de conformité et ne remplace pas l’observation du travail, la consultation des travailleurs et de leurs représentants, ni les évaluations réglementaire, médicale, ergonomique, technique, de sécurité ou de protection des données adaptées au projet.</footer>
     `;
   }
 
@@ -739,14 +532,14 @@
 
     return `
       <p><strong>${escapeHtml(wording)}</strong></p>
-      ${highDims.length ? `<p>Les dimensions appelant une instruction prioritaire sont : ${highDims.map(escapeHtml).join(", ")}.</p>` : ""}
-      <ul>
-        <li><strong>Médecin du travail :</strong> conseil sur les effets possibles de la transformation, les populations vulnérables, les signaux de santé et les conditions de suivi.</li>
-        <li><strong>Équipe pluridisciplinaire / IPRP / ergonomie :</strong> analyse de l’activité réelle, des interfaces, des marges de manœuvre, de la charge et des scénarios d’incident.</li>
-        <li><strong>Employeur et prévention :</strong> intégration dans l’évaluation des risques, choix des mesures collectives et formalisation des critères d’arrêt.</li>
-        <li><strong>CSE et représentants des travailleurs :</strong> discussion des transformations technologiques, organisationnelles et des modalités de contrôle.</li>
-      </ul>
-      <div class="report-callout"><strong>Moment optimal :</strong><p>avant le choix définitif de la solution et avant que les objectifs, workflows, données et modalités de surveillance soient figés.</p></div>
+      ${highDims.length ? `<p>Dimensions à instruire prioritairement : ${highDims.map(escapeHtml).join(", ")}.</p>` : ""}
+      <div class="report-role-grid">
+        <div class="report-role-card"><strong>Médecin du travail</strong><p>Conseil sur les effets possibles de la transformation, les populations vulnérables, les signaux de santé et les conditions de suivi.</p></div>
+        <div class="report-role-card"><strong>Équipe pluridisciplinaire / IPRP / ergonomie</strong><p>Analyse de l’activité réelle, des interfaces, des marges de manœuvre, de la charge et des scénarios d’incident.</p></div>
+        <div class="report-role-card"><strong>Employeur et prévention</strong><p>Intégration dans l’évaluation des risques, choix des mesures collectives et formalisation des critères d’arrêt.</p></div>
+        <div class="report-role-card"><strong>CSE et représentants des travailleurs</strong><p>Discussion des transformations technologiques, organisationnelles et des modalités de contrôle.</p></div>
+      </div>
+      <div class="report-callout"><strong>Moment optimal</strong><p>Avant le choix définitif de la solution et avant que les objectifs, workflows, données et modalités de surveillance soient figés.</p></div>
     `;
   }
 
@@ -880,22 +673,24 @@
     };
   }
 
+  function buildReportDocument(title, content) {
+    return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><style>${REPORT_EXPORT_CSS}</style></head><body><main class="generated-report">${content}</main></body></html>`;
+  }
+
   function downloadReportHtml() {
     if (!state.result) return;
     const title = "Rapport d’évaluation d’impact IA & travail";
-    const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><style>
-      body{font-family:Arial,sans-serif;color:#17140F;line-height:1.55;max-width:980px;margin:40px auto;padding:0 24px;background:#F8F4EC}h1,h2,h3{font-family:Georgia,serif}h1{font-size:42px}h2{margin-top:30px}.report-cover{display:grid;grid-template-columns:1fr auto;gap:24px;border-bottom:1px solid #ccc;padding-bottom:20px}.report-meta{text-align:right;font-size:12px}.report-section{background:#fff;padding:24px;margin:12px 0;border-radius:16px}.report-score-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.report-score-grid div,.action-column{border:1px solid #ddd;border-radius:10px;padding:12px}.report-score-grid span{display:block;font-size:24px}.action-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.report-callout{padding:14px;background:#eef3ef;border-left:4px solid #3D5B52;margin-top:12px}.warning{background:#fff0e8;border-color:#C05F2B}.mini-kicker{text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:#A84E1F}.report-disclaimer{font-size:12px;color:#666}@media(max-width:700px){.report-score-grid{grid-template-columns:repeat(2,1fr)}.action-timeline,.report-cover{grid-template-columns:1fr}.report-meta{text-align:left}}@media print{body{background:#fff;margin:0}.report-section{break-inside:avoid}}
-    </style></head><body>${els.generatedReport.innerHTML}</body></html>`;
+    const html = buildReportDocument(title, els.generatedReport.innerHTML);
     downloadBlob(html, `rapport-impact-ia-${safeDate(state.result.context.assessmentDate)}-${state.result.id.slice(0, 8)}.html`, "text/html;charset=utf-8");
   }
 
   function downloadResultJson() {
     if (!state.result) return;
     const exportData = {
-      schema: "iaht-impact-assessment-0.3",
+      schema: "iaht-impact-assessment-gollac-ia-0.7",
       generatedAt: new Date().toISOString(),
       result: state.result,
-      note: "Questionnaire empirique et exploratoire conçu par le Dr Charles Broutin, sans validation scientifique, psychométrique ou prédictive. Les réponses et scores ne constituent ni un diagnostic, ni une certification, ni un avis médical ou juridique, ni une preuve de conformité."
+      note: "Outil empirique fondé sur les six facteurs du cadre Gollac et trois axes propres à l’IA. Cette adaptation n’est pas un questionnaire psychométrique validé et ne constitue ni un diagnostic, ni une certification, ni une preuve de conformité."
     };
     downloadBlob(JSON.stringify(exportData, null, 2), `impact-ia-${safeDate(state.result.context.assessmentDate)}-${state.result.id.slice(0, 8)}.json`, "application/json;charset=utf-8");
   }
@@ -969,12 +764,25 @@
 
   function printPdf() {
     if (!state.result) return;
-    const previousTitle = document.title;
-    document.title = `rapport-impact-ia-${safeDate(state.result.context.assessmentDate)}-${state.result.id.slice(0, 8)}`;
-    const restore = () => { document.title = previousTitle; window.removeEventListener("afterprint", restore); };
-    window.addEventListener("afterprint", restore);
-    window.print();
-    setTimeout(restore, 1500);
+    const filename = `rapport-impact-ia-${safeDate(state.result.context.assessmentDate)}-${state.result.id.slice(0, 8)}`;
+    const popup = window.open("", "_blank", "width=980,height=820");
+    if (!popup) {
+      const previousTitle = document.title;
+      document.title = filename;
+      const restore = () => { document.title = previousTitle; window.removeEventListener("afterprint", restore); };
+      window.addEventListener("afterprint", restore);
+      window.print();
+      setTimeout(restore, 1500);
+      return;
+    }
+    popup.opener = null;
+    popup.document.open();
+    popup.document.write(buildReportDocument(filename, els.generatedReport.innerHTML));
+    popup.document.close();
+    const launch = () => { popup.focus(); popup.print(); };
+    popup.addEventListener("afterprint", () => popup.close(), { once: true });
+    if (popup.document.fonts?.ready) popup.document.fonts.ready.then(() => setTimeout(launch, 180));
+    else setTimeout(launch, 450);
   }
 
   function createId() {
