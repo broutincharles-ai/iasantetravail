@@ -12,17 +12,31 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/impact-assessment.css" rel="stylesheet"/>
+<link href="../../assets/css/site.css" rel="stylesheet"/>
+<link href="assets/css/impact-assessment.css?v=0.7.4" rel="stylesheet"/>
+<!-- Site icons -->
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="msapplication-TileColor" content="#A84E1F"/>
 </head>
-<body>
+<body class="inner-page page-evaluer page-impact" data-page="evaluer" data-root="../../">
 <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<header class="site-head">
 <nav aria-label="Navigation principale" class="nav glass">
-<a aria-label="Retour à IA et Santé au Travail" class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span><span>IA &amp; Santé au Travail</span></a>
-<div class="nav-links"><a href="../../comprendre/">Comprendre</a><a href="../../usages-terrain/">Usages &amp; terrain</a><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a><a aria-current="page" href="../">Évaluer</a></div>
-<a class="nav-cta" href="../">Vue d’ensemble</a>
+<a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+<div class="nav-links" id="navLinks"><a href="../../comprendre/">Comprendre</a><a href="../../usages-terrain/">Usages &amp; terrain</a><a aria-current="page" class="is-active" href="../">Évaluer</a><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a>
+<details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu">
+<a href="../../ressources/modeles/">Panorama des modèles</a><a href="../../a-propos/">À propos et publications</a><a href="../../mentions-legales/">Mentions légales</a>
+</div></details></div>
+<div class="nav-tools"><button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+<div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="suivi.html" hreflang="fr" lang="fr">FR</a><a href="../../en/evaluate/" hreflang="en" lang="en">EN</a></div>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
+<a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>
 </nav>
-</header>
 <main id="main-content">
 <section class="tool-intro">
 <div class="wrap">
@@ -139,7 +153,17 @@
 </div>
 </div>
 </section></main>
-<footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="../../"><span aria-hidden="true" class="brand-mark"></span><span>IA &amp; Santé au Travail</span></a><p>Évaluer les projets d’IA à partir du travail réel.</p></div><div><strong>Évaluer</strong><a href="../">Vue d’ensemble</a><a href="../benchmark/">Comprendre les benchmarks</a><a href="#evaluation">Évaluation initiale</a><a href="#evaluation">Suivi daté</a></div><div><strong>Cadre</strong><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a><a href="../../confidentialite/">Confidentialité</a></div></div><div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Outil empirique Gollac–IA · version 0.7.3</span></div></footer>
-<noscript><div class="noscript">JavaScript est nécessaire pour utiliser ce questionnaire.</div></noscript>
-<script src="assets/js/impact-config.js"></script><script src="assets/js/impact-followup.js"></script>
+<footer><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
+<div><h4>Parcours</h4><ul><li><a href="../../comprendre/">Comprendre</a></li><li><a href="../../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../">Évaluer</a></li><li><a href="../../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
+<div><h4>Ressources</h4><ul><li><a href="../../ressources/modeles/">Panorama des modèles</a></li><li><a href="../../a-propos/">À propos et publications</a></li><li><a href="../../#mises-a-jour">Dernières mises à jour</a></li></ul></div>
+<div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../../confidentialite/">Confidentialité</a></li></ul></div>
+</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span><span><a href="../../mentions-legales/">Mentions légales</a> · <a href="../../confidentialite/">Confidentialité</a></span></div></div></footer>
+<button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
+<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, hallucinations, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog>
+<noscript><div class="noscript">JavaScript est nécessaire pour utiliser cette évaluation interactive.</div></noscript>
+<script src="assets/js/impact-config.js?v=0.7.4"></script>
+<script src="assets/js/impact-followup.js?v=0.7.4"></script>
+<script defer src="../../assets/js/search-index.js?v=0.7.4"></script>
+<script defer src="../../assets/js/site.js?v=0.7.4"></script>
 </body></html>
