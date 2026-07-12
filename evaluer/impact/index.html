@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Évaluation structurée des effets potentiels d’un projet d’intelligence artificielle sur le travail réel et les conditions de prévention.">
+  <meta name="author" content="Dr Charles Broutin">
+  <meta name="theme-color" content="#EADDC6">
+  <link rel="canonical" href="https://www.iasantetravail.com/evaluer/impact/">
+  <title>Évaluation d’impact IA & travail — IA & Santé au Travail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/impact-assessment.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Évaluation d’impact IA & travail",
+    "applicationCategory":"HealthApplication",
+    "operatingSystem":"Web",
+    "inLanguage":"fr-FR",
+    "description":"Outil exploratoire d’analyse des transformations potentielles liées à un projet d’intelligence artificielle sur le travail réel et les conditions de prévention.",
+    "author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail"}
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<header class="site-head">
+  <nav class="nav glass" aria-label="Navigation principale">
+    <a class="brand" href="../../" aria-label="Retour à IA et Santé au Travail">
+      <span class="brand-mark" aria-hidden="true"><span>IA</span></span>
+      <span>IA &amp; Santé au Travail</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../comprendre/">Comprendre</a>
+      <a href="../../usages-terrain/">Usages &amp; terrain</a>
+      <a href="../../risques-prevention/">Risques &amp; prévention</a>
+      <a href="../../droit-gouvernance/">Droit &amp; gouvernance</a>
+      <a href="../" aria-current="page">Évaluer</a>
+    </div>
+    <a class="nav-cta" href="../">Vue d’ensemble</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+    <nav class="wrap tool-breadcrumb" aria-label="Navigation de la rubrique Évaluer">
+      <a href="../">Vue d’ensemble</a>
+      <a href="../benchmark/">Comprendre les benchmarks</a>
+      <a href="index.html" aria-current="page">Évaluation initiale</a>
+      <a href="suivi.html">Suivi daté</a>
+    </nav>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Outil exploratoire · version 0.4</span>
+        <h1>Évaluer l’impact d’un projet d’IA sur <em>le travail réel</em></h1>
+        <p class="hero-lead">Une analyse structurée des transformations organisationnelles, des facteurs psychosociaux, de la gouvernance algorithmique, des données, de la fiabilité et des conditions de déploiement. Le résultat produit un profil de vigilance et un plan de prévention priorisé.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroStart" type="button">Commencer l’évaluation</button>
+          <a class="btn btn-ghost" href="#methodologie">Comprendre la méthode</a>
+        </div>
+        <div class="hero-notes" aria-label="Caractéristiques de l’outil">
+          <span>26 questions de base</span><span>Jusqu’à 6 questions ciblées</span><span>PDF daté et archivable</span><span>Suivi longitudinal séparé</span>
+        </div>
+      </div>
+      <aside class="hero-panel glass glass-dark" aria-label="Ce que fournit l’évaluation">
+        <div class="panel-kicker">À l’issue du parcours</div>
+        <div class="hero-feature"><span>01</span><div><strong>Profil visuel</strong><small>Dix dimensions de risque comparables</small></div></div>
+        <div class="hero-feature"><span>02</span><div><strong>Signaux critiques</strong><small>Situations nécessitant une action immédiate</small></div></div>
+        <div class="hero-feature"><span>03</span><div><strong>Rapport de prévention</strong><small>Mesures avant, pendant et après déploiement</small></div></div>
+        <div class="hero-feature"><span>04</span><div><strong>Orientation santé-travail</strong><small>Quand associer le SPST, le médecin du travail et le CSE</small></div></div>
+        <a class="hero-feature hero-feature-link" href="suivi.html"><span>05</span><div><strong>Suivi daté du déploiement</strong><small>Réévaluer séparément les effets observés dans le temps</small></div></a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="notice-band">
+    <div class="wrap">
+      <div class="notice glass">
+        <span class="notice-icon" aria-hidden="true">i</span>
+        <p><strong>Statut méthodologique.</strong> Ce questionnaire, conçu par le Dr Charles Broutin, repose sur une construction empirique et experte. Il n’a pas fait l’objet d’une validation scientifique, psychométrique ou prédictive. Il ne constitue ni une certification, ni un avis médical ou juridique, ni une preuve de conformité réglementaire.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="assessment-shell" id="evaluation" aria-labelledby="assessmentTitle">
+    <div class="wrap">
+      <div class="assessment-card glass">
+        <div class="assessment-topbar">
+          <div>
+            <span class="mini-kicker">Évaluation guidée</span>
+            <h2 id="assessmentTitle">Votre projet d’IA</h2>
+          </div>
+          <div class="privacy-pill"><span aria-hidden="true">●</span> Aucune donnée nominative demandée</div>
+        </div>
+
+        <div id="introStep" class="step active" data-step="intro">
+          <div class="intro-grid">
+            <div>
+              <h3>Avant de commencer</h3>
+              <p>Répondez à partir du projet tel qu’il sera réellement utilisé, et non à partir de la démonstration commerciale. Lorsque plusieurs populations sont concernées, retenez la situation la plus exposée.</p>
+              <ul class="check-list">
+                <li>Ne saisissez aucun nom d’entreprise, de salarié ou de fournisseur.</li>
+                <li>Les réponses restent dans ce navigateur tant que vous ne choisissez pas de contribuer aux statistiques.</li>
+                <li>Le questionnaire s’adapte aux usages sélectionnés.</li>
+                <li>Un rapport daté peut être enregistré en PDF à la fin pour être archivé.</li>
+              </ul>
+              <div class="followup-link-box">
+                <strong>Le système est déjà déployé ?</strong>
+                <p>Utilisez le questionnaire de suivi, distinct de l’évaluation initiale, pour documenter les effets observés à une date donnée.</p>
+                <a class="btn btn-secondary" href="suivi.html">Ouvrir le suivi daté</a>
+              </div>
+            </div>
+            <div class="method-mini">
+              <strong>Cadre d’analyse</strong>
+              <span>6 dimensions issues de la grille Gollac</span>
+              <span>4 dimensions propres aux systèmes d’IA</span>
+              <span>Règles de criticité indépendantes du score moyen</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="beginContext" type="button">Décrire le projet</button>
+        </div>
+
+        <form id="contextStep" class="step" data-step="context" novalidate>
+          <div class="step-heading">
+            <div><span class="step-index">Étape 1</span><h3>Contexte du déploiement</h3></div>
+            <p>Ces catégories servent uniquement à adapter les questions et à contextualiser le rapport.</p>
+          </div>
+
+          <div class="form-grid">
+            <fieldset class="field-card">
+              <legend>Secteur principal</legend>
+              <select id="sector" required>
+                <option value="">Choisir une catégorie</option>
+                <option value="sante">Santé, médico-social ou prévention</option>
+                <option value="industrie">Industrie, logistique ou construction</option>
+                <option value="services">Services, conseil ou fonctions support</option>
+                <option value="public">Administration ou service public</option>
+                <option value="commerce">Commerce, hôtellerie ou relation client</option>
+                <option value="education">Éducation, recherche ou formation</option>
+                <option value="autre">Autre secteur</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="field-card">
+              <legend>Taille approximative</legend>
+              <select id="orgSize" required>
+                <option value="">Choisir une tranche</option>
+                <option value="1-10">1 à 10 travailleurs</option>
+                <option value="11-49">11 à 49</option>
+                <option value="50-249">50 à 249</option>
+                <option value="250-999">250 à 999</option>
+                <option value="1000+">1 000 ou plus</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="field-card">
+              <legend>Stade du projet</legend>
+              <select id="projectStage" required>
+                <option value="">Choisir un stade</option>
+                <option value="idee">Cadrage ou choix de solution</option>
+                <option value="pilot">Pilote limité</option>
+                <option value="rollout">Déploiement en cours</option>
+                <option value="deployed">Déjà généralisé</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="field-card">
+              <legend>Population directement concernée</legend>
+              <select id="population" required>
+                <option value="">Choisir une tranche</option>
+                <option value="1-10">1 à 10 personnes</option>
+                <option value="11-50">11 à 50</option>
+                <option value="51-250">51 à 250</option>
+                <option value="251+">Plus de 250</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="field-card">
+              <legend>Date de l’évaluation</legend>
+              <input id="assessmentDate" type="date" required aria-describedby="assessmentDateHelp">
+              <small id="assessmentDateHelp">Cette date figurera dans le rapport et dans le nom de fichier suggéré pour l’archivage.</small>
+            </fieldset>
+          </div>
+
+          <fieldset class="use-fieldset">
+            <legend>À quoi servira l’IA ? <small>Plusieurs choix possibles</small></legend>
+            <div class="use-grid" id="useGrid">
+              <label class="use-option"><input type="checkbox" name="useType" value="genai"><span><b>Assistant génératif</b><small>Rédaction, synthèse, recherche, documentation</small></span></label>
+              <label class="use-option"><input type="checkbox" name="useType" value="management"><span><b>Organisation du travail</b><small>Planification, priorisation, attribution des tâches</small></span></label>
+              <label class="use-option"><input type="checkbox" name="useType" value="rh"><span><b>Décisions RH</b><small>Recrutement, évaluation, mobilité, rémunération</small></span></label>
+              <label class="use-option"><input type="checkbox" name="useType" value="monitoring"><span><b>Suivi ou contrôle</b><small>Productivité, activité, présence, comportement</small></span></label>
+              <label class="use-option"><input type="checkbox" name="useType" value="health"><span><b>Santé ou sécurité</b><small>Aide à la décision, triage, détection ou prévention</small></span></label>
+              <label class="use-option"><input type="checkbox" name="useType" value="physical"><span><b>Système physique</b><small>Robot, machine, véhicule ou procédé automatisé</small></span></label>
+            </div>
+          </fieldset>
+
+          <div class="inline-error" id="contextError" role="alert"></div>
+          <div class="step-actions">
+            <button class="btn btn-ghost" id="backIntro" type="button">Retour</button>
+            <button class="btn btn-primary" type="submit">Construire le questionnaire</button>
+          </div>
+        </form>
+
+        <section id="questionStep" class="step" data-step="questions" aria-live="polite">
+          <div class="question-progress-wrap">
+            <div class="progress-meta"><span id="progressLabel">Question 1</span><span id="adaptiveLabel"></span></div>
+            <div class="progress-track"><span id="progressBar"></span></div>
+          </div>
+          <div class="question-shell" id="questionShell"></div>
+          <div class="question-nav">
+            <button class="btn btn-ghost" id="prevQuestion" type="button">Précédente</button>
+            <button class="btn btn-primary" id="nextQuestion" type="button" disabled>Suivante</button>
+          </div>
+        </section>
+
+        <section id="resultsStep" class="step results-step" data-step="results" aria-live="polite">
+          <div class="result-header">
+            <div>
+              <span class="mini-kicker">Résultat exploratoire</span>
+              <h2>Profil d’impact du projet</h2>
+              <p id="resultSummary"></p>
+            </div>
+            <div class="score-orbit" id="scoreOrbit" aria-label="Score global de risque">
+              <div><strong id="overallScore">0</strong><span>/100</span><small id="overallLevel">—</small></div>
+            </div>
+          </div>
+
+          <div id="criticalAlerts" class="critical-alerts" hidden></div>
+
+          <div class="result-grid">
+            <article class="chart-card glass-soft">
+              <div class="card-head"><div><span class="mini-kicker">Cartographie</span><h3>Dix dimensions</h3></div><button class="icon-btn" id="toggleChartTable" type="button" aria-expanded="false">Voir les valeurs</button></div>
+              <div class="radar-wrap" id="radarWrap" aria-label="Graphique radar des dimensions de risque"></div>
+              <div class="dimension-table" id="dimensionTable" hidden></div>
+            </article>
+
+            <article class="priority-card glass-soft">
+              <span class="mini-kicker">Priorités</span>
+              <h3>Points à traiter en premier</h3>
+              <div id="topPriorities" class="priority-list"></div>
+            </article>
+          </div>
+
+          <div class="report-toolbar">
+            <div>
+              <span class="mini-kicker">Rapport généré</span>
+              <h3>Plan de prévention personnalisé</h3>
+            </div>
+            <div class="toolbar-actions">
+              <button class="btn btn-ghost" id="downloadHtml" type="button">Télécharger en HTML</button>
+              <button class="btn btn-ghost" id="downloadJson" type="button">Données JSON</button>
+              <button class="btn btn-primary" id="printReport" type="button">Créer / enregistrer le PDF</button>
+            </div>
+          </div>
+
+          <article id="generatedReport" class="generated-report"></article>
+
+          <section class="archive-section glass-soft" aria-labelledby="archiveTitle">
+            <div>
+              <span class="mini-kicker">Archivage</span>
+              <h3 id="archiveTitle">Conserver une trace datée</h3>
+              <p>Le bouton « Créer / enregistrer le PDF » ouvre la boîte d’impression du navigateur. Choisissez <strong>Enregistrer au format PDF</strong>. Le rapport ne contient que les catégories déclarées, les scores et les recommandations.</p>
+            </div>
+            <button class="btn btn-primary" id="archivePdf" type="button">Créer le PDF maintenant</button>
+          </section>
+
+          <section class="email-contribution glass-soft" aria-labelledby="emailContributionTitle">
+            <div>
+              <span class="mini-kicker">Contribution volontaire</span>
+              <h3 id="emailContributionTitle">Faire émerger des tendances à partir de résultats anonymes</h3>
+              <p>Après avoir vérifié que le PDF ne contient aucun nom d’entreprise, de personne, de fournisseur ou autre élément identifiable, vous êtes les bienvenus pour me le transmettre à <a href="mailto:santetravailia@gmail.com">santetravailia@gmail.com</a>. Ces envois volontaires pourront aider à faire émerger des tendances et à améliorer cette démarche exploratoire.</p>
+              <p class="microcopy">Aucun envoi automatique et aucune pièce jointe ne sont déclenchés par le site. Vous restez libre de ne rien transmettre.</p>
+            </div>
+            <a class="btn btn-secondary" id="emailAnonymousResult" href="mailto:santetravailia@gmail.com?subject=Résultat%20anonyme%20-%20évaluation%20initiale%20IA%20et%20travail">Préparer l’e-mail</a>
+          </section>
+
+          <section class="aggregate-section glass-soft" aria-labelledby="aggregateTitle">
+            <div class="aggregate-head">
+              <div><span class="mini-kicker">Statistiques anonymes</span><h3 id="aggregateTitle">Comparer sans identifier</h3></div>
+              <span class="aggregate-status" id="aggregateStatus">Données locales uniquement</span>
+            </div>
+            <div class="aggregate-grid" id="localAggregate"></div>
+            <div class="contribution-box">
+              <label class="consent-line"><input type="checkbox" id="aggregateConsent"><span>Je consens à transmettre un résumé anonyme de cette évaluation : secteur large, tranche d’effectif, types d’usage, scores et mois de réalisation. Aucune réponse détaillée ni donnée nominative n’est envoyée.</span></label>
+              <button class="btn btn-secondary" id="contributeStats" type="button" disabled>Contribuer aux statistiques collectives</button>
+              <p class="microcopy" id="contributionMessage">L’envoi collectif n’est actif que si une adresse de collecte est configurée.</p>
+            </div>
+            <div id="globalAggregate" class="global-aggregate" hidden></div>
+          </section>
+
+          <div class="result-actions-bottom">
+            <a class="btn btn-secondary" href="suivi.html">Passer au suivi daté</a><button class="btn btn-ghost" id="restartAssessment" type="button">Nouvelle évaluation</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="method-section" id="methodologie">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Méthodologie</span>
+        <h2>Deux lectures complémentaires du risque</h2>
+        <p>Le score par dimension repère les zones de tension. Des règles de criticité s’appliquent séparément pour éviter qu’un signal grave soit dilué dans une moyenne favorable.</p>
+      </div>
+      <div class="method-grid">
+        <article class="method-card glass"><span>Gollac · 01</span><h3>Intensité et temps de travail</h3><p>Accélération, délais, charge de correction, disponibilité et fragmentation de l’activité.</p></article>
+        <article class="method-card glass"><span>Gollac · 02</span><h3>Exigences émotionnelles</h3><p>Gestion de situations difficiles, exposition à la détresse, conflits et injonctions émotionnelles.</p></article>
+        <article class="method-card glass"><span>Gollac · 03</span><h3>Autonomie</h3><p>Capacité à choisir, comprendre, contester et reprendre la main sur le système.</p></article>
+        <article class="method-card glass"><span>Gollac · 04</span><h3>Rapports sociaux</h3><p>Coopération, soutien, responsabilité, formation et qualité du dialogue autour du projet.</p></article>
+        <article class="method-card glass"><span>Gollac · 05</span><h3>Conflits de valeurs</h3><p>Écart entre vitesse et qualité, sens du métier, éthique et travail empêché.</p></article>
+        <article class="method-card glass"><span>Gollac · 06</span><h3>Insécurité</h3><p>Évolution des emplois, dépendance technologique, compétences et lisibilité des transformations.</p></article>
+        <article class="method-card glass ai-card"><span>IA · 07</span><h3>Gouvernance algorithmique</h3><p>Finalité, explicabilité, recours, supervision humaine et responsabilité décisionnelle.</p></article>
+        <article class="method-card glass ai-card"><span>IA · 08</span><h3>Données et surveillance</h3><p>Minimisation, confidentialité, granularité du suivi et usages secondaires des données.</p></article>
+        <article class="method-card glass ai-card"><span>IA · 09</span><h3>Fiabilité et sécurité</h3><p>Validation locale, conséquences des erreurs, biais d’automatisation et solutions de repli.</p></article>
+        <article class="method-card glass ai-card"><span>IA · 10</span><h3>Déploiement préventif</h3><p>Participation, expérimentation, formation, suivi des effets et amélioration continue.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="scoring-section" aria-labelledby="scoringTitle">
+    <div class="wrap scoring-grid">
+      <div>
+        <span class="eyebrow">Lecture du score</span>
+        <h2 id="scoringTitle">Un outil de repérage, pas une échelle diagnostique</h2>
+      </div>
+      <div class="scoring-cards">
+        <article><strong>Score dimensionnel</strong><p>Moyenne pondérée des réponses rattachées à chaque dimension, transformée sur une échelle de 0 à 100.</p></article>
+        <article><strong>Score global</strong><p>Moyenne pondérée des dix dimensions. Il sert à hiérarchiser les sujets, jamais à certifier un système.</p></article>
+        <article><strong>Signaux critiques</strong><p>Règles indépendantes de la moyenne pour les décisions à fort impact, la surveillance intrusive, les données sensibles et la sécurité physique.</p></article>
+        <article><strong>Statut scientifique</strong><p>Grille empirique et exploratoire conçue par le Dr Charles Broutin. Ses scores, pondérations et seuils n’ont pas été scientifiquement validés.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="oh-section" id="sante-travail">
+    <div class="wrap oh-grid">
+      <div>
+        <span class="eyebrow">Quand associer la santé au travail ?</span>
+        <h2>Avant que les choix techniques ne deviennent irréversibles</h2>
+        <p>Le recours au service de prévention et de santé au travail est particulièrement pertinent lorsque l’IA modifie l’organisation, la charge, l’autonomie, les modalités de contrôle, les compétences, la sécurité ou les relations de travail.</p>
+      </div>
+      <div class="oh-list glass">
+        <article><span>01</span><div><strong>En phase de cadrage</strong><p>Pour analyser le travail réel, les populations exposées, les scénarios d’erreur et les mesures de prévention primaire.</p></div></article>
+        <article><span>02</span><div><strong>Avant un pilote ou une généralisation</strong><p>Pour organiser le suivi de la charge de travail, des incidents, de la sécurité, de la qualité et définir des critères d’arrêt.</p></div></article>
+        <article><span>03</span><div><strong>Dès qu’un signal apparaît</strong><p>Plaintes, surcharge, perte d’autonomie, conflits, erreurs, incidents, absentéisme, rotation ou dégradation de la qualité.</p></div></article>
+        <article><span>04</span><div><strong>Pour organiser le suivi</strong><p>Intégration au DUERP, dialogue avec le CSE, retour d’expérience, adaptation collective et réévaluation.</p></div></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <section class="sources-section" id="sources" aria-labelledby="sourcesTitle">
+    <div class="wrap">
+      <div class="section-head sources-head">
+        <span class="eyebrow">Sources structurantes</span>
+        <h2 id="sourcesTitle">Un cadre documenté, à confronter au terrain</h2>
+        <p>La grille articule des références de prévention reconnues et une synthèse experte des enjeux propres aux systèmes d’IA. Les obligations applicables doivent être vérifiées pour chaque projet.</p>
+      </div>
+      <div class="source-grid">
+        <a class="source-card" href="https://www.inrs.fr/risques/psychosociaux/facteurs-risques.html" target="_blank" rel="noopener noreferrer"><span>INRS</span><strong>Six catégories de facteurs de risques psychosociaux</strong><small>Cadre Gollac utilisé pour les six premières dimensions.</small></a>
+        <a class="source-card" href="https://www.inrs.fr/media.html?refINRS=AC+197" target="_blank" rel="noopener noreferrer"><span>INRS</span><strong>Intelligence artificielle et santé et sécurité au travail</strong><small>Panorama des usages numériques, de la gestion algorithmique et des enjeux de prévention.</small></a>
+        <a class="source-card" href="https://healthy-workplaces.osha.europa.eu/en/publications/worker-management-through-ai-implications-occupational-safety-and-health" target="_blank" rel="noopener noreferrer"><span>EU-OSHA</span><strong>Gestion des travailleurs fondée sur l’IA</strong><small>Autonomie, organisation du travail et risques psychosociaux.</small></a>
+        <a class="source-card" href="https://webapps.ilo.org/static/english/intserv/working-papers/wp170/index.html" target="_blank" rel="noopener noreferrer"><span>OIT</span><strong>AI Systems at Work</strong><small>Approche intégrée des effets psychosociaux, du travail, de la vie privée et de la gouvernance.</small></a>
+        <a class="source-card" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noopener noreferrer"><span>Code du travail</span><strong>Évaluation des risques et organisation du travail</strong><small>Article L. 4121-3 et contribution du SPST à l’évaluation.</small></a>
+        <a class="source-card" href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072050/LEGISCTA000006160792/" target="_blank" rel="noopener noreferrer"><span>Code du travail</span><strong>Missions des services de prévention et de santé au travail</strong><small>Accompagnement des changements organisationnels importants.</small></a>
+        <a class="source-card" href="https://www.cnil.fr/fr/thematiques/travail-et-donnees-personnelles" target="_blank" rel="noopener noreferrer"><span>CNIL</span><strong>Travail et données personnelles</strong><small>Gestion du personnel, contrôle, information et proportionnalité.</small></a>
+        <a class="source-card" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer"><span>Union européenne</span><strong>Cadre réglementaire européen sur l’IA</strong><small>Approche par les risques et informations officielles de mise en œuvre.</small></a>
+      </div>
+      <p class="source-note"><strong>Note de transparence :</strong> questionnaire empirique et exploratoire conçu par le Dr Charles Broutin. Il n’a pas fait l’objet d’une validation scientifique. Ses pondérations, seuils et recommandations constituent une proposition méthodologique révisable. Dernière vérification éditoriale : 12 juillet 2026.</p>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><a class="brand footer-brand" href="../../"><span class="brand-mark" aria-hidden="true"><span>IA</span></span><span>IA &amp; Santé au Travail</span></a><p>Un outil exploratoire pour analyser les projets d’IA à partir du travail réel.</p></div>
+    <div><strong>Évaluer</strong><a href="../">Vue d’ensemble</a><a href="../benchmark/">Comprendre les benchmarks</a><a href="#evaluation">Évaluation initiale</a><a href="suivi.html">Suivi daté</a><a href="#methodologie">Méthodologie</a></div>
+    <div><strong>Cadre</strong><a href="../../risques-prevention/">Risques &amp; prévention</a><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a><a href="../../confidentialite/">Confidentialité</a></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Version expérimentale 0.4 · juillet 2026</span></div>
+</footer>
+
+<noscript><div class="noscript">JavaScript est nécessaire pour utiliser cette évaluation interactive.</div></noscript>
+<script src="assets/js/impact-config.js"></script>
+<script src="assets/js/impact-assessment.js"></script>
+</body>
+</html>
