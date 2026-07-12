@@ -1,182 +1,137 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Évaluer les modèles d’intelligence artificielle avec BenchMedTrav et analyser l’impact d’un projet d’IA sur le travail grâce à une évaluation initiale et un suivi daté.">
-  <meta name="author" content="Dr Charles Broutin">
-  <meta name="theme-color" content="#EADDC6">
-  <link rel="canonical" href="https://www.iasantetravail.com/evaluer/">
-  <title>Évaluer — modèles d’IA et déploiements au travail</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/evaluer.css">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"Évaluer",
-    "url":"https://www.iasantetravail.com/evaluer/",
-    "inLanguage":"fr-FR",
-    "description":"Deux parcours complémentaires pour évaluer les capacités des modèles d’IA et les effets d’un projet de déploiement sur le travail réel.",
-    "author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail"}
-  }
-  </script>
-</head>
-<body>
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="Comprendre ce qu’est un benchmark, pourquoi la santé au travail française nécessite une évaluation dédiée et comment interpréter les résultats avec prudence." name="description"/><meta content="Dr Charles Broutin" name="author"/><meta content="index,follow,max-image-preview:large" name="robots"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="#EADDC6" name="theme-color"/><link href="https://www.iasantetravail.com/evaluer/" rel="canonical"/><link href="https://www.iasantetravail.com/evaluer/" hreflang="fr" rel="alternate"/><link href="https://www.iasantetravail.com/en/evaluate/" hreflang="en" rel="alternate"/><link href="https://www.iasantetravail.com/evaluer/" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="IA &amp; Santé au Travail" property="og:site_name"/><meta content="Évaluer les modèles — IA &amp; Santé au Travail" property="og:title"/><meta content="Comprendre ce qu’est un benchmark, pourquoi la santé au travail française nécessite une évaluation dédiée et comment interpréter les résultats avec prudence." property="og:description"/><meta content="https://www.iasantetravail.com/evaluer/" property="og:url"/><meta content="https://www.iasantetravail.com/assets/images/og-evaluer.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Évaluer les modèles — IA &amp; Santé au Travail" name="twitter:title"/><meta content="Comprendre ce qu’est un benchmark, pourquoi la santé au travail française nécessite une évaluation dédiée et comment interpréter les résultats avec prudence." name="twitter:description"/><title>Évaluer les modèles — IA &amp; Santé au Travail</title><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Évaluer les modèles", "url": "https://www.iasantetravail.com/evaluer/", "inLanguage": "fr-FR", "description": "Comprendre ce qu’est un benchmark, pourquoi la santé au travail française nécessite une évaluation dédiée et comment interpréter les résultats avec prudence.", "dateModified": "2026-07-11", "author": {"@type": "Person", "name": "Dr Charles Broutin", "jobTitle": "Médecin du travail", "sameAs": ["https://www.linkedin.com/in/charles-broutin-a03932201"]}, "publisher": {"@type": "Person", "name": "Dr Charles Broutin"}}</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link as="image" href="../assets/images/consummation-1280.webp" rel="preload" type="image/webp"/><link href="../assets/css/site.css" rel="stylesheet"/>
+<!-- Site icons -->
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="msapplication-TileColor" content="#A84E1F"/>
+</head><body class="inner-page page-evaluer" data-page="evaluer" data-root="../">
 <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<header class="site-head">
-  <nav class="nav glass" aria-label="Navigation principale">
-    <a class="brand" href="../" aria-label="Retour à IA et Santé au Travail">
-      <span class="brand-mark" aria-hidden="true"><span>IA</span></span>
-      <span>IA &amp; Santé au Travail</span>
-    </a>
-    <div class="nav-links">
-      <a href="../comprendre/">Comprendre</a>
-      <a href="../usages-terrain/">Usages &amp; terrain</a>
-      <a href="../risques-prevention/">Risques &amp; prévention</a>
-      <a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
-      <a href="./" aria-current="page">Évaluer</a>
-    </div>
-    <a class="nav-cta" href="impact-ia/">Évaluer un projet</a>
-  </nav>
-</header>
-
-<main id="main-content">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">III · Évaluer</span>
-        <h1>Évaluer les modèles. <em>Évaluer les déploiements.</em></h1>
-        <p class="hero-lead">Deux niveaux complémentaires pour décider avec méthode : mesurer ce qu’un modèle sait faire dans un domaine spécialisé, puis examiner ce que son utilisation peut transformer dans l’organisation et le travail réel.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-arrow" href="benchmark/">Découvrir BenchMedTrav</a>
-          <a class="btn btn-secondary btn-arrow" href="impact-ia/">Évaluer un projet d’IA</a>
-        </div>
-        <div class="hero-notes" aria-label="Contenu de la rubrique">
-          <span>Benchmark spécialisé</span>
-          <span>Évaluation initiale</span>
-          <span>Suivi daté</span>
-          <span>Rapports PDF archivables</span>
-        </div>
-      </div>
-      <aside class="hero-panel glass glass-dark" aria-label="Deux objets d’évaluation">
-        <div class="panel-title">Une démarche, deux objets</div>
-        <div class="hero-feature"><span>01</span><div><strong>Le modèle</strong><small>Connaissances, raisonnement, robustesse, coûts et profils d’erreur.</small></div></div>
-        <div class="hero-feature"><span>02</span><div><strong>Le projet</strong><small>Charge, autonomie, gouvernance, données, fiabilité et conditions d’usage.</small></div></div>
-        <div class="hero-feature"><span>03</span><div><strong>Le suivi</strong><small>Effets observés, incidents, corrections engagées et réévaluation dans le temps.</small></div></div>
-      </aside>
-    </div>
-  </section>
-
-  <div class="section-nav-wrap">
-    <nav class="section-nav glass wrap" aria-label="Navigation de la rubrique Évaluer">
-      <a href="./" aria-current="page">Vue d’ensemble</a>
-      <a href="benchmark/">BenchMedTrav</a>
-      <a href="impact-ia/">Évaluation initiale</a>
-      <a href="impact-ia/suivi.html">Suivi daté</a>
-    </nav>
-  </div>
-
-  <section class="intro-section" aria-labelledby="toolsTitle">
-    <div class="wrap">
-      <div class="section-heading">
-        <div><span class="eyebrow">Choisir l’outil adapté</span><h2 id="toolsTitle">Deux niveaux d’évaluation à ne pas confondre</h2></div>
-        <p>Un modèle peut obtenir un bon score tout en produisant des effets indésirables lorsqu’il est intégré à une organisation. À l’inverse, un projet bien préparé ne compense pas les limites techniques d’un système. Les deux niveaux doivent être examinés séparément.</p>
-      </div>
-
-      <div class="tool-grid">
-        <article class="tool-card">
-          <div class="tool-card-head"><span class="status">Benchmark spécialisé</span><span class="tool-number" aria-hidden="true">01</span></div>
-          <span class="mini-kicker">Évaluer les modèles d’IA</span>
-          <h3>BenchMedTrav</h3>
-          <p>Comparer les grands modèles de langage sur des connaissances, des situations de raisonnement et des règles propres à la santé au travail française.</p>
-          <div class="metric-row" aria-label="Caractéristiques du benchmark">
-            <div class="metric"><strong>300</strong><span>questions spécialisées</span></div>
-            <div class="metric"><strong>29</strong><span>domaines couverts</span></div>
-            <div class="metric"><strong>220</strong><span>exécutions comparatives</span></div>
-          </div>
-          <ul class="tool-points">
-            <li>Comparer les performances dans des conditions reproductibles.</li>
-            <li>Examiner les erreurs d’omission, de sur-inclusion et de raisonnement.</li>
-            <li>Distinguer performance générale et compétence métier spécialisée.</li>
-          </ul>
-          <div class="tool-actions">
-            <a class="btn btn-primary btn-arrow" href="benchmark/">Découvrir le benchmark</a>
-            <a class="btn btn-ghost" href="../ressources/modeles/">Panorama des modèles</a>
-          </div>
-        </article>
-
-        <article class="tool-card tool-card--impact">
-          <div class="tool-card-head"><span class="status status--exploratory">Démarche exploratoire</span><span class="tool-number" aria-hidden="true">02</span></div>
-          <span class="mini-kicker">Évaluer un projet de déploiement</span>
-          <h3>Impact de l’IA sur le travail</h3>
-          <p>Repérer les transformations organisationnelles, les facteurs psychosociaux et les points de vigilance associés à un projet d’IA, puis documenter son évolution dans le temps.</p>
-          <div class="metric-row" aria-label="Caractéristiques des questionnaires">
-            <div class="metric"><strong>26–32</strong><span>questions initiales</span></div>
-            <div class="metric"><strong>10</strong><span>dimensions analysées</span></div>
-            <div class="metric"><strong>22–28</strong><span>questions de suivi</span></div>
-          </div>
-          <ul class="tool-points">
-            <li>Obtenir un profil visuel et des priorités de prévention.</li>
-            <li>Créer un rapport daté et l’enregistrer au format PDF.</li>
-            <li>Réaliser un suivi séparé après le déploiement.</li>
-          </ul>
-          <p class="method-note"><strong>Statut méthodologique.</strong> Questionnaires conçus par le Dr Charles Broutin à partir d’une construction empirique et experte, sans validation scientifique, psychométrique ou prédictive à ce stade.</p>
-          <div class="tool-actions">
-            <a class="btn btn-primary btn-arrow" href="impact-ia/">Évaluation initiale</a>
-            <a class="btn btn-ghost btn-arrow" href="impact-ia/suivi.html">Suivi daté</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="choose-section" aria-labelledby="chooseTitle">
-    <div class="wrap">
-      <div class="section-heading">
-        <div><span class="eyebrow">Entrer par votre situation</span><h2 id="chooseTitle">Quel parcours choisir&nbsp;?</h2></div>
-        <p>Chaque outil répond à une question différente. Utilisez le benchmark pour interroger les capacités du modèle, l’évaluation initiale pour préparer un projet et le suivi daté pour documenter ce qui se passe réellement après sa mise en œuvre.</p>
-      </div>
-      <div class="choose-grid">
-        <article class="choose-card"><span class="choose-index">01</span><h3>Je compare des modèles</h3><p>Je souhaite savoir si un LLM maîtrise les connaissances et le raisonnement attendus en santé au travail française.</p><a class="text-link" href="benchmark/">Ouvrir BenchMedTrav</a></article>
-        <article class="choose-card"><span class="choose-index">02</span><h3>Je prépare un déploiement</h3><p>Le projet est au stade du cadrage, du choix de solution, du pilote ou du déploiement progressif.</p><a class="text-link" href="impact-ia/">Réaliser l’évaluation initiale</a></article>
-        <article class="choose-card"><span class="choose-index">03</span><h3>Le système est déjà utilisé</h3><p>Je souhaite tracer les effets observés, les difficultés rencontrées, les corrections et la date d’un nouveau suivi.</p><a class="text-link" href="impact-ia/suivi.html">Réaliser un suivi daté</a></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="compare-section" aria-labelledby="compareTitle">
-    <div class="wrap compare-grid">
-      <div><span class="eyebrow">Lecture commune</span><h2 id="compareTitle">Une même exigence de méthode, deux objets distincts</h2><p>Le benchmark évalue un système dans un protocole standardisé. Les questionnaires examinent un projet situé dans une organisation. Aucun résultat ne doit être interprété en dehors de son périmètre.</p></div>
-      <div class="compare-table" role="table" aria-label="Comparaison des outils">
-        <div class="compare-row compare-row--head" role="row"><div role="columnheader">Question</div><div role="columnheader">BenchMedTrav</div><div role="columnheader">Impact IA &amp; travail</div></div>
-        <div class="compare-row" role="row"><div role="rowheader">Objet</div><div role="cell">Capacités d’un modèle</div><div role="cell">Conditions et effets d’un déploiement</div></div>
-        <div class="compare-row" role="row"><div role="rowheader">Moment</div><div role="cell">Avant le choix ou lors d’une comparaison</div><div role="cell">Avant le projet puis après le déploiement</div></div>
-        <div class="compare-row" role="row"><div role="rowheader">Résultat</div><div role="cell">Scores, robustesse et profils d’erreur</div><div role="cell">Profil de vigilance et rapport de prévention</div></div>
-        <div class="compare-row" role="row"><div role="rowheader">Limite centrale</div><div role="cell">Ne démontre pas la sécurité en situation réelle</div><div role="cell">Questionnaires empiriques non validés scientifiquement</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="notice-section">
-    <div class="wrap">
-      <div class="notice-card glass">
-        <span class="notice-icon" aria-hidden="true">i</span>
-        <div><h3>Un résultat d’évaluation n’est jamais une autorisation automatique de déployer</h3><p>La performance technique, la conformité juridique, l’utilité organisationnelle et les conditions de prévention relèvent de vérifications différentes. Les outils proposés ici contribuent à structurer la réflexion, sans remplacer l’analyse de terrain, le dialogue social, l’expertise métier ou les responsabilités des acteurs concernés.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div><a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true"><span>IA</span></span><span>IA &amp; Santé au Travail</span></a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
-    <div><strong>Évaluer</strong><a href="./">Vue d’ensemble</a><a href="benchmark/">BenchMedTrav</a><a href="impact-ia/">Évaluation initiale</a><a href="impact-ia/suivi.html">Suivi daté</a></div>
-    <div><strong>Parcours</strong><a href="../comprendre/">Comprendre</a><a href="../usages-terrain/">Usages &amp; terrain</a><a href="../risques-prevention/">Risques &amp; prévention</a><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></div>
-  </div>
-  <div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Rubrique Évaluer · version 0.4</span></div>
-</footer>
-</body>
-</html>
+<nav aria-label="Navigation principale" class="nav glass">
+<a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+<div class="nav-links" id="navLinks"><a href="../comprendre/">Comprendre</a><a href="../usages-terrain/">Usages &amp; terrain</a><a aria-current="page" class="is-active" href="../evaluer/">Évaluer</a><a href="../risques-prevention/">Risques &amp; prévention</a><a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
+<details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu">
+<a href="../ressources/modeles/">Panorama des modèles</a><a href="../a-propos/">À propos et publications</a><a href="../mentions-legales/">Mentions légales</a>
+</div></details></div>
+<div class="nav-tools"><button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+<div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="../evaluer/" hreflang="fr" lang="fr">FR</a><a href="../en/evaluate/" hreflang="en" lang="en">EN</a></div>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
+<a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>
+</nav><main id="main-content" tabindex="-1"><section class="page active" id="page-evaluer">
+<header class="page-hero">
+<div class="wrap">
+<div class="hero-frame">
+<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="../assets/images/consummation-640.webp 640w, ../assets/images/consummation-960.webp 960w, ../assets/images/consummation-1280.webp 1280w, ../assets/images/consummation-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'Apogée de l'Empire, 1836" decoding="async" fetchpriority="high" loading="eager" src="../assets/images/consummation-1800.jpg"/></picture>
+<div class="veil"></div>
+<p class="hero-credit">Thomas Cole, The Consummation of Empire, 1836</p>
+<div class="hero-inner">
+<span class="stage-tag glass glass--dark"><span class="roman">III.</span> L'Apogée</span>
+<h1>Évaluer les promesses <em>avant d'y croire</em></h1><p class="hero-descriptor">Benchmarks, protocoles, incertitude et validité en conditions réelles.</p>
+<div class="hero-card glass glass--dark">Un modèle performant en général peut échouer sur une tâche spécialisée. L’évaluation doit être contextualisée, reproductible et distincte des promesses marketing.</div>
+<div class="hero-actions">
+<a class="btn btn-solid" href="#evaluer-demarche">La démarche
+              <svg aria-hidden="true" fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
+<a class="btn btn-glassy glass glass--dark" href="../ressources/modeles/">Le paysage des modèles</a>
+</div>
+</div>
+</div>
+</div>
+</header><section aria-labelledby="resume-page" class="page-summary-section">
+<div class="wrap">
+<div class="page-summary glass">
+<div class="page-summary-main">
+<span class="mini-kicker">En 30 secondes</span>
+<h2 id="resume-page">Les repères essentiels</h2>
+<ul><li>Un score généraliste ne mesure pas la maîtrise du droit, des institutions et des pratiques propres à la santé au travail française.</li><li>Un benchmark utile décrit le corpus, les répétitions, les erreurs, l’incertitude, les coûts et les conditions exactes d’exécution.</li><li>Les résultats du benchmark spécialisé restent non publiés ici tant que l’article scientifique correspondant n’est pas rendu public.</li></ul>
+<div aria-label="Légende des niveaux de preuve" class="status-legend"><span class="proof proof--consensus">Cadre établi</span><span class="proof proof--emergent">Émergent</span><span class="proof proof--expert">Analyse</span></div></div>
+<aside aria-label="Informations de lecture" class="page-summary-side">
+<dl>
+<div><dt>Public</dt><dd>Chercheurs, décideurs, acheteurs, professionnels de santé au travail et responsables de l’innovation</dd></div>
+<div><dt>Temps de lecture</dt><dd>Environ 6 minutes</dd></div>
+<div><dt>Dernière vérification</dt><dd>11 juillet 2026</dd></div>
+</dl>
+</aside>
+<nav aria-label="Sommaire de la page" class="page-toc"><span>Sur cette page</span><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#qu-est-ce-qu-un-benchmark">Qu’est-ce qu’un benchmark ?</a></li><li><a href="#la-sante-au-travail-francaise-exige-un-benchmark-dedie">Pourquoi la santé au travail française exige une évaluation dédiée</a></li><li><a href="#un-travail-en-attente-de-publication">Un travail en attente de publication</a></li><li><a href="#les-conditions-dun-benchmark-reellement-utile">Les conditions d’un benchmark réellement utile</a></li><li><a href="#les-risques-ne-sont-pas-seulement-psychologiques-ils-sont-aussi-organisationnels">Risques organisationnels et juridiques</a></li></ol></nav></div>
+</div>
+</section><details class="mobile-toc"><summary>Sur cette page</summary><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#qu-est-ce-qu-un-benchmark">Qu’est-ce qu’un benchmark ?</a></li><li><a href="#la-sante-au-travail-francaise-exige-un-benchmark-dedie">Pourquoi la santé au travail française exige une évaluation dédiée</a></li><li><a href="#un-travail-en-attente-de-publication">Un travail en attente de publication</a></li><li><a href="#les-conditions-dun-benchmark-reellement-utile">Les conditions d’un benchmark réellement utile</a></li><li><a href="#les-risques-ne-sont-pas-seulement-psychologiques-ils-sont-aussi-organisationnels">Risques organisationnels et juridiques</a></li></ol></details>
+<section class="section" id="evaluer-demarche"><div class="wrap">
+<div class="section-head reveal"><span class="kicker">Définition</span><h2 id="qu-est-ce-qu-un-benchmark">Qu’est-ce qu’un benchmark ?</h2><p>Un benchmark est un protocole d’évaluation standardisé. Il soumet plusieurs modèles aux mêmes tâches, dans les mêmes conditions, puis compare leurs réponses à une référence explicite. Il ne s’agit ni d’une démonstration commerciale, ni d’un label universel de « bonne IA » : il mesure des capacités délimitées, à une date donnée.</p></div>
+<div class="concept-grid benchmark-definition">
+<article class="concept-card glass reveal"><span class="label">1 · Corpus</span><h3>Des tâches représentatives</h3><p>Les questions, cas ou documents doivent couvrir les situations que l’on cherche réellement à évaluer. Un score n’a de sens que par rapport à ce périmètre.</p></article>
+<article class="concept-card glass reveal"><span class="label">2 · Référence</span><h3>Une correction traçable</h3><p>Les réponses attendues, critères de notation et procédures d’arbitrage doivent être documentés, idéalement avec une validation experte indépendante.</p></article>
+<article class="concept-card glass reveal"><span class="label">3 · Exécution</span><h3>Des conditions reproductibles</h3><p>Version du modèle, prompt, paramètres, outils, répétitions, coûts, non-réponses et profils d’erreur doivent être rapportés afin que la comparaison puisse être comprise et reproduite.</p></article>
+</div>
+<div class="section-head reveal" style="margin-top:48px"><span class="kicker">Pourquoi un benchmark spécialisé ?</span><h2 id="la-sante-au-travail-francaise-exige-un-benchmark-dedie">La santé au travail française ne se déduit pas d’un score médical généraliste</h2><p>La santé au travail française constitue un domaine étroit, transversal et fortement dépendant de son cadre national. Elle combine médecine, prévention, toxicologie, ergonomie, droit du travail, institutions et procédures propres aux SPST, au CSE, à l’inaptitude, au maintien en emploi et aux tableaux de maladies professionnelles.</p></div>
+<div class="duo">
+<div class="duo-block glass reveal"><h3>Une couverture d’entraînement impossible à présumer</h3><p>Les corpus d’entraînement des grands modèles sont seulement partiellement documentés. Ils peuvent contenir des sources françaises inégales, anciennes, contradictoires ou peu représentatives de ce petit domaine. On ne peut donc pas déduire d’un bon niveau général en médecine, en français ou en droit que le modèle maîtrise les pratiques françaises de santé au travail.</p><p>Cette incertitude ne signifie pas que les modèles sont nécessairement mauvais. Elle signifie que leur compétence doit être <strong>mesurée</strong> sur des tâches pertinentes plutôt que supposée.</p></div>
+<div class="duo-block glass analyse reveal"><h3>Ce qu’un benchmark dédié peut révéler</h3><p>Il permet de distinguer la mémorisation de connaissances, le raisonnement appliqué à des vignettes, la compréhension des rôles institutionnels, les erreurs de sur-inclusion ou d’omission et la robustesse entre plusieurs exécutions.</p><p>Il ne prouve pas à lui seul qu’un outil est sûr en situation réelle : une évaluation de terrain, une supervision humaine et une analyse des risques restent nécessaires.</p></div>
+</div>
+<div class="takeaway glass reveal" style="margin:32px 0"><h2 id="un-travail-en-attente-de-publication">Un travail en attente de publication</h2><p>Un benchmark spécialisé a été développé afin de comparer les grands modèles de langage sur des questions représentatives des connaissances et du raisonnement attendus en santé au travail française. L’article scientifique qui en décrit le corpus, le protocole et les résultats est en attente de publication. Les résultats ne sont donc pas présentés ici comme une référence validée par les pairs.</p></div>
+<div class="section-head reveal" style="margin-bottom:24px"><span class="kicker">Méthode</span><h2 id="les-conditions-dun-benchmark-reellement-utile">Les conditions d’un benchmark réellement utile</h2><p>Un classement global ne suffit pas. L’évaluation doit être représentative du domaine, reproductible et capable de montrer la nature des erreurs, pas seulement un score moyen.</p></div>
+<div class="checklist-grid">
+<article class="check-card glass reveal"><h3>1. Couvrir le travail réel</h3><p>Construire des questions représentatives de la prévention, de la réglementation, des expositions, du suivi individuel, du maintien en emploi, de la toxicologie et de l’organisation du travail.</p></article>
+<article class="check-card glass reveal"><h3>2. Établir une référence experte</h3><p>Documenter chaque réponse à partir de sources fiables, faire relire les items et prévoir une procédure d’arbitrage des désaccords.</p></article>
+<article class="check-card glass reveal"><h3>3. Analyser les erreurs</h3><p>Examiner les omissions, les réponses excessives, les erreurs juridiques, les biais, les non-réponses et la variabilité entre exécutions.</p></article>
+<article class="check-card glass reveal"><h3>4. Tester la robustesse</h3><p>Comparer les modèles dans des conditions identiques et préciser versions, paramètres, répétitions, coûts, intervalles d’incertitude et limites.</p></article>
+</div>
+<div class="sources glass reveal" style="margin-top:32px"><h3>Références méthodologiques</h3><ol>
+<li><a href="https://crfm.stanford.edu/helm/" rel="noopener noreferrer" target="_blank">Stanford CRFM — HELM</a> : évaluation holistique, scénarios, métriques et transparence.</li>
+<li><a href="https://medhelm.org/" rel="noopener noreferrer" target="_blank">MedHELM</a> : benchmark médical ouvert couvrant 121 tâches cliniques dans une taxonomie validée par des cliniciens.</li>
+<li><a href="https://openai.com/index/healthbench/" rel="noopener noreferrer" target="_blank">HealthBench</a> : conversations de santé réalistes évaluées par des grilles créées par des médecins.</li>
+<li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" rel="noopener noreferrer" target="_blank">NIST — Generative AI Profile</a> : gouverner, cartographier, mesurer et gérer les risques dans leur contexte d’usage.</li>
+<li><a href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">INRS, TF 335</a> : exemple d’évaluation spécialisée d’un usage précis en santé au travail.</li>
+</ol></div>
+</div></section>
+<section class="section" id="risques-gouvernance" style="padding-top:0">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="kicker">Surveillance, données et responsabilité</span>
+<h2 id="les-risques-ne-sont-pas-seulement-psychologiques-ils-sont-aussi-organisationnels">Les risques ne sont pas seulement psychologiques : ils sont aussi organisationnels et juridiques</h2>
+<p>Un système d'IA peut devenir problématique non parce qu'il est spectaculaire,
+        mais parce qu'il s'insère discrètement dans les circuits de décision : attribution
+        des tâches, mesure de productivité, analyse des échanges, scoring, priorisation,
+        tri de dossiers, alertes automatiques ou recommandations managériales.</p>
+</div>
+<div class="article-grid">
+<article class="article glass reveal">
+<span class="proof proof--expert">Données</span>
+<h3>Données personnelles et données sensibles</h3>
+<p>L'IA peut traiter des traces d'activité, des messages, des plannings, des comptes rendus,
+          des données RH ou des éléments indirectement révélateurs d'un état de santé. Le risque
+          augmente lorsque le salarié ne sait pas quelles données sont collectées, pourquoi, par
+          qui elles sont consultées et combien de temps elles sont conservées.</p>
+<span class="src"><strong>Garde-fou :</strong> minimisation, information claire, base légale, AIPD si nécessaire, séparation stricte avec les données médicales.</span>
+</article>
+<article class="article glass reveal">
+<span class="proof proof--expert">Management algorithmique</span>
+<h3>Quand l'outil organise le travail</h3>
+<p>Planification automatisée, ranking de performance, scoring de productivité ou priorisation
+          algorithmique peuvent modifier les marges de manœuvre sans que le changement soit nommé.
+          L'enjeu est de rendre la prescription compréhensible et contestable.</p>
+<span class="src"><strong>Question clé :</strong> le salarié peut-il comprendre, discuter et corriger la décision soutenue par l'IA ?</span>
+</article>
+<article class="article glass reveal">
+<span class="proof proof--expert">Responsabilité</span>
+<h3>Qui répond de l'erreur ?</h3>
+<p>Si une recommandation IA est erronée, la responsabilité ne peut pas être laissée dans
+          une zone grise. L'entreprise doit définir qui valide, qui peut s'écarter de la proposition,
+          comment l'écart est documenté et dans quels cas l'outil ne doit pas être utilisé.</p>
+<span class="src"><strong>Principe :</strong> la responsabilité humaine doit être explicite, réelle et soutenable.</span>
+</article>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cycle-nav reveal"><a class="cycle-card glass" href="../usages-terrain/"><svg aria-hidden="true" fill="none" height="18" viewbox="0 0 16 16" width="18"><path d="M14 8H3M7 3.5 2.5 8 7 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg><div><div class="lbl">Précédent — Usages et terrain</div><div class="ttl">Revenir aux usages</div></div></a><a class="cycle-card glass next" href="../risques-prevention/"><div><div class="lbl">Suivant — Risques et prévention</div><div class="ttl">Anticiper les effets</div></div><svg aria-hidden="true" fill="none" height="18" viewbox="0 0 16 16" width="18"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a></div></div></section></section></main>
+<footer><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
+<div><h4>Parcours</h4><ul><li><a href="../comprendre/">Comprendre</a></li><li><a href="../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../evaluer/">Évaluer</a></li><li><a href="../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
+<div><h4>Ressources</h4><ul><li><a href="../ressources/modeles/">Panorama des modèles</a></li><li><a href="../a-propos/">À propos et publications</a></li><li><a href="../#mises-a-jour">Dernières mises à jour</a></li></ul></div>
+<div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../confidentialite/">Confidentialité</a></li></ul></div>
+</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span><span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span></div></div></footer>
+<button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
+<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, hallucinations, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog><script defer="" src="../assets/js/search-index.js"></script><script defer="" src="../assets/js/site.js"></script></body></html>
