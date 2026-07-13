@@ -1,34 +1,43 @@
-usages-terrain/index.html
-  - single_h1: OK
-  - summary_30s: OK
-  - byline: OK
+evaluer/index.html
+  - H1 unique: OK
   - canonical: OK
-  - nav: OK
-  - footer: OK
-usages-terrain/exemple-sante-travail/index.html
-  - single_h1: OK
-  - summary_30s: OK
+  - description: OK
+  - Open Graph: OK
+  - JSON-LD: OK
   - byline: OK
-  - canonical: OK
-  - nav: OK
+  - navigation: OK
   - footer: OK
-usages-terrain/avant-deploiement/index.html
-  - single_h1: OK
-  - summary_30s: OK
+evaluer/benchmark/index.html
+  - H1 unique: OK
+  - canonical: OK
+  - description: OK
+  - Open Graph: OK
+  - JSON-LD: OK
   - byline: OK
-  - canonical: OK
-  - nav: OK
+  - navigation: OK
   - footer: OK
-usages-terrain/retours-terrain/index.html
-  - single_h1: OK
-  - summary_30s: OK
+evaluer/impact/index.html
+  - H1 unique: OK
+  - canonical: OK
+  - description: OK
+  - Open Graph: OK
+  - JSON-LD: OK
   - byline: OK
-  - canonical: OK
-  - nav: OK
+  - navigation: OK
   - footer: OK
-Contrôles spécifiques
-  - 3 route cards: OK
-  - old #retours-terrain anchor preserved: OK
-  - Arcadian painting on landing: OK
-  - River painting on returns: OK
-  - 3 new URLs in sitemap: OK
+evaluer/impact/suivi.html
+  - H1 unique: OK
+  - canonical: OK
+  - description: OK
+  - Open Graph: OK
+  - JSON-LD: OK
+  - byline: OK
+  - navigation: OK
+  - footer: OK
+Contrôles fonctionnels
+  - IDs questionnaire initial conservés: OK
+  - IDs suivi conservés: OK
+  - 6 usages initiaux: OK
+  - 6 usages suivi: OK
+  - scripts questionnaire initial inchangés: OK
+  - scripts questionnaire suivi inchangés: OK

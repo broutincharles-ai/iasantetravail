@@ -1,0 +1,62 @@
+
+/* Épuration des introductions des questionnaires */
+.page-impact-refined .tool-intro{
+  padding-bottom:34px
+}
+.page-impact-refined .intro-layout{
+  grid-template-columns:1fr!important;
+  max-width:980px
+}
+.page-impact-refined .intro-copy{
+  max-width:900px
+}
+.page-impact-refined .intro-copy h1{
+  max-width:18ch
+}
+.page-impact-refined .decision-card{
+  display:none
+}
+.page-impact-refined .intro-result-line{
+  margin-top:17px;
+  max-width:780px;
+  color:var(--muted);
+  font-size:.88rem
+}
+.page-impact-refined .status-note{
+  max-width:980px;
+  padding:14px 16px
+}
+.page-impact-refined .status-note p{
+  font-size:.78rem
+}
+.page-impact-refined .onboarding{
+  max-width:760px
+}
+.page-impact-refined .onboarding-points{
+  grid-template-columns:repeat(2,minmax(0,1fr))
+}
+.page-impact-refined .onboarding-points article:last-child{
+  display:none
+}
+.page-impact-refined .tool-author{
+  padding:0 0 32px
+}
+.page-impact-refined .tool-author .wrap{
+  padding-top:21px;
+  border-top:1px solid var(--line)
+}
+.page-impact-refined .tool-author p{
+  font-size:.86rem;
+  color:var(--muted)
+}
+.page-impact-refined .tool-author a{
+  color:var(--terra-deep);
+  text-decoration:underline;
+  text-underline-offset:3px
+}
+.page-impact-refined .tool-breadcrumb{
+  flex-wrap:wrap
+}
+@media(max-width:760px){
+  .page-impact-refined .onboarding-points{grid-template-columns:1fr}
+}

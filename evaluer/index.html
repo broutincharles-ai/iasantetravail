@@ -1,86 +1,139 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Comprendre l’évaluation des modèles et accéder aux questionnaires d’impact d’un projet d’intelligence artificielle sur le travail.">
-  <meta name="author" content="Dr Charles Broutin">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#EADDC6">
-  <link rel="canonical" href="https://www.iasantetravail.com/evaluer/">
-  <title>Évaluer — IA &amp; Santé au Travail</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-  <style>
-    .eval-hero{padding:158px 0 70px;background:radial-gradient(circle at 82% 24%,rgba(201,194,242,.58),transparent 25%),linear-gradient(135deg,#eadcc5,#eee2cf 55%,#c7d2cd);border-bottom:1px solid rgba(23,20,15,.08)}
-    .eval-hero-inner{max-width:850px}
-    .eval-hero h1{font-size:clamp(3.4rem,8vw,7rem);margin:12px 0 18px}
-    .eval-hero p{max-width:690px;font-size:clamp(1rem,1.5vw,1.2rem);color:var(--muted)}
-    .eval-links{padding:54px 0 96px}
-    .eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .eval-card{border-radius:28px;padding:clamp(26px,4vw,42px);background:rgba(251,247,239,.7);border:1px solid rgba(255,255,255,.78);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:310px}
-    .eval-card h2{font-size:clamp(2rem,3.8vw,3.35rem);margin:12px 0 14px}
-    .eval-card p{color:var(--muted);max-width:610px}
-    .eval-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:28px}
-    .eval-badge{display:inline-flex;align-items:center;gap:7px;width:max-content;padding:7px 10px;border-radius:999px;background:rgba(192,95,43,.1);color:var(--terra-deep);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .eval-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--terracotta)}
-    .questionnaire-links{display:grid;gap:12px;margin-top:24px}
-    .questionnaire-link{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.4);transition:.2s}
-    .questionnaire-link:hover{transform:translateY(-2px);background:rgba(255,255,255,.66)}
-    .questionnaire-link strong{display:block;margin-bottom:3px}
-    .questionnaire-link span{font-size:.85rem;color:var(--muted)}
-    .questionnaire-link::after{content:"→";font-size:1.25rem;flex:none}
-    @media(max-width:820px){.eval-grid{grid-template-columns:1fr}.eval-hero{padding-top:130px}.eval-card{min-height:0}}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="description" content="Évaluez un projet d’intelligence artificielle avant son déploiement, suivez ses effets sur le travail réel ou découvrez comment interpréter un benchmark d’IA."/>
+<meta name="author" content="Dr Charles Broutin"/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="theme-color" content="#EADDC6"/>
+<link rel="canonical" href="https://www.iasantetravail.com/evaluer/"/>
+<link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/"/>
+<link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/evaluate/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/evaluer/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="IA &amp; Santé au Travail"/>
+<meta property="og:title" content="Évaluer un projet d’IA et ses effets sur le travail"/>
+<meta property="og:description" content="Questionnaire avant déploiement, suivi après déploiement et repères pour comprendre les benchmarks d’intelligence artificielle."/>
+<meta property="og:url" content="https://www.iasantetravail.com/evaluer/"/>
+<meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-evaluer.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Évaluer un projet d’IA et ses effets sur le travail"/>
+<meta name="twitter:description" content="Choisissez l’évaluation adaptée au stade de votre projet d’intelligence artificielle."/>
+<title>Évaluer un projet d’IA et ses effets sur le travail</title>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"Évaluer un projet d’intelligence artificielle et ses effets sur le travail","url":"https://www.iasantetravail.com/evaluer/","description":"Évaluer un projet d’intelligence artificielle avant son déploiement, suivre ses effets sur le travail réel ou comprendre l’évaluation des performances d’un modèle.","inLanguage":"fr-FR","dateModified":"2026-07-13","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail","url":"https://www.iasantetravail.com/a-propos/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.iasantetravail.com/"},{"@type":"ListItem","position":2,"name":"Évaluer","item":"https://www.iasantetravail.com/evaluer/"}]}]</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/site.css"/>
+<link rel="stylesheet" href="../assets/css/evaluer.css?v=1.0"/>
+
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="msapplication-TileColor" content="#A84E1F"/>
+
 </head>
-<body class="inner-page page-evaluer" data-page="evaluer" data-root="../">
+<body class="inner-page page-evaluer page-evaluer-refined" data-page="evaluer" data-root="../">
+
 <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<nav class="nav glass" aria-label="Navigation principale">
-  <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span>IA &amp; Santé au Travail</a>
+<nav aria-label="Navigation principale" class="nav glass">
+  <a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
   <div class="nav-links" id="navLinks">
-    <a href="../comprendre/">Comprendre</a><a href="../usages-terrain/">Usages &amp; terrain</a><a aria-current="page" class="is-active" href="../evaluer/">Évaluer</a><a href="../risques-prevention/">Risques &amp; prévention</a><a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
-    <details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu"><a href="../ressources/modeles/">Panorama des modèles</a><a href="../a-propos/">À propos et publications</a><a href="../mentions-legales/">Mentions légales</a></div></details>
+    <a href="../comprendre/">Comprendre</a>
+    <a href="../usages-terrain/">Usages &amp; terrain</a>
+    <a aria-current="page" class="is-active" href="../evaluer/">Évaluer</a>
+    <a href="../risques-prevention/">Risques &amp; prévention</a>
+    <a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
+    <details class="nav-resources">
+      <summary>Ressources</summary>
+      <div class="nav-resources-menu">
+        <a href="../ressources/modeles/">Panorama des modèles</a>
+        <a href="../a-propos/">À propos et publications</a>
+        <a href="../mentions-legales/">Mentions légales</a>
+      </div>
+    </details>
   </div>
-  <div class="nav-tools"><button class="search-open" type="button" aria-label="Rechercher sur le site">⌕</button><div class="lang-switch" aria-label="Choix de la langue"><a class="active" href="../evaluer/" lang="fr" hreflang="fr">FR</a><a href="../en/evaluate/" lang="en" hreflang="en">EN</a></div><button class="nav-menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks"><span>Menu</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button><a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+  <div class="nav-tools">
+    <button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+    <div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="" lang="fr">FR</a><a href="../en/evaluate/" lang="en">EN</a></div>
+    <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
+    <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+  </div>
 </nav>
+
 <main id="main-content" tabindex="-1">
   <header class="eval-hero">
     <div class="wrap eval-hero-inner">
       <span class="kicker">Évaluer</span>
-      <h1>Choisir le bon outil</h1>
-      <p>Comprendre comment évaluer un modèle, ou examiner les effets potentiels et observés d’un projet d’IA sur le travail.</p>
+      <h1>Évaluer un projet d’intelligence artificielle et <em>ses effets sur le travail</em></h1>
+      <p>Choisissez l’outil adapté au stade du projet : analyse avant déploiement, suivi des effets observés ou compréhension des performances d’un modèle.</p>
+      <div style="margin-top:26px"><a class="btn btn-solid" href="#choisir-evaluation">Choisir une évaluation</a></div>
     </div>
   </header>
 
-  <section class="eval-links" aria-label="Outils d’évaluation">
-    <div class="wrap eval-grid">
-      <article class="eval-card">
-        <span class="eval-badge">Publication à venir</span>
-        <h2>Comprendre les benchmarks</h2>
-        <p>Une courte présentation de leur rôle et de l’intérêt d’une évaluation spécifique à la santé au travail française. Le travail scientifique associé est en attente de publication.</p>
-        <div class="eval-actions"><a class="btn btn-solid" href="benchmark/">Découvrir</a></div>
-      </article>
+  <section class="eval-choices" id="choisir-evaluation" aria-labelledby="evalChoicesTitle">
+    <div class="wrap">
+      <div class="section-head" style="max-width:800px;margin-bottom:28px">
+        <span class="kicker">Trois situations</span>
+        <h2 id="evalChoicesTitle">Quel type d’évaluation recherchez-vous&nbsp;?</h2>
+      </div>
 
-      <article class="eval-card">
-        <span class="mini-kicker">Questionnaires</span>
-        <h2>Évaluer l’impact d’un projet d’IA</h2>
-        <p>Deux questionnaires exploratoires pour structurer l’analyse avant le déploiement puis suivre les effets réellement observés.</p>
-        <div class="questionnaire-links">
-          <a class="questionnaire-link" href="impact/"><span><strong>Évaluation initiale</strong><span>Avant le pilote ou la généralisation.</span></span></a>
-          <a class="questionnaire-link" href="impact/suivi.html"><span><strong>Suivi après déploiement</strong><span>Pour documenter les effets dans le temps.</span></span></a>
-        </div>
-      </article>
+      <div class="eval-choice-grid">
+        <article class="eval-choice">
+          <span class="mini-kicker">Avant le déploiement</span>
+          <h2>Évaluer l’impact potentiel d’un projet d’IA</h2>
+          <p>Repérer les effets possibles sur l’organisation, les conditions de travail et les risques psychosociaux avant le pilote ou la généralisation.</p>
+          <ul><li>18 questions</li><li>Environ 10 minutes</li><li>Cadre Gollac + axes IA</li><li>Rapport PDF</li></ul>
+          <div class="eval-actions"><a class="btn btn-solid" href="impact/">Commencer l’évaluation initiale</a></div>
+        </article>
+
+        <article class="eval-choice">
+          <span class="mini-kicker">Après le déploiement</span>
+          <h2>Suivre les effets de l’IA dans le travail réel</h2>
+          <p>Documenter à une date donnée les effets observés sur la charge, l’autonomie, les compétences, les collectifs et la qualité du travail.</p>
+          <ul><li>18 questions</li><li>Suivi daté</li><li>Code anonyme local</li><li>Rapport archivable</li></ul>
+          <div class="eval-actions"><a class="btn btn-solid" href="impact/suivi.html">Commencer le suivi après déploiement</a></div>
+        </article>
+
+        <article class="eval-choice eval-choice--secondary">
+          <div>
+            <span class="eval-badge">Article en attente de publication</span>
+            <h2>Comprendre les benchmarks d’intelligence artificielle</h2>
+          </div>
+          <div>
+            <p>Comprendre ce qu’un score mesure, reconnaître un protocole robuste et saisir pourquoi la santé au travail française nécessite une évaluation spécialisée.</p>
+            <ul><li>Corpus</li><li>Référence</li><li>Reproductibilité</li><li>Profils d’erreur</li></ul>
+            <div class="eval-actions"><a class="btn btn-solid" href="benchmark/">Comprendre et interpréter un benchmark</a></div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </main>
-<footer><div class="wrap"><div class="foot-grid"><div class="foot-brand"><a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p></div><div><h4>Parcours</h4><ul><li><a href="../comprendre/">Comprendre</a></li><li><a href="../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../evaluer/">Évaluer</a></li><li><a href="../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div><div><h4>Ressources</h4><ul><li><a href="../ressources/modeles/">Panorama des modèles</a></li><li><a href="../a-propos/">À propos et publications</a></li></ul></div><div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a></li><li><a href="../confidentialite/">Confidentialité</a></li></ul></div></div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail</span><span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span></div></div></footer>
+
+<section class="eval-author" aria-label="Auteur du contenu">
+  <div class="wrap"><p>Rédigé par le <a href="../a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p></div>
+</section>
+
+
+<footer><div class="wrap"><div class="foot-grid">
+  <div class="foot-brand"><a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
+  <div><h4>Évaluer</h4><ul><li><a href="../evaluer/">Vue d’ensemble</a></li><li><a href="../evaluer/impact/">Évaluation avant déploiement</a></li><li><a href="../evaluer/impact/suivi.html">Suivi après déploiement</a></li><li><a href="../evaluer/benchmark/">Comprendre les benchmarks</a></li></ul></div>
+  <div><h4>Parcours</h4><ul><li><a href="../comprendre/">Comprendre</a></li><li><a href="../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../confidentialite/">Confidentialité</a></li></ul></div>
+</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span></div></div></footer>
 <button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
-<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, hallucinations, benchmark…" type="search"><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog>
-<script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/site.js"></script>
+<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. questionnaire IA, Gollac, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog>
+
+<script defer src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search-index-evaluer.js"></script>
+<script defer src="../assets/js/site.js"></script>
 </body>
 </html>

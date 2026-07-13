@@ -1,29 +1,36 @@
-# Rubrique Usages & terrain — architecture en sous-pages
+# Refonte de la rubrique Évaluer — épuration et SEO
 
 ## Fichiers à téléverser
 
-- `usages-terrain/index.html` — remplace la page actuelle.
-- `usages-terrain/exemple-sante-travail/index.html` — nouveau.
-- `usages-terrain/avant-deploiement/index.html` — nouveau.
-- `usages-terrain/retours-terrain/index.html` — nouveau.
-- `assets/css/usages-terrain.css` — nouveau.
-- `assets/js/search-index-usages.js` — nouveau complément de recherche chargé par ces quatre pages.
-- `sitemap.xml` — remplace le sitemap actuel.
+- `evaluer/index.html`
+- `evaluer/benchmark/index.html`
+- `evaluer/impact/index.html`
+- `evaluer/impact/suivi.html`
+- `assets/css/evaluer.css`
+- `assets/css/evaluer-tools.css`
+- `assets/js/search-index-evaluer.js`
+- `sitemap.xml`
 
-## Architecture
+## Éléments inchangés
 
-1. **Page carrefour** avec L’État arcadien ou pastoral.
-2. **Exemple concret en santé au travail** consacré à l’article TF 335.
-3. **Avant déploiement** consacré au choix de l’usage, aux niveaux de vigilance et au pilote.
-4. **Retours de terrain** avec River in the Catskills, les enseignements post-déploiement et les indicateurs de suivi.
+Ne remplacez pas les fichiers suivants : ils ne sont pas contenus dans ce paquet.
 
-## Compatibilité
+- `evaluer/impact/assets/js/impact-config.js`
+- `evaluer/impact/assets/js/impact-assessment.js`
+- `evaluer/impact/assets/js/impact-followup.js`
+- `evaluer/impact/assets/css/impact-assessment.css`
 
-Les anciennes ancres principales sont conservées sur la page carrefour :
-- `#pratique-tf335`
-- `#pratique-usages`
-- `#retours-terrain`
+Les questions, la notation, les calculs, les résultats et les exports restent donc pilotés par les fichiers déjà présents dans le dépôt.
 
-Les quatre pages utilisent les fichiers partagés existants `assets/css/site.css`, `assets/js/site.js` et `assets/js/search-index.js`.
+## Principales modifications
 
-Aucune autre page du site n’est modifiée.
+- page Évaluer transformée en carrefour de trois parcours ;
+- questionnaires mis en avant avant le benchmark ;
+- page benchmark raccourcie, peinture conservée ;
+- introductions des deux outils allégées ;
+- métadonnées SEO distinctes pour chaque URL ;
+- Open Graph, Twitter Cards, JSON-LD et fils d’Ariane ;
+- suppression des faux `hreflang` anglais sur les outils non traduits ;
+- byline visible vers `/a-propos/` ;
+- recherche interne complétée ;
+- sitemap mis à jour.
