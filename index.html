@@ -1,195 +1,580 @@
-<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Ressource indépendante et sourcée pour comprendre, évaluer et encadrer les usages de l’intelligence artificielle au travail."><meta name="author" content="Dr Charles Broutin"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="theme-color" content="#EADDC6"><link rel="canonical" href="https://www.iasantetravail.com/"><link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/"><link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/"><link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/"><meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="IA & Santé au Travail"><meta property="og:title" content="IA & Santé au Travail — Comprendre, évaluer, prévenir"><meta property="og:description" content="Ressource indépendante et sourcée pour comprendre, évaluer et encadrer les usages de l’intelligence artificielle au travail."><meta property="og:url" content="https://www.iasantetravail.com/"><meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-home.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="IA & Santé au Travail — Comprendre, évaluer, prévenir"><meta name="twitter:description" content="Ressource indépendante et sourcée pour comprendre, évaluer et encadrer les usages de l’intelligence artificielle au travail."><title>IA & Santé au Travail — Comprendre, évaluer, prévenir</title><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "IA & Santé au Travail", "url": "https://www.iasantetravail.com/", "inLanguage": "fr-FR", "description": "Ressource indépendante et sourcée pour comprendre, évaluer et encadrer les usages de l’intelligence artificielle au travail.", "dateModified": "2026-07-11", "author": {"@type": "Person", "name": "Dr Charles Broutin", "jobTitle": "Médecin du travail", "sameAs": ["https://www.linkedin.com/in/charles-broutin-a03932201"]}, "publisher": {"@type": "Person", "name": "Dr Charles Broutin"}}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="preload" as="image" href="assets/images/consummation-1280.webp" type="image/webp"><link rel="stylesheet" href="assets/css/site.css"><!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Ressource indépendante pour comprendre l’intelligence artificielle au travail, évaluer ses usages, prévenir ses effets et construire un cadre adapté.">
+  <meta name="author" content="Dr Charles Broutin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#EADDC6">
 
-<!-- Site icons -->
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
-<meta name="msapplication-TileColor" content="#A84E1F"/>
-</head><body class="home-page page-accueil" data-page="accueil" data-root="">
-<a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<nav class="nav glass" aria-label="Navigation principale">
-<a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>IA &amp; Santé au Travail</a>
-<div class="nav-links" id="navLinks"><a href="comprendre/">Comprendre</a><a href="usages-terrain/">Usages & terrain</a><a href="evaluer/">Évaluer</a><a href="risques-prevention/">Risques & prévention</a><a href="droit-gouvernance/">Droit & gouvernance</a>
-<details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu">
-<a href="ressources/modeles/">Panorama des modèles</a><a href="a-propos/">À propos et publications</a><a href="mentions-legales/">Mentions légales</a>
-</div></details></div>
-<div class="nav-tools"><button class="search-open" type="button" aria-label="Rechercher sur le site">⌕</button>
-<div class="lang-switch" aria-label="Choix de la langue"><a class="active" href="./" lang="fr" hreflang="fr">FR</a><a href="en/" lang="en" hreflang="en">EN</a></div>
-<button class="nav-menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks"><span>Menu</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
-<a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
-</nav><main id="main-content" tabindex="-1"><section class="page active" id="page-accueil">
-<header class="page-hero">
-<div class="wrap">
-<div class="hero-frame">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/consummation-640.webp 640w, assets/images/consummation-960.webp 960w, assets/images/consummation-1280.webp 1280w, assets/images/consummation-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'Apogée de l'Empire, 1836" decoding="async" fetchpriority="high" loading="eager" src="assets/images/consummation-1800.jpg"/></picture>
-<div class="veil"></div>
-<p class="hero-credit">Thomas Cole, The Course of Empire — The Consummation, 1836</p>
-<div class="hero-inner">
-<span class="stage-tag glass glass--dark"><span class="roman">Le cycle de l'empire</span> · Repères pour la prévention</span>
-<h1>L’intelligence artificielle transforme le travail.<br/><em>L’évaluer avant de la déployer.</em></h1><p class="hero-descriptor">Usages, évaluation, risques psychosociaux et cadre juridique.</p>
-<div class="hero-card glass glass--dark">Une ressource indépendante pour les médecins du travail, les équipes SPST, les représentants du personnel et les organisations : comprendre les systèmes, apprécier leurs usages, anticiper leurs effets et construire un cadre adapté au travail réel.</div>
-<div class="hero-actions"><a class="btn btn-solid" href="comprendre/">Comprendre les fondamentaux</a><a class="btn btn-glassy glass glass--dark" href="risques-prevention/">Explorer les enjeux</a></div>
-</div>
-</div>
-</div>
-</header>
-<section class="trust reveal">
-<div class="wrap">
-<p>Publications, formations et contributions de l’auteur</p>
-<div class="trust-row"><a class="trust-chip" href="https://www.inrs.fr/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Références en Santé au Travail · TF 335</a><a class="trust-chip" href="https://doi.org/10.1016/j.admp.2025.102877" rel="noopener noreferrer" target="_blank">Archives des Maladies Professionnelles</a><a class="trust-chip" href="a-propos/">Université de Lille</a><a class="trust-chip" href="a-propos/">Société Française de Santé au Travail</a></div>
-</div>
-</section>
-<section class="section home-overview" style="padding-top:36px;padding-bottom:28px">
-<div class="wrap">
-<div class="home-overview-grid reveal">
-<div class="home-overview-main glass">
-<span class="kicker">Pourquoi ce site</span>
-<h2 id="une-ressource-editoriale-pour-decider-avec-methode">Une ressource éditoriale pour décider avec méthode</h2>
-<p class="home-lead">Le site rassemble des repères scientifiques, juridiques et pratiques pour analyser l’intelligence artificielle à partir des tâches, des collectifs et des conditions réelles de travail.</p>
-<p>Il couvre trois familles à ne pas confondre : l’IA générative et les modèles de langage ; les systèmes prédictifs ou décisionnels ; le management algorithmique, la surveillance et l’organisation automatisée du travail.</p>
-<div class="home-points">
-<div class="home-point">
-<strong>Comprendre</strong>
-<span>Aller à l’essentiel sur les LLMs, leurs mécanismes, leurs limites et les bons réflexes d’usage.</span>
-</div>
-<div class="home-point">
-<strong>Décider</strong>
-<span>S’appuyer sur des exemples, des résultats comparatifs et des repères concrets plutôt que sur des promesses marketing.</span>
-</div>
-<div class="home-point">
-<strong>Prévenir</strong>
-<span>Regarder l’IA comme une transformation du travail réel et non comme un simple outil logiciel à brancher.</span>
-</div>
-</div>
-</div>
-<aside class="home-overview-side reveal">
-<div class="home-quickstart glass">
-<span class="mini-kicker">Entrer par votre besoin</span>
-<h3>Choisir le bon parcours</h3>
-<p>Chaque entrée conduit directement à la question professionnelle correspondante.</p>
-<div class="quick-links">
-<a href="comprendre/"><span class="num">I</span><span class="txt"><strong>Je découvre l’IA</strong><span>Définitions, mécanismes et limites.</span></span><span aria-hidden="true">→</span></a>
-<a href="usages-terrain/"><span class="num">II</span><span class="txt"><strong>Un usage est envisagé</strong><span>Usages crédibles et niveaux de vigilance.</span></span><span aria-hidden="true">→</span></a>
-<a href="evaluer/"><span class="num">III</span><span class="txt"><strong>Je dois évaluer un modèle</strong><span>Benchmark, protocole et interprétation.</span></span><span aria-hidden="true">→</span></a>
-<a href="risques-prevention/"><span class="num">IV</span><span class="txt"><strong>J’observe des effets sur le travail</strong><span>RPS, erreurs, charge et surveillance.</span></span><span aria-hidden="true">→</span></a>
-<a href="droit-gouvernance/"><span class="num">V</span><span class="txt"><strong>Je prépare le cadre</strong><span>AI Act, RGPD, CSE et prévention.</span></span><span aria-hidden="true">→</span></a>
-</div></div>
-<div class="home-pubs glass">
-<span class="mini-kicker">Périmètre</span><h3>Ce que vous trouverez ici</h3>
-<p>Des contenus datés, sourcés et révisables. Les connaissances établies, les signaux émergents et l’analyse éditoriale sont distingués autant que possible.</p>
-<div class="scope-list"><span>IA générative et LLM</span><span>Systèmes prédictifs</span><span>Management algorithmique</span></div></div>
-</aside>
-</div>
-</div>
-</section>
-<section class="section home-method" id="methode-editoriale" style="padding-top:0">
-<div class="wrap"><div class="method-panel"><div><span class="kicker">Méthode éditoriale</span><h2 id="sourcer-dater-distinguer">Sourcer, dater, distinguer</h2><p>Une affirmation juridique n’a pas le même statut qu’un résultat scientifique, une décision de première instance ou une analyse professionnelle. Le site rend cette différence visible, cite les sources au plus près du propos et indique les limites lorsque les données restent incertaines.</p></div><div class="method-links"><a href="a-propos/">Connaître l’auteur et la démarche</a><a href="https://www.inrs.fr/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l’article TF 335</a><a href="https://doi.org/10.1016/j.admp.2025.102877" rel="noopener noreferrer" target="_blank">Voir l’article sur les RPS</a></div></div></div></section><section class="section home-updates" id="mises-a-jour">
-<div class="wrap"><div class="section-head reveal"><span class="kicker">Dernières mises à jour</span><h2 id="un-site-date-pas-une-photographie-intemporelle">Un site daté, pas une photographie intemporelle</h2><p>Les éléments susceptibles d’évoluer sont vérifiés et signalés. Les changements importants sont regroupés ici.</p></div>
-<div class="update-grid">
-<article class="update-card reveal"><time datetime="2026-07-11">11 juillet 2026</time><h3>Refonte éditoriale et technique</h3><p>Nouvelles URL, sommaires, niveaux de preuve, recherche interne et amélioration de l’accessibilité mobile.</p></article>
-<article class="update-card reveal"><time datetime="2026-07-11">11 juillet 2026</time><h3>Cadre juridique actualisé</h3><p>Calendrier européen, consultation du CSE, décisions récentes et place du SPST.</p><a href="droit-gouvernance/">Lire la rubrique</a></article>
-<article class="update-card reveal"><time datetime="2026-07-11">11 juillet 2026</time><h3>Panorama des modèles</h3><p>Comparaisons datées, coûts publics et limites méthodologiques.</p><a href="ressources/modeles/">Voir le panorama</a></article>
-</div></div></section><section class="section" id="cycle">
-<div class="wrap">
-<div class="section-head reveal">
-<span class="kicker">Le choix des œuvres</span>
-<h2 id="thomas-cole-le-paysage-comme-maniere-de-penser-les-transformations">Thomas Cole, le paysage comme manière de penser les transformations</h2>
-<p>Les tableaux sont présentés sans texte superposé afin de laisser apparaître leur composition dans son intégralité. Faites-les défiler horizontalement, au clavier ou avec les flèches ; chaque œuvre reste cliquable et conduit à la page qu’elle accompagne.</p>
-</div>
-<div class="cole-context">
-<article class="cole-context-card glass reveal">
-<span class="eyebrow">Pourquoi ces œuvres ?</span>
-<h3>Une trajectoire, plutôt qu’une simple illustration</h3>
-<p><em>Le Cours de l’Empire</em>, peint entre 1833 et 1836, suit une même civilisation depuis un paysage encore sauvage jusqu’à son essor, son apogée puis sa destruction. Cette progression permet de représenter l’intelligence artificielle comme une transformation inscrite dans le temps : elle apparaît, s’organise en usages, se charge de promesses, modifie les équilibres du travail et oblige à penser ses conséquences.</p>
-<p>Le site reprend ce mouvement sans reproduire littéralement le cycle. <em>L’État sauvage</em>, <em>L’Arcadie</em>, <em>L’Apogée</em> et <em>La Destruction</em> structurent les étapes de compréhension, d’usage, d’évaluation et de prévention. <em>Le Rêve de l’architecte</em> incarne la construction d’un cadre juridique et organisationnel. <em>Le Gobelet du Titan</em>, <em>River in the Catskills</em> et <em>The Oxbow</em> prolongent la métaphore vers le paysage des modèles, le travail réel et la position de l’observateur.</p>
-</article>
-<article class="cole-context-card glass glass--lavande reveal">
-<span class="eyebrow">Thomas Cole · 1801–1848</span>
-<h3>Fondateur de la Hudson River School</h3>
-<p>Né à Bolton-le-Moors, dans le Lancashire, Thomas Cole émigre avec sa famille aux États-Unis en 1818. Largement autodidacte, il se fait connaître à New York à partir de 1825 grâce à ses paysages de la vallée de l’Hudson et des Catskills. Il est aujourd’hui considéré comme le fondateur de la Hudson River School, mouvement majeur de la peinture de paysage américaine du XIX<sup>e</sup> siècle.</p>
-<p>Chez Cole, le paysage n’est jamais seulement descriptif. Il devient historique, moral et allégorique. Ses grands ensembles, notamment <em>Le Cours de l’Empire</em> et <em>Le Voyage de la vie</em>, interrogent le progrès, la fragilité des civilisations et la place de l’être humain dans la nature. Également intéressé par l’architecture, il peint en 1840 <em>Le Rêve de l’architecte</em>, panorama imaginaire où plusieurs traditions architecturales se succèdent.</p>
-<span class="cole-source">Repères biographiques : <a href="https://thomascole.org/thomas-cole/" rel="noopener noreferrer" target="_blank">Thomas Cole National Historic Site</a> · <a href="https://emuseum.toledomuseum.org/objects/54973/the-architects-dream" rel="noopener noreferrer" target="_blank">Toledo Museum of Art</a>.</span>
-</article>
-</div>
-<div class="art-carousel-shell reveal">
-<div aria-label="Galerie des œuvres de Thomas Cole utilisées sur le site" aria-roledescription="carrousel" class="art-carousel" id="artCarousel" role="region" tabindex="0">
-<a aria-label="L’État sauvage, 1836 — ouvrir la page Comprendre l’IA" class="art-slide" data-art-meta="1836 · Comprendre l’IA" data-art-title="L’État sauvage" href="comprendre/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/savage-state-640.webp 640w, assets/images/savage-state-960.webp 960w, assets/images/savage-state-1280.webp 1280w, assets/images/savage-state-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'État sauvage, 1836" decoding="async" loading="lazy" src="assets/images/savage-state-1800.jpg"/></picture>
-</a>
-<a aria-label="L’État arcadien ou pastoral, 1836 — ouvrir la page L’IA en pratique" class="art-slide" data-art-meta="1836 · L’IA en pratique" data-art-title="L’État arcadien ou pastoral" href="usages-terrain/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/arcadian-state-640.webp 640w, assets/images/arcadian-state-960.webp 960w, assets/images/arcadian-state-1280.webp 1280w, assets/images/arcadian-state-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'État arcadien ou pastoral, 1836" decoding="async" loading="lazy" src="assets/images/arcadian-state-1800.jpg"/></picture>
-</a>
-<a aria-label="L’Apogée de l’Empire, 1836 — ouvrir la page Évaluer les promesses" class="art-slide" data-art-meta="1836 · Évaluer les promesses" data-art-title="L’Apogée de l’Empire" href="evaluer/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/consummation-640.webp 640w, assets/images/consummation-960.webp 960w, assets/images/consummation-1280.webp 1280w, assets/images/consummation-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'Apogée de l'Empire, 1836" decoding="async" loading="lazy" src="assets/images/consummation-1800.jpg"/></picture>
-</a>
-<a aria-label="Le Gobelet du Titan, 1833 — ouvrir la page Panorama des modèles" class="art-slide" data-art-meta="1833 · Panorama des modèles" data-art-title="Le Gobelet du Titan" href="ressources/modeles/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/titans-goblet-640.webp 640w, assets/images/titans-goblet-960.webp 960w, assets/images/titans-goblet-1280.webp 1280w, assets/images/titans-goblet-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, Le Gobelet du Titan, 1833" decoding="async" loading="lazy" src="assets/images/titans-goblet-1800.jpg"/></picture>
-</a>
-<a aria-label="River in the Catskills, 1843 — ouvrir la page L’IA sur le terrain" class="art-slide" data-art-meta="1843 · L’IA sur le terrain" data-art-title="River in the Catskills" href="usages-terrain/#retours-terrain">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/river-catskills-640.webp 640w, assets/images/river-catskills-960.webp 960w, assets/images/river-catskills-1280.webp 1280w, assets/images/river-catskills-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, River in the Catskills, 1843" decoding="async" loading="lazy" src="assets/images/river-catskills-1800.jpg"/></picture>
-</a>
-<a aria-label="La Destruction, 1836 — ouvrir la page Anticiper les risques" class="art-slide" data-art-meta="1836 · Anticiper les risques" data-art-title="La Destruction" href="risques-prevention/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/destruction-640.webp 640w, assets/images/destruction-960.webp 960w, assets/images/destruction-1280.webp 1280w, assets/images/destruction-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, La Destruction, 1836" decoding="async" loading="lazy" src="assets/images/destruction-1800.jpg"/></picture>
-</a>
-<a aria-label="Le Rêve de l’architecte, 1840 — ouvrir la page Construire le cadre" class="art-slide" data-art-meta="1840 · Construire le cadre" data-art-title="Le Rêve de l’architecte" href="droit-gouvernance/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/architects-dream-640.webp 640w, assets/images/architects-dream-960.webp 960w, assets/images/architects-dream-1280.webp 1280w, assets/images/architects-dream-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, Le Rêve de l’architecte, 1840" decoding="async" loading="lazy" src="assets/images/architects-dream-1800.jpg"/></picture>
-</a>
-<a aria-label="The Oxbow, 1836 — ouvrir la page À propos" class="art-slide" data-art-meta="1836 · À propos" data-art-title="The Oxbow" href="a-propos/">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="assets/images/oxbow-640.webp 640w, assets/images/oxbow-960.webp 960w, assets/images/oxbow-1280.webp 1280w, assets/images/oxbow-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, The Oxbow, 1836" decoding="async" loading="lazy" src="assets/images/oxbow-1800.jpg"/></picture>
-</a>
-</div>
-<button aria-label="Œuvre précédente" class="art-nav art-prev" type="button"><svg aria-hidden="true" fill="none" height="22" viewbox="0 0 16 16" width="22"><path d="M14 8H3M7 3.5 2.5 8 7 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-<button aria-label="Œuvre suivante" class="art-nav art-next" type="button"><svg aria-hidden="true" fill="none" height="22" viewbox="0 0 16 16" width="22"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-<div class="art-carousel-footer">
-<div aria-live="polite" class="art-current">
-<strong class="art-current-title">L’État sauvage</strong>
-<span class="art-current-meta">1836 · Comprendre l’IA</span>
-</div>
-<div class="art-carousel-controls">
-<div aria-label="Choisir une œuvre" class="art-dots" role="group">
-<button aria-current="true" aria-label="Afficher l’œuvre 1" class="art-dot" data-slide="0" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 2" class="art-dot" data-slide="1" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 3" class="art-dot" data-slide="2" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 4" class="art-dot" data-slide="3" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 5" class="art-dot" data-slide="4" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 6" class="art-dot" data-slide="5" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 7" class="art-dot" data-slide="6" type="button"></button>
-<button aria-current="false" aria-label="Afficher l’œuvre 8" class="art-dot" data-slide="7" type="button"></button>
-</div>
-<span class="art-counter">1 / 8</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section" id="contact" style="padding-top:0">
-<div class="wrap">
-<div class="news-band glass glass--lavande reveal">
-<span class="halo h1"></span><span class="halo h2"></span>
-<h2>Entrer en contact</h2>
-<p>Ce site est un projet éditorial indépendant consacré à l’intelligence artificielle appliquée à la santé au travail.</p>
-<p>Pour échanger autour d’un projet, d’une publication, d’une intervention ou simplement discuter de ces sujets, vous pouvez me contacter directement sur LinkedIn.</p>
-<div style="margin-top:32px">
-<a class="btn btn-solid" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Me contacter sur LinkedIn</a>
-</div>
-</div>
-</div>
-</section>
-</section></main>
-<footer><div class="wrap"><div class="foot-grid">
-<div class="foot-brand"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
-<div><h4>Parcours</h4><ul><li><a href="comprendre/">Comprendre</a></li><li><a href="usages-terrain/">Usages &amp; terrain</a></li><li><a href="evaluer/">Évaluer</a></li><li><a href="risques-prevention/">Risques &amp; prévention</a></li><li><a href="droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
-<div><h4>Ressources</h4><ul><li><a href="ressources/modeles/">Panorama des modèles</a></li><li><a href="a-propos/">À propos et publications</a></li><li><a href="./#mises-a-jour">Dernières mises à jour</a></li></ul></div>
-<div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contacter l’auteur sur LinkedIn</a></li><li><a href="confidentialite/">Confidentialité</a></li></ul></div>
-</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span><span><a href="mentions-legales/">Mentions légales</a> · <a href="confidentialite/">Confidentialité</a></span></div></div></footer>
-<button id="backToTop" type="button" aria-label="Revenir en haut">↑</button>
-<dialog class="search-dialog" id="siteSearch" aria-labelledby="searchTitle"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button class="search-close" type="button" aria-label="Fermer">×</button></div><input class="search-input" id="searchInput" type="search" placeholder="Ex. CSE, hallucinations, benchmark…" autocomplete="off"><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog><script src="assets/js/search-index.js" defer></script><script src="assets/js/site.js" defer></script></body></html>
+  <link rel="canonical" href="https://www.iasantetravail.com/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="IA &amp; Santé au Travail">
+  <meta property="og:title" content="IA &amp; Santé au Travail — Comprendre, évaluer, prévenir">
+  <meta property="og:description" content="Des repères et des outils pour analyser l’intelligence artificielle à partir du travail réel.">
+  <meta property="og:url" content="https://www.iasantetravail.com/">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-home.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IA &amp; Santé au Travail — Comprendre, évaluer, prévenir">
+  <meta name="twitter:description" content="Des repères et des outils pour analyser l’intelligence artificielle à partir du travail réel.">
+
+  <title>IA &amp; Santé au Travail — Comprendre, évaluer, prévenir</title>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"IA & Santé au Travail",
+    "url":"https://www.iasantetravail.com/",
+    "inLanguage":"fr-FR",
+    "description":"Ressource indépendante pour comprendre l’intelligence artificielle au travail, évaluer ses usages, prévenir ses effets et construire un cadre adapté.",
+    "dateModified":"2026-07-13",
+    "author":{
+      "@type":"Person",
+      "name":"Dr Charles Broutin",
+      "jobTitle":"Médecin du travail",
+      "sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]
+    },
+    "publisher":{"@type":"Person","name":"Dr Charles Broutin"}
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/consummation-1280.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <!-- Ajustements limités à la page d'accueil -->
+  <style>
+    .page-accueil-simplifiee .page-hero{padding-bottom:0}
+    .page-accueil-simplifiee .hero-frame{min-height:clamp(520px,70vh,690px)}
+    .page-accueil-simplifiee .hero-inner{gap:18px}
+    .page-accueil-simplifiee .page-hero h1{max-width:18ch}
+    .page-accueil-simplifiee .hero-card{max-width:700px}
+    .page-accueil-simplifiee .hero-card p{margin:0}
+    .page-accueil-simplifiee .hero-audience{
+      margin-top:-5px;
+      font-size:.82rem;
+      color:rgba(244,235,218,.8)
+    }
+
+    .home-direct{padding:clamp(54px,7vw,82px) 0}
+    .home-direct .section-head{margin-bottom:30px}
+    .need-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px
+    }
+    .need-card{
+      display:flex;
+      flex-direction:column;
+      min-height:245px;
+      padding:25px;
+      border-radius:24px;
+      background:rgba(244,235,218,.54);
+      border:1px solid rgba(23,20,15,.08);
+      box-shadow:0 18px 50px -38px rgba(23,20,15,.35)
+    }
+    .need-card .need-num{
+      display:grid;
+      place-items:center;
+      width:34px;
+      height:34px;
+      margin-bottom:23px;
+      border-radius:50%;
+      background:var(--encre);
+      color:var(--creme);
+      font-family:'Fraunces',Georgia,serif;
+      font-size:.86rem
+    }
+    .need-card h3{font-size:1.35rem;margin-bottom:10px}
+    .need-card p{color:var(--encre-60);font-size:.92rem}
+    .need-card .need-links{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:7px;
+      margin-top:auto;
+      padding-top:20px
+    }
+    .need-card .need-links a{
+      color:var(--terra-deep);
+      font-weight:650;
+      font-size:.88rem
+    }
+    .need-card .need-links a:hover{text-decoration:underline;text-underline-offset:3px}
+
+    .tools-section{padding-top:0}
+    .tool-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px
+    }
+    .tool-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+      padding:24px 26px;
+      border-radius:22px;
+      background:rgba(255,255,255,.34);
+      border:1px solid rgba(23,20,15,.09);
+      transition:transform .25s ease,background .25s ease
+    }
+    .tool-card:hover{transform:translateY(-2px);background:rgba(255,255,255,.5)}
+    .tool-card h3{font-size:1.18rem;margin-bottom:6px}
+    .tool-card p{color:var(--encre-60);font-size:.88rem}
+    .tool-arrow{
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      background:var(--lavande);
+      font-weight:700
+    }
+
+    .credibility-band{
+      padding:0 0 clamp(54px,7vw,82px)
+    }
+    .credibility-panel{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:26px;
+      align-items:center;
+      padding:28px 30px
+    }
+    .credibility-panel h2{font-size:clamp(1.55rem,2.8vw,2.2rem);margin-bottom:8px}
+    .credibility-panel p{color:var(--encre-60);max-width:700px}
+    .credibility-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:8px
+    }
+    .credibility-links a{
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.48);
+      border:1px solid rgba(23,20,15,.08);
+      font-size:.78rem;
+      font-weight:650
+    }
+
+    .home-updates .section-head{margin-bottom:28px}
+    .home-updates .update-grid{gap:14px}
+
+    .art-signature{padding-top:0}
+    .art-signature-head{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(260px,.6fr);
+      gap:30px;
+      align-items:end;
+      margin-bottom:22px
+    }
+    .art-signature-head p{color:var(--encre-60)}
+    .art-mini-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px
+    }
+    .art-mini{
+      position:relative;
+      min-height:190px;
+      overflow:hidden;
+      border-radius:20px;
+      background:var(--cole-nuit)
+    }
+    .art-mini img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .art-mini:hover img{transform:scale(1.025)}
+    .art-mini::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 48%,rgba(23,20,15,.74))
+    }
+    .art-mini span{
+      position:absolute;
+      z-index:2;
+      left:15px;
+      right:15px;
+      bottom:13px;
+      color:var(--creme);
+      font-size:.8rem;
+      font-weight:650
+    }
+    .art-source{
+      display:block;
+      margin-top:12px;
+      color:var(--encre-60);
+      font-size:.72rem
+    }
+    .art-source a{text-decoration:underline;text-underline-offset:2px}
+
+    .page-accueil-simplifiee #contact .news-band{padding:clamp(28px,4vw,44px)}
+    .page-accueil-simplifiee #contact .news-band p{max-width:720px}
+
+    @media(max-width:980px){
+      .need-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .credibility-panel{grid-template-columns:1fr}
+      .credibility-links{justify-content:flex-start}
+      .art-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:700px){
+      .page-accueil-simplifiee .hero-frame{min-height:570px}
+      .page-accueil-simplifiee .hero-card{font-size:.94rem}
+      .need-grid,.tool-grid{grid-template-columns:1fr}
+      .need-card{min-height:auto}
+      .art-signature-head{grid-template-columns:1fr;gap:12px}
+    }
+    @media(max-width:460px){
+      .art-mini-grid{grid-template-columns:1fr}
+      .art-mini{min-height:180px}
+    }
+  </style>
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},
+    plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init();
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#A84E1F">
+</head>
+
+<body class="home-page page-accueil page-accueil-simplifiee" data-page="accueil" data-root="">
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <nav class="nav glass" aria-label="Navigation principale">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>IA &amp; Santé au Travail</a>
+    <div class="nav-links" id="navLinks">
+      <a href="comprendre/">Comprendre</a>
+      <a href="usages-terrain/">Usages &amp; terrain</a>
+      <a href="evaluer/">Évaluer</a>
+      <a href="risques-prevention/">Risques &amp; prévention</a>
+      <a href="droit-gouvernance/">Droit &amp; gouvernance</a>
+      <details class="nav-resources">
+        <summary>Ressources</summary>
+        <div class="nav-resources-menu">
+          <a href="ressources/modeles/">Panorama des modèles</a>
+          <a href="a-propos/">À propos et publications</a>
+          <a href="mentions-legales/">Mentions légales</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-tools">
+      <button class="search-open" type="button" aria-label="Rechercher sur le site">⌕</button>
+      <div class="lang-switch" aria-label="Choix de la langue">
+        <a class="active" href="./" lang="fr" hreflang="fr">FR</a>
+        <a href="en/" lang="en" hreflang="en">EN</a>
+      </div>
+      <button class="nav-menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span>Menu</span>
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <section class="page active" id="page-accueil">
+
+      <header class="page-hero">
+        <div class="wrap">
+          <div class="hero-frame">
+            <picture class="responsive-art">
+              <source sizes="(max-width:760px) 100vw,1180px"
+                      srcset="assets/images/consummation-640.webp 640w, assets/images/consummation-960.webp 960w, assets/images/consummation-1280.webp 1280w, assets/images/consummation-1800.webp 1800w"
+                      type="image/webp">
+              <img alt="Thomas Cole, L’Apogée de l’Empire, 1836"
+                   decoding="async"
+                   fetchpriority="high"
+                   loading="eager"
+                   src="assets/images/consummation-1800.jpg">
+            </picture>
+            <div class="veil"></div>
+            <p class="hero-credit">Thomas Cole, The Course of Empire — The Consummation, 1836</p>
+            <div class="hero-inner">
+              <h1>Comprendre et encadrer l’intelligence artificielle <em>au travail.</em></h1>
+              <p class="hero-descriptor">Des repères et des outils pour évaluer un projet, prévenir ses effets et organiser un déploiement responsable.</p>
+              <div class="hero-card glass glass--dark">
+                <p>Une ressource indépendante qui relie fonctionnement des systèmes, usages professionnels, transformations du travail, risques psychosociaux et obligations juridiques.</p>
+              </div>
+              <p class="hero-audience">Santé au travail · Prévention · Employeurs · RH · CSE · Juristes</p>
+              <div class="hero-actions">
+                <a class="btn btn-solid" href="evaluer/impact/">Évaluer un projet d’IA</a>
+                <a class="btn btn-glassy glass glass--dark" href="#parcours">Explorer les ressources</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="home-direct" id="parcours">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="kicker">Commencer par votre besoin</span>
+            <h2>Une question, un parcours direct</h2>
+            <p>Chaque rubrique répond à une fonction précise, sans réintroduire l’ensemble du sujet à chaque étape.</p>
+          </div>
+
+          <div class="need-grid">
+            <article class="need-card reveal">
+              <span class="need-num">I</span>
+              <h3>Comprendre</h3>
+              <p>Identifier le type d’IA, son fonctionnement, ses limites et les points qui nécessitent une vérification humaine.</p>
+              <div class="need-links">
+                <a href="comprendre/">Découvrir les fondamentaux →</a>
+              </div>
+            </article>
+
+            <article class="need-card reveal">
+              <span class="need-num">II</span>
+              <h3>Examiner un usage</h3>
+              <p>Partir d’une tâche réelle, apprécier l’utilité attendue et déterminer le niveau de vigilance nécessaire.</p>
+              <div class="need-links">
+                <a href="usages-terrain/">Voir les usages et le terrain →</a>
+              </div>
+            </article>
+
+            <article class="need-card reveal">
+              <span class="need-num">III</span>
+              <h3>Évaluer</h3>
+              <p>Analyser les effets potentiels ou observés d’un projet et interpréter les comparaisons entre modèles.</p>
+              <div class="need-links">
+                <a href="evaluer/">Accéder aux outils d’évaluation →</a>
+              </div>
+            </article>
+
+            <article class="need-card reveal">
+              <span class="need-num">IV</span>
+              <h3>Prévenir et encadrer</h3>
+              <p>Agir sur les risques pour le travail et les salariés, puis construire la gouvernance adaptée à l’usage.</p>
+              <div class="need-links">
+                <a href="risques-prevention/">Prévenir les risques →</a>
+                <a href="droit-gouvernance/">Vérifier le cadre juridique →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tools-section" id="outils">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="kicker">Outils disponibles</span>
+            <h2>Passer rapidement de la réflexion à l’action</h2>
+            <p>Des outils distincts pour préparer un déploiement, suivre ses effets et comparer les systèmes avec méthode.</p>
+          </div>
+
+          <div class="tool-grid">
+            <a class="tool-card reveal" href="evaluer/impact/">
+              <span><h3>Évaluation avant déploiement</h3><p>Questionnaire d’impact sur l’organisation et les conditions de travail.</p></span>
+              <span class="tool-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="tool-card reveal" href="evaluer/impact/suivi.html">
+              <span><h3>Suivi après déploiement</h3><p>Repérer les effets réels sur la charge, l’autonomie, les collectifs et l’activité.</p></span>
+              <span class="tool-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="tool-card reveal" href="evaluer/benchmark/">
+              <span><h3>Comprendre les benchmarks</h3><p>Lire un score, apprécier un protocole et éviter les conclusions trop générales.</p></span>
+              <span class="tool-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="tool-card reveal" href="ressources/modeles/">
+              <span><h3>Panorama des modèles</h3><p>Comparer capacités, coûts et limites sans réduire le choix à un classement.</p></span>
+              <span class="tool-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="credibility-band" aria-labelledby="credibilite">
+        <div class="wrap">
+          <div class="credibility-panel glass reveal">
+            <div>
+              <span class="kicker">Crédibilité et méthode</span>
+              <h2 id="credibilite">Une approche issue de la santé au travail</h2>
+              <p>Les contenus s’appuient sur une pratique de médecin du travail, des travaux publiés et une lecture croisée des dimensions techniques, organisationnelles, psychosociales et juridiques.</p>
+            </div>
+            <div class="credibility-links" aria-label="Références principales">
+              <a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noopener noreferrer">Références en Santé au Travail · TF 335</a>
+              <a href="https://doi.org/10.1016/j.admp.2025.102877" target="_blank" rel="noopener noreferrer">Archives des Maladies Professionnelles</a>
+              <a href="a-propos/">Auteur, parcours et publications</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-updates" id="mises-a-jour">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="kicker">Dernières mises à jour</span>
+            <h2>Les évolutions importantes du site</h2>
+            <p>Les contenus susceptibles d’évoluer sont datés et actualisés dans leurs rubriques respectives.</p>
+          </div>
+
+          <div class="update-grid">
+            <article class="update-card reveal">
+              <time datetime="2026-07-13">13 juillet 2026</time>
+              <h3>Accueil recentré</h3>
+              <p>Accès plus direct aux besoins, aux outils et aux ressources principales.</p>
+            </article>
+            <article class="update-card reveal">
+              <time datetime="2026-07-11">11 juillet 2026</time>
+              <h3>Cadre juridique actualisé</h3>
+              <p>AI Act, RGPD, consultation du CSE et place du SPST.</p>
+              <a href="droit-gouvernance/">Lire la rubrique</a>
+            </article>
+            <article class="update-card reveal">
+              <time datetime="2026-07-11">11 juillet 2026</time>
+              <h3>Panorama des modèles</h3>
+              <p>Comparaisons datées, coûts publics et limites méthodologiques.</p>
+              <a href="ressources/modeles/">Voir le panorama</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section art-signature" id="thomas-cole">
+        <div class="wrap">
+          <div class="art-signature-head reveal">
+            <div>
+              <span class="kicker">Signature artistique</span>
+              <h2>Thomas Cole comme fil visuel</h2>
+            </div>
+            <p>Ses paysages interrogent le progrès, ses promesses et ses conséquences. Ils restent une signature du site, sans se substituer à l’information professionnelle.</p>
+          </div>
+
+          <div class="art-mini-grid reveal" aria-label="Sélection d’œuvres de Thomas Cole utilisées sur le site">
+            <a class="art-mini" href="comprendre/">
+              <picture>
+                <source srcset="assets/images/savage-state-640.webp" type="image/webp">
+                <img src="assets/images/savage-state-1800.jpg" loading="lazy" decoding="async" alt="Thomas Cole, L’État sauvage, 1836">
+              </picture>
+              <span>L’État sauvage · Comprendre</span>
+            </a>
+            <a class="art-mini" href="usages-terrain/">
+              <picture>
+                <source srcset="assets/images/arcadian-state-640.webp" type="image/webp">
+                <img src="assets/images/arcadian-state-1800.jpg" loading="lazy" decoding="async" alt="Thomas Cole, L’État arcadien ou pastoral, 1836">
+              </picture>
+              <span>L’Arcadie · Examiner les usages</span>
+            </a>
+            <a class="art-mini" href="risques-prevention/">
+              <picture>
+                <source srcset="assets/images/destruction-640.webp" type="image/webp">
+                <img src="assets/images/destruction-1800.jpg" loading="lazy" decoding="async" alt="Thomas Cole, La Destruction, 1836">
+              </picture>
+              <span>La Destruction · Prévenir</span>
+            </a>
+            <a class="art-mini" href="droit-gouvernance/">
+              <picture>
+                <source srcset="assets/images/architects-dream-640.webp" type="image/webp">
+                <img src="assets/images/architects-dream-1800.jpg" loading="lazy" decoding="async" alt="Thomas Cole, Le Rêve de l’architecte, 1840">
+              </picture>
+              <span>Le Rêve de l’architecte · Encadrer</span>
+            </a>
+          </div>
+
+          <small class="art-source">Œuvres dans le domaine public. Repères biographiques : <a href="https://thomascole.org/thomas-cole/" target="_blank" rel="noopener noreferrer">Thomas Cole National Historic Site</a>.</small>
+        </div>
+      </section>
+
+      <section class="section" id="contact" style="padding-top:0">
+        <div class="wrap">
+          <div class="news-band glass glass--lavande reveal">
+            <span class="halo h1"></span>
+            <span class="halo h2"></span>
+            <span class="kicker">Contact et mises à jour</span>
+            <h2>Échanger autour de l’IA et du travail</h2>
+            <p>Pour discuter d’un projet, signaler une source, proposer une collaboration ou suivre les nouveaux contenus publiés, vous pouvez me contacter sur LinkedIn.</p>
+            <div style="margin-top:26px">
+              <a class="btn btn-solid" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Me contacter sur LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>IA &amp; Santé au Travail</a>
+          <p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p>
+        </div>
+        <div>
+          <h4>Parcours</h4>
+          <ul>
+            <li><a href="comprendre/">Comprendre</a></li>
+            <li><a href="usages-terrain/">Usages &amp; terrain</a></li>
+            <li><a href="evaluer/">Évaluer</a></li>
+            <li><a href="risques-prevention/">Risques &amp; prévention</a></li>
+            <li><a href="droit-gouvernance/">Droit &amp; gouvernance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="ressources/modeles/">Panorama des modèles</a></li>
+            <li><a href="a-propos/">À propos et publications</a></li>
+            <li><a href="#mises-a-jour">Dernières mises à jour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contacter l’auteur sur LinkedIn</a></li>
+            <li><a href="confidentialite/">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span>
+        <span><a href="mentions-legales/">Mentions légales</a> · <a href="confidentialite/">Confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" type="button" aria-label="Revenir en haut">↑</button>
+
+  <dialog class="search-dialog" id="siteSearch" aria-labelledby="searchTitle">
+    <div class="search-shell">
+      <div class="search-head">
+        <h2 id="searchTitle">Rechercher</h2>
+        <button class="search-close" type="button" aria-label="Fermer">×</button>
+      </div>
+      <input class="search-input" id="searchInput" type="search" placeholder="Ex. CSE, hallucinations, benchmark…" autocomplete="off">
+      <div class="search-results" id="searchResults">
+        <p class="search-empty">Saisissez au moins deux caractères.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/search-index.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
