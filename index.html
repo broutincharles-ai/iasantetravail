@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="Ressource indépendante pour comprendre l’intelligence artificielle au travail, évaluer ses usages, prévenir ses effets et construire un cadre adapté." name="description"/>
+<meta content="Site de référence sur l’intelligence artificielle en santé au travail : repères et outils pour professionnels de santé au travail, RH, employeurs, juristes, DPO et CSE." name="description"/>
 <meta content="Dr Charles Broutin" name="author"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
@@ -17,12 +17,12 @@
 <meta content="fr_FR" property="og:locale"/>
 <meta content="IA &amp; Santé au Travail" property="og:site_name"/>
 <meta content="IA &amp; Santé au Travail — Comprendre, évaluer, prévenir" property="og:title"/>
-<meta content="Des repères et des outils pour analyser l’intelligence artificielle à partir du travail réel." property="og:description"/>
+<meta content="Repères et outils sur l’IA en santé au travail pour professionnels de santé au travail, RH, employeurs, juristes, DPO et CSE." property="og:description"/>
 <meta content="https://www.iasantetravail.com/" property="og:url"/>
 <meta content="https://www.iasantetravail.com/assets/images/og-home.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="IA &amp; Santé au Travail — Comprendre, évaluer, prévenir" name="twitter:title"/>
-<meta content="Des repères et des outils pour analyser l’intelligence artificielle à partir du travail réel." name="twitter:description"/>
+<meta content="Repères et outils sur l’IA en santé au travail pour professionnels de santé au travail, RH, employeurs, juristes, DPO et CSE." name="twitter:description"/>
 <title>IA &amp; Santé au Travail — Comprendre, évaluer, prévenir</title>
 <script type="application/ld+json">
   {
@@ -313,6 +313,70 @@
       .role-grid{grid-template-columns:1fr}
       .role-card--primary{grid-column:auto}
     }
+
+
+    /* Ajustements accueil v3 */
+    .page-accueil-simplifiee .hero-frame{
+      min-height:clamp(430px,58vh,560px)
+    }
+    .page-accueil-simplifiee .hero-inner{
+      gap:16px;
+      padding:clamp(34px,5vw,58px)
+    }
+    .page-accueil-simplifiee .page-hero h1{
+      max-width:18ch;
+      font-size:clamp(2.9rem,6.4vw,5.4rem);
+      line-height:.98
+    }
+    .page-accueil-simplifiee .hero-descriptor{
+      max-width:850px;
+      font-size:clamp(1rem,1.6vw,1.25rem);
+      line-height:1.48;
+      font-weight:550
+    }
+    .page-accueil-simplifiee .hero-actions{
+      margin-top:6px
+    }
+
+    /* Le parcours santé au travail doit apparaître en premier */
+    .role-card--primary{
+      order:-1;
+      grid-column:1/-1;
+      min-height:auto;
+      background:linear-gradient(150deg,rgba(201,194,242,.58),rgba(244,235,218,.44))
+    }
+    .role-card--primary h3{max-width:760px}
+    .role-card--primary p{max-width:980px}
+
+    /* Flèche toujours sur la même ligne que son libellé */
+    .need-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      max-width:100%;
+      white-space:nowrap
+    }
+    .need-links a .inline-arrow{
+      display:inline-block;
+      flex:none;
+      line-height:1
+    }
+
+    @media(max-width:700px){
+      .page-accueil-simplifiee .hero-frame{
+        min-height:500px
+      }
+      .page-accueil-simplifiee .page-hero h1{
+        font-size:clamp(2.35rem,11vw,3.75rem)
+      }
+      .need-links a{
+        white-space:normal
+      }
+      .need-links a .inline-arrow{
+        white-space:nowrap
+      }
+    }
 </style>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async="" src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
@@ -374,16 +438,11 @@
 <div class="veil"></div>
 <p class="hero-credit">Thomas Cole, The Course of Empire — The Consummation, 1836</p>
 <div class="hero-inner">
-<h1>Comprendre et encadrer l’intelligence artificielle <em>au travail.</em></h1>
-<p class="hero-descriptor">Des repères et des outils pour évaluer un projet, prévenir ses effets et organiser un déploiement responsable.</p>
-<div class="hero-card glass glass--dark">
-<p>Une ressource indépendante qui relie fonctionnement des systèmes, usages professionnels, transformations du travail, risques psychosociaux et obligations juridiques.</p>
-</div>
-<p class="hero-audience">Santé au travail · Prévention · Employeurs · RH · CSE · Juristes</p>
-<div class="hero-actions">
-<a class="btn btn-solid" href="evaluer/impact/">Évaluer un projet d’IA</a>
-<a class="btn btn-glassy glass glass--dark" href="#parcours">Explorer les ressources</a>
-</div>
+<h1>Le site de référence sur l’IA <em>en santé au travail.</em></h1>
+<p class="hero-descriptor">Des repères fiables et des outils concrets pour les professionnels de santé au travail, les RH, les employeurs, les juristes, les DPO et les représentants du personnel.</p>
+
+
+<div class="hero-actions"><a class="btn btn-solid" href="evaluer/impact/">Évaluer un projet d’IA</a><a class="btn btn-glassy glass glass--dark" href="#par-role">Accéder par votre rôle</a></div>
 </div>
 </div>
 </div>
@@ -394,7 +453,14 @@
 <h2 id="role-access-title">Accéder directement aux ressources adaptées à votre rôle</h2>
 <p>Le site reste avant tout consacré à la santé au travail. Ces entrées permettent simplement aux autres acteurs concernés de rejoindre directement les contenus qui leur sont utiles.</p>
 </div>
-<div class="role-grid">
+<div class="role-grid"><article class="role-card glass reveal role-card--primary">
+<span class="role-label">Professionnels de santé au travail</span>
+<h3>Accéder au parcours spécialisé en santé au travail</h3>
+<p>Retrouver l’ensemble des contenus consacrés aux usages de l’IA, à l’évaluation, aux risques psychosociaux, à la prévention et au cadre juridique du travail.</p>
+<div class="role-links">
+<a href="comprendre/">Commencer le parcours santé au travail</a>
+</div>
+</article>
 <article class="role-card glass reveal">
 <span class="role-label">RH ou DRH</span>
 <h3>Prévenir, encadrer et évaluer</h3>
@@ -432,14 +498,7 @@
 <a href="droit-gouvernance/">Consultation et gouvernance</a>
 </div>
 </article>
-<article class="role-card glass reveal role-card--primary">
-<span class="role-label">Professionnel de santé au travail</span>
-<h3>Parcourir l’ensemble du site spécialisé</h3>
-<p>Accéder au parcours complet, depuis les fondamentaux jusqu’aux outils d’évaluation, à la prévention et au cadre juridique.</p>
-<div class="role-links">
-<a href="comprendre/">Commencer le parcours spécialisé</a>
-</div>
-</article>
+
 </div>
 </div>
 </section>
@@ -456,7 +515,7 @@
 <h3>Comprendre</h3>
 <p>Identifier le type d’IA, son fonctionnement, ses limites et les points qui nécessitent une vérification humaine.</p>
 <div class="need-links">
-<a href="comprendre/">Découvrir les fondamentaux →</a>
+<a href="comprendre/"><span>Découvrir les fondamentaux</span><span aria-hidden="true" class="inline-arrow">→</span></a>
 </div>
 </article>
 <article class="need-card reveal">
@@ -464,7 +523,7 @@
 <h3>Examiner un usage</h3>
 <p>Partir d’une tâche réelle, apprécier l’utilité attendue et déterminer le niveau de vigilance nécessaire.</p>
 <div class="need-links">
-<a href="usages-terrain/">Voir les usages et le terrain →</a>
+<a href="usages-terrain/"><span>Voir les usages et le terrain</span><span aria-hidden="true" class="inline-arrow">→</span></a>
 </div>
 </article>
 <article class="need-card reveal">
@@ -472,7 +531,7 @@
 <h3>Évaluer</h3>
 <p>Analyser les effets potentiels ou observés d’un projet et interpréter les comparaisons entre modèles.</p>
 <div class="need-links">
-<a href="evaluer/">Accéder aux outils d’évaluation →</a>
+<a href="evaluer/"><span>Accéder aux outils d’évaluation</span><span aria-hidden="true" class="inline-arrow">→</span></a>
 </div>
 </article>
 <article class="need-card reveal">
@@ -480,8 +539,8 @@
 <h3>Prévenir et encadrer</h3>
 <p>Agir sur les risques pour le travail et les salariés, puis construire la gouvernance adaptée à l’usage.</p>
 <div class="need-links">
-<a href="risques-prevention/">Prévenir les risques →</a>
-<a href="droit-gouvernance/">Vérifier le cadre juridique →</a>
+<a href="risques-prevention/"><span>Prévenir les risques</span><span aria-hidden="true" class="inline-arrow">→</span></a>
+<a href="droit-gouvernance/"><span>Vérifier le cadre juridique</span><span aria-hidden="true" class="inline-arrow">→</span></a>
 </div>
 </article>
 </div>
@@ -514,23 +573,6 @@
 </div>
 </div>
 </section>
-<section aria-labelledby="credibilite" class="credibility-band" id="credibilite-methode">
-<div class="wrap">
-<div class="credibility-panel glass reveal">
-<div>
-<span class="kicker">Crédibilité et méthode</span>
-<h2 id="credibilite">Une approche issue de la santé au travail</h2>
-<p>Les contenus s’appuient sur une pratique de médecin du travail, des travaux publiés et une lecture croisée des dimensions techniques, organisationnelles, psychosociales et juridiques.</p>
-</div>
-<div aria-label="Références principales" class="credibility-links">
-<a href="https://www.inrs.fr/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Références en Santé au Travail · TF 335</a>
-<a href="https://doi.org/10.1016/j.admp.2025.102877" rel="noopener noreferrer" target="_blank">Archives des Maladies Professionnelles</a>
-<a href="a-propos/">Auteur, parcours et publications</a>
-</div>
-</div>
-</div>
-</section>
-
 
 <section class="section" id="contact" style="padding-top:0">
 <div class="wrap">
@@ -574,7 +616,6 @@
 <ul>
 <li><a href="ressources/modeles/">Panorama des modèles</a></li>
 <li><a href="a-propos/">À propos et publications</a></li>
-
 </ul>
 </div>
 <div>
