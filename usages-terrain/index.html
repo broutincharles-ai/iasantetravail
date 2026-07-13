@@ -1,357 +1,262 @@
 <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="Choisir un parcours pour comprendre un exemple d’IA en santé au travail, maîtriser un usage avant son déploiement ou analyser ses effets dans le travail réel." name="description"/>
+  <meta content="Dr Charles Broutin" name="author"/>
+  <meta content="index,follow,max-image-preview:large" name="robots"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <meta content="#EADDC6" name="theme-color"/>
+  <link href="https://www.iasantetravail.com/usages-terrain/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="fr_FR" property="og:locale"/>
+  <meta content="IA &amp; Santé au Travail" property="og:site_name"/>
+  <meta content="Usages et terrain — IA & Santé au Travail" property="og:title"/>
+  <meta content="Choisir un parcours pour comprendre un exemple d’IA en santé au travail, maîtriser un usage avant son déploiement ou analyser ses effets dans le travail réel." property="og:description"/>
+  <meta content="https://www.iasantetravail.com/usages-terrain/" property="og:url"/>
+  <meta content="https://www.iasantetravail.com/assets/images/og-usages.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Usages et terrain — IA & Santé au Travail" name="twitter:title"/>
+  <meta content="Choisir un parcours pour comprendre un exemple d’IA en santé au travail, maîtriser un usage avant son déploiement ou analyser ses effets dans le travail réel." name="twitter:description"/>
+  <title>Usages et terrain — IA & Santé au Travail</title>
+  <script type="application/ld+json">[
+      {
+        "@type":"WebPage",
+        "headline":"Usages et terrain",
+        "name":"Usages et terrain",
+        "url":"https://www.iasantetravail.com/usages-terrain/",
+        "inLanguage":"fr-FR",
+        "description":"Choisir un parcours pour comprendre un exemple d’IA en santé au travail, maîtriser un usage avant son déploiement ou analyser ses effets dans le travail réel.",
+        "dateModified":"2026-07-13",
+        "author":{
+          "@type":"Person",
+          "name":"Dr Charles Broutin",
+          "jobTitle":"Médecin du travail",
+          "url":"https://www.iasantetravail.com/a-propos/",
+          "sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]
+        },
+        "publisher":{"@type":"Person","name":"Dr Charles Broutin"}
+      },
+        {
+          "@type":"BreadcrumbList",
+          "itemListElement":[{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.iasantetravail.com/"},{"@type": "ListItem", "position": 2, "name": "Usages et terrain", "item": "https://www.iasantetravail.com/usages-terrain/"}]
+        }
+    ]</script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  <link as="image" href="../assets/images/arcadian-state-1280.webp" rel="preload" type="image/webp"/>
+  <link href="../assets/css/site.css" rel="stylesheet"/>
+  <link href="../assets/css/usages-terrain.css?v=1.0" rel="stylesheet"/>
+  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
+  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+</head>
 
-<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="Usages raisonnables de l’IA en santé au travail, niveaux de vigilance et premiers enseignements des déploiements en entreprise." name="description"/><meta content="Dr Charles Broutin" name="author"/><meta content="index,follow,max-image-preview:large" name="robots"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="#EADDC6" name="theme-color"/><link href="https://www.iasantetravail.com/usages-terrain/" rel="canonical"/><link href="https://www.iasantetravail.com/usages-terrain/" hreflang="fr" rel="alternate"/><link href="https://www.iasantetravail.com/en/uses-and-field/" hreflang="en" rel="alternate"/><link href="https://www.iasantetravail.com/usages-terrain/" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="IA &amp; Santé au Travail" property="og:site_name"/><meta content="Usages et terrain — IA &amp; Santé au Travail" property="og:title"/><meta content="Usages raisonnables de l’IA en santé au travail, niveaux de vigilance et premiers enseignements des déploiements en entreprise." property="og:description"/><meta content="https://www.iasantetravail.com/usages-terrain/" property="og:url"/><meta content="https://www.iasantetravail.com/assets/images/og-usages.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Usages et terrain — IA &amp; Santé au Travail" name="twitter:title"/><meta content="Usages raisonnables de l’IA en santé au travail, niveaux de vigilance et premiers enseignements des déploiements en entreprise." name="twitter:description"/><title>Usages et terrain — IA &amp; Santé au Travail</title><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Usages et terrain", "url": "https://www.iasantetravail.com/usages-terrain/", "inLanguage": "fr-FR", "description": "Usages raisonnables de l’IA en santé au travail, niveaux de vigilance et premiers enseignements des déploiements en entreprise.", "dateModified": "2026-07-11", "author": {"@type": "Person", "name": "Dr Charles Broutin", "jobTitle": "Médecin du travail", "sameAs": ["https://www.linkedin.com/in/charles-broutin-a03932201"]}, "publisher": {"@type": "Person", "name": "Dr Charles Broutin"}}</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link as="image" href="../assets/images/arcadian-state-1280.webp" rel="preload" type="image/webp"/><link href="../assets/css/site.css" rel="stylesheet"/>
-<!-- Site icons -->
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
-<meta name="msapplication-TileColor" content="#A84E1F"/>
-</head><body class="inner-page page-pratique" data-page="pratique" data-root="../">
-<a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<nav aria-label="Navigation principale" class="nav glass">
-<a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
-<div class="nav-links" id="navLinks"><a href="../comprendre/">Comprendre</a><a aria-current="page" class="is-active" href="../usages-terrain/">Usages &amp; terrain</a><a href="../evaluer/">Évaluer</a><a href="../risques-prevention/">Risques &amp; prévention</a><a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
-<details class="nav-resources"><summary>Ressources</summary><div class="nav-resources-menu">
-<a href="../ressources/modeles/">Panorama des modèles</a><a href="../a-propos/">À propos et publications</a><a href="../mentions-legales/">Mentions légales</a>
-</div></details></div>
-<div class="nav-tools"><button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
-<div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="../usages-terrain/" hreflang="fr" lang="fr">FR</a><a href="../en/uses-and-field/" hreflang="en" lang="en">EN</a></div>
-<button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
-<a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>
-</nav><main id="main-content" tabindex="-1"><section class="page active" id="page-pratique">
-<header class="page-hero">
-<div class="wrap">
-<div class="hero-frame">
-<picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="../assets/images/arcadian-state-640.webp 640w, ../assets/images/arcadian-state-960.webp 960w, ../assets/images/arcadian-state-1280.webp 1280w, ../assets/images/arcadian-state-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, L'État arcadien ou pastoral, 1836" decoding="async" fetchpriority="high" loading="eager" src="../assets/images/arcadian-state-1800.jpg"/></picture>
-<div class="veil"></div>
-<p class="hero-credit">Thomas Cole, The Arcadian or Pastoral State, 1836</p>
-<div class="hero-inner">
-<span class="stage-tag glass glass--dark"><span class="roman">II.</span> L'Arcadie</span>
-<h1>Usages et terrain. <em>L’IA au service de la prévention.</em></h1><p class="hero-descriptor">Usages crédibles, niveaux de vigilance et retours de déploiement.</p>
-<div class="hero-card glass glass--dark">Les usages crédibles partent d’un besoin professionnel précis et d’une responsabilité humaine clairement attribuée. Leur utilité se juge dans l’activité réelle, pas dans une démonstration technique.</div>
-</div>
-</div>
-</div>
-</header><section aria-labelledby="resume-page" class="page-summary-section">
-<div class="wrap">
-<div class="page-summary glass">
-<div class="page-summary-main">
-<span class="mini-kicker">En 30 secondes</span>
-<h2 id="resume-page">Les repères essentiels</h2>
-<ul><li>Les usages les plus robustes assistent une tâche délimitée, réversible et vérifiable plutôt qu’une décision sensible.</li><li>Le niveau de vigilance augmente avec les données traitées, l’autonomie du système et les conséquences d’une erreur.</li><li>Les premiers retours de terrain invitent à distinguer la promesse affichée, l’usage réel et les effets sur l’emploi, la charge et les compétences.</li></ul>
-</div>
-<aside aria-label="Informations de lecture" class="page-summary-side">
-<dl>
-<div><dt>Public</dt><dd>Équipes SPST, médecins du travail, préventeurs, directions de projet et représentants du personnel</dd></div>
-<div><dt>Temps de lecture</dt><dd>Environ 12 minutes</dd></div>
-<div><dt>Dernière vérification</dt><dd>11 juillet 2026</dd></div>
-</dl>
-</aside>
-<nav aria-label="Sommaire de la page" class="page-toc"><span>Sur cette page</span><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#l-ia-n-a-d-interet-que-lorsqu-elle-ameliore-une-tache-reelle">L'IA n'a d'intérêt que lorsqu'elle améliore une tâche réelle</a></li><li><a href="#relire-les-preconisations-avant-transmission">Relire les préconisations avant transmission</a></li><li><a href="#hierarchiser-les-usages-selon-leur-niveau-de-risque">Hiérarchiser les usages selon leur niveau de risque</a></li><li><a href="#pour-chaque-idee-un-mini-protocole-avant-diffusion">Pour chaque idée : un mini-protocole avant diffusion</a></li><li><a href="#regarder-ce-que-les-deploiements-produisent-reellement">Regarder ce que les déploiements produisent réellement</a></li><li><a href="#ce-que-montrent-les-premiers-deploiements-en-entreprise">Ce que montrent les premiers déploiements en entreprise</a></li><li><a href="#entre-promesse-affichee-et-resultats-reels">Entre promesse affichée et résultats réels</a></li><li><a href="#des-cas-concrets-du-licenciement-au-retropedalage">Des cas concrets, du licenciement au rétropédalage</a></li></ol></nav></div>
-</div>
-</section><details class="mobile-toc"><summary>Sur cette page</summary><ol><li><a href="#resume-page">Les repères essentiels</a></li><li><a href="#l-ia-n-a-d-interet-que-lorsqu-elle-ameliore-une-tache-reelle">L'IA n'a d'intérêt que lorsqu'elle améliore une tâche réelle</a></li><li><a href="#relire-les-preconisations-avant-transmission">Relire les préconisations avant transmission</a></li><li><a href="#hierarchiser-les-usages-selon-leur-niveau-de-risque">Hiérarchiser les usages selon leur niveau de risque</a></li><li><a href="#pour-chaque-idee-un-mini-protocole-avant-diffusion">Pour chaque idée : un mini-protocole avant diffusion</a></li><li><a href="#regarder-ce-que-les-deploiements-produisent-reellement">Regarder ce que les déploiements produisent réellement</a></li><li><a href="#ce-que-montrent-les-premiers-deploiements-en-entreprise">Ce que montrent les premiers déploiements en entreprise</a></li><li><a href="#entre-promesse-affichee-et-resultats-reels">Entre promesse affichée et résultats réels</a></li><li><a href="#des-cas-concrets-du-licenciement-au-retropedalage">Des cas concrets, du licenciement au rétropédalage</a></li></ol></details>
-<section class="section" id="pratique-tf335">
-<div class="wrap">
-<div class="meta-line reveal">
-<span class="chip">Mis à jour : juillet 2026</span>
-<span class="chip">Version 2.0</span>
-<a class="chip" href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Cas d'usage publié : RST TF 335 ↗</a>
-</div>
-<div class="section-head reveal">
-<span class="kicker">Du concept à l'usage contrôlé</span>
-<h2 id="l-ia-n-a-d-interet-que-lorsqu-elle-ameliore-une-tache-reelle">L'IA n'a d'intérêt que lorsqu'elle améliore une tâche réelle</h2>
-<p>Cette section ne présente pas l'IA comme une promesse abstraite. Elle part d'un cas publié dans <em>Références en Santé au Travail</em> : l'utilisation d'un grand modèle de langage comme second lecteur de préconisations médicales, avec un protocole, des critères et des limites explicites.</p>
-</div>
-<div class="metrics-panel reveal">
-<span class="halo hl"></span>
-<div class="metrics-head">
-<span class="kicker" style="color:var(--lavande)">Article de référence — INRS · TF 335</span>
-<h2 class="serif" id="relire-les-preconisations-avant-transmission">Relire les préconisations avant transmission</h2>
-<p>L'article <em>L'intelligence artificielle en santé au travail : évaluation de son potentiel pour renforcer la précision et la clarté des préconisations médicales</em> propose un exemple concret d'usage prudent : l'IA n'écrit pas à la place du médecin, elle aide à repérer les défauts de formulation avant envoi à l'employeur.</p>
-<a class="btn btn-solid" href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l'article sur le site de l'INRS
-            <svg aria-hidden="true" fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
-</div>
-<div class="metrics-grid">
-<div class="metric glass glass--dark"><div class="num">78<sup>%</sup></div><div class="lbl">% des 3 776 préconisations ayant fait l’objet d’un consensus présentaient au moins un défaut de qualité dans l’étude antérieure</div></div>
-<div class="metric glass glass--dark"><div class="num">385</div><div class="lbl">préconisations tirées au sort pour l’évaluation comparative du modèle o1</div></div>
-<div class="metric glass glass--dark"><div class="num">74,6<sup>%</sup></div><div class="lbl">% de concordance globale entre le modèle o1 et le consensus multidisciplinaire</div></div>
-<div class="metric glass glass--dark"><div class="num">0</div><div class="lbl">hallucination observée dans l’échantillon de 385 préconisations</div></div>
-</div><p class="metric-context"><strong>Contexte des chiffres.</strong> Dans la base antérieure, 3 776 préconisations sur 4 217 ont fait l’objet d’un consensus multidisciplinaire ; 2 947, soit 78 %, présentaient au moins un défaut. Dans l’échantillon comparatif de 385 préconisations, l’étude rapporte 74,6 % de concordances, 10,5 % de discordances justifiées, 13,2 % de discordances par excès, 1,5 % de discordances par défaut et aucune hallucination.</p>
-</div>
-</div>
-</section>
-<section class="section" id="pratique-article" style="padding-top:0">
-<div class="wrap">
-<div class="article-grid">
-<article class="article glass reveal">
-<span class="proof proof--consensus">Usage documenté</span>
-<h3>Un second lecteur des préconisations</h3>
-<p>Le cas d'usage le plus robuste est la relecture structurée des préconisations médicales selon cinq critères : imprécision, doute sur le caractère obligatoire, informations hors annexe 4, inaptitude déguisée ou changement de poste excessif, rupture du secret médical.</p>
-<span class="src"><strong>Apport pratique :</strong> sécuriser la clarté, la proportionnalité et la confidentialité avant transmission à l'employeur.</span>
-<a class="card-link" href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l'article TF 335
-            <svg aria-hidden="true" fill="none" height="14" viewbox="0 0 16 16" width="14"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--expert">Condition d'usage</span>
-<h3>Une aide, pas un substitut</h3>
-<p>Le modèle doit rester un outil d'assistance. Il peut signaler une ambiguïté, proposer une alerte ou inviter à reformuler, mais la décision médicale, la contextualisation du poste et la responsabilité de l'avis restent du ressort du médecin du travail.</p>
-<span class="src"><strong>Principe :</strong> supervision humaine, traçabilité, anonymisation, vérification systématique.</span>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--emergent">Limite utile</span>
-<h3>Une IA volontairement trop prudente</h3>
-<p>Dans l'étude, le modèle tend à surdétecter les anomalies : 13,2 % de discordances par excès. Cette sévérité peut être acceptable pour une relecture de sécurité, mais elle impose une validation humaine afin d'éviter une médecine du travail trop défensive ou trop standardisée.</p>
-<span class="src"><strong>Lecture opérationnelle :</strong> un faux positif est acceptable s'il ouvre une réflexion ; il devient problématique s'il automatise la décision.</span>
-</article>
-</div>
-</div>
-</section>
-<section class="section" id="pratique-usages" style="padding-top:0">
-<div class="wrap">
-<div class="section-head reveal">
-<span class="kicker">Une échelle d'usages</span>
-<h2 id="hierarchiser-les-usages-selon-leur-niveau-de-risque">Hiérarchiser les usages selon leur niveau de risque</h2>
-<p>Les usages sont présentés ici comme une échelle plutôt que comme une liste d'outils : de l'aide documentaire à faible risque jusqu'aux usages cliniques ou organisationnels qui appellent une évaluation formelle.</p>
-</div>
-<div class="article-grid" style="margin-bottom:28px">
-<article class="article glass reveal">
-<span class="proof proof--consensus">Niveau 1 · Faible risque</span>
-<h3>Appui documentaire et rédactionnel</h3>
-<p>Ce niveau concerne les tâches où l'IA aide à lire, classer, résumer ou reformuler sans manipuler de données de santé identifiantes et sans produire d'effet direct sur un salarié.</p>
-<ul>
-<li><strong>Données :</strong> sources publiques, textes réglementaires, articles, supports de formation, notes anonymes.</li>
-<li><strong>Sortie attendue :</strong> synthèse, trame, reformulation, liste de points de vigilance.</li>
-<li><strong>Contrôle :</strong> vérification des sources, relecture humaine, absence de copier-coller automatique.</li>
-</ul>
-<span class="rule"><strong>Feu vert :</strong> usage quotidien possible si les sources sont citées et si aucune donnée sensible n'est entrée dans un outil non maîtrisé.</span>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--emergent">Niveau 2 · Usage métier supervisé</span>
-<h3>Aide à la qualité des pratiques SPST</h3>
-<p>Ce niveau concerne les usages proches du cœur de métier, comme la relecture de préconisations, la préparation d'une fiche d'entreprise, l'aide au DUERP ou la formation par cas simulés.</p>
-<ul>
-<li><strong>Données :</strong> cas anonymisés, observations terrain, documents de prévention, critères métier explicites.</li>
-<li><strong>Sortie attendue :</strong> alerte, aide à la structuration, proposition à discuter, jamais décision finale.</li>
-<li><strong>Contrôle :</strong> protocole pilote, comparaison à une référence humaine, traçabilité des erreurs.</li>
-</ul>
-<span class="rule"><strong>Feu orange :</strong> utile, mais seulement avec supervision professionnelle et critères d'arrêt définis.</span>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--expert">Niveau 3 · Risque élevé</span>
-<h3>Données sensibles, signaux collectifs, organisation du travail</h3>
-<p>Ce niveau touche aux données personnelles, au suivi médical, aux signaux faibles collectifs ou à l'analyse de projets IA déployés dans les entreprises. Le bénéfice peut être important, mais le risque d'atteinte aux droits, à la confidentialité ou à l'autonomie est réel.</p>
-<ul>
-<li><strong>Données :</strong> données de santé, verbatims, dossiers, indicateurs collectifs, informations RH ou organisationnelles.</li>
-<li><strong>Sortie attendue :</strong> aide à l'analyse, priorisation collective prudente, alerte qualitative, jamais scoring individuel opaque.</li>
-<li><strong>Contrôle :</strong> gouvernance médicale, analyse RGPD/AIPD si nécessaire, information des parties prenantes, environnement sécurisé.</li>
-</ul>
-<span class="rule"><strong>Feu rouge contrôlé :</strong> pas de déploiement sans évaluation formelle, validation juridique et revue régulière des effets sur le travail réel.</span>
-</article>
-</div>
-<div class="exp-list">
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 1 · Faible risque</span><h3>Veille bibliographique et réglementaire sourcée</h3></div>
-<p><strong>Ce que ça fait :</strong> transformer une veille dispersée en notes courtes et actionnables pour les équipes. L'outil peut résumer un article, extraire les implications pour un SPST, comparer plusieurs recommandations et proposer une liste de points à surveiller. <strong>Garde-fou :</strong> chaque affirmation doit renvoyer à une source vérifiable ; la synthèse doit distinguer clairement le fait établi, l'interprétation et l'avis éditorial.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 1 · Faible risque</span><h3>Assistant de reformulation professionnelle</h3></div>
-<p><strong>Ce que ça fait :</strong> améliorer la clarté d'un courrier, d'une synthèse d'action en milieu de travail, d'un compte rendu ou d'un support de formation. L'IA peut aider à supprimer les ambiguïtés, réduire le jargon, neutraliser les formulations stigmatisantes et rendre le message plus opérationnel. <strong>Garde-fou :</strong> ne jamais introduire d'information médicale nouvelle ni laisser l'outil modifier le sens métier du message.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 2 · Usage métier</span><h3>Relecture qualité des préconisations</h3></div>
-<p><strong>Ce que ça fait :</strong> décliner directement le cas publié dans le TF 335 : contrôle de la précision, de la temporalité, du caractère applicable, de l'absence d'information hors annexe 4, du risque d'inaptitude déguisée et du respect du secret médical. <strong>Sortie attendue :</strong> une alerte argumentée avec les critères concernés, pas une réécriture automatique ni une décision. <strong>Garde-fou :</strong> validation finale par le médecin du travail, car le contexte réel du poste peut justifier une formulation que l'IA juge trop sévèrement.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 2 · Prévention</span><h3>Aide à la fiche d'entreprise et au DUERP</h3></div>
-<p><strong>Ce que ça fait :</strong> organiser les observations terrain anonymisées en dangers, expositions, populations concernées, mesures existantes, lacunes et pistes de prévention. L'outil peut aider à homogénéiser les fiches d'entreprise ou à préparer une contribution au DUERP. <strong>Garde-fou :</strong> l'IA ne remplace ni la visite terrain, ni l'analyse du travail réel, ni la discussion collective avec l'employeur, les représentants du personnel et l'équipe pluridisciplinaire.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 2 · Formation</span><h3>Simulateur de situations en santé au travail</h3></div>
-<p><strong>Ce que ça fait :</strong> générer des vignettes cliniques, QCM, exercices de raisonnement, simulations d'entretien ou cas de maintien en emploi. C'est particulièrement utile pour entraîner les internes, IDEST, IPRP et préventeurs à repérer les pièges : secret médical, formulation des préconisations, proportionnalité des aménagements. <strong>Garde-fou :</strong> tous les scénarios doivent être relus par un expert, car un cas plausible peut rester juridiquement ou médicalement faux.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 3 · À évaluer</span><h3>Détection de signaux faibles collectifs</h3></div>
-<p><strong>Ce que ça fait :</strong> repérer des motifs récurrents dans des données agrégées : expositions répétées, verbatims anonymisés, demandes fréquentes, signaux RPS, difficultés de maintien en emploi. <strong>Intérêt :</strong> aider le SPST à passer d'une accumulation de cas individuels à une lecture collective de prévention. <strong>Garde-fou :</strong> pas de scoring individuel, pas de surveillance nominative, minimisation stricte des données et gouvernance médicale documentée.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 3 · À encadrer</span><h3>Évaluation des projets IA des entreprises adhérentes</h3></div>
-<p><strong>Ce que ça fait :</strong> examiner en amont les effets probables d'un outil d'IA déployé par une entreprise adhérente : intensification, perte d'autonomie, surveillance, transformation des collectifs, conflits de valeurs, insécurité professionnelle. <strong>Intérêt :</strong> positionner le SPST comme acteur de prévention primaire des risques liés à l'IA. <strong>Garde-fou :</strong> solliciter la médecine du travail avant le déploiement, pas après les premiers effets délétères.</p>
-</article>
-<article class="exp-item glass reveal">
-<div><span class="roman">Niveau 3 · Risque élevé</span><h3>Préparation du suivi médical avec données sensibles</h3></div>
-<p><strong>Ce que ça fait :</strong> préparer un suivi longitudinal, résumer un dossier complexe, retrouver des éléments utiles ou aider à structurer une consultation. <strong>Pourquoi c'est sensible :</strong> ce niveau peut impliquer des données de santé, des informations sociales, des restrictions d'aptitude ou des éléments de vie privée. <strong>Garde-fou :</strong> environnement maîtrisé, contrat explicite, absence de réutilisation des données, contrôle médical strict et possibilité de renoncer à l'outil si le bénéfice réel n'est pas démontré.</p>
-</article>
-</div>
-</div>
-</section>
-<section class="section" id="pratique-garde-fous" style="padding-top:0">
-<div class="wrap">
-<div class="duo">
-<div class="duo-block glass litt reveal">
-<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><path d="M9 2.5c-2.2-1.3-5-1.3-7 0v12c2-1.3 4.8-1.3 7 0 2.2-1.3 5-1.3 7 0v-12c-2-1.3-4.8-1.3-7 0Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path><path d="M9 2.5v12" stroke="currentColor" stroke-width="1.5"></path></svg></span>Ce que permet un bon usage</h3>
-<p>Gagner du temps sur les tâches rédactionnelles, homogénéiser certains contrôles qualité, rendre les préconisations plus claires, aider les équipes à accéder plus vite aux sources, préparer des supports pédagogiques et structurer les démarches de prévention.</p>
-<p>Le bon usage est celui qui augmente la capacité d'analyse de l'équipe sans déplacer la responsabilité médicale vers l'outil.</p>
-</div>
-<div class="duo-block glass analyse reveal">
-<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M9 5.5V9l2.5 2" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></span>Ce qu'il faut éviter</h3>
-<p>Entrer des données identifiantes dans un outil non maîtrisé, générer automatiquement des avis médicaux, laisser l'IA décider d'une aptitude, utiliser des scores opaques pour prioriser les salariés ou déployer un outil sans analyse préalable du travail réel.</p>
-<p>Le risque n'est pas seulement l'erreur technique ; c'est aussi l'usage organisationnel qui intensifie le travail, réduit l'autonomie ou brouille les responsabilités.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section" id="pratique-methode" style="padding-top:0">
-<div class="wrap">
-<div class="section-head reveal">
-<span class="kicker">Méthode proposée</span>
-<h2 id="pour-chaque-idee-un-mini-protocole-avant-diffusion">Pour chaque idée : un mini-protocole avant diffusion</h2>
-<p>Chaque usage est analysé avec la même grille : tâche exacte, données nécessaires, bénéfice attendu, risques, niveau de supervision, critères d'arrêt et indicateurs de qualité.</p>
-</div>
-<div class="article-grid">
-<article class="article glass reveal">
-<span class="proof proof--consensus">1 · Définir</span>
-<h3>La tâche, pas l'outil</h3>
-<p>Décrire précisément le problème métier : relire une préconisation, produire une synthèse sourcée, préparer une formation, analyser un projet IA. Aucun outil ne devrait être choisi avant cette étape.</p>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--consensus">2 · Tester</span>
-<h3>Un pilote sur cas anonymisés</h3>
-<p>Comparer les réponses de l'IA à une référence humaine, mesurer les erreurs, les omissions et les faux positifs, puis documenter les cas où l'outil ne doit pas être utilisé.</p>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--consensus">3 · Déployer</span>
-<h3>Avec journalisation et retour terrain</h3>
-<p>Tracer les usages, recueillir les retours des professionnels, réévaluer régulièrement le modèle et prévoir un arrêt du dispositif si les performances ou les conditions de sécurité changent.</p>
-</article>
-</div>
-</div>
-</section>
-<section class="section" id="pratique-sources" style="padding-top:0">
-<div class="wrap">
-<div class="sources glass reveal">
-<h3>Références de la section</h3>
-<ol>
-<li>Broutin C. <em>L'intelligence artificielle en santé au travail : évaluation de son potentiel pour renforcer la précision et la clarté des préconisations médicales.</em> Références en Santé au Travail, TF 335, n°186, juin 2026. INRS. <a href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l'article</a>.</li>
-<li>INRS. <em>Intelligence artificielle au service de la santé et sécurité au travail.</em> Prospective à l'horizon 2035, PV 19 / PV 20.</li>
-<li>INRS. <em>Intelligence artificielle et santé et sécurité au travail.</em> Actualité AC 197, 2025.</li>
-<li>LaborIA / Matrice. <em>Explorer les impacts de l'IA sur le travail.</em> Ministère du Travail, INRIA.</li>
-<li>EU-OSHA. <em>Worker management through AI: implications for occupational safety and health.</em></li>
-<li>CNIL. <em>Fiches pratiques IA</em> et guide de sécurité des données personnelles.</li>
-<li>Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle.</li>
-<li>Gollac M, Bodier M. <em>Mesurer les facteurs psychosociaux de risque au travail.</em> Collège d'expertise, 2011.</li>
-</ol>
-</div>
-</div>
-</section>
-<section class="section visual-break-section" id="retours-terrain"><div class="wrap"><div class="visual-break"><div class="visual-break-media"><picture class="responsive-art"><source sizes="(max-width: 760px) 100vw, 1180px" srcset="../assets/images/river-catskills-640.webp 640w, ../assets/images/river-catskills-960.webp 960w, ../assets/images/river-catskills-1280.webp 1280w, ../assets/images/river-catskills-1800.webp 1800w" type="image/webp"/><img alt="Thomas Cole, River in the Catskills, 1843" decoding="async" loading="lazy" src="../assets/images/river-catskills-1800.jpg"/></picture></div><div class="visual-break-copy"><span class="kicker">Retours de terrain</span><h2 id="regarder-ce-que-les-deploiements-produisent-reellement">Regarder ce que les déploiements produisent réellement</h2><p>Au-delà des démonstrations et des scores, les effets se lisent dans l’organisation, les emplois, les compétences, les arbitrages et les retours en arrière.</p></div></div></div></section><section class="section">
-<div class="wrap">
-<div class="meta-line reveal">
-<span class="chip">Macroéconomie &amp; travail réel</span>
-<span class="chip">Sources : presse, littérature, décisions</span>
-<span class="chip">Mis à jour : juillet 2026</span>
-</div>
-<div class="section-head reveal">
-<span class="kicker">L'IA sur le terrain</span>
-<h2 id="ce-que-montrent-les-premiers-deploiements-en-entreprise">Ce que montrent les premiers déploiements en entreprise</h2>
-<p>Au-delà des scores, une question compte pour la prévention : que se passe-t-il quand des
-        entreprises déploient réellement l'IA ? Les premiers retours sont contrastés : certaines
-        réorganisations l’invoquent, certaines entreprises réintroduisent davantage d’intervention humaine,
-        et des rapports préliminaires décrivent un écart important entre expérimentation et impact financier.
-        Ces signaux intéressent directement la santé au travail : emploi, charge, autonomie, qualité et insécurité.</p>
-</div>
-<div class="metrics-panel reveal">
-<span class="halo hl"></span>
-<div class="metrics-head">
-<span class="kicker" style="color:var(--lavande)">Quelques repères chiffrés</span>
-<h2 class="serif" id="entre-promesse-affichee-et-resultats-reels">Entre promesse affichée et résultats réels</h2>
-<p>Ces chiffres ne disent pas que l'IA « ne marche pas », mais que sa valeur dépend de
-          l'organisation, de la tâche et de la place laissée au travail réel.</p>
-</div>
-<div class="metrics-grid">
-<div class="metric glass glass--dark"><div class="num">95<sup>%</sup></div><div class="lbl">des systèmes d’IA générative intégrés étudiés sans impact financier mesurable, dans un rapport préliminaire MIT NANDA (2025)</div></div>
-<div class="metric glass glass--dark"><div class="num">217<span style="font-size:1.1rem">/383</span></div><div class="lbl">postes visés sur 383 par le projet de PSE Onclusive en 2023 ; la première procédure a ensuite été abandonnée</div></div>
-<div class="metric glass glass--dark"><div class="num">700</div><div class="lbl">agents à temps plein : charge de travail déclarée comme équivalente par Klarna pour son assistant IA en 2024</div></div>
-<div class="metric glass glass--dark"><div class="num">30–40<span style="font-size:1.1rem"> Md$</span></div><div class="lbl">d’investissement mondial estimé dans l’IA générative d’entreprise, selon le rapport préliminaire MIT NANDA (2025)</div></div>
-</div>
-</div>
-</div>
-</section><section class="section" id="terrain-cas" style="padding-top:0">
-<div class="wrap">
-<div class="section-head reveal">
-<span class="kicker">Trois trajectoires</span>
-<h2 id="des-cas-concrets-du-licenciement-au-retropedalage">Des cas concrets, du licenciement au rétropédalage</h2>
-<p>Trois situations documentées résument le spectre observé : l'IA invoquée pour licencier,
-        la sur-automatisation corrigée, et le décalage général entre pilotes et résultats.</p>
-</div>
-<div class="article-grid">
-<article class="article glass reveal">
-<span class="proof proof--consensus">Cas français · 2023</span>
-<h3>Onclusive : une première procédure de PSE abandonnée</h3>
-<p>Cette entreprise de veille médiatique annonce en septembre 2023 un projet de PSE visant 217 postes
-          sur 383, dans le contexte d’une automatisation accrue. Après les observations de l’administration,
-          notamment sur l’information du CSE et l’évaluation des conséquences du projet, la première procédure
-          est abandonnée en octobre 2023. L’entreprise indique alors qu’un nouveau projet pourrait être présenté.</p>
-<span class="src"><strong>Lecture santé au travail :</strong> la maturité du projet, son motif économique, l’information-consultation et l’évaluation des conséquences sur le travail doivent être documentés sans réduire l’analyse au seul mot « IA ».</span>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--emergent">Cas international · 2024-2025</span>
-<h3>Klarna : la sur-automatisation, puis le rétropédalage</h3>
-<p>Klarna a présenté en 2024 son assistant conversationnel comme traitant une charge de travail
-          équivalente à celle d’environ 700 agents à temps plein. Cette déclaration ne signifie pas que
-          700 salariés auraient été directement licenciés par l’outil. En 2025, l’entreprise recommence
-          à recruter pour renforcer la qualité du service et privilégie davantage un modèle hybride.</p>
-<span class="src"><strong>Lecture santé au travail :</strong> ce cas illustre la nécessité de mesurer la qualité, les escalades, la charge résiduelle et les effets sur les métiers, plutôt que le seul volume traité.</span>
-</article>
-<article class="article glass reveal">
-<span class="proof proof--expert">Vue d'ensemble · 2025</span>
-<h3>Le décalage entre pilotes et résultats</h3>
-<p>Un rapport préliminaire du projet MIT NANDA observe que la grande majorité des systèmes intégrés
-          examinés n’avaient pas encore produit d’impact financier mesurable. Les auteurs mettent notamment en avant :
-          intégration aux flux de travail, qualité des données, boucles de correction. À cela s'ajoute
-          une « taxe de vérification » — le temps passé à contrôler une réponse fluide mais parfois fausse.</p>
-<span class="src"><strong>Lecture santé au travail :</strong> sans intégration, données propres et supervision, le gain affiché peut être annulé par la charge de vérification.</span>
-</article>
-</div>
-<div class="duo" style="margin-top:26px">
-<div class="duo-block glass litt reveal">
-<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><path d="M9 2.5c-2.2-1.3-5-1.3-7 0v12c2-1.3 4.8-1.3 7 0 2.2-1.3 5-1.3 7 0v-12c-2-1.3-4.8-1.3-7 0Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path><path d="M9 2.5v12" stroke="currentColor" stroke-width="1.5"></path></svg></span>Un enjeu de prévention primaire</h3>
-<p>Suppressions de postes, réorganisations, intensification, perte de sens ou insécurité de
-          l'emploi sont des facteurs de risques psychosociaux au sens du rapport Gollac. Les retours
-          de terrain confirment que ces effets se jouent en amont, dès la décision de déploiement.</p>
-<p>C'est précisément là que la santé au travail a une place : objectiver les effets sur le
-          travail réel avant, et non après, les premières difficultés.</p>
-</div>
-<div class="duo-block glass analyse reveal">
-<h3><span class="ico"><svg fill="none" height="17" viewbox="0 0 18 18" width="17"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M9 5.5V9l2.5 2" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></span>Un enjeu de méthode</h3>
-<p>Les échecs les plus visibles viennent d'un même réflexe : remplacer plutôt qu'augmenter,
-          et déployer sans évaluer. Les trajectoires qui tiennent dans la durée combinent IA sur les
-          tâches répétitives, humain sur les décisions sensibles, et mesure continue des erreurs.</p>
-<p>C'est la même logique que celle proposée en pratique sur ce site : définir la tâche,
-          tester sur cas réels, puis déployer avec journalisation et retour terrain.</p>
-</div>
-</div>
-</div>
-</section><section class="section" id="terrain-sources" style="padding-top:0">
-<div class="wrap">
-<div class="sources glass reveal">
-<h3>Références de la section</h3>
-<ol>
-<li>MIT NANDA. <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" rel="noopener noreferrer" target="_blank"><em>The GenAI Divide: State of AI in Business 2025</em></a>. Résultats préliminaires fondés sur plus de 300 initiatives publiques, 52 entretiens organisationnels et 153 réponses de dirigeants ; le chiffre de 95 % ne doit pas être extrapolé à toutes les entreprises.</li>
-<li>Onclusive / Reputational Intelligence France — PSE de septembre 2023 (217 postes sur 383). Question écrite n°12062, <a href="https://questions.assemblee-nationale.fr/q16/16-12062QE.htm" rel="noopener noreferrer" target="_blank">Assemblée nationale</a>. La première procédure a été abandonnée ; l’entreprise avait annoncé son intention de présenter éventuellement un nouveau projet.</li>
-<li>Klarna — <a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/" rel="noopener noreferrer" target="_blank">communiqué de 2024</a> sur une charge de travail équivalente à 700 agents à temps plein, puis <a href="https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/" rel="noopener noreferrer" target="_blank">évolution documentée en 2025</a> vers davantage d’intervention humaine et une priorité accrue donnée à la qualité de service.</li>
-</ol>
-</div>
-</div>
-</section><section class="section" style="padding-top:0"><div class="wrap"><div class="cycle-nav reveal"><a class="cycle-card glass" href="../comprendre/"><svg aria-hidden="true" fill="none" height="18" viewbox="0 0 16 16" width="18"><path d="M14 8H3M7 3.5 2.5 8 7 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg><div><div class="lbl">Précédent — Comprendre</div><div class="ttl">Revenir aux fondamentaux</div></div></a><a class="cycle-card glass next" href="../evaluer/"><div><div class="lbl">Suivant — Évaluer</div><div class="ttl">Évaluer les promesses</div></div><svg aria-hidden="true" fill="none" height="18" viewbox="0 0 16 16" width="18"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a></div></div></section></section></main>
-<footer><div class="wrap"><div class="foot-grid">
-<div class="foot-brand"><a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés, datés et discutables pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
-<div><h4>Parcours</h4><ul><li><a href="../comprendre/">Comprendre</a></li><li><a href="../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../evaluer/">Évaluer</a></li><li><a href="../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
-<div><h4>Ressources</h4><ul><li><a href="../ressources/modeles/">Panorama des modèles</a></li><li><a href="../a-propos/">À propos et publications</a></li><li><a href="../#mises-a-jour">Dernières mises à jour</a></li></ul></div>
-<div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../confidentialite/">Confidentialité</a></li></ul></div>
-</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span><span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span></div></div></footer>
-<button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
-<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, hallucinations, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog><script defer="" src="../assets/js/search-index.js"></script><script defer="" src="../assets/js/site.js"></script></body></html>
+<body class="inner-page page-pratique page-usages-split" data-page="pratique" data-root="../">
+
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <nav aria-label="Navigation principale" class="nav glass">
+    <a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../comprendre/">Comprendre</a>
+      <a aria-current="page" class="is-active" href="../usages-terrain/">Usages &amp; terrain</a>
+      <a href="../evaluer/">Évaluer</a>
+      <a href="../risques-prevention/">Risques &amp; prévention</a>
+      <a href="../droit-gouvernance/">Droit &amp; gouvernance</a>
+      <details class="nav-resources">
+        <summary>Ressources</summary>
+        <div class="nav-resources-menu">
+          <a href="../ressources/modeles/">Panorama des modèles</a>
+          <a href="../a-propos/">À propos et publications</a>
+          <a href="../mentions-legales/">Mentions légales</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-tools">
+      <button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+      <div aria-label="Choix de la langue" class="lang-switch">
+        <a class="active" href="../usages-terrain/" hreflang="fr" lang="fr">FR</a>
+        <a href="../en/uses-and-field/" hreflang="en" lang="en">EN</a>
+      </div>
+      <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button">
+        <span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
+      </button>
+      <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+<main id="main-content" tabindex="-1">
+  <section class="page active" id="page-pratique">
+    <header class="page-hero">
+      <div class="wrap">
+        <div class="hero-frame">
+          <picture class="responsive-art">
+            <source sizes="(max-width:760px) 100vw,1180px" srcset="../assets/images/arcadian-state-640.webp 640w, ../assets/images/arcadian-state-960.webp 960w, ../assets/images/arcadian-state-1280.webp 1280w, ../assets/images/arcadian-state-1800.webp 1800w" type="image/webp"/>
+            <img alt="Thomas Cole, L’État arcadien ou pastoral, 1836" decoding="async" fetchpriority="high" loading="eager" src="../assets/images/arcadian-state-1800.jpg"/>
+          </picture>
+          <div class="veil"></div>
+          <p class="hero-credit">Thomas Cole, The Arcadian or Pastoral State, 1836</p>
+          <div class="hero-inner">
+            <h1>De l’idée à l’usage réel de <em>l’intelligence artificielle</em></h1>
+            <p class="hero-descriptor">Découvrir un exemple documenté en santé au travail, préparer un usage avant son déploiement et analyser ses effets une fois confronté au travail réel.</p>
+            <div class="hero-actions"><a class="btn btn-solid" href="#parcours-usages">Choisir un parcours</a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+      <section aria-labelledby="resume-page" class="page-summary-section">
+        <div class="wrap">
+          <div class="page-summary glass">
+            <div class="page-summary-main">
+              <span class="mini-kicker">En 30 secondes</span>
+              <h2 id="resume-page">Les repères essentiels</h2>
+              <ul><li>Un usage utile part d’une tâche professionnelle précise, pas d’une technologie à placer.</li><li>Avant le déploiement, il faut ajuster la vigilance aux données, à l’autonomie du système et aux conséquences d’une erreur.</li><li>Après le déploiement, l’analyse porte sur la qualité, la charge, les compétences, l’autonomie et les collectifs.</li></ul>
+            </div>
+            <aside aria-label="Informations de lecture" class="page-summary-side">
+              <dl>
+                <div><dt>Public</dt><dd>Professionnels de santé au travail, préventeurs, RH, employeurs, juristes, CSE et porteurs de projet</dd></div>
+                <div><dt>Temps de lecture</dt><dd>Environ 2 minutes</dd></div>
+                <div><dt>Dernière vérification</dt><dd>13 juillet 2026</dd></div>
+              </dl>
+            </aside>
+            <nav aria-label="Sommaire de la page" class="page-toc">
+              <span>Sur cette page</span>
+              <ol><li><a href="#parcours-usages">Choisir un parcours</a></li><li><a href="#principe-commun">Le principe commun</a></li></ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+
+    <section class="usages-section" id="parcours-usages">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Trois parcours autonomes</span>
+          <h2>Accéder directement au contenu utile</h2>
+          <p>Chaque page répond à une question distincte et peut être consultée indépendamment.</p>
+        </div>
+
+        <div class="route-grid">
+          <article class="route-card route-card--primary glass reveal" id="pratique-tf335">
+            <span class="route-number">1</span>
+            <h2>Un exemple concret d’IA en santé au travail</h2>
+            <p>Comprendre l’utilisation d’un modèle de langage comme second lecteur de préconisations médicales, à partir d’un protocole publié.</p>
+            <ul class="route-list">
+              <li>problème professionnel de départ ;</li>
+              <li>cinq critères de qualité ;</li>
+              <li>résultats et limites ;</li>
+              <li>rôle maintenu du médecin du travail.</li>
+            </ul>
+            <a class="route-link" href="exemple-sante-travail/"><span>Découvrir le cas documenté</span><span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="route-card glass reveal" id="pratique-usages">
+            <span class="route-number">2</span>
+            <h2>Maîtriser un usage avant déploiement</h2>
+            <p>Choisir une tâche, apprécier le niveau de risque et organiser un pilote limité, vérifiable et réversible.</p>
+            <ul class="route-list">
+              <li>grille de décision ;</li>
+              <li>trois niveaux de vigilance ;</li>
+              <li>parcours TPE-PME ;</li>
+              <li>fiche minimale de pilotage.</li>
+            </ul>
+            <a class="route-link" href="avant-deploiement/"><span>Préparer un usage</span><span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="route-card glass reveal" id="retours-terrain">
+            <span class="route-number">3</span>
+            <h2>Analyser les retours après déploiement</h2>
+            <p>Observer ce que l’IA produit réellement dans l’organisation, au-delà des démonstrations et des promesses initiales.</p>
+            <ul class="route-list">
+              <li>charge de vérification ;</li>
+              <li>évolution des métiers ;</li>
+              <li>cas documentés ;</li>
+              <li>indicateurs de suivi.</li>
+            </ul>
+            <a class="route-link" href="retours-terrain/"><span>Voir les retours de terrain</span><span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section" id="principe-commun">
+      <div class="wrap">
+        <div class="principle-band reveal">
+          <span class="principle-icon" aria-hidden="true">+</span>
+          <div>
+            <h2>Un principe commun : partir du travail réel</h2>
+            <p>L’utilité d’un système ne se déduit ni de sa nouveauté ni de ses performances générales. Elle se mesure sur une tâche située, avec les personnes concernées, des critères explicites et la possibilité de corriger ou d’arrêter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="author-byline" aria-label="Auteur du contenu">
+        <div class="wrap">
+          <p>Rédigé par le <a href="../a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p>
+        </div>
+      </section>
+
+  </section>
+</main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+          <p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p>
+        </div>
+        <div>
+          <h4>Parcours</h4>
+          <ul>
+            <li><a href="../comprendre/">Comprendre</a></li>
+            <li><a href="../usages-terrain/">Usages &amp; terrain</a></li>
+            <li><a href="../evaluer/">Évaluer</a></li>
+            <li><a href="../risques-prevention/">Risques &amp; prévention</a></li>
+            <li><a href="../droit-gouvernance/">Droit &amp; gouvernance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="../ressources/modeles/">Panorama des modèles</a></li>
+            <li><a href="../a-propos/">À propos et publications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li>
+            <li><a href="../confidentialite/">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span>
+        <span><a href="../mentions-legales/">Mentions légales</a> · <a href="../confidentialite/">Confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+  <button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
+  <dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
+    <div class="search-shell">
+      <div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div>
+      <input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, pilote, préconisations…" type="search"/>
+      <div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div>
+    </div>
+  </dialog>
+  <script defer src="../assets/js/search-index.js"></script>
+  <script defer src="../assets/js/search-index-usages.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+
+</body>
+</html>

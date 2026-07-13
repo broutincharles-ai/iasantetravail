@@ -1,0 +1,34 @@
+usages-terrain/index.html
+  - single_h1: OK
+  - summary_30s: OK
+  - byline: OK
+  - canonical: OK
+  - nav: OK
+  - footer: OK
+usages-terrain/exemple-sante-travail/index.html
+  - single_h1: OK
+  - summary_30s: OK
+  - byline: OK
+  - canonical: OK
+  - nav: OK
+  - footer: OK
+usages-terrain/avant-deploiement/index.html
+  - single_h1: OK
+  - summary_30s: OK
+  - byline: OK
+  - canonical: OK
+  - nav: OK
+  - footer: OK
+usages-terrain/retours-terrain/index.html
+  - single_h1: OK
+  - summary_30s: OK
+  - byline: OK
+  - canonical: OK
+  - nav: OK
+  - footer: OK
+Contrôles spécifiques
+  - 3 route cards: OK
+  - old #retours-terrain anchor preserved: OK
+  - Arcadian painting on landing: OK
+  - River painting on returns: OK
+  - 3 new URLs in sitemap: OK

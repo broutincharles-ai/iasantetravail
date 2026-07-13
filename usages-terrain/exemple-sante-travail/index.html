@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." name="description"/>
+  <meta content="Dr Charles Broutin" name="author"/>
+  <meta content="index,follow,max-image-preview:large" name="robots"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <meta content="#EADDC6" name="theme-color"/>
+  <link href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="fr_FR" property="og:locale"/>
+  <meta content="IA &amp; Santé au Travail" property="og:site_name"/>
+  <meta content="Un exemple concret d’IA en santé au travail" property="og:title"/>
+  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." property="og:description"/>
+  <meta content="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/" property="og:url"/>
+  <meta content="https://www.iasantetravail.com/assets/images/og-usages.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Un exemple concret d’IA en santé au travail" name="twitter:title"/>
+  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." name="twitter:description"/>
+  <title>Un exemple concret d’IA en santé au travail</title>
+  <script type="application/ld+json">[
+      {
+        "@type":"Article",
+        "headline":"Un exemple concret d’utilisation de l’IA en santé au travail",
+        "name":"Un exemple concret d’utilisation de l’IA en santé au travail",
+        "url":"https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/",
+        "inLanguage":"fr-FR",
+        "description":"Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites.",
+        "dateModified":"2026-07-13",
+        "author":{
+          "@type":"Person",
+          "name":"Dr Charles Broutin",
+          "jobTitle":"Médecin du travail",
+          "url":"https://www.iasantetravail.com/a-propos/",
+          "sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]
+        },
+        "publisher":{"@type":"Person","name":"Dr Charles Broutin"}
+      },
+        {
+          "@type":"BreadcrumbList",
+          "itemListElement":[{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.iasantetravail.com/"},{"@type": "ListItem", "position": 2, "name": "Usages et terrain", "item": "https://www.iasantetravail.com/usages-terrain/"},{"@type": "ListItem", "position": 3, "name": "Exemple en santé au travail", "item": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"}]
+        }
+    ]</script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  
+  <link href="../../assets/css/site.css" rel="stylesheet"/>
+  <link href="../../assets/css/usages-terrain.css?v=1.0" rel="stylesheet"/>
+  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
+  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+</head>
+
+<body class="inner-page page-pratique page-usages-split" data-page="pratique" data-root="../../">
+
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <nav aria-label="Navigation principale" class="nav glass">
+    <a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../../comprendre/">Comprendre</a>
+      <a aria-current="page" class="is-active" href="../../usages-terrain/">Usages &amp; terrain</a>
+      <a href="../../evaluer/">Évaluer</a>
+      <a href="../../risques-prevention/">Risques &amp; prévention</a>
+      <a href="../../droit-gouvernance/">Droit &amp; gouvernance</a>
+      <details class="nav-resources">
+        <summary>Ressources</summary>
+        <div class="nav-resources-menu">
+          <a href="../../ressources/modeles/">Panorama des modèles</a>
+          <a href="../../a-propos/">À propos et publications</a>
+          <a href="../../mentions-legales/">Mentions légales</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-tools">
+      <button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
+      <div aria-label="Choix de la langue" class="lang-switch">
+        <a class="active" href="../../usages-terrain/" hreflang="fr" lang="fr">FR</a>
+        <a href="../../en/uses-and-field/" hreflang="en" lang="en">EN</a>
+      </div>
+      <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button">
+        <span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
+      </button>
+      <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+<main id="main-content" tabindex="-1">
+  <section class="page active">
+    <header class="text-hero">
+      <div class="wrap">
+        <div class="text-hero-shell">
+          <nav aria-label="Fil d’Ariane" class="breadcrumbs">
+            <a href="../../">Accueil</a><span>›</span><a href="../">Usages &amp; terrain</a><span>›</span><span>Exemple en santé au travail</span>
+          </nav>
+          <h1>Un exemple concret d’utilisation de l’IA <em>en santé au travail</em></h1>
+          <p>Un modèle de langage utilisé comme second lecteur pour repérer des défauts de qualité dans les préconisations médicales, sans rédiger ni décider à la place du médecin du travail.</p>
+        </div>
+      </div>
+    </header>
+
+
+      <section aria-labelledby="resume-page" class="page-summary-section">
+        <div class="wrap">
+          <div class="page-summary glass">
+            <div class="page-summary-main">
+              <span class="mini-kicker">En 30 secondes</span>
+              <h2 id="resume-page">Les repères essentiels</h2>
+              <ul><li>L’IA intervient comme second lecteur selon cinq critères explicites de qualité.</li><li>Elle signale des formulations à vérifier ; la contextualisation du poste et la décision restent médicales.</li><li>Les résultats montrent un potentiel d’assistance, mais aussi une tendance à la surdétection qui impose une validation humaine.</li></ul>
+            </div>
+            <aside aria-label="Informations de lecture" class="page-summary-side">
+              <dl>
+                <div><dt>Public</dt><dd>Médecins du travail, IDEST, équipes SPST et professionnels évaluant un usage métier supervisé</dd></div>
+                <div><dt>Temps de lecture</dt><dd>Environ 6 minutes</dd></div>
+                <div><dt>Dernière vérification</dt><dd>13 juillet 2026</dd></div>
+              </dl>
+            </aside>
+            <nav aria-label="Sommaire de la page" class="page-toc">
+              <span>Sur cette page</span>
+              <ol><li><a href="#probleme">Le problème de départ</a></li><li><a href="#protocole">Le protocole</a></li><li><a href="#resultats">Les résultats</a></li><li><a href="#enseignements">Les enseignements</a></li></ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+
+    <section class="usages-section" id="probleme">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Le problème professionnel</span>
+          <h2>Relire les préconisations avant leur transmission</h2>
+          <p>Une préconisation doit être claire, applicable, proportionnée et compatible avec le secret médical. Une formulation imprécise ou excessive peut créer des difficultés pour le salarié, l’employeur et le médecin du travail.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="content-card glass reveal">
+            <h3>La tâche confiée au modèle</h3>
+            <p>Analyser une préconisation déjà rédigée et signaler les critères susceptibles de nécessiter une relecture. Le modèle ne produit pas l’avis médical initial et ne modifie pas automatiquement le document.</p>
+          </article>
+          <article class="content-card glass reveal">
+            <h3>La responsabilité conservée</h3>
+            <p>Le médecin du travail reste seul responsable de la formulation finale, de la prise en compte du poste réel, du contexte clinique et de la proportionnalité de la recommandation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section" id="protocole">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Cinq critères explicites</span>
+          <h2>Ce que le modèle devait repérer</h2>
+          <p>L’évaluation portait sur des catégories définies à l’avance, afin de comparer la sortie du modèle à une référence humaine structurée.</p>
+        </div>
+
+        <div class="criteria-grid">
+          <article class="criteria-card glass reveal"><span>Critère 1</span><h3>Imprécision</h3><p>Formulation trop vague pour être comprise ou appliquée correctement.</p></article>
+          <article class="criteria-card glass reveal"><span>Critère 2</span><h3>Caractère obligatoire ambigu</h3><p>Doute sur ce qui relève d’une recommandation ou d’une obligation.</p></article>
+          <article class="criteria-card glass reveal"><span>Critère 3</span><h3>Information hors cadre</h3><p>Élément qui ne devrait pas être transmis dans le document adressé à l’employeur.</p></article>
+          <article class="criteria-card glass reveal"><span>Critère 4</span><h3>Inaptitude déguisée</h3><p>Restriction ou changement de poste formulé de manière excessive.</p></article>
+          <article class="criteria-card glass reveal"><span>Critère 5</span><h3>Secret médical</h3><p>Information susceptible de révéler un diagnostic ou un élément médical confidentiel.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section" id="resultats">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Résultats principaux</span>
+          <h2>Un potentiel de second lecteur, avec des limites identifiables</h2>
+          <p>Les chiffres doivent être lus dans le cadre précis de l’étude et ne prouvent pas une capacité générale à produire ou valider des préconisations de façon autonome.</p>
+        </div>
+
+        <div class="study-metrics">
+          <article class="study-metric reveal"><div class="num">78 %</div><p>des préconisations consensuelles de la base antérieure présentaient au moins un défaut de qualité.</p></article>
+          <article class="study-metric reveal"><div class="num">385</div><p>préconisations ont été tirées au sort pour l’évaluation comparative.</p></article>
+          <article class="study-metric reveal"><div class="num">74,6 %</div><p>de concordance globale entre le modèle et le consensus multidisciplinaire.</p></article>
+          <article class="study-metric reveal"><div class="num">0</div><p>hallucination observée dans l’échantillon comparatif évalué.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section" id="enseignements">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Interprétation</span>
+          <h2>Ce que l’étude permet — et ne permet pas — de conclure</h2>
+        </div>
+
+        <div class="conclusion-grid">
+          <article class="content-card glass reveal">
+            <span class="proof proof--consensus">Apports</span>
+            <h3>Un usage plausible comme second lecteur</h3>
+            <ul>
+              <li>repérer des formulations à vérifier ;</li>
+              <li>appliquer une grille homogène ;</li>
+              <li>attirer l’attention sur la clarté et la confidentialité ;</li>
+              <li>ouvrir une réflexion avant transmission.</li>
+            </ul>
+          </article>
+          <article class="content-card glass reveal">
+            <span class="proof proof--expert">Limites</span>
+            <h3>Pas de substitution à la décision médicale</h3>
+            <ul>
+              <li>tendance à la surdétection ;</li>
+              <li>absence de connaissance complète du poste réel ;</li>
+              <li>généralisation non démontrée à d’autres usages cliniques ;</li>
+              <li>validation finale nécessairement humaine.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section">
+      <div class="wrap">
+        <div class="article-cta reveal">
+          <div>
+            <span class="kicker">Article de référence</span>
+            <h2>Lire l’étude complète</h2>
+            <p>Retrouver le protocole, les résultats détaillés et la discussion dans l’article publié sous la référence TF 335.</p>
+          </div>
+          <a class="btn btn-solid" href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l’article sur le site de l’INRS ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="usages-section">
+      <div class="wrap">
+        <div class="action-grid">
+          <a class="action-card glass reveal" href="../avant-deploiement/"><span><h3>Maîtriser un usage avant déploiement</h3><p>Passer du cas documenté à une méthode de pilotage.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
+          <a class="action-card glass reveal" href="../../evaluer/impact/"><span><h3>Évaluer un projet d’IA</h3><p>Analyser les effets potentiels avant la mise en place.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
+          <a class="action-card glass reveal" href="../retours-terrain/"><span><h3>Voir les retours de terrain</h3><p>Observer les effets une fois l’outil déployé.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="author-byline" aria-label="Auteur du contenu">
+        <div class="wrap">
+          <p>Rédigé par le <a href="../../a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p>
+        </div>
+      </section>
+
+  </section>
+</main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
+          <p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p>
+        </div>
+        <div>
+          <h4>Parcours</h4>
+          <ul>
+            <li><a href="../../comprendre/">Comprendre</a></li>
+            <li><a href="../../usages-terrain/">Usages &amp; terrain</a></li>
+            <li><a href="../../evaluer/">Évaluer</a></li>
+            <li><a href="../../risques-prevention/">Risques &amp; prévention</a></li>
+            <li><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="../../ressources/modeles/">Panorama des modèles</a></li>
+            <li><a href="../../a-propos/">À propos et publications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li>
+            <li><a href="../../confidentialite/">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span>
+        <span><a href="../../mentions-legales/">Mentions légales</a> · <a href="../../confidentialite/">Confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+  <button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
+  <dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
+    <div class="search-shell">
+      <div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div>
+      <input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, pilote, préconisations…" type="search"/>
+      <div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div>
+    </div>
+  </dialog>
+  <script defer src="../../assets/js/search-index.js"></script>
+  <script defer src="../../assets/js/search-index-usages.js"></script>
+  <script defer src="../../assets/js/site.js"></script>
+
+</body>
+</html>
