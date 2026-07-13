@@ -1,36 +1,19 @@
-# Refonte de la rubrique Évaluer — épuration et SEO
+# Refonte de la page À propos
 
-## Fichiers à téléverser
+## Fichiers à téléverser à la racine du dépôt
 
-- `evaluer/index.html`
-- `evaluer/benchmark/index.html`
-- `evaluer/impact/index.html`
-- `evaluer/impact/suivi.html`
-- `assets/css/evaluer.css`
-- `assets/css/evaluer-tools.css`
-- `assets/js/search-index-evaluer.js`
-- `sitemap.xml`
+- `a-propos/index.html` — remplace le fichier actuel.
+- `assets/css/a-propos.css` — nouveau fichier.
 
-## Éléments inchangés
+## Modifications
 
-Ne remplacez pas les fichiers suivants : ils ne sont pas contenus dans ce paquet.
+- hero allégé et harmonisé avec les autres pages ;
+- peinture *The Oxbow* conservée ;
+- parcours condensé et informations essentielles mieux hiérarchisées ;
+- publications présentées dans deux cartes distinctes ;
+- interventions et méthode éditoriale séparées ;
+- suppression des répétitions et de la grande citation finale ;
+- contact LinkedIn et newsletter SFST mieux visibles ;
+- SEO renforcé : title, description, Open Graph, ProfilePage et BreadcrumbList.
 
-- `evaluer/impact/assets/js/impact-config.js`
-- `evaluer/impact/assets/js/impact-assessment.js`
-- `evaluer/impact/assets/js/impact-followup.js`
-- `evaluer/impact/assets/css/impact-assessment.css`
-
-Les questions, la notation, les calculs, les résultats et les exports restent donc pilotés par les fichiers déjà présents dans le dépôt.
-
-## Principales modifications
-
-- page Évaluer transformée en carrefour de trois parcours ;
-- questionnaires mis en avant avant le benchmark ;
-- page benchmark raccourcie, peinture conservée ;
-- introductions des deux outils allégées ;
-- métadonnées SEO distinctes pour chaque URL ;
-- Open Graph, Twitter Cards, JSON-LD et fils d’Ariane ;
-- suppression des faux `hreflang` anglais sur les outils non traduits ;
-- byline visible vers `/a-propos/` ;
-- recherche interne complétée ;
-- sitemap mis à jour.
+Aucune autre page du site n’est modifiée.
