@@ -1,14 +1,7 @@
-- un seul H1: OK
-- peinture Oxbow conservée: OK
-- hero sans stage-tag: OK
-- hero sans hero-card: OK
-- bloc En 30 secondes: OK
-- section parcours: OK
-- section publications: OK
-- 2 publications: OK
-- section interventions: OK
-- méthode éditoriale: OK
-- SEO canonical: OK
-- JSON-LD ProfilePage: OK
-- LinkedIn: OK
-- newsletter SFST: OK
+- section méthode supprimée: OK
+- lien sommaire supprimé: OK
+- hero conservé: OK
+- parcours conservé: OK
+- publications conservées: OK
+- interventions conservées: OK
+- contact conservé: OK
