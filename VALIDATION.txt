@@ -1,22 +1,5 @@
-- one H1: OK
-- English language: OK
-- primary topic in title: OK
-- canonical: OK
-- English hreflang: OK
-- French hreflang: OK
-- Open Graph: OK
-- Twitter card: OK
-- ProfilePage JSON-LD: OK
-- Oxbow painting preserved: OK
-- hero has no stage tag: OK
-- hero has no dark card: OK
-- editorial method section removed: OK
-- profile section: OK
-- two publications: OK
-- three activity cards: OK
-- contact section: OK
-- LinkedIn link: OK
-- SFST newsletter link: OK
-- shared French About CSS: OK
-- English CSS: OK
-- search supplement: OK
+- Syntaxe JavaScript : OK
+- Ordre français présent : OK
+- Ordre anglais présent : OK
+- Réorganisation des menus : OK
+- Réorganisation des pieds de page : OK

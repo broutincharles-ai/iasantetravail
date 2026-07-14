@@ -1,49 +1,25 @@
-# English About page — international SEO redesign
+# Nouvel ordre de navigation français et anglais
 
-Upload these files at the root of the GitHub repository:
+Téléverser à la racine du dépôt :
 
-- `en/about/index.html`
-- `assets/css/en-about.css`
-- `assets/js/search-index-en-about.js`
-- `sitemap.xml`
+- `assets/js/site.js`
 
-The page also reuses the existing French visual stylesheet:
+Nouvel ordre français :
+1. Comprendre
+2. Usages & terrain
+3. Risques & prévention
+4. Évaluer
+5. Droit & gouvernance
+6. Ressources
 
-- `assets/css/a-propos.css`
+Nouvel ordre anglais :
+1. Understand
+2. Uses & field evidence
+3. Risks & prevention
+4. Assess
+5. Law & governance
+6. Resources
 
-Do not remove that shared file.
+Le script réordonne les menus desktop, les menus mobiles et les listes de parcours correspondantes dans les pieds de page.
 
-## Visual and content changes
-
-- same hero structure as the current French About page;
-- *The Oxbow* preserved;
-- old stage label and dark hero card removed;
-- editorial-method section removed;
-- profile and qualifications presented clearly;
-- two published works shown in dedicated cards;
-- professional education, institutional work and deployment analysis separated;
-- international scope explained without presenting French rules as universal;
-- LinkedIn and the French SFST newsletter clearly linked.
-
-## SEO positioning
-
-Primary topic:
-- Dr Charles Broutin and AI in occupational health
-
-Supporting topics:
-- occupational physician artificial intelligence;
-- workplace AI and psychosocial risks;
-- large language models in occupational medicine;
-- AI assessment and responsible deployment;
-- occupational-health publications.
-
-## Technical SEO
-
-- unique title and meta description;
-- ProfilePage, Person and BreadcrumbList structured data;
-- one descriptive H1;
-- canonical URL;
-- reciprocal English/French hreflang;
-- Open Graph and Twitter metadata;
-- descriptive internal links;
-- updated English search index and sitemap.
+Aucun contenu, lien ou état actif n’est modifié.

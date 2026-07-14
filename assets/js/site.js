@@ -1,8 +1,42 @@
-
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isEN = document.documentElement.lang.toLowerCase().startsWith('en');
 const nav = document.querySelector('.nav');
 const menuButton = document.querySelector('.nav-menu-btn');
+
+/* Ordre éditorial commun à toutes les pages :
+   Comprendre → Usages → Risques → Évaluer → Droit
+   Understand → Uses → Risks → Assess → Law */
+function reorderSiteNavigation(){
+ const orderedPaths=isEN
+  ? ['/en/understand','/en/uses-and-field','/en/risks-prevention','/en/evaluate','/en/legal-governance']
+  : ['/comprendre','/usages-terrain','/risques-prevention','/evaluer','/droit-gouvernance'];
+ const routeIndex=href=>{
+  try{
+   const path=new URL(href,document.baseURI).pathname.replace(/\/+$/,'');
+   return orderedPaths.indexOf(path);
+  }catch{return -1}
+ };
+
+ document.querySelectorAll('.nav-links').forEach(container=>{
+  const resourceMenu=container.querySelector(':scope > details');
+  [...container.querySelectorAll(':scope > a')]
+   .map(link=>({link,index:routeIndex(link.getAttribute('href'))}))
+   .filter(item=>item.index>=0)
+   .sort((a,b)=>a.index-b.index)
+   .forEach(({link})=>container.insertBefore(link,resourceMenu||null));
+ });
+
+ document.querySelectorAll('footer ul').forEach(list=>{
+  const items=[...list.querySelectorAll(':scope > li')];
+  const routes=items
+   .map(item=>({item,index:routeIndex(item.querySelector(':scope > a')?.getAttribute('href'))}))
+   .filter(entry=>entry.index>=0);
+  if(routes.length<4)return;
+  routes.sort((a,b)=>a.index-b.index).forEach(({item})=>list.appendChild(item));
+ });
+}
+reorderSiteNavigation();
+
 function closeMenu(){ if(!nav||!menuButton)return; nav.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); }
 menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open?'true':'false');});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',closeMenu));
@@ -40,4 +74,3 @@ input?.addEventListener('input',e=>renderSearch(e.target.value));
 
 // Préserve les anciens liens par fragment vers les nouvelles URL.
 if(document.body.dataset.page==='accueil' && location.hash){const m={comprendre:'comprendre/',pratique:'usages-terrain/',terrain:'usages-terrain/#retours-terrain',evaluer:'evaluer/',modeles:'ressources/modeles/',risques:'risques-prevention/',legislation:'droit-gouvernance/',apropos:'a-propos/',mentions:'mentions-legales/',confidentialite:'confidentialite/'};const raw=decodeURIComponent(location.hash.slice(1));const owner=Object.keys(m).find(k=>raw===k||raw.startsWith(k+'-'));if(owner){const target=m[owner]+(raw!==owner&&!m[owner].includes('#')?'#'+raw:'');location.replace(target);}}
-
