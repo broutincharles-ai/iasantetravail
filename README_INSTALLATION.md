@@ -1,60 +1,44 @@
-# English Assess section — SEO and interactive tools
+# English Risks & Prevention page — international SEO redesign
 
 Upload these files at the root of the GitHub repository:
 
-- `en/evaluate/index.html`
-- `en/evaluate/benchmark/index.html`
-- `en/evaluate/impact/index.html`
-- `en/evaluate/impact/follow-up.html`
-- `en/evaluate/impact/assets/js/initial-config-en.js`
-- `en/evaluate/impact/assets/js/followup-config-en.js`
-- `en/evaluate/impact/assets/js/assessment-core-en.js`
-- `assets/js/search-index-en-evaluate.js`
+- `en/risks-prevention/index.html`
+- `assets/css/en-risks.css`
+- `assets/js/search-index-en-risks.js`
 - `sitemap.xml`
 
-## Existing shared files used
+## Visual changes
 
-Do not remove:
+- simplified hero matching the revised French page;
+- *Destruction* by Thomas Cole preserved;
+- no stage label or dark hero card;
+- compact “In 30 seconds” summary;
+- six psychosocial-risk cards;
+- four-step early-prevention pathway;
+- separate technical, organisational and governance risk families;
+- dark explanatory panel for plausible errors and hallucinations;
+- practical four-principle prevention panel;
+- links to the English assessment and governance sections.
 
-- `assets/css/evaluer.css`
-- `assets/css/evaluer-tools.css`
-- `evaluer/impact/assets/css/impact-assessment.css`
-- `assets/css/site.css`
-- `assets/js/site.js`
-- `assets/js/search-index-en.js`
+## SEO positioning
 
-## Section structure
+Primary topic:
+- AI and psychosocial risks at work
 
-- English Assess hub.
-- Pre-deployment 18-question interactive impact assessment.
-- Post-deployment 18-question dated follow-up.
-- English benchmark explainer.
-
-## Tool functions
-
-- contextualised 18-question journey;
-- nine-dimension score and radar chart;
-- critical-signal detection;
-- prioritised prevention actions;
-- HTML and JSON export;
-- print/save-to-PDF report;
-- anonymous local history for follow-up;
-- “not assessed” response option in follow-up.
-
-## SEO targets
-
-- workplace AI impact assessment;
-- AI risk assessment before deployment;
-- post-deployment AI monitoring;
-- AI and psychosocial risk assessment;
-- human oversight of workplace AI;
-- AI benchmarks in occupational health.
+Supporting topics:
+- workplace AI risks;
+- AI risk prevention before deployment;
+- occupational health and AI;
+- algorithmic management and worker surveillance;
+- LLM hallucinations in professional use;
+- human oversight and skill erosion.
 
 ## Technical SEO
 
-- unique title and meta description for each URL;
-- canonical URLs;
-- English/French hreflang;
+- unique title and meta description;
+- one descriptive H1;
+- canonical URL and reciprocal English/French hreflang;
 - Open Graph and Twitter metadata;
-- CollectionPage, Article, WebApplication and BreadcrumbList structured data;
+- Article and BreadcrumbList structured data;
+- descriptive internal links;
 - updated English search index and sitemap.

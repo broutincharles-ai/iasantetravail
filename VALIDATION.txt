@@ -1,67 +1,21 @@
-en/evaluate/index.html
-  - one H1: OK
-  - English language: OK
-  - canonical: OK
-  - English hreflang: OK
-  - French hreflang: OK
-  - Open Graph: OK
-  - Twitter card: OK
-  - JSON-LD: OK
-  - navigation: OK
-  - footer: OK
-  - author: OK
-  - search supplement: OK
-en/evaluate/benchmark/index.html
-  - one H1: OK
-  - English language: OK
-  - canonical: OK
-  - English hreflang: OK
-  - French hreflang: OK
-  - Open Graph: OK
-  - Twitter card: OK
-  - JSON-LD: OK
-  - navigation: OK
-  - footer: OK
-  - author: OK
-  - search supplement: OK
-en/evaluate/impact/index.html
-  - one H1: OK
-  - English language: OK
-  - canonical: OK
-  - English hreflang: OK
-  - French hreflang: OK
-  - Open Graph: OK
-  - Twitter card: OK
-  - JSON-LD: OK
-  - navigation: OK
-  - footer: OK
-  - author: OK
-  - search supplement: OK
-en/evaluate/impact/follow-up.html
-  - one H1: OK
-  - English language: OK
-  - canonical: OK
-  - English hreflang: OK
-  - French hreflang: OK
-  - Open Graph: OK
-  - Twitter card: OK
-  - JSON-LD: OK
-  - navigation: OK
-  - footer: OK
-  - author: OK
-  - search supplement: OK
-Functional checks
-  - hub has 3 assessment choices: OK
-  - benchmark keeps The Consummation of Empire: OK
-  - initial page has context form: OK
-  - initial page loads English engine: OK
-  - follow-up page has anonymous project code: OK
-  - follow-up page has local history: OK
-  - initial config has 18 questions: OK
-  - follow-up config has 18 questions: OK
-  - engine supports JSON export: OK
-  - engine supports HTML export: OK
-  - engine supports print/PDF: OK
-  - engine supports radar chart: OK
-  - engine supports local history: OK
-  - engine supports not-assessed answers: OK
+- one H1: OK
+- English language: OK
+- primary topic in title: OK
+- canonical: OK
+- English hreflang: OK
+- French hreflang: OK
+- Open Graph: OK
+- Twitter card: OK
+- Article JSON-LD: OK
+- Destruction painting preserved: OK
+- hero has no stage tag: OK
+- hero has no dark card: OK
+- six risk dimensions: OK
+- four prevention steps: OK
+- three risk families: OK
+- six error cards: OK
+- four practical safeguards: OK
+- assessment link: OK
+- governance link: OK
+- author byline: OK
+- search supplement: OK
