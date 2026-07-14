@@ -1,17 +1,63 @@
-- one H1: OK
-- English language: OK
-- primary phrase in title: OK
-- canonical: OK
-- English hreflang: OK
-- French hreflang: OK
-- Open Graph: OK
-- Twitter card: OK
-- Article JSON-LD: OK
-- painting preserved: OK
-- 3 AI-family cards: OK
-- 3 expandable family sections: OK
-- 4 LLM steps: OK
-- 5 occupational-health questions: OK
-- sources included: OK
-- author byline: OK
-- supplemental search index: OK
+en/uses-and-field/index.html
+  - one H1: OK
+  - English language: OK
+  - canonical: OK
+  - English hreflang: OK
+  - French hreflang: OK
+  - Open Graph: OK
+  - JSON-LD: OK
+  - navigation: OK
+  - footer: OK
+  - author byline: OK
+  - shared French visual CSS: OK
+  - search supplement: OK
+en/uses-and-field/occupational-health-example/index.html
+  - one H1: OK
+  - English language: OK
+  - canonical: OK
+  - English hreflang: OK
+  - French hreflang: OK
+  - Open Graph: OK
+  - JSON-LD: OK
+  - navigation: OK
+  - footer: OK
+  - author byline: OK
+  - shared French visual CSS: OK
+  - search supplement: OK
+en/uses-and-field/before-deployment/index.html
+  - one H1: OK
+  - English language: OK
+  - canonical: OK
+  - English hreflang: OK
+  - French hreflang: OK
+  - Open Graph: OK
+  - JSON-LD: OK
+  - navigation: OK
+  - footer: OK
+  - author byline: OK
+  - shared French visual CSS: OK
+  - search supplement: OK
+en/uses-and-field/after-deployment/index.html
+  - one H1: OK
+  - English language: OK
+  - canonical: OK
+  - English hreflang: OK
+  - French hreflang: OK
+  - Open Graph: OK
+  - JSON-LD: OK
+  - navigation: OK
+  - footer: OK
+  - author byline: OK
+  - shared French visual CSS: OK
+  - search supplement: OK
+Specific checks
+  - hub has 3 pathway cards: OK
+  - published case has 5 criteria: OK
+  - published case has 4 metrics: OK
+  - pre-deployment has 6 decision rows: OK
+  - pre-deployment has 3 vigilance levels: OK
+  - pre-deployment has 6 pilot steps: OK
+  - after-deployment keeps River in the Catskills: OK
+  - after-deployment has 4 field lessons: OK
+  - after-deployment has 3 documented cases: OK
+  - after-deployment has 8 monitoring indicators: OK
