@@ -6,19 +6,17 @@
 - French hreflang: OK
 - Open Graph: OK
 - Twitter card: OK
-- Article JSON-LD: OK
-- Architect's Dream preserved: OK
+- ProfilePage JSON-LD: OK
+- Oxbow painting preserved: OK
 - hero has no stage tag: OK
 - hero has no dark card: OK
-- four legal layers: OK
-- six use rows: OK
-- five timeline items: OK
-- four consultation cards: OK
-- six governance steps: OK
-- four case cards: OK
-- twelve checklist items: OK
-- assessment link: OK
-- risk-prevention link: OK
-- legal disclaimer: OK
-- author byline: OK
+- editorial method section removed: OK
+- profile section: OK
+- two publications: OK
+- three activity cards: OK
+- contact section: OK
+- LinkedIn link: OK
+- SFST newsletter link: OK
+- shared French About CSS: OK
+- English CSS: OK
 - search supplement: OK
