@@ -3,6 +3,31 @@ const isEN = document.documentElement.lang.toLowerCase().startsWith('en');
 const nav = document.querySelector('.nav');
 const menuButton = document.querySelector('.nav-menu-btn');
 
+/* Plausible est chargé uniquement sur les deux pages d’accueil.
+   La fonction de file d’attente permet d’enregistrer la page vue
+   même si le script externe n’est pas encore entièrement chargé. */
+function initHomepageAnalytics(){
+ const page=document.body.dataset.page;
+ if(page!=='accueil' && page!=='en-home')return;
+ const scriptUrl='https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js';
+ if(document.querySelector(`script[src="${scriptUrl}"]`))return;
+
+ window.plausible=window.plausible||function(){
+  (window.plausible.q=window.plausible.q||[]).push(arguments);
+ };
+ window.plausible.init=window.plausible.init||function(options){
+  window.plausible.o=options||{};
+ };
+ window.plausible.init();
+
+ const analyticsScript=document.createElement('script');
+ analyticsScript.async=true;
+ analyticsScript.src=scriptUrl;
+ analyticsScript.dataset.analytics='plausible';
+ document.head.appendChild(analyticsScript);
+}
+initHomepageAnalytics();
+
 /* Ordre éditorial commun à toutes les pages :
    Comprendre → Usages → Risques → Évaluer → Droit
    Understand → Uses → Risks → Assess → Law */

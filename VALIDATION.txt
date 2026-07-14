@@ -1,6 +1,8 @@
 - Syntaxe JavaScript : OK
-- Usages à gauche en français : OK
-- Évaluer à droite en français : OK
-- Uses à gauche en anglais : OK
-- Assess à droite en anglais : OK
-- Pages ciblées uniquement : OK
+- Page française ciblée : OK
+- Page anglaise ciblée : OK
+- URL Plausible correcte : OK
+- Protection contre les doublons : OK
+- Chargement asynchrone : OK
+- Navigation conservée : OK
+- Vignettes Risques conservées : OK

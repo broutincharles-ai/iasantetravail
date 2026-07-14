@@ -1,22 +1,19 @@
-# Correction des vignettes de navigation de la page Risques
+# Plausible sur les deux pages d’accueil
 
 Remplacer dans le dépôt :
 
 - `assets/js/site.js`
 
-Résultat sur la page française `risques-prevention/` :
+Le script Plausible suivant est chargé uniquement lorsque `data-page` vaut :
 
-- vignette gauche : `Précédent — Usages & terrain`
-- lien gauche : `../usages-terrain/`
-- vignette droite : `Suivant — Évaluer`
-- lien droit : `../evaluer/`
+- `accueil` pour la page française ;
+- `en-home` pour la page anglaise.
 
-Résultat sur la page anglaise `en/risks-prevention/` :
+Script utilisé :
 
-- left card: `Previous — Uses & field evidence`
-- left link: `../../en/uses-and-field/`
-- right card: `Next — Assess`
-- right link: `../../en/evaluate/`
+`https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js`
 
-Le fichier conserve aussi le nouvel ordre du menu principal :
-Risques avant Évaluer / Risks before Assess.
+Le fichier conserve également :
+- l’ordre Risques avant Évaluer ;
+- la correction des vignettes de fin de page Risques ;
+- la recherche locale et les autres fonctions existantes.
