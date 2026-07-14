@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="description" content="Understand what an AI benchmark measures, the criteria for a robust protocol, the limits of rankings and the need for specialised occupational-health evaluation."/>
+<meta name="author" content="Dr Charles Broutin"/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="theme-color" content="#EADDC6"/>
+<link rel="canonical" href="https://www.iasantetravail.com/en/evaluate/benchmark/"/>
+<link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/evaluate/benchmark/"/>
+<link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/benchmark/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/evaluer/benchmark/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:locale:alternate" content="fr_FR"/>
+<meta property="og:site_name" content="AI &amp; Occupational Health"/>
+<meta property="og:title" content="AI Benchmarks in Occupational Health: How to Interpret Results"/>
+<meta property="og:description" content="Why benchmark scores depend on the corpus, protocol, language, domain and error profile."/>
+<meta property="og:url" content="https://www.iasantetravail.com/en/evaluate/benchmark/"/>
+<meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-evaluer.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Benchmarks in Occupational Health"/>
+<meta name="twitter:description" content="Understand benchmark methods, limitations and specialised occupational-health evaluation."/>
+<title>AI Benchmarks in Occupational Health | How to Interpret Results</title>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"AI benchmarks in occupational health: how to interpret results","description":"Understand what an AI benchmark measures, the criteria for a robust protocol, the limits of model rankings and the need for specialised occupational-health evaluation.","image":"https://www.iasantetravail.com/assets/images/og-evaluer.jpg","dateModified":"2026-07-14","mainEntityOfPage":"https://www.iasantetravail.com/en/evaluate/benchmark/","inLanguage":"en","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Assess","item":"https://www.iasantetravail.com/en/evaluate/"},{"@type":"ListItem","position":3,"name":"Understand AI benchmarks","item":"https://www.iasantetravail.com/en/evaluate/benchmark/"}]}]</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="../../../assets/images/consummation-1280.webp" type="image/webp"/>
+<link rel="stylesheet" href="../../../assets/css/site.css"/>
+<link rel="stylesheet" href="../../../assets/css/evaluer.css?v=1.0"/>
+
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="msapplication-TileColor" content="#A84E1F"/>
+
+</head>
+<body class="inner-page page-evaluer benchmark-refined" data-page="en-evaluate" data-root="../../../">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Main navigation" class="nav glass">
+  <a class="brand" href="../../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
+  <div class="nav-links" id="navLinks">
+    <a href="../../../en/understand/">Understand</a>
+    <a href="../../../en/uses-and-field/">Uses &amp; field evidence</a>
+    <a aria-current="page" class="is-active" href="../../../en/evaluate/">Assess</a>
+    <a href="../../../en/risks-prevention/">Risks &amp; prevention</a>
+    <a href="../../../en/legal-governance/">Law &amp; governance</a>
+    <details class="nav-resources">
+      <summary>Resources</summary>
+      <div class="nav-resources-menu">
+        <a href="../../../en/resources/models/">Model landscape</a>
+        <a href="../../../en/about/">About &amp; publications</a>
+        <a href="../../../en/legal-notice/">Legal notice</a>
+      </div>
+    </details>
+  </div>
+  <div class="nav-tools">
+    <button aria-label="Search the site" class="search-open" type="button">⌕</button>
+    <div aria-label="Language" class="lang-switch">
+      <a href="../../../evaluer/benchmark/" hreflang="fr" lang="fr">FR</a>
+      <a class="active" href="../../../en/evaluate/" hreflang="en" lang="en">EN</a>
+    </div>
+    <button aria-controls="navLinks" aria-expanded="false" aria-label="Open menu" class="nav-menu-btn" type="button">
+      <span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
+    </button>
+    <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+  </div>
+</nav>
+
+<main id="main-content" tabindex="-1">
+  <section class="page active">
+    <div class="benchmark-nav"><div class="wrap"><a class="benchmark-back" href="../">Back to Assess</a></div></div>
+
+    <header class="page-hero" style="padding-top:28px">
+      <div class="wrap">
+        <div class="hero-frame">
+          <picture class="responsive-art">
+            <source sizes="(max-width:760px) 100vw,1180px" srcset="../../../assets/images/consummation-640.webp 640w, ../../../assets/images/consummation-960.webp 960w, ../../../assets/images/consummation-1280.webp 1280w, ../../../assets/images/consummation-1800.webp 1800w" type="image/webp"/>
+            <img alt="Thomas Cole, The Consummation of Empire, 1836" decoding="async" fetchpriority="high" loading="eager" src="../../../assets/images/consummation-1800.jpg"/>
+          </picture>
+          <div class="veil"></div>
+          <p class="hero-credit">Thomas Cole, The Consummation of Empire, 1836</p>
+          <div class="hero-inner">
+            <h1>Understand and interpret an <em>artificial-intelligence benchmark</em></h1>
+            <p class="hero-descriptor">A benchmark measures a defined capability in a particular corpus, language and testing environment. It does not by itself show that a system is safe, compliant or useful in real work.</p>
+            <div class="hero-actions"><a class="btn btn-solid" href="#definition">Understand the method</a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="benchmark-summary" aria-labelledby="benchmarkSummary">
+      <div class="wrap">
+        <div class="page-summary glass">
+          <div class="page-summary-main">
+            <span class="mini-kicker">In 30 seconds</span>
+            <h2 id="benchmarkSummary">Essential points</h2>
+            <ul>
+              <li>A score depends on the corpus, language, reference standard and execution conditions.</li>
+              <li>Error profiles, stability and uncertainty matter as much as the average score.</li>
+              <li>A general benchmark cannot establish competence in a specialised occupational-health system.</li>
+            </ul>
+          </div>
+          <aside class="page-summary-side" aria-label="Reading information">
+            <dl><div><dt>Audience</dt><dd>Occupational-health professionals, researchers, evaluators, purchasers and AI users</dd></div><div><dt>Reading time</dt><dd>About 5 minutes</dd></div><div><dt>Last reviewed</dt><dd>14 July 2026</dd></div></dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="benchmark-section" id="definition">
+      <div class="wrap">
+        <div class="benchmark-heading"><div><span class="kicker">Definition</span><h2>What is an AI benchmark?</h2></div><p>A benchmark gives multiple models the same tasks under comparable conditions and compares their outputs with an explicit reference. It measures a bounded performance at a particular time.</p></div>
+        <div class="benchmark-grid">
+          <article class="benchmark-card"><span>01</span><h3>A representative corpus</h3><p>Questions and scenarios should reflect the knowledge, reasoning and situations the benchmark claims to test.</p></article>
+          <article class="benchmark-card"><span>02</span><h3>A traceable reference standard</h3><p>Expected answers, scoring rules and expert decisions should be documented and validated.</p></article>
+          <article class="benchmark-card"><span>03</span><h3>Reproducible execution</h3><p>Model version, provider, settings, repetitions, cost, errors and missing answers should be reported.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benchmark-section benchmark-section--paper">
+      <div class="wrap">
+        <div class="benchmark-heading"><div><span class="kicker">Specialised evaluation</span><h2>Why French occupational health requires direct testing</h2></div><p>Strong performance in general medicine, law or French does not guarantee knowledge of the roles, procedures and reasoning specific to French occupational health.</p></div>
+        <div class="why-grid">
+          <article class="why-card"><span class="mini-kicker">Jurisdiction</span><h3>Specific institutions and procedures</h3><p>Employment law, occupational-health services, fitness decisions, job retention and relations with employers and worker representatives form a distinct system.</p></article>
+          <article class="why-card"><span class="mini-kicker">Cross-disciplinary field</span><h3>Medical, preventive and legal reasoning</h3><p>Answers may require clinical knowledge, toxicology, ergonomics, prevention, work organisation, ethics and social law.</p></article>
+          <article class="why-card"><span class="mini-kicker">Consequences of error</span><h3>Plausible answers may still be professionally serious</h3><p>Convincing wording can conceal confusion about legal roles, outdated rules or omission of collective prevention.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benchmark-section">
+      <div class="wrap">
+        <div class="benchmark-heading"><div><span class="kicker">Critical appraisal</span><h2>How to recognise a useful benchmark</h2></div><p>Quality is not determined by item count alone. It depends on scope, comparability, uncertainty, error analysis and restraint in interpreting results.</p></div>
+        <div class="quality-list">
+          <div class="quality-item"><span>01</span><div><h3>Explicit scope</h3><p>Readers can see what is being tested and which conclusions are not justified.</p></div></div>
+          <div class="quality-item"><span>02</span><div><h3>Comparable conditions</h3><p>Models receive the same tasks and are scored under equivalent rules.</p></div></div>
+          <div class="quality-item"><span>03</span><div><h3>Measured uncertainty</h3><p>Repeated runs and intervals help distinguish a stable signal from a chance difference.</p></div></div>
+          <div class="quality-item"><span>04</span><div><h3>Described error profiles</h3><p>Omissions, over-inclusion, role confusion and instability complement the average score.</p></div></div>
+          <div class="quality-item"><span>05</span><div><h3>Cautious transfer to practice</h3><p>Passing a benchmark does not automatically show that a tool is safe or useful in a real workflow.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benchmark-section benchmark-section--paper" id="publication">
+      <div class="wrap">
+        <div class="publication-panel">
+          <span class="publication-state">Scientific article awaiting publication</span>
+          <h2>A specialised benchmark for French occupational health</h2>
+          <p>A scientific evaluation of large language models in this domain has been developed. Until the corresponding article is public, this page presents the rationale and methodological requirements without publishing detailed model rankings or results.</p>
+          <div class="publication-actions"><a class="btn btn-primary" href="../">Back to Assess</a><a class="btn btn-secondary" href="../impact/">Assess a workplace AI project</a></div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<section class="eval-author" aria-label="Content author">
+  <div class="wrap"><p>Written by <a href="../../../en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI representative for the French Society of Occupational Health.</p></div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
+        <p>Independent, evidence-based guidance for analysing artificial intelligence through real work.</p>
+      </div>
+      <div>
+        <h4>Assess</h4>
+        <ul>
+          <li><a href="../../../en/evaluate/">Overview</a></li>
+          <li><a href="../../../en/evaluate/impact/">Pre-deployment assessment</a></li>
+          <li><a href="../../../en/evaluate/impact/follow-up.html">Post-deployment follow-up</a></li>
+          <li><a href="../../../en/evaluate/benchmark/">Understand AI benchmarks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guidance</h4>
+        <ul>
+          <li><a href="../../../en/understand/">Understand AI at work</a></li>
+          <li><a href="../../../en/uses-and-field/">Uses &amp; field evidence</a></li>
+          <li><a href="../../../en/risks-prevention/">Risks &amp; prevention</a></li>
+          <li><a href="../../../en/legal-governance/">Law &amp; governance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contact the author on LinkedIn</a></li>
+          <li><a href="../../../en/privacy/">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span>
+      <span><a href="../../../en/legal-notice/">Legal notice</a> · <a href="../../../en/privacy/">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+<button aria-label="Back to top" id="backToTop" type="button">↑</button>
+<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
+  <div class="search-shell">
+    <div class="search-head"><h2 id="searchTitle">Search</h2><button aria-label="Close" class="search-close" type="button">×</button></div>
+    <input autocomplete="off" class="search-input" id="searchInput" placeholder="e.g. AI assessment, psychosocial risk, benchmark" type="search"/>
+    <div class="search-results" id="searchResults"><p class="search-empty">Enter at least two characters.</p></div>
+  </div>
+</dialog>
+
+<script defer src="../../../assets/js/search-index-en.js"></script>
+<script defer src="../../../assets/js/search-index-en-evaluate.js?v=1.0"></script>
+<script defer src="../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,63 +1,67 @@
-en/uses-and-field/index.html
+en/evaluate/index.html
   - one H1: OK
   - English language: OK
   - canonical: OK
   - English hreflang: OK
   - French hreflang: OK
   - Open Graph: OK
+  - Twitter card: OK
   - JSON-LD: OK
   - navigation: OK
   - footer: OK
-  - author byline: OK
-  - shared French visual CSS: OK
+  - author: OK
   - search supplement: OK
-en/uses-and-field/occupational-health-example/index.html
+en/evaluate/benchmark/index.html
   - one H1: OK
   - English language: OK
   - canonical: OK
   - English hreflang: OK
   - French hreflang: OK
   - Open Graph: OK
+  - Twitter card: OK
   - JSON-LD: OK
   - navigation: OK
   - footer: OK
-  - author byline: OK
-  - shared French visual CSS: OK
+  - author: OK
   - search supplement: OK
-en/uses-and-field/before-deployment/index.html
+en/evaluate/impact/index.html
   - one H1: OK
   - English language: OK
   - canonical: OK
   - English hreflang: OK
   - French hreflang: OK
   - Open Graph: OK
+  - Twitter card: OK
   - JSON-LD: OK
   - navigation: OK
   - footer: OK
-  - author byline: OK
-  - shared French visual CSS: OK
+  - author: OK
   - search supplement: OK
-en/uses-and-field/after-deployment/index.html
+en/evaluate/impact/follow-up.html
   - one H1: OK
   - English language: OK
   - canonical: OK
   - English hreflang: OK
   - French hreflang: OK
   - Open Graph: OK
+  - Twitter card: OK
   - JSON-LD: OK
   - navigation: OK
   - footer: OK
-  - author byline: OK
-  - shared French visual CSS: OK
+  - author: OK
   - search supplement: OK
-Specific checks
-  - hub has 3 pathway cards: OK
-  - published case has 5 criteria: OK
-  - published case has 4 metrics: OK
-  - pre-deployment has 6 decision rows: OK
-  - pre-deployment has 3 vigilance levels: OK
-  - pre-deployment has 6 pilot steps: OK
-  - after-deployment keeps River in the Catskills: OK
-  - after-deployment has 4 field lessons: OK
-  - after-deployment has 3 documented cases: OK
-  - after-deployment has 8 monitoring indicators: OK
+Functional checks
+  - hub has 3 assessment choices: OK
+  - benchmark keeps The Consummation of Empire: OK
+  - initial page has context form: OK
+  - initial page loads English engine: OK
+  - follow-up page has anonymous project code: OK
+  - follow-up page has local history: OK
+  - initial config has 18 questions: OK
+  - follow-up config has 18 questions: OK
+  - engine supports JSON export: OK
+  - engine supports HTML export: OK
+  - engine supports print/PDF: OK
+  - engine supports radar chart: OK
+  - engine supports local history: OK
+  - engine supports not-assessed answers: OK

@@ -1,40 +1,60 @@
-# English Uses & Field Evidence — complete international section
+# English Assess section — SEO and interactive tools
 
 Upload these files at the root of the GitHub repository:
 
-- `en/uses-and-field/index.html`
-- `en/uses-and-field/occupational-health-example/index.html`
-- `en/uses-and-field/before-deployment/index.html`
-- `en/uses-and-field/after-deployment/index.html`
-- `assets/js/search-index-en-uses.js`
+- `en/evaluate/index.html`
+- `en/evaluate/benchmark/index.html`
+- `en/evaluate/impact/index.html`
+- `en/evaluate/impact/follow-up.html`
+- `en/evaluate/impact/assets/js/initial-config-en.js`
+- `en/evaluate/impact/assets/js/followup-config-en.js`
+- `en/evaluate/impact/assets/js/assessment-core-en.js`
+- `assets/js/search-index-en-evaluate.js`
 - `sitemap.xml`
 
-The existing stylesheet `assets/css/usages-terrain.css` is reused. Do not remove it.
+## Existing shared files used
 
-## Structure
+Do not remove:
 
-- English hub page with three independent pathways.
-- Published occupational-health AI use case.
-- Pre-deployment workplace AI framework.
-- Post-deployment field evidence and monitoring.
+- `assets/css/evaluer.css`
+- `assets/css/evaluer-tools.css`
+- `evaluer/impact/assets/css/impact-assessment.css`
+- `assets/css/site.css`
+- `assets/js/site.js`
+- `assets/js/search-index-en.js`
 
-## SEO topics
+## Section structure
 
-- workplace AI use cases;
-- AI in occupational health;
-- workplace AI before deployment;
-- workplace AI risk assessment;
-- AI pilot and human oversight;
-- workplace AI after deployment;
-- AI field evidence and post-deployment monitoring.
+- English Assess hub.
+- Pre-deployment 18-question interactive impact assessment.
+- Post-deployment 18-question dated follow-up.
+- English benchmark explainer.
+
+## Tool functions
+
+- contextualised 18-question journey;
+- nine-dimension score and radar chart;
+- critical-signal detection;
+- prioritised prevention actions;
+- HTML and JSON export;
+- print/save-to-PDF report;
+- anonymous local history for follow-up;
+- “not assessed” response option in follow-up.
+
+## SEO targets
+
+- workplace AI impact assessment;
+- AI risk assessment before deployment;
+- post-deployment AI monitoring;
+- AI and psychosocial risk assessment;
+- human oversight of workplace AI;
+- AI benchmarks in occupational health.
 
 ## Technical SEO
 
-- unique titles and descriptions for four URLs;
-- reciprocal English/French hreflang;
+- unique title and meta description for each URL;
 - canonical URLs;
+- English/French hreflang;
 - Open Graph and Twitter metadata;
-- Article/WebPage and BreadcrumbList structured data;
-- descriptive internal links;
-- updated English search entries;
-- updated sitemap.
+- CollectionPage, Article, WebApplication and BreadcrumbList structured data;
+- updated English search index and sitemap.
