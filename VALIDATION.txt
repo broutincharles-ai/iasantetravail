@@ -7,15 +7,18 @@
 - Open Graph: OK
 - Twitter card: OK
 - Article JSON-LD: OK
-- Destruction painting preserved: OK
+- Architect's Dream preserved: OK
 - hero has no stage tag: OK
 - hero has no dark card: OK
-- six risk dimensions: OK
-- four prevention steps: OK
-- three risk families: OK
-- six error cards: OK
-- four practical safeguards: OK
+- four legal layers: OK
+- six use rows: OK
+- five timeline items: OK
+- four consultation cards: OK
+- six governance steps: OK
+- four case cards: OK
+- twelve checklist items: OK
 - assessment link: OK
-- governance link: OK
+- risk-prevention link: OK
+- legal disclaimer: OK
 - author byline: OK
 - search supplement: OK
