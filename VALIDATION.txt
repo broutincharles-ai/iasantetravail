@@ -1,13 +1,17 @@
 - one H1: OK
-- primary keyword in title: OK
-- primary topic in H1: OK
+- English language: OK
+- primary phrase in title: OK
 - canonical: OK
-- self hreflang: OK
+- English hreflang: OK
 - French hreflang: OK
 - Open Graph: OK
 - Twitter card: OK
-- JSON-LD graph: OK
-- descriptive internal links: OK
+- Article JSON-LD: OK
 - painting preserved: OK
-- English page stylesheet: OK
+- 3 AI-family cards: OK
+- 3 expandable family sections: OK
+- 4 LLM steps: OK
+- 5 occupational-health questions: OK
+- sources included: OK
+- author byline: OK
 - supplemental search index: OK

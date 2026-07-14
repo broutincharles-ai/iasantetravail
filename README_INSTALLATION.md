@@ -1,33 +1,45 @@
-# International English homepage — SEO-ready
+# English Understand page — international SEO redesign
 
 Upload these files at the root of the GitHub repository:
 
-- `en/index.html` — replaces the existing English homepage.
-- `assets/css/en-home.css` — new stylesheet.
-- `assets/js/search-index-en-home.js` — new supplemental search index for the homepage.
-- `sitemap.xml` — updates the English homepage last-modified date.
+- `en/understand/index.html` — replaces the existing English page.
+- `assets/css/en-understand.css` — new stylesheet.
+- `assets/js/search-index-en-understand.js` — replaces outdated search entries for this page at runtime.
+- `sitemap.xml` — updates the page last-modified date.
+
+## Visual changes
+
+- simplified hero matching the current French design;
+- `The Savage State` painting preserved;
+- “In 30 seconds” summary and compact table of contents;
+- three AI-family cards with expandable explanations;
+- dark visual flow explaining how an LLM generates an answer;
+- two-column capabilities/limitations comparison;
+- five occupational-health questions;
+- expandable RAG, agent and prompting content;
+- next-step cards, sources and author byline.
 
 ## SEO positioning
 
 Primary topic:
-- AI in occupational health
+- understanding AI at work
 
 Supporting topics:
-- AI and psychosocial risks at work
-- workplace AI risk assessment
-- AI governance in the workplace
-- large language models in occupational medicine
-- human oversight of workplace AI
+- how large language models work;
+- generative AI in the workplace;
+- predictive AI systems;
+- algorithmic management;
+- AI capabilities and limitations;
+- occupational-health questions before AI deployment.
 
-## Technical SEO included
+## Technical SEO
 
 - unique title and meta description;
-- canonical URL;
-- reciprocal `hreflang` links to the French homepage;
-- Open Graph and Twitter metadata;
-- `WebSite`, `WebPage` and `Person` JSON-LD;
 - one descriptive H1;
-- semantic H2/H3 structure;
-- descriptive internal anchor text;
-- updated sitemap entry;
-- local search index updated without replacing the full existing English index.
+- reciprocal English/French `hreflang`;
+- canonical URL;
+- Open Graph and Twitter metadata;
+- Article and BreadcrumbList structured data;
+- descriptive internal links;
+- updated local search entries;
+- updated sitemap date.
