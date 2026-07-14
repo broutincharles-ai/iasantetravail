@@ -1,7 +1,13 @@
-- section méthode supprimée: OK
-- lien sommaire supprimé: OK
-- hero conservé: OK
-- parcours conservé: OK
-- publications conservées: OK
-- interventions conservées: OK
-- contact conservé: OK
+- one H1: OK
+- primary keyword in title: OK
+- primary topic in H1: OK
+- canonical: OK
+- self hreflang: OK
+- French hreflang: OK
+- Open Graph: OK
+- Twitter card: OK
+- JSON-LD graph: OK
+- descriptive internal links: OK
+- painting preserved: OK
+- English page stylesheet: OK
+- supplemental search index: OK
