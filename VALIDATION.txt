@@ -1,5 +1,6 @@
 - Syntaxe JavaScript : OK
-- Ordre français présent : OK
-- Ordre anglais présent : OK
-- Réorganisation des menus : OK
-- Réorganisation des pieds de page : OK
+- Usages à gauche en français : OK
+- Évaluer à droite en français : OK
+- Uses à gauche en anglais : OK
+- Assess à droite en anglais : OK
+- Pages ciblées uniquement : OK

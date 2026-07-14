@@ -37,6 +37,55 @@ function reorderSiteNavigation(){
 }
 reorderSiteNavigation();
 
+/* Corrige la navigation séquentielle de la page Risques après
+   le déplacement d’Évaluer après Risques dans le parcours. */
+function fixRiskCycleNavigation(){
+ const page=document.body.dataset.page;
+ if(page!=='risques' && page!=='en-risks')return;
+
+ const cycle=document.querySelector('.cycle-nav');
+ if(!cycle)return;
+
+ const root=document.body.dataset.root||'';
+ const leftArrow='<svg aria-hidden="true" fill="none" height="18" viewBox="0 0 16 16" width="18"><path d="M14 8H3M7 3.5 2.5 8 7 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>';
+ const rightArrow='<svg aria-hidden="true" fill="none" height="18" viewBox="0 0 16 16" width="18"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>';
+
+ if(isEN){
+  cycle.innerHTML=`
+   <a class="cycle-card glass" href="${root}en/uses-and-field/">
+    ${leftArrow}
+    <div>
+     <div class="lbl">Previous — Uses &amp; field evidence</div>
+     <div class="ttl">Return to workplace uses and field evidence</div>
+    </div>
+   </a>
+   <a class="cycle-card glass next" href="${root}en/evaluate/">
+    <div>
+     <div class="lbl">Next — Assess</div>
+     <div class="ttl">Evaluate before and after deployment</div>
+    </div>
+    ${rightArrow}
+   </a>`;
+ }else{
+  cycle.innerHTML=`
+   <a class="cycle-card glass" href="${root}usages-terrain/">
+    ${leftArrow}
+    <div>
+     <div class="lbl">Précédent — Usages &amp; terrain</div>
+     <div class="ttl">Revenir aux usages et aux retours de terrain</div>
+    </div>
+   </a>
+   <a class="cycle-card glass next" href="${root}evaluer/">
+    <div>
+     <div class="lbl">Suivant — Évaluer</div>
+     <div class="ttl">Évaluer avant et après le déploiement</div>
+    </div>
+    ${rightArrow}
+   </a>`;
+ }
+}
+fixRiskCycleNavigation();
+
 function closeMenu(){ if(!nav||!menuButton)return; nav.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); }
 menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open?'true':'false');});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',closeMenu));

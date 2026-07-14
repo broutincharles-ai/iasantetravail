@@ -1,25 +1,22 @@
-# Nouvel ordre de navigation français et anglais
+# Correction des vignettes de navigation de la page Risques
 
-Téléverser à la racine du dépôt :
+Remplacer dans le dépôt :
 
 - `assets/js/site.js`
 
-Nouvel ordre français :
-1. Comprendre
-2. Usages & terrain
-3. Risques & prévention
-4. Évaluer
-5. Droit & gouvernance
-6. Ressources
+Résultat sur la page française `risques-prevention/` :
 
-Nouvel ordre anglais :
-1. Understand
-2. Uses & field evidence
-3. Risks & prevention
-4. Assess
-5. Law & governance
-6. Resources
+- vignette gauche : `Précédent — Usages & terrain`
+- lien gauche : `../usages-terrain/`
+- vignette droite : `Suivant — Évaluer`
+- lien droit : `../evaluer/`
 
-Le script réordonne les menus desktop, les menus mobiles et les listes de parcours correspondantes dans les pieds de page.
+Résultat sur la page anglaise `en/risks-prevention/` :
 
-Aucun contenu, lien ou état actif n’est modifié.
+- left card: `Previous — Uses & field evidence`
+- left link: `../../en/uses-and-field/`
+- right card: `Next — Assess`
+- right link: `../../en/evaluate/`
+
+Le fichier conserve aussi le nouvel ordre du menu principal :
+Risques avant Évaluer / Risks before Assess.
