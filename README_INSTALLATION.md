@@ -1,43 +1,27 @@
-# Correctif PDF définitif — Évaluer / Assess
+# Assess / Évaluer — restauration web + PDF v3
 
-Ce paquet n'utilise plus le fichier partagé `site.js` pour générer les PDF.
-Il ajoute un moteur dédié avec un nouveau nom de fichier, ce qui évite que
-GitHub Pages ou le navigateur réutilise l'ancien export HTML mis en cache.
+Téléverser tout le contenu de ce dossier à la racine de la branche `main`.
 
-## Fichiers à téléverser dans la branche `main`
+## Ce qui est corrigé
 
-- `assets/js/assessment-pdf-v2.js`
-- `evaluer/impact/index.html`
-- `evaluer/impact/suivi.html`
-- `en/evaluate/impact/index.html`
-- `en/evaluate/impact/follow-up.html`
+### Page web
+- `site.js` revient à sa version propre, sans moteur PDF ni capture HTML.
+- Le rapport affiché à l’écran retrouve ses cartes, colonnes, espacements et barres.
+- Le correctif CSS est strictement limité à `.generated-report`.
+- Le questionnaire, le radar interactif et les autres composants ne sont pas modifiés.
 
-Respecter exactement ces chemins à la racine du dépôt.
+### PDF
+- génération directe avec jsPDF ;
+- correction du chevauchement entre le score et `/100` ;
+- radar plus sobre avec quatre niveaux de référence ;
+- chiffres numérotés dans le graphique ;
+- libellés et scores déplacés dans une légende structurée sous le radar ;
+- aucune modification du rendu de la page web.
 
-## Pourquoi les quatre fichiers HTML sont nécessaires
+## Fichiers principaux
+- `assets/js/site.js`
+- `assets/js/assessment-pdf-v3.js`
+- `assets/css/assessment-report-web-fix.css`
+- les quatre pages HTML déjà raccordées aux nouveaux fichiers
 
-Les pages françaises chargeaient encore `site.js?v=0.7.4` et les pages
-anglaises chargeaient `site.js` sans numéro de version. Le nouveau moteur est
-maintenant chargé par un chemin inédit :
-
-- FR : `../../assets/js/assessment-pdf-v2.js?v=2.2.0`
-- EN : `../../../assets/js/assessment-pdf-v2.js?v=2.2.0`
-
-Il est placé avant `site.js`, afin d'intercepter les boutons PDF avant les
-anciens gestionnaires d'impression ou de capture HTML.
-
-## Nouveau rendu
-
-- PDF A4 construit directement avec jsPDF ;
-- aucune capture de la page web ;
-- aucune grande bordure ou partie de page coupée ;
-- carte de score séparée de la décision ;
-- contexte en cartes à deux colonnes ;
-- radar vectoriel sur une page dédiée ;
-- tableau des neuf dimensions ;
-- actions prioritaires et conditions minimales ;
-- numéros de page.
-
-Après téléversement, attendre la fin du déploiement GitHub Pages puis ouvrir
-une nouvelle fenêtre privée pour tester. Le nouveau bouton est libellé
-`Télécharger le PDF` / `Download PDF`.
+Après publication, ouvrir une fenêtre privée ou effectuer `Cmd + Shift + R`.

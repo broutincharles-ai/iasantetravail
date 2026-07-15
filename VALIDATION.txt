@@ -1,10 +1,10 @@
-- Syntaxe assessment-pdf-v2.js : OK
-- Nouveau moteur distinct de site.js : OK
-- Export direct jsPDF : OK
-- Radar vectoriel : OK
-- Mise en page A4 en millimètres : OK
-- Page française initiale : script v2 chargé avant site.js
-- Page française de suivi : script v2 chargé avant site.js
-- Page anglaise initiale : script v2 chargé avant site.js
-- Page anglaise de suivi : script v2 chargé avant site.js
-- Anciennes consignes d'impression remplacées : OK
+- site.js sans html2pdf: OK
+- moteur PDF v3: OK
+- score /100 mesuré avant changement de police: OK
+- radar à quatre niveaux: OK
+- légende numérotée: OK
+- CSS web strictement scoped: OK
+- quatre pages raccordées: OK
+- CSS raccordé aux quatre pages: OK
+- syntaxe site.js: OK
+- syntaxe assessment-pdf-v3.js: OK
