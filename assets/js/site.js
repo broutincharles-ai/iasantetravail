@@ -111,6 +111,128 @@ function fixRiskCycleNavigation(){
 }
 fixRiskCycleNavigation();
 
+
+/* Génération directe des rapports PDF pour Évaluer / Assess.
+   Le gestionnaire est installé en phase de capture afin de remplacer
+   les anciennes fonctions qui ouvraient uniquement la boîte d’impression. */
+function initAssessmentPdfExport(){
+ const pdfButtons=[...document.querySelectorAll('#printReport,#archivePdf')];
+ const report=document.getElementById('generatedReport');
+ if(!pdfButtons.length||!report)return;
+
+ const loadHtml2Pdf=()=>{
+  if(typeof window.html2pdf==='function')return Promise.resolve(window.html2pdf);
+  if(window.__html2pdfLoading)return window.__html2pdfLoading;
+
+  window.__html2pdfLoading=new Promise((resolve,reject)=>{
+   const existing=document.querySelector('script[data-html2pdf]');
+   if(existing){
+    existing.addEventListener('load',()=>resolve(window.html2pdf),{once:true});
+    existing.addEventListener('error',reject,{once:true});
+    return;
+   }
+
+   const script=document.createElement('script');
+   script.src='https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js';
+   script.async=true;
+   script.dataset.html2pdf='true';
+   script.onload=()=>typeof window.html2pdf==='function'
+    ? resolve(window.html2pdf)
+    : reject(new Error('html2pdf unavailable after loading'));
+   script.onerror=()=>reject(new Error('Unable to load html2pdf'));
+   document.head.appendChild(script);
+  });
+
+  return window.__html2pdfLoading;
+ };
+
+ const reportFilename=()=>{
+  const today=new Date().toISOString().slice(0,10);
+  const path=location.pathname.toLowerCase();
+  const followup=path.includes('suivi')||path.includes('follow-up');
+  const english=document.documentElement.lang.toLowerCase().startsWith('en');
+  if(english)return `${followup?'workplace-ai-follow-up':'workplace-ai-assessment'}-${today}.pdf`;
+  return `${followup?'suivi-impact-ia':'rapport-impact-ia'}-${today}.pdf`;
+ };
+
+ const fallbackPrint=()=>{
+  const title=document.title;
+  document.title=reportFilename().replace(/\.pdf$/i,'');
+  const restore=()=>{document.title=title;window.removeEventListener('afterprint',restore)};
+  window.addEventListener('afterprint',restore);
+  window.print();
+  setTimeout(restore,1800);
+ };
+
+ const generatePdf=async button=>{
+  if(!report.innerHTML.trim()){
+   alert(isEN
+    ? 'Complete the questionnaire before generating the PDF.'
+    : 'Terminez le questionnaire avant de générer le PDF.');
+   return;
+  }
+
+  const originalText=button.textContent;
+  button.disabled=true;
+  button.setAttribute('aria-busy','true');
+  button.textContent=isEN?'Generating PDF…':'Génération du PDF…';
+
+  const exportShell=document.createElement('div');
+  exportShell.className='pdf-export-shell';
+  exportShell.style.cssText='position:fixed;left:-10000px;top:0;width:794px;background:#fff;padding:0;z-index:-1;';
+  const clone=report.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.style.width='794px';
+  clone.style.maxWidth='794px';
+  clone.style.margin='0';
+  clone.style.boxShadow='none';
+  clone.style.borderRadius='0';
+  exportShell.appendChild(clone);
+  document.body.appendChild(exportShell);
+
+  try{
+   const html2pdf=await loadHtml2Pdf();
+   await document.fonts?.ready;
+   await html2pdf()
+    .set({
+     margin:[8,8,10,8],
+     filename:reportFilename(),
+     image:{type:'jpeg',quality:.98},
+     html2canvas:{
+      scale:2,
+      useCORS:true,
+      backgroundColor:'#ffffff',
+      logging:false,
+      scrollX:0,
+      scrollY:0,
+      windowWidth:794
+     },
+     jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+     pagebreak:{mode:['css','legacy'],avoid:['.report-section-heading','.report-score-row','.action-column','.report-role-card','.report-callout']}
+    })
+    .from(clone)
+    .save();
+  }catch(error){
+   console.error('Direct PDF generation failed; using print fallback.',error);
+   fallbackPrint();
+  }finally{
+   exportShell.remove();
+   button.disabled=false;
+   button.removeAttribute('aria-busy');
+   button.textContent=originalText;
+  }
+ };
+
+ pdfButtons.forEach(button=>{
+  button.addEventListener('click',event=>{
+   event.preventDefault();
+   event.stopImmediatePropagation();
+   generatePdf(button);
+  },true);
+ });
+}
+initAssessmentPdfExport();
+
 function closeMenu(){ if(!nav||!menuButton)return; nav.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); }
 menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open?'true':'false');});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',closeMenu));

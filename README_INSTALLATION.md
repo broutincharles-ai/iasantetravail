@@ -1,19 +1,24 @@
-# Plausible sur les deux pages d’accueil
+# Correction de la génération PDF — Évaluer / Assess
 
-Remplacer dans le dépôt :
+Remplacer à la racine du dépôt :
 
 - `assets/js/site.js`
 
-Le script Plausible suivant est chargé uniquement lorsque `data-page` vaut :
+## Pages corrigées
 
-- `accueil` pour la page française ;
-- `en-home` pour la page anglaise.
+- `evaluer/impact/`
+- `evaluer/impact/suivi.html`
+- `en/evaluate/impact/`
+- `en/evaluate/impact/follow-up.html`
 
-Script utilisé :
+## Nouveau comportement
 
-`https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js`
+Les boutons PDF :
 
-Le fichier conserve également :
-- l’ordre Risques avant Évaluer ;
-- la correction des vignettes de fin de page Risques ;
-- la recherche locale et les autres fonctions existantes.
+- génèrent et téléchargent directement un fichier `.pdf` ;
+- n’exigent plus de choisir manuellement « Enregistrer au format PDF » ;
+- affichent un état « Génération du PDF… » ;
+- conservent l’impression du navigateur comme solution de secours ;
+- fonctionnent pour l’évaluation initiale et le suivi, en français et en anglais.
+
+La bibliothèque `html2pdf.js` est chargée uniquement lorsque l’utilisateur clique sur un bouton PDF.

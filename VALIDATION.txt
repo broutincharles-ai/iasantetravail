@@ -1,8 +1,10 @@
 - Syntaxe JavaScript : OK
-- Page française ciblée : OK
-- Page anglaise ciblée : OK
-- URL Plausible correcte : OK
-- Protection contre les doublons : OK
-- Chargement asynchrone : OK
-- Navigation conservée : OK
+- Deux boutons PDF ciblés : OK
+- Génération directe html2pdf : OK
+- Téléchargement .pdf : OK
+- Interception avant anciens gestionnaires : OK
+- Solution de secours impression : OK
+- Français et anglais : OK
+- Plausible conservé : OK
+- Ordre navigation conservé : OK
 - Vignettes Risques conservées : OK
