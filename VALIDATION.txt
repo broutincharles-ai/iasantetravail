@@ -1,10 +1,13 @@
 - Syntaxe JavaScript : OK
-- Deux boutons PDF ciblés : OK
-- Génération directe html2pdf : OK
-- Téléchargement .pdf : OK
-- Interception avant anciens gestionnaires : OK
-- Solution de secours impression : OK
-- Français et anglais : OK
+- Document A4 de 210 mm : OK
+- Radar ajouté au PDF : OK
+- Radar converti en image : OK
+- Tableau des scores intégré : OK
+- Titre redimensionné : OK
+- Protection contre le débordement : OK
+- Coupures de pages contrôlées : OK
+- Interception des deux boutons : OK
+- Impression de secours : OK
 - Plausible conservé : OK
-- Ordre navigation conservé : OK
+- Navigation conservée : OK
 - Vignettes Risques conservées : OK
