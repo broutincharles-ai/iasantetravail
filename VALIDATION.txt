@@ -1,10 +1,10 @@
-- site.js sans html2pdf: OK
-- moteur PDF v3: OK
-- score /100 mesuré avant changement de police: OK
-- radar à quatre niveaux: OK
-- légende numérotée: OK
-- CSS web strictement scoped: OK
-- quatre pages raccordées: OK
-- CSS raccordé aux quatre pages: OK
 - syntaxe site.js: OK
-- syntaxe assessment-pdf-v3.js: OK
+- syntaxe PDF v3.2: OK
+- reset padding web: OK
+- reset hauteur web: OK
+- espacement web 24 px: OK
+- titres autour du radar: OK
+- suppression doublon limitations: OK
+- version PDF 3.2: OK
+- cache CSS 3.2 sur 4 pages: OK
+- cache PDF 3.2 sur 4 pages: OK
