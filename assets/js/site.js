@@ -116,343 +116,578 @@ fixRiskCycleNavigation();
    Le rapport est reconstruit dans un document dédié de 210 mm afin
    d’éviter les contenus décalés ou coupés et d’y intégrer le radar. */
 function initAssessmentPdfExport(){
- const hasPdfButtons=document.querySelector('#printReport,#archivePdf');
  const report=document.getElementById('generatedReport');
- if(!hasPdfButtons||!report)return;
+ if(!document.querySelector('#printReport,#archivePdf')||!report)return;
 
- const HTML2PDF_URL='https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js';
+ const JSPDF_URL='https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+ const language=document.documentElement.lang.toLowerCase().startsWith('en')?'en':'fr';
+ const followup=/suivi|follow-up/i.test(location.pathname);
 
- const loadHtml2Pdf=()=>{
-  if(typeof window.html2pdf==='function')return Promise.resolve(window.html2pdf);
-  if(window.__assessmentPdfLibrary)return window.__assessmentPdfLibrary;
+ const copy=language==='en'
+  ? {
+     generating:'Generating PDF…',
+     incomplete:'Complete the questionnaire before generating the PDF.',
+     brand:'AI & Occupational Health',
+     reportType:followup?'Post-deployment follow-up':'Pre-deployment assessment',
+     decision:'Decision summary',
+     context:'Declared context',
+     profile:'Nine-dimension profile',
+     profileNote:'A larger surface indicates a higher level of risk or insufficient safeguards.',
+     dimensions:'Dimension scores',
+     actions:'Priority prevention actions',
+     conditions:'Minimum collective-prevention conditions',
+     limitations:'Status and limitations',
+     assessmentDate:'Assessment date',
+     generated:'Generated',
+     page:'Page'
+    }
+  : {
+     generating:'Génération du PDF…',
+     incomplete:'Terminez le questionnaire avant de générer le PDF.',
+     brand:'IA & Santé au Travail',
+     reportType:followup?'Suivi après déploiement':'Évaluation avant déploiement',
+     decision:'Synthèse décisionnelle',
+     context:'Contexte déclaré',
+     profile:'Profil radar des neuf dimensions',
+     profileNote:'Une surface plus étendue indique un niveau de vigilance plus élevé ou des garde-fous insuffisants.',
+     dimensions:'Scores par dimension',
+     actions:'Actions de prévention prioritaires',
+     conditions:'Conditions minimales de prévention collective',
+     limitations:'Statut et limites',
+     assessmentDate:"Date de l'évaluation",
+     generated:'Généré le',
+     page:'Page'
+    };
 
-  window.__assessmentPdfLibrary=new Promise((resolve,reject)=>{
-   const existing=document.querySelector('script[data-assessment-pdf-library]');
+ const loadJsPdf=()=>{
+  if(window.jspdf?.jsPDF)return Promise.resolve(window.jspdf.jsPDF);
+  if(window.__assessmentJsPdf)return window.__assessmentJsPdf;
+
+  window.__assessmentJsPdf=new Promise((resolve,reject)=>{
+   const existing=document.querySelector('script[data-assessment-jspdf]');
    if(existing){
-    existing.addEventListener('load',()=>resolve(window.html2pdf),{once:true});
-    existing.addEventListener('error',()=>reject(new Error('Unable to load PDF library')),{once:true});
+    existing.addEventListener('load',()=>resolve(window.jspdf?.jsPDF),{once:true});
+    existing.addEventListener('error',()=>reject(new Error('Unable to load jsPDF')),{once:true});
     return;
    }
-
    const script=document.createElement('script');
-   script.src=HTML2PDF_URL;
+   script.src=JSPDF_URL;
    script.async=true;
-   script.dataset.assessmentPdfLibrary='true';
-   script.onload=()=>typeof window.html2pdf==='function'
-    ? resolve(window.html2pdf)
-    : reject(new Error('PDF library unavailable after loading'));
-   script.onerror=()=>reject(new Error('Unable to load PDF library'));
+   script.dataset.assessmentJspdf='true';
+   script.onload=()=>window.jspdf?.jsPDF
+    ? resolve(window.jspdf.jsPDF)
+    : reject(new Error('jsPDF unavailable after loading'));
+   script.onerror=()=>reject(new Error('Unable to load jsPDF'));
    document.head.appendChild(script);
   });
-
-  return window.__assessmentPdfLibrary;
+  return window.__assessmentJsPdf;
  };
 
- const escapePdfText=value=>String(value||'')
+ const normalise=value=>String(value??'')
+  .replace(/\u00a0/g,' ')
+  .replace(/[“”]/g,'"')
+  .replace(/[‘’]/g,"'")
+  .replace(/[–—]/g,'-')
+  .replace(/…/g,'...')
+  .replace(/\s+/g,' ')
+  .trim();
+
+ const slug=value=>normalise(value)
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g,'')
   .replace(/[^a-zA-Z0-9_-]+/g,'-')
   .replace(/^-+|-+$/g,'')
   .toLowerCase();
 
- const pdfFilename=()=>{
-  const path=location.pathname.toLowerCase();
-  const followup=path.includes('suivi')||path.includes('follow-up');
-  const english=document.documentElement.lang.toLowerCase().startsWith('en');
+ const readLabelValue=node=>{
+  const labelNode=node.querySelector('strong,b,dt');
+  const label=normalise(labelNode?.textContent);
+  const clone=node.cloneNode(true);
+  clone.querySelector('strong,b,dt')?.remove();
+  const value=normalise(clone.textContent);
+  return label&&value?[label,value]:null;
+ };
+
+ const findSection=pattern=>[...report.querySelectorAll('section')]
+  .find(section=>pattern.test(normalise(section.querySelector('h2,h3')?.textContent)));
+
+ const contextEntries=()=>{
+  const section=findSection(/context|contexte/i);
+  if(!section)return [];
+  const nodes=[...section.querySelectorAll('.context > div,.report-context-item,.timeline-meta > div')];
+  return nodes.map(readLabelValue).filter(Boolean);
+ };
+
+ const dimensionEntries=()=>{
+  const rows=[...document.querySelectorAll('#dimensionTable .dimension-row')];
+  if(rows.length){
+   return rows.map(row=>{
+    const label=normalise(row.querySelector('span')?.textContent);
+    const score=Number(normalise(row.querySelector('strong')?.textContent).replace(/[^0-9.-]/g,''));
+    return {label,score:Number.isFinite(score)?score:0};
+   }).filter(item=>item.label);
+  }
+
+  return [...report.querySelectorAll('.score-row,.report-score-row')].map(row=>{
+   const label=normalise(row.querySelector('.score-head strong,.report-score-head strong,strong')?.textContent);
+   const score=Number(normalise(row.querySelector('.score-head span,.report-score-head span')?.textContent).replace(/[^0-9.-]/g,''));
+   return {label,score:Number.isFinite(score)?score:0};
+  }).filter(item=>item.label);
+ };
+
+ const actionGroups=()=>{
+  const section=findSection(/priority|priorit|plan d.?action|actions de prevention/i);
+  if(!section)return [];
+  const cards=[...section.querySelectorAll('.action,.action-column')];
+  if(cards.length){
+   return cards.map(card=>({
+    title:normalise(card.querySelector('h3,strong')?.textContent),
+    items:[...card.querySelectorAll('li')].map(li=>normalise(li.textContent)).filter(Boolean)
+   })).filter(group=>group.title||group.items.length);
+  }
+  const items=[...section.querySelectorAll('li')].map(li=>normalise(li.textContent)).filter(Boolean);
+  return items.length?[{title:copy.actions,items}]:[];
+ };
+
+ const minimumConditions=()=>{
+  const section=[...report.querySelectorAll('section')].find(candidate=>{
+   const heading=normalise(candidate.querySelector('h2,h3')?.textContent);
+   return /minimum|conditions minimales|collective-prevention|prevention collective/i.test(heading);
+  });
+  return section?[...section.querySelectorAll('li')].map(li=>normalise(li.textContent)).filter(Boolean):[];
+ };
+
+ const filename=()=>{
   const date=document.getElementById(followup?'followupDate':'assessmentDate')?.value
    ||new Date().toISOString().slice(0,10);
-  const code=escapePdfText(document.getElementById('projectCode')?.value);
+  const code=slug(document.getElementById('projectCode')?.value);
   const suffix=code?`-${code}`:'';
-
-  if(english)return `${followup?'workplace-ai-follow-up':'workplace-ai-assessment'}${suffix}-${date}.pdf`;
+  if(language==='en')return `${followup?'workplace-ai-follow-up':'workplace-ai-assessment'}${suffix}-${date}.pdf`;
   return `${followup?'suivi-impact-ia':'rapport-impact-ia'}${suffix}-${date}.pdf`;
  };
 
- const pdfCss=`
-  @page{size:A4;margin:0}
-  html,body{width:210mm;margin:0;padding:0;background:#fff;color:#17140f}
-  *{box-sizing:border-box}
-  body{font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{max-width:100%;margin-top:0;overflow-wrap:anywhere;word-break:normal;font-family:Georgia,"Times New Roman",serif}
-  p,li,span,strong,b,small{overflow-wrap:anywhere}
-  .pdf-page{width:210mm;min-height:297mm;margin:0;padding:10mm 12mm 12mm;background:#fff}
-  .generated-report,.report{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important;overflow:visible!important;transform:none!important}
-
-  /* Couverture française */
-  .report-cover{padding:0 0 7mm;border-bottom:1px solid #ddd5c8}
-  .report-brandline{display:flex;align-items:center;gap:3mm;margin:0 0 7mm;color:#3d5b52;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .report-brandmark{width:5mm;height:5mm;border-radius:50%;background:#c05f2b}
-  .report-type{margin-left:auto;padding:1.5mm 3mm;border:1px solid #ddd5c8;border-radius:99px;color:#625e56;background:#fff}
-  .report-cover-grid{display:grid;grid-template-columns:minmax(0,1fr) 48mm;gap:8mm;align-items:end}
-  .report-eyebrow{margin:0 0 2mm;color:#c05f2b;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .report-cover h1{margin:0 0 3mm;font-size:25pt!important;line-height:1.06!important;letter-spacing:-.02em!important}
-  .report-subtitle{margin:0;color:#625e56;font-size:9.5pt;line-height:1.45}
-  .report-id-card{padding:4mm;border:1px solid #ddd5c8;border-radius:4mm;background:#f8f4ed;color:#625e56;font-size:8pt;line-height:1.45}
-  .report-id-card strong{display:block;margin-bottom:1.5mm;color:#17140f;font-size:9pt}
-
-  /* Couverture anglaise */
-  .cover{padding:0 0 7mm;border-bottom:1px solid #ddd5c8}
-  .brand{display:flex;align-items:center;gap:3mm;margin:0 0 7mm;color:#3d5b52;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .mark{width:5mm;height:5mm;border-radius:50%;background:#c05f2b}
-  .eyebrow{margin:0 0 2mm;color:#c05f2b;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .cover h1{margin:0 0 3mm;font-size:25pt!important;line-height:1.06!important;letter-spacing:-.02em!important}
-  .subtitle{max-width:none;margin:0;color:#625e56;font-size:9.5pt;line-height:1.45}
-  .meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm;margin-top:5mm}
-  .meta div{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;font-size:8pt}
-  .meta strong{display:block;margin-bottom:1mm;color:#625e56;font-size:6.8pt;text-transform:uppercase;letter-spacing:.06em}
-
-  /* Section radar intégrée au PDF */
-  .pdf-radar-section{margin:7mm 0 0;padding:6mm;border:1px solid #ddd5c8;border-radius:4mm;background:#fff;break-inside:avoid;page-break-inside:avoid}
-  .pdf-radar-kicker{margin:0 0 1.5mm;color:#c05f2b;font-size:7pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .pdf-radar-section h2{margin:0 0 2mm;font-size:17pt;line-height:1.1}
-  .pdf-radar-note{margin:0 0 4mm;color:#625e56;font-size:8.5pt;line-height:1.4}
-  .pdf-radar-image{display:block;width:145mm;max-width:100%;height:auto;margin:0 auto 4mm}
-  .pdf-radar-section .dimension-table{display:grid!important;gap:1.5mm;margin-top:3mm}
-  .pdf-radar-section .dimension-row{display:grid;grid-template-columns:minmax(0,1fr) 65mm 12mm;gap:3mm;align-items:center;padding:2mm 2.5mm;border:1px solid #ece6dc;border-radius:2.5mm;background:#fff;font-size:8pt}
-  .pdf-radar-section .dimension-row .bar{display:block;height:2mm;border-radius:99px;background:#eee9e1;overflow:hidden}
-  .pdf-radar-section .dimension-row .bar i{display:block;height:100%;border-radius:inherit}
-  .pdf-radar-section .dimension-row strong{text-align:right;font-family:Georgia,"Times New Roman",serif;font-size:10pt}
-
-  /* Sections françaises */
-  .report-section{margin-top:7mm}
-  .report-section-heading{display:flex;align-items:flex-start;gap:3mm;margin-bottom:3mm;break-after:avoid;page-break-after:avoid}
-  .report-section-number{display:flex;align-items:center;justify-content:center;flex:0 0 8mm;width:8mm;height:8mm;border-radius:50%;background:#17140f;color:#fff;font-size:7pt;font-weight:700}
-  .report-section-heading h2{margin:.5mm 0 0;font-size:16.5pt;line-height:1.08}
-  .report-section-heading p{margin:0 0 1mm;color:#c05f2b;font-size:7pt;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
-  .report-section>p,.report-section li{color:#625e56;font-size:8.5pt;line-height:1.45}
-  .report-section ul,.report-section ol{padding-left:5mm}
-  .report-summary-grid{display:grid;grid-template-columns:43mm minmax(0,1fr);gap:3mm}
-  .report-score-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:42mm;padding:5mm;border-radius:4mm;background:#17140f;color:#fff;overflow:hidden}
-  .report-score-card>span{font-size:7pt;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.68)}
-  .report-score-card strong{font-family:Georgia,"Times New Roman",serif;font-size:30pt;line-height:1}
-  .report-score-card strong small{font-family:Arial,Helvetica,sans-serif;font-size:8pt;color:rgba(255,255,255,.6)}
-  .report-score-card b{font-size:8.5pt}
-  .report-decision-card{padding:5mm;border:1px solid #ddd5c8;border-radius:4mm;background:#fff}
-  .report-decision-card>strong{display:block;margin-bottom:2mm;font-size:10pt}
-  .report-decision-card p{margin:0;color:#625e56;font-size:8.5pt;line-height:1.45}
-  .report-critical-list,.report-callout{margin-top:3mm;padding:3.5mm 4mm;border-radius:3mm;background:#fff3f1;break-inside:avoid}
-  .report-context-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm}
-  .report-context-item,.timeline-meta div{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .report-context-item strong,.timeline-meta strong{display:block;margin-bottom:1mm;color:#625e56;font-size:6.5pt;text-transform:uppercase;letter-spacing:.06em}
-  .report-context-item span,.timeline-meta span{font-size:8pt;font-weight:700}
-  .timeline-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2mm;margin-bottom:3mm}
-  .report-score-list{display:grid;gap:2mm}
-  .report-score-row{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .report-score-head{display:flex;justify-content:space-between;gap:3mm;margin-bottom:1.5mm}
-  .report-score-head strong{font-size:8pt}
-  .report-score-head span{font-family:Georgia,"Times New Roman",serif;font-size:10pt}
-  .report-score-bar{height:2mm;border-radius:99px;background:#eee9e1;overflow:hidden}
-  .report-score-bar i{display:block;height:100%}
-  .report-priority-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2mm;margin:0 0 4mm;padding:0;list-style:none}
-  .report-priority-list li{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .report-actions-title{margin:4mm 0 2mm;font-family:Arial,Helvetica,sans-serif;font-size:7pt;text-transform:uppercase;letter-spacing:.07em}
-  .action-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm}
-  .action-column{padding:3.5mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .action-column h3{margin:0 0 2mm;font-size:11pt}
-  .action-column li{font-size:7.5pt}
-  .report-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2mm}
-  .report-role-card{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .report-role-card strong{font-size:8pt}
-  .report-role-card p{margin:1mm 0 0;color:#625e56;font-size:7.5pt;line-height:1.4}
-  .report-check-list{display:grid;gap:2mm;margin:0;padding:0;list-style:none}
-  .report-check-list li{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .report-legal{margin-top:7mm;padding:4mm;border-top:1px solid #ddd5c8;border-radius:3mm;background:#f8f5ef;color:#625e56;font-size:7.2pt;line-height:1.4}
-
-  /* Sections anglaises */
-  .section{margin-top:7mm}
-  .section h2{margin:0 0 3mm;font-size:16.5pt;line-height:1.08}
-  .section p,.section li{color:#625e56;font-size:8.5pt;line-height:1.45}
-  .summary{display:grid;grid-template-columns:43mm minmax(0,1fr);gap:3mm}
-  .score{display:flex;flex-direction:column;justify-content:space-between;min-height:42mm;padding:5mm;border-radius:4mm;background:#17140f;color:#fff}
-  .score strong{font-family:Georgia,"Times New Roman",serif;font-size:30pt;line-height:1}
-  .decision{padding:5mm;border:1px solid #ddd5c8;border-radius:4mm;background:#fff}
-  .critical{margin-top:3mm;padding:3.5mm 4mm;border-left:1.5mm solid #8f2530;background:#fff3f1;break-inside:avoid}
-  .context{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm}
-  .context div{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .context strong{display:block;margin-bottom:1mm;color:#625e56;font-size:6.5pt;text-transform:uppercase;letter-spacing:.06em}
-  .scores{display:grid;gap:2mm}
-  .score-row{padding:3mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .score-head{display:flex;justify-content:space-between;gap:3mm;margin-bottom:1.5mm}
-  .score-head strong{font-size:8pt}
-  .score-head span{font-family:Georgia,"Times New Roman",serif;font-size:10pt}
-  .bar{height:2mm;border-radius:99px;background:#eee9e1;overflow:hidden}
-  .bar i{display:block;height:100%}
-  .actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm}
-  .action{padding:3.5mm;border:1px solid #ddd5c8;border-radius:3mm;background:#fff;break-inside:avoid}
-  .action h3{margin:0 0 2mm;font-size:11pt}
-  .action li{font-size:7.5pt}
-  .limits{margin-top:7mm;padding:4mm;border-top:1px solid #ddd5c8;border-radius:3mm;background:#f8f5ef;color:#625e56;font-size:7.2pt;line-height:1.4}
-
-  .report-cover,.cover,.pdf-radar-section,.report-summary-grid,.summary,.report-context-item,.context div,.report-score-row,.score-row,.action-column,.action,.report-role-card,.report-callout,.report-critical-list,.critical,.report-check-list li,.report-legal,.limits{break-inside:avoid;page-break-inside:avoid}
- `;
-
- const sanitiseSvg=svg=>{
-  const copy=svg.cloneNode(true);
-  copy.setAttribute('xmlns','http://www.w3.org/2000/svg');
-  copy.setAttribute('width','100%');
-  copy.setAttribute('height','auto');
-  copy.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-  copy.querySelectorAll('[aria-labelledby],[aria-describedby]').forEach(node=>{
-   node.removeAttribute('aria-labelledby');
-   node.removeAttribute('aria-describedby');
-  });
-  return copy;
+ const collectData=()=>{
+  const title=normalise(report.querySelector('h1')?.textContent)
+   ||normalise(document.querySelector('.intro-copy h1')?.textContent)
+   ||copy.reportType;
+  const subtitle=normalise(report.querySelector('.subtitle,.report-subtitle')?.textContent);
+  const decisionTitle=normalise(report.querySelector('.decision > strong,.report-decision-card > strong')?.textContent);
+  const score=normalise(document.getElementById('overallScore')?.textContent)||'0';
+  const level=normalise(document.getElementById('overallLevel')?.textContent);
+  const summary=normalise(document.getElementById('resultSummary')?.textContent)
+   ||normalise(report.querySelector('.decision p,.report-decision-card p')?.textContent);
+  const critical=[...document.querySelectorAll('#criticalAlerts li')]
+   .map(li=>normalise(li.textContent)).filter(Boolean);
+  const dateValue=document.getElementById(followup?'followupDate':'assessmentDate')?.value;
+  const assessmentDate=dateValue
+   ? new Intl.DateTimeFormat(language==='en'?'en-GB':'fr-FR',{dateStyle:'long'}).format(new Date(`${dateValue}T12:00:00`))
+   : '';
+  const limitations=normalise(report.querySelector('.limits,.report-legal')?.textContent);
+  return {
+   title,subtitle,decisionTitle,score,level,summary,critical,assessmentDate,limitations,
+   context:contextEntries(),
+   dimensions:dimensionEntries(),
+   actions:actionGroups(),
+   conditions:minimumConditions()
+  };
  };
 
- const svgDataUrl=svg=>{
-  const xml=new XMLSerializer().serializeToString(sanitiseSvg(svg));
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(xml)}`;
- };
+ const createPdf=async()=>{
+  const JsPDF=await loadJsPdf();
+  const data=collectData();
+  const doc=new JsPDF({orientation:'portrait',unit:'mm',format:'a4',compress:true,putOnlyUsedFonts:true});
 
- const buildPdfFrame=()=>{
-  const clone=report.cloneNode(true);
-  clone.removeAttribute('id');
+  const PAGE_W=210;
+  const PAGE_H=297;
+  const M=16;
+  const CONTENT_W=PAGE_W-(M*2);
+  const TOP=18;
+  const BOTTOM=18;
+  const palette={
+   ink:[24,20,15],
+   muted:[96,89,78],
+   line:[221,213,200],
+   paper:[255,253,249],
+   warm:[248,244,237],
+   terra:[192,95,43],
+   terraLight:[249,232,222],
+   green:[61,91,82],
+   lavender:[228,224,247],
+   danger:[143,37,48],
+   dangerLight:[255,242,241],
+   white:[255,255,255]
+  };
 
-  const radarSvg=document.querySelector('#radarWrap svg');
-  const dimensionTable=document.getElementById('dimensionTable');
-  if(radarSvg){
-   const section=document.createElement('section');
-   section.className='pdf-radar-section';
+  let y=TOP;
 
-   const kicker=document.createElement('p');
-   kicker.className='pdf-radar-kicker';
-   kicker.textContent=isEN?'Risk profile':'Profil de vigilance';
+  const setText=(font='helvetica',style='normal',size=10,color=palette.ink)=>{
+   doc.setFont(font,style);
+   doc.setFontSize(size);
+   doc.setTextColor(...color);
+  };
 
-   const title=document.createElement('h2');
-   title.textContent=isEN
-    ? 'Nine-dimension radar profile'
-    : 'Cartographie radar des neuf dimensions';
+  const split=(text,width)=>doc.splitTextToSize(normalise(text),width);
 
-   const note=document.createElement('p');
-   note.className='pdf-radar-note';
-   note.textContent=isEN
-    ? 'A larger surface indicates a higher estimated level of risk or insufficient safeguards.'
-    : 'Une surface plus étendue indique un niveau de vigilance plus élevé ou des garde-fous insuffisants.';
+  const textBlock=(text,x,width,opts={})=>{
+   const {font='helvetica',style='normal',size=9.5,color=palette.ink,lineHeight=1.3,align='left'}=opts;
+   setText(font,style,size,color);
+   const lines=split(text,width);
+   doc.text(lines,x,y,{baseline:'top',lineHeightFactor:lineHeight,align});
+   y+=lines.length*size*0.3528*lineHeight;
+   return lines.length;
+  };
 
-   const image=document.createElement('img');
-   image.className='pdf-radar-image';
-   image.alt=isEN?'Radar chart of the nine assessment dimensions':'Graphique radar des neuf dimensions évaluées';
-   image.src=svgDataUrl(radarSvg);
+  const ensureSpace=height=>{
+   if(y+height>PAGE_H-BOTTOM){
+    doc.addPage();
+    y=TOP;
+   }
+  };
 
-   section.append(kicker,title,note,image);
+  const sectionHeading=title=>{
+   ensureSpace(15);
+   setText('times','bold',18,palette.ink);
+   doc.text(normalise(title),M,y,{baseline:'top'});
+   y+=8;
+   doc.setDrawColor(...palette.terra);
+   doc.setLineWidth(1.1);
+   doc.line(M,y,M+CONTENT_W,y);
+   y+=7;
+  };
 
-   if(dimensionTable?.innerHTML.trim()){
-    const values=dimensionTable.cloneNode(true);
-    values.removeAttribute('id');
-    values.hidden=false;
-    values.removeAttribute('hidden');
-    section.appendChild(values);
+  const bulletList=(items,x,width,opts={})=>{
+   const size=opts.size||9;
+   const color=opts.color||palette.muted;
+   items.forEach(item=>{
+    const lines=split(item,width-7);
+    const height=Math.max(6,lines.length*size*0.3528*1.3);
+    ensureSpace(height+2);
+    doc.setFillColor(...palette.terra);
+    doc.circle(x+1.2,y+2.5,1.05,'F');
+    setText('helvetica','normal',size,color);
+    doc.text(lines,x+5,y,{baseline:'top',lineHeightFactor:1.3});
+    y+=height+2;
+   });
+  };
+
+  const roundedCard=(x,top,width,height,fill=palette.white,stroke=palette.line,radius=3)=>{
+   doc.setFillColor(...fill);
+   doc.setDrawColor(...stroke);
+   doc.setLineWidth(.35);
+   doc.roundedRect(x,top,width,height,radius,radius,'FD');
+  };
+
+  const labelValueCard=(x,top,width,label,value)=>{
+   const labelLines=split(label,width-8);
+   const valueLines=split(value,width-8);
+   const height=8+(labelLines.length*2.6)+(valueLines.length*3.5);
+   roundedCard(x,top,width,height,palette.white,palette.line,2.5);
+   setText('helvetica','bold',7,palette.muted);
+   doc.text(labelLines,x+4,top+4,{baseline:'top',lineHeightFactor:1.1});
+   setText('helvetica','bold',9,palette.ink);
+   doc.text(valueLines,x+4,top+8+(labelLines.length*2.3),{baseline:'top',lineHeightFactor:1.2});
+   return height;
+  };
+
+  const drawRadar=(items,centerX,centerY,radius)=>{
+   const n=items.length;
+   if(!n)return;
+   const point=(index,factor)=>{
+    const angle=-Math.PI/2+(index*2*Math.PI/n);
+    return {x:centerX+Math.cos(angle)*radius*factor,y:centerY+Math.sin(angle)*radius*factor,angle};
+   };
+
+   doc.setLineWidth(.25);
+   for(let ring=1;ring<=5;ring++){
+    const factor=ring/5;
+    doc.setDrawColor(...palette.line);
+    for(let i=0;i<n;i++){
+     const a=point(i,factor);
+     const b=point((i+1)%n,factor);
+     doc.line(a.x,a.y,b.x,b.y);
+    }
    }
 
-   const target=clone.querySelector('.report')||clone;
-   const cover=target.querySelector('.report-cover,.cover');
-   if(cover)cover.insertAdjacentElement('afterend',section);
-   else target.prepend(section);
+   for(let i=0;i<n;i++){
+    const edge=point(i,1);
+    doc.setDrawColor(232,226,216);
+    doc.line(centerX,centerY,edge.x,edge.y);
+   }
+
+   const dataPoints=items.map((item,index)=>point(index,Math.max(0,Math.min(100,item.score))/100));
+   if(dataPoints.length>=3){
+    const vectors=[];
+    for(let i=1;i<dataPoints.length;i++){
+     vectors.push([dataPoints[i].x-dataPoints[i-1].x,dataPoints[i].y-dataPoints[i-1].y]);
+    }
+    doc.setFillColor(244,205,181);
+    doc.setDrawColor(...palette.terra);
+    doc.setLineWidth(.8);
+    doc.lines(vectors,dataPoints[0].x,dataPoints[0].y,[1,1],'FD',true);
+    dataPoints.forEach(pointValue=>{
+     doc.setFillColor(...palette.terra);
+     doc.setDrawColor(...palette.white);
+     doc.circle(pointValue.x,pointValue.y,1.25,'FD');
+    });
+   }
+
+   items.forEach((item,index)=>{
+    const labelPoint=point(index,1.24);
+    const cos=Math.cos(labelPoint.angle);
+    const align=cos>.25?'left':cos<-.25?'right':'center';
+    const width=32;
+    const labelLines=split(item.label,width);
+    setText('helvetica','normal',7.2,palette.ink);
+    doc.text(labelLines,labelPoint.x,labelPoint.y-(labelLines.length-1)*2.3,{align,baseline:'middle',lineHeightFactor:1.05});
+    setText('helvetica','bold',7.2,palette.terra);
+    doc.text(`${Math.round(item.score)}/100`,labelPoint.x,labelPoint.y+(labelLines.length*2.4),{align,baseline:'middle'});
+   });
+  };
+
+  const drawDimensionGrid=(items)=>{
+   const columns=2;
+   const gap=5;
+   const cardW=(CONTENT_W-gap)/columns;
+   const rowH=12;
+   items.forEach((item,index)=>{
+    const column=index%columns;
+    const row=Math.floor(index/columns);
+    const x=M+column*(cardW+gap);
+    const top=y+row*(rowH+3);
+    roundedCard(x,top,cardW,rowH,palette.white,palette.line,2.2);
+    setText('helvetica','bold',7.6,palette.ink);
+    const labelLines=split(item.label,cardW-26);
+    doc.text(labelLines,x+4,top+3.2,{baseline:'top',lineHeightFactor:1.05});
+    setText('times','bold',11,palette.terra);
+    doc.text(`${Math.round(item.score)}`,x+cardW-4,top+3.6,{align:'right',baseline:'top'});
+    const barX=x+4;
+    const barY=top+9.2;
+    const barW=cardW-8;
+    doc.setFillColor(238,233,225);
+    doc.roundedRect(barX,barY,barW,1.6,.8,.8,'F');
+    doc.setFillColor(...palette.terra);
+    doc.roundedRect(barX,barY,barW*Math.max(0,Math.min(100,item.score))/100,1.6,.8,.8,'F');
+   });
+   const rows=Math.ceil(items.length/columns);
+   y+=rows*(rowH+3);
+  };
+
+  /* Page 1 — cover and decision */
+  doc.setFillColor(...palette.paper);
+  doc.rect(0,0,PAGE_W,PAGE_H,'F');
+
+  doc.setFillColor(...palette.terra);
+  doc.circle(M+2.5,y+2.5,2.5,'F');
+  setText('helvetica','bold',8,palette.green);
+  doc.text(copy.brand.toUpperCase(),M+8,y+3.8);
+  setText('helvetica','bold',7,palette.muted);
+  doc.text(copy.reportType.toUpperCase(),M+CONTENT_W,y+3.8,{align:'right'});
+  y+=13;
+
+  setText('times','bold',27,palette.ink);
+  const titleLines=split(data.title,CONTENT_W);
+  doc.text(titleLines,M,y,{baseline:'top',lineHeightFactor:1.02});
+  y+=titleLines.length*27*0.3528*1.02+3;
+
+  if(data.subtitle){
+   textBlock(data.subtitle,M,CONTENT_W,{size:9.5,color:palette.muted,lineHeight:1.35});
+   y+=4;
   }
 
-  const iframe=document.createElement('iframe');
-  iframe.title=isEN?'PDF generation document':'Document de génération PDF';
-  iframe.style.cssText='position:fixed;left:-12000px;top:0;width:210mm;height:297mm;border:0;background:#fff;pointer-events:none;';
-  document.body.appendChild(iframe);
+  const generatedDate=new Intl.DateTimeFormat(language==='en'?'en-GB':'fr-FR',{
+   dateStyle:'long',timeStyle:'short'
+  }).format(new Date());
+  const metaTop=y;
+  const metaGap=4;
+  const metaW=(CONTENT_W-metaGap)/2;
+  const leftMeta=data.assessmentDate||'-';
+  labelValueCard(M,metaTop,metaW,copy.assessmentDate,leftMeta);
+  labelValueCard(M+metaW+metaGap,metaTop,metaW,copy.generated,generatedDate);
+  y=metaTop+21;
 
-  const doc=iframe.contentDocument;
-  doc.open();
-  doc.write(`<!doctype html><html lang="${isEN?'en':'fr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${pdfCss}</style></head><body><main class="pdf-page">${clone.outerHTML}</main></body></html>`);
-  doc.close();
+  sectionHeading(copy.decision);
 
-  return {iframe,doc,root:doc.querySelector('.pdf-page')};
- };
+  const scoreCardW=50;
+  const decisionGap=5;
+  const decisionW=CONTENT_W-scoreCardW-decisionGap;
+  const decisionTop=y;
+  const decisionBody=[data.decisionTitle,data.summary].filter(Boolean);
+  const decisionLines=decisionBody.flatMap((item,index)=>split(item,decisionW-10));
+  const criticalLines=data.critical.flatMap(item=>split(item,decisionW-13));
+  const decisionH=Math.max(45,20+(decisionLines.length*4)+(criticalLines.length*4.3)+(data.critical.length?8:0));
 
- const waitForAssets=async doc=>{
-  if(doc.fonts?.ready){
-   try{await doc.fonts.ready}catch{}
+  doc.setFillColor(...palette.ink);
+  doc.roundedRect(M,decisionTop,scoreCardW,decisionH,4,4,'F');
+  doc.setFillColor(...palette.terra);
+  doc.rect(M,decisionTop,scoreCardW,2.2,'F');
+  setText('helvetica','normal',7.5,[220,215,207]);
+  doc.text(language==='en'?'OVERALL SCORE':'SCORE GLOBAL',M+5,decisionTop+8);
+  setText('times','bold',31,palette.white);
+  doc.text(data.score,M+5,decisionTop+20);
+  setText('helvetica','normal',8,[220,215,207]);
+  doc.text('/100',M+5+doc.getTextWidth(data.score)+1,decisionTop+20);
+  setText('helvetica','bold',10,palette.white);
+  doc.text(split(data.level,scoreCardW-10),M+5,decisionTop+31,{baseline:'top',lineHeightFactor:1.1});
+
+  roundedCard(M+scoreCardW+decisionGap,decisionTop,decisionW,decisionH,palette.white,palette.line,4);
+  let innerY=decisionTop+6;
+  if(data.decisionTitle){
+   setText('helvetica','bold',11,palette.ink);
+   const lines=split(data.decisionTitle,decisionW-10);
+   doc.text(lines,M+scoreCardW+decisionGap+5,innerY,{baseline:'top',lineHeightFactor:1.15});
+   innerY+=lines.length*4.5+3;
   }
-  const images=[...doc.images];
-  await Promise.all(images.map(image=>image.complete
-   ? Promise.resolve()
-   : new Promise(resolve=>{
-      image.addEventListener('load',resolve,{once:true});
-      image.addEventListener('error',resolve,{once:true});
-     })
-  ));
-  await new Promise(resolve=>setTimeout(resolve,120));
+  if(data.summary){
+   setText('helvetica','normal',9,palette.muted);
+   const lines=split(data.summary,decisionW-10);
+   doc.text(lines,M+scoreCardW+decisionGap+5,innerY,{baseline:'top',lineHeightFactor:1.25});
+   innerY+=lines.length*4+3;
+  }
+  if(data.critical.length){
+   setText('helvetica','bold',8.5,palette.danger);
+   doc.text(language==='en'?'Critical signals':'Signaux critiques',M+scoreCardW+decisionGap+5,innerY);
+   innerY+=4;
+   data.critical.forEach(item=>{
+    const lines=split(item,decisionW-15);
+    doc.setFillColor(...palette.danger);
+    doc.circle(M+scoreCardW+decisionGap+7,innerY+1.4,.8,'F');
+    setText('helvetica','normal',8.2,palette.ink);
+    doc.text(lines,M+scoreCardW+decisionGap+10,innerY,{baseline:'top',lineHeightFactor:1.2});
+    innerY+=lines.length*3.8+2;
+   });
+  }
+  y=decisionTop+decisionH+8;
+
+  if(data.context.length){
+   sectionHeading(copy.context);
+   const gap=4;
+   const cardW=(CONTENT_W-gap)/2;
+   for(let index=0;index<data.context.length;index+=2){
+    const left=data.context[index];
+    const right=data.context[index+1];
+    const leftLabelLines=split(left[0],cardW-8);
+    const leftValueLines=split(left[1],cardW-8);
+    const leftH=8+leftLabelLines.length*2.6+leftValueLines.length*3.5;
+    let rightH=0;
+    if(right){
+     rightH=8+split(right[0],cardW-8).length*2.6+split(right[1],cardW-8).length*3.5;
+    }
+    const rowH=Math.max(leftH,rightH,15);
+    ensureSpace(rowH+4);
+    labelValueCard(M,y,cardW,left[0],left[1]);
+    if(right)labelValueCard(M+cardW+gap,y,cardW,right[0],right[1]);
+    y+=rowH+4;
+   }
+  }
+
+  /* Page 2 — native radar and scores */
+  doc.addPage();
+  y=TOP;
+  sectionHeading(copy.profile);
+  textBlock(copy.profileNote,M,CONTENT_W,{size:8.7,color:palette.muted,lineHeight:1.3});
+  y+=2;
+
+  const radarCenterX=PAGE_W/2;
+  const radarCenterY=y+58;
+  drawRadar(data.dimensions,radarCenterX,radarCenterY,47);
+  y=radarCenterY+62;
+
+  ensureSpace(15);
+  setText('times','bold',14,palette.ink);
+  doc.text(copy.dimensions,M,y,{baseline:'top'});
+  y+=8;
+  drawDimensionGrid(data.dimensions);
+
+  /* Page 3 — action plan and safeguards */
+  doc.addPage();
+  y=TOP;
+  sectionHeading(copy.actions);
+
+  if(data.actions.length){
+   data.actions.forEach((group,index)=>{
+    const estimated=15+group.items.reduce((sum,item)=>sum+split(item,CONTENT_W-16).length*3.6,0);
+    ensureSpace(estimated+5);
+    const top=y;
+    const titleLines=split(group.title||copy.actions,CONTENT_W-16);
+    const itemLines=group.items.reduce((sum,item)=>sum+split(item,CONTENT_W-18).length,0);
+    const height=13+(titleLines.length*4)+(itemLines*3.7)+(group.items.length*3);
+    roundedCard(M,top,CONTENT_W,height,index===0?palette.terraLight:palette.warm,palette.line,4);
+    doc.setFillColor(...(index===0?palette.terra:palette.green));
+    doc.roundedRect(M,top,3,height,1.5,1.5,'F');
+    setText('times','bold',13,palette.ink);
+    doc.text(titleLines,M+8,top+5,{baseline:'top',lineHeightFactor:1.1});
+    y=top+8+titleLines.length*4;
+    group.items.forEach(item=>{
+     const lines=split(item,CONTENT_W-20);
+     doc.setFillColor(...palette.terra);
+     doc.circle(M+10,y+1.4,.8,'F');
+     setText('helvetica','normal',8.6,palette.muted);
+     doc.text(lines,M+14,y,{baseline:'top',lineHeightFactor:1.25});
+     y+=lines.length*3.8+2.5;
+    });
+    y=top+height+5;
+   });
+  }else{
+   textBlock(language==='en'
+    ? 'No priority action section was available in the generated report.'
+    : "Aucune section d'actions prioritaires n'était disponible dans le rapport généré.",
+    M,CONTENT_W,{size:9,color:palette.muted});
+  }
+
+  if(data.conditions.length){
+   sectionHeading(copy.conditions);
+   bulletList(data.conditions,M,CONTENT_W,{size:8.8});
+  }
+
+  if(data.limitations){
+   ensureSpace(25);
+   const lines=split(data.limitations,CONTENT_W-12);
+   const height=11+lines.length*3.6;
+   roundedCard(M,y,CONTENT_W,height,palette.warm,palette.line,3);
+   setText('helvetica','bold',8,palette.terra);
+   doc.text(copy.limitations.toUpperCase(),M+6,y+5);
+   setText('helvetica','normal',7.8,palette.muted);
+   doc.text(lines,M+6,y+10,{baseline:'top',lineHeightFactor:1.25});
+   y+=height+5;
+  }
+
+  /* Footer on every page */
+  const totalPages=doc.getNumberOfPages();
+  for(let pageNumber=1;pageNumber<=totalPages;pageNumber++){
+   doc.setPage(pageNumber);
+   doc.setDrawColor(...palette.line);
+   doc.setLineWidth(.3);
+   doc.line(M,PAGE_H-12,M+CONTENT_W,PAGE_H-12);
+   setText('helvetica','normal',7,palette.muted);
+   doc.text(copy.brand,M,PAGE_H-7.5);
+   doc.text(`${copy.page} ${pageNumber} / ${totalPages}`,M+CONTENT_W,PAGE_H-7.5,{align:'right'});
+  }
+
+  doc.save(filename());
  };
 
- const fallbackPrint=({iframe,doc})=>{
-  const cleanup=()=>setTimeout(()=>iframe.remove(),500);
-  iframe.contentWindow.addEventListener('afterprint',cleanup,{once:true});
-  doc.title=pdfFilename().replace(/\.pdf$/i,'');
-  iframe.contentWindow.focus();
-  iframe.contentWindow.print();
-  setTimeout(cleanup,30000);
- };
-
- const generatePdf=async button=>{
+ const generate=async button=>{
   if(!report.innerHTML.trim()){
-   alert(isEN
-    ? 'Complete the questionnaire before generating the PDF.'
-    : 'Terminez le questionnaire avant de générer le PDF.');
+   alert(copy.incomplete);
    return;
   }
 
-  const originalText=button.textContent;
+  const original=button.textContent;
   button.disabled=true;
   button.setAttribute('aria-busy','true');
-  button.textContent=isEN?'Generating PDF…':'Génération du PDF…';
-
-  const frame=buildPdfFrame();
+  button.textContent=copy.generating;
 
   try{
-   await waitForAssets(frame.doc);
-   const html2pdf=await loadHtml2Pdf();
-
-   await html2pdf()
-    .set({
-     margin:0,
-     filename:pdfFilename(),
-     image:{type:'jpeg',quality:.98},
-     html2canvas:{
-      scale:2,
-      useCORS:true,
-      allowTaint:false,
-      backgroundColor:'#ffffff',
-      logging:false,
-      scrollX:0,
-      scrollY:0,
-      windowWidth:Math.max(frame.root.scrollWidth,794),
-      width:frame.root.scrollWidth
-     },
-     jsPDF:{
-      unit:'mm',
-      format:'a4',
-      orientation:'portrait',
-      compress:true
-     },
-     pagebreak:{
-      mode:['css','legacy'],
-      avoid:[
-       '.report-cover','.cover','.pdf-radar-section',
-       '.report-summary-grid','.summary',
-       '.report-context-item','.context div',
-       '.report-score-row','.score-row',
-       '.action-column','.action',
-       '.report-role-card','.report-callout',
-       '.report-critical-list','.critical',
-       '.report-check-list li'
-      ]
-     }
-    })
-    .from(frame.root)
-    .save();
-
-   frame.iframe.remove();
+   await createPdf();
   }catch(error){
-   console.error('Direct PDF generation failed; opening the print fallback.',error);
-   fallbackPrint(frame);
+   console.error('PDF generation failed.',error);
+   alert(language==='en'
+    ? 'The PDF could not be generated. Please reload the page and try again.'
+    : "Le PDF n'a pas pu être généré. Rechargez la page puis réessayez.");
   }finally{
    button.disabled=false;
    button.removeAttribute('aria-busy');
-   button.textContent=originalText;
+   button.textContent=original;
   }
  };
 
@@ -461,7 +696,7 @@ function initAssessmentPdfExport(){
   if(!button)return;
   event.preventDefault();
   event.stopImmediatePropagation();
-  generatePdf(button);
+  generate(button);
  },true);
 }
 initAssessmentPdfExport();

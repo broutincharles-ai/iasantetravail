@@ -1,13 +1,13 @@
 - Syntaxe JavaScript : OK
-- Document A4 de 210 mm : OK
-- Radar ajouté au PDF : OK
-- Radar converti en image : OK
-- Tableau des scores intégré : OK
-- Titre redimensionné : OK
-- Protection contre le débordement : OK
-- Coupures de pages contrôlées : OK
+- Ancien html2pdf supprimé : OK
+- jsPDF direct utilisé : OK
+- Radar vectoriel : OK
+- Résumé décisionnel dessiné : OK
+- Contexte en cartes : OK
+- Neuf scores en grille : OK
+- Actions de prévention : OK
+- Pagination : OK
 - Interception des deux boutons : OK
-- Impression de secours : OK
 - Plausible conservé : OK
 - Navigation conservée : OK
 - Vignettes Risques conservées : OK
