@@ -1,10 +1,10 @@
-- syntaxe site.js: OK
-- syntaxe PDF v3.2: OK
-- reset padding web: OK
-- reset hauteur web: OK
-- espacement web 24 px: OK
-- titres autour du radar: OK
-- suppression doublon limitations: OK
-- version PDF 3.2: OK
-- cache CSS 3.2 sur 4 pages: OK
-- cache PDF 3.2 sur 4 pages: OK
+- Résumé français supprimé: OK
+- Résumé anglais supprimé: OK
+- Photo française intégrée: OK
+- Photo anglaise intégrée: OK
+- Lien LinkedIn sur la photo: OK
+- Méthode éditoriale absente: OK
+- CSS du portrait présent: OK
+- JPEG optimisé présent: OK
+- WebP 400 présent: OK
+- WebP 800 présent: OK

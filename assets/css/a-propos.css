@@ -299,3 +299,62 @@
     min-width:0;
   }
 }
+
+
+/* Portrait professionnel LinkedIn */
+.about-portrait{
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  border-radius:24px;
+  background:rgba(255,253,249,.72);
+}
+.about-portrait-link{
+  display:block;
+  overflow:hidden;
+  aspect-ratio:1;
+  background:var(--cole-nuit);
+}
+.about-portrait picture{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.about-portrait img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 34%;
+  transition:transform .45s ease;
+}
+.about-portrait-link:hover img,
+.about-portrait-link:focus-visible img{
+  transform:scale(1.025);
+}
+.about-portrait-link:focus-visible{
+  outline:3px solid var(--terra);
+  outline-offset:-3px;
+}
+.about-portrait figcaption{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:17px 20px 19px;
+}
+.about-portrait figcaption strong{
+  color:var(--encre);
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+  line-height:1.2;
+}
+.about-portrait figcaption span{
+  color:var(--encre-60);
+  font-size:.78rem;
+  line-height:1.45;
+}
+@media(max-width:720px){
+  .about-portrait-link{
+    max-height:430px;
+  }
+}
