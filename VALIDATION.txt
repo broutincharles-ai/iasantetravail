@@ -1,13 +1,10 @@
-- Syntaxe JavaScript : OK
-- Ancien html2pdf supprimé : OK
-- jsPDF direct utilisé : OK
+- Syntaxe assessment-pdf-v2.js : OK
+- Nouveau moteur distinct de site.js : OK
+- Export direct jsPDF : OK
 - Radar vectoriel : OK
-- Résumé décisionnel dessiné : OK
-- Contexte en cartes : OK
-- Neuf scores en grille : OK
-- Actions de prévention : OK
-- Pagination : OK
-- Interception des deux boutons : OK
-- Plausible conservé : OK
-- Navigation conservée : OK
-- Vignettes Risques conservées : OK
+- Mise en page A4 en millimètres : OK
+- Page française initiale : script v2 chargé avant site.js
+- Page française de suivi : script v2 chargé avant site.js
+- Page anglaise initiale : script v2 chargé avant site.js
+- Page anglaise de suivi : script v2 chargé avant site.js
+- Anciennes consignes d'impression remplacées : OK

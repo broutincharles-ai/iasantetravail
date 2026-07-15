@@ -147,10 +147,10 @@
 <article class="chart-card glass-soft"><div class="card-head"><div><span class="mini-kicker">Cartographie</span><h3>Neuf axes de lecture</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">Voir les valeurs</button></div><div class="radar-wrap" id="radarWrap"></div><div class="dimension-table" hidden="" id="dimensionTable"></div></article>
 <article class="priority-card glass-soft"><span class="mini-kicker">Actions</span><h3>Corrections prioritaires</h3><div class="priority-list" id="topPriorities"></div></article>
 </div>
-<div class="report-toolbar"><div><span class="mini-kicker">Rapport daté</span><h3>Compte rendu de suivi</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Télécharger en HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Données JSON</button><button class="btn btn-primary" id="printReport" type="button">Créer / enregistrer le PDF</button></div></div>
-<article class="generated-report" id="generatedReport"></article><p class="microcopy print-tip">Pour un PDF sans date ni URL ajoutées par Chrome : Plus de paramètres → désactiver « En-têtes et pieds de page ».</p>
+<div class="report-toolbar"><div><span class="mini-kicker">Rapport daté</span><h3>Compte rendu de suivi</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Télécharger en HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Données JSON</button><button class="btn btn-primary" id="printReport" type="button">Télécharger le PDF</button></div></div>
+<article class="generated-report" id="generatedReport"></article><p class="microcopy print-tip">Le rapport A4 est généré directement, sans en-têtes ni URL ajoutés par le navigateur.</p>
 <details class="result-extras"><summary>Archivage, historique et contribution volontaire</summary><div class="result-extras-body">
-<section class="archive-section glass-soft"><div><span class="mini-kicker">Archivage longitudinal</span><h3>Conserver ce passage avec sa date</h3><p>Enregistrez le rapport en PDF puis conservez-le avec les rapports antérieurs portant le même code anonyme.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Créer le PDF maintenant</button></section>
+<section class="archive-section glass-soft"><div><span class="mini-kicker">Archivage longitudinal</span><h3>Conserver ce passage avec sa date</h3><p>Générez directement le rapport A4 puis conservez-le avec les rapports antérieurs portant le même code anonyme.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Créer le PDF maintenant</button></section>
 <section class="email-contribution glass-soft"><div><span class="mini-kicker">Contribution volontaire</span><h3>Transmettre un résultat anonyme</h3><p>Après avoir vérifié l’absence de tout élément identifiable, vous pouvez transmettre le PDF à <a href="mailto:santetravailia@gmail.com">santetravailia@gmail.com</a>.</p><p class="microcopy">Aucun envoi automatique.</p></div><a class="btn btn-secondary" href="mailto:santetravailia@gmail.com?subject=Résultat%20anonyme%20-%20suivi%20daté%20IA%20et%20travail">Préparer l’e-mail</a></section>
 <section aria-labelledby="historyTitle" class="followup-history glass-soft"><span class="mini-kicker">Historique local</span><h3 id="historyTitle">Passages enregistrés dans ce navigateur</h3><div class="history-list" id="historyList"></div></section>
 </div></details>
@@ -192,6 +192,7 @@
 <script src="assets/js/impact-followup.js?v=0.7.4"></script>
 <script defer src="../../assets/js/search-index.js?v=0.7.4"></script>
 <script defer src="../../assets/js/search-index-evaluer.js?v=1.0"></script>
+<script defer src="../../assets/js/assessment-pdf-v2.js?v=2.2.0"></script>
 <script defer src="../../assets/js/site.js?v=0.7.4"></script>
 </body>
 </html>

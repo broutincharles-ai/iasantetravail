@@ -163,10 +163,10 @@
 <article class="chart-card glass-soft"><div class="card-head"><div><span class="mini-kicker">Mapping</span><h3>Nine dimensions</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">View values</button></div><div aria-label="Radar chart of observed effects" class="radar-wrap" id="radarWrap"></div><div class="dimension-table" hidden id="dimensionTable"></div></article>
 <article class="priority-card glass-soft"><span class="mini-kicker">Actions</span><h3>Priority corrections</h3><div class="priority-list" id="topPriorities"></div></article>
 </div>
-<div class="report-toolbar"><div><span class="mini-kicker">Dated report</span><h3>Follow-up report</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Download HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Download JSON</button><button class="btn btn-primary" id="printReport" type="button">Print / save PDF</button></div></div>
+<div class="report-toolbar"><div><span class="mini-kicker">Dated report</span><h3>Follow-up report</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Download HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Download JSON</button><button class="btn btn-primary" id="printReport" type="button">Download PDF</button></div></div>
 <div class="generated-report" id="generatedReport"></div>
 <details class="result-extras"><summary>Archiving and local history</summary><div class="result-extras-body">
-<section class="archive-section glass-soft"><div><span class="mini-kicker">Longitudinal archive</span><h3>Keep this dated review</h3><p>Save the report as PDF and retain it with previous reports using the same anonymous code.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Create PDF now</button></section>
+<section class="archive-section glass-soft"><div><span class="mini-kicker">Longitudinal archive</span><h3>Keep this dated review</h3><p>Generate the A4 PDF directly and retain it with previous reports using the same anonymous code.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Create PDF now</button></section>
 <section class="followup-history glass-soft"><span class="mini-kicker">Local history</span><h3>Reviews stored in this browser</h3><div class="history-list" id="historyList"></div></section>
 </div></details>
 <div class="result-actions-bottom"><a class="btn btn-secondary" href="index.html">New pre-deployment assessment</a><button class="btn btn-ghost" id="restartAssessment" type="button">New follow-up</button></div>
@@ -244,6 +244,7 @@
 <script src="assets/js/assessment-core-en.js?v=1.0"></script>
 <script defer src="../../../assets/js/search-index-en.js"></script>
 <script defer src="../../../assets/js/search-index-en-evaluate.js?v=1.0"></script>
+<script defer src="../../../assets/js/assessment-pdf-v2.js?v=2.2.0"></script>
 <script defer src="../../../assets/js/site.js"></script>
 </body>
 </html>

@@ -1,45 +1,43 @@
-# Export PDF professionnel — génération directe avec jsPDF
+# Correctif PDF définitif — Évaluer / Assess
 
-Remplacer dans la branche `main` :
+Ce paquet n'utilise plus le fichier partagé `site.js` pour générer les PDF.
+Il ajoute un moteur dédié avec un nouveau nom de fichier, ce qui évite que
+GitHub Pages ou le navigateur réutilise l'ancien export HTML mis en cache.
 
-- `assets/js/site.js`
+## Fichiers à téléverser dans la branche `main`
 
-## Ce qui change
-
-Le PDF n'est plus créé à partir d'une capture HTML. Il est dessiné directement avec jsPDF, ce qui évite :
-
-- les textes concaténés ;
-- les cartes qui disparaissent ;
-- les colonnes qui se replient ;
-- les débordements et coupures à gauche ;
-- les différences de rendu entre Chrome, Safari et l'impression système.
-
-## Contenu du rapport
-
-Le rapport comporte désormais :
-
-1. une couverture et les métadonnées ;
-2. une synthèse décisionnelle avec score, niveau, décision et signaux critiques ;
-3. le contexte déclaré présenté en cartes ;
-4. un graphique radar vectoriel des neuf dimensions ;
-5. les neuf scores avec barres de progression ;
-6. les actions de prévention prioritaires ;
-7. les conditions minimales de prévention collective ;
-8. les limites méthodologiques ;
-9. une pagination et un pied de page.
-
-## Pages corrigées
-
-- `evaluer/impact/`
+- `assets/js/assessment-pdf-v2.js`
+- `evaluer/impact/index.html`
 - `evaluer/impact/suivi.html`
-- `en/evaluate/impact/`
+- `en/evaluate/impact/index.html`
 - `en/evaluate/impact/follow-up.html`
 
-## Après le téléversement
+Respecter exactement ces chemins à la racine du dépôt.
 
-Effectuer un rechargement forcé :
+## Pourquoi les quatre fichiers HTML sont nécessaires
 
-- macOS : `Cmd + Shift + R`
-- Windows : `Ctrl + F5`
+Les pages françaises chargeaient encore `site.js?v=0.7.4` et les pages
+anglaises chargeaient `site.js` sans numéro de version. Le nouveau moteur est
+maintenant chargé par un chemin inédit :
 
-La bibliothèque jsPDF est chargée uniquement lors du clic sur le bouton PDF.
+- FR : `../../assets/js/assessment-pdf-v2.js?v=2.2.0`
+- EN : `../../../assets/js/assessment-pdf-v2.js?v=2.2.0`
+
+Il est placé avant `site.js`, afin d'intercepter les boutons PDF avant les
+anciens gestionnaires d'impression ou de capture HTML.
+
+## Nouveau rendu
+
+- PDF A4 construit directement avec jsPDF ;
+- aucune capture de la page web ;
+- aucune grande bordure ou partie de page coupée ;
+- carte de score séparée de la décision ;
+- contexte en cartes à deux colonnes ;
+- radar vectoriel sur une page dédiée ;
+- tableau des neuf dimensions ;
+- actions prioritaires et conditions minimales ;
+- numéros de page.
+
+Après téléversement, attendre la fin du déploiement GitHub Pages puis ouvrir
+une nouvelle fenêtre privée pour tester. Le nouveau bouton est libellé
+`Télécharger le PDF` / `Download PDF`.
