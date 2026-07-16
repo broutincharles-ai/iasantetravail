@@ -216,7 +216,7 @@ function addSubstackAboutSection(){
 }
 
 function addSubstackToBylines(){
- let bylines=[...document.querySelectorAll('.author-byline')];
+ let bylines=[...document.querySelectorAll('.author-byline, .about-author-note')];
 
  if(!bylines.length){
   const main=document.querySelector('main');
