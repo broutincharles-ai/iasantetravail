@@ -114,6 +114,222 @@ function initCarousel(){
 }
 initCarousel();
 
+/* ============================================================
+   SUBSTACK — intégration globale
+   ============================================================ */
+const SUBSTACK_URL='https://substack.com/@charlesbroutin';
+
+function loadSubstackStyles(){
+ if(document.querySelector('link[data-substack-styles]'))return;
+ const root=document.body.dataset.root||'';
+ const stylesheet=document.createElement('link');
+ stylesheet.rel='stylesheet';
+ stylesheet.href=`${root}assets/css/substack.css?v=1.0`;
+ stylesheet.dataset.substackStyles='true';
+ document.head.appendChild(stylesheet);
+}
+
+function createSubstackLink({label,source,className}){
+ const link=document.createElement('a');
+ link.className=className;
+ link.href=SUBSTACK_URL;
+ link.target='_blank';
+ link.rel='noopener noreferrer';
+ link.dataset.substackSource=source;
+ link.setAttribute('aria-label',`${label} — Substack`);
+ link.innerHTML=`<span>${label}</span><span aria-hidden="true">↗</span>`;
+ return link;
+}
+
+function addSubstackAboutSection(){
+ const page=document.body.dataset.page;
+ if(page!=='apropos' && page!=='en-about')return;
+ if(document.getElementById('newsletter-substack'))return;
+
+ const publications=document.getElementById('publications');
+ if(!publications)return;
+
+ const section=document.createElement('section');
+ section.id='newsletter-substack';
+ section.className='about-section substack-about-section';
+
+ if(isEN){
+  section.innerHTML=`
+   <div class="wrap">
+    <article class="substack-about-card glass reveal">
+     <div class="substack-about-copy">
+      <span class="kicker">Personal newsletter</span>
+      <h2>Long-form analysis on AI and occupational health</h2>
+      <p>I publish longer pieces than on LinkedIn, covering recent technological developments, artificial intelligence at work and their implications for occupational health.</p>
+      <div class="substack-about-topics" aria-label="Newsletter topics">
+       <span>Technology developments</span>
+       <span>AI at work</span>
+       <span>Occupational health</span>
+      </div>
+     </div>
+     <div class="substack-about-action">
+      <span class="substack-wordmark">Substack</span>
+      <p>Receive new articles directly by email.</p>
+     </div>
+    </article>
+   </div>`;
+ }else{
+  section.innerHTML=`
+   <div class="wrap">
+    <article class="substack-about-card glass reveal">
+     <div class="substack-about-copy">
+      <span class="kicker">Newsletter personnelle</span>
+      <h2>Des analyses approfondies sur l’IA et la santé au travail</h2>
+      <p>Je publie sur Substack des articles plus longs que sur LinkedIn, consacrés aux évolutions technologiques récentes, à l’intelligence artificielle au travail et à leurs implications pour la santé au travail.</p>
+      <div class="substack-about-topics" aria-label="Thèmes de la newsletter">
+       <span>Évolutions technologiques</span>
+       <span>IA au travail</span>
+       <span>Santé au travail</span>
+      </div>
+     </div>
+     <div class="substack-about-action">
+      <span class="substack-wordmark">Substack</span>
+      <p>Recevez les nouveaux articles directement par e-mail.</p>
+     </div>
+    </article>
+   </div>`;
+ }
+
+ const action=section.querySelector('.substack-about-action');
+ action?.appendChild(createSubstackLink({
+  label:isEN?'Subscribe to the newsletter':'S’abonner à la newsletter',
+  source:isEN?'about-en':'about-fr',
+  className:'substack-main-cta'
+ }));
+
+ publications.before(section);
+ section.querySelectorAll('.reveal').forEach(el=>revealObserver?revealObserver.observe(el):el.classList.add('in'));
+
+ const heroActions=document.querySelector('.hero-actions');
+ if(heroActions && !heroActions.querySelector('[data-substack-source]')){
+  heroActions.appendChild(createSubstackLink({
+   label:isEN?'Read the newsletter':'Lire la newsletter',
+   source:isEN?'about-hero-en':'about-hero-fr',
+   className:'btn btn-glassy glass glass--dark substack-hero-cta'
+  }));
+ }
+}
+
+function addSubstackToBylines(){
+ let bylines=[...document.querySelectorAll('.author-byline')];
+
+ if(!bylines.length){
+  const main=document.querySelector('main');
+  if(!main)return;
+
+  const generated=document.createElement('section');
+  generated.className='author-byline author-byline--generated';
+  generated.setAttribute('aria-label',isEN?'Content author':'Auteur du contenu');
+  generated.innerHTML=`
+   <div class="wrap">
+    <p>${isEN
+     ? 'Written by <a href="'+(document.body.dataset.root||'')+'en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI representative for the French Society of Occupational Health.'
+     : 'Rédigé par le <a href="'+(document.body.dataset.root||'')+'a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.'}
+    </p>
+   </div>`;
+  main.appendChild(generated);
+  bylines=[generated];
+ }
+
+ bylines.forEach((byline,index)=>{
+  const wrap=byline.querySelector('.wrap')||byline;
+  if(wrap.querySelector('.substack-byline'))return;
+
+  const text=wrap.querySelector(':scope > p')||wrap.querySelector('p');
+  const row=document.createElement('div');
+  row.className='author-newsletter-row';
+
+  if(text){
+   text.before(row);
+   row.appendChild(text);
+  }else{
+   wrap.appendChild(row);
+  }
+
+  row.appendChild(createSubstackLink({
+   label:isEN?'Subscribe to the newsletter':'S’abonner à la newsletter',
+   source:`byline-${isEN?'en':'fr'}-${index+1}`,
+   className:'substack-byline'
+  }));
+ });
+}
+
+function addSubstackToFooter(){
+ document.querySelectorAll('footer ul').forEach(list=>{
+  if(list.querySelector(`a[href="${SUBSTACK_URL}"]`))return;
+  const linkedIn=list.querySelector('a[href*="linkedin.com/in/charles-broutin"]');
+  if(!linkedIn)return;
+
+  const item=document.createElement('li');
+  const link=createSubstackLink({
+   label:isEN?'Subscribe to the newsletter':'S’abonner à la newsletter',
+   source:isEN?'footer-en':'footer-fr',
+   className:'substack-footer-link'
+  });
+  item.appendChild(link);
+
+  const linkedInItem=linkedIn.closest('li');
+  linkedInItem?.after(item);
+ });
+}
+
+function enrichAuthorStructuredData(){
+ document.querySelectorAll('script[type="application/ld+json"]').forEach(script=>{
+  try{
+   const data=JSON.parse(script.textContent);
+   let changed=false;
+
+   const visit=value=>{
+    if(Array.isArray(value)){
+     value.forEach(visit);
+     return;
+    }
+    if(!value || typeof value!=='object')return;
+
+    const types=Array.isArray(value['@type'])?value['@type']:[value['@type']];
+    if(types.includes('Person') && value.name==='Dr Charles Broutin'){
+     const sameAs=Array.isArray(value.sameAs)?value.sameAs:value.sameAs?[value.sameAs]:[];
+     if(!sameAs.includes(SUBSTACK_URL)){
+      value.sameAs=[...sameAs,SUBSTACK_URL];
+      changed=true;
+     }
+    }
+    Object.values(value).forEach(visit);
+   };
+
+   visit(data);
+   if(changed)script.textContent=JSON.stringify(data);
+  }catch{
+   // Un bloc JSON-LD invalide ne doit pas empêcher le reste du site de fonctionner.
+  }
+ });
+}
+
+function initSubstackIntegration(){
+ loadSubstackStyles();
+ addSubstackAboutSection();
+ addSubstackToBylines();
+ addSubstackToFooter();
+ enrichAuthorStructuredData();
+
+ document.addEventListener('click',event=>{
+  const link=event.target.closest('a[data-substack-source]');
+  if(!link || typeof window.plausible!=='function')return;
+  window.plausible('Substack CTA',{
+   props:{
+    source:link.dataset.substackSource||'unknown',
+    language:isEN?'en':'fr'
+   }
+  });
+ });
+}
+initSubstackIntegration();
+
 // Recherche locale : aucun contenu de recherche n'est envoyé à un tiers.
 const dialog=document.getElementById('siteSearch'),openSearch=document.querySelector('.search-open'),closeSearch=document.querySelector('.search-close'),input=document.getElementById('searchInput'),results=document.getElementById('searchResults');
 openSearch?.addEventListener('click',()=>{dialog?.showModal();setTimeout(()=>input?.focus(),30)});closeSearch?.addEventListener('click',()=>dialog?.close());
