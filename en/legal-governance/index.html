@@ -1,558 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="Govern workplace AI through the actual use, EU AI Act, GDPR, worker consultation, occupational-risk prevention and meaningful human oversight." name="description"/>
-<meta content="Dr Charles Broutin" name="author"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/>
-<meta content="#EADDC6" name="theme-color"/>
-
-<link href="https://www.iasantetravail.com/en/legal-governance/" rel="canonical"/>
-<link href="https://www.iasantetravail.com/en/legal-governance/" hreflang="en" rel="alternate"/>
-<link href="https://www.iasantetravail.com/droit-gouvernance/" hreflang="fr" rel="alternate"/>
-<link href="https://www.iasantetravail.com/droit-gouvernance/" hreflang="x-default" rel="alternate"/>
-
-<meta content="article" property="og:type"/>
-<meta content="en_GB" property="og:locale"/>
-<meta content="fr_FR" property="og:locale:alternate"/>
-<meta content="AI &amp; Occupational Health" property="og:site_name"/>
-<meta content="Workplace AI Governance | EU AI Act, GDPR and Workers" property="og:title"/>
-<meta content="A practical framework for AI use at work: risk classification, data protection, worker consultation, prevention and human oversight." property="og:description"/>
-<meta content="https://www.iasantetravail.com/en/legal-governance/" property="og:url"/>
-<meta content="https://www.iasantetravail.com/assets/images/og-droit.jpg" property="og:image"/>
-<meta content="Workplace AI law and governance framework" property="og:image:alt"/>
-
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Workplace AI Governance | EU AI Act and GDPR" name="twitter:title"/>
-<meta content="Connect the EU AI Act, GDPR, worker consultation and occupational-risk prevention before workplace AI deployment." name="twitter:description"/>
-<meta content="https://www.iasantetravail.com/assets/images/og-droit.jpg" name="twitter:image"/>
-
-<title>Workplace AI Governance | EU AI Act, GDPR and Workers</title>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Workplace AI governance: EU AI Act, GDPR and worker consultation","description":"A practical framework for governing workplace AI through the actual use, EU AI Act, GDPR, worker consultation, occupational-risk prevention and human oversight.","url":"https://www.iasantetravail.com/en/legal-governance/","mainEntityOfPage":"https://www.iasantetravail.com/en/legal-governance/","inLanguage":"en","dateModified":"2026-07-14","image":"https://www.iasantetravail.com/assets/images/og-droit.jpg","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]},"about":[{"@type":"Thing","name":"Workplace AI governance"},{"@type":"Thing","name":"EU AI Act"},{"@type":"Thing","name":"GDPR and artificial intelligence"},{"@type":"Thing","name":"Worker consultation on AI"},{"@type":"Thing","name":"Occupational risk prevention"}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Law & governance","item":"https://www.iasantetravail.com/en/legal-governance/"}]}]</script>
-
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link as="image" href="../../assets/images/architects-dream-1280.webp" rel="preload" type="image/webp"/>
-<link href="../../assets/css/site.css" rel="stylesheet"/>
-<link href="../../assets/css/en-legal-governance.css?v=1.0" rel="stylesheet"/>
-
-<script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
-<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
-<meta name="msapplication-TileColor" content="#A84E1F"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Qualify artificial intelligence uses at work, identify applicable obligations, and organise documented governance.">
+  <meta name="author" content="Dr Charles Broutin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F4EBDA">
+  <link rel="canonical" href="https://www.iasantetravail.com/en/legal-governance/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/droit-gouvernance/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/legal-governance/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/droit-gouvernance/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="AI &amp; Occupational Health">
+  <meta property="og:title" content="Legal and governance — AI &amp; Occupational Health">
+  <meta property="og:description" content="AI Act, GDPR, French labour law, worker consultation, and prevention: start from actual use to organise decisions.">
+  <meta property="og:url" content="https://www.iasantetravail.com/en/legal-governance/">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-droit.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Legal and governance — AI &amp; Occupational Health</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/images/architects-dream-1280.webp" type="image/webp">
+  <link rel="stylesheet" href="/assets/css/droit-gouvernance-v2.css?v=1.0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Legal and governance","url":"https://www.iasantetravail.com/en/legal-governance/","inLanguage":"en-GB","description":"Qualify artificial intelligence uses at work, identify applicable obligations, and organise documented governance.","dateModified":"2026-07-18","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]}}</script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
+<body class="legal-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body class="inner-page page-en-legal page-en-legal-refined" data-page="en-legal" data-root="../../">
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
-<nav aria-label="Main navigation" class="nav glass">
-  <a class="brand" href="../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
-  <div class="nav-links" id="navLinks">
-    <a href="../../en/understand/">Understand</a>
-    <a href="../../en/uses-and-field/">Uses &amp; field evidence</a>
-    <a href="../../en/evaluate/">Assess</a>
-    <a href="../../en/risks-prevention/">Risks &amp; prevention</a>
-    <a aria-current="page" class="is-active" href="../../en/legal-governance/">Law &amp; governance</a>
-    <details class="nav-resources">
-      <summary>Resources</summary>
-      <div class="nav-resources-menu">
-        <a href="../../en/resources/models/">Model landscape</a>
-        <a href="../../en/about/">About &amp; publications</a>
-        <a href="../../en/legal-notice/">Legal notice</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="AI and Occupational Health, home"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="https://www.iasantetravail.com/en/">Home</a>
+        <a href="https://www.iasantetravail.com/en/understand/">Understand</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field evidence</a>
+        <a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a>
+        <a href="https://www.iasantetravail.com/en/evaluate/">Assess</a>
+        <a class="active" href="#top" aria-current="page">Legal &amp; governance</a>
+        <a href="#references">Resources</a>
       </div>
-    </details>
-  </div>
-  <div class="nav-tools">
-    <button aria-label="Search the site" class="search-open" type="button">⌕</button>
-    <div aria-label="Language" class="lang-switch">
-      <a href="../../droit-gouvernance/" hreflang="fr" lang="fr">FR</a>
-      <a class="active" href="../../en/legal-governance/" hreflang="en" lang="en">EN</a>
-    </div>
-    <button aria-controls="navLinks" aria-expanded="false" aria-label="Open menu" class="nav-menu-btn" type="button">
-      <span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
-    </button>
-    <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-  </div>
-</nav>
-
-<main id="main-content" tabindex="-1">
-<section class="page active" id="page-legal-governance">
-
-<header class="page-hero">
-  <div class="wrap">
-    <div class="hero-frame">
-      <picture class="responsive-art">
-        <source sizes="(max-width:760px) 100vw,1180px"
-                srcset="../../assets/images/architects-dream-640.webp 640w,
-                        ../../assets/images/architects-dream-960.webp 960w,
-                        ../../assets/images/architects-dream-1280.webp 1280w,
-                        ../../assets/images/architects-dream-1800.webp 1800w"
-                type="image/webp"/>
-        <img alt="Thomas Cole, The Architect’s Dream, 1840"
-             decoding="async"
-             fetchpriority="high"
-             loading="eager"
-             src="../../assets/images/architects-dream-1800.jpg"
-             style="object-position:center 52%"/>
-      </picture>
-      <div class="veil"></div>
-      <p class="hero-credit">Thomas Cole, The Architect’s Dream, 1840</p>
-      <div class="hero-inner">
-        <h1>Govern workplace AI <em>before deployment</em></h1>
-        <p class="hero-descriptor">EU AI Act, GDPR, worker consultation and occupational-risk prevention must be connected to the system’s actual use, the data processed and its effects on work.</p>
-        <div class="hero-actions"><a class="btn btn-solid" href="#decision-architecture">Understand the applicable framework</a></div>
+      <div class="nav-tools">
+        <button class="search-button" id="openSearch" type="button" aria-label="Search this page">⌕</button>
+        <div class="language" aria-label="Language selection"><a href="https://www.iasantetravail.com/droit-gouvernance/" lang="fr" hreflang="fr">FR</a><a class="active" href="https://www.iasantetravail.com/en/legal-governance/" lang="en" aria-current="page">EN</a></div>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+        <a class="nav-cta" href="https://www.iasantetravail.com/en/evaluate/impact/">Assess a project</a>
       </div>
-    </div>
-  </div>
-</header>
+    </nav>
+  </header>
 
-<section aria-labelledby="page-summary" class="page-summary-section">
-  <div class="wrap">
-    <div class="page-summary glass">
-      <div class="page-summary-main">
-        <span class="mini-kicker">In 30 seconds</span>
-        <h2 id="page-summary">Essential points</h2>
-        <ul>
-          <li>The legal and governance framework depends on the actual workplace use: documentation, recruitment, task allocation, monitoring, health or a decision affecting a person.</li>
-          <li>The EU AI Act, GDPR, labour law, worker consultation and occupational-risk prevention are cumulative; compliance with one does not replace the others.</li>
-          <li>Governance should define purpose, authority, data, human oversight, evidence, worker involvement, incident handling and conditions for stopping the system.</li>
-        </ul>
-        <div aria-label="Status legend" class="status-legend">
-          <span class="proof proof--consensus">Established framework</span>
-          <span class="proof proof--emergent">Emerging case law</span>
-          <span class="proof proof--expert">Governance analysis</span>
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-frame">
+          <img src="/assets/images/architects-dream-1280.webp" alt="Thomas Cole, The Architect’s Dream, 1840" width="1280" height="786" fetchpriority="high">
+          <div class="hero-copy">
+            <p class="eyebrow">Legal &amp; governance · From use to decision</p>
+            <h1 id="hero-title">Set the rules for AI <em>before</em> it transforms work.</h1>
+            <p class="hero-lead">Identify the applicable rules from actual use, the data processed, the authority given to the system, and its effects on work.</p>
+          </div>
+          <p class="hero-credit">Thomas Cole, The Architect’s Dream, 1840</p>
         </div>
       </div>
-      <aside aria-label="Reading information" class="page-summary-side">
-        <dl>
-          <div><dt>Audience</dt><dd>Employers, worker representatives, legal teams, DPOs, HR, occupational-health teams and AI project leaders</dd></div>
-          <div><dt>Reading time</dt><dd>About 10 minutes</dd></div>
-          <div><dt>Last reviewed</dt><dd>14 July 2026</dd></div>
-        </dl>
-      </aside>
-      <nav aria-label="On this page" class="page-toc">
-        <span>On this page</span>
-        <ol>
-          <li><a href="#decision-architecture">Decision architecture</a></li>
-          <li><a href="#legal-layers">Four legal layers</a></li>
-          <li><a href="#use-matrix">Start from the actual use</a></li>
-          <li><a href="#ai-act-timeline">EU timetable</a></li>
-          <li><a href="#worker-consultation">Worker consultation</a></li>
-          <li><a href="#governance-lifecycle">Governance lifecycle</a></li>
-          <li><a href="#french-case-law">French case law</a></li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="legal-section" id="decision-architecture">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Start from the real use</span>
-      <h2>Use a decision architecture, not a fixed compliance table</h2>
-      <p>The same model may be low-impact when reformulating public text, sensitive when processing employee data, high-risk when used in recruitment or worker management, and unacceptable when used for prohibited workplace emotion recognition.</p>
-    </div>
-    <div class="decision-grid">
-      <article class="decision-card glass reveal">
-        <h3>The legal reflex</h3>
-        <p>Do not begin with the brand name or technical category alone. Describe the purpose, people affected, data, output, authority given to the system and consequences of an error.</p>
-        <p>The applicable rules then emerge from concrete questions: does the system process personal or health data, influence employment decisions, allocate work, monitor activity or create a significant automated decision?</p>
-      </article>
-      <article class="decision-card decision-card--accent reveal">
-        <span class="mini-kicker">The prevention reflex</span>
-        <h3>Legal permission is not the end of the analysis</h3>
-        <p>A system may remain problematic because of workload, autonomy, skills, surveillance, unequal effects or unclear responsibility.</p>
-        <p class="decision-question">What does the AI system actually do in real work?</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="legal-layers">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Four cumulative layers</span>
-      <h2>EU AI Act, GDPR, labour law and occupational-risk prevention</h2>
-      <p>These frameworks answer different questions and may all apply to the same project.</p>
-    </div>
-
-    <div class="legal-layer-grid">
-      <article class="legal-layer glass reveal">
-        <span class="proof proof--consensus">European Union</span>
-        <h3>EU AI Act: obligations depend on the use and risk level</h3>
-        <p>Workplace-relevant provisions include prohibited practices, transparency duties, rules for general-purpose AI and high-risk requirements for certain employment and worker-management systems.</p>
-        <p>High-risk safeguards include risk management, data governance, logging, documentation, information for deployers, human oversight, accuracy, robustness and cybersecurity.</p>
-        <span class="legal-key">Employment, recruitment and worker-management systems require specific classification rather than generic approval of the model.</span>
-      </article>
-
-      <article class="legal-layer glass reveal">
-        <span class="proof proof--consensus">Personal data</span>
-        <h3>GDPR: purpose, minimisation, transparency and rights</h3>
-        <p>When AI processes data about workers, candidates, patients or users, organisations must identify a lawful basis, limit the purpose and data, define retention, ensure security and enable the exercise of rights.</p>
-        <p>Health, biometric and inferred psychological data, large-scale monitoring and automated decisions require particular caution. A data-protection impact assessment may be necessary.</p>
-        <span class="legal-key">Provider documentation does not replace the deployer’s own GDPR analysis.</span>
-      </article>
-
-      <article class="legal-layer glass reveal">
-        <span class="proof proof--expert">Worker participation</span>
-        <h3>Labour law and consultation: involve workers early enough to matter</h3>
-        <p>Applicable national rules vary. A sound governance process gives workers and their representatives information on purpose, tasks, data, criteria, risks, safeguards and alternatives before the project is effectively deployed.</p>
-        <p>In France, specific CSE information and consultation duties apply to new technologies, automated personnel management, recruitment methods and employee-monitoring techniques.</p>
-        <span class="legal-key">A consultation held after general rollout cannot influence the design.</span>
-      </article>
-
-      <article class="legal-layer glass reveal">
-        <span class="proof proof--consensus">Occupational health and safety</span>
-        <h3>Prevention duties: treat AI as a transformation of work</h3>
-        <p>Employers must protect physical and mental health and assess occupational risks. AI projects may require preventive action when they change pace, autonomy, surveillance, skills, emotional demands or work organisation.</p>
-        <p>In France, relevant risks should be reflected in the occupational risk assessment document and associated prevention programme where applicable.</p>
-        <span class="legal-key">Training alone is not sufficient when the system or workflow itself creates the risk.</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="use-matrix">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Practical use matrix</span>
-      <h2>Start from what the AI system does at work</h2>
-      <p>The classification below is indicative. The exact obligations depend on the data, affected people, decision authority and national context.</p>
-    </div>
-
-    <div class="use-matrix">
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Document assistance</span><h3>Search, summarisation and reformulation</h3></div>
-        <p><strong>Usually lower impact</strong> when no personal, confidential or protected information is shared. Main safeguards include confidentiality, source verification, traceability and appropriate disclosure of AI-assisted content.</p>
-      </article>
-
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Human resources</span><h3>Recruitment, scoring, promotion and training</h3></div>
-        <p><strong>Potentially high-risk under the EU AI Act.</strong> GDPR, bias testing, meaningful human oversight, candidate or employee information and worker consultation may also apply.</p>
-      </article>
-
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Work organisation</span><h3>Scheduling, task allocation and prioritisation</h3></div>
-        <p><strong>A governance turning point.</strong> The system no longer merely assists an individual: it may prescribe or organise activity. Criteria, appeal routes and effects on workload, autonomy, deadlines and cooperation should be documented.</p>
-      </article>
-
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Monitoring and control</span><h3>Performance measurement and activity analysis</h3></div>
-        <p><strong>Highly sensitive.</strong> Monitoring should be necessary, proportionate, transparent and subject to applicable labour and data-protection rules. Workplace emotion recognition is prohibited under the EU AI Act, subject to narrow exceptions defined by the regulation.</p>
-      </article>
-
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Occupational health</span><h3>Health data, follow-up and decision support</h3></div>
-        <p><strong>Maximum caution.</strong> Medical confidentiality, health data, security, hosting, separation from employer access and competent medical supervision are central. Decision support should not become an autonomous decision on health or fitness for work.</p>
-      </article>
-
-      <article class="use-row glass reveal">
-        <div><span class="use-label">Collective prevention</span><h3>Risk assessment and weak-signal analysis</h3></div>
-        <p><strong>Promising but context-dependent.</strong> AI may help structure information or identify patterns, but risk qualification should remain multidisciplinary, contextual and discussed with people who understand the real work.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="ai-act-timeline">
-  <div class="wrap">
-    <div class="timeline-panel reveal">
-      <div class="section-head">
-        <span class="kicker" style="color:var(--lavande)">EU AI Act timeline</span>
-        <h2>A progressive and recently revised timetable</h2>
-        <p>The 2026 simplification regulation delayed the application of high-risk requirements while leaving earlier prohibitions, AI-literacy duties and general-purpose AI rules in place.</p>
-      </div>
-
-      <div class="timeline-grid">
-        <article class="timeline-item"><strong>02/2025</strong><p>Prohibited practices and AI-literacy obligations began to apply.</p></article>
-        <article class="timeline-item"><strong>08/2025</strong><p>Governance provisions and obligations for general-purpose AI models became applicable.</p></article>
-        <article class="timeline-item"><strong>08/2026</strong><p>General application of the regulation and core transparency duties, depending on the provision concerned.</p></article>
-        <article class="timeline-item"><strong>12/2027</strong><p>High-risk rules for stand-alone systems, including certain employment and worker-management uses.</p></article>
-        <article class="timeline-item"><strong>08/2028</strong><p>High-risk rules for systems embedded in regulated products.</p></article>
+    <div class="route-strip">
+      <div class="wrap route-grid" aria-label="Direct access">
+        <a class="route-item" href="#qualify"><span class="route-index">01</span><span><strong>Qualify the use</strong><span>What the system actually does.</span></span></a>
+        <a class="route-item" href="#obligations"><span class="route-index">02</span><span><strong>Identify obligations</strong><span>The frameworks that apply together.</span></span></a>
+        <a class="route-item" href="#governance"><span class="route-index">03</span><span><strong>Organise governance</strong><span>Decide, document, reassess.</span></span></a>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="legal-section" id="worker-consultation">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Worker participation</span>
-      <h2>Consultation should enable workers to influence the project</h2>
-      <p>A useful consultation addresses the actual effects of the system, not only a technical or marketing presentation.</p>
-    </div>
-
-    <div class="consultation-grid">
-      <article class="consultation-card glass reveal">
-        <span class="proof proof--consensus">Timing</span>
-        <h3>Consult before implementation is effectively determined</h3>
-        <p>A pilot may already amount to implementation when employees use the tool in organised conditions, training is scheduled or wider rollout has been decided.</p>
-      </article>
-
-      <article class="consultation-card glass reveal">
-        <span class="proof proof--expert">Information</span>
-        <h3>Provide enough evidence to understand the change</h3>
-        <p>Documentation should cover purpose, affected groups, transformed tasks, data, criteria, human oversight, expected employment and workload effects, alternatives and pilot results.</p>
-      </article>
-
-      <article class="consultation-card glass reveal">
-        <span class="proof proof--consensus">Expert support</span>
-        <h3>Allow independent analysis where the project is significant</h3>
-        <p>National law may allow worker representatives to obtain expert support. In France, the CSE may use an authorised expert in defined cases involving new technology or a major change to health, safety or working conditions.</p>
-      </article>
-
-      <article class="consultation-card glass reveal">
-        <span class="proof proof--expert">Content of the opinion</span>
-        <h3>Discuss safeguards and follow-up, not only the purchase decision</h3>
-        <p>Worker representatives may examine transparency, skills, checking time, actual workload, surveillance, training, escalation routes and the conditions for reassessing or stopping the system.</p>
-      </article>
-    </div>
-
-    <div class="consultation-note reveal">
-      <strong>French-specific note</strong>
-      <p>For companies within the relevant statutory scope, Articles L.2312-8 and L.2312-38 of the French Labour Code address new technologies, automated personnel management, recruitment methods and employee-monitoring techniques. Other countries use different consultation structures.</p>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="governance-lifecycle">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Governance lifecycle</span>
-      <h2>Six decisions to document from idea to follow-up</h2>
-      <p>Governance is a continuing process rather than a one-time compliance review.</p>
-    </div>
-
-    <div class="governance-flow">
-      <article class="governance-step glass reveal"><span>1</span><h3>Define the purpose</h3><p>State the workplace problem, intended benefit, affected people and prohibited uses.</p></article>
-      <article class="governance-step glass reveal"><span>2</span><h3>Classify the system</h3><p>Identify AI Act status, data categories, decision effects and national labour-law requirements.</p></article>
-      <article class="governance-step glass reveal"><span>3</span><h3>Assess the work impact</h3><p>Examine tasks, workload, autonomy, skills, cooperation, surveillance and psychosocial risks.</p></article>
-      <article class="governance-step glass reveal"><span>4</span><h3>Consult and test</h3><p>Involve affected workers, representatives, DPO, occupational health, legal and security expertise.</p></article>
-      <article class="governance-step glass reveal"><span>5</span><h3>Authorise with conditions</h3><p>Define oversight, data access, logging, incident handling, appeal, fallback and stop criteria.</p></article>
-      <article class="governance-step glass reveal"><span>6</span><h3>Monitor and reassess</h3><p>Review errors, overrides, unequal effects, workload, system changes and reasons to redesign or stop.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="french-case-law">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">French case law</span>
-      <h2>An emerging line of decisions remains highly fact-dependent</h2>
-      <p>Recent French disputes increasingly examine whether AI pilots and tools should have been subject to prior CSE consultation. The outcome depends on the actual use, maturity of deployment and demonstrated effects on working conditions.</p>
-    </div>
-
-    <div class="case-intro reveal">
-      This section is informational and France-specific. Interim orders and first-instance judgments may be appealed and should not be treated as universal rules.
-    </div>
-
-    <div class="case-grid">
-      <article class="case-card glass reveal">
-        <span class="proof proof--expert">French Supreme Court · 2018</span>
-        <h3>AI is not automatically a major project</h3>
-        <p>In a dispute concerning an IBM Watson tool supporting email processing, the court accepted a concrete analysis of the consequences. Where direct effects on working conditions were considered limited, expert assistance could be refused.</p>
-        <span class="case-ref">Cass. soc., 12 April 2018, no. 16-27.866.</span>
-      </article>
-
-      <article class="case-card glass reveal">
-        <span class="proof proof--emergent">Nanterre · interim proceedings 2025</span>
-        <h3>A pilot may already be an implementation</h3>
-        <p>A project described as experimental was treated as already implemented where workers were using the tools and deployment had been organised. This does not make every test automatically consultable; maturity and effects remain relevant.</p>
-        <span class="case-ref">TJ Nanterre, 14 February 2025, no. 24/01457.</span>
-      </article>
-
-      <article class="case-card glass reveal">
-        <span class="proof proof--emergent">Paris Court of Appeal · 2026</span>
-        <h3>Suspension confirmed pending consultation</h3>
-        <p>The court confirmed that introducing generative-AI tools into editorial work could constitute a new technology affecting working conditions and justify prior CSE consultation.</p>
-        <span class="case-ref">TJ Créteil, 15 July 2025, no. 25/00851; CA Paris, 21 May 2026, no. 25/13232.</span>
-      </article>
-
-      <article class="case-card glass reveal">
-        <span class="proof proof--expert">Paris · interim proceedings 2025</span>
-        <h3>A new AI platform may differ from a routine update</h3>
-        <p>The decision distinguished access to a new platform offering generative-AI tools from a modification to an existing HR chatbot where no new employee effect was demonstrated.</p>
-        <span class="case-ref">TJ Paris, 2 September 2025, no. 25/53278.</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="occupational-health-role">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Occupational-health contribution</span>
-      <h2>What occupational health adds to legal governance</h2>
-      <p>Occupational-health teams do not replace the employer’s legal analysis, the DPO or worker representatives. Their contribution is to make effects on real work visible.</p>
-    </div>
-
-    <div class="oh-grid">
-      <article class="oh-card glass reveal">
-        <h3>Before deployment</h3>
-        <p>Identify the workers concerned, transformed tasks, whether use is optional or imposed, expected checking time, error handling, skill preservation and whether the tool produces or influences a decision affecting a person.</p>
-      </article>
-
-      <article class="oh-card glass reveal">
-        <h3>After deployment</h3>
-        <p>Monitor intensification, loss of autonomy, workarounds, hypervigilance, conflicts of values, isolation, disengagement, team tension, errors, perceived surveillance and employment insecurity.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="governance-checklist">
-  <div class="wrap">
-    <div class="governance-checklist reveal">
-      <div class="section-head">
-        <span class="kicker" style="color:var(--lavande)">Minimum governance record</span>
-        <h2>What should be documented before authorisation</h2>
-        <p>The precise file will depend on the use and jurisdiction, but these items form a practical baseline.</p>
+    <section class="summary" aria-labelledby="summary-title">
+      <div class="wrap summary-panel reveal">
+        <div>
+          <p class="eyebrow" style="color:var(--terra)">In 30 seconds</p>
+          <h2 id="summary-title">The law does not apply to “AI” in the abstract.</h2>
+        </div>
+        <div class="summary-copy">
+          <p>It applies to a specific use, in a particular organisation, involving identifiable people, data, and consequences.</p>
+          <ul class="summary-list">
+            <li>The AI Act, GDPR, French labour law, and occupational risk prevention may all apply at the same time.</li>
+            <li>Qualification should come before procurement, piloting, and consultation.</li>
+            <li>Initial compliance does not replace monitoring of effects on real work.</li>
+          </ul>
+          <div class="summary-meta"><span>Reading · 9 min</span><span>Checked · 18 July 2026</span><span>Official sources</span></div>
+        </div>
       </div>
+    </section>
 
-      <div class="check-grid">
-        <div class="check-item">Purpose, owner and affected populations</div>
-        <div class="check-item">Tasks, decisions and prohibited uses</div>
-        <div class="check-item">AI Act classification and applicable dates</div>
-        <div class="check-item">Personal-data roles and lawful basis</div>
-        <div class="check-item">DPIA or other impact assessments where required</div>
-        <div class="check-item">Worker information and consultation</div>
-        <div class="check-item">Human oversight and appeal route</div>
-        <div class="check-item">Testing, error and bias evidence</div>
-        <div class="check-item">Occupational-health and safety assessment</div>
-        <div class="check-item">Logging, security and access control</div>
-        <div class="check-item">Incident, fallback and stop procedures</div>
-        <div class="check-item">Review date and change-management trigger</div>
+    <section class="legal-section tint" id="qualify" aria-labelledby="qualify-title">
+      <div class="wrap">
+        <header class="legal-head reveal">
+          <div><p class="eyebrow" style="color:var(--terra)">Starting point · 01</p><h2 id="qualify-title">Start from the system’s actual authority.</h2></div>
+          <p>A model name or commercial promise is not enough. Legal qualification starts with four practical questions connected to the activity.</p>
+        </header>
+        <div class="decision-board reveal">
+          <div class="decision-flow">
+            <article><b>01</b><div><small>Use</small><h3>Which task is being transformed?</h3><p>Rewriting, recommending, ranking, allocating, monitoring, or deciding.</p></div></article>
+            <article><b>02</b><div><small>People &amp; data</small><h3>Who is affected?</h3><p>Applicants, workers, patients, professionals — and the data used to describe them.</p></div></article>
+            <article><b>03</b><div><small>Authority</small><h3>What can the output produce?</h3><p>Revisable assistance, guidance, control, or a significant decision.</p></div></article>
+            <article><b>04</b><div><small>Effects &amp; redress</small><h3>How can it be challenged or stopped?</h3><p>Human intervention, traceability, a route for appeal, and a fallback solution.</p></div></article>
+          </div>
+          <aside class="trigger-panel" aria-label="Consequences of qualification">
+            <p class="eyebrow">What this analysis triggers</p>
+            <div><b>01</b><span><strong>A risk classification</strong> under the AI Act.</span></div>
+            <div><b>02</b><span><strong>A data assessment</strong> under the GDPR.</span></div>
+            <div><b>03</b><span><strong>Social dialogue</strong> suited to the transformation.</span></div>
+            <div><b>04</b><span><strong>Occupational risk assessment</strong> for health and work.</span></div>
+          </aside>
+        </div>
       </div>
+    </section>
+
+    <section class="legal-section" id="obligations" aria-labelledby="obligations-title">
+      <div class="wrap">
+        <header class="legal-head reveal">
+          <div><p class="eyebrow" style="color:var(--terra)">Obligations · 02</p><h2 id="obligations-title">Four frameworks that apply together.</h2></div>
+          <p>No single green light is sufficient. A project may fall outside the AI Act’s high-risk category and still remain sensitive in terms of data protection, social dialogue, or prevention.</p>
+        </header>
+        <div class="layer-list">
+          <article class="layer-card reveal">
+            <div class="layer-number">01</div><div class="layer-title"><span>European Union</span><h3>AI Act</h3><p>Qualify the use, the organisation’s role, and the level of risk.</p></div><div class="layer-action"><small>Decisive question</small><strong>Is the use prohibited, subject to transparency duties, or classified as a high-risk system?</strong></div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Regulation and timeline ↗</a>
+          </article>
+          <article class="layer-card layer-data reveal">
+            <div class="layer-number">02</div><div class="layer-title"><span>Personal data</span><h3>GDPR &amp; CNIL</h3><p>Define purpose, legal basis, data, rights, and security.</p></div><div class="layer-action"><small>Decisive question</small><strong>Is the processing likely to create high risk requiring a DPIA, or does it produce a significant fully automated decision?</strong></div><a href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noopener noreferrer">CNIL DPIA method ↗</a>
+          </article>
+          <article class="layer-card layer-work reveal">
+            <div class="layer-number">03</div><div class="layer-title"><span>Work organisation</span><h3>French labour law &amp; CSE</h3><p>Inform and consult early enough for worker representatives to give a meaningful opinion.</p></div><div class="layer-action"><small>Decisive question</small><strong>Does the project affect organisation, working conditions, recruitment, automated workforce management, or activity monitoring?</strong></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noopener noreferrer">Article L. 2312-8 ↗</a>
+          </article>
+          <article class="layer-card layer-health reveal">
+            <div class="layer-number">04</div><div class="layer-title"><span>Occupational health</span><h3>Prevention &amp; DUERP</h3><p>Assess physical and mental health risks in the actual organisation of work.</p></div><div class="layer-action"><small>Decisive question</small><strong>Does the project change workload, autonomy, monitoring, skills, responsibilities, or collective work?</strong></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noopener noreferrer">Article L. 4121-3 ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-section tint" id="uses" aria-labelledby="uses-title">
+      <div class="wrap">
+        <header class="legal-head reveal">
+          <div><p class="eyebrow" style="color:var(--terra)">Read by use</p><h2 id="uses-title">Locate the first point of attention.</h2></div>
+          <p>This matrix is not an automatic legal classification. It indicates where to begin the assessment and which document to prepare first.</p>
+        </header>
+        <div class="use-table reveal" role="table" aria-label="Uses and points of attention">
+          <div class="use-row table-head" role="row"><span>Actual use</span><span>Point of attention</span><span>First deliverable</span></div>
+          <div class="use-row" role="row"><div><i class="level low">Moderate</i><strong>Research, summarising, rewriting</strong></div><p>Confidentiality, source reliability, and user information.</p><b>Use policy + human verification</b></div>
+          <div class="use-row" role="row"><div><i class="level high">High</i><strong>Recruitment, scoring, mobility</strong></div><p>Bias, personal data, human intervention, and individual rights.</p><b>AI Act qualification + DPIA</b></div>
+          <div class="use-row" role="row"><div><i class="level watch">Sensitive</i><strong>Scheduling and task allocation</strong></div><p>Autonomy, workload, decision criteria, and the ability to challenge outputs.</p><b>Work analysis + CSE dossier</b></div>
+          <div class="use-row" role="row"><div><i class="level high">Very high</i><strong>Control and monitoring</strong></div><p>Proportionality, information, activity monitoring, and psychosocial risks.</p><b>Proportionality test + consultation</b></div>
+          <div class="use-row" role="row"><div><i class="level high">Very high</i><strong>Health, fitness for work, medical data</strong></div><p>Confidentiality, health data, separation of roles, security, and medical supervision.</p><b>Specialist assessment before any pilot</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-section" id="timeline" aria-labelledby="timeline-title">
+      <div class="wrap timeline-panel reveal">
+        <header><p class="eyebrow">AI Act · current legal timeline</p><h2 id="timeline-title">Progressive application.</h2><p>Dates should be checked again when a project is assessed: implementing texts and future amendments may refine the framework.</p></header>
+        <div class="timeline-track">
+          <article><time datetime="2024-08-01">1 Aug 2024</time><strong>Entry into force</strong><p>The regulation became the European reference framework.</p></article>
+          <article><time datetime="2025-02-02">2 Feb 2025</time><strong>First rules</strong><p>Prohibited practices, the AI-system definition, and AI literacy.</p></article>
+          <article><time datetime="2025-08-02">2 Aug 2025</time><strong>General-purpose AI</strong><p>Rules for GPAI models and governance provisions.</p></article>
+          <article class="current"><time datetime="2026-08-02">2 Aug 2026</time><strong>General application</strong><p>Most provisions become applicable, subject to the regulation’s exceptions.</p></article>
+        </div>
+        <a class="source-link" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">View the European Commission’s official timeline ↗</a>
+      </div>
+    </section>
+
+    <section class="legal-section tint" id="governance" aria-labelledby="governance-title">
+      <div class="wrap">
+        <header class="legal-head reveal">
+          <div><p class="eyebrow" style="color:var(--terra)">Governance · 03</p><h2 id="governance-title">A collective decision, not end-of-process approval.</h2></div>
+          <p>Each participant contributes a different part of the assessment. Governance makes trade-offs visible, avoids blind spots, and identifies who can suspend use.</p>
+        </header>
+        <div class="governance-board reveal">
+          <div class="role-grid">
+            <article><span>Project leadership</span><strong>Defines the need and owns the decision</strong></article>
+            <article><span>Legal &amp; DPO</span><strong>Qualify the framework and the data</strong></article>
+            <article><span>Worker representatives</span><strong>Assess the transformation of work</strong></article>
+            <article><span>Occupational health service</span><strong>Clarifies effects on work and health</strong></article>
+            <article><span>Professionals &amp; managers</span><strong>Test actual use and its limits</strong></article>
+            <article><span>Procurement &amp; security</span><strong>Document the provider and technical control</strong></article>
+          </div>
+          <div class="gate-list">
+            <p class="eyebrow">Five decision gates</p>
+            <ol>
+              <li><span>01</span><div><strong>Demonstrated need</strong><small>A precise work problem, without starting from a tool already selected.</small></div></li>
+              <li><span>02</span><div><strong>Qualified use</strong><small>System role, data, people, and risk level.</small></div></li>
+              <li><span>03</span><div><strong>Organised dialogue</strong><small>Information and consultation early enough to influence the project.</small></div></li>
+              <li><span>04</span><div><strong>Reversible pilot</strong><small>Success criteria, warning signals, redress, and fallback solution.</small></div></li>
+              <li><span>05</span><div><strong>Documented monitoring</strong><small>Observed effects, incidents, corrections, and a decision to continue or stop.</small></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-section" id="consultation" aria-labelledby="consultation-title">
+      <div class="wrap consult-panel reveal">
+        <div class="consult-intro"><p class="eyebrow">CSE · make consultation meaningful</p><h2 id="consultation-title">Provide a dossier that supports an informed opinion.</h2><p>A product demonstration is not enough. The dossier should describe the expected transformation of work, affected people, decision-making latitude, and planned monitoring.</p></div>
+        <div class="consult-grid">
+          <article><span>Before</span><h3>Make the project open to scrutiny</h3><ul><li>need and intended uses</li><li>affected population and tasks</li><li>alternatives considered</li></ul></article>
+          <article><span>During</span><h3>Document trade-offs</h3><ul><li>system data and criteria</li><li>human intervention and redress</li><li>expected effects on work</li></ul></article>
+          <article><span>After</span><h3>Return with evidence</h3><ul><li>observed incidents and errors</li><li>workload, autonomy, and quality</li><li>corrections or withdrawal</li></ul></article>
+        </div>
+        <p class="legal-note"><strong>Note:</strong> obligations depend on factors including workforce size, the nature of the project, and its effects. This page provides a general method and does not replace legal advice tailored to the situation.</p>
+      </div>
+    </section>
+
+    <section class="reference-section" id="references" aria-labelledby="references-title">
+      <div class="wrap reference-panel reveal">
+        <div class="reference-copy"><p class="eyebrow">Official sources</p><h2 id="references-title">A dated framework to recheck when decisions are made.</h2><p>European and French rules evolve. The sources opposite were checked on 18 July 2026.</p><div class="reference-meta"><span>AI Act</span><span>GDPR</span><span>French labour law</span><span>Prevention</span></div></div>
+        <div class="reference-sources">
+          <h3>Reference texts</h3>
+          <div class="source-row"><b>01</b><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission — AI Act regulatory framework and timeline.</a></div>
+          <div class="source-row"><b>02</b><a href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noopener noreferrer">CNIL — determining when a data protection impact assessment is required.</a></div>
+          <div class="source-row"><b>03</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 2312-8 on CSE responsibilities.</a></div>
+          <div class="source-row"><b>04</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035610275" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 2312-38 on recruitment, automated management, and monitoring.</a></div>
+          <div class="source-row"><b>05</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 4121-3 on occupational risk assessment.</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap next-panel reveal" aria-labelledby="next-title">
+      <div><p class="eyebrow">From framework to action</p><h2 id="next-title">Assess a project through real work.</h2><p>Qualify the use, prepare the pilot, and organise monitoring before the tool becomes a new working norm.</p></div>
+      <div class="next-actions"><a class="button button-paper" href="https://www.iasantetravail.com/en/evaluate/impact/">Assess an AI project <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="author-byline" aria-label="Content author">
+      <div class="wrap author-row"><p>Written by <a href="https://www.iasantetravail.com/en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI lead at the French Society of Occupational Health.</p><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a class="brand" href="https://www.iasantetravail.com/en/"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a><p>Sourced and dated guidance for analysing artificial intelligence through real work.</p></div>
+      <div class="footer-col"><h3>Pathways</h3><ul><li><a href="https://www.iasantetravail.com/en/understand/">Understand</a></li><li><a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field evidence</a></li><li><a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a></li><li><a href="https://www.iasantetravail.com/en/evaluate/">Assess</a></li><li><a href="#top">Legal &amp; governance</a></li></ul></div>
+      <div class="footer-col"><h3>Resources</h3><ul><li><a href="https://www.iasantetravail.com/en/resources/models/">Model landscape</a></li><li><a href="https://www.iasantetravail.com/en/about/">About and publications</a></li><li><a href="#references">Sources for this page</a></li><li><a href="https://www.iasantetravail.com/en/#newsletter">Newsletter</a></li></ul></div>
+      <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contact the author on LinkedIn ↗</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></li><li><a href="https://www.iasantetravail.com/en/legal-notice/">Legal notice</a></li><li><a href="https://www.iasantetravail.com/en/privacy/">Privacy</a></li></ul></div>
+    </div>
+    <div class="wrap footer-bottom"><span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span><span>Works by Thomas Cole · public domain</span></div>
+  </footer>
+
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+    <div class="search-box">
+      <h2 class="sr-only" id="searchTitle">Search this page</h2>
+      <div class="search-top"><label class="sr-only" for="searchInput">Search</label><input class="search-input" id="searchInput" type="search" placeholder="E.g. CSE, DPIA, monitoring…" autocomplete="off"><button class="close-search" id="closeSearch" type="button" aria-label="Close search">×</button></div>
+      <div class="search-results" id="searchResults" aria-live="polite"><p>Enter at least two characters.</p></div>
     </div>
   </div>
-</section>
 
-<section class="legal-section">
-  <div class="wrap">
-    <div class="legal-actions">
-      <a class="legal-action glass reveal" href="../../en/evaluate/impact/">
-        <span><h3>Assess the project before deployment</h3><p>Use the 18-question tool to examine work organisation, psychosocial risks and AI-specific mechanisms.</p></span>
-        <span aria-hidden="true" class="legal-action-arrow">→</span>
-      </a>
-      <a class="legal-action glass reveal" href="../../en/risks-prevention/">
-        <span><h3>Connect governance with prevention</h3><p>Review workload, autonomy, surveillance, plausible errors and skill erosion.</p></span>
-        <span aria-hidden="true" class="legal-action-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="references">
-  <div class="wrap">
-    <details class="sources-details reveal">
-      <summary>View legal sources and references</summary>
-      <div class="sources-content">
-        <ol>
-          <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" rel="noopener noreferrer" target="_blank">European Commission — AI Act overview, risk levels and current application timeline</a>.</li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener noreferrer" target="_blank">Regulation (EU) 2024/1689 — official AI Act text</a>.</li>
-          <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/" rel="noopener noreferrer" target="_blank">Council of the European Union, 29 June 2026 — final adoption of the AI simplification timetable</a>.</li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" rel="noopener noreferrer" target="_blank">Regulation (EU) 2016/679 — General Data Protection Regulation</a>.</li>
-          <li><a href="https://www.cnil.fr/fr/developpement-des-systemes-dia-les-recommandations-de-la-cnil-pour-respecter-le-rgpd" rel="noopener noreferrer" target="_blank">CNIL — recommendations for developing AI systems in accordance with the GDPR</a>.</li>
-          <li><a href="https://code.travail.gouv.fr/code-du-travail/l2312-8" rel="noopener noreferrer" target="_blank">French Labour Code, Article L.2312-8 — new technologies and working conditions</a>.</li>
-          <li><a href="https://code.travail.gouv.fr/code-du-travail/l2312-38" rel="noopener noreferrer" target="_blank">French Labour Code, Article L.2312-38 — recruitment, automated personnel management and monitoring</a>.</li>
-          <li><a href="https://code.travail.gouv.fr/code-du-travail/l2315-94" rel="noopener noreferrer" target="_blank">French Labour Code, Article L.2315-94 — authorised expert assistance</a>.</li>
-          <li><a href="https://code.travail.gouv.fr/code-du-travail/l4121-1" rel="noopener noreferrer" target="_blank">French Labour Code, Article L.4121-1 — protection of physical and mental health</a>.</li>
-          <li><a href="https://code.travail.gouv.fr/code-du-travail/r4121-1" rel="noopener noreferrer" target="_blank">French Labour Code, Article R.4121-1 — occupational risk assessment document</a>.</li>
-          <li><a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000036829790/" rel="noopener noreferrer" target="_blank">French Supreme Court, employment chamber, 12 April 2018, no. 16-27.866</a>.</li>
-        </ol>
-      </div>
-    </details>
-
-    <p class="legal-disclaimer"><strong>Legal status.</strong> This page provides general educational information and does not constitute legal advice. National labour-law requirements differ, and the applicability of any rule depends on the facts, system and jurisdiction. Verify current consolidated texts and obtain appropriate legal advice for a specific deployment.</p>
-  </div>
-</section>
-
-<section class="legal-section" style="padding-top:0">
-  <div class="wrap">
-    <div class="cycle-nav reveal">
-      <a class="cycle-card glass" href="../../en/risks-prevention/">
-        <span aria-hidden="true">←</span>
-        <div><div class="lbl">Previous — Risks &amp; prevention</div><div class="ttl">Return to workplace prevention</div></div>
-      </a>
-      <a class="cycle-card glass next" href="../../en/">
-        <div><div class="lbl">Return</div><div class="ttl">Back to the international homepage</div></div>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="legal-author" aria-label="Content author">
-  <div class="wrap">
-    <p>Written by <a href="../../en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI representative for the French Society of Occupational Health.</p>
-  </div>
-</section>
-
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
-        <p>Independent, evidence-based guidance for analysing artificial intelligence through real work.</p>
-      </div>
-      <div>
-        <h4>Guidance</h4>
-        <ul>
-          <li><a href="../../en/understand/">Understand AI at work</a></li>
-          <li><a href="../../en/uses-and-field/">Uses &amp; field evidence</a></li>
-          <li><a href="../../en/evaluate/">Assess workplace AI</a></li>
-          <li><a href="../../en/risks-prevention/">Risks &amp; prevention</a></li>
-          <li><a href="../../en/legal-governance/">Law &amp; governance</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="../../en/resources/models/">AI model landscape</a></li>
-          <li><a href="../../en/about/">About &amp; publications</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contact the author on LinkedIn</a></li>
-          <li><a href="../../en/privacy/">Privacy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 AI &amp; Occupational Health — Independent editorial initiative · Thomas Cole paintings, public domain.</span>
-      <span><a href="../../en/legal-notice/">Legal notice</a> · <a href="../../en/privacy/">Privacy</a></span>
-    </div>
-  </div>
-</footer>
-
-<button aria-label="Back to top" id="backToTop" type="button">↑</button>
-
-<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
-  <div class="search-shell">
-    <div class="search-head"><h2 id="searchTitle">Search</h2><button aria-label="Close" class="search-close" type="button">×</button></div>
-    <input autocomplete="off" class="search-input" id="searchInput" placeholder="e.g. EU AI Act, GDPR, worker consultation" type="search"/>
-    <div class="search-results" id="searchResults"><p class="search-empty">Enter at least two characters.</p></div>
-  </div>
-</dialog>
-
-<script defer src="../../assets/js/search-index-en.js"></script>
-<script defer src="../../assets/js/search-index-en-legal.js?v=1.0"></script>
-<script defer src="../../assets/js/site.js"></script>
+  <script>
+    const menuButton=document.getElementById('menuButton');
+    const navLinks=document.getElementById('navLinks');
+    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+    navLinks.addEventListener('click',event=>{if(!event.target.closest('a'))return;navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')});
+    const searchModal=document.getElementById('searchModal');
+    const openSearch=document.getElementById('openSearch');
+    const closeSearch=document.getElementById('closeSearch');
+    const searchInput=document.getElementById('searchInput');
+    const searchResults=document.getElementById('searchResults');
+    const searchItems=[
+      {label:'Qualify the use',detail:'Task, people, data, authority, and redress',href:'#qualify'},
+      {label:'Four legal frameworks',detail:'AI Act, GDPR, French labour law, and prevention',href:'#obligations'},
+      {label:'Read by use',detail:'Level of attention and first deliverable',href:'#uses'},
+      {label:'AI Act timeline',detail:'Application dates for the regulation',href:'#timeline'},
+      {label:'Governance',detail:'Roles and decision gates',href:'#governance'},
+      {label:'CSE consultation',detail:'Organise meaningful worker consultation',href:'#consultation'},
+      {label:'Official sources',detail:'Checked and dated reference texts',href:'#references'}
+    ];
+    function showSearch(){searchModal.hidden=false;document.body.classList.add('search-open');searchInput.focus()}
+    function hideSearch(){searchModal.hidden=true;document.body.classList.remove('search-open');openSearch.focus()}
+    function renderSearch(value){const query=value.trim().toLocaleLowerCase('en');if(query.length<2){searchResults.innerHTML='<p>Enter at least two characters.</p>';return}const found=searchItems.filter(item=>(item.label+' '+item.detail).toLocaleLowerCase('en').includes(query));searchResults.innerHTML=found.length?found.map(item=>`<a class="search-result" href="${item.href}"><strong>${item.label}</strong><span>${item.detail}</span></a>`).join(''):'<p>No result on this page.</p>'}
+    openSearch.addEventListener('click',showSearch);closeSearch.addEventListener('click',hideSearch);searchInput.addEventListener('input',event=>renderSearch(event.target.value));searchResults.addEventListener('click',event=>{if(event.target.closest('a'))hideSearch()});searchModal.addEventListener('click',event=>{if(event.target===searchModal)hideSearch()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!searchModal.hidden)hideSearch()});
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+  </script>
 </body>
 </html>
