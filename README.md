@@ -24,3 +24,4 @@ Le paquet remplace uniquement les pages `comprendre/` et `en/understand/` ainsi 
 - version anglaise complète, avec métadonnées, navigation, recherche et contenus traduits ;
 - liens `canonical` et `hreflang` français/anglais.
 - simplification du début de page et suppression du bloc introductif décoratif.
+- navigation interne conservée dans l’onglet courant ; seuls LinkedIn et Substack s’ouvrent dans un nouvel onglet.
