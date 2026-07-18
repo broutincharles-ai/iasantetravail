@@ -1,573 +1,930 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-  <meta content="Understand generative AI, large language models, predictive systems and algorithmic management, and identify the occupational-health questions to ask before professional use." name="description"/>
-  <meta content="Dr Charles Broutin" name="author"/>
-  <meta content="index,follow,max-image-preview:large" name="robots"/>
-  <meta content="strict-origin-when-cross-origin" name="referrer"/>
-  <meta content="#EADDC6" name="theme-color"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Understand the main forms of artificial intelligence, how language models work, and how they affect real work.">
+  <title>Understanding AI at work</title>
+  <link rel="canonical" href="https://www.iasantetravail.com/en/understand/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/comprendre/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/understand/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/comprendre/">
+  <link rel="icon" href="/assets/images/favicon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17140f;
+      --cream: #f4ebda;
+      --ivory: #eaddc6;
+      --paper: #fff9f2;
+      --terra: #9b451c;
+      --terra-bright: #ce4520;
+      --lavender: #c9c2f2;
+      --lavender-dark: #4a4090;
+      --green: #3d5b52;
+      --night: #23383a;
+      --muted: #5f584f;
+      --line: rgba(23, 20, 15, .14);
+      --light-line: rgba(255, 249, 242, .18);
+      --shadow: 0 28px 75px -40px rgba(23, 20, 15, .36);
+      --max: 1220px;
+      --reading: 720px;
+      --ease: cubic-bezier(.22, .9, .28, 1);
+    }
 
-  <link href="https://www.iasantetravail.com/en/understand/" rel="canonical"/>
-  <link href="https://www.iasantetravail.com/en/understand/" hreflang="en" rel="alternate"/>
-  <link href="https://www.iasantetravail.com/comprendre/" hreflang="fr" rel="alternate"/>
-  <link href="https://www.iasantetravail.com/comprendre/" hreflang="x-default" rel="alternate"/>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 92% 5%, rgba(201, 194, 242, .22), transparent 27rem),
+        linear-gradient(180deg, #f6eddd 0%, var(--cream) 46%, #eee0c8 100%);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .17;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+    body.menu-open, body.search-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    img { display: block; max-width: 100%; }
+    [hidden] { display: none !important; }
+    ::selection { color: var(--paper); background: var(--terra); }
+    :focus-visible { outline: 3px solid var(--lavender-dark); outline-offset: 4px; }
 
-  <meta content="article" property="og:type"/>
-  <meta content="en_GB" property="og:locale"/>
-  <meta content="fr_FR" property="og:locale:alternate"/>
-  <meta content="AI &amp; Occupational Health" property="og:site_name"/>
-  <meta content="Understanding AI at Work | LLMs and Algorithmic Management" property="og:title"/>
-  <meta content="A practical introduction to generative AI, predictive systems, algorithmic management and the occupational-health questions raised by their use at work." property="og:description"/>
-  <meta content="https://www.iasantetravail.com/en/understand/" property="og:url"/>
-  <meta content="https://www.iasantetravail.com/assets/images/og-comprendre.jpg" property="og:image"/>
-  <meta content="Understanding AI systems used at work" property="og:image:alt"/>
+    .skip-link {
+      position: fixed;
+      top: -70px;
+      left: 18px;
+      z-index: 1000;
+      padding: 10px 15px;
+      color: white;
+      background: var(--lavender-dark);
+      border-radius: 10px;
+      font-weight: 700;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 18px; }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+    .reading { max-width: var(--reading); }
 
-  <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Understanding AI at Work | LLMs and Algorithmic Management" name="twitter:title"/>
-  <meta content="Understand generative AI, predictive systems and algorithmic management from an occupational-health perspective." name="twitter:description"/>
-  <meta content="https://www.iasantetravail.com/assets/images/og-comprendre.jpg" name="twitter:image"/>
+    .site-header { position: fixed; inset: 14px 0 auto; z-index: 100; pointer-events: none; }
+    .nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 9px 10px 9px 15px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 999px;
+      background: rgba(244,235,218,.84);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.8);
+      backdrop-filter: blur(18px) saturate(1.3);
+      pointer-events: auto;
+    }
+    .brand {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(168,78,31,.24);
+      border-radius: 12px;
+      background: #a84e1f;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 14px 28px -18px rgba(168,78,31,.55);
+    }
+    .brand-mark::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url("/assets/images/favicon-192.png") center / cover no-repeat;
+    }
+    .nav-links { margin-left: auto; display: flex; align-items: center; gap: 2px; }
+    .nav-links a {
+      padding: 8px 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 650;
+      white-space: nowrap;
+      transition: background .2s ease;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.55); }
+    .nav-links .active { background: rgba(201,194,242,.74); }
+    .nav-tools { display: flex; align-items: center; gap: 6px; }
+    .search-button, .menu-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--ink);
+      background: rgba(255,255,255,.25);
+      cursor: pointer;
+    }
+    .language {
+      display: flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .language a {
+      min-width: 34px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      text-align: center;
+      text-decoration: none;
+      font-size: .69rem;
+      font-weight: 700;
+    }
+    .language .active { color: var(--paper); background: var(--ink); }
+    .nav-cta {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: var(--paper);
+      background: var(--terra);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .menu-button { display: none; }
 
-  <title>Understanding AI at Work | LLMs and Algorithmic Management</title>
+    .hero { padding-top: 105px; }
+    .hero-frame {
+      position: relative;
+      min-height: clamp(520px, 67vh, 700px);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--night);
+      box-shadow: 0 48px 90px -56px rgba(23,20,15,.85);
+      isolation: isolate;
+    }
+    .hero-frame > img { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(16,23,22,.88) 0%, rgba(16,23,22,.54) 50%, rgba(16,23,22,.14) 78%),
+        linear-gradient(0deg, rgba(12,17,16,.74), transparent 52%);
+    }
+    .hero-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(130deg, rgba(155,69,28,.13), transparent 35%, rgba(201,194,242,.13));
+      mix-blend-mode: screen;
+    }
+    .hero-copy { max-width: 900px; padding: clamp(30px,6vw,72px); color: var(--paper); }
+    .coordinate, .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: rgba(255,249,242,.74);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .coordinate::before, .eyebrow::before { content: ""; width: 32px; height: 1px; background: currentColor; }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 500; letter-spacing: -.025em; }
+    h1 { max-width: 13ch; margin-bottom: 22px; font-size: clamp(3.55rem,7.1vw,6.7rem); line-height: .96; }
+    h1 em { color: var(--lavender); font-weight: 500; }
+    .hero-lead { max-width: 710px; margin-bottom: 28px; color: rgba(255,249,242,.9); font-size: clamp(1rem,1.45vw,1.2rem); line-height: 1.58; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 19px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--terra); box-shadow: 0 16px 35px -22px rgba(206,69,32,.92); }
+    .button-light { color: var(--ink); background: var(--paper); border-color: rgba(23,20,15,.09); }
+    .summary { padding: 72px 0 40px; }
+    .summary-panel {
+      display: grid;
+      grid-template-columns: minmax(0,1.4fr) minmax(250px,.6fr);
+      gap: 44px;
+      padding: clamp(28px,5vw,58px);
+      border: 1px solid rgba(255,255,255,.64);
+      border-radius: 28px;
+      background: rgba(255,249,242,.55);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.7);
+    }
+    .summary h2 { margin-bottom: 18px; font-size: clamp(2.2rem,4vw,3.7rem); line-height: 1.03; }
+    .summary-points { margin: 0; padding: 0; list-style: none; }
+    .summary-points li { position: relative; padding: 13px 0 13px 28px; border-top: 1px solid var(--line); color: var(--muted); }
+    .summary-points li::before { content: ""; position: absolute; left: 2px; top: 23px; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+    .read-card { display: grid; align-content: start; gap: 14px; }
+    .meta-card { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: rgba(244,235,218,.58); }
+    .meta-card dt { color: var(--muted); font-size: .61rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .meta-card dd { margin: 5px 0 0; font-size: .78rem; }
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.iasantetravail.com/en/understand/#article","headline":"Understanding AI at Work: LLMs, Predictive Systems and Algorithmic Management","description":"Understand generative AI, large language models, predictive systems and algorithmic management, and identify the occupational-health questions to ask before professional use.","url":"https://www.iasantetravail.com/en/understand/","mainEntityOfPage":"https://www.iasantetravail.com/en/understand/","inLanguage":"en","dateModified":"2026-07-14","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]},"publisher":{"@type":"Person","name":"Dr Charles Broutin"},"image":"https://www.iasantetravail.com/assets/images/og-comprendre.jpg","about":[{"@type":"Thing","name":"Artificial intelligence at work"},{"@type":"Thing","name":"Large language models"},{"@type":"Thing","name":"Predictive AI systems"},{"@type":"Thing","name":"Algorithmic management"},{"@type":"Thing","name":"Occupational health"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Understand AI at Work","item":"https://www.iasantetravail.com/en/understand/"}]}]}</script>
+    .page-layout { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 56px; padding: 54px 0 96px; }
+    .section-nav { position: sticky; top: 100px; align-self: start; }
+    .section-nav-label { margin: 0 0 18px; color: var(--muted); font-size: .65rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .section-nav ol { position: relative; margin: 0; padding: 0 0 0 28px; list-style: none; }
+    .section-nav ol::before { content: ""; position: absolute; left: 7px; top: 5px; bottom: 5px; width: 1px; background: var(--line); }
+    .section-nav li { position: relative; }
+    .section-nav li + li { margin-top: 17px; }
+    .section-nav a { display: block; color: var(--muted); text-decoration: none; font-size: .75rem; line-height: 1.35; transition: color .2s ease; }
+    .section-nav a::before { content: ""; position: absolute; left: -25px; top: 6px; width: 9px; height: 9px; border: 2px solid var(--cream); border-radius: 50%; background: #8d8579; box-shadow: 0 0 0 1px #8d8579; transition: background .2s ease, transform .2s ease; }
+    .section-nav a.active { color: var(--terra); font-weight: 700; }
+    .section-nav a.active::before { background: var(--terra); box-shadow: 0 0 0 1px var(--terra); transform: scale(1.16); }
+    .progress-label { margin: 30px 0 7px; color: var(--muted); font-size: .61rem; letter-spacing: .12em; text-transform: uppercase; }
+    .progress-track { height: 4px; overflow: hidden; border-radius: 4px; background: rgba(23,20,15,.09); }
+    .progress-bar { width: 0; height: 100%; border-radius: inherit; background: var(--terra); transition: width .1s linear; }
 
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-  <link as="image" href="../../assets/images/savage-state-1280.webp" rel="preload" type="image/webp"/>
-  <link href="../../assets/css/site.css" rel="stylesheet"/>
-  <link href="../../assets/css/en-understand.css?v=1.0" rel="stylesheet"/>
+    .page-content { min-width: 0; }
+    .plate { scroll-margin-top: 100px; padding-bottom: 96px; }
+    .plate + .plate { padding-top: 90px; border-top: 1px solid var(--line); }
+    .plate-head { display: grid; grid-template-columns: 95px minmax(0,1fr); gap: 27px; align-items: start; margin-bottom: 38px; }
+    .plate-id { color: var(--terra); font-family: "Fraunces", serif; font-size: 3rem; line-height: 1; }
+    .plate-id small { display: block; margin-top: 8px; color: var(--muted); font-family: "Instrument Sans", sans-serif; font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .plate h2 { max-width: 14ch; margin-bottom: 15px; font-size: clamp(2.8rem,5.2vw,5rem); line-height: .98; }
+    .plate-intro { max-width: var(--reading); margin: 0; color: var(--muted); }
 
-  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
-  <script>
-    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},
-    plausible.init=plausible.init||function(i){plausible.o=i||{}};
-    plausible.init();
-  </script>
+    .forms-map { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .form-card {
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,249,242,.62);
+      box-shadow: var(--shadow);
+    }
+    .form-card:nth-child(2) { background: rgba(201,194,242,.23); }
+    .form-card:nth-child(3) { color: var(--paper); background: var(--green); }
+    .card-topline { display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
+    .form-card:nth-child(3) .card-topline, .form-card:nth-child(3) p { color: rgba(255,249,242,.72); }
+    .form-card h3 { margin: 32px 0 10px; font-size: 1.75rem; line-height: 1.06; }
+    .form-card p { color: var(--muted); font-size: .78rem; }
+    .micro-flow { margin-top: auto; padding-top: 22px; }
+    .flow-line { display: grid; grid-template-columns: 1fr 20px 1fr; align-items: center; gap: 7px; }
+    .flow-node { min-height: 64px; display: grid; place-items: center; padding: 9px; border: 1px solid currentColor; border-radius: 12px; font-size: .65rem; text-align: center; opacity: .82; }
+    .flow-arrow { text-align: center; }
+    .flow-caption { margin: 11px 0 0; color: inherit; font-size: .61rem; }
 
-  <link rel="icon" href="/favicon.ico" sizes="any"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-  <link rel="manifest" href="/site.webmanifest"/>
-  <meta name="msapplication-TileColor" content="#A84E1F"/>
+    .data-matrix { margin-top: 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,249,242,.45); }
+    .matrix-row { display: grid; grid-template-columns: 1.15fr repeat(3,1fr); }
+    .matrix-row + .matrix-row { border-top: 1px solid var(--line); }
+    .matrix-cell { min-height: 54px; display: flex; align-items: center; padding: 11px 13px; font-size: .69rem; }
+    .matrix-cell + .matrix-cell { border-left: 1px solid var(--line); }
+    .matrix-row:first-child .matrix-cell { min-height: 44px; color: var(--muted); font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .signal { display: inline-flex; align-items: center; gap: 7px; }
+    .signal::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+    .signal.green::before { background: var(--green); }
+    .signal.lavender::before { background: var(--lavender-dark); }
+
+    .work-change {
+      position: relative;
+      margin-top: 22px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e8e2fb;
+      box-shadow: var(--shadow);
+    }
+    .work-change::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--lavender-dark); }
+    .change-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end; padding: 27px 30px 20px; border-bottom: 1px solid rgba(74,64,144,.17); }
+    .change-kicker { margin: 0 0 6px; color: var(--lavender-dark); font-size: .61rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .change-head h3 { margin: 0; color: #2f285d; font-family: "Fraunces", serif; font-size: 1.75rem; }
+    .change-head span { color: rgba(47,40,93,.64); font-size: .66rem; }
+    .change-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .change-item { padding: 24px 28px 28px; }
+    .change-item + .change-item { border-left: 1px solid rgba(74,64,144,.17); }
+    .change-item strong { display: block; margin-bottom: 7px; color: #2f285d; font-size: .8rem; }
+    .change-item p { margin: 0; color: rgba(47,40,93,.75); font-size: .72rem; line-height: 1.55; }
+
+    .technical-plate {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px,5vw,58px);
+      border-radius: 26px;
+      color: var(--paper);
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        var(--night);
+      background-size: 34px 34px;
+      box-shadow: var(--shadow);
+    }
+    .technical-meta { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 34px; color: rgba(255,249,242,.58); font-size: .61rem; letter-spacing: .12em; text-transform: uppercase; }
+    .pipeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+    .pipeline-step { position: relative; min-height: 170px; padding: 20px; border: 1px solid var(--light-line); border-radius: 16px; background: rgba(255,255,255,.045); backdrop-filter: blur(8px); }
+    .pipeline-step:not(:last-child)::after { content: "→"; position: absolute; top: 50%; right: -21px; color: var(--lavender); transform: translateY(-50%); }
+    .pipeline-index { color: var(--lavender); font-family: "Fraunces", serif; font-size: 1.5rem; }
+    .pipeline-step h3 { margin: 20px 0 8px; font-size: 1.28rem; }
+    .pipeline-step p { margin: 0; color: rgba(255,249,242,.66); font-size: .7rem; line-height: 1.48; }
+    .technical-actions {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--light-line);
+    }
+    .technical-note { max-width: 760px; margin: 0; color: rgba(255,249,242,.72); font-size: .72rem; }
+
+    .human-note {
+      margin-top: 22px;
+      padding: clamp(28px,5vw,52px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .human-note .eyebrow { margin-bottom: 10px; color: var(--terra); }
+    .human-note blockquote { max-width: 900px; margin: 0; font-family: "Fraunces", serif; font-size: clamp(1.8rem,3.2vw,3rem); line-height: 1.12; }
+    .human-note p:last-child { max-width: 760px; margin: 20px 0 0; color: var(--muted); font-size: .77rem; }
+
+    .capability-board { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,249,242,.56); box-shadow: var(--shadow); }
+    .capability-header, .capability-row { display: grid; grid-template-columns: 1.15fr 1fr 1fr; }
+    .capability-header { color: var(--paper); background: var(--night); }
+    .capability-header div { padding: 15px 20px; font-size: .61rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .capability-row + .capability-row { border-top: 1px solid var(--line); }
+    .capability-row > div { min-height: 90px; display: flex; align-items: center; padding: 18px 20px; font-size: .72rem; }
+    .capability-row > div + div { border-left: 1px solid var(--line); }
+    .capability-row strong { font-size: .78rem; }
+    .can { color: var(--green); }
+    .cannot { color: var(--terra); }
+    .takeaway { margin-top: 18px; padding: 22px 25px; border-left: 4px solid var(--terra); border-radius: 0 16px 16px 0; background: rgba(255,249,242,.62); color: var(--muted); font-size: .77rem; }
+    .takeaway strong { color: var(--ink); }
+
+    .system-map {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 16px;
+      padding: 34px;
+      border-radius: 24px;
+      color: var(--paper);
+      background: var(--green);
+      box-shadow: var(--shadow);
+    }
+    .system-map::before { content: ""; position: absolute; left: 9%; right: 9%; top: 50%; height: 1px; background: rgba(255,249,242,.25); }
+    .system-node { position: relative; z-index: 1; min-height: 132px; display: flex; flex-direction: column; justify-content: space-between; padding: 17px; border: 1px solid rgba(255,249,242,.25); border-radius: 16px; background: rgba(255,249,242,.07); backdrop-filter: blur(8px); }
+    .system-node span { color: rgba(255,249,242,.55); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
+    .system-node strong { font-family: "Fraunces", serif; font-size: 1.2rem; font-weight: 500; line-height: 1.12; }
+    .questions { display: grid; gap: 10px; margin-top: 18px; }
+    .questions details { border: 1px solid var(--line); border-radius: 15px; background: rgba(255,249,242,.55); }
+    .questions summary { display: grid; grid-template-columns: 42px 1fr auto; gap: 13px; align-items: center; padding: 17px 20px; cursor: pointer; list-style: none; font-weight: 700; font-size: .78rem; }
+    .questions summary::-webkit-details-marker { display: none; }
+    .question-num { color: var(--terra); font-family: "Fraunces", serif; font-size: 1.2rem; }
+    .question-plus { color: var(--muted); font-size: 1.15rem; transition: transform .2s ease; }
+    .questions details[open] .question-plus { transform: rotate(45deg); }
+    .question-body { padding: 0 20px 20px 75px; color: var(--muted); font-size: .72rem; }
+
+    .next-panel {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 34px;
+      align-items: end;
+      padding: clamp(32px,6vw,70px);
+      border-radius: 28px;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(201,194,242,.22), transparent 23rem),
+        var(--night);
+      box-shadow: var(--shadow);
+    }
+    .next-panel h2 { margin-bottom: 15px; font-size: clamp(2.6rem,5vw,4.8rem); line-height: 1; }
+    .next-panel p { max-width: 620px; margin: 0; color: rgba(255,249,242,.65); }
+    .next-actions { display: grid; gap: 10px; }
+
+    .author-byline { padding: 48px 0 0; }
+    .author-row { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .author-row p { margin: 0; color: var(--muted); font-size: .78rem; }
+    .author-row a { text-decoration: none; }
+    .newsletter-link { padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--terra); background: rgba(255,249,242,.5); font-size: .72rem; font-weight: 700; }
+
+    footer { margin-top: 70px; padding: 55px 0 28px; border-top: 1px solid var(--line); background: rgba(234,221,198,.55); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3,1fr); gap: 38px; }
+    .footer-brand p { max-width: 34ch; margin: 15px 0 0; color: var(--muted); font-size: .78rem; }
+    .footer-col h3 { margin-bottom: 14px; font-family: "Instrument Sans",sans-serif; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+    .footer-col ul { margin: 0; padding: 0; list-style: none; }
+    .footer-col li + li { margin-top: 7px; }
+    .footer-col a { color: var(--muted); text-decoration: none; font-size: .76rem; }
+    .footer-col a:hover { color: var(--terra); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; margin-top: 38px; padding-top: 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: .65rem; }
+
+    .search-modal { position: fixed; inset: 0; z-index: 300; display: grid; place-items: start center; padding: 95px 18px 18px; background: rgba(23,20,15,.63); backdrop-filter: blur(12px); }
+    .search-box { width: min(680px,100%); padding: 20px; border: 1px solid rgba(255,255,255,.58); border-radius: 20px; background: var(--paper); box-shadow: 0 35px 90px -34px rgba(0,0,0,.72); }
+    .search-top { display: flex; gap: 9px; }
+    .search-input { flex: 1; min-width: 0; min-height: 48px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: var(--cream); }
+    .close-search { width: 48px; height: 48px; border: 0; border-radius: 50%; color: var(--paper); background: var(--night); cursor: pointer; }
+    .search-results { display: grid; gap: 7px; margin-top: 13px; }
+    .search-result { display: flex; justify-content: space-between; padding: 11px 13px; border-radius: 11px; background: var(--cream); text-decoration: none; font-size: .75rem; }
+    .search-result:hover { background: var(--lavender); }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 1140px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-button { display: inline-grid; place-items: center; }
+      .nav { position: relative; }
+      .nav-links.open { position: absolute; top: 72px; left: 0; right: 0; display: grid; padding: 12px; border: 1px solid rgba(255,255,255,.68); border-radius: 22px; background: rgba(244,235,218,.98); box-shadow: var(--shadow); }
+      .nav-links.open a { padding: 12px 14px; font-size: .9rem; }
+      .page-layout { grid-template-columns: 185px minmax(0,1fr); gap: 34px; }
+      .forms-map { grid-template-columns: 1fr; }
+      .form-card { min-height: 310px; }
+      .pipeline { grid-template-columns: 1fr 1fr; }
+      .pipeline-step:not(:last-child)::after { display: none; }
+      .system-map { grid-template-columns: repeat(3,1fr); }
+      .system-map::before { display: none; }
+    }
+
+    @media (max-width: 820px) {
+      .wrap { width: min(calc(100% - 32px),var(--max)); }
+      .hero-frame { min-height: 630px; }
+      .hero-copy { padding: 30px 24px; }
+      h1 { font-size: clamp(3.2rem,13vw,5.2rem); }
+      .summary-panel { grid-template-columns: 1fr; }
+      .read-card { grid-template-columns: repeat(3,1fr); }
+      .page-layout { display: block; padding-top: 30px; }
+      .section-nav { position: sticky; top: 84px; z-index: 20; margin-bottom: 52px; padding: 9px; overflow-x: auto; border: 1px solid var(--line); border-radius: 999px; background: rgba(244,235,218,.93); box-shadow: var(--shadow); backdrop-filter: blur(16px); }
+      .section-nav-label, .progress-label, .progress-track { display: none; }
+      .section-nav ol { display: flex; gap: 4px; padding: 0; }
+      .section-nav ol::before, .section-nav a::before { display: none; }
+      .section-nav li + li { margin: 0; }
+      .section-nav a { min-width: max-content; padding: 8px 11px; border-radius: 999px; font-size: .68rem; }
+      .section-nav a.active { color: var(--paper); background: var(--terra); }
+      .plate-head { grid-template-columns: 70px minmax(0,1fr); }
+      .change-grid { grid-template-columns: 1fr; }
+      .change-item + .change-item { border-left: 0; border-top: 1px solid rgba(74,64,144,.17); }
+      .system-map { grid-template-columns: 1fr 1fr; }
+      .next-panel { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .wrap { width: min(calc(100% - 28px),var(--max)); }
+      .site-header { top: 10px; }
+      .nav { min-height: 58px; gap: 7px; padding: 8px 8px 8px 11px; }
+      .brand { max-width: 150px; font-size: .76rem; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 11px; }
+      .brand-mark::before { width: 21px; height: 21px; }
+      .language a { min-width: 29px; padding-inline: 5px; }
+      .search-button, .menu-button { width: 40px; height: 40px; }
+      .hero { padding-top: 78px; }
+      .hero-frame { min-height: 600px; border-radius: 24px; }
+      h1 { max-width: 10ch; }
+      .hero-lead { font-size: .94rem; }
+      .summary { padding-top: 52px; }
+      .summary-panel { padding: 28px 20px; border-radius: 22px; }
+      .read-card { grid-template-columns: 1fr; }
+      .section-nav { top: 75px; margin-bottom: 42px; }
+      .plate { padding-bottom: 70px; }
+      .plate + .plate { padding-top: 65px; }
+      .plate-head { display: block; }
+      .plate-id { margin-bottom: 22px; font-size: 2.4rem; }
+      .plate h2 { font-size: clamp(2.7rem,13vw,3.8rem); }
+      .form-card { min-height: 330px; padding: 22px; }
+      .data-matrix { overflow-x: auto; }
+      .matrix-row { min-width: 650px; }
+      .change-head { display: block; padding: 24px 23px 18px; }
+      .change-head span { display: block; margin-top: 7px; }
+      .change-item { padding: 20px 23px; }
+      .technical-plate { padding: 27px 20px; border-radius: 22px; }
+      .technical-meta { display: block; }
+      .technical-meta span { display: block; margin-top: 5px; }
+      .pipeline { grid-template-columns: 1fr; }
+      .pipeline-step { min-height: 145px; }
+      .technical-actions { align-items: stretch; flex-direction: column; }
+      .technical-note { text-align: left; }
+      .human-note { padding: 28px 22px; }
+      .capability-board { overflow-x: auto; }
+      .capability-header, .capability-row { min-width: 650px; }
+      .system-map { grid-template-columns: 1fr; padding: 22px; }
+      .system-node { min-height: 110px; }
+      .question-body { padding-left: 20px; }
+      .author-row { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal, .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-
-<body class="inner-page page-en-understand page-en-understand-refined" data-page="en-understand" data-root="../../">
+<body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <nav aria-label="Main navigation" class="nav glass">
-    <a class="brand" href="../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
-    <div class="nav-links" id="navLinks">
-      <a aria-current="page" class="is-active" href="../../en/understand/">Understand</a>
-      <a href="../../en/uses-and-field/">Uses &amp; field evidence</a>
-      <a href="../../en/evaluate/">Assess</a>
-      <a href="../../en/risks-prevention/">Risks &amp; prevention</a>
-      <a href="../../en/legal-governance/">Law &amp; governance</a>
-      <details class="nav-resources">
-        <summary>Resources</summary>
-        <div class="nav-resources-menu">
-          <a href="../../en/resources/models/">Model landscape</a>
-          <a href="../../en/about/">About &amp; publications</a>
-          <a href="../../en/legal-notice/">Legal notice</a>
-        </div>
-      </details>
-    </div>
-    <div class="nav-tools">
-      <button aria-label="Search the site" class="search-open" type="button">⌕</button>
-      <div aria-label="Language" class="lang-switch">
-        <a href="../../comprendre/" hreflang="fr" lang="fr">FR</a>
-        <a class="active" href="../../en/understand/" hreflang="en" lang="en">EN</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="AI and Occupational Health, home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>IA &amp; Santé au Travail</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a class="active" href="#top" aria-current="page">Understand</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/" target="_blank" rel="noopener">Use cases &amp; fieldwork</a>
+        <a href="https://www.iasantetravail.com/risques-prevention/" target="_blank" rel="noopener">Risks &amp; prevention</a>
+        <a href="https://www.iasantetravail.com/evaluer/" target="_blank" rel="noopener">Assess</a>
+        <a href="https://www.iasantetravail.com/droit-gouvernance/" target="_blank" rel="noopener">Law &amp; governance</a>
+        <a href="#sources">Resources</a>
       </div>
-      <button aria-controls="navLinks" aria-expanded="false" aria-label="Open menu" class="nav-menu-btn" type="button">
-        <span>Menu</span>
-        <span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
-      </button>
-      <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-    </div>
-  </nav>
+      <div class="nav-tools">
+        <button class="search-button" id="openSearch" type="button" aria-label="Search this page">⌕</button>
+        <div class="language" aria-label="Language selection">
+          <a href="/comprendre/" lang="fr" hreflang="fr">FR</a>
+          <a class="active" href="/en/understand/" lang="en" aria-current="page">EN</a>
+        </div>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open the menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+        <a class="nav-cta" href="https://www.iasantetravail.com/evaluer/impact/" target="_blank" rel="noopener">Assess a project</a>
+      </div>
+    </nav>
+  </header>
 
-  <main id="main-content" tabindex="-1">
-    <section class="page active" id="page-understand">
-
-      <header class="page-hero">
-        <div class="wrap">
-          <div class="hero-frame">
-            <picture class="responsive-art">
-              <source sizes="(max-width:760px) 100vw,1180px"
-                      srcset="../../assets/images/savage-state-640.webp 640w, ../../assets/images/savage-state-960.webp 960w, ../../assets/images/savage-state-1280.webp 1280w, ../../assets/images/savage-state-1800.webp 1800w"
-                      type="image/webp"/>
-              <img alt="Thomas Cole, The Savage State, 1836"
-                   decoding="async"
-                   fetchpriority="high"
-                   loading="eager"
-                   src="../../assets/images/savage-state-1800.jpg"/>
-            </picture>
-            <div class="veil"></div>
-            <p class="hero-credit">Thomas Cole, The Savage State, 1836</p>
-            <div class="hero-inner">
-              <h1>Understanding artificial intelligence <em>at work</em></h1>
-              <p class="hero-descriptor">Distinguish the main types of AI systems, understand how a large language model produces an answer, and identify what no system can guarantee before it is used in a professional setting.</p>
-              <div class="hero-actions">
-                <a class="btn btn-solid" href="#types-of-ai">Explore the fundamentals</a>
-              </div>
-            </div>
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-frame">
+          <img src="/assets/images/savage-state-1280.webp" alt="Mountain landscape crossed by a river" width="1280" height="796" fetchpriority="high">
+          <div class="hero-copy">
+            <p class="coordinate">Understand · Essential concepts</p>
+            <h1 id="hero-title">Understand artificial intelligence <em>at work.</em></h1>
+            <p class="hero-lead">Distinguish between AI systems, follow how they work, and connect each concept to the changes it brings to tasks, decisions and responsibilities.</p>
+            <a class="button button-primary" href="#concepts">Start reading <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section aria-labelledby="page-summary" class="page-summary-section">
-        <div class="wrap">
-          <div class="page-summary glass">
-            <div class="page-summary-main">
-              <span class="mini-kicker">In 30 seconds</span>
-              <h2 id="page-summary">Essential points</h2>
-              <ul>
-                <li>“AI” covers different systems: generative AI, predictive or decision-support systems, and algorithmic management.</li>
-                <li>A large language model generates a plausible sequence of tokens; it does not inherently verify truth, legality or clinical relevance.</li>
-                <li>The useful question is not only what the tool can produce, but how it changes tasks, decisions, workload and responsibility.</li>
-              </ul>
-              <div aria-label="Evidence-status legend" class="status-legend">
-                <span class="proof proof--consensus">Established</span>
-                <span class="proof proof--emergent">Emerging</span>
-                <span class="proof proof--expert">Analysis</span>
-              </div>
-            </div>
-
-            <aside aria-label="Reading information" class="page-summary-side">
-              <dl>
-                <div><dt>Audience</dt><dd>Occupational health and safety professionals, employers, HR teams, worker representatives and non-specialists</dd></div>
-                <div><dt>Reading time</dt><dd>About 7 minutes</dd></div>
-                <div><dt>Last reviewed</dt><dd>14 July 2026</dd></div>
-              </dl>
-            </aside>
-
-            <nav aria-label="On this page" class="page-toc">
-              <span>On this page</span>
-              <ol>
-                <li><a href="#types-of-ai">Three types of AI</a></li>
-                <li><a href="#how-llms-work">How an LLM works</a></li>
-                <li><a href="#capabilities-and-limits">Capabilities and limits</a></li>
-                <li><a href="#occupational-health-questions">Occupational-health questions</a></li>
-              </ol>
-            </nav>
-          </div>
+    <section class="summary">
+      <div class="wrap summary-panel reveal">
+        <div>
+          <p class="eyebrow" style="color:var(--terra)">In 30 seconds</p>
+          <h2>The essentials for understanding AI at work.</h2>
+          <ul class="summary-points">
+            <li>“AI” covers several types of system that produce neither the same outputs nor the same risks.</li>
+            <li>A language model generates a plausible sequence; it does not independently validate truth or compliance.</li>
+            <li>The relevant unit of analysis remains the work system: tool, task, data, people and organisation.</li>
+          </ul>
         </div>
-      </section>
+        <dl class="read-card">
+          <div class="meta-card"><dt>Audience</dt><dd>Occupational health, prevention, HR, employee representatives and non-specialist readers</dd></div>
+          <div class="meta-card"><dt>Method</dt><dd>Concept → diagram → comparison → consequences</dd></div>
+          <div class="meta-card"><dt>Levels</dt><dd>Established framework · Emerging · Analysis</dd></div>
+        </dl>
+      </div>
+    </section>
 
-      <section class="understand-section" id="types-of-ai">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <span class="kicker">Start with the right category</span>
-            <h2>Three forms of AI that can transform work</h2>
-            <p>Before assessing a system, identify what kind of system it is. These categories have different purposes, data flows, failure modes and consequences for workers.</p>
-          </div>
+    <section class="wrap page-layout" id="concepts">
+      <aside class="section-nav" aria-label="Page contents">
+        <p class="section-nav-label">Contents</p>
+        <ol>
+          <li><a class="active" href="#formes-ia">01 · Three forms of AI</a></li>
+          <li><a href="#fonctionnement-llm">02 · How an LLM works</a></li>
+          <li><a href="#capacites-limites">03 · Capabilities and limits</a></li>
+          <li><a href="#questions-prevention">04 · Prevention questions</a></li>
+        </ol>
+        <p class="progress-label">Progress</p>
+        <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+      </aside>
 
-          <div class="family-grid">
-            <article class="family-card glass reveal">
-              <span class="family-number">1</span>
-              <h3>Generative AI and large language models</h3>
-              <p>These systems produce or transform text, images, code and summaries. Fluency can create an impression of understanding, but a coherent answer may still be factually or contextually wrong.</p>
-              <span class="family-examples">Examples: drafting, summarising, translating, extracting and brainstorming.</span>
+      <div class="page-content">
+        <article class="plate" id="formes-ia" data-title="Three forms of AI">
+          <header class="plate-head reveal">
+            <div class="plate-id">01<small>Distinguish</small></div>
+            <div>
+              <h2>Three forms of AI that transform work.</h2>
+              <p class="plate-intro">Before assessing a tool, identify its core logic: generating, classifying or organising. This distinction changes the questions to ask about quality, control and prevention.</p>
+            </div>
+          </header>
 
-              <details class="family-details">
-                <summary>Learn more</summary>
-                <div class="family-details-content">
-                  <h4>How generative AI works</h4>
-                  <p>A generative model learns statistical regularities from large datasets, then produces new content in response to an instruction and the context supplied at use time.</p>
-
-                  <h4>For a large language model</h4>
-                  <ul>
-                    <li>Text is split into units called <strong>tokens</strong>.</li>
-                    <li>The model estimates which tokens are most likely to follow the current context.</li>
-                    <li>The answer is generated progressively rather than retrieved from a verified catalogue of facts.</li>
-                    <li>Output quality depends on the prompt, available context, training, model configuration and connected tools.</li>
-                  </ul>
-
-                  <h4>What to monitor at work</h4>
-                  <ul>
-                    <li>Fabricated facts, false references and unjustified confidence.</li>
-                    <li>Disclosure of confidential, personal or health data.</li>
-                    <li>Standardisation of professional writing and erosion of skills.</li>
-                    <li>The actual time required to verify outputs.</li>
-                  </ul>
-
-                  <p class="family-detail-note"><strong>Examples:</strong> ChatGPT, Claude, Gemini, Mistral or an internal assistant connected to organisational documents.</p>
-                </div>
-              </details>
-            </article>
-
-            <article class="family-card glass reveal">
-              <span class="family-number">2</span>
-              <h3>Predictive and decision-support systems</h3>
-              <p>These systems score, classify, detect, rank or recommend. Their reliability depends on the target being predicted, the training data, the selected threshold and the consequences of error.</p>
-              <span class="family-examples">Examples: recruitment, scheduling, risk detection and workload forecasting.</span>
-
-              <details class="family-details">
-                <summary>Learn more</summary>
-                <div class="family-details-content">
-                  <h4>How predictive systems work</h4>
-                  <p>The system learns relationships between input data and an expected output such as a probability, category, ranking or recommendation.</p>
-
-                  <h4>Typical steps</h4>
-                  <ul>
-                    <li>Define the event, score or decision the system is intended to support.</li>
-                    <li>Train or configure the system using historical or labelled data.</li>
-                    <li>Select an alert or decision threshold.</li>
-                    <li>Measure errors and monitor performance after deployment.</li>
-                  </ul>
-
-                  <h4>What to monitor at work</h4>
-                  <ul>
-                    <li>Bias embedded in historical data or proxy variables.</li>
-                    <li>False positives and false negatives with unequal consequences.</li>
-                    <li>Scores that affected workers or professionals cannot understand or challenge.</li>
-                    <li>Gradual automation of a decision that was supposed to remain human.</li>
-                  </ul>
-
-                  <p class="family-detail-note"><strong>Examples:</strong> applicant scoring, absence prediction, safety alerts, workload forecasting or allocation recommendations.</p>
-                </div>
-              </details>
-            </article>
-
-            <article class="family-card glass reveal">
-              <span class="family-number">3</span>
+          <div class="forms-map">
+            <section class="form-card reveal">
+              <div class="card-topline"><span>Family A</span><span>Generation</span></div>
+              <h3>Generative AI</h3>
+              <p>Produces or transforms text, images, code or summaries. A fluent form does not guarantee accurate content.</p>
+              <div class="micro-flow" aria-label="Generative AI diagram">
+                <div class="flow-line"><span class="flow-node">Prompt<br>+ context</span><span class="flow-arrow">→</span><span class="flow-node">Generated<br>content</span></div>
+                <p class="flow-caption">Main output · content to verify</p>
+              </div>
+            </section>
+            <section class="form-card reveal">
+              <div class="card-topline"><span>Family B</span><span>Classification</span></div>
+              <h3>Predictive systems</h3>
+              <p>Assign scores, classify, detect, recommend or contribute to decisions using historical data.</p>
+              <div class="micro-flow" aria-label="Predictive system diagram">
+                <div class="flow-line"><span class="flow-node">Observed<br>data</span><span class="flow-arrow">→</span><span class="flow-node">Score<br>or class</span></div>
+                <p class="flow-caption">Main output · a signal to interpret</p>
+              </div>
+            </section>
+            <section class="form-card reveal">
+              <div class="card-topline"><span>Family C</span><span>Organisation</span></div>
               <h3>Algorithmic management</h3>
-              <p>Algorithmic management uses data and automated rules to allocate, monitor or evaluate work. The central issue is not only technical accuracy, but its effects on autonomy, pace, cooperation and accountability.</p>
-              <span class="family-examples">Examples: task allocation, performance monitoring, automated scheduling and worker scoring.</span>
-
-              <details class="family-details">
-                <summary>Learn more</summary>
-                <div class="family-details-content">
-                  <h4>What algorithmic management does</h4>
-                  <p>It uses data, rules and sometimes machine-learning models to organise, measure or influence workers and their activity.</p>
-
-                  <h4>Common functions</h4>
-                  <ul>
-                    <li>Automatically allocate tasks, shifts, routes or priorities.</li>
-                    <li>Track time, movement, objectives or performance indicators.</li>
-                    <li>Rank workers or trigger managerial alerts.</li>
-                    <li>Recommend or impose pace, sequencing or a course of action.</li>
-                  </ul>
-
-                  <h4>What to monitor at work</h4>
-                  <ul>
-                    <li>Work intensification and reduced discretion.</li>
-                    <li>Continuous monitoring or a persistent sense of surveillance.</li>
-                    <li>Targets derived from incomplete indicators.</li>
-                    <li>Weakened collective work and unclear responsibility when the system is wrong.</li>
-                  </ul>
-
-                  <p class="family-detail-note"><strong>Examples:</strong> route optimisation, automated scheduling, productivity tracking, dynamic task allocation or performance ranking.</p>
-                </div>
-              </details>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="understand-section" id="how-llms-work">
-        <div class="wrap">
-          <div class="llm-panel reveal">
-            <div class="section-head">
-              <span class="kicker" style="color:var(--lavande)">A useful mental model</span>
-              <h2>How a large language model produces an answer</h2>
-              <p>An LLM does not spontaneously consult a verified database of truths. It generates a response from learned statistical patterns, the instruction, the available context and any tools connected to it.</p>
-            </div>
-
-            <div aria-label="Simplified process used by a large language model" class="llm-flow">
-              <article class="llm-step">
-                <span>1</span>
-                <h3>An instruction</h3>
-                <p>The prompt, context and documents supplied by the user shape the task.</p>
-              </article>
-              <article class="llm-step">
-                <span>2</span>
-                <h3>Learned patterns</h3>
-                <p>The model uses statistical relationships acquired during training and adaptation.</p>
-              </article>
-              <article class="llm-step">
-                <span>3</span>
-                <h3>Progressive prediction</h3>
-                <p>It generates the most plausible continuation token by token within the current context.</p>
-              </article>
-              <article class="llm-step">
-                <span>4</span>
-                <h3>An output to verify</h3>
-                <p>The answer can be useful and convincing while remaining incomplete, outdated or incorrect.</p>
-              </article>
-            </div>
-
-            <p class="llm-takeaway"><strong>Key point:</strong> linguistic plausibility is not evidence, regulatory compliance, clinical validation or professional judgement.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="understand-section" id="capabilities-and-limits">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <span class="kicker">Critical reading</span>
-            <h2>What AI can support — and what it cannot guarantee</h2>
-            <p>A system may be useful without being sufficiently reliable to decide. Performance must always be interpreted in relation to a specific task, population, consequence and working environment.</p>
-          </div>
-
-          <div class="compare-table reveal">
-            <div class="compare-column">
-              <h3>AI may help to…</h3>
-              <ul>
-                <li>Structure or summarise a large body of documents.</li>
-                <li>Reformulate content for different audiences.</li>
-                <li>Flag inconsistencies or points requiring review.</li>
-                <li>Prepare an evidence scan or an initial analytical framework.</li>
-                <li>Accelerate bounded tasks under competent human supervision.</li>
-              </ul>
-            </div>
-
-            <div class="compare-column">
-              <h3>It does not guarantee…</h3>
-              <ul>
-                <li>That an answer is true, complete or up to date.</li>
-                <li>Compliance with data-protection, AI or employment law.</li>
-                <li>The absence of bias in data, thresholds or outputs.</li>
-                <li>The suitability of an individual medical, legal or employment decision.</li>
-                <li>A positive effect on workload, autonomy, skills or collective work.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="understand-section" id="occupational-health-questions">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <span class="kicker">Occupational health and safety</span>
-            <h2>Five questions before AI is used professionally</h2>
-            <p>The correct unit of analysis is not the model alone. It is the full work system: tool, data, users, organisation, responsibilities and effects on real work.</p>
-          </div>
-
-          <div class="prevention-grid">
-            <article class="prevention-card glass reveal">
-              <span class="proof proof--consensus">Question 1</span>
-              <h3>Which task is changing?</h3>
-              <p>Describe work before and after introduction, rather than listing only the system’s features.</p>
-            </article>
-
-            <article class="prevention-card glass reveal">
-              <span class="proof proof--consensus">Question 2</span>
-              <h3>Which data are involved?</h3>
-              <p>Identify personal, health, employment and behavioural data, including data inferred from activity.</p>
-            </article>
-
-            <article class="prevention-card glass reveal">
-              <span class="proof proof--emergent">Question 3</span>
-              <h3>Who can verify the output?</h3>
-              <p>Ensure that oversight comes with sufficient time, competence, information and authority.</p>
-            </article>
-
-            <article class="prevention-card glass reveal">
-              <span class="proof proof--expert">Question 4</span>
-              <h3>How does responsibility move?</h3>
-              <p>Clarify who recommends, decides, validates, challenges and bears the consequences of error.</p>
-            </article>
-
-            <article class="prevention-card glass reveal">
-              <span class="proof proof--expert">Question 5</span>
-              <h3>Which effects will be monitored?</h3>
-              <p>Define indicators for quality, error, workload, autonomy, skills, cooperation and worker experience.</p>
-            </article>
-          </div>
-
-          <div class="osh-callout reveal">
-            <span aria-hidden="true" class="callout-icon">+</span>
-            <p><strong>Involve occupational health and safety expertise before deployment.</strong> Early involvement helps identify how the system may transform work before difficulties become individual complaints, organisational conflict or health effects.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="understand-section" id="further-reading">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <span class="kicker">Go further</span>
-            <h2>Useful concepts without overloading the main pathway</h2>
-          </div>
-
-          <div class="deep-dive-stack">
-            <details class="deep-dive reveal">
-              <summary>RAG and agents: two developments to understand</summary>
-              <div class="deep-dive-content">
-                <div class="deep-dive-grid">
-                  <article class="deep-card">
-                    <h3>Retrieval-augmented generation</h3>
-                    <p>RAG allows a model to search a document collection before answering. It may reduce some fabrications, but it does not remove the need to verify the documents, their date, scope and interpretation.</p>
-                  </article>
-                  <article class="deep-card">
-                    <h3>AI agents</h3>
-                    <p>An agent combines a model with tools, memory and sometimes the ability to act in software. The more independently it acts, the more important logging, permissions, human validation and stop conditions become.</p>
-                  </article>
-                </div>
+              <p>Allocates, monitors or assesses work through data and automated rules. It directly affects autonomy.</p>
+              <div class="micro-flow" aria-label="Algorithmic management diagram">
+                <div class="flow-line"><span class="flow-node">Rules<br>+ activity data</span><span class="flow-arrow">→</span><span class="flow-node">Allocation<br>+ control</span></div>
+                <p class="flow-caption">Main output · an imposed organisation</p>
               </div>
-            </details>
-
-            <details class="deep-dive reveal">
-              <summary>How to formulate a professional request</summary>
-              <div class="deep-dive-content">
-                <p>A better prompt can improve the request and the output format. It cannot make an unsafe use safe by itself.</p>
-                <div class="deep-dive-grid">
-                  <article class="deep-card"><h3>Define the task</h3><p>State the objective, intended audience and expected format.</p></article>
-                  <article class="deep-card"><h3>Provide useful context</h3><p>Specify the country, professional setting, time frame and required level of detail.</p></article>
-                  <article class="deep-card"><h3>Require sources</h3><p>Distinguish supplied documents, general knowledge and assumptions.</p></article>
-                  <article class="deep-card"><h3>Make uncertainty visible</h3><p>Ask the model to identify missing, doubtful or unverifiable points.</p></article>
-                  <article class="deep-card"><h3>Protect data</h3><p>Do not enter identifiable or sensitive data into an unapproved system.</p></article>
-                  <article class="deep-card"><h3>Test several cases</h3><p>Look for recurring errors and document the model, configuration and workflow tested.</p></article>
-                </div>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="understand-section" id="next-steps">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <span class="kicker">Next steps</span>
-            <h2>Move from general understanding to a concrete decision</h2>
+            </section>
           </div>
 
+          <div class="data-matrix reveal" aria-label="Comparison of the three AI families">
+            <div class="matrix-row"><div class="matrix-cell">Comparison point</div><div class="matrix-cell">Generative</div><div class="matrix-cell">Predictive</div><div class="matrix-cell">Management</div></div>
+            <div class="matrix-row"><div class="matrix-cell"><strong>Mainly produces</strong></div><div class="matrix-cell"><span class="signal lavender">Content</span></div><div class="matrix-cell"><span class="signal green">A score</span></div><div class="matrix-cell"><span class="signal">An instruction</span></div></div>
+            <div class="matrix-row"><div class="matrix-cell"><strong>Main concern</strong></div><div class="matrix-cell">Accuracy</div><div class="matrix-cell">Thresholds and bias</div><div class="matrix-cell">Autonomy</div></div>
+            <div class="matrix-row"><div class="matrix-cell"><strong>Human control</strong></div><div class="matrix-cell">Review</div><div class="matrix-cell">Interpret</div><div class="matrix-cell">Ability to challenge</div></div>
+          </div>
+
+          <section class="work-change reveal" aria-labelledby="change-1">
+            <header class="change-head"><div><p class="change-kicker">What this changes at work</p><h3 id="change-1">Each category changes a different part of the work system.</h3></div><span>Organisational perspective</span></header>
+            <div class="change-grid">
+              <div class="change-item"><strong>Tasks</strong><p>Generation adds review; prediction adds interpretation; algorithmic management directly changes how work is carried out.</p></div>
+              <div class="change-item"><strong>Organisation</strong><p>Validation pathways, alert thresholds and ways to challenge outcomes must be designed differently.</p></div>
+              <div class="change-item"><strong>Health and skills</strong><p>Review workload, loss of autonomy and potential deskilling must be linked to the type of system.</p></div>
+            </div>
+          </section>
+        </article>
+
+        <article class="plate" id="fonctionnement-llm" data-title="How an LLM works">
+          <header class="plate-head reveal">
+            <div class="plate-id">02<small>Follow the flow</small></div>
+            <div>
+              <h2>How a language model produces an answer.</h2>
+              <p class="plate-intro">It does not independently consult a database of truths. It progressively generates a plausible sequence from its training, the prompt and the available context.</p>
+            </div>
+          </header>
+
+          <section class="technical-plate reveal" id="technicalPlate" aria-label="Simplified operation of a language model">
+            <div class="technical-meta"><span>Process diagram · simplified view</span><span>4 steps · 1 output to verify</span></div>
+            <div class="pipeline">
+              <div class="pipeline-step"><span class="pipeline-index">01</span><h3>Prompt</h3><p>The request, context and supplied documents shape the answer.</p></div>
+              <div class="pipeline-step"><span class="pipeline-index">02</span><h3>Patterns</h3><p>The model draws on statistical relationships learned during training.</p></div>
+              <div class="pipeline-step"><span class="pipeline-index">03</span><h3>Prediction</h3><p>It progressively selects the most plausible continuation in that context.</p></div>
+              <div class="pipeline-step"><span class="pipeline-index">04</span><h3>Output</h3><p>The answer may sound convincing while remaining inaccurate or unsuitable.</p></div>
+            </div>
+            <div class="technical-actions">
+              <p class="technical-note"><strong>Key point:</strong> this sequence is probabilistic. It is neither human reasoning nor a verification of truth.</p>
+            </div>
+          </section>
+
+          <aside class="human-note reveal" aria-label="Real-work perspective">
+            <p class="eyebrow">Real-work perspective</p>
+            <blockquote>A model’s output is never the whole of the work.</blockquote>
+            <p>In care as in prevention, work involves a situation, relationships, trade-offs and responsibility. Technology enters this fabric; it does not sum it up.</p>
+          </aside>
+
+          <section class="work-change reveal" aria-labelledby="change-2">
+            <header class="change-head"><div><p class="change-kicker">What this changes at work</p><h3 id="change-2">Verification becomes a task in its own right.</h3></div><span>Work-activity perspective</span></header>
+            <div class="change-grid">
+              <div class="change-item"><strong>Tasks</strong><p>Time saved on production may be transferred to prompting, review, source checking and correction.</p></div>
+              <div class="change-item"><strong>Organisation</strong><p>It must be clear who verifies, using what information, within what timeframe and with what authority to reject the output.</p></div>
+              <div class="change-item"><strong>Health and skills</strong><p>Supervision without time or expertise creates hidden workload and an unsustainable burden of responsibility.</p></div>
+            </div>
+          </section>
+        </article>
+
+        <article class="plate" id="capacites-limites" data-title="Capabilities and limits">
+          <header class="plate-head reveal">
+            <div class="plate-id">03<small>Compare</small></div>
+            <div>
+              <h2>What a tool can do — and what it does not guarantee.</h2>
+              <p class="plate-intro">A system can be useful without being reliable enough to decide. Assessment must remain tied to a task, a level of risk and a specific context.</p>
+            </div>
+          </header>
+
+          <div class="capability-board reveal" role="table" aria-label="Possible capabilities and absent guarantees">
+            <div class="capability-header" role="row"><div role="columnheader">Observed task</div><div role="columnheader">Possible support</div><div role="columnheader">Does not guarantee</div></div>
+            <div class="capability-row" role="row"><div role="cell"><strong>Summarise a file</strong></div><div class="can" role="cell">Structure and condense quickly</div><div class="cannot" role="cell">Completeness or absence of omissions</div></div>
+            <div class="capability-row" role="row"><div role="cell"><strong>Rephrase a message</strong></div><div class="can" role="cell">Adapt tone and language level</div><div class="cannot" role="cell">Suitability for a sensitive situation</div></div>
+            <div class="capability-row" role="row"><div role="cell"><strong>Identify an inconsistency</strong></div><div class="can" role="cell">Flag a point for review</div><div class="cannot" role="cell">That every defect will be identified</div></div>
+            <div class="capability-row" role="row"><div role="cell"><strong>Prepare a decision</strong></div><div class="can" role="cell">Organise available information</div><div class="cannot" role="cell">Clinical, legal or ethical compliance</div></div>
+          </div>
+          <p class="takeaway reveal"><strong>Key point:</strong> linguistic plausibility is not evidence, a compliance guarantee, or clinical or legal validation.</p>
+
+          <section class="work-change reveal" aria-labelledby="change-3">
+            <header class="change-head"><div><p class="change-kicker">What this changes at work</p><h3 id="change-3">Tool performance does not predict the quality of work.</h3></div><span>Critical perspective</span></header>
+            <div class="change-grid">
+              <div class="change-item"><strong>Tasks</strong><p>A faster task may create new checks, corrections and manual rework when errors occur.</p></div>
+              <div class="change-item"><strong>Organisation</strong><p>Claimed gains must be compared with review time, the cost of errors and situations the tool does not cover.</p></div>
+              <div class="change-item"><strong>Health and skills</strong><p>Use may support work or weaken the profession depending on the place given to expertise and room for manoeuvre.</p></div>
+            </div>
+          </section>
+        </article>
+
+        <article class="plate" id="questions-prevention" data-title="Prevention questions">
+          <header class="plate-head reveal">
+            <div class="plate-id">04<small>Decide</small></div>
+            <div>
+              <h2>Five questions before professional use.</h2>
+              <p class="plate-intro">The relevant unit of analysis is not the model alone, but the whole system: tool, data, users, organisation, responsibilities and effects on real work.</p>
+            </div>
+          </header>
+
+          <div class="system-map reveal" aria-label="Work-system diagram to analyse">
+            <div class="system-node"><span>Input</span><strong>Real task</strong></div>
+            <div class="system-node"><span>Material</span><strong>Data</strong></div>
+            <div class="system-node"><span>Processing</span><strong>AI system</strong></div>
+            <div class="system-node"><span>Action</span><strong>Human decision</strong></div>
+            <div class="system-node"><span>Effects</span><strong>Work &amp; health</strong></div>
+          </div>
+
+          <div class="questions reveal">
+            <details open><summary><span class="question-num">01</span><span>Which task is actually being transformed?</span><span class="question-plus">+</span></summary><div class="question-body">Describe work before and after the tool, including added checks, edge cases and manual rework.</div></details>
+            <details><summary><span class="question-num">02</span><span>What data is being used?</span><span class="question-plus">+</span></summary><div class="question-body">Identify personal, medical and HR data or activity records, along with their quality and retention period.</div></details>
+            <details><summary><span class="question-num">03</span><span>Who can review the output?</span><span class="question-plus">+</span></summary><div class="question-body">Ensure reviewers genuinely have the necessary time, skills, information and authority.</div></details>
+            <details><summary><span class="question-num">04</span><span>Which responsibilities are shifting?</span><span class="question-plus">+</span></summary><div class="question-body">Identify who decides, who validates, who can challenge and who bears the consequences of an error.</div></details>
+            <details><summary><span class="question-num">05</span><span>Which effects will be monitored?</span><span class="question-plus">+</span></summary><div class="question-body">Define indicators covering quality, workload, autonomy, errors, skills and working collectives.</div></details>
+          </div>
+
+          <section class="work-change reveal" aria-labelledby="change-4">
+            <header class="change-head"><div><p class="change-kicker">What this changes at work</p><h3 id="change-4">Prevention begins before the tool is selected.</h3></div><span>Design perspective</span></header>
+            <div class="change-grid">
+              <div class="change-item"><strong>Tasks</strong><p>Describing real activity helps prevent a tool optimised for an abstract scenario from disrupting actual work.</p></div>
+              <div class="change-item"><strong>Organisation</strong><p>The pilot must make responsibilities, stop criteria, appeal routes and social dialogue arrangements visible.</p></div>
+              <div class="change-item"><strong>Health and skills</strong><p>Involving the occupational health and prevention service upstream helps anticipate effects before they become individualised.</p></div>
+            </div>
+          </section>
+        </article>
+
+        <section class="next-panel reveal" aria-labelledby="next-title">
+          <div>
+            <p class="coordinate">Continue · From understanding to action</p>
+            <h2 id="next-title">Move from understanding to a concrete decision.</h2>
+            <p>Examine a real use case or assess a project before deployment, starting from changes to work.</p>
+          </div>
           <div class="next-actions">
-            <a class="next-action glass reveal" href="../../en/uses-and-field/">
-              <span>
-                <h3>Examine a real workplace use</h3>
-                <p>Start with a task, a working context and an appropriate level of vigilance.</p>
-              </span>
-              <span aria-hidden="true" class="next-action-arrow">→</span>
-            </a>
-
-            <a class="next-action glass reveal" href="../../en/evaluate/">
-              <span>
-                <h3>Assess a workplace AI project</h3>
-                <p>Review potential effects on work organisation, people and governance before deployment.</p>
-              </span>
-              <span aria-hidden="true" class="next-action-arrow">→</span>
-            </a>
+            <a class="button button-primary" href="https://www.iasantetravail.com/usages-terrain/" target="_blank" rel="noopener">Examine a real use case ↗</a>
+            <a class="button button-light" href="https://www.iasantetravail.com/evaluer/impact/" target="_blank" rel="noopener">Assess a project ↗</a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="understand-section" id="references">
-        <div class="wrap">
-          <details class="sources-details reveal">
-            <summary>View key sources and references</summary>
-            <div class="sources-content">
-              <div class="source-grid">
-                <article class="source-card">
-                  <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener noreferrer" target="_blank">Regulation (EU) 2024/1689 — EU AI Act</a>
-                  <p>Definition of AI systems and the European risk-based regulatory approach.</p>
-                </article>
+        <details class="questions" id="sources" style="margin-top:20px">
+          <summary><span class="question-num">+</span><span>View sources and references</span><span class="question-plus">+</span></summary>
+          <div class="question-body">This page follows the current site’s principles: visible sources, review dates and a distinction between established frameworks, emerging issues and analysis. Detailed references are drawn from the “Understand” page sources.</div>
+        </details>
+      </div>
+    </section>
 
-                <article class="source-card">
-                  <a href="https://oecd.ai/en/ai-principles" rel="noopener noreferrer" target="_blank">OECD AI Principles</a>
-                  <p>International principles for trustworthy AI, human rights and accountability.</p>
-                </article>
-
-                <article class="source-card">
-                  <a href="https://arxiv.org/abs/1706.03762" rel="noopener noreferrer" target="_blank">Vaswani et al. — Attention Is All You Need</a>
-                  <p>The foundational paper introducing the transformer architecture.</p>
-                </article>
-
-                <article class="source-card">
-                  <a href="https://crfm.stanford.edu/report.html" rel="noopener noreferrer" target="_blank">Stanford CRFM — Foundation Models</a>
-                  <p>A report on the capabilities, risks and sociotechnical dimensions of foundation models.</p>
-                </article>
-
-                <article class="source-card">
-                  <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" rel="noopener noreferrer" target="_blank">NIST — Generative AI Profile</a>
-                  <p>Risk-management guidance for organisations developing or using generative AI.</p>
-                </article>
-
-                <article class="source-card">
-                  <a href="https://www.who.int/publications/i/item/9789240084759" rel="noopener noreferrer" target="_blank">WHO — Governance of large multi-modal models for health</a>
-                  <p>Guidance on transparency, accountability, safety and evaluation in health-related uses.</p>
-                </article>
-
-                <article class="source-card">
-                  <a href="https://osha.europa.eu/en/publications/artificial-intelligence-worker-management-implications-occupational-safety-and-health" rel="noopener noreferrer" target="_blank">EU-OSHA — AI-based worker management</a>
-                  <p>Occupational-safety and health implications of algorithmic management and worker monitoring.</p>
-                </article>
-              </div>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section aria-label="Content author" class="author-byline">
-        <div class="wrap">
-          <p>Written by <a href="../../en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI representative for the French Society of Occupational Health.</p>
-        </div>
-      </section>
-
+    <section class="author-byline" aria-label="Content author">
+      <div class="wrap author-row">
+        <p>Written by <a href="https://www.iasantetravail.com/a-propos/" target="_blank" rel="noopener"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI lead for the SFST.</p>
+        <a class="newsletter-link" href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="brand" href="../../en/"><span aria-hidden="true" class="brand-mark"></span>AI &amp; Occupational Health</a>
-          <p>Independent, evidence-based guidance for analysing artificial intelligence through real work.</p>
-        </div>
-        <div>
-          <h4>Guidance</h4>
-          <ul>
-            <li><a href="../../en/understand/">Understand AI at work</a></li>
-            <li><a href="../../en/uses-and-field/">Uses &amp; field evidence</a></li>
-            <li><a href="../../en/evaluate/">Assess workplace AI</a></li>
-            <li><a href="../../en/risks-prevention/">Risks &amp; prevention</a></li>
-            <li><a href="../../en/legal-governance/">Law &amp; governance</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="../../en/resources/models/">AI model landscape</a></li>
-            <li><a href="../../en/about/">About &amp; publications</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contact the author on LinkedIn</a></li>
-            <li><a href="../../en/privacy/">Privacy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <span>© 2026 AI &amp; Occupational Health — Independent editorial initiative · Thomas Cole paintings, public domain.</span>
-        <span><a href="../../en/legal-notice/">Legal notice</a> · <a href="../../en/privacy/">Privacy</a></span>
-      </div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span>IA &amp; Santé au Travail</span></a><p>Sourced and dated guidance for analysing artificial intelligence through real work.</p></div>
+      <div class="footer-col"><h3>Explore</h3><ul><li><a href="#top">Understand</a></li><li><a href="https://www.iasantetravail.com/usages-terrain/" target="_blank" rel="noopener">Use cases &amp; fieldwork</a></li><li><a href="https://www.iasantetravail.com/risques-prevention/" target="_blank" rel="noopener">Risks &amp; prevention</a></li><li><a href="https://www.iasantetravail.com/evaluer/" target="_blank" rel="noopener">Assess</a></li></ul></div>
+      <div class="footer-col"><h3>Resources</h3><ul><li><a href="https://www.iasantetravail.com/ressources/modeles/" target="_blank" rel="noopener">Model overview</a></li><li><a href="https://www.iasantetravail.com/a-propos/" target="_blank" rel="noopener">About and publications</a></li><li><a href="#sources">Sources</a></li></ul></div>
+      <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Newsletter ↗</a></li><li><a href="https://www.iasantetravail.com/mentions-legales/" target="_blank" rel="noopener">Legal notice</a></li></ul></div>
     </div>
+    <div class="wrap footer-bottom"><span>© 2026 AI &amp; Occupational Health.</span><span>Understand · Prevent · Support</span></div>
   </footer>
 
-  <button aria-label="Back to top" id="backToTop" type="button">↑</button>
-
-  <dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
-    <div class="search-shell">
-      <div class="search-head">
-        <h2 id="searchTitle">Search</h2>
-        <button aria-label="Close" class="search-close" type="button">×</button>
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+    <div class="search-box">
+      <h2 class="sr-only" id="searchTitle">Search this page</h2>
+      <div class="search-top">
+        <label class="sr-only" for="searchInput">Search for a concept</label>
+        <input class="search-input" id="searchInput" type="search" placeholder="E.g. LLM, data, supervision…" autocomplete="off">
+        <button class="close-search" id="closeSearch" type="button" aria-label="Close search">×</button>
       </div>
-      <input autocomplete="off" class="search-input" id="searchInput" placeholder="e.g. LLM, algorithmic management, human oversight" type="search"/>
-      <div class="search-results" id="searchResults">
-        <p class="search-empty">Enter at least two characters.</p>
-      </div>
+      <div class="search-results" id="searchResults" aria-live="polite"></div>
     </div>
-  </dialog>
+  </div>
 
-  <script defer src="../../assets/js/search-index-en.js"></script>
-  <script defer src="../../assets/js/search-index-en-understand.js?v=1.0"></script>
-  <script defer src="../../assets/js/site.js"></script>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close the menu' : 'Open the menu');
+      document.body.classList.toggle('menu-open', open);
+    });
+    navLinks.addEventListener('click', event => {
+      if (!event.target.closest('a')) return;
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    });
+
+    const searchModal = document.getElementById('searchModal');
+    const openSearch = document.getElementById('openSearch');
+    const closeSearch = document.getElementById('closeSearch');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const searchItems = [
+      ['Three forms of AI', '#formes-ia', 'generative predictive algorithmic management'],
+      ['How an LLM works', '#fonctionnement-llm', 'language model tokens prediction answer'],
+      ['Capabilities and limits', '#capacites-limites', 'reliability hallucination verification'],
+      ['Prevention questions', '#questions-prevention', 'task data control responsibilities effects'],
+      ['What this changes at work', '#formes-ia', 'tasks organisation health skills']
+    ];
+    function renderSearch(query = '') {
+      const clean = query.trim().toLowerCase();
+      const matches = searchItems.filter(item => !clean || `${item[0]} ${item[2]}`.toLowerCase().includes(clean));
+      searchResults.innerHTML = matches.length
+        ? matches.map(item => `<a class="search-result" href="${item[1]}"><span>${item[0]}</span><span aria-hidden="true">→</span></a>`).join('')
+        : '<p>No results. Try “LLM”, “data” or “prevention”.</p>';
+    }
+    function showSearch() {
+      searchModal.hidden = false;
+      document.body.classList.add('search-open');
+      renderSearch();
+      requestAnimationFrame(() => searchInput.focus());
+    }
+    function hideSearch() {
+      searchModal.hidden = true;
+      document.body.classList.remove('search-open');
+      openSearch.focus();
+    }
+    openSearch.addEventListener('click', showSearch);
+    closeSearch.addEventListener('click', hideSearch);
+    searchInput.addEventListener('input', event => renderSearch(event.target.value));
+    searchResults.addEventListener('click', event => { if (event.target.closest('a')) hideSearch(); });
+    searchModal.addEventListener('click', event => { if (event.target === searchModal) hideSearch(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !searchModal.hidden) hideSearch(); });
+
+    const sectionLinks = Array.from(document.querySelectorAll('.section-nav a'));
+    const plates = Array.from(document.querySelectorAll('.plate'));
+    const progressBar = document.getElementById('progressBar');
+    const plateObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
+    plates.forEach(plate => plateObserver.observe(plate));
+
+    function updateProgress() {
+      const root = document.documentElement;
+      const max = root.scrollHeight - root.clientHeight;
+      const progress = max > 0 ? Math.min(100, Math.max(0, root.scrollTop / max * 100)) : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+    document.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: .07, rootMargin: '0px 0px -26px' });
+      revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('in'));
+    }
+  </script>
 </body>
 </html>
