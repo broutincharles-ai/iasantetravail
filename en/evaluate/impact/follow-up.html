@@ -23,16 +23,13 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Post-Deployment Workplace AI Follow-Up | 18 Questions"/>
 <meta name="twitter:description" content="An 18-question post-deployment workplace AI follow-up covering workload, autonomy, skills, collective work, human oversight and observed psychosocial effects."/>
-<title>Post-Deployment Workplace AI Follow-Up | 18 Questions</title>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Post-deployment workplace AI follow-up","url":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html","mainEntityOfPage":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html","applicationCategory":"HealthApplication","operatingSystem":"Web","browserRequirements":"JavaScript","isAccessibleForFree":true,"inLanguage":"en","dateModified":"2026-07-14","description":"An 18-question post-deployment workplace AI follow-up covering workload, autonomy, skills, collective work, human oversight and observed psychosocial effects.","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Assess","item":"https://www.iasantetravail.com/en/evaluate/"},{"@type":"ListItem","position":3,"name":"Post-deployment follow-up","item":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html"}]}]</script>
+<title>Post-Deployment Workplace AI Follow-Up | 18 Questions — AI &amp; Occupational Health</title>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Post-deployment workplace AI follow-up","url":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html","mainEntityOfPage":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html","applicationCategory":"HealthApplication","operatingSystem":"Web","browserRequirements":"JavaScript","isAccessibleForFree":true,"inLanguage":"en","dateModified":"2026-07-19","description":"An 18-question post-deployment workplace AI follow-up covering workload, autonomy, skills, collective work, human oversight and observed psychosocial effects.","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Assess","item":"https://www.iasantetravail.com/en/evaluate/"},{"@type":"ListItem","position":3,"name":"Post-deployment follow-up","item":"https://www.iasantetravail.com/en/evaluate/impact/follow-up.html"}]}]</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../../../assets/css/site.css" rel="stylesheet"/>
-<link href="../../../evaluer/impact/assets/css/impact-assessment.css?v=0.7.4" rel="stylesheet"/>
-<link href="../../../assets/css/evaluer-tools.css?v=1.0" rel="stylesheet"/>
-<link href="../../../assets/css/assessment-report-web-fix.css?v=3.2.0" rel="stylesheet"/>
-
+<link href="../../../evaluer/impact/assets/css/impact-assessment.css?v=1.0" rel="stylesheet"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
@@ -42,6 +39,11 @@
 <link rel="manifest" href="/site.webmanifest"/>
 <meta name="msapplication-TileColor" content="#A84E1F"/>
 
+
+<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
+<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
+<link href="/assets/css/components.css?v=1.0" rel="stylesheet"/>
+<script defer src="/assets/js/site-shell.js?v=1.0"></script>
 </head>
 
 <body class="inner-page page-evaluer page-impact page-impact-refined" data-page="en-evaluate" data-root="../../../">
@@ -81,7 +83,7 @@
 <section class="tool-intro">
 <div class="wrap">
 <nav aria-label="Assess section navigation" class="tool-breadcrumb">
-<a href="../">Overview</a><a href="../benchmark/">Understand benchmarks</a><a href="index.html">Pre-deployment assessment</a><a aria-current="page" href="follow-up.html">Post-deployment follow-up</a>
+<a href="../">Overview</a><a href="../#capabilities">Understand benchmarks</a><a href="index.html">Pre-deployment assessment</a><a aria-current="page" href="follow-up.html">Post-deployment follow-up</a>
 </nav>
 <div class="intro-layout">
 <div class="intro-copy">
@@ -164,7 +166,7 @@
 <article class="chart-card glass-soft"><div class="card-head"><div><span class="mini-kicker">Mapping</span><h3>Nine dimensions</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">View values</button></div><div aria-label="Radar chart of observed effects" class="radar-wrap" id="radarWrap"></div><div class="dimension-table" hidden id="dimensionTable"></div></article>
 <article class="priority-card glass-soft"><span class="mini-kicker">Actions</span><h3>Priority corrections</h3><div class="priority-list" id="topPriorities"></div></article>
 </div>
-<div class="report-toolbar"><div><span class="mini-kicker">Dated report</span><h3>Follow-up report</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Download HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Download JSON</button><button class="btn btn-primary" id="printReport" type="button">Download PDF</button></div></div>
+<div class="report-toolbar"><div><span class="mini-kicker">Dated report</span><h3>Follow-up report</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Download HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Download JSON</button><button class="btn btn-ghost" id="printSimple" type="button">Print</button><button class="btn btn-primary" id="printReport" type="button">Download PDF</button></div></div>
 <div class="generated-report" id="generatedReport"></div>
 <details class="result-extras"><summary>Archiving and local history</summary><div class="result-extras-body">
 <section class="archive-section glass-soft"><div><span class="mini-kicker">Longitudinal archive</span><h3>Keep this dated review</h3><p>Generate the A4 PDF directly and retain it with previous reports using the same anonymous code.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Create PDF now</button></section>
@@ -205,7 +207,7 @@
           <li><a href="../../../en/evaluate/">Overview</a></li>
           <li><a href="../../../en/evaluate/impact/">Pre-deployment assessment</a></li>
           <li><a href="../../../en/evaluate/impact/follow-up.html">Post-deployment follow-up</a></li>
-          <li><a href="../../../en/evaluate/benchmark/">Understand AI benchmarks</a></li>
+          <li><a href="../../../en/evaluate/#capabilities">Understand AI benchmarks</a></li>
         </ul>
       </div>
       <div>

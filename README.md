@@ -1,28 +1,32 @@
-# Page « Comprendre » — version bilingue
+# IA & Santé au Travail
 
-Ce paquet contient les deux versions prêtes à intégrer au dépôt statique de `iasantetravail.com` :
+Site éditorial statique bilingue de [iasantetravail.com](https://www.iasantetravail.com), sans compilation ni dépendance de production.
 
-- `comprendre/index.html` : version française ;
-- `en/understand/index.html` : version anglaise ;
-- `assets/images/favicon-192.png` : logo actuel du site, conservé à l’identique ;
-- `assets/images/savage-state-1280.webp` : image de fond du hero.
+## Architecture
 
-## Installation sur GitHub
+- `index.html` et `en/index.html` : accueils français et anglais ;
+- `comprendre/`, `usages-terrain/`, `risques-prevention/`, `evaluer/`, `droit-gouvernance/`, `a-propos/` : parcours canoniques ;
+- `assets/css/tokens.css` : couleurs, espaces, largeurs, typographie et accessibilité ;
+- `assets/css/layout.css` : grilles et rythmes communs ;
+- `assets/css/components.css` : navigation, footer et composants partagés ;
+- `assets/js/site-shell.js` : source unique de la navigation et du footer bilingues ;
+- `mises-a-jour/` : méthode éditoriale et historique des changements ;
+- `_redirects` et pages historiques : conservation des anciennes adresses.
 
-Copier le contenu du dossier à la racine du dépôt en conservant exactement cette arborescence. Les chemins des images commencent par `/assets/` et fonctionneront donc sur le domaine principal.
+La navigation reste fonctionnelle sans framework. Le contenu des pages est présent dans le HTML ; JavaScript ne sert qu’aux interactions, à l’enveloppe commune et aux outils d’évaluation.
 
-Le paquet remplace uniquement les pages `comprendre/` et `en/understand/` ainsi que les deux images listées ci-dessus. Il ne nécessite ni dépendance JavaScript ni étape de compilation.
+## Maintenance
 
-## Changements intégrés
+Utiliser le runtime Node.js disponible, puis exécuter depuis la racine :
 
-- remplacement de la formule « ouvrir une carte » par une introduction explicite ;
-- remplacement du CTA par « Commencer la lecture » / « Start reading » ;
-- suppression complète du bouton et de l’animation « Relancer le tracé » ;
-- conservation du schéma LLM sous une forme statique et lisible ;
-- suppression de la photographie documentaire ;
-- remplacement de celle-ci par un repère éditorial directement lié au travail réel ;
-- version anglaise complète, avec métadonnées, navigation, recherche et contenus traduits ;
-- liens `canonical` et `hreflang` français/anglais.
-- simplification du début de page et suppression du bloc introductif décoratif.
-- navigation interne conservée dans l’onglet courant ; seuls LinkedIn et Substack s’ouvrent dans un nouvel onglet.
-- retour vers l’accueil corrigé avec `/` en français et `/en/` en anglais, depuis le bouton et le logo.
+```sh
+node scripts/build-search-index.mjs
+node scripts/create-redirects.mjs
+node scripts/validate-site.mjs
+```
+
+Après une modification éditoriale, mettre à jour la date visible, `dateModified`, le sitemap et la page `mises-a-jour/` quand le changement est substantiel. Les règles de fréquence sont décrites sur cette dernière page.
+
+## Publication
+
+Le dépôt est publié comme site statique avec le domaine configuré dans `CNAME`. Les URL sont absolues depuis la racine du domaine afin de fonctionner sur GitHub Pages.
