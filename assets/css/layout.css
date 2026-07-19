@@ -1,0 +1,56 @@
+.wrap {
+  width: min(var(--content-max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.reading-width,
+.prose {
+  max-width: var(--reading-max);
+}
+
+main [id] {
+  scroll-margin-top: 112px;
+}
+
+.section,
+.about-section,
+.legal-section,
+.reference-section,
+.case-section,
+.prevention-section,
+.moments,
+.real-work,
+.choices,
+.method,
+.capabilities {
+  padding-block: clamp(64px, 7vw, 96px);
+}
+
+.section-tight {
+  padding-block: clamp(48px, 5vw, 64px);
+}
+
+.system-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 920px) {
+  .system-grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .wrap { width: min(100% - 28px, var(--content-max)); }
+  .section,
+  .about-section,
+  .legal-section,
+  .reference-section,
+  .case-section,
+  .prevention-section,
+  .moments,
+  .real-work,
+  .choices,
+  .method,
+  .capabilities { padding-block: 56px; }
+}
