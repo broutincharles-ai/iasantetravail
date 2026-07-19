@@ -176,5 +176,10 @@
     }
   });
 
+  // Legacy page styles hide `.reveal` elements until the former page script
+  // adds the `in` class. The shared shell now owns that progressive enhancement;
+  // content must remain visible even when no animation controller is loaded.
+  document.querySelectorAll(".reveal").forEach(element => element.classList.add("in"));
+
   document.documentElement.classList.add("site-system-ready");
 })();
