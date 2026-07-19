@@ -304,7 +304,8 @@
 /* Portrait professionnel LinkedIn */
 .about-portrait{
   overflow:hidden;
-  margin:0;
+  width:min(100%,260px);
+  margin:0 auto;
   padding:0;
   border-radius:24px;
   background:rgba(255,253,249,.72);
@@ -354,7 +355,10 @@
   line-height:1.45;
 }
 @media(max-width:720px){
+  .about-portrait{
+    width:min(100%,220px);
+  }
   .about-portrait-link{
-    max-height:430px;
+    max-height:220px;
   }
 }
