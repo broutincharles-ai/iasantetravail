@@ -17,6 +17,7 @@
     "/evaluer/impact/": "/en/evaluate/impact/",
     "/evaluer/impact/suivi.html": "/en/evaluate/impact/follow-up.html",
     "/droit-gouvernance/": "/en/legal-governance/",
+    "/ai-safety-agi/": "/en/ai-safety-agi/",
     "/a-propos/": "/en/about/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mises-a-jour/": "/en/updates/",
@@ -28,27 +29,33 @@
   const currentEn = isEnglish ? path : (pairs[path] || "/en/");
 
   const navItems = isEnglish ? [
-    ["Understand", "/en/understand/", "understand"],
-    ["Deploy", "/en/uses-and-field/", "deploy"],
-    ["Risks", "/en/risks-prevention/", "risks"],
-    ["Evaluate", "/en/evaluate/", "evaluate"],
-    ["Governance", "/en/legal-governance/", "governance"],
+    ["Understand AI", "/en/understand/", "understand"],
+    ["Field use", "/en/uses-and-field/", "field"],
+    ["Assess", "/en/evaluate/", "evaluate"],
+    ["Short questionnaire", "/en/evaluate/impact/", "questionnaire"],
+    ["Law & governance", "/en/legal-governance/", "governance"],
+    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "ohs"],
+    ["AI safety & AGI", "/en/ai-safety-agi/", "agi"],
     ["About", "/en/about/", "about"]
   ] : [
-    ["Comprendre", "/comprendre/", "understand"],
-    ["Déployer", "/usages-terrain/", "deploy"],
-    ["Risques", "/risques-prevention/", "risks"],
+    ["Comprendre l’IA", "/comprendre/", "understand"],
+    ["Usages terrain", "/usages-terrain/", "field"],
     ["Évaluer", "/evaluer/", "evaluate"],
-    ["Gouvernance", "/droit-gouvernance/", "governance"],
+    ["Questionnaire court", "/evaluer/impact/", "questionnaire"],
+    ["Droit & gouvernance", "/droit-gouvernance/", "governance"],
+    ["L’IA dans les SPSTI", "/usages-terrain/exemple-sante-travail/", "ohs"],
+    ["AI safety et AGI", "/ai-safety-agi/", "agi"],
     ["À propos", "/a-propos/", "about"]
   ];
 
   const activeKey = (() => {
     if (/^\/en\/understand|^\/comprendre/.test(path)) return "understand";
-    if (/^\/en\/uses-and-field|^\/usages-terrain/.test(path)) return "deploy";
-    if (/^\/en\/risks-prevention|^\/risques-prevention/.test(path)) return "risks";
+    if (/^\/en\/uses-and-field\/occupational-health-example|^\/usages-terrain\/exemple-sante-travail/.test(path)) return "ohs";
+    if (/^\/en\/uses-and-field|^\/usages-terrain/.test(path)) return "field";
+    if (/^\/en\/evaluate\/impact|^\/evaluer\/impact/.test(path)) return "questionnaire";
     if (/^\/en\/evaluate|^\/evaluer/.test(path)) return "evaluate";
     if (/^\/en\/legal-governance|^\/droit-gouvernance/.test(path)) return "governance";
+    if (/^\/en\/ai-safety-agi|^\/ai-safety-agi/.test(path)) return "agi";
     if (/^\/en\/about|^\/a-propos/.test(path)) return "about";
     return "";
   })();
@@ -72,23 +79,12 @@
   header.innerHTML = `
     <nav class="system-nav wrap" aria-label="${isEnglish ? "Main navigation" : "Navigation principale"}">
       <a class="system-brand" href="${isEnglish ? "/en/" : "/"}" aria-label="${isEnglish ? "AI & Occupational Health, home" : "IA et Santé au Travail, accueil"}">
-        <span class="system-brand-mark" aria-hidden="true"></span><span>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</span>
+        <span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong><small>${isEnglish ? "Prevention · Real work" : "Prévention · Travail réel"}</small></span>
       </a>
       <div class="system-nav-links" id="systemNavLinks">
-        ${navItems.map(([label, href, key]) => `<a href="${href}"${key === activeKey ? ' aria-current="page"' : ""} class="${key === "evaluate" ? "system-evaluate-link" : ""}">${label}</a>`).join("")}
-        <details class="system-resources">
-          <summary>${isEnglish ? "Resources" : "Ressources"}</summary>
-          <div class="system-resources-menu">${resources.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</div>
-        </details>
+        ${navItems.map(([label, href, key]) => `<a href="${href}"${key === activeKey ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </div>
-      <div class="system-nav-tools">
-        <button class="system-search-button" type="button" aria-label="${isEnglish ? "Search the site" : "Rechercher sur le site"}">⌕</button>
-        <div class="system-lang" aria-label="${isEnglish ? "Language" : "Choix de la langue"}">
-          <a href="${currentFr}" lang="fr" hreflang="fr"${isEnglish ? "" : ' aria-current="page"'}>FR</a>
-          <a href="${currentEn}" lang="en" hreflang="en"${isEnglish ? ' aria-current="page"' : ""}>EN</a>
-        </div>
-        <button class="system-menu-button" type="button" aria-controls="systemNavLinks" aria-expanded="false">${isEnglish ? "Menu" : "Menu"}</button>
-      </div>
+      <button class="system-menu-button" type="button" aria-controls="systemNavLinks" aria-expanded="false">Menu</button>
     </nav>`;
 
   const existingHeader = document.querySelector("body > header.site-header") || document.querySelector("body > nav.nav");
@@ -109,6 +105,7 @@
       <div><h2>${isEnglish ? "Contact" : "Contact"}</h2><ul>
         <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
         <li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Newsletter ↗</a></li>
+        <li><a href="${isEnglish ? currentFr : currentEn}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}">${isEnglish ? "Version française" : "English version"}</a></li>
         <li><a href="${isEnglish ? "/en/privacy/" : "/confidentialite/"}">${isEnglish ? "Privacy" : "Confidentialité"}</a></li>
       </ul></div>
     </div>
@@ -153,26 +150,10 @@
     menuButton.setAttribute("aria-expanded", "false");
   }));
 
-  header.querySelector(".system-search-button").addEventListener("click", () => {
-    const dialog = document.getElementById("siteSearch");
-    const modal = document.getElementById("searchModal");
-    if (dialog && !dialog.open) {
-      dialog.showModal();
-      window.setTimeout(() => dialog.querySelector("input")?.focus(), 30);
-    } else if (modal) {
-      modal.hidden = false;
-      document.body.classList.add("search-open");
-      window.setTimeout(() => modal.querySelector("input")?.focus(), 30);
-    } else {
-      window.location.href = isEnglish ? "/en/#search" : "/#recherche";
-    }
-  });
-
   document.addEventListener("click", event => {
     if (!header.contains(event.target)) {
       header.classList.remove("is-open");
       menuButton.setAttribute("aria-expanded", "false");
-      header.querySelector(".system-resources")?.removeAttribute("open");
     }
   });
 
