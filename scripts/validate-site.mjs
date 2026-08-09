@@ -50,6 +50,12 @@ function targetPath(source, raw) {
   return path.extname(absolute) ? absolute : path.join(absolute, "index.html");
 }
 
+function metaContent(html, name) {
+  const tag = (html.match(/<meta\b[^>]*>/gi) || [])
+    .find(candidate => new RegExp(`name=["']${name}["']`, "i").test(candidate));
+  return tag?.match(/content=["']([^"']*)/i)?.[1] || "";
+}
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   const markup = html
@@ -58,6 +64,12 @@ for (const file of htmlFiles) {
   const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map(match => match[1]);
   const duplicates = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicates.length) errors.push(`${path.relative(root, file)}: duplicate id(s): ${duplicates.join(", ")}`);
+
+  const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
+  const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
+  if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
+    errors.push(`${path.relative(root, file)}: expected exactly one Google tag, found ${googleTagLoaders} loader(s) and ${googleTagConfigs} config(s)`);
+  }
 
   for (const match of markup.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const raw = match[1];
@@ -106,16 +118,22 @@ for (const file of cssFiles) {
   }
 }
 
-const canonicalHtml = htmlFiles.filter(file => !/\bnoindex\b/i.test(String(file)));
-for (const file of canonicalHtml) {
+for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
-  if (/http-equiv=["']refresh["']/i.test(html)) continue;
+  if (/\bnoindex\b/i.test(html) || /http-equiv=["']refresh["']/i.test(html)) continue;
   const hasSharedShell = /site-shell\.js/.test(html);
   const hasInlineShell = /<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(html)
     && /<footer\b[^>]*class=["'][^"']*\bsite-footer\b/i.test(html);
   if (!hasSharedShell && !hasInlineShell) errors.push(`${path.relative(root, file)}: navigation shell missing`);
-  if (!/<title[^>]*>[^<]+<\/title>/i.test(html)) errors.push(`${path.relative(root, file)}: title missing`);
-  if (!/<meta[^>]+name=["']description["']/i.test(html)) errors.push(`${path.relative(root, file)}: meta description missing`);
+  const title = html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1].replace(/&amp;/g, "&").trim() || "";
+  const description = metaContent(html, "description").trim();
+  const documentMarkup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
+  const h1Count = [...documentMarkup.matchAll(/<h1\b/gi)].length;
+  if (!title) errors.push(`${path.relative(root, file)}: title missing`);
+  else if (title.length > 70) errors.push(`${path.relative(root, file)}: title is ${title.length} characters; keep it at 70 or fewer`);
+  if (!description) errors.push(`${path.relative(root, file)}: meta description missing`);
+  else if (description.length > 180) errors.push(`${path.relative(root, file)}: meta description is ${description.length} characters; keep it at 180 or fewer`);
+  if (h1Count !== 1) errors.push(`${path.relative(root, file)}: expected exactly one h1, found ${h1Count}`);
   if (!/<link[^>]+rel=["']canonical["']/i.test(html) && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: canonical missing`);
 }
 

@@ -24,7 +24,7 @@ node scripts/create-redirects.mjs
 node scripts/validate-site.mjs
 ```
 
-Après une modification éditoriale, mettre à jour la date visible, `dateModified` et le sitemap quand le changement est substantiel.
+Le validateur contrôle notamment les liens locaux, les identifiants, les métadonnées SEO, le balisage JSON-LD, les variantes linguistiques et l’unicité du tag Google. Après une modification éditoriale, mettre à jour la date visible, `dateModified` et le sitemap quand le changement est substantiel.
 
 ## Publication
 
