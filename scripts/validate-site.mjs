@@ -98,7 +98,10 @@ const canonicalHtml = htmlFiles.filter(file => !/\bnoindex\b/i.test(String(file)
 for (const file of canonicalHtml) {
   const html = await readFile(file, "utf8");
   if (/http-equiv=["']refresh["']/i.test(html)) continue;
-  if (!/site-shell\.js/.test(html)) errors.push(`${path.relative(root, file)}: shared site shell missing`);
+  const hasSharedShell = /site-shell\.js/.test(html);
+  const hasInlineShell = /<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(html)
+    && /<footer\b[^>]*class=["'][^"']*\bsite-footer\b/i.test(html);
+  if (!hasSharedShell && !hasInlineShell) errors.push(`${path.relative(root, file)}: navigation shell missing`);
   if (!/<title[^>]*>[^<]+<\/title>/i.test(html)) errors.push(`${path.relative(root, file)}: title missing`);
   if (!/<meta[^>]+name=["']description["']/i.test(html)) errors.push(`${path.relative(root, file)}: meta description missing`);
   if (!/<link[^>]+rel=["']canonical["']/i.test(html) && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: canonical missing`);

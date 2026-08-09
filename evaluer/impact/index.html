@@ -1,204 +1,648 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="Questionnaire en 18 questions pour repérer avant déploiement les effets potentiels d’un projet d’IA sur l’organisation, les risques psychosociaux et les conditions de travail." name="description"/>
-<meta content="Dr Charles Broutin" name="author"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/>
-<meta content="#EADDC6" name="theme-color"/>
-<link href="https://www.iasantetravail.com/evaluer/impact/" rel="canonical"/>
-<meta property="og:type" content="website"/>
-<meta property="og:locale" content="fr_FR"/>
-<meta property="og:site_name" content="IA &amp; Santé au Travail"/>
-<meta property="og:title" content="Évaluer l’impact d’un projet d’IA sur le travail | Questionnaire"/>
-<meta property="og:description" content="Questionnaire en 18 questions pour repérer avant déploiement les effets potentiels d’un projet d’IA sur l’organisation, les risques psychosociaux et les conditions de travail."/>
-<meta property="og:url" content="https://www.iasantetravail.com/evaluer/impact/"/>
-<meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-evaluer.jpg"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Évaluer l’impact d’un projet d’IA sur le travail | Questionnaire"/>
-<meta name="twitter:description" content="Questionnaire en 18 questions pour repérer avant déploiement les effets potentiels d’un projet d’IA sur l’organisation, les risques psychosociaux et les conditions de travail."/>
-<title>Évaluer l’impact d’un projet d’IA sur le travail | Questionnaire — IA &amp; Santé au Travail</title>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Évaluation de l’impact d’un projet d’IA sur le travail","url":"https://www.iasantetravail.com/evaluer/impact/","mainEntityOfPage":"https://www.iasantetravail.com/evaluer/impact/","applicationCategory":"HealthApplication","operatingSystem":"Web","browserRequirements":"JavaScript","isAccessibleForFree":true,"inLanguage":"fr-FR","dateModified":"2026-07-19","description":"Questionnaire en 18 questions pour repérer avant déploiement les effets potentiels d’un projet d’IA sur l’organisation, les risques psychosociaux et les conditions de travail.","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail","url":"https://www.iasantetravail.com/a-propos/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.iasantetravail.com/"},{"@type":"ListItem","position":2,"name":"Évaluer","item":"https://www.iasantetravail.com/evaluer/"},{"@type":"ListItem","position":3,"name":"Évaluation de l’impact d’un projet d’IA sur le travail","item":"https://www.iasantetravail.com/evaluer/impact/"}]}]</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/css/site.css" rel="stylesheet"/>
-<link href="assets/css/impact-assessment.css?v=1.0" rel="stylesheet"/>
-<link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png"/>
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png"/>
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
-<meta name="msapplication-TileColor" content="#A84E1F"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questionnaire court avant déploiement — IA &amp; Santé au Travail</title>
+  <meta name="description" content="Questionnaire exploratoire en 18 items pour repérer avant le déploiement les effets psychosociaux potentiels d’un projet d’intelligence artificielle.">
+  <link rel="canonical" href="https://www.iasantetravail.com/evaluer/impact/">
+  <style>
+    :root {
+      --ink: #17140f;
+      --ink-soft: #3f3931;
+      --muted: #625b52;
+      --terra: #a84e1f;
+      --terra-bright: #c94d24;
+      --green: #344f49;
+      --green-dark: #23383a;
+      --cream: #f4ebda;
+      --paper: #fff9f2;
+      --white: #fffdf9;
+      --lavender: #c9c2f2;
+      --lavender-dark: #4a4090;
+      --line: rgba(23, 20, 15, .16);
+      --line-light: rgba(244, 235, 218, .23);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --wrap: min(1440px, calc(100% - 80px));
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea, summary { color: inherit; font: inherit; }
+    button { border-radius: 0; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
+    .skip-link:focus { transform: none; }
 
-<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/components.css?v=1.1" rel="stylesheet"/>
-<script defer src="/assets/js/site-shell.js?v=1.1"></script>
+    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
+    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
+    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
+    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
+    .brand-copy strong, .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
+    .nav-side { display: flex; align-items: center; gap: 10px; }
+    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 20px; padding: 0 22px; border: 1px solid var(--green); cursor: pointer; font-size: 13px; font-weight: 750; }
+    .nav-cta, .button.primary { color: #fff; background: var(--green); }
+    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
+    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
+    .button.secondary { border-color: var(--line); background: transparent; }
+    .button.secondary:hover { background: var(--cream); }
+    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
+    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
+    .button:disabled { cursor: not-allowed; opacity: .4; }
+
+    .menu-dropdown { position: relative; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary::-webkit-details-marker { display: none; }
+    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
+    .menu-dropdown[open] > summary::after { content: "−"; }
+    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .menu-col { display: grid; align-content: start; gap: 11px; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
+    .menu-col a:hover { color: var(--terra); }
+
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker.line { display: flex; align-items: center; gap: 14px; }
+    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .assessment-hero { width: var(--wrap); margin: 0 auto; padding: 68px 0 48px; display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(390px, .64fr); gap: 80px; align-items: center; }
+    .assessment-hero h1 { max-width: 900px; margin: 33px 0 25px; font-size: clamp(54px, 5.2vw, 82px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
+    .assessment-hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 33px; }
+    .tool-preview { border: 1px solid var(--line); background: var(--white); }
+    .preview-head { min-height: 58px; padding: 0 19px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .preview-head strong { display: flex; align-items: center; gap: 9px; color: var(--green); }
+    .preview-head strong::before { width: 7px; height: 7px; border-radius: 50%; background: var(--green); content: ""; }
+    .preview-body { padding: 27px; }
+    .preview-body > span { color: var(--terra); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .preview-body h2 { margin: 27px 0 12px; font-size: 28px; letter-spacing: -.04em; }
+    .preview-body p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.52; }
+    .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 25px; border-top: 1px solid var(--line); }
+    .preview-grid div { padding: 17px 11px 0 0; }
+    .preview-grid div + div { padding-left: 11px; border-left: 1px solid var(--line); }
+    .preview-grid small, .preview-grid strong { display: block; }
+    .preview-grid small { color: var(--terra); font-family: var(--mono); font-size: 7px; text-transform: uppercase; }
+    .preview-grid strong { margin-top: 8px; font-size: 10px; line-height: 1.4; }
+    .preview-foot { padding: 18px 20px; border-top: 1px solid var(--line); color: var(--muted); background: var(--cream); font-size: 10px; line-height: 1.45; }
+
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); width: var(--wrap); margin: 0 auto 64px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .facts article { min-height: 106px; padding: 22px 25px; border-right: 1px solid var(--line); }
+    .facts article:first-child { padding-left: 0; }
+    .facts article:last-child { border-right: 0; }
+    .facts span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
+    .facts strong, .facts small { display: block; }
+    .facts strong { margin-top: 15px; font-size: 12px; }
+    .facts small { margin-top: 5px; color: var(--muted); font-size: 9px; line-height: 1.4; }
+
+    .questionnaire-zone { padding: 0 max(40px, calc(50% - 720px)) 76px; }
+    .journey { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-bottom: 0; background: var(--cream); }
+    .journey-step { min-height: 79px; padding: 18px 20px; border-right: 1px solid var(--line); color: var(--muted); }
+    .journey-step:last-child { border-right: 0; }
+    .journey-step span, .journey-step strong { display: block; }
+    .journey-step span { font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
+    .journey-step strong { margin-top: 10px; font-size: 11px; }
+    .journey-step.active { color: var(--cream); background: var(--green-dark); }
+    .journey-step.active span { color: var(--lavender); }
+    .journey-step.done span::after { margin-left: 8px; color: var(--terra); content: "✓"; }
+
+    .tool-shell { min-height: 610px; border: 1px solid var(--line); background: var(--white); }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .panel-head { min-height: 78px; padding: 0 31px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .panel-head span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .privacy-state { display: flex; align-items: center; gap: 9px; color: var(--green) !important; }
+    .privacy-state::before { width: 7px; height: 7px; border-radius: 50%; background: var(--green); content: ""; }
+    .panel-body { padding: 38px 42px; }
+    .panel-body h2 { max-width: 900px; margin: 0; font-size: clamp(35px, 3.6vw, 53px); font-weight: 500; letter-spacing: -.052em; line-height: 1.06; }
+    .panel-intro { max-width: 850px; margin: 21px 0 0; color: var(--muted); font-size: 15px; line-height: 1.62; }
+    .intro-cards { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 37px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .intro-card { min-height: 180px; padding: 23px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .intro-card span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .intro-card strong { display: block; margin-top: 37px; font-size: 15px; }
+    .intro-card p { margin: 9px 0 0; color: var(--muted); font-size: 11px; line-height: 1.48; }
+    .method-warning { margin-top: 27px; padding: 22px 24px; border-left: 4px solid var(--terra); color: var(--cream); background: var(--green-dark); }
+    .method-warning strong { color: var(--lavender); font-family: var(--mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+    .method-warning p { margin: 11px 0 0; font-size: 13px; line-height: 1.52; }
+    .panel-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 31px; }
+    .panel-actions.end { justify-content: flex-end; }
+
+    .context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; }
+    .field { display: grid; gap: 9px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label, .field legend { color: var(--ink); font-size: 12px; font-weight: 730; }
+    .field select, .field input[type="date"], .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--paper); }
+    .field select, .field input[type="date"] { height: 52px; padding: 0 14px; }
+    .field textarea { min-height: 105px; padding: 14px; resize: vertical; line-height: 1.45; }
+    .field small { color: var(--muted); font-size: 9px; line-height: 1.4; }
+    fieldset.field { margin: 0; padding: 0; border: 0; }
+    .usage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 4px; }
+    .check-option { position: relative; }
+    .check-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .check-option label { display: flex; min-height: 66px; padding: 12px 13px; border: 1px solid var(--line); cursor: pointer; align-items: center; gap: 10px; color: var(--muted); background: var(--paper); font-size: 10px; line-height: 1.35; }
+    .check-option label::before { display: grid; width: 18px; height: 18px; flex: 0 0 18px; place-items: center; border: 1px solid var(--line); color: #fff; content: ""; }
+    .check-option input:checked + label { border-color: var(--terra); color: var(--ink); background: var(--cream); }
+    .check-option input:checked + label::before { border-color: var(--terra); background: var(--terra); content: "✓"; font-size: 10px; }
+    .check-option input:focus-visible + label { outline: 3px solid var(--terra); outline-offset: 2px; }
+    .form-error { min-height: 18px; margin: 8px 0 0; color: #9b2d1b; font-size: 10px; font-weight: 700; }
+
+    .question-wrap { max-width: 1070px; margin: 0 auto; }
+    .progress-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 26px; }
+    .progress-row span { color: var(--terra); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .progress-track { width: min(420px, 52%); height: 5px; background: var(--cream); }
+    .progress-fill { width: 0; height: 100%; background: var(--terra); transition: width .2s ease; }
+    .question-dimension { color: var(--terra); font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .question-text { max-width: 930px; margin: 28px 0 15px; font-size: clamp(28px, 3vw, 43px); font-weight: 520; letter-spacing: -.045em; line-height: 1.12; }
+    .question-help { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .answer-scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 35px; }
+    .answer-option { position: relative; }
+    .answer-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .answer-option label { display: flex; min-height: 104px; padding: 16px; border: 1px solid var(--line); cursor: pointer; flex-direction: column; justify-content: space-between; color: var(--muted); background: var(--paper); }
+    .answer-option label b { color: var(--terra); font-family: var(--mono); font-size: 17px; }
+    .answer-option label span { font-size: 10px; line-height: 1.35; }
+    .answer-option input:checked + label { border-color: var(--terra); color: var(--ink); background: var(--cream); box-shadow: inset 0 -4px var(--terra); }
+    .answer-option input:focus-visible + label { outline: 3px solid var(--terra); outline-offset: 2px; }
+    .answer-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .answer-extra .answer-option label { min-height: 68px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 15px; }
+    .answer-note { margin-top: 16px; color: var(--muted); font-size: 9px; }
+
+    .results-body { padding-bottom: 46px; }
+    .results-summary { display: grid; grid-template-columns: .8fr 1.2fr; gap: 42px; align-items: start; }
+    .results-title h2 { margin: 0; font-size: clamp(38px, 4.1vw, 61px); font-weight: 490; letter-spacing: -.056em; line-height: 1.05; }
+    .results-title p { margin: 20px 0 0; color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .result-context { padding: 24px; border: 1px solid var(--line); background: var(--cream); }
+    .result-context > span { color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .result-context dl { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 22px; margin: 21px 0 0; }
+    .result-context dt { color: var(--muted); font-size: 9px; }
+    .result-context dd { margin: 4px 0 0; font-size: 11px; font-weight: 700; line-height: 1.35; }
+    .no-global-score { margin-top: 28px; padding: 22px 24px; border-left: 4px solid var(--terra); color: var(--cream); background: var(--green-dark); }
+    .no-global-score strong { color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .no-global-score p { margin: 10px 0 0; font-size: 13px; line-height: 1.5; }
+    .result-section { margin-top: 38px; }
+    .result-section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+    .result-section-head h3 { margin: 0; font-size: 25px; letter-spacing: -.035em; }
+    .result-section-head span { color: var(--muted); font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
+    .profile-list { border-top: 1px solid var(--line); }
+    .profile-row { display: grid; grid-template-columns: 36px 250px 1fr 95px; gap: 20px; min-height: 82px; align-items: center; border-bottom: 1px solid var(--line); }
+    .profile-row > span:first-child { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .profile-row strong { font-size: 12px; line-height: 1.4; }
+    .profile-bar { height: 7px; background: var(--cream); }
+    .profile-fill { height: 100%; background: var(--terra); }
+    .profile-value { color: var(--terra); font-family: var(--mono); font-size: 10px; text-align: right; }
+    .profile-value small { display: block; margin-top: 5px; color: var(--muted); font-size: 7px; }
+    .priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .priority-card { min-height: 190px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .priority-card span { color: var(--terra); font-family: var(--mono); font-size: 8px; }
+    .priority-card strong { display: block; margin-top: 29px; font-size: 15px; line-height: 1.35; }
+    .priority-card p { margin: 9px 0 0; color: var(--muted); font-size: 10px; line-height: 1.48; }
+    .sentinel-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+    .sentinel-list li { display: grid; grid-template-columns: 58px 1fr; gap: 17px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .sentinel-list b { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .empty-state { padding: 24px; border: 1px solid var(--line); color: var(--muted); background: var(--paper); font-size: 11px; line-height: 1.5; }
+    .result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+
+    .method-section { padding: 72px max(40px, calc(50% - 720px)); color: var(--paper); background: var(--green-dark); }
+    .method-section .kicker { color: var(--lavender); }
+    .method-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: end; }
+    .method-head h2 { max-width: 850px; margin: 25px 0 0; font-size: clamp(42px, 4.4vw, 66px); font-weight: 480; letter-spacing: -.055em; line-height: 1.05; }
+    .method-head > p { margin: 0; color: rgba(244, 235, 218, .7); font-size: 16px; line-height: 1.6; }
+    .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 47px; border: 1px solid var(--line-light); }
+    .method-card { min-height: 190px; padding: 23px; border-right: 1px solid var(--line-light); }
+    .method-card:last-child { border-right: 0; }
+    .method-card span { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .method-card strong { display: block; margin-top: 38px; color: var(--cream); font-size: 14px; line-height: 1.4; }
+    .method-card p { margin: 9px 0 0; color: rgba(244, 235, 218, .62); font-size: 10px; line-height: 1.48; }
+    .method-links { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
+
+    .contact-section { padding: 70px max(40px, calc(50% - 720px)); display: grid; grid-template-columns: 1.05fr .95fr; gap: 75px; align-items: center; background: var(--lavender); }
+    .contact-section .kicker { color: var(--lavender-dark); }
+    .contact-section h2 { margin: 24px 0 0; font-size: clamp(40px, 4.3vw, 64px); font-weight: 480; letter-spacing: -.055em; line-height: 1.05; }
+    .contact-copy p { margin: 0; color: #423b65; font-size: 16px; line-height: 1.6; }
+    .contact-copy .button { margin-top: 24px; }
+
+    .site-footer { color: var(--cream); background: var(--ink); }
+    .footer-grid { width: var(--wrap); margin: 0 auto; padding: 50px 0 24px; display: grid; grid-template-columns: 1.5fr repeat(3, .65fr); gap: 58px; }
+    .footer-brand strong { font-size: 21px; }
+    .footer-brand p { max-width: 400px; margin: 16px 0 0; color: rgba(244, 235, 218, .62); font-size: 13px; line-height: 1.58; }
+    .footer-col { display: grid; align-content: start; gap: 9px; }
+    .footer-col span { margin-bottom: 7px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .7); font-size: 12px; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 25px; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(244, 235, 218, .17); color: rgba(244, 235, 218, .45); font-size: 10px; }
+
+    @media (max-width: 1120px) {
+      .nav-links { display: none; }
+      .assessment-hero { grid-template-columns: 1fr .75fr; gap: 42px; }
+      .answer-option label { padding: 12px; }
+      .profile-row { grid-template-columns: 30px 210px 1fr 85px; }
+    }
+    @media (max-width: 880px) {
+      :root { --wrap: min(100% - 44px, 1440px); }
+      .assessment-hero, .method-head, .contact-section, .results-summary { grid-template-columns: 1fr; gap: 38px; }
+      .tool-preview { max-width: 680px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .facts article:nth-child(2) { border-right: 0; }
+      .facts article { border-bottom: 1px solid var(--line); }
+      .facts article:nth-child(3), .facts article:nth-child(4) { border-bottom: 0; }
+      .questionnaire-zone { padding-right: 22px; padding-left: 22px; }
+      .journey { grid-template-columns: 1fr 1fr; }
+      .journey-step:nth-child(2) { border-right: 0; }
+      .journey-step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .intro-cards, .priority-grid, .method-grid { grid-template-columns: 1fr 1fr; }
+      .intro-card:nth-child(2) { border-right: 0; }
+      .answer-scale { grid-template-columns: 1fr 1fr; }
+      .answer-option:last-child { grid-column: 1 / -1; }
+      .method-card { border-bottom: 1px solid var(--line-light); }
+      .method-card:nth-child(2) { border-right: 0; }
+      .method-card:nth-child(3), .method-card:nth-child(4) { border-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-bottom { display: grid; }
+    }
+    @media (max-width: 620px) {
+      :root { --wrap: calc(100% - 30px); }
+      .nav { min-height: 78px; gap: 14px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .brand-mark img { width: 31px; height: 31px; }
+      .brand-copy strong { font-size: 15px; }
+      .brand-copy small, .language, .nav-cta { display: none; }
+      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
+      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
+      .assessment-hero { padding-top: 52px; }
+      .assessment-hero h1 { font-size: clamp(42px, 13vw, 58px); }
+      .hero-lede { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .facts { grid-template-columns: 1fr; margin-bottom: 48px; }
+      .facts article { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .facts article:last-child { border-bottom: 0 !important; }
+      .questionnaire-zone { padding: 0 15px 54px; }
+      .journey { grid-template-columns: 1fr; }
+      .journey-step { min-height: 62px; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .journey-step:last-child { border-bottom: 0 !important; }
+      .panel-head { min-height: 66px; padding: 0 19px; }
+      .panel-head > span:first-child { display: none; }
+      .panel-body { padding: 28px 20px; }
+      .panel-body h2 { font-size: 35px; }
+      .intro-cards, .context-grid, .usage-grid, .priority-grid, .method-grid { grid-template-columns: 1fr; }
+      .intro-card { min-height: 0; }
+      .field.full { grid-column: auto; }
+      .panel-actions { flex-direction: column-reverse; }
+      .panel-actions .button { width: 100%; }
+      .progress-row { display: grid; }
+      .progress-track { width: 100%; }
+      .question-text { font-size: 27px; }
+      .answer-scale, .answer-extra { grid-template-columns: 1fr; }
+      .answer-option:last-child { grid-column: auto; }
+      .answer-option label { min-height: 73px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 18px; }
+      .profile-row { grid-template-columns: 28px 1fr 75px; padding: 16px 0; }
+      .profile-bar { grid-column: 2 / -1; width: 100%; margin-bottom: 4px; }
+      .profile-value { grid-column: 3; grid-row: 1; }
+      .result-section-head { align-items: start; flex-direction: column; }
+      .result-context dl { grid-template-columns: 1fr; }
+      .result-actions { display: grid; }
+      .method-section { padding: 54px 15px; }
+      .method-card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light) !important; }
+      .method-card:last-child { border-bottom: 0 !important; }
+      .contact-section { padding: 54px 15px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media print {
+      .site-header, .assessment-hero, .facts, .journey, .panel:not(#resultsPanel), .method-section, .contact-section, .site-footer, .result-actions { display: none !important; }
+      body { border: 0; background: #fff; }
+      .questionnaire-zone { padding: 0; }
+      .tool-shell { border: 0; }
+      #resultsPanel { display: block !important; }
+      .panel-head { padding: 0; }
+      .panel-body { padding: 24px 0; }
+      .profile-fill { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .progress-fill { transition: none; } }
+  </style>
 </head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-<body class="inner-page page-evaluer page-impact page-impact-refined" data-page="evaluer" data-root="../../">
-
-<a class="skip-link" href="#main-content">Aller au contenu principal</a>
-<nav aria-label="Navigation principale" class="nav glass">
-  <a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
-  <div class="nav-links" id="navLinks">
-    <a href="../../comprendre/">Comprendre</a>
-    <a href="../../usages-terrain/">Usages &amp; terrain</a>
-    <a aria-current="page" class="is-active" href="../../evaluer/">Évaluer</a>
-    <a href="../../risques-prevention/">Risques &amp; prévention</a>
-    <a href="../../droit-gouvernance/">Droit &amp; gouvernance</a>
-    <details class="nav-resources">
-      <summary>Ressources</summary>
-      <div class="nav-resources-menu">
-        <a href="../../ressources/modeles/">Panorama des modèles</a>
-        <a href="../../a-propos/">À propos et publications</a>
-        <a href="../../mentions-legales/">Mentions légales</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="https://www.iasantetravail.com/">
+        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.iasantetravail.com/comprendre/">Comprendre</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/">Usages &amp; terrain</a>
+        <a href="https://www.iasantetravail.com/evaluer/">Méthode</a>
+        <a href="#outil" aria-current="page">Questionnaire</a>
       </div>
-    </details>
-  </div>
-  <div class="nav-tools">
-    <button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
-    <div aria-label="Choix de la langue" class="lang-switch"><a class="active" href="" lang="fr">FR</a><a href="../../en/evaluate/" lang="en">EN</a></div>
-    <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button"><span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span></button>
-    <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-  </div>
-</nav>
+      <div class="nav-side">
+        <a class="language" href="https://www.iasantetravail.com/en/" aria-label="English version">EN</a>
+        <details class="menu-dropdown">
+          <summary>Menu</summary>
+          <div class="menu-panel">
+            <div class="menu-col"><span>Questionnaire</span><a href="#outil">Commencer</a><a href="#methode">Méthode et limites</a><a href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Déjà déployé&nbsp;? Suivre ↗</a></div>
+            <div class="menu-col"><span>Comprendre</span><a href="https://www.iasantetravail.com/evaluer/">Version longue et validation</a><a href="https://www.iasantetravail.com/comprendre/">Comprendre l’IA ↗</a><a href="https://www.iasantetravail.com/usages-terrain/">Préparer un déploiement ↗</a></div>
+            <div class="menu-col"><span>Le site</span><a href="https://www.iasantetravail.com/a-propos/">À propos ↗</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter sur LinkedIn ↗</a><a href="https://www.iasantetravail.com/confidentialite/">Confidentialité ↗</a></div>
+          </div>
+        </details>
+        <a class="nav-cta" href="#outil">Commencer <span>↓</span></a>
+      </div>
+    </nav>
+  </header>
 
-<main id="main-content">
-<section class="tool-intro">
-<div class="wrap">
-<nav aria-label="Navigation de la rubrique Évaluer" class="tool-breadcrumb">
-<a href="../">Vue d’ensemble</a><a href="../#capacites">Comprendre les benchmarks</a><a aria-current="page" href="index.html">Évaluation initiale</a><a href="suivi.html">Suivi après déploiement</a>
-</nav>
-<div class="intro-layout">
-<div class="intro-copy">
-<span class="eyebrow">Avant le déploiement · outil exploratoire</span>
-<h1>Évaluer l’impact d’un projet d’IA <em>sur le travail</em></h1>
-<p class="intro-lead">Repérez avant le déploiement les effets potentiels du projet à partir des six facteurs de risques psychosociaux du cadre Gollac et de trois mécanismes propres à l’IA.</p>
-<div class="intro-actions"><button class="btn btn-primary" id="heroStart" type="button">Commencer l’évaluation</button><a class="btn btn-ghost" href="#methodologie">Méthode et limites</a></div>
-<div aria-label="Informations pratiques" class="intro-facts"><span><strong>10 min</strong><small>durée indicative</small></span><span><strong>18</strong><small>questions</small></span><span><strong>PDF</strong><small>rapport archivable</small></span><span><strong>Local</strong><small>aucun nom demandé</small></span></div>
-<p class="intro-result-line">À la fin : un profil de vigilance, les signaux critiques et un plan d’action exportable en PDF.</p>
-</div>
-</div>
-<div class="status-note"><span aria-hidden="true">i</span><p><strong>Outil exploratoire non psychométrique.</strong> Il adapte les six facteurs de risques psychosociaux du rapport Gollac aux transformations du travail liées à l’IA et ajoute trois mécanismes spécifiques. Les résultats constituent un support de discussion et non une validation réglementaire, clinique ou juridique.</p></div>
-</div>
-</section>
+  <main id="contenu">
+    <section class="assessment-hero">
+      <div>
+        <p class="kicker line">Avant déploiement · Forme courte exploratoire</p>
+        <h1>Repérer les effets psychosociaux potentiels <em>avant le pilote.</em></h1>
+        <p class="hero-lede">Un parcours guidé en 18 items pour examiner le projet selon les six facteurs du rapport Gollac et trois dimensions liées à l’intelligence artificielle.</p>
+        <div class="hero-actions"><a class="button primary" href="#outil">Commencer l’évaluation <span>↓</span></a><a class="button secondary" href="https://www.iasantetravail.com/evaluer/">Comprendre la méthode</a></div>
+      </div>
+      <aside class="tool-preview" aria-label="Ce que produit le questionnaire">
+        <div class="preview-head"><strong>Résultat exploratoire</strong><span>Aucun score global</span></div>
+        <div class="preview-body"><span>À la fin du parcours</span><h2>Un profil descriptif, pas un verdict.</h2><p>Les neuf dimensions restent séparées afin de rendre visibles les mécanismes à discuter avant le pilote.</p><div class="preview-grid"><div><small>Sortie 01</small><strong>Neuf repères descriptifs</strong></div><div><small>Sortie 02</small><strong>Items élevés à examiner</strong></div><div><small>Sortie 03</small><strong>Pistes de discussion</strong></div></div></div>
+        <div class="preview-foot">Les résultats restent dans cette page. Aucun nom de personne, d’entreprise ou de fournisseur n’est demandé.</div>
+      </aside>
+    </section>
 
-<section aria-labelledby="assessmentTitle" class="assessment-shell" id="evaluation">
-<div class="wrap">
-<div class="assessment-card glass">
-<aside aria-label="Étapes du questionnaire" class="assessment-rail">
-<div><span class="rail-kicker">Parcours</span><strong>Évaluation initiale</strong></div>
-<ol>
-<li data-rail-step="intro"><span>01</span><div><b>Préparer</b><small>Consignes essentielles</small></div></li>
-<li data-rail-step="context"><span>02</span><div><b>Décrire</b><small>Contexte et usages</small></div></li>
-<li data-rail-step="questions"><span>03</span><div><b>Évaluer</b><small>Une question à la fois</small></div></li>
-<li data-rail-step="results"><span>04</span><div><b>Agir</b><small>Résultats et priorités</small></div></li>
-</ol>
-<a class="rail-switch" href="suivi.html"><b>Déjà déployé ?</b><span>Passer au suivi daté →</span></a>
-</aside>
+    <section class="facts" aria-label="Caractéristiques du questionnaire">
+      <article><span>18</span><strong>Questions</strong><small>Deux items pour chacune des neuf dimensions.</small></article>
+      <article><span>≈ 10 min</span><strong>Durée indicative</strong><small>À réaliser à partir du fonctionnement réellement prévu.</small></article>
+      <article><span>Local</span><strong>Aucun envoi</strong><small>Les réponses ne quittent pas le navigateur.</small></article>
+      <article><span>Exploratoire</span><strong>Non psychométrique</strong><small>Pas de diagnostic, de certification ou de seuil scientifique.</small></article>
+    </section>
 
-<div class="assessment-main">
-<div class="assessment-topbar"><div><span class="mini-kicker">Questionnaire guidé</span><h2 id="assessmentTitle">Évaluation initiale</h2></div><div class="privacy-pill"><span aria-hidden="true">●</span> Aucune donnée nominative demandée</div></div>
+    <section class="questionnaire-zone" id="outil">
+      <div class="journey" aria-label="Étapes du questionnaire">
+        <div class="journey-step active" data-step="0"><span>01 · Préparer</span><strong>Consignes essentielles</strong></div>
+        <div class="journey-step" data-step="1"><span>02 · Décrire</span><strong>Contexte et usage</strong></div>
+        <div class="journey-step" data-step="2"><span>03 · Évaluer</span><strong>Une question à la fois</strong></div>
+        <div class="journey-step" data-step="3"><span>04 · Interpréter</span><strong>Profil et points à discuter</strong></div>
+      </div>
 
-<div class="step active" data-step="intro" id="introStep">
-<div class="onboarding">
-<div class="onboarding-head"><span class="step-index">Avant de commencer</span><h3>Répondez sur l’usage réellement prévu</h3><p>Retenez la population la plus exposée et le fonctionnement le plus contraignant. Ne saisissez aucun nom d’entreprise, de personne ou de fournisseur.</p></div>
-<div class="onboarding-points">
-<article><span>01</span><div><strong>Situation réelle</strong><p>Ne vous basez pas uniquement sur la démonstration du fournisseur.</p></div></article>
-<article><span>02</span><div><strong>Aucune donnée nominative</strong><p>Le rapport doit rester non identifiable.</p></div></article>
-</div>
-<div class="onboarding-actions"><button class="btn btn-primary" id="beginContext" type="button">Décrire le projet</button><a href="suivi.html">Le système est déjà déployé ?</a></div>
-</div>
-</div>
+      <div class="tool-shell">
+        <section class="panel active" id="introPanel" aria-labelledby="introTitle">
+          <div class="panel-head"><span>Évaluation initiale</span><span class="privacy-state">Aucune donnée nominative</span></div>
+          <div class="panel-body">
+            <h2 id="introTitle">Répondez sur l’usage réellement prévu.</h2>
+            <p class="panel-intro">Retenez la population la plus exposée et la situation la plus exigeante raisonnablement envisageable. Ne vous fondez pas uniquement sur la démonstration du fournisseur.</p>
+            <div class="intro-cards">
+              <article class="intro-card"><span>01</span><strong>Un usage précis</strong><p>Choisissez une tâche, une population et une organisation clairement définies.</p></article>
+              <article class="intro-card"><span>02</span><strong>L’information manquante reste visible</strong><p>Choisissez « NE » plutôt qu’une réponse intermédiaire si les éléments sont insuffisants.</p></article>
+              <article class="intro-card"><span>03</span><strong>Une discussion collective</strong><p>Confrontez ensuite le résultat aux points de vue des personnes concernées.</p></article>
+            </div>
+            <div class="method-warning"><strong>Statut de l’outil</strong><p>Cette forme courte est empirique et non validée scientifiquement. Elle ne constitue ni un diagnostic, ni une preuve de conformité, ni une autorisation de déployer.</p></div>
+            <div class="panel-actions end"><button class="button primary" id="startButton" type="button">Décrire le projet <span>→</span></button></div>
+          </div>
+        </section>
 
-<form class="step" data-step="context" id="contextStep" novalidate="">
-<div class="step-heading"><div><span class="step-index">Étape 1</span><h3>Contexte du déploiement</h3></div><p>Ces catégories servent uniquement à adapter les questions et à contextualiser le rapport.</p></div>
-<div class="form-grid">
-<fieldset class="field-card"><legend>Secteur principal</legend><select id="sector" required=""><option value="">Choisir une catégorie</option><option value="sante">Santé, médico-social ou prévention</option><option value="industrie">Industrie, logistique ou construction</option><option value="services">Services, conseil ou fonctions support</option><option value="public">Administration ou service public</option><option value="commerce">Commerce, hôtellerie ou relation client</option><option value="education">Éducation, recherche ou formation</option><option value="autre">Autre secteur</option></select></fieldset>
-<fieldset class="field-card"><legend>Taille approximative</legend><select id="orgSize" required=""><option value="">Choisir une tranche</option><option value="1-10">1 à 10 travailleurs</option><option value="11-49">11 à 49</option><option value="50-249">50 à 249</option><option value="250-999">250 à 999</option><option value="1000+">1 000 ou plus</option></select></fieldset>
-<fieldset class="field-card"><legend>Stade du projet</legend><select id="projectStage" required=""><option value="">Choisir un stade</option><option value="idee">Cadrage ou choix de solution</option><option value="pilot">Pilote limité</option><option value="rollout">Déploiement en cours</option><option value="deployed">Déjà généralisé</option></select></fieldset>
-<fieldset class="field-card"><legend>Population directement concernée</legend><select id="population" required=""><option value="">Choisir une tranche</option><option value="1-10">1 à 10 personnes</option><option value="11-50">11 à 50</option><option value="51-250">51 à 250</option><option value="251+">Plus de 250</option></select></fieldset>
-<fieldset class="field-card"><legend>Date de l’évaluation</legend><input aria-describedby="assessmentDateHelp" id="assessmentDate" required="" type="date"/><small id="assessmentDateHelp">Cette date figurera dans le rapport et dans le nom de fichier suggéré pour l’archivage.</small></fieldset>
-</div>
-<fieldset class="use-fieldset"><legend>À quoi servira l’IA ? <small>Plusieurs choix possibles</small></legend><div class="use-grid" id="useGrid">
-<label class="use-option"><input name="useType" type="checkbox" value="genai"/><span><b>Assistant génératif</b><small>Rédaction, synthèse, recherche, documentation</small></span></label>
-<label class="use-option"><input name="useType" type="checkbox" value="management"/><span><b>Organisation du travail</b><small>Planification, priorisation, attribution des tâches</small></span></label>
-<label class="use-option"><input name="useType" type="checkbox" value="rh"/><span><b>Décisions RH</b><small>Recrutement, évaluation, mobilité, rémunération</small></span></label>
-<label class="use-option"><input name="useType" type="checkbox" value="monitoring"/><span><b>Suivi ou contrôle</b><small>Productivité, activité, présence, comportement</small></span></label>
-<label class="use-option"><input name="useType" type="checkbox" value="health"/><span><b>Santé ou sécurité</b><small>Aide à la décision, triage, détection ou prévention</small></span></label>
-<label class="use-option"><input name="useType" type="checkbox" value="physical"/><span><b>Système physique</b><small>Robot, machine, véhicule ou procédé automatisé</small></span></label>
-</div></fieldset>
-<div class="inline-error" id="contextError" role="alert"></div>
-<div class="step-actions"><button class="btn btn-ghost" id="backIntro" type="button">Retour</button><button class="btn btn-primary" type="submit">Construire le questionnaire</button></div>
-</form>
+        <section class="panel" id="contextPanel" aria-labelledby="contextTitle" aria-hidden="true">
+          <div class="panel-head"><span>Étape 02</span><span class="privacy-state">Contexte non identifiable</span></div>
+          <form class="panel-body" id="contextForm" novalidate>
+            <h2 id="contextTitle">Décrivez le projet sans le nommer.</h2>
+            <p class="panel-intro">Ces informations contextualisent le profil. N’indiquez aucun nom d’entreprise, de personne, de logiciel ou de fournisseur.</p>
+            <div class="context-grid">
+              <div class="field"><label for="sector">Secteur principal</label><select id="sector" name="sector" required><option value="">Choisir une catégorie</option><option>Santé, médico-social ou prévention</option><option>Industrie, logistique ou construction</option><option>Services, conseil ou fonctions support</option><option>Administration ou service public</option><option>Commerce, hôtellerie ou relation client</option><option>Éducation, recherche ou formation</option><option>Autre secteur</option></select></div>
+              <div class="field"><label for="size">Taille approximative de l’organisation</label><select id="size" name="size" required><option value="">Choisir une tranche</option><option>1 à 10 travailleurs</option><option>11 à 49</option><option>50 à 249</option><option>250 à 999</option><option>1 000 ou plus</option></select></div>
+              <div class="field"><label for="stage">Stade du projet</label><select id="stage" name="stage" required><option value="">Choisir un stade</option><option>Cadrage ou choix de solution</option><option>Pilote en préparation</option><option>Pilote commencé récemment</option><option>Déploiement en cours</option></select></div>
+              <div class="field"><label for="population">Population directement concernée</label><select id="population" name="population" required><option value="">Choisir une tranche</option><option>1 à 10 personnes</option><option>11 à 50</option><option>51 à 250</option><option>Plus de 250</option></select></div>
+              <div class="field"><label for="assessmentDate">Date de l’évaluation</label><input id="assessmentDate" name="assessmentDate" type="date" required><small>Cette date figurera dans le rapport.</small></div>
+              <div class="field"><label for="nature">Nature prévue de l’usage</label><select id="nature" name="nature" required><option value="">Choisir</option><option>Volontaire</option><option>Recommandé</option><option>Attendu</option><option>Obligatoire</option><option>Non défini</option></select></div>
+              <div class="field full"><label for="task">Tâche ou processus concerné</label><textarea id="task" name="task" required placeholder="Ex. préparer un compte rendu, classer des demandes, proposer un planning…"></textarea><small>Décrivez la fonction, pas le nom du produit.</small></div>
+              <fieldset class="field full"><legend>À quoi servira l’IA&nbsp;? Plusieurs choix possibles.</legend><div class="usage-grid">
+                <div class="check-option"><input id="use1" name="uses" type="checkbox" value="Assistant génératif"><label for="use1">Assistant génératif</label></div>
+                <div class="check-option"><input id="use2" name="uses" type="checkbox" value="Organisation du travail"><label for="use2">Organisation du travail</label></div>
+                <div class="check-option"><input id="use3" name="uses" type="checkbox" value="Décisions RH"><label for="use3">Décisions RH</label></div>
+                <div class="check-option"><input id="use4" name="uses" type="checkbox" value="Suivi ou contrôle"><label for="use4">Suivi ou contrôle</label></div>
+                <div class="check-option"><input id="use5" name="uses" type="checkbox" value="Santé ou sécurité"><label for="use5">Santé ou sécurité</label></div>
+                <div class="check-option"><input id="use6" name="uses" type="checkbox" value="Système physique"><label for="use6">Système physique</label></div>
+              </div><p class="form-error" id="contextError" role="alert"></p></fieldset>
+            </div>
+            <div class="panel-actions"><button class="button secondary" id="contextBack" type="button">← Retour</button><button class="button primary" type="submit">Construire le questionnaire <span>→</span></button></div>
+          </form>
+        </section>
 
-<section aria-live="polite" class="step" data-step="questions" id="questionStep">
-<div class="question-progress-wrap"><div class="progress-meta"><span id="progressLabel">Question 1</span><span id="adaptiveLabel"></span></div><div class="progress-track"><span id="progressBar"></span></div></div>
-<div class="question-shell" id="questionShell"></div>
-<div class="question-nav"><button class="btn btn-ghost" id="prevQuestion" type="button">Précédente</button><button class="btn btn-primary" disabled="" id="nextQuestion" type="button">Suivante</button></div>
-</section>
+        <section class="panel" id="questionPanel" aria-labelledby="questionText" aria-hidden="true">
+          <div class="panel-head"><span>Étape 03</span><span class="privacy-state">Réponses conservées localement</span></div>
+          <div class="panel-body question-wrap">
+            <div class="progress-row"><span id="progressLabel">Question 1 sur 18</span><div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div></div>
+            <div class="question-dimension" id="questionDimension"></div>
+            <h2 class="question-text" id="questionText"></h2>
+            <p class="question-help">Répondez en pensant à la situation la plus exigeante raisonnablement prévisible pour la population concernée.</p>
+            <fieldset style="margin:0;padding:0;border:0"><legend class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Choisir une réponse</legend>
+              <div class="answer-scale" id="answerScale">
+                <div class="answer-option"><input type="radio" name="answer" id="answer0" value="0"><label for="answer0"><b>0</b><span>Pas du tout vrai</span></label></div>
+                <div class="answer-option"><input type="radio" name="answer" id="answer1" value="1"><label for="answer1"><b>1</b><span>Un peu vrai</span></label></div>
+                <div class="answer-option"><input type="radio" name="answer" id="answer2" value="2"><label for="answer2"><b>2</b><span>Modérément vrai</span></label></div>
+                <div class="answer-option"><input type="radio" name="answer" id="answer3" value="3"><label for="answer3"><b>3</b><span>En grande partie vrai</span></label></div>
+                <div class="answer-option"><input type="radio" name="answer" id="answer4" value="4"><label for="answer4"><b>4</b><span>Tout à fait vrai</span></label></div>
+              </div>
+              <div class="answer-extra"><div class="answer-option"><input type="radio" name="answer" id="answerNE" value="NE"><label for="answerNE"><b>NE</b><span>Information insuffisante</span></label></div><div class="answer-option"><input type="radio" name="answer" id="answerNA" value="NA"><label for="answerNA"><b>NA</b><span>Non applicable</span></label></div></div>
+            </fieldset>
+            <p class="answer-note">Un chiffre élevé décrit une situation moins favorable. NE et NA ne sont pas transformés en valeur numérique.</p>
+            <div class="panel-actions"><button class="button secondary" id="questionBack" type="button">← Précédente</button><button class="button primary" id="questionNext" type="button" disabled>Suivante <span>→</span></button></div>
+          </div>
+        </section>
 
-<section aria-live="polite" class="step results-step" data-step="results" id="resultsStep">
-<div class="result-header"><div><span class="mini-kicker">Résultat exploratoire</span><h2>Profil d’impact du projet</h2><p id="resultSummary"></p></div><div aria-label="Score global de risque" class="score-orbit" id="scoreOrbit"><div><strong id="overallScore">0</strong><span>/100</span><small id="overallLevel">—</small></div></div></div>
-<div class="critical-alerts" hidden="" id="criticalAlerts"></div>
-<div class="result-grid">
-<article class="chart-card glass-soft"><div class="card-head"><div><span class="mini-kicker">Cartographie</span><h3>Neuf axes de lecture</h3></div><button aria-expanded="false" class="icon-btn" id="toggleChartTable" type="button">Voir les valeurs</button></div><div aria-label="Graphique radar des dimensions de risque" class="radar-wrap" id="radarWrap"></div><div class="dimension-table" hidden="" id="dimensionTable"></div></article>
-<article class="priority-card glass-soft"><span class="mini-kicker">Priorités</span><h3>Points à traiter en premier</h3><div class="priority-list" id="topPriorities"></div></article>
-</div>
-<div class="report-toolbar"><div><span class="mini-kicker">Rapport généré</span><h3>Plan de prévention personnalisé</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Télécharger en HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Données JSON</button><button class="btn btn-ghost" id="printSimple" type="button">Imprimer</button><button class="btn btn-primary" id="printReport" type="button">Télécharger le PDF</button></div></div>
-<article class="generated-report" id="generatedReport"></article>
-<details class="result-extras"><summary>Archivage, historique et contribution volontaire</summary><div class="result-extras-body">
-<section aria-labelledby="archiveTitle" class="archive-section glass-soft"><div><span class="mini-kicker">Archivage</span><h3 id="archiveTitle">Conserver une trace datée</h3><p>Le bouton génère directement un rapport A4 et le télécharge sur votre appareil.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Créer le PDF maintenant</button></section>
-<section aria-labelledby="emailContributionTitle" class="email-contribution glass-soft"><div><span class="mini-kicker">Contribution volontaire</span><h3 id="emailContributionTitle">Faire émerger des tendances à partir de résultats anonymes</h3><p>Après avoir vérifié que le PDF ne contient aucun élément identifiable, vous pouvez le transmettre à <a href="mailto:santetravailia@gmail.com">santetravailia@gmail.com</a>.</p><p class="microcopy">Aucun envoi automatique n’est déclenché par le site.</p></div><a class="btn btn-secondary" href="mailto:santetravailia@gmail.com?subject=Résultat%20anonyme%20-%20évaluation%20initiale%20IA%20et%20travail" id="emailAnonymousResult">Préparer l’e-mail</a></section>
-<section aria-labelledby="aggregateTitle" class="aggregate-section glass-soft"><div class="aggregate-head"><div><span class="mini-kicker">Statistiques anonymes</span><h3 id="aggregateTitle">Comparer sans identifier</h3></div><span class="aggregate-status" id="aggregateStatus">Données locales uniquement</span></div><div class="aggregate-grid" id="localAggregate"></div><div class="contribution-box"><label class="consent-line"><input id="aggregateConsent" type="checkbox"/><span>Je consens à transmettre un résumé anonyme de cette évaluation.</span></label><button class="btn btn-secondary" disabled="" id="contributeStats" type="button">Contribuer aux statistiques collectives</button><p class="microcopy" id="contributionMessage">L’envoi collectif n’est actif que si une adresse de collecte est configurée.</p></div><div class="global-aggregate" hidden="" id="globalAggregate"></div></section>
-</div></details>
-<div class="result-actions-bottom"><a class="btn btn-secondary" href="suivi.html">Passer au suivi daté</a><button class="btn btn-ghost" id="restartAssessment" type="button">Nouvelle évaluation</button></div>
-</section>
-</div>
-</div>
-</div>
-</section>
+        <section class="panel" id="resultsPanel" aria-labelledby="resultsTitle" aria-hidden="true">
+          <div class="panel-head"><span>Résultat exploratoire</span><span class="privacy-state">Rapport généré localement</span></div>
+          <div class="panel-body results-body">
+            <div class="results-summary"><div class="results-title"><h2 id="resultsTitle">Profil descriptif du projet.</h2><p>Les résultats ordonnent les informations renseignées. Ils ne prouvent ni la présence d’un risque, ni l’absence de risque, et ne permettent pas de comparer des personnes ou des organisations.</p></div><div class="result-context" id="resultContext"></div></div>
+            <div class="no-global-score"><strong>Pourquoi aucun score global&nbsp;?</strong><p>Cette forme courte n’est pas validée psychométriquement et aucun seuil scientifique n’a été établi. Une moyenne unique masquerait les mécanismes concrets et les informations manquantes.</p></div>
+            <section class="result-section"><div class="result-section-head"><h3>Neuf dimensions séparées</h3><span>Moyenne descriptive · 0 à 4</span></div><div class="profile-list" id="profileList"></div></section>
+            <section class="result-section"><div class="result-section-head"><h3>Dimensions à discuter en premier</h3><span>Classement relatif · pas un seuil</span></div><div class="priority-grid" id="priorityGrid"></div></section>
+            <section class="result-section"><div class="result-section-head"><h3>Items cotés 4</h3><span>À examiner indépendamment des moyennes</span></div><ul class="sentinel-list" id="sentinelList"></ul></section>
+            <div class="result-actions"><button class="button primary" id="downloadReport" type="button">Télécharger le rapport HTML <span>↓</span></button><button class="button secondary" id="printReport" type="button">Imprimer / enregistrer en PDF</button><button class="button secondary" id="restartButton" type="button">Nouvelle évaluation</button></div>
+          </div>
+        </section>
+      </div>
+    </section>
 
-<section class="reference-section" id="methodologie">
-<div class="wrap">
-<div class="reference-head"><span class="eyebrow">Méthode, limites et sources</span><h2>Un support de discussion, pas un verdict automatique</h2></div>
-<div class="reference-grid">
-<article><span>01</span><h3>Six facteurs Gollac</h3><p>Intensité, exigences émotionnelles, autonomie, rapports sociaux, conflits de valeurs et insécurité de la situation de travail.</p></article>
-<article><span>02</span><h3>Trois axes propres à l’IA</h3><p>Opacité et contestabilité, charge cognitive de supervision et érosion des compétences.</p></article>
-<article><span>03</span><h3>Associer la santé au travail en amont</h3><p>Le SPST et le médecin du travail peuvent aider à analyser la tâche, les marges de manœuvre, la charge et les critères d’arrêt.</p></article>
-</div>
-<details class="sources-details"><summary>Voir les références et les limites méthodologiques</summary><div><p>La grille adapte le cadre Gollac aux transformations du travail liées à l’IA. Les trois axes spécifiques sont issus d’une construction empirique et experte. Cette adaptation reste révisable et n’est pas validée psychométriquement.</p><p><a href="https://www.inrs.fr/risques/psychosociaux/facteurs-risques.html" rel="noopener noreferrer" target="_blank">INRS · facteurs de RPS</a> · <a href="https://healthy-workplaces.osha.europa.eu/en/publications/worker-management-through-ai-implications-occupational-safety-and-health" rel="noopener noreferrer" target="_blank">EU-OSHA · gestion algorithmique</a> · <a href="https://www.cnil.fr/fr/thematiques/travail-et-donnees-personnelles" rel="noopener noreferrer" target="_blank">CNIL · travail et données</a></p></div></details>
-</div>
-</section>
-</main>
+    <section class="method-section" id="methode">
+      <div class="method-head"><div><p class="kicker">Méthode et limites</p><h2>Un support de discussion, pas une mesure scientifique.</h2></div><p>La forme courte retient deux items par dimension à partir de la version longue de développement. Cette réduction facilite un premier repérage, mais diminue aussi la couverture de chaque dimension.</p></div>
+      <div class="method-grid"><article class="method-card"><span>01</span><strong>Neuf dimensions visibles séparément</strong><p>Six facteurs de Gollac et trois mécanismes exploratoires propres à l’IA.</p></article><article class="method-card"><span>02</span><strong>Aucun diagnostic</strong><p>Le résultat ne remplace ni l’analyse du travail ni l’expertise clinique ou juridique.</p></article><article class="method-card"><span>03</span><strong>Aucun classement individuel</strong><p>Le questionnaire porte sur un projet et une situation de travail, jamais sur un salarié.</p></article><article class="method-card"><span>04</span><strong>Aucun seuil de décision</strong><p>La poursuite ou l’arrêt d’un projet relève d’une discussion documentée, pas d’une note automatique.</p></article></div>
+      <div class="method-links"><a class="button light" href="https://www.iasantetravail.com/evaluer/">Lire la présentation méthodologique <span>→</span></a><a class="button secondary" style="color:var(--cream);border-color:var(--line-light)" href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Le système est déjà déployé&nbsp;?</a></div>
+    </section>
 
-<section class="tool-author" aria-label="Auteur du contenu">
-  <div class="wrap"><p>Outil conçu par le <a href="../../a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p></div>
-</section>
+    <section class="contact-section"><div><p class="kicker">Utilisation accompagnée</p><h2>Vous souhaitez employer l’outil dans une organisation&nbsp;?</h2></div><div class="contact-copy"><p>Employeurs, RH, CSE, SPSTI et équipes de recherche peuvent prendre contact pour discuter du périmètre, des participants et des conditions d’utilisation de la version courte ou longue.</p><a class="button primary" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter le Dr Charles Broutin <span>↗</span></a></div></section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="footer-grid"><div class="footer-brand"><strong>IA &amp; Santé au Travail</strong><p>Un questionnaire exploratoire pour préparer la discussion sur les effets d’un projet d’IA dans le travail.</p></div><div class="footer-col"><span>Questionnaire</span><a href="#outil">Commencer</a><a href="#methode">Méthode</a><a href="https://www.iasantetravail.com/evaluer/">Présentation méthodologique</a></div><div class="footer-col"><span>Parcours</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a><a href="https://www.iasantetravail.com/usages-terrain/">Usages &amp; terrain</a><a href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Suivre après</a></div><div class="footer-col"><span>Contact</span><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos</a><a href="https://www.iasantetravail.com/confidentialite/">Confidentialité</a></div><div class="footer-bottom"><span>Questionnaire conçu par le Dr Charles Broutin, médecin du travail, référent IA de la SFST.</span><span>© 2026 IA &amp; Santé au Travail · Outil exploratoire non psychométrique.</span></div></div>
+  </footer>
 
-<footer><div class="wrap"><div class="foot-grid">
-  <div class="foot-brand"><a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a><p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
-  <div><h4>Évaluer</h4><ul><li><a href="../../evaluer/">Vue d’ensemble</a></li><li><a href="../../evaluer/impact/">Évaluation avant déploiement</a></li><li><a href="../../evaluer/impact/suivi.html">Suivi après déploiement</a></li><li><a href="../../evaluer/#capacites">Comprendre les benchmarks</a></li></ul></div>
-  <div><h4>Parcours</h4><ul><li><a href="../../comprendre/">Comprendre</a></li><li><a href="../../usages-terrain/">Usages &amp; terrain</a></li><li><a href="../../risques-prevention/">Risques &amp; prévention</a></li><li><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
-  <div><h4>Contact</h4><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li><li><a href="../../confidentialite/">Confidentialité</a></li></ul></div>
-</div><div class="foot-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span><a href="../../mentions-legales/">Mentions légales</a> · <a href="../../confidentialite/">Confidentialité</a></span></div></div></footer>
-<button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
-<dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch"><div class="search-shell"><div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div><input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. questionnaire IA, Gollac, benchmark…" type="search"/><div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div></div></dialog>
+  <script>
+    const dimensions = {
+      intensity: { label: "Intensité et temps de travail", action: "Quantifier le temps de vérification et vérifier que les objectifs, délais et ressources restent compatibles." },
+      emotion: { label: "Exigences émotionnelles", action: "Identifier les situations humaines difficiles que l’outil peut créer ou concentrer et prévoir les moyens de soutien." },
+      autonomy: { label: "Autonomie et décision", action: "Formaliser les marges de manœuvre, le droit de s’écarter d’une sortie et les conditions de suspension." },
+      relations: { label: "Rapports sociaux et reconnaissance", action: "Clarifier les responsabilités et rendre visible le travail humain de raisonnement, de contrôle et de correction." },
+      values: { label: "Conflits de valeurs", action: "Définir les exigences de qualité et de sécurité qui priment sur les gains de vitesse ou de productivité." },
+      insecurity: { label: "Insécurité de la situation", action: "Expliquer les changements attendus sur les tâches et les emplois, ainsi que les critères utilisés pour les décisions RH." },
+      opacity: { label: "Opacité et contestabilité", action: "Documenter les limites du système et garantir une révision humaine rapide, traçable et dotée d’un pouvoir réel." },
+      supervision: { label: "Charge cognitive de supervision", action: "Tester le temps et l’effort nécessaires pour détecter les erreurs plausibles, les biais et les omissions." },
+      skills: { label: "Érosion des compétences", action: "Préserver la pratique autonome, les tâches formatrices et la capacité de travailler lorsque le système est indisponible." }
+    };
 
-<noscript><div class="noscript">JavaScript est nécessaire pour utiliser cette évaluation interactive.</div></noscript>
-<script src="assets/js/impact-config.js?v=0.7.4"></script>
-<script src="assets/js/impact-assessment.js?v=0.7.4"></script>
-<script defer src="../../assets/js/search-index.js?v=0.7.4"></script>
-<script defer src="../../assets/js/search-index-evaluer.js?v=1.0"></script>
-<script defer src="../../assets/js/assessment-pdf-v3.js?v=3.2.0"></script>
-<script defer src="../../assets/js/site.js?v=0.7.4"></script>
+    const questions = [
+      { id: "G01", dimension: "intensity", text: "Le déploiement pourrait conduire les travailleurs à traiter davantage de dossiers, de demandes ou de productions sans augmentation correspondante du temps ou des moyens." },
+      { id: "G03", dimension: "intensity", text: "Le temps nécessaire pour formuler les consignes, vérifier les résultats, corriger les erreurs et documenter l’usage pourrait empiéter sur les pauses ou les horaires prévus." },
+      { id: "G04", dimension: "emotion", text: "Les erreurs de l’IA ou les décisions influencées par celle-ci pourraient exposer les travailleurs à davantage de plaintes, de contestations ou de situations humaines difficiles." },
+      { id: "G06", dimension: "emotion", text: "La possibilité qu’une erreur de l’IA affecte un usager, un patient, un client ou un collègue pourrait devenir une source importante de tension." },
+      { id: "G07", dimension: "autonomy", text: "Les procédures, scores ou recommandations de l’IA pourraient imposer une manière de travailler au détriment du jugement professionnel." },
+      { id: "G09", dimension: "autonomy", text: "Corriger, signaler, refuser ou suspendre une recommandation de l’IA pourrait entraîner une pénalisation explicite ou implicite." },
+      { id: "G11", dimension: "relations", text: "En cas d’erreur liée à l’IA, la répartition des responsabilités entre l’utilisateur, l’encadrement, les fonctions support et le fournisseur pourrait rester insuffisamment claire." },
+      { id: "G12", dimension: "relations", text: "Les résultats produits avec l’IA pourraient réduire la reconnaissance de l’expertise, du raisonnement ou du travail de vérification des salariés." },
+      { id: "G13", dimension: "values", text: "Les gains attendus de vitesse ou de productivité pourraient passer avant la qualité, la sécurité ou le temps nécessaire pour bien faire le travail." },
+      { id: "G14", dimension: "values", text: "Les travailleurs pourraient être encouragés à suivre une sortie de l’IA contraire aux règles du métier, au jugement éthique ou à l’intérêt de la personne concernée." },
+      { id: "G16", dimension: "insecurity", text: "Les changements de tâches, de rôles ou d’organisation liés à l’IA pourraient être annoncés de façon incertaine, changeante ou contradictoire." },
+      { id: "G18", dimension: "insecurity", text: "Des scores, indicateurs ou analyses produits par l’IA pourraient influencer l’évaluation professionnelle ou des décisions d’emploi selon des critères peu prévisibles." },
+      { id: "AI01", dimension: "opacity", text: "Les utilisateurs pourraient ne pas comprendre suffisamment quelles données, règles ou critères le système utilise pour produire ses recommandations ou ses résultats." },
+      { id: "AI03", dimension: "opacity", text: "Une personne affectée par une sortie de l’IA pourrait ne pas disposer d’une révision humaine rapide, traçable et réellement capable de modifier la décision." },
+      { id: "AI04", dimension: "supervision", text: "La formulation des consignes, la vérification, la correction et la documentation des résultats pourraient créer une charge de travail importante." },
+      { id: "AI05", dimension: "supervision", text: "Repérer des erreurs plausibles, des biais ou des omissions dans les résultats de l’IA pourrait exiger une vigilance mentale soutenue." },
+      { id: "AI07", dimension: "skills", text: "L’automatisation pourrait réduire les occasions de pratiquer les raisonnements, gestes ou décisions essentiels au métier." },
+      { id: "AI09", dimension: "skills", text: "Le projet pourrait créer une dépendance telle que le travail ne puisse plus être réalisé correctement et en sécurité lorsque l’IA est indisponible ou erronée." }
+    ];
+
+    const state = { context: {}, answers: {}, current: 0 };
+    const panels = ["introPanel", "contextPanel", "questionPanel", "resultsPanel"];
+    const answerInputs = [...document.querySelectorAll('input[name="answer"]')];
+
+    function showPanel(id, step) {
+      panels.forEach(panelId => {
+        const panel = document.getElementById(panelId);
+        const active = panelId === id;
+        panel.classList.toggle("active", active);
+        panel.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      document.querySelectorAll(".journey-step").forEach((item, index) => {
+        item.classList.toggle("active", index === step);
+        item.classList.toggle("done", index < step);
+      });
+      document.getElementById("outil").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
+    }
+
+    function renderQuestion() {
+      const question = questions[state.current];
+      document.getElementById("progressLabel").textContent = `Question ${state.current + 1} sur ${questions.length}`;
+      document.getElementById("progressFill").style.width = `${((state.current + 1) / questions.length) * 100}%`;
+      document.getElementById("questionDimension").textContent = `${question.id} · ${dimensions[question.dimension].label}`;
+      document.getElementById("questionText").textContent = question.text;
+      answerInputs.forEach(input => { input.checked = state.answers[question.id] === input.value; });
+      const hasAnswer = Object.prototype.hasOwnProperty.call(state.answers, question.id);
+      document.getElementById("questionNext").disabled = !hasAnswer;
+      document.getElementById("questionNext").innerHTML = state.current === questions.length - 1 ? 'Voir le profil <span>→</span>' : 'Suivante <span>→</span>';
+      document.getElementById("questionBack").textContent = state.current === 0 ? "← Contexte" : "← Précédente";
+    }
+
+    function collectDimensionResults() {
+      return Object.entries(dimensions).map(([key, info], index) => {
+        const related = questions.filter(question => question.dimension === key);
+        const numeric = related.map(question => state.answers[question.id]).filter(value => ["0", "1", "2", "3", "4"].includes(value)).map(Number);
+        return { key, index, ...info, mean: numeric.length === related.length ? numeric.reduce((sum, value) => sum + value, 0) / numeric.length : null, completed: numeric.length, total: related.length };
+      });
+    }
+
+    function renderResults() {
+      const results = collectDimensionResults();
+      const contextPairs = [
+        ["Date", state.context.assessmentDate], ["Secteur", state.context.sector], ["Stade", state.context.stage], ["Population", state.context.population], ["Nature", state.context.nature], ["Usages", state.context.uses.join(", ")]
+      ];
+      document.getElementById("resultContext").innerHTML = `<span>Contexte de l’évaluation</span><dl>${contextPairs.map(([label, value]) => `<div><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>`).join("")}</dl>`;
+
+      document.getElementById("profileList").innerHTML = results.map(result => {
+        const width = result.mean === null ? 0 : (result.mean / 4) * 100;
+        const value = result.mean === null ? "Non calculée" : `${result.mean.toFixed(1)} / 4`;
+        return `<div class="profile-row"><span>${String(result.index + 1).padStart(2, "0")}</span><strong>${escapeHTML(result.label)}</strong><div class="profile-bar"><div class="profile-fill" style="width:${width}%"></div></div><div class="profile-value">${value}<small>${result.completed}/${result.total} items cotés</small></div></div>`;
+      }).join("");
+
+      const ranked = results.filter(result => result.mean !== null).sort((a, b) => b.mean - a.mean).slice(0, 3);
+      document.getElementById("priorityGrid").innerHTML = ranked.length ? ranked.map((result, index) => `<article class="priority-card"><span>0${index + 1} · ${result.mean.toFixed(1)} / 4</span><strong>${escapeHTML(result.label)}</strong><p>${escapeHTML(result.action)}</p></article>`).join("") : '<div class="empty-state" style="grid-column:1/-1">Aucune dimension ne peut être calculée : les réponses numériques sont insuffisantes. Examinez les réponses NE et NA avec les acteurs concernés.</div>';
+
+      const sentinels = questions.filter(question => state.answers[question.id] === "4");
+      document.getElementById("sentinelList").innerHTML = sentinels.length ? sentinels.map(question => `<li><b>${question.id}</b><span>${escapeHTML(question.text)}</span></li>`).join("") : '<li class="empty-state" style="display:block">Aucun item n’a été coté 4. Cela ne permet pas de conclure à l’absence de risque ; les réponses NE, NA et les dimensions élevées restent à discuter.</li>';
+    }
+
+    function buildReportHTML() {
+      const results = collectDimensionResults();
+      const sentinels = questions.filter(question => state.answers[question.id] === "4");
+      const rows = results.map(result => `<tr><td>${escapeHTML(result.label)}</td><td>${result.mean === null ? "Non calculée" : result.mean.toFixed(1) + " / 4"}</td><td>${result.completed}/${result.total}</td><td>${escapeHTML(result.action)}</td></tr>`).join("");
+      const items = sentinels.length ? `<ul>${sentinels.map(question => `<li><strong>${question.id}</strong> — ${escapeHTML(question.text)}</li>`).join("")}</ul>` : "<p>Aucun item coté 4.</p>";
+      return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Rapport exploratoire IA</title><style>body{font-family:Arial,sans-serif;max-width:1000px;margin:40px auto;color:#17140f;line-height:1.5}h1{font-size:38px}h2{margin-top:35px}aside{padding:18px;border-left:4px solid #a84e1f;background:#f4ebda}dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}dt{color:#625b52;font-size:12px}dd{margin:3px 0 0;font-weight:bold}table{width:100%;border-collapse:collapse;margin-top:15px}th,td{padding:12px;border:1px solid #c9c2b7;text-align:left;vertical-align:top}th{background:#f4ebda}small{color:#625b52}@media print{body{margin:0}}</style></head><body><p>IA &amp; Santé au Travail · Forme courte avant déploiement</p><h1>Profil descriptif du projet</h1><aside><strong>Outil exploratoire non psychométrique.</strong> Aucun score total ni seuil scientifique. Ce rapport soutient l’analyse du travail et la discussion collective ; il ne constitue ni un diagnostic ni une preuve de conformité.</aside><h2>Contexte</h2><dl><div><dt>Date</dt><dd>${escapeHTML(state.context.assessmentDate)}</dd></div><div><dt>Secteur</dt><dd>${escapeHTML(state.context.sector)}</dd></div><div><dt>Stade</dt><dd>${escapeHTML(state.context.stage)}</dd></div><div><dt>Population</dt><dd>${escapeHTML(state.context.population)}</dd></div><div><dt>Nature</dt><dd>${escapeHTML(state.context.nature)}</dd></div><div><dt>Usages</dt><dd>${escapeHTML(state.context.uses.join(", "))}</dd></div><div style="grid-column:1/-1"><dt>Tâche</dt><dd>${escapeHTML(state.context.task)}</dd></div></dl><h2>Neuf dimensions séparées</h2><table><thead><tr><th>Dimension</th><th>Repère descriptif</th><th>Items cotés</th><th>Piste de discussion</th></tr></thead><tbody>${rows}</tbody></table><h2>Items cotés 4</h2>${items}<p><small>Questionnaire conçu par le Dr Charles Broutin. Rapport généré localement le ${new Date().toLocaleString("fr-FR")}.</small></p></body></html>`;
+    }
+
+    document.getElementById("startButton").addEventListener("click", () => showPanel("contextPanel", 1));
+    document.getElementById("contextBack").addEventListener("click", () => showPanel("introPanel", 0));
+    document.getElementById("contextForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const uses = [...form.querySelectorAll('input[name="uses"]:checked')].map(input => input.value);
+      const error = document.getElementById("contextError");
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!uses.length) { error.textContent = "Choisissez au moins un type d’usage."; return; }
+      error.textContent = "";
+      const data = new FormData(form);
+      state.context = { sector: data.get("sector"), size: data.get("size"), stage: data.get("stage"), population: data.get("population"), assessmentDate: data.get("assessmentDate"), nature: data.get("nature"), task: data.get("task"), uses };
+      state.current = 0;
+      renderQuestion();
+      showPanel("questionPanel", 2);
+    });
+
+    answerInputs.forEach(input => input.addEventListener("change", event => {
+      state.answers[questions[state.current].id] = event.target.value;
+      document.getElementById("questionNext").disabled = false;
+    }));
+
+    document.getElementById("questionBack").addEventListener("click", () => {
+      if (state.current === 0) { showPanel("contextPanel", 1); return; }
+      state.current -= 1;
+      renderQuestion();
+    });
+
+    document.getElementById("questionNext").addEventListener("click", () => {
+      if (!Object.prototype.hasOwnProperty.call(state.answers, questions[state.current].id)) return;
+      if (state.current < questions.length - 1) { state.current += 1; renderQuestion(); return; }
+      renderResults();
+      showPanel("resultsPanel", 3);
+    });
+
+    document.getElementById("downloadReport").addEventListener("click", () => {
+      const blob = new Blob([buildReportHTML()], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `evaluation-ia-${state.context.assessmentDate || "rapport"}.html`;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById("printReport").addEventListener("click", () => window.print());
+    document.getElementById("restartButton").addEventListener("click", () => {
+      if (!window.confirm("Effacer les réponses de cette évaluation et recommencer ?")) return;
+      state.context = {};
+      state.answers = {};
+      state.current = 0;
+      document.getElementById("contextForm").reset();
+      document.getElementById("assessmentDate").value = new Date().toISOString().slice(0, 10);
+      showPanel("introPanel", 0);
+    });
+
+    document.getElementById("assessmentDate").value = new Date().toISOString().slice(0, 10);
+    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
+  </script>
 </body>
 </html>

@@ -1,309 +1,511 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." name="description"/>
-  <meta content="Dr Charles Broutin" name="author"/>
-  <meta content="index,follow,max-image-preview:large" name="robots"/>
-  <meta content="strict-origin-when-cross-origin" name="referrer"/>
-  <meta content="#EADDC6" name="theme-color"/>
-  <link href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/" rel="canonical"/>
-  <meta content="website" property="og:type"/>
-  <meta content="fr_FR" property="og:locale"/>
-  <meta content="IA &amp; Santé au Travail" property="og:site_name"/>
-  <meta content="Un exemple concret d’IA en santé au travail" property="og:title"/>
-  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." property="og:description"/>
-  <meta content="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/" property="og:url"/>
-  <meta content="https://www.iasantetravail.com/assets/images/og-usages.jpg" property="og:image"/>
-  <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Un exemple concret d’IA en santé au travail" name="twitter:title"/>
-  <meta content="Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites." name="twitter:description"/>
-  <title>Un exemple concret d’IA en santé au travail — IA &amp; Santé au Travail</title>
-  <script type="application/ld+json">[
-      {
-        "@type":"Article",
-        "headline":"Un exemple concret d’utilisation de l’IA en santé au travail",
-        "name":"Un exemple concret d’utilisation de l’IA en santé au travail",
-        "url":"https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/",
-        "inLanguage":"fr-FR",
-        "description":"Étude d’un modèle de langage utilisé comme second lecteur de préconisations médicales : protocole, résultats, apports et limites.",
-        "dateModified":"2026-07-19",
-        "author":{
-          "@type":"Person",
-          "name":"Dr Charles Broutin",
-          "jobTitle":"Médecin du travail",
-          "url":"https://www.iasantetravail.com/a-propos/",
-          "sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]
-        },
-        "publisher":{"@type":"Person","name":"Dr Charles Broutin"}
-      },
-        {
-          "@type":"BreadcrumbList",
-          "itemListElement":[{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.iasantetravail.com/"},{"@type": "ListItem", "position": 2, "name": "Usages et terrain", "item": "https://www.iasantetravail.com/usages-terrain/"},{"@type": "ListItem", "position": 3, "name": "Exemple en santé au travail", "item": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"}]
-        }
-    ]</script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-  
-  <link href="../../assets/css/site.css" rel="stylesheet"/>
-  <link href="../../assets/css/usages-terrain.css?v=1.0" rel="stylesheet"/>
-  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
-  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-  <link rel="icon" href="/favicon.ico" sizes="any"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"/>
-  <link rel="manifest" href="/site.webmanifest"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comment l’IA peut servir en SPSTI — IA &amp; Santé au Travail</title>
+  <meta name="description" content="Des usages concrets et encadrés de l’intelligence artificielle dans les services de prévention et de santé au travail interentreprises, à partir d’une étude publiée par l’INRS.">
+  <link rel="canonical" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
+  <style>
+    :root {
+      --ink: #17140f;
+      --ink-soft: #3f3931;
+      --muted: #625b52;
+      --terra: #a84e1f;
+      --terra-bright: #c94d24;
+      --green: #344f49;
+      --green-dark: #23383a;
+      --cream: #f4ebda;
+      --paper: #fff9f2;
+      --white: #fffdf9;
+      --lavender: #c9c2f2;
+      --line: rgba(23, 20, 15, .16);
+      --line-light: rgba(244, 235, 218, .23);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --wrap: min(1440px, calc(100% - 80px));
+    }
 
-<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/components.css?v=1.1" rel="stylesheet"/>
-<script defer src="/assets/js/site-shell.js?v=1.1"></script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, summary { color: inherit; font: inherit; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
+    .skip-link:focus { transform: none; }
+
+    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
+    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
+    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
+    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
+    .brand-copy strong, .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
+    .nav-side { display: flex; align-items: center; gap: 10px; }
+    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
+    .nav-cta, .button.primary { color: #fff; background: var(--green); }
+    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
+    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
+    .button.secondary { border-color: var(--line); background: transparent; }
+    .button.secondary:hover { background: var(--cream); }
+    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
+    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
+
+    .menu-dropdown { position: relative; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary::-webkit-details-marker { display: none; }
+    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
+    .menu-dropdown[open] > summary::after { content: "−"; }
+    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .menu-col { display: grid; align-content: start; gap: 11px; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
+    .menu-col a:hover { color: var(--terra); }
+
+    .section { padding: 76px max(40px, calc(50% - 720px)); }
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker.line { display: flex; align-items: center; gap: 14px; }
+    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
+    .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
+
+    .hero { width: var(--wrap); min-height: 690px; margin: 0 auto; padding: 64px 0 48px; display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: 68px; }
+    .hero-copy { max-width: 720px; }
+    .hero h1 { margin: 34px 0 28px; font-size: clamp(55px, 5.35vw, 82px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
+    .hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lede { max-width: 660px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.62; }
+    .hero-note { max-width: 660px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .hero-note strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 28px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
+
+    .evidence-board { border: 1px solid var(--line); background: var(--white); }
+    .board-head { min-height: 65px; padding: 0 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .board-head strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
+    .board-head strong::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .board-summary { min-height: 150px; padding: 27px; display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: center; }
+    .board-summary span, .board-summary strong, .board-summary small { display: block; }
+    .board-summary span { color: var(--terra); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .board-summary strong { margin-top: 16px; font-size: 28px; letter-spacing: -.045em; }
+    .board-summary small { margin-top: 9px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .evidence-badge { padding: 12px 14px; border: 1px solid var(--terra); color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .board-table-head, .board-row { display: grid; grid-template-columns: 1.1fr .72fr .7fr; gap: 20px; align-items: center; }
+    .board-table-head { min-height: 54px; padding: 0 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .board-row { min-height: 82px; padding: 18px 25px; border-bottom: 1px solid var(--line); }
+    .board-row:last-of-type { border-bottom: 0; }
+    .board-row strong { font-size: 12px; }
+    .board-row span { color: var(--muted); font-size: 11px; }
+    .board-row b { justify-self: start; padding: 7px 9px; border: 1px solid var(--line); color: var(--green); font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
+    .board-row b.to-test { color: var(--terra); border-color: rgba(168, 78, 31, .45); }
+    .board-foot { padding: 16px 22px; border-top: 1px solid var(--line); color: var(--muted); background: rgba(244, 235, 218, .48); font-size: 10px; line-height: 1.48; }
+    .board-foot strong { color: var(--ink); }
+
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .facts article { min-height: 138px; padding: 24px 27px; border-right: 1px solid var(--line); }
+    .facts article:first-child { padding-left: 0; }
+    .facts article:last-child { border-right: 0; }
+    .facts b { color: var(--terra); font-size: 27px; font-weight: 520; letter-spacing: -.04em; }
+    .facts strong, .facts small { display: block; }
+    .facts strong { margin-top: 18px; font-size: 13px; }
+    .facts small { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .uses { background: var(--cream); }
+    .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .use-card { min-height: 280px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 249, 242, .5); }
+    .use-card:nth-child(even) { background: var(--paper); }
+    .use-card > span { display: flex; justify-content: space-between; gap: 18px; color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .use-card > span b { color: var(--muted); font-weight: 700; }
+    .use-card h3 { margin: 51px 0 14px; font-size: 22px; letter-spacing: -.035em; }
+    .use-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .use-card small { display: block; margin-top: 19px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 9px; line-height: 1.45; }
+    .use-card small strong { color: var(--terra); }
+    .use-note { display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; padding: 26px 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
+    .use-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .use-note p { margin: 0; font-size: 17px; font-weight: 620; line-height: 1.5; }
+
+    .study { background: var(--white); }
+    .study-card { display: grid; grid-template-columns: .78fr 1.22fr; margin-top: 52px; border: 1px solid var(--line); }
+    .study-intro { padding: 35px; color: var(--cream); background: var(--green-dark); }
+    .study-intro .kicker { color: var(--lavender); }
+    .study-intro h3 { margin: 45px 0 18px; color: var(--paper); font-size: 33px; letter-spacing: -.045em; line-height: 1.14; }
+    .study-intro p { margin: 0; color: rgba(244, 235, 218, .72); font-size: 13px; line-height: 1.6; }
+    .study-origin { margin-top: 24px !important; padding-top: 20px; border-top: 1px solid var(--line-light); }
+    .study-origin strong { color: var(--lavender); }
+    .study-intro .button { margin-top: 30px; }
+    .method-list { padding: 10px 32px; }
+    .method-row { display: grid; grid-template-columns: 48px 1fr; gap: 18px; min-height: 106px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .method-row:last-child { border-bottom: 0; }
+    .method-row > span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .method-row strong, .method-row small { display: block; }
+    .method-row strong { font-size: 14px; }
+    .method-row small { margin-top: 8px; color: var(--muted); font-size: 10px; line-height: 1.48; }
+
+    .criteria { background: var(--paper); }
+    .criteria-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
+    .criteria-table table { width: 100%; min-width: 980px; border-collapse: collapse; }
+    .criteria-table th { padding: 16px 21px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    .criteria-table th:first-child { width: 24%; }
+    .criteria-table td { padding: 20px 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.5; vertical-align: top; }
+    .criteria-table tbody tr:first-child td { border-top: 0; }
+    .criteria-table td:first-child { color: var(--ink); font-weight: 720; }
+    .criterion-index { display: inline-block; min-width: 35px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .criteria-table td:last-child { color: var(--ink-soft); font-weight: 650; }
+
+    .results { color: var(--paper); background: var(--green-dark); }
+    .results .kicker { color: var(--lavender); }
+    .results .section-head > p { color: rgba(244, 235, 218, .7); }
+    .result-strip { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 52px; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+    .result-metric { min-height: 180px; padding: 25px 22px; border-right: 1px solid var(--line-light); }
+    .result-metric:last-child { border-right: 0; }
+    .result-metric b { color: var(--lavender); font-size: 36px; font-weight: 500; letter-spacing: -.05em; }
+    .result-metric strong, .result-metric small { display: block; }
+    .result-metric strong { margin-top: 28px; color: var(--cream); font-size: 12px; }
+    .result-metric small { margin-top: 8px; color: rgba(244, 235, 218, .6); font-size: 9px; line-height: 1.45; }
+    .result-table { margin-top: 30px; border: 1px solid var(--line-light); overflow-x: auto; }
+    .result-table table { width: 100%; min-width: 820px; border-collapse: collapse; }
+    .result-table th { padding: 14px 18px; color: rgba(244, 235, 218, .62); background: rgba(244, 235, 218, .05); font-family: var(--mono); font-size: 8px; text-align: left; text-transform: uppercase; }
+    .result-table td { padding: 17px 18px; border-top: 1px solid var(--line-light); color: rgba(244, 235, 218, .7); font-size: 10px; line-height: 1.45; }
+    .result-table td:first-child { color: var(--cream); font-weight: 720; }
+    .result-table td:nth-child(2), .result-table td:nth-child(3) { color: var(--lavender); font-family: var(--mono); font-weight: 800; }
+    .interpretation-note { display: grid; grid-template-columns: .48fr 1.52fr; gap: 40px; align-items: center; margin-top: 28px; padding: 27px 30px; border-left: 4px solid var(--terra); background: rgba(244, 235, 218, .06); }
+    .interpretation-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .interpretation-note p { margin: 0; color: var(--cream); font-size: 16px; line-height: 1.55; }
+
+    .limits { background: var(--cream); }
+    .limit-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .limit-card { min-height: 285px; padding: 28px 25px; border-right: 1px solid var(--line); }
+    .limit-card:last-child { border-right: 0; }
+    .limit-card span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .limit-card h3 { margin: 52px 0 14px; font-size: 19px; letter-spacing: -.03em; }
+    .limit-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .limit-rule { display: grid; grid-template-columns: .53fr 1.47fr; gap: 40px; align-items: center; margin-top: 29px; padding: 27px 30px; color: var(--paper); background: var(--green-dark); }
+    .limit-rule span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .limit-rule p { margin: 0; font-size: 17px; font-weight: 620; line-height: 1.5; }
+
+    .pilot { background: var(--white); }
+    .pilot-flow { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .pilot-step { min-height: 278px; padding: 26px 22px; border-right: 1px solid var(--line); }
+    .pilot-step:last-child { border-right: 0; }
+    .pilot-step span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .pilot-step h3 { margin: 52px 0 13px; font-size: 17px; letter-spacing: -.025em; }
+    .pilot-step p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
+    .pilot-panel { display: grid; grid-template-columns: 1fr 1fr; margin-top: 30px; border: 1px solid var(--line); }
+    .pilot-column { padding: 31px; }
+    .pilot-column + .pilot-column { border-left: 1px solid var(--line); background: var(--paper); }
+    .pilot-column > span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .pilot-column h3 { margin: 35px 0 14px; font-size: 25px; letter-spacing: -.04em; }
+    .pilot-column ul { margin: 0; padding: 0; list-style: none; }
+    .pilot-column li { position: relative; padding: 11px 0 11px 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .pilot-column li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+
+    .roles { background: var(--paper); }
+    .role-table { margin-top: 52px; border: 1px solid var(--line); }
+    .role-row { display: grid; grid-template-columns: .65fr 1fr 1fr; gap: 26px; min-height: 126px; padding: 24px 27px; border-bottom: 1px solid var(--line); align-items: center; }
+    .role-row:last-child { border-bottom: 0; }
+    .role-row > strong { font-size: 15px; }
+    .role-row div span, .role-row div strong { display: block; }
+    .role-row div span { color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .role-row div strong { margin-top: 10px; color: var(--muted); font-size: 11px; font-weight: 560; line-height: 1.48; }
+
+    .contact { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: end; color: var(--paper); background: var(--green-dark); }
+    .contact .kicker { color: var(--lavender); }
+    .contact h2 { max-width: 820px; margin: 24px 0 0; font-size: clamp(43px, 4.8vw, 68px); font-weight: 480; letter-spacing: -.058em; line-height: 1.04; }
+    .contact-copy > p { margin: 0; color: rgba(244, 235, 218, .72); font-size: 16px; line-height: 1.62; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
+    .contact-copy small { display: block; margin-top: 16px; color: rgba(244, 235, 218, .5); font-size: 9px; }
+
+    .site-footer { padding: 55px max(40px, calc(50% - 720px)) 28px; color: var(--cream); background: #192c2e; }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, .72fr); gap: 58px; }
+    .footer-brand strong { color: var(--paper); font-size: 18px; }
+    .footer-brand p { max-width: 340px; margin: 18px 0 0; color: rgba(244, 235, 218, .6); font-size: 11px; line-height: 1.55; }
+    .footer-col { display: grid; align-content: start; gap: 11px; }
+    .footer-col span { margin-bottom: 6px; color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .75); font-size: 11px; }
+    .footer-col a:hover { color: var(--paper); }
+    .footer-bottom { grid-column: 1 / -1; margin-top: 32px; padding-top: 23px; border-top: 1px solid var(--line-light); display: flex; justify-content: space-between; gap: 24px; color: rgba(244, 235, 218, .5); font-family: var(--mono); font-size: 8px; line-height: 1.5; }
+
+    @media (max-width: 1180px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero h1 { font-size: clamp(52px, 6.6vw, 74px); }
+      .pilot-flow { grid-template-columns: repeat(3, 1fr); }
+      .pilot-step { border-bottom: 1px solid var(--line); }
+      .pilot-step:nth-child(3n) { border-right: 0; }
+    }
+    @media (max-width: 920px) {
+      :root { --wrap: min(100% - 44px, 1440px); }
+      .section { padding: 64px 22px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
+      .hero-copy { max-width: none; }
+      .evidence-board { max-width: 760px; }
+      .section-head, .use-note, .study-card, .interpretation-note, .limit-rule, .contact { grid-template-columns: 1fr; gap: 34px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .facts article:nth-child(2) { border-right: 0; }
+      .facts article { border-bottom: 1px solid var(--line); }
+      .facts article:nth-child(3), .facts article:nth-child(4) { border-bottom: 0; }
+      .use-grid { grid-template-columns: 1fr 1fr; }
+      .limit-grid { grid-template-columns: 1fr 1fr; }
+      .limit-card:nth-child(2) { border-right: 0; }
+      .limit-card:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .pilot-panel { grid-template-columns: 1fr; }
+      .pilot-column + .pilot-column { border-left: 0; border-top: 1px solid var(--line); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-bottom { display: grid; }
+    }
+    @media (max-width: 640px) {
+      :root { --wrap: calc(100% - 30px); }
+      .section { padding: 54px 15px; }
+      .nav { min-height: 78px; gap: 14px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .brand-mark img { width: 31px; height: 31px; }
+      .brand-copy strong { font-size: 15px; }
+      .brand-copy small, .language, .nav-cta { display: none; }
+      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
+      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
+      .hero h1 { font-size: clamp(43px, 13.3vw, 59px); }
+      .hero-lede { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .section-head h2, .contact h2 { font-size: 40px; }
+      .facts, .use-grid, .result-strip, .limit-grid, .pilot-flow { grid-template-columns: 1fr; }
+      .facts article { padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .facts article:last-child { border-bottom: 0 !important; }
+      .board-summary { grid-template-columns: 1fr; }
+      .evidence-badge { justify-self: start; }
+      .board-table-head, .board-row { grid-template-columns: 1fr .75fr; }
+      .board-table-head span:nth-child(2), .board-row span { display: none; }
+      .use-card { min-height: 0; }
+      .use-card h3 { margin-top: 35px; }
+      .result-metric, .limit-card, .pilot-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light) !important; }
+      .limit-card, .pilot-step { border-bottom-color: var(--line) !important; }
+      .result-metric:last-child, .limit-card:last-child, .pilot-step:last-child { border-bottom: 0 !important; }
+      .role-row { grid-template-columns: 1fr; gap: 18px; }
+      .contact-actions { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-<body class="inner-page page-pratique page-usages-split" data-page="pratique" data-root="../../">
-
-  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-  <nav aria-label="Navigation principale" class="nav glass">
-    <a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
-    <div class="nav-links" id="navLinks">
-      <a href="../../comprendre/">Comprendre</a>
-      <a aria-current="page" class="is-active" href="../../usages-terrain/">Usages &amp; terrain</a>
-      <a href="../../evaluer/">Évaluer</a>
-      <a href="../../risques-prevention/">Risques &amp; prévention</a>
-      <a href="../../droit-gouvernance/">Droit &amp; gouvernance</a>
-      <details class="nav-resources">
-        <summary>Ressources</summary>
-        <div class="nav-resources-menu">
-          <a href="../../ressources/modeles/">Panorama des modèles</a>
-          <a href="../../a-propos/">À propos et publications</a>
-          <a href="../../mentions-legales/">Mentions légales</a>
-        </div>
-      </details>
-    </div>
-    <div class="nav-tools">
-      <button aria-label="Rechercher sur le site" class="search-open" type="button">⌕</button>
-      <div aria-label="Choix de la langue" class="lang-switch">
-        <a class="active" href="../../usages-terrain/" hreflang="fr" lang="fr">FR</a>
-        <a href="../../en/uses-and-field/" hreflang="en" lang="en">EN</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="https://www.iasantetravail.com/">
+        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.iasantetravail.com/comprendre/">Comprendre</a>
+        <a href="#usages" aria-current="page">Usages en SPSTI</a>
+        <a href="#etude">Étude INRS</a>
+        <a href="#pilote">Déployer</a>
+        <a href="https://www.iasantetravail.com/droit-gouvernance/">Droit</a>
       </div>
-      <button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-menu-btn" type="button">
-        <span>Menu</span><span aria-hidden="true" class="bars"><i></i><i></i><i></i></span>
-      </button>
-      <a class="nav-cta" href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-    </div>
-  </nav>
-
-<main id="main-content" tabindex="-1">
-  <section class="page active">
-    <header class="text-hero">
-      <div class="wrap">
-        <div class="text-hero-shell">
-          <nav aria-label="Fil d’Ariane" class="breadcrumbs">
-            <a href="../../">Accueil</a><span>›</span><a href="../">Usages &amp; terrain</a><span>›</span><span>Exemple en santé au travail</span>
-          </nav>
-          <h1>Un exemple concret d’utilisation de l’IA <em>en santé au travail</em></h1>
-          <p>Un modèle de langage utilisé comme second lecteur pour repérer des défauts de qualité dans les préconisations médicales, sans rédiger ni décider à la place du médecin du travail.</p>
-        </div>
-      </div>
-    </header>
-
-
-      <section aria-labelledby="resume-page" class="page-summary-section">
-        <div class="wrap">
-          <div class="page-summary glass">
-            <div class="page-summary-main">
-              <span class="mini-kicker">En 30 secondes</span>
-              <h2 id="resume-page">Les repères essentiels</h2>
-              <ul><li>L’IA intervient comme second lecteur selon cinq critères explicites de qualité.</li><li>Elle signale des formulations à vérifier ; la contextualisation du poste et la décision restent médicales.</li><li>Les résultats montrent un potentiel d’assistance, mais aussi une tendance à la surdétection qui impose une validation humaine.</li></ul>
-            </div>
-            <aside aria-label="Informations de lecture" class="page-summary-side">
-              <dl>
-                <div><dt>Public</dt><dd>Médecins du travail, IDEST, équipes SPST et professionnels évaluant un usage métier supervisé</dd></div>
-                <div><dt>Temps de lecture</dt><dd>Environ 6 minutes</dd></div>
-                <div><dt>Dernière vérification</dt><dd>19 juillet 2026</dd></div>
-              </dl>
-            </aside>
-            <nav aria-label="Sommaire de la page" class="page-toc">
-              <span>Sur cette page</span>
-              <ol><li><a href="#probleme">Le problème de départ</a></li><li><a href="#protocole">Le protocole</a></li><li><a href="#resultats">Les résultats</a></li><li><a href="#enseignements">Les enseignements</a></li></ol>
-            </nav>
+      <div class="nav-side">
+        <a class="language" href="https://www.iasantetravail.com/en/" aria-label="English version">EN</a>
+        <details class="menu-dropdown">
+          <summary>Menu</summary>
+          <div class="menu-panel">
+            <div class="menu-col"><span>Comprendre</span><a href="#usages">Six usages possibles</a><a href="#etude">Le cas des préconisations</a><a href="#resultats">Résultats détaillés</a><a href="#limites">Ce que l’étude ne montre pas</a></div>
+            <div class="menu-col"><span>Mettre en œuvre</span><a href="#pilote">Construire un pilote</a><a href="#roles">Répartir les rôles</a><a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance →</a><a href="https://www.iasantetravail.com/evaluer/">Évaluer les effets →</a></div>
+            <div class="menu-col"><span>Le site</span><a href="https://www.iasantetravail.com/">Accueil →</a><a href="https://www.iasantetravail.com/a-propos/">À propos →</a><a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article INRS ↗</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter sur LinkedIn ↗</a></div>
           </div>
+        </details>
+        <a class="nav-cta" href="#pilote">Préparer un pilote <span>→</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="kicker line">SPSTI · Usages professionnels · Supervision humaine</p>
+        <h1>L’IA peut aider un SPSTI quand <em>la tâche est précise.</em></h1>
+        <p class="hero-lede">Relire un document, retrouver une source, structurer des observations ou préparer une formation : l’intérêt ne vient pas de « l’IA » en général, mais d’un usage limité que l’on peut tester et corriger.</p>
+        <p class="hero-note"><strong>Un exemple évalué.</strong> Une étude publiée par l’INRS en juin 2026 a testé un modèle de langage comme second lecteur de préconisations médicales. Elle montre un potentiel réel, mais pas une capacité à remplacer le médecin du travail.</p>
+        <div class="hero-actions"><a class="button primary" href="#etude">Voir l’étude et ses résultats <span>↓</span></a><a class="button secondary" href="#usages">Explorer les usages</a></div>
+        <div class="hero-proof"><span>Tâche limitée</span><span>Référence humaine</span><span>Décision conservée</span></div>
+      </div>
+
+      <aside class="evidence-board" aria-label="État des usages présentés">
+        <div class="board-head"><strong>Usages en SPSTI</strong><span>État des preuves</span></div>
+        <div class="board-summary"><div><span>Un usage étudié</span><strong>Aide à la relecture</strong><small>Détection de défauts de formulation selon cinq critères prédéfinis.</small></div><div class="evidence-badge">INRS · TF 335</div></div>
+        <div class="board-table-head"><span>Usage</span><span>Place de l’humain</span><span>Statut</span></div>
+        <div class="board-row"><strong>Relire une préconisation</strong><span>Validation médicale</span><b>Étudié</b></div>
+        <div class="board-row"><strong>Interroger une base documentaire</strong><span>Vérification des sources</span><b class="to-test">À évaluer</b></div>
+        <div class="board-row"><strong>Préparer une analyse de prévention</strong><span>Analyse de terrain</span><b class="to-test">À évaluer</b></div>
+        <div class="board-row"><strong>Créer un support de formation</strong><span>Validation pédagogique</span><b class="to-test">À évaluer</b></div>
+        <div class="board-foot"><strong>Principe :</strong> aucune sortie n’est utilisée comme une décision clinique, une conclusion d’aptitude ou une preuve automatique.</div>
+      </aside>
+    </section>
+
+    <section class="facts" aria-label="Chiffres clés de l’étude INRS">
+      <article><b>385</b><strong>Préconisations analysées</strong><small>Un échantillon tiré au sort et distinct des exemples utilisés pour préparer le prompt.</small></article>
+      <article><b>5</b><strong>Critères de relecture</strong><small>De l’imprécision à la divulgation d’informations médicales.</small></article>
+      <article><b>74,6&nbsp;%</b><strong>Concordance globale</strong><small>Entre le modèle o1 et le consensus multidisciplinaire de référence.</small></article>
+      <article><b>0</b><strong>Hallucination observée</strong><small>Dans cet échantillon et avec ce protocole ; ce résultat n’est pas une garantie générale.</small></article>
+    </section>
+
+    <section class="section uses" id="usages">
+      <div class="section-head">
+        <div><p class="kicker">01 / Où l’IA peut être utile</p><h2>Six usages concrets, avec une responsabilité humaine clairement définie.</h2></div>
+        <p>À l’exception du cas de relecture présenté plus bas, ces usages sont des pistes à expérimenter et à évaluer dans chaque service.</p>
+      </div>
+      <div class="use-grid">
+        <article class="use-card"><span>01 · Médecine du travail <b>Usage étudié</b></span><h3>Relire la forme d’une préconisation.</h3><p>Repérer une formulation ambiguë, une obligation implicite, une information inutile ou un risque de divulgation avant transmission.</p><small><strong>L’humain garde :</strong> l’analyse du poste, la formulation finale, la décision et la signature.</small></article>
+        <article class="use-card"><span>02 · Tous métiers <b>Piste à tester</b></span><h3>Interroger une documentation interne.</h3><p>Retrouver un protocole, une fiche de risque ou une procédure à partir d’une base contrôlée, avec les sources affichées dans la réponse.</p><small><strong>L’humain garde :</strong> la vérification de la source, de sa date et de son application au cas.</small></article>
+        <article class="use-card"><span>03 · Prévention <b>Piste à tester</b></span><h3>Structurer des observations de terrain.</h3><p>Regrouper des notes par thème, préparer une synthèse et faire ressortir les informations manquantes avant l’analyse collective.</p><small><strong>L’humain garde :</strong> l’observation, l’interprétation, la hiérarchisation et les mesures proposées.</small></article>
+        <article class="use-card"><span>04 · Formation <b>Piste à tester</b></span><h3>Préparer des cas et des supports.</h3><p>Produire des variantes d’une situation, des questions de discussion ou une première trame adaptée au métier des participants.</p><small><strong>L’humain garde :</strong> les objectifs, la validité du contenu et l’animation pédagogique.</small></article>
+        <article class="use-card"><span>05 · Qualité <b>Piste à tester</b></span><h3>Repérer les dossiers incomplets.</h3><p>Vérifier la présence de rubriques attendues ou signaler une incohérence formelle sans attribuer automatiquement un niveau de risque au salarié.</p><small><strong>L’humain garde :</strong> l’accès au dossier, l’interprétation et toute action qui en découle.</small></article>
+        <article class="use-card"><span>06 · Administration <b>Piste à tester</b></span><h3>Alléger des tâches répétitives.</h3><p>Préparer un message, classer une demande non médicale ou reformuler une information pratique dans un langage plus accessible.</p><small><strong>L’humain garde :</strong> le traitement des exceptions et la validation avant envoi.</small></article>
+      </div>
+      <div class="use-note"><span>Ce qui ne doit pas être automatisé</span><p>L’aptitude, l’orientation clinique, l’évaluation individuelle d’un salarié ou une décision de prévention ne peuvent pas être déduites d’une sortie de modèle sans jugement professionnel et sans le contexte du travail.</p></div>
+    </section>
+
+    <section class="section study" id="etude">
+      <div class="section-head">
+        <div><p class="kicker">02 / Le cas publié par l’INRS</p><h2>Tester l’IA comme second lecteur, pas comme auteur de la décision.</h2></div>
+        <p>L’étude porte sur la capacité du modèle de raisonnement o1 d’OpenAI à détecter des défauts dans des préconisations déjà rédigées.</p>
+      </div>
+      <div class="study-card">
+        <div class="study-intro">
+          <p class="kicker">Références en Santé au Travail · TF 335</p>
+          <h3>Évaluer une tâche étroite contre une référence humaine.</h3>
+          <p>Le protocole n’évalue ni une consultation automatisée ni la génération intégrale d’une préconisation. Le modèle analyse uniquement le texte fourni selon cinq critères prédéfinis.</p>
+          <p class="study-origin"><strong>Point de départ.</strong> Une évaluation antérieure menée dans les Hauts-de-France avait classé 78&nbsp;% des préconisations comme comportant au moins un des cinq défauts recherchés.</p>
+          <a class="button light" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article complet sur le site de l’INRS <span>↗</span></a>
         </div>
-      </section>
-
-
-    <section class="usages-section" id="probleme">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Le problème professionnel</span>
-          <h2>Relire les préconisations avant leur transmission</h2>
-          <p>Une préconisation doit être claire, applicable, proportionnée et compatible avec le secret médical. Une formulation imprécise ou excessive peut créer des difficultés pour le salarié, l’employeur et le médecin du travail.</p>
-        </div>
-
-        <div class="problem-grid">
-          <article class="content-card glass reveal">
-            <h3>La tâche confiée au modèle</h3>
-            <p>Analyser une préconisation déjà rédigée et signaler les critères susceptibles de nécessiter une relecture. Le modèle ne produit pas l’avis médical initial et ne modifie pas automatiquement le document.</p>
-          </article>
-          <article class="content-card glass reveal">
-            <h3>La responsabilité conservée</h3>
-            <p>Le médecin du travail reste seul responsable de la formulation finale, de la prise en compte du poste réel, du contexte clinique et de la proportionnalité de la recommandation.</p>
-          </article>
+        <div class="method-list">
+          <div class="method-row"><span>01</span><div><strong>Une référence multidisciplinaire.</strong><small>Les réponses du modèle sont comparées à des préconisations ayant fait l’objet d’un consensus multidisciplinaire antérieur.</small></div></div>
+          <div class="method-row"><span>02</span><div><strong>Un prompt optimisé séparément.</strong><small>Cinq itérations sur cent préconisations, puis un nouveau test sur cinquante exemples, avant l’analyse finale.</small></div></div>
+          <div class="method-row"><span>03</span><div><strong>Un échantillon final indépendant.</strong><small>Le prompt validé est appliqué à 385 nouvelles préconisations tirées aléatoirement.</small></div></div>
+          <div class="method-row"><span>04</span><div><strong>Quatre issues possibles.</strong><small>Concordance, divergence justifiée après réévaluation, détection par excès ou erreur non repérée par le modèle.</small></div></div>
+          <div class="method-row"><span>05</span><div><strong>Des textes sans identité.</strong><small>Les préconisations transmises ne comportaient aucune information permettant d’identifier le salarié, l’entreprise, l’employeur, le médecin ou le service émetteur.</small></div></div>
         </div>
       </div>
     </section>
 
-    <section class="usages-section" id="protocole">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Cinq critères explicites</span>
-          <h2>Ce que le modèle devait repérer</h2>
-          <p>L’évaluation portait sur des catégories définies à l’avance, afin de comparer la sortie du modèle à une référence humaine structurée.</p>
-        </div>
-
-        <div class="criteria-grid">
-          <article class="criteria-card glass reveal"><span>Critère 1</span><h3>Imprécision</h3><p>Formulation trop vague pour être comprise ou appliquée correctement.</p></article>
-          <article class="criteria-card glass reveal"><span>Critère 2</span><h3>Caractère obligatoire ambigu</h3><p>Doute sur ce qui relève d’une recommandation ou d’une obligation.</p></article>
-          <article class="criteria-card glass reveal"><span>Critère 3</span><h3>Information hors cadre</h3><p>Élément qui ne devrait pas être transmis dans le document adressé à l’employeur.</p></article>
-          <article class="criteria-card glass reveal"><span>Critère 4</span><h3>Inaptitude déguisée</h3><p>Restriction ou changement de poste formulé de manière excessive.</p></article>
-          <article class="criteria-card glass reveal"><span>Critère 5</span><h3>Secret médical</h3><p>Information susceptible de révéler un diagnostic ou un élément médical confidentiel.</p></article>
-        </div>
+    <section class="section criteria" id="criteres">
+      <div class="section-head">
+        <div><p class="kicker">03 / Ce que le modèle recherchait</p><h2>Cinq défauts de formulation définis avant l’analyse.</h2></div>
+        <p>Le modèle ne devait pas inventer une meilleure préconisation. Il devait signaler la présence éventuelle de problèmes précis.</p>
+      </div>
+      <div class="criteria-table">
+        <table>
+          <thead><tr><th>Critère</th><th>Problème recherché</th><th>Exemple de point de vigilance</th><th>Pourquoi cela compte</th></tr></thead>
+          <tbody>
+            <tr><td><span class="criterion-index">01</span>Imprécision</td><td>Difficulté de compréhension ou d’application pour l’employeur.</td><td>Durée non définie, fréquence absente, fin imprécise ou mention « renouvelable » sans périodicité.</td><td>Une consigne floue peut être mal appliquée et fragiliser le maintien en emploi.</td></tr>
+            <tr><td><span class="criterion-index">02</span>Doute sur l’obligation</td><td>Formulation qui laisse croire qu’une mesure est facultative ou négociable.</td><td>Conditionnel, alternative non justifiée ou marge de choix introduite dans l’avis.</td><td>La force de la préconisation doit être comprise sans ambiguïté.</td></tr>
+            <tr><td><span class="criterion-index">03</span>Information hors annexe 4</td><td>Commentaire ou échange avec l’employeur qui ne constitue pas une mesure d’aménagement.</td><td>Information générale sans formulation d’une préconisation concrète.</td><td>Le document doit rester centré sur les mesures nécessaires au travail.</td></tr>
+            <tr><td><span class="criterion-index">04</span>Changement de poste déguisé</td><td>Préconisation d’un autre poste ou aménagement manifestement disproportionné.</td><td>Mesure qui revient de fait à écarter le salarié de son poste antérieur.</td><td>Une préconisation ne doit pas se substituer à une conclusion médicale appropriée.</td></tr>
+            <tr><td><span class="criterion-index">05</span>Secret médical et vie privée</td><td>Divulgation d’une information sur la santé ou la situation personnelle.</td><td>Diagnostic, arrêt maladie, invalidité, reconnaissance de handicap ou autre donnée médicale.</td><td>La communication à l’employeur doit préserver strictement le secret médical.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="usages-section" id="resultats">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Résultats principaux</span>
-          <h2>Un potentiel de second lecteur, avec des limites identifiables</h2>
-          <p>Les chiffres doivent être lus dans le cadre précis de l’étude et ne prouvent pas une capacité générale à produire ou valider des préconisations de façon autonome.</p>
-        </div>
+    <section class="section results" id="resultats">
+      <div class="section-head">
+        <div><p class="kicker">04 / Résultats</p><h2>Un accord global élevé, mais très variable selon le critère.</h2></div>
+        <p>La moyenne ne doit pas masquer les différences : le modèle est très fiable sur certains défauts et beaucoup plus discutable sur d’autres.</p>
+      </div>
+      <div class="result-strip">
+        <article class="result-metric"><b>74,6&nbsp;%</b><strong>Concordances</strong><small>Le modèle et le consensus aboutissent à la même évaluation.</small></article>
+        <article class="result-metric"><b>10,5&nbsp;%</b><strong>Divergences justifiées</strong><small>Après réévaluation, l’analyse différente du modèle est considérée correcte.</small></article>
+        <article class="result-metric"><b>13,2&nbsp;%</b><strong>Détections par excès</strong><small>Le modèle applique les critères plus strictement que la référence humaine.</small></article>
+        <article class="result-metric"><b>1,45&nbsp;%</b><strong>Erreurs non repérées</strong><small>Le consensus identifie un défaut que le modèle n’a pas signalé.</small></article>
+        <article class="result-metric"><b>0&nbsp;%</b><strong>Hallucinations observées</strong><small>Aucune réponse inventée dans les 385 préconisations de cette étude.</small></article>
+      </div>
+      <div class="result-table">
+        <table>
+          <thead><tr><th>Critère</th><th>Concordance brute</th><th>Kappa de Cohen</th><th>Lecture</th></tr></thead>
+          <tbody>
+            <tr><td>Imprécision</td><td>61,3&nbsp;%</td><td>0,10</td><td>Accord faible ; le modèle signale beaucoup plus souvent une imprécision.</td></tr>
+            <tr><td>Doute sur l’obligation</td><td>45,5&nbsp;%</td><td>0,14</td><td>Accord faible et forte tendance à la détection par excès.</td></tr>
+            <tr><td>Information hors annexe 4</td><td>77,1&nbsp;%</td><td>0,13</td><td>Accord brut élevé, mais accord au-delà du hasard encore faible.</td></tr>
+            <tr><td>Changement de poste</td><td>93,0&nbsp;%</td><td>0,48</td><td>Accord modéré ; aucune divergence par défaut observée.</td></tr>
+            <tr><td>Secret médical ou vie privée</td><td>96,1&nbsp;%</td><td>0,82</td><td>Accord presque parfait ; aucune divergence par défaut observée.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="interpretation-note"><span>La bonne conclusion</span><p>Le modèle o1 apparaît prometteur comme outil de relecture. Les résultats ne démontrent ni qu’il sait rédiger seul une préconisation, ni qu’il améliore déjà la santé ou le maintien en emploi.</p></div>
+    </section>
 
-        <div class="study-metrics">
-          <article class="study-metric reveal"><div class="num">78 %</div><p>des préconisations consensuelles de la base antérieure présentaient au moins un défaut de qualité.</p></article>
-          <article class="study-metric reveal"><div class="num">385</div><p>préconisations ont été tirées au sort pour l’évaluation comparative.</p></article>
-          <article class="study-metric reveal"><div class="num">74,6 %</div><p>de concordance globale entre le modèle et le consensus multidisciplinaire.</p></article>
-          <article class="study-metric reveal"><div class="num">0</div><p>hallucination observée dans l’échantillon comparatif évalué.</p></article>
-        </div>
+    <section class="section limits" id="limites">
+      <div class="section-head">
+        <div><p class="kicker">05 / Limites</p><h2>Ce que l’étude ne permet pas d’affirmer.</h2></div>
+        <p>La transparence sur ces limites évite de transformer un résultat encourageant en promesse générale sur tous les modèles ou tous les usages.</p>
+      </div>
+      <div class="limit-grid">
+        <article class="limit-card"><span>01</span><h3>Le contexte de travail manquait.</h3><p>Les évaluateurs et le modèle ne disposaient pas d’informations détaillées sur le poste, le salarié ou les contraintes particulières de l’entreprise.</p></article>
+        <article class="limit-card"><span>02</span><h3>Un seul modèle a été étudié.</h3><p>Les résultats concernent o1 dans les conditions précises de cette étude. Ils ne sont pas directement extrapolables à d’autres modèles.</p></article>
+        <article class="limit-card"><span>03</span><h3>Les performances évoluent vite.</h3><p>De nouveaux modèles peuvent dépasser o1 sur certains tests. Un protocole doit donc être rejoué lorsque le système ou le prompt change.</p></article>
+        <article class="limit-card"><span>04</span><h3>Aucun effet clinique n’a été mesuré.</h3><p>L’étude évalue la détection de défauts, pas la compréhension réelle par l’employeur, l’application de la mesure ou le maintien en emploi.</p></article>
+      </div>
+      <div class="limit-rule"><span>Zéro hallucination ne veut pas dire risque nul</span><p>Aucune hallucination n’a été observée dans cet échantillon parce que la tâche et le prompt étaient fortement encadrés. Un autre modèle, une autre consigne ou un texte différent peuvent produire d’autres erreurs.</p></div>
+    </section>
+
+    <section class="section pilot" id="pilote">
+      <div class="section-head">
+        <div><p class="kicker">06 / Construire un pilote en SPSTI</p><h2>Évaluer l’usage avant de chercher à le généraliser.</h2></div>
+        <p>Un pilote utile commence par une question mesurable et une référence humaine. Il doit aussi permettre de revenir au fonctionnement antérieur.</p>
+      </div>
+      <div class="pilot-flow">
+        <article class="pilot-step"><span>01</span><h3>Choisir une tâche étroite.</h3><p>Un problème récurrent, corrigible et distinct de la décision clinique.</p></article>
+        <article class="pilot-step"><span>02</span><h3>Établir la référence.</h3><p>Un jeu de cas évalué par des professionnels selon des critères explicites.</p></article>
+        <article class="pilot-step"><span>03</span><h3>Protéger les données.</h3><p>Minimisation, hébergement adapté, accès limité et absence d’identifiants inutiles.</p></article>
+        <article class="pilot-step"><span>04</span><h3>Tester en parallèle.</h3><p>Le modèle travaille en second lecteur sans modifier le circuit habituel.</p></article>
+        <article class="pilot-step"><span>05</span><h3>Mesurer les erreurs.</h3><p>Accord par critère, excès, défauts, temps gagné et nouvelle charge de vérification.</p></article>
+        <article class="pilot-step"><span>06</span><h3>Décider collectivement.</h3><p>Poursuivre, corriger ou arrêter selon des résultats documentés et les effets sur le travail.</p></article>
+      </div>
+      <div class="pilot-panel">
+        <div class="pilot-column"><span>Mesurer la performance</span><h3>Ce que fait le système.</h3><ul><li>erreurs repérées et erreurs manquées</li><li>différences selon les métiers et les cas</li><li>stabilité après changement de modèle ou de prompt</li><li>temps réellement économisé, corrections comprises</li></ul></div>
+        <div class="pilot-column"><span>Mesurer le travail</span><h3>Ce que le système fait aux équipes.</h3><ul><li>charge de vérification et interruptions</li><li>autonomie et possibilité de contester</li><li>évolution des compétences et de l’apprentissage</li><li>incidents, contournements et inégalités d’usage</li></ul></div>
       </div>
     </section>
 
-    <section class="usages-section" id="enseignements">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Interprétation</span>
-          <h2>Ce que l’étude permet — et ne permet pas — de conclure</h2>
-        </div>
-
-        <div class="conclusion-grid">
-          <article class="content-card glass reveal">
-            <span class="proof proof--consensus">Apports</span>
-            <h3>Un usage plausible comme second lecteur</h3>
-            <ul>
-              <li>repérer des formulations à vérifier ;</li>
-              <li>appliquer une grille homogène ;</li>
-              <li>attirer l’attention sur la clarté et la confidentialité ;</li>
-              <li>ouvrir une réflexion avant transmission.</li>
-            </ul>
-          </article>
-          <article class="content-card glass reveal">
-            <span class="proof proof--expert">Limites</span>
-            <h3>Pas de substitution à la décision médicale</h3>
-            <ul>
-              <li>tendance à la surdétection ;</li>
-              <li>absence de connaissance complète du poste réel ;</li>
-              <li>généralisation non démontrée à d’autres usages cliniques ;</li>
-              <li>validation finale nécessairement humaine.</li>
-            </ul>
-          </article>
-        </div>
+    <section class="section roles" id="roles">
+      <div class="section-head">
+        <div><p class="kicker">07 / Répartir les responsabilités</p><h2>Un projet de service, pas un outil laissé à quelques utilisateurs.</h2></div>
+        <p>Les métiers doivent pouvoir définir les critères, les limites et les situations dans lesquelles le système ne doit pas être utilisé.</p>
+      </div>
+      <div class="role-table">
+        <article class="role-row"><strong>Médecins et infirmiers</strong><div><span>Apport</span><strong>Définir les cas, la référence professionnelle et les erreurs inacceptables.</strong></div><div><span>Responsabilité</span><strong>Conserver l’interprétation clinique et la validation de toute sortie utilisée.</strong></div></article>
+        <article class="role-row"><strong>IPRP, ergonomes et psychologues</strong><div><span>Apport</span><strong>Décrire les situations de travail et les effets organisationnels du pilote.</strong></div><div><span>Responsabilité</span><strong>Éviter qu’une synthèse automatique remplace l’analyse du terrain.</strong></div></article>
+        <article class="role-row"><strong>Assistants et équipes administratives</strong><div><span>Apport</span><strong>Identifier les tâches répétitives, les exceptions et les besoins d’information.</strong></div><div><span>Responsabilité</span><strong>Signaler la charge réelle de correction et les erreurs qui atteignent les usagers.</strong></div></article>
+        <article class="role-row"><strong>Direction, DPO et informatique</strong><div><span>Apport</span><strong>Organiser le contrat, les données, les accès, la sécurité et le suivi.</strong></div><div><span>Responsabilité</span><strong>Donner les moyens d’arrêter l’usage et d’informer les instances concernées.</strong></div></article>
+        <article class="role-row"><strong>CSE et représentants du personnel</strong><div><span>Apport</span><strong>Examiner les conséquences sur les métiers, la charge, l’autonomie et les compétences.</strong></div><div><span>Responsabilité</span><strong>Demander un retour documenté avant toute généralisation.</strong></div></article>
       </div>
     </section>
 
-    <section class="usages-section">
-      <div class="wrap">
-        <div class="article-cta reveal">
-          <div>
-            <span class="kicker">Article de référence</span>
-            <h2>Lire l’étude complète</h2>
-            <p>Retrouver le protocole, les résultats détaillés et la discussion dans l’article publié sous la référence TF 335.</p>
-          </div>
-          <a class="btn btn-solid" href="https://www.inrs.fr/accueil/media.html?refINRS=TF+335" rel="noopener noreferrer" target="_blank">Lire l’article sur le site de l’INRS ↗</a>
-        </div>
-      </div>
+    <section class="section contact" id="contact">
+      <div><p class="kicker">Utilisation en SPSTI · Formation · Recherche</p><h2>Vous souhaitez discuter d’un pilote ou de l’étude&nbsp;?</h2></div>
+      <div class="contact-copy"><p>Présentez la tâche envisagée, les professionnels concernés, les données utilisées et ce que vous souhaitez mesurer. L’échange peut porter sur le choix du cas d’usage, le protocole d’évaluation ou les effets sur le travail.</p><div class="contact-actions"><a class="button light" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter le Dr Charles Broutin <span>↗</span></a><a class="button secondary" style="color:var(--cream);border-color:var(--line-light)" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article INRS</a></div><small>Contact professionnel sur LinkedIn · article accessible sur le site de l’INRS</small></div>
     </section>
+  </main>
 
-    <section class="usages-section">
-      <div class="wrap">
-        <div class="action-grid">
-          <a class="action-card glass reveal" href="../avant-deploiement/"><span><h3>Maîtriser un usage avant déploiement</h3><p>Passer du cas documenté à une méthode de pilotage.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
-          <a class="action-card glass reveal" href="../../evaluer/impact/"><span><h3>Évaluer un projet d’IA</h3><p>Analyser les effets potentiels avant la mise en place.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
-          <a class="action-card glass reveal" href="../retours-terrain/"><span><h3>Voir les retours de terrain</h3><p>Observer les effets une fois l’outil déployé.</p></span><span class="action-arrow" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-
-      <section class="author-byline" aria-label="Auteur du contenu">
-        <div class="wrap">
-          <p>Rédigé par le <a href="../../a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p>
-        </div>
-      </section>
-
-  </section>
-</main>
-
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="brand" href="../../"><span aria-hidden="true" class="brand-mark"></span>IA &amp; Santé au Travail</a>
-          <p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p>
-        </div>
-        <div>
-          <h4>Parcours</h4>
-          <ul>
-            <li><a href="../../comprendre/">Comprendre</a></li>
-            <li><a href="../../usages-terrain/">Usages &amp; terrain</a></li>
-            <li><a href="../../evaluer/">Évaluer</a></li>
-            <li><a href="../../risques-prevention/">Risques &amp; prévention</a></li>
-            <li><a href="../../droit-gouvernance/">Droit &amp; gouvernance</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Ressources</h4>
-          <ul>
-            <li><a href="../../ressources/modeles/">Panorama des modèles</a></li>
-            <li><a href="../../a-propos/">À propos et publications</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" rel="noopener noreferrer" target="_blank">Contacter l’auteur sur LinkedIn</a></li>
-            <li><a href="../../confidentialite/">Confidentialité</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante · Toiles de Thomas Cole, domaine public.</span>
-        <span><a href="../../mentions-legales/">Mentions légales</a> · <a href="../../confidentialite/">Confidentialité</a></span>
-      </div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><strong>IA &amp; Santé au Travail</strong><p>Des repères pour choisir, évaluer et encadrer les usages de l’intelligence artificielle dans le travail réel.</p></div>
+      <div class="footer-col"><span>Cette page</span><a href="#usages">Usages</a><a href="#etude">Étude INRS</a><a href="#resultats">Résultats</a><a href="#pilote">Construire un pilote</a></div>
+      <div class="footer-col"><span>Parcours</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a><a href="https://www.iasantetravail.com/usages-terrain/">Usages &amp; terrain</a><a href="https://www.iasantetravail.com/evaluer/">Évaluer</a><a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a></div>
+      <div class="footer-col"><span>Ressources</span><a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Article INRS ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.iasantetravail.com/confidentialite/">Confidentialité</a></div>
+      <div class="footer-bottom"><span>Étude citée : C. Broutin, Références en Santé au Travail, TF 335, n° 186, juin 2026.</span><span>© 2026 IA &amp; Santé au Travail.</span></div>
     </div>
   </footer>
-  <button aria-label="Revenir en haut" id="backToTop" type="button">↑</button>
-  <dialog aria-labelledby="searchTitle" class="search-dialog" id="siteSearch">
-    <div class="search-shell">
-      <div class="search-head"><h2 id="searchTitle">Rechercher</h2><button aria-label="Fermer" class="search-close" type="button">×</button></div>
-      <input autocomplete="off" class="search-input" id="searchInput" placeholder="Ex. CSE, pilote, préconisations…" type="search"/>
-      <div class="search-results" id="searchResults"><p class="search-empty">Saisissez au moins deux caractères.</p></div>
-    </div>
-  </dialog>
-  <script defer src="../../assets/js/search-index.js"></script>
-  <script defer src="../../assets/js/search-index-usages.js"></script>
-  <script defer src="../../assets/js/site.js"></script>
 
+  <script>
+    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
+  </script>
 </body>
 </html>
