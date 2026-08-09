@@ -54,3 +54,100 @@ main [id] {
   .method,
   .capabilities { padding-block: 56px; }
 }
+
+/* Three explicit hero roles shared by the new editorial generation. */
+.page-shell-v2 main > .hero,
+.page-shell-v2 main > .assessment-hero {
+  width: 100%;
+  padding: clamp(48px, 5vw, 76px) max(32px, calc(50% - 720px));
+  align-items: center;
+}
+
+.page-shell-v2.hero-manifesto main > .hero {
+  min-height: clamp(660px, 76vh, 850px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  gap: clamp(44px, 6vw, 96px);
+}
+
+.page-shell-v2.hero-editorial main > .hero,
+.page-shell-v2.hero-profile main > .hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.72fr);
+  gap: clamp(38px, 5vw, 78px);
+  padding-block: clamp(54px, 6vw, 86px);
+}
+
+.page-shell-v2.hero-tool main > .hero,
+.page-shell-v2.hero-tool main > .assessment-hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
+  gap: clamp(34px, 5vw, 72px);
+  padding-block: clamp(42px, 5vw, 70px);
+}
+
+.page-shell-v2.hero-editorial main > .hero > .artwork img,
+.page-shell-v2.hero-editorial main > .hero > .hero-artwork img {
+  max-height: 430px;
+  object-fit: cover;
+}
+
+.page-shell-v2 main > .hero > .hero-copy { max-width: 760px; }
+.page-shell-v2 main > .hero h1,
+.page-shell-v2 main > .assessment-hero h1 {
+  max-width: 14ch;
+  margin: 18px 0 22px;
+  font-family: var(--sans);
+  font-size: clamp(3rem, 5.4vw, 6.3rem);
+  font-weight: 640;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.page-shell-v2.hero-editorial main > .hero h1,
+.page-shell-v2.hero-profile main > .hero h1 {
+  max-width: 15ch;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+}
+
+.page-shell-v2.hero-tool main > .hero h1,
+.page-shell-v2.hero-tool main > .assessment-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.7rem, 4.4vw, 4.9rem);
+}
+
+.page-shell-v2 main > .hero h1 em,
+.page-shell-v2 main > .assessment-hero h1 em {
+  color: var(--terra-interactive);
+  font-style: normal;
+}
+
+@media (max-width: 980px) {
+  .page-shell-v2.hero-manifesto main > .hero,
+  .page-shell-v2.hero-editorial main > .hero,
+  .page-shell-v2.hero-profile main > .hero,
+  .page-shell-v2.hero-tool main > .hero,
+  .page-shell-v2.hero-tool main > .assessment-hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .page-shell-v2.hero-manifesto main > .hero { min-height: 0; }
+}
+
+@media (max-width: 760px) {
+  .page-shell-v2 main > .hero,
+  .page-shell-v2 main > .assessment-hero {
+    padding: 42px 16px;
+  }
+
+  .page-shell-v2 main > .hero h1,
+  .page-shell-v2 main > .assessment-hero h1,
+  .page-shell-v2.hero-editorial main > .hero h1,
+  .page-shell-v2.hero-profile main > .hero h1,
+  .page-shell-v2.hero-tool main > .hero h1,
+  .page-shell-v2.hero-tool main > .assessment-hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.45rem, 11vw, 4rem);
+    line-height: 0.98;
+  }
+}

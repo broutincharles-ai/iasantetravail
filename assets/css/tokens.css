@@ -1,16 +1,24 @@
 :root {
   --ink: #17140f;
+  --ink-soft: #3f3931;
   --cream: #f4ebda;
   --paper: #fff9f2;
+  --white: #fffdf9;
   --terra: #a84e1f;
-  --terra-interactive: #c94d24;
+  --terra-bright: #c94d24;
+  --terra-interactive: #873a16;
   --prevention: #344f49;
   --governance: #23383a;
+  --green: var(--prevention);
+  --green-dark: var(--governance);
   --lavender: #c9c2f2;
   --lavender-accessible: #4a4090;
+  --lavender-dark: var(--lavender-accessible);
   --muted: #5f584f;
   --line: rgba(23, 20, 15, 0.16);
-  --shadow-soft: 0 20px 60px -42px rgba(23, 20, 15, 0.55);
+  --line-strong: rgba(23, 20, 15, 0.3);
+  --line-light: rgba(244, 235, 218, 0.24);
+  --shadow-soft: 0 16px 38px -34px rgba(23, 20, 15, 0.48);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -22,12 +30,16 @@
   --space-8: 64px;
   --space-9: 96px;
 
-  --content-max: 1220px;
-  --reading-max: 720px;
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 30px;
-  --focus-ring: 0 0 0 3px var(--paper), 0 0 0 6px var(--lavender-accessible);
+  --content-max: 1440px;
+  --content-wide: 1760px;
+  --reading-max: 760px;
+  --radius-sm: 0;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --sans: Inter, Geist, "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --wrap: min(var(--content-max), calc(100% - 80px));
+  --focus-ring: 0 0 0 3px var(--paper), 0 0 0 6px var(--terra-interactive);
 
   /* Compatibility aliases for the existing page generations. */
   --encre: var(--ink);
@@ -43,21 +55,35 @@ html {
   scroll-behavior: smooth;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
+  margin: 0;
   color: var(--ink);
-  font-family: "Instrument Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--paper);
+  font-family: var(--sans);
   font-size: 17px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
+
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea, summary { color: inherit; font: inherit; }
+h1, h2, h3, p { text-wrap: pretty; }
+[hidden] { display: none !important; }
 
 h1,
 h2,
-h3,
-.serif {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
+h3 {
+  font-family: var(--sans);
+  font-weight: 650;
+  letter-spacing: -0.04em;
 }
+
+.serif { font-family: "Fraunces", Georgia, serif; }
 
 a,
 button,
@@ -69,9 +95,22 @@ textarea {
 }
 
 :focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring);
+  outline: 3px solid var(--terra-interactive);
+  outline-offset: 3px;
 }
+
+.skip-link {
+  position: fixed;
+  z-index: 2000;
+  top: 8px;
+  left: 8px;
+  padding: 11px 15px;
+  color: var(--paper);
+  background: var(--ink);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus { transform: none; }
 
 ::selection {
   color: var(--paper);
