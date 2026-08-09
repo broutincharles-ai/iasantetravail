@@ -2,305 +2,479 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Observer une application concrète de l’IA en santé au travail, préparer un usage avant déploiement et en suivre les effets dans le travail réel.">
-  <meta name="author" content="Dr Charles Broutin">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#EADDC6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accompagner le déploiement d’une IA — IA &amp; Santé au Travail</title>
+  <meta name="description" content="Évaluer un projet d’intelligence artificielle avant son déploiement, organiser un pilote réversible et suivre ses effets dans le travail réel.">
   <link rel="canonical" href="https://www.iasantetravail.com/usages-terrain/">
-  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/">
-  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/">
-  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:site_name" content="IA &amp; Santé au Travail">
-  <meta property="og:title" content="Usages &amp; terrain — IA &amp; Santé au Travail">
-  <meta property="og:description" content="Observer une application concrète de l’IA en santé au travail, préparer un usage avant déploiement et en suivre les effets dans le travail réel.">
-  <meta property="og:url" content="https://www.iasantetravail.com/usages-terrain/">
-  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-usages.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Usages &amp; terrain — IA &amp; Santé au Travail">
-  <meta name="twitter:description" content="Observer une application concrète de l’IA en santé au travail et analyser ses effets dans le travail réel.">
-  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/og-usages.jpg">
-  <title>Déployer l’IA à partir du travail réel — IA &amp; Santé au Travail</title>
-  <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"CollectionPage",
-      "name":"Usages & terrain",
-      "headline":"Usages et terrain",
-      "url":"https://www.iasantetravail.com/usages-terrain/",
-      "inLanguage":"fr-FR",
-      "description":"Observer une application concrète de l’IA en santé au travail, préparer un usage avant déploiement et en suivre les effets dans le travail réel.",
-      "dateModified":"2026-07-19",
-      "author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail","url":"https://www.iasantetravail.com/a-propos/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]},
-      "publisher":{"@type":"Person","name":"Dr Charles Broutin"}
+  <style>
+    :root {
+      --ink: #17140f;
+      --ink-soft: #3f3931;
+      --muted: #625b52;
+      --terra: #a84e1f;
+      --terra-bright: #c94d24;
+      --green: #344f49;
+      --green-dark: #23383a;
+      --cream: #f4ebda;
+      --paper: #fff9f2;
+      --white: #fffdf9;
+      --lavender: #c9c2f2;
+      --lavender-dark: #4a4090;
+      --line: rgba(23, 20, 15, .16);
+      --line-light: rgba(244, 235, 218, .23);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --wrap: min(1440px, calc(100% - 80px));
     }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="preload" href="/assets/images/arcadian-state-1280.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="/assets/css/usages-terrain-hub.css?v=1.0">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/assets/images/favicon-48.png" sizes="48x48" type="image/png">
-  <link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <script async src="https://plausible.io/js/pa-7YQqLhsPMI0TxmcCTe7d6.js"></script>
-  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};plausible.init=plausible.init||function(options){plausible.o=options||{}};plausible.init();</script>
-  <script>document.documentElement.classList.add('js');</script>
 
-<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/components.css?v=1.1" rel="stylesheet"/>
-<script defer src="/assets/js/site-shell.js?v=1.1"></script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, summary { color: inherit; font: inherit; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
+    .skip-link:focus { transform: none; }
+
+    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
+    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
+    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
+    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
+    .brand-copy strong, .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
+    .nav-side { display: flex; align-items: center; gap: 10px; }
+    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
+    .nav-cta, .button.primary { color: #fff; background: var(--green); }
+    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
+    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
+    .button.secondary { border-color: var(--line); background: transparent; }
+    .button.secondary:hover { background: var(--cream); }
+    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
+    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
+
+    .menu-dropdown { position: relative; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary::-webkit-details-marker { display: none; }
+    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
+    .menu-dropdown[open] > summary::after { content: "−"; }
+    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .menu-col { display: grid; align-content: start; gap: 11px; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
+    .menu-col a:hover { color: var(--terra); }
+
+    .section { padding: 76px max(40px, calc(50% - 720px)); }
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker.line { display: flex; align-items: center; gap: 14px; }
+    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
+    .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
+
+    .hero { width: var(--wrap); min-height: 690px; margin: 0 auto; padding: 66px 0 48px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 68px; }
+    .hero-copy { max-width: 700px; }
+    .hero h1 { margin: 34px 0 28px; font-size: clamp(56px, 5.55vw, 86px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
+    .hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lede { max-width: 650px; margin: 0; color: var(--muted); font-size: 19px; line-height: 1.6; }
+    .hero-context { max-width: 650px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .hero-context strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 35px; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 29px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
+
+    .artwork { margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .artwork-label { min-height: 62px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 10px; }
+    .artwork-label strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
+    .artwork-label strong::before { content: ""; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+    .artwork img { width: 100%; aspect-ratio: 1.48 / 1; object-fit: cover; object-position: center; filter: saturate(.82) contrast(.96); }
+    .artwork figcaption { display: grid; grid-template-columns: 175px 1fr; gap: 25px; padding: 20px; border-top: 1px solid var(--line); }
+    .artwork figcaption span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 780; letter-spacing: .07em; line-height: 1.45; text-transform: uppercase; }
+    .artwork figcaption p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .artwork figcaption a { color: var(--terra); font-weight: 750; }
+
+    .quick-read { display: grid; grid-template-columns: repeat(3, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .quick-read article { min-height: 150px; padding: 25px 28px; border-right: 1px solid var(--line); }
+    .quick-read article:first-child { padding-left: 0; }
+    .quick-read article:last-child { border-right: 0; }
+    .quick-read span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
+    .quick-read h2 { margin: 26px 0 8px; font-size: 16px; letter-spacing: -.02em; }
+    .quick-read p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .pathways { background: var(--cream); }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border: 1px solid var(--line); }
+    .tool-card { min-height: 420px; padding: 34px; display: flex; flex-direction: column; background: rgba(255, 249, 242, .42); }
+    .tool-card + .tool-card { border-left: 1px solid var(--line); background: var(--paper); }
+    .tool-top { display: flex; justify-content: space-between; gap: 20px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .tool-card h3 { max-width: 590px; margin: 50px 0 18px; font-size: 31px; letter-spacing: -.045em; line-height: 1.12; }
+    .tool-card > p { max-width: 620px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .tool-output { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 30px; border-top: 1px solid var(--line); }
+    .tool-output div { padding: 20px 14px 0 0; }
+    .tool-output div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+    .tool-output small, .tool-output strong { display: block; }
+    .tool-output small { color: var(--terra); font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
+    .tool-output strong { margin-top: 8px; font-size: 11px; line-height: 1.45; }
+    .tool-card .button { align-self: flex-start; margin-top: auto; }
+    .shared-trace { padding: 24px 28px; border: 1px solid var(--line); border-top: 0; display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; color: var(--paper); background: var(--green-dark); }
+    .shared-trace span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .shared-trace p { margin: 0; font-size: 16px; font-weight: 620; line-height: 1.5; }
+
+    .before { background: var(--white); }
+    .decision-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
+    .decision-table table { width: 100%; min-width: 920px; border-collapse: collapse; }
+    .decision-table th { padding: 15px 22px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    .decision-table th:first-child { width: 24%; }
+    .decision-table th:nth-child(2) { width: 42%; }
+    .decision-table td { padding: 21px 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.52; vertical-align: top; }
+    .decision-table tbody tr:first-child td { border-top: 0; }
+    .decision-table td:first-child { color: var(--ink); font-weight: 720; }
+    .decision-table td:last-child { color: var(--terra); }
+    .table-index { display: inline-block; min-width: 31px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .before-note { display: grid; grid-template-columns: .62fr 1.38fr; gap: 44px; align-items: center; margin-top: 30px; padding: 27px 30px; color: var(--paper); background: var(--green-dark); }
+    .before-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .before-note p { margin: 0; color: var(--cream); font-size: 17px; font-weight: 620; line-height: 1.5; }
+
+    .pilot { background: var(--paper); }
+    .pilot-chain { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .pilot-step { position: relative; min-height: 295px; padding: 29px; border-right: 1px solid var(--line); }
+    .pilot-step:last-child { border-right: 0; }
+    .pilot-step > span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
+    .pilot-step h3 { margin: 62px 0 16px; font-size: 21px; letter-spacing: -.03em; line-height: 1.18; }
+    .pilot-step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .pilot-step:not(:last-child)::after { position: absolute; z-index: 2; top: 50%; right: -10px; display: grid; width: 20px; height: 20px; place-items: center; color: var(--terra); background: var(--paper); content: "→"; font-size: 13px; }
+    .demo-gap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 58px; margin-top: 34px; padding: 28px 30px; border: 1px solid var(--line); background: var(--cream); }
+    .demo-gap h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; line-height: 1.2; }
+    .demo-gap ul { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 25px; margin: 0; padding: 0; list-style: none; }
+    .demo-gap li { position: relative; padding-left: 20px; color: var(--muted); font-size: 12px; line-height: 1.48; }
+    .demo-gap li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+
+    .follow-up { color: var(--paper); background: var(--green-dark); }
+    .follow-up .kicker { color: var(--lavender); }
+    .follow-up .section-head > p { color: rgba(244, 235, 218, .7); }
+    .monitor-table { margin-top: 52px; border-top: 1px solid var(--line-light); }
+    .monitor-row { display: grid; grid-template-columns: 42px 210px minmax(260px, 1fr) minmax(230px, .7fr); gap: 24px; align-items: center; min-height: 120px; border-bottom: 1px solid var(--line-light); }
+    .monitor-row > span:first-child { color: var(--lavender); font-family: var(--mono); font-size: 10px; }
+    .monitor-row strong { font-size: 17px; letter-spacing: -.02em; }
+    .monitor-row p { margin: 0; color: rgba(244, 235, 218, .68); font-size: 12px; line-height: 1.5; }
+    .monitor-row b { color: var(--cream); font-size: 12px; line-height: 1.45; font-weight: 650; }
+    .monitor-head { min-height: 48px; color: rgba(244, 235, 218, .5); font-family: var(--mono); font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .follow-calendar { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; border: 1px solid var(--line-light); }
+    .calendar-step { min-height: 145px; padding: 22px; border-right: 1px solid var(--line-light); }
+    .calendar-step:last-child { border-right: 0; }
+    .calendar-step span { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .calendar-step strong { display: block; margin-top: 28px; font-size: 13px; line-height: 1.4; }
+    .calendar-note { margin: 17px 0 0; color: rgba(244, 235, 218, .55); font-size: 10px; }
+
+    .access { background: var(--cream); }
+    .role-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .role-card { min-height: 270px; padding: 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 249, 242, .45); }
+    .role-card > span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .role-card h3 { margin: 48px 0 14px; font-size: 20px; letter-spacing: -.03em; }
+    .role-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .contact-panel { display: grid; grid-template-columns: 1.02fr .98fr; margin-top: 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
+    .contact-copy { padding: 35px 36px; }
+    .contact-copy span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-copy h3 { max-width: 660px; margin: 24px 0 16px; font-size: 31px; letter-spacing: -.045em; line-height: 1.14; }
+    .contact-copy p { max-width: 650px; margin: 0; color: rgba(244, 235, 218, .72); font-size: 14px; line-height: 1.58; }
+    .contact-copy .button { margin-top: 27px; }
+    .contact-options { padding: 35px; border-left: 1px solid var(--line-light); display: grid; align-content: center; }
+    .contact-options strong { margin-bottom: 15px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .contact-options ul { margin: 0; padding: 0; list-style: none; }
+    .contact-options li { padding: 13px 0 13px 23px; border-top: 1px solid var(--line-light); color: var(--cream); font-size: 12px; line-height: 1.45; position: relative; }
+    .contact-options li::before { position: absolute; left: 0; color: var(--lavender); content: "→"; }
+
+    .method { background: var(--white); }
+    .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border: 1px solid var(--line); }
+    .method-card { min-height: 220px; padding: 25px; border-right: 1px solid var(--line); }
+    .method-card:last-child { border-right: 0; }
+    .method-card span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .method-card h3 { margin: 42px 0 12px; font-size: 18px; letter-spacing: -.025em; }
+    .method-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.52; }
+    .source-strip { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .source-strip a { padding: 12px 14px; border: 1px solid var(--line); color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 750; }
+    .source-strip a:hover { background: var(--cream); }
+
+    .newsletter { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; align-items: center; background: var(--lavender); }
+    .newsletter .kicker { color: var(--lavender-dark); }
+    .newsletter h2 { max-width: 850px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .newsletter-copy p { margin: 0; color: #423b65; font-size: 17px; line-height: 1.62; }
+    .newsletter-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .newsletter .secondary { border-color: rgba(74, 64, 144, .35); }
+    .newsletter-copy small { display: block; margin-top: 18px; color: #554e77; font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+
+    .site-footer { color: var(--cream); background: var(--ink); }
+    .footer-grid { width: var(--wrap); margin: 0 auto; padding: 58px 0 24px; display: grid; grid-template-columns: 1.5fr repeat(3, .65fr); gap: 58px; }
+    .footer-brand strong { font-size: 21px; }
+    .footer-brand p { max-width: 400px; margin: 16px 0 0; color: rgba(244, 235, 218, .62); font-size: 13px; line-height: 1.58; }
+    .footer-col { display: grid; align-content: start; gap: 9px; }
+    .footer-col span { margin-bottom: 7px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .7); font-size: 12px; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 25px; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(244, 235, 218, .17); color: rgba(244, 235, 218, .45); font-size: 10px; }
+
+    @media (max-width: 1220px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero h1 { font-size: clamp(53px, 6.8vw, 76px); }
+      .monitor-row { grid-template-columns: 38px 180px 1fr; }
+      .monitor-row b { grid-column: 3; padding-bottom: 18px; }
+      .monitor-head b { display: none; }
+      .role-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 920px) {
+      :root { --wrap: min(100% - 44px, 1440px); }
+      .section { padding: 64px 22px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
+      .hero-copy { max-width: none; }
+      .artwork { max-width: 780px; }
+      .section-head, .before-note, .shared-trace, .demo-gap, .contact-panel, .newsletter { grid-template-columns: 1fr; gap: 34px; }
+      .quick-read, .tool-grid, .pilot-chain, .follow-calendar, .method-grid { grid-template-columns: 1fr; }
+      .quick-read article { min-height: 0; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .quick-read article:last-child { border-bottom: 0; }
+      .tool-card { min-height: 390px; }
+      .tool-card + .tool-card { border-left: 0; border-top: 1px solid var(--line); }
+      .pilot-step { min-height: 0; padding: 29px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .pilot-step h3 { margin-top: 32px; }
+      .pilot-step::after { display: none !important; }
+      .demo-gap ul { grid-template-columns: 1fr; }
+      .follow-calendar .calendar-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
+      .follow-calendar .calendar-step:last-child { border-bottom: 0; }
+      .contact-options { border-left: 0; border-top: 1px solid var(--line-light); }
+      .method-card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .method-card:last-child { border-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-bottom { display: grid; }
+    }
+    @media (max-width: 640px) {
+      :root { --wrap: calc(100% - 30px); }
+      .section { padding: 54px 15px; }
+      .nav { min-height: 78px; gap: 14px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .brand-mark img { width: 31px; height: 31px; }
+      .brand-copy strong { font-size: 15px; }
+      .brand-copy small, .language, .nav-cta { display: none; }
+      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
+      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
+      .hero h1 { font-size: clamp(44px, 13.5vw, 60px); }
+      .hero-lede { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .artwork figcaption { grid-template-columns: 1fr; }
+      .section-head h2, .newsletter h2 { font-size: 40px; }
+      .tool-card { min-height: 0; padding: 25px 20px; }
+      .tool-card h3 { margin-top: 35px; font-size: 27px; }
+      .tool-output { grid-template-columns: 1fr; }
+      .tool-output div { padding: 16px 0; border-bottom: 1px solid var(--line); }
+      .tool-output div + div { padding-left: 0; border-left: 0; }
+      .tool-output div:last-child { border-bottom: 0; }
+      .tool-card .button { width: 100%; margin-top: 25px; }
+      .monitor-row { grid-template-columns: 30px 1fr; gap: 12px; padding: 20px 0; }
+      .monitor-row strong, .monitor-row p, .monitor-row b { grid-column: 2; }
+      .monitor-row b { padding-bottom: 0; }
+      .monitor-head { display: none; }
+      .role-grid { grid-template-columns: 1fr; }
+      .contact-copy, .contact-options { padding: 28px 24px; }
+      .contact-copy h3 { font-size: 27px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
-<body class="page-usages-v2" data-page="pratique" data-root="../">
-  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="site-header">
-    <nav class="nav wrap" aria-label="Navigation principale">
-      <a class="brand" href="https://www.iasantetravail.com/" aria-label="IA et Santé au Travail, accueil"><span class="brand-mark" aria-hidden="true"></span><span>IA &amp; Santé au Travail</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="https://www.iasantetravail.com/">Accueil</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="https://www.iasantetravail.com/">
+        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span>
+      </a>
+      <div class="nav-links">
         <a href="https://www.iasantetravail.com/comprendre/">Comprendre</a>
-        <a class="active" href="https://www.iasantetravail.com/usages-terrain/" aria-current="page">Usages &amp; terrain</a>
-        <a href="https://www.iasantetravail.com/risques-prevention/">Risques &amp; prévention</a>
-        <a href="https://www.iasantetravail.com/evaluer/">Évaluer</a>
-        <a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a>
-        <a href="https://www.iasantetravail.com/ressources/modeles/">Ressources</a>
+        <a href="#parcours" aria-current="page">Usages &amp; terrain</a>
+        <a href="#avant">Avant</a>
+        <a href="#apres">Après</a>
+        <a href="#acces">Accès accompagné</a>
       </div>
-      <div class="nav-tools">
-        <button class="search-button" id="openSearch" type="button" aria-label="Rechercher dans la page">⌕</button>
-        <div class="language" aria-label="Choix de la langue"><a class="active" href="https://www.iasantetravail.com/usages-terrain/" lang="fr" aria-current="page">FR</a><a href="https://www.iasantetravail.com/en/uses-and-field/" lang="en" hreflang="en">EN</a></div>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">☰</button>
-        <a class="nav-cta" href="https://www.iasantetravail.com/evaluer/impact/">Évaluer un projet</a>
+      <div class="nav-side">
+        <a class="language" href="https://www.iasantetravail.com/en/" aria-label="English version">EN</a>
+        <details class="menu-dropdown">
+          <summary>Menu</summary>
+          <div class="menu-panel">
+            <div class="menu-col"><span>Déployer</span><a href="#parcours">Les deux questionnaires</a><a href="#avant">Décider avant</a><a href="#pilote">Organiser un pilote</a><a href="#apres">Vérifier après</a></div>
+            <div class="menu-col"><span>Utiliser</span><a href="https://www.iasantetravail.com/evaluer/impact/">Évaluation initiale ↗</a><a href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Suivi après déploiement ↗</a><a href="#methode">Méthode et limites</a><a href="#acces">Demander un accès accompagné</a></div>
+            <div class="menu-col"><span>Le site</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre l’IA ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos ↗</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter sur LinkedIn ↗</a></div>
+          </div>
+        </details>
+        <a class="nav-cta" href="https://www.iasantetravail.com/evaluer/impact/">Évaluer un projet <span>→</span></a>
       </div>
     </nav>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero-frame">
-          <img src="/assets/images/arcadian-state-1280.webp" alt="Thomas Cole, L’État arcadien ou pastoral, 1836" width="1280" height="798" fetchpriority="high">
-          <div class="hero-copy">
-            <p class="eyebrow">Déployer · De la preuve à la décision</p>
-            <h1 id="hero-title">Déployer l’IA à partir <em>du travail réel.</em></h1>
-            <p class="hero-lead">Examiner un usage concret, préparer un pilote maîtrisé et comparer après déploiement les bénéfices promis aux effets réellement observés.</p>
-          </div>
-          <p class="hero-credit">Thomas Cole, The Arcadian or Pastoral State, 1836</p>
-        </div>
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="kicker line">Usages &amp; terrain · Accompagnement au déploiement</p>
+        <h1>Déployer une IA sans découvrir ses effets <em>après coup.</em></h1>
+        <p class="hero-lede">Cadrez l’usage avant sa mise en place, organisez un pilote réversible, puis comparez les promesses aux effets réellement observés dans le travail.</p>
+        <p class="hero-context"><strong>Pourquoi un questionnaire&nbsp;?</strong> Pour rendre cette démarche concrète, j’ai conçu un outil exploratoire à partir des six familles de facteurs de risques psychosociaux définies par le rapport Gollac, complétées par trois dimensions liées à l’IA. Il sert à structurer la discussion et à faire apparaître des points de vigilance. Son efficacité et ses qualités de mesure n’ont pas, à ce jour, été démontrées scientifiquement.</p>
+        <div class="hero-actions"><a class="button primary" href="#parcours">Choisir le bon questionnaire <span>↓</span></a><a class="button secondary" href="#acces">Être accompagné</a></div>
+        <div class="hero-proof"><span>18 questions · environ 10 min</span><span>Données conservées localement</span><span>Rapport archivable</span></div>
       </div>
+
+      <figure class="artwork">
+        <div class="artwork-label"><strong>Le moment de choisir</strong><span>Art · organisation · prévention</span></div>
+        <img src="https://www.iasantetravail.com/assets/images/arcadian-state-1280.webp" alt="The Course of Empire — The Arcadian or Pastoral State, œuvre de Thomas Cole montrant un paysage désormais cultivé et habité">
+        <figcaption>
+          <span>Thomas Cole<br>The Arcadian or Pastoral State · 1834</span>
+          <p>Dans le deuxième tableau de la série, le paysage s’organise : les habitants cultivent, construisent, naviguent et développent les arts. Mais certains signes annoncent déjà ce que cette transformation pourrait devenir. C’est précisément le moment du déploiement : celui où l’on peut encore choisir les usages à développer, les équilibres à préserver et les signaux qui imposeront de corriger ou d’arrêter. <a href="https://explorethomascole.org/project/the-arcadian-or-pastoral-state/" target="_blank" rel="noreferrer">Voir l’œuvre ↗</a></p>
+        </figcaption>
+      </figure>
     </section>
 
-    <div class="route-strip">
-      <div class="wrap route-grid" aria-label="Accès directs">
-        <a class="route-item" href="#cas-documente"><span class="route-index">01</span><span><strong>Voir une application concrète</strong><span>Une seconde lecture assistée en santé au travail.</span></span></a>
-        <a class="route-item" href="#avant"><span class="route-index">02</span><span><strong>Préparer avant déploiement</strong><span>Risque, pilote et responsabilités.</span></span></a>
-        <a class="route-item" href="#apres"><span class="route-index">03</span><span><strong>Observer après déploiement</strong><span>Qualité, charge et autonomie.</span></span></a>
-      </div>
-    </div>
-
-    <section class="summary">
-      <div class="wrap summary-panel reveal">
-        <div>
-          <p class="eyebrow" style="color:var(--terra)">En 30 secondes</p>
-          <h2>Un usage ne vaut que dans une situation de travail précise.</h2>
-          <ul class="summary-list">
-            <li>La bonne question n’est pas « que sait faire l’IA ? », mais « quelle tâche transforme-t-elle, pour qui et dans quelles conditions ? »</li>
-            <li>Avant le déploiement, les données, l’autonomie du système et les conséquences d’une erreur déterminent le niveau de vigilance.</li>
-            <li>Après le déploiement, l’utilité doit être comparée à la charge de contrôle, aux erreurs, aux compétences et aux effets collectifs.</li>
-          </ul>
-        </div>
-        <aside class="summary-aside" aria-label="Informations de lecture">
-          <div class="meta-card"><strong>Public</strong><span>Santé au travail, prévention, RH, CSE, employeurs et porteurs de projet</span></div>
-          <div class="meta-card"><strong>Parcours</strong><span>Exemple concret · Avant déploiement · Après déploiement</span></div>
-          <div class="meta-card"><strong>Principe</strong><span>Tâche située · Critères explicites · Possibilité d’arrêter</span></div>
-        </aside>
-      </div>
+    <section class="quick-read" aria-label="À retenir en trente secondes">
+      <article><span>01 · Avant</span><h2>Transformer une intention en hypothèses vérifiables.</h2><p>Décrire la tâche, les personnes concernées, les erreurs possibles, la charge de contrôle et les responsabilités.</p></article>
+      <article><span>02 · Pilote</span><h2>Tester petit, observer vraiment, pouvoir revenir en arrière.</h2><p>Un pilote utile possède un périmètre, une situation de référence, des critères de réussite et des motifs d’arrêt.</p></article>
+      <article><span>03 · Après</span><h2>Comparer les promesses au travail réellement effectué.</h2><p>Mesurer la qualité finale, le temps gagné ou déplacé, l’autonomie, les compétences, le collectif et les alertes.</p></article>
     </section>
 
-    <section class="case-section" id="cas-documente" aria-labelledby="case-title">
-      <div class="wrap">
-        <div class="section-intro reveal">
-          <p class="eyebrow" style="color:var(--terra)">Exemple concret d’application · Santé au travail</p>
-          <h2 id="case-title">Utiliser un modèle de langage comme second lecteur de préconisations médicales.</h2>
-          <p>L’article «&nbsp;Un exemple concret d’utilisation de l’IA en santé au travail&nbsp;» présente la tâche étudiée, le protocole, les résultats et les limites de cet usage.</p>
-        </div>
-
-        <article class="case-panel reveal">
-          <div class="case-top">
-            <div class="case-story">
-              <p class="eyebrow">Article publié · Santé au travail</p>
-              <div class="proof-status">Résultats publiés et contextualisés</div>
-              <h2>Un second lecteur, jamais un décideur.</h2>
-              <p>Un modèle de langage est utilisé pour repérer des défauts de qualité dans des préconisations médicales. Il ne rédige pas la préconisation et ne décide pas à la place du médecin du travail.</p>
-            </div>
-            <div class="case-flow" aria-label="Déroulement simplifié de l’application présentée">
-              <p class="flow-label">Déroulement de l’usage</p>
-              <div class="flow-step"><b>01</b><strong>Préconisation médicale</strong><span>Document rédigé par le médecin</span></div>
-              <div class="flow-step"><b>02</b><strong>Seconde lecture par l’IA</strong><span>Repérage de défauts possibles</span></div>
-              <div class="flow-step"><b>03</b><strong>Comparaison à cinq critères</strong><span>Qualité examinée explicitement</span></div>
-              <div class="flow-step"><b>04</b><strong>Décision du médecin</strong><span>Validation, correction ou rejet</span></div>
-            </div>
-          </div>
-          <div class="case-metrics" aria-label="Résultats principaux de l’étude">
-            <div class="metric"><strong>385</strong><span>préconisations tirées au sort pour l’évaluation comparative.</span></div>
-            <div class="metric"><strong>74,6&nbsp;%</strong><span>de concordance globale avec le consensus multidisciplinaire.</span></div>
-            <div class="metric"><strong>0</strong><span>hallucination observée dans l’échantillon comparatif évalué.</span></div>
-            <div class="metric"><strong>1 rôle</strong><span>maintenu au centre : le médecin contrôle et décide.</span></div>
-          </div>
-          <footer class="case-footer">
-            <p>Ces chiffres décrivent ce protocole et cet échantillon. Ils ne démontrent pas une capacité générale à produire ou valider des préconisations de façon autonome.</p>
-            <a class="button button-primary case-link" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">Lire l’article complet <span aria-hidden="true">→</span></a>
-          </footer>
+    <section class="section pathways" id="parcours">
+      <div class="section-head">
+        <div><p class="kicker">01 / Deux moments, deux outils</p><h2>Documenter la décision avant. Vérifier les effets après.</h2></div>
+        <p>Les deux questionnaires répondent à des questions différentes. Le premier repère ce que le projet pourrait transformer ; le second examine ce qui a réellement changé une fois l’outil utilisé.</p>
+      </div>
+      <div class="tool-grid">
+        <article class="tool-card">
+          <div class="tool-top"><span>Avant déploiement</span><span>18 questions · ≈ 10 min</span></div>
+          <h3>Évaluer l’impact potentiel du projet.</h3>
+          <p>À utiliser pendant le cadrage, le choix d’une solution ou la préparation d’un pilote. Le questionnaire croise les six facteurs de risques psychosociaux du cadre Gollac avec trois mécanismes propres à l’IA.</p>
+          <div class="tool-output"><div><small>Sortie 01</small><strong>Profil sur neuf axes</strong></div><div><small>Sortie 02</small><strong>Points à traiter en priorité</strong></div><div><small>Sortie 03</small><strong>Plan d’action exportable</strong></div></div>
+          <a class="button primary" href="https://www.iasantetravail.com/evaluer/impact/">Commencer l’évaluation <span>→</span></a>
+        </article>
+        <article class="tool-card">
+          <div class="tool-top"><span>Après déploiement</span><span>Suivi daté</span></div>
+          <h3>Observer les effets dans le travail réel.</h3>
+          <p>À utiliser pendant un pilote ou après la mise en service. Le suivi confronte les objectifs initiaux à l’expérience des personnes qui utilisent, vérifient ou subissent les résultats du système.</p>
+          <div class="tool-output"><div><small>Observer</small><strong>Qualité et erreurs</strong></div><div><small>Comparer</small><strong>Charge et autonomie</strong></div><div><small>Décider</small><strong>Maintenir, corriger ou arrêter</strong></div></div>
+          <a class="button secondary" href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Organiser le suivi <span>→</span></a>
         </article>
       </div>
+      <div class="shared-trace"><span>La continuité utile</span><p>Conserver le même périmètre, les mêmes populations et quelques indicateurs communs permet de comparer la situation de départ, le pilote et l’usage stabilisé.</p></div>
     </section>
 
-    <section class="moments" id="avant-apres" aria-labelledby="moments-title">
-      <div class="wrap">
-        <div class="section-intro reveal">
-          <p class="eyebrow" style="color:var(--terra)">Deux moments · Deux questions différentes</p>
-          <h2 id="moments-title">Décider avant. Vérifier après.</h2>
-          <p>Les deux parcours opérationnels sont distingués clairement : préparer un usage n’est pas la même chose qu’en observer les effets réels.</p>
-        </div>
-        <div class="moment-grid">
-          <article class="moment-card reveal" id="avant">
-            <div class="moment-topline"><span>Avant déploiement</span><span class="moment-number">02</span></div>
-            <h3>Maîtriser l’usage avant qu’il ne transforme l’organisation.</h3>
-            <p class="moment-lead">Définir la tâche, choisir un niveau de vigilance et organiser un pilote limité, vérifiable et réversible.</p>
-            <div class="risk-levels" aria-label="Trois niveaux de vigilance">
-              <div class="risk-level"><b>Niveau 1</b><span>Veille, synthèse ou reformulation à partir de sources publiques.</span></div>
-              <div class="risk-level"><b>Niveau 2</b><span>Usage métier supervisé : DUERP, formation, fiche d’entreprise ou relecture.</span></div>
-              <div class="risk-level"><b>Niveau 3</b><span>Données sensibles, suivi médical ou système affectant directement les personnes.</span></div>
-            </div>
-            <a class="button button-primary moment-action" href="https://www.iasantetravail.com/usages-terrain/avant-deploiement/">Préparer un usage <span aria-hidden="true">→</span></a>
-          </article>
+    <section class="section before" id="avant">
+      <div class="section-head">
+        <div><p class="kicker">02 / Avant le déploiement</p><h2>Six décisions à prendre avant de lancer le pilote.</h2></div>
+        <p>Le questionnaire ne remplace pas la décision collective. Il sert à rendre explicites les choix qui restent trop souvent enfouis dans une présentation fournisseur ou une promesse de productivité.</p>
+      </div>
+      <div class="decision-table">
+        <table>
+          <thead><tr><th>Décision</th><th>Question à trancher</th><th>Trace à conserver</th></tr></thead>
+          <tbody>
+            <tr><td><span class="table-index">01</span>Besoin réel</td><td>Quel problème professionnel cherche-t-on à résoudre, pour quelles personnes et avec quel résultat attendu&nbsp;?</td><td>Description de la tâche actuelle et objectif du projet</td></tr>
+            <tr><td><span class="table-index">02</span>Périmètre</td><td>Ce que l’outil pourra faire, ce qui restera humain et les usages expressément exclus.</td><td>Cas d’usage autorisés, limites et population concernée</td></tr>
+            <tr><td><span class="table-index">03</span>Données et version</td><td>Quelles données entrent dans le système, où elles circulent et quelle version précise sera testée&nbsp;?</td><td>Sources, règles de conservation et fiche de version</td></tr>
+            <tr><td><span class="table-index">04</span>Contrôle</td><td>Qui vérifiera les résultats, avec quelles compétences, quelles informations et quel temps disponible&nbsp;?</td><td>Responsable, procédure de vérification et charge prévue</td></tr>
+            <tr><td><span class="table-index">05</span>Participation et recours</td><td>Comment les salariés, leurs représentants et la santé au travail seront-ils associés&nbsp;? Qui pourra contester un résultat&nbsp;?</td><td>Modalités de participation, d’alerte et de contestation</td></tr>
+            <tr><td><span class="table-index">06</span>Réversibilité</td><td>Quelles erreurs ou quels effets entraîneront une correction, une suspension ou l’arrêt du projet&nbsp;?</td><td>Seuils de décision et solution de retour au fonctionnement antérieur</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="before-note"><span>Le document qui compte</span><p>À la fin du cadrage, chacun doit pouvoir comprendre ce qui sera testé, ce qui ne le sera pas, qui décide et dans quelles conditions l’expérimentation peut s’arrêter.</p></div>
+    </section>
 
-          <article class="moment-card after reveal" id="apres">
-            <div class="moment-topline"><span>Après déploiement</span><span class="moment-number">03</span></div>
-            <h3>Observer ce que l’outil produit vraiment dans le travail.</h3>
-            <p class="moment-lead">Comparer les promesses initiales aux effets observés, avec les personnes qui utilisent, contrôlent ou subissent le système.</p>
-            <div class="indicator-list" aria-label="Indicateurs de suivi">
-              <div class="indicator" style="--bar:72%"><i></i><strong>Qualité</strong><span>erreurs, omissions, reprises</span></div>
-              <div class="indicator" style="--bar:89%"><i></i><strong>Charge</strong><span>contrôle et travail caché</span></div>
-              <div class="indicator" style="--bar:61%"><i></i><strong>Autonomie</strong><span>marges de manœuvre</span></div>
-              <div class="indicator" style="--bar:77%"><i></i><strong>Compétences</strong><span>apprentissage ou déqualification</span></div>
-              <div class="indicator" style="--bar:68%"><i></i><strong>Collectif</strong><span>coopération et responsabilités</span></div>
-              <div class="indicator" style="--bar:54%"><i></i><strong>Recours</strong><span>contestation et arrêt</span></div>
-            </div>
-            <a class="button button-light moment-action" href="https://www.iasantetravail.com/usages-terrain/retours-terrain/">Voir les retours de terrain <span aria-hidden="true">→</span></a>
-          </article>
-        </div>
+    <section class="section pilot" id="pilote">
+      <div class="section-head">
+        <div><p class="kicker">03 / Organiser le pilote</p><h2>Un pilote n’est pas une démonstration en conditions favorables.</h2></div>
+        <p>Il sert à éprouver une hypothèse dans le travail réel, y compris lorsque les informations sont incomplètes, les cas atypiques et le temps contraint.</p>
+      </div>
+      <div class="pilot-chain">
+        <article class="pilot-step"><span>01 · Point de départ</span><h3>Décrire la situation sans l’outil</h3><p>Qualité, délais, charge, incidents, marges de manœuvre et difficultés déjà présentes. Sans cette référence, aucun gain ne peut être attribué au projet.</p></article>
+        <article class="pilot-step"><span>02 · Cas d’essai</span><h3>Inclure le travail ordinaire et les exceptions</h3><p>Tester les cas fréquents, rares, ambigus et potentiellement graves, ainsi que les situations où le système doit reconnaître qu’il ne peut pas répondre.</p></article>
+        <article class="pilot-step"><span>03 · Conditions limitées</span><h3>Fixer une durée et un périmètre</h3><p>Limiter la population, les données et les décisions concernées. Maintenir une solution de secours et éviter une dépendance irréversible pendant l’essai.</p></article>
+        <article class="pilot-step"><span>04 · Porte de décision</span><h3>Examiner avant d’élargir</h3><p>Réunir les résultats, l’expérience des utilisateurs et les signaux de santé au travail pour décider de poursuivre, modifier, suspendre ou abandonner.</p></article>
+      </div>
+      <div class="demo-gap"><h3>Ce qu’une démonstration fournisseur ne permet pas de mesurer.</h3><ul><li>Le temps nécessaire pour vérifier et corriger</li><li>Le travail supplémentaire créé par les exceptions</li><li>L’effet sur l’entraide et les compétences</li><li>La possibilité réelle de contester une réponse</li><li>Les erreurs propres à vos données et à votre métier</li><li>L’évolution des objectifs une fois l’outil installé</li></ul></div>
+    </section>
+
+    <section class="section follow-up" id="apres">
+      <div class="section-head">
+        <div><p class="kicker">04 / Après le déploiement</p><h2>Suivre les effets qui disparaissent dans une moyenne de performance.</h2></div>
+        <p>Une amélioration globale peut masquer un report de charge sur certains métiers, une perte d’autonomie ou des erreurs rares mais graves. Le suivi doit donc croiser mesures et retours du terrain.</p>
+      </div>
+      <div class="monitor-table" role="table" aria-label="Dimensions de suivi après déploiement">
+        <div class="monitor-row monitor-head" role="row"><span></span><span>Dimension</span><span>Ce qu’il faut observer</span><b>Signal qui appelle une action</b></div>
+        <div class="monitor-row" role="row"><span>01</span><strong>Qualité finale</strong><p>Erreurs, omissions, reprises, incidents évités ou créés et variabilité selon les cas.</p><b>Une erreur grave, répétée ou difficile à détecter.</b></div>
+        <div class="monitor-row" role="row"><span>02</span><strong>Temps et charge</strong><p>Temps de production, mais aussi de vérification, correction, apprentissage et traitement des exceptions.</p><b>Le contrôle annule le gain ou se fait dans l’urgence.</b></div>
+        <div class="monitor-row" role="row"><span>03</span><strong>Autonomie et recours</strong><p>Possibilité de s’écarter du résultat, d’expliquer une décision et d’obtenir une révision.</p><b>La recommandation devient une consigne impossible à contester.</b></div>
+        <div class="monitor-row" role="row"><span>04</span><strong>Compétences</strong><p>Occasions d’apprendre, maintien de la pratique autonome et capacité à repérer une réponse incorrecte.</p><b>Les personnes ne savent plus agir sans l’outil ou contrôler sa sortie.</b></div>
+        <div class="monitor-row" role="row"><span>05</span><strong>Collectif de travail</strong><p>Répartition des tâches, coopération, transmission des savoirs et clarté des responsabilités.</p><b>Le travail difficile se concentre sur quelques personnes ou devient invisible.</b></div>
+        <div class="monitor-row" role="row"><span>06</span><strong>Alertes et santé</strong><p>Difficultés signalées, fatigue, tensions, absentéisme et situations où l’usage doit être interrompu.</p><b>Les alertes augmentent sans réponse ou sans possibilité d’arrêt.</b></div>
+      </div>
+      <div class="follow-calendar" aria-label="Exemple de calendrier de suivi">
+        <article class="calendar-step"><span>T0 · Avant</span><strong>Établir la situation de référence et les effets attendus.</strong></article>
+        <article class="calendar-step"><span>Premières semaines</span><strong>Repérer rapidement les difficultés d’usage et le travail supplémentaire.</strong></article>
+        <article class="calendar-step"><span>Après stabilisation</span><strong>Vérifier les effets durables sur l’activité, les compétences et le collectif.</strong></article>
+        <article class="calendar-step"><span>À chaque changement</span><strong>Réévaluer si le modèle, les données, le périmètre ou l’organisation évoluent.</strong></article>
+      </div>
+      <p class="calendar-note">Cadence indicative à adapter à la durée du pilote, au niveau de risque et au rythme de transformation de l’activité.</p>
+    </section>
+
+    <section class="section access" id="acces">
+      <div class="section-head">
+        <div><p class="kicker">05 / Utiliser l’outil dans votre organisation</p><h2>Un support commun pour préparer la discussion, pas un score à subir.</h2></div>
+        <p>Le questionnaire peut être utilisé directement. Pour une démarche collective, un pilote ou une adaptation à votre contexte, un échange en amont permet de choisir le bon périmètre et les bons participants.</p>
+      </div>
+      <div class="role-grid">
+        <article class="role-card"><span>01</span><h3>Employeurs et directions</h3><p>Documenter la décision, les moyens nécessaires, les responsabilités, les conditions du pilote et les critères de poursuite ou d’arrêt.</p></article>
+        <article class="role-card"><span>02</span><h3>RH et transformations</h3><p>Étudier les tâches recomposées, la charge réelle, les compétences à maintenir, la formation et les conséquences sur les emplois.</p></article>
+        <article class="role-card"><span>03</span><h3>CSE et représentants du personnel</h3><p>Disposer d’une trame commune pour examiner les conditions de travail, demander les informations utiles et convenir d’un suivi.</p></article>
+        <article class="role-card"><span>04</span><h3>SPSTI et acteurs de la prévention</h3><p>Intervenir dès le cadrage, repérer les situations d’exposition et aider à choisir des indicateurs collectifs de prévention.</p></article>
+      </div>
+      <div class="contact-panel">
+        <div class="contact-copy"><span>Accès accompagné · Collaboration</span><h3>Vous souhaitez utiliser l’outil dans une entreprise, un CSE ou un SPSTI&nbsp;?</h3><p>Présentez brièvement le projet, son stade d’avancement, la population concernée et l’usage envisagé. Nous pourrons déterminer ensemble la forme d’utilisation la plus pertinente.</p><a class="button light" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter le Dr Charles Broutin sur LinkedIn <span>↗</span></a></div>
+        <div class="contact-options"><strong>Une collaboration peut notamment porter sur</strong><ul><li>Le cadrage d’une évaluation avant déploiement</li><li>L’animation d’un échange réunissant les acteurs concernés</li><li>L’adaptation de la grille à un secteur ou un type d’usage</li><li>L’organisation du suivi après le pilote</li><li>Le partage anonymisé de retours d’expérience</li></ul></div>
       </div>
     </section>
 
-    <section class="real-work" id="travail-reel" aria-labelledby="work-title">
-      <div class="wrap system-panel reveal">
-        <header>
-          <div><p class="eyebrow" style="color:var(--terra)">Principe commun</p><h2 id="work-title">Évaluer l’IA dans l’ensemble de la situation de travail.</h2></div>
-          <p>L’utilité ne se déduit ni de la nouveauté de l’outil ni de sa performance générale. Elle se mesure sur une tâche située, avec des données, des personnes, une organisation et des effets observables.</p>
-        </header>
-        <div class="work-audit" aria-label="Quatre étapes pour analyser une application d’intelligence artificielle au travail">
-          <article class="audit-row">
-            <span class="audit-index" aria-hidden="true">01</span>
-            <div class="audit-copy">
-              <h3>Tâche et contexte</h3>
-              <p>Commencer par l’activité réelle, les personnes concernées et les contraintes du poste.</p>
-              <div class="audit-tags" aria-label="Éléments à observer"><span>Tâche</span><span>Acteurs</span><span>Contraintes</span></div>
-            </div>
-            <div class="audit-question"><span>Question de contrôle</span><strong>Quelle tâche professionnelle l’IA transforme-t-elle, et dans quel but&nbsp;?</strong></div>
-          </article>
-          <article class="audit-row">
-            <span class="audit-index" aria-hidden="true">02</span>
-            <div class="audit-copy">
-              <h3>Données et système</h3>
-              <p>Identifier les sources, les données sensibles, la consigne donnée au système et ses limites.</p>
-              <div class="audit-tags" aria-label="Éléments à observer"><span>Sources</span><span>Modèle</span><span>Sorties</span></div>
-            </div>
-            <div class="audit-question"><span>Question de contrôle</span><strong>Quelles données conditionnent la sortie, et que le système ne peut-il pas connaître&nbsp;?</strong></div>
-          </article>
-          <article class="audit-row">
-            <span class="audit-index" aria-hidden="true">03</span>
-            <div class="audit-copy">
-              <h3>Contrôle et décision</h3>
-              <p>Rendre visibles le temps de vérification, l’autorité nécessaire et les possibilités de recours.</p>
-              <div class="audit-tags" aria-label="Éléments à observer"><span>Vérification</span><span>Décision</span><span>Arrêt</span></div>
-            </div>
-            <div class="audit-question"><span>Question de contrôle</span><strong>Qui peut vérifier, corriger, refuser ou arrêter l’usage&nbsp;?</strong></div>
-          </article>
-          <article class="audit-row">
-            <span class="audit-index" aria-hidden="true">04</span>
-            <div class="audit-copy">
-              <h3>Effets à suivre</h3>
-              <p>Comparer qualité, charge, autonomie, compétences, fonctionnement collectif et effets sur la santé.</p>
-              <div class="audit-tags" aria-label="Éléments à observer"><span>Travail</span><span>Santé</span><span>Indicateurs</span></div>
-            </div>
-            <div class="audit-question"><span>Question de contrôle</span><strong>Quels effets seront mesurés, et quels seuils imposeront une correction ou un arrêt&nbsp;?</strong></div>
-          </article>
-        </div>
+    <section class="section method" id="methode">
+      <div class="section-head">
+        <div><p class="kicker">06 / Méthode et limites</p><h2>Ce que le questionnaire permet de faire — et ce qu’il ne prétend pas faire.</h2></div>
+        <p>La valeur de l’outil tient à la qualité de la discussion et des informations renseignées. Son résultat n’est ni un label de conformité ni une autorisation automatique de déployer.</p>
       </div>
+      <div class="method-grid">
+        <article class="method-card"><span>01</span><h3>Outil exploratoire</h3><p>Il structure l’analyse et fait apparaître des points de vigilance. Il n’est pas validé comme test psychométrique.</p></article>
+        <article class="method-card"><span>02</span><h3>Aucune donnée nominative</h3><p>Le questionnaire ne demande ni nom de personne, ni nom d’entreprise, ni nom de fournisseur. Les réponses restent sur l’appareil.</p></article>
+        <article class="method-card"><span>03</span><h3>Pas de notation des salariés</h3><p>Le profil porte sur un projet et une situation de travail. Il ne doit pas servir à classer ou évaluer individuellement des travailleurs.</p></article>
+        <article class="method-card"><span>04</span><h3>Pas de substitution</h3><p>Il ne remplace ni les obligations de prévention, ni le dialogue social, ni une analyse juridique, clinique ou technique spécialisée.</p></article>
+      </div>
+      <div class="source-strip"><a href="https://www.iasantetravail.com/evaluer/impact/">Lire la méthode complète ↗</a><a href="https://www.inrs.fr/media.html?refINRS=VP+36" target="_blank" rel="noreferrer">INRS · IA et santé-sécurité au travail ↗</a><a href="https://healthy-workplaces.osha.europa.eu/en/publications/summary-artificial-intelligence-worker-management-overview" target="_blank" rel="noreferrer">EU-OSHA · Participation des travailleurs ↗</a></div>
     </section>
 
-    <section class="wrap next-panel reveal" aria-labelledby="next-title">
-      <div><p class="eyebrow">Passer du terrain à la décision</p><h2 id="next-title">Conclure par une décision explicite.</h2><p>Chaque analyse doit se terminer par un choix documenté et révisable : tester, encadrer, suspendre, réviser ou renoncer.</p><div class="decision-strip" aria-label="Décisions possibles"><span>Tester</span><span>Encadrer</span><span>Suspendre</span><span>Réviser</span><span>Renoncer</span></div></div>
-      <div class="next-actions"><a class="button button-paper" href="https://www.iasantetravail.com/evaluer/impact/">Évaluer un projet d’IA <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="author-byline" aria-label="Auteur du contenu">
-      <div class="wrap author-row"><p>Rédigé par le <a href="https://www.iasantetravail.com/a-propos/"><strong>Dr Charles Broutin</strong></a>, médecin du travail, référent IA de la SFST.</p><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">S’abonner à la newsletter ↗</a></div>
+    <section class="section newsletter" id="newsletter">
+      <div><p class="kicker">Newsletter indépendante</p><h2>Suivre les déploiements et leurs effets sur le travail.</h2></div>
+      <div class="newsletter-copy"><p>Une veille sur les usages, les méthodes d’évaluation et les décisions qui modifient concrètement les tâches, les métiers et la prévention.</p><div class="newsletter-actions"><a class="button primary" href="https://substack.com/@charlesbroutin" target="_blank" rel="noreferrer">Découvrir la newsletter <span>↗</span></a><a class="button secondary" href="https://www.iasantetravail.com/a-propos/">À propos du projet</a></div><small>Abonnement sur Substack · désinscription à tout moment</small></div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="https://www.iasantetravail.com/"><span class="brand-mark" aria-hidden="true"></span><span>IA &amp; Santé au Travail</span></a><p>Des repères sourcés et datés pour analyser l’intelligence artificielle à partir du travail réel.</p></div>
-      <div class="footer-col"><h3>Parcours</h3><ul><li><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a></li><li><a href="#top">Usages &amp; terrain</a></li><li><a href="https://www.iasantetravail.com/risques-prevention/">Risques &amp; prévention</a></li><li><a href="https://www.iasantetravail.com/evaluer/">Évaluer</a></li><li><a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a></li></ul></div>
-      <div class="footer-col"><h3>Ressources</h3><ul><li><a href="https://www.iasantetravail.com/ressources/modeles/">Panorama des modèles</a></li><li><a href="https://www.iasantetravail.com/a-propos/">À propos et publications</a></li><li><a href="https://www.iasantetravail.com/#analyses">Dernières analyses</a></li><li><a href="https://www.iasantetravail.com/#newsletter">Newsletter</a></li></ul></div>
-      <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contacter l’auteur sur LinkedIn ↗</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">S’abonner à la newsletter ↗</a></li><li><a href="https://www.iasantetravail.com/mentions-legales/">Mentions légales</a></li><li><a href="https://www.iasantetravail.com/confidentialite/">Confidentialité</a></li></ul></div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><strong>IA &amp; Santé au Travail</strong><p>Des repères sourcés et des outils pour préparer les usages de l’intelligence artificielle et suivre leurs effets dans le travail réel.</p></div>
+      <div class="footer-col"><span>Déployer</span><a href="#parcours">Les questionnaires</a><a href="#avant">Avant</a><a href="#pilote">Pilote</a><a href="#apres">Après</a></div>
+      <div class="footer-col"><span>Outils</span><a href="https://www.iasantetravail.com/evaluer/impact/">Évaluation initiale</a><a href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Suivi daté</a><a href="#methode">Méthode</a><a href="#acces">Accès accompagné</a></div>
+      <div class="footer-col"><span>Le site</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a><a href="https://www.iasantetravail.com/a-propos/">À propos</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      <div class="footer-bottom"><span>Rédigé par le Dr Charles Broutin, médecin du travail, référent IA de la SFST.</span><span>© 2026 IA &amp; Santé au Travail · Thomas Cole, œuvre dans le domaine public.</span></div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span><span>Œuvres de Thomas Cole · domaine public</span></div>
   </footer>
 
-  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
-    <div class="search-box">
-      <h2 class="sr-only" id="searchTitle">Rechercher dans la page</h2>
-      <div class="search-top"><label class="sr-only" for="searchInput">Rechercher une notion</label><input class="search-input" id="searchInput" type="search" placeholder="Ex. pilote, charge, préconisations…" autocomplete="off"><button class="close-search" id="closeSearch" type="button" aria-label="Fermer la recherche">×</button></div>
-      <div class="search-results" id="searchResults" aria-live="polite"></div>
-    </div>
-  </div>
-
   <script>
-    const menuButton=document.getElementById('menuButton');
-    const navLinks=document.getElementById('navLinks');
-    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');document.body.classList.toggle('menu-open',open);});
-    navLinks.addEventListener('click',event=>{if(!event.target.closest('a'))return;navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');});
-
-    const searchModal=document.getElementById('searchModal');
-    const openSearch=document.getElementById('openSearch');
-    const closeSearch=document.getElementById('closeSearch');
-    const searchInput=document.getElementById('searchInput');
-    const searchResults=document.getElementById('searchResults');
-    const searchItems=[
-      ['Un exemple concret d’utilisation de l’IA en santé au travail','#cas-documente','préconisations médecin concordance article'],
-      ['Avant déploiement','#avant','pilote risque vigilance données'],
-      ['Après déploiement','#apres','qualité charge autonomie compétences collectif'],
-      ['Partir du travail réel','#travail-reel','tâche système décision effets santé'],
-      ['Évaluer un projet','https://www.iasantetravail.com/evaluer/impact/','questionnaire impact initial suivi']
-    ];
-    function renderSearch(query=''){const clean=query.trim().toLowerCase();const matches=searchItems.filter(item=>!clean||`${item[0]} ${item[2]}`.toLowerCase().includes(clean));searchResults.innerHTML=matches.length?matches.map(item=>`<a class="search-result" href="${item[1]}"><span>${item[0]}</span><span aria-hidden="true">→</span></a>`).join(''):'<p>Aucun résultat. Essayez « préconisations », « pilote » ou « charge ».</p>';}
-    function showSearch(){searchModal.hidden=false;document.body.classList.add('search-open');renderSearch();requestAnimationFrame(()=>searchInput.focus());}
-    function hideSearch(){searchModal.hidden=true;document.body.classList.remove('search-open');openSearch.focus();}
-    openSearch.addEventListener('click',showSearch);closeSearch.addEventListener('click',hideSearch);searchInput.addEventListener('input',event=>renderSearch(event.target.value));searchResults.addEventListener('click',event=>{if(event.target.closest('a'))hideSearch();});searchModal.addEventListener('click',event=>{if(event.target===searchModal)hideSearch();});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!searchModal.hidden)hideSearch();});
-
-    const revealItems=document.querySelectorAll('.reveal');
-    if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('in');observer.unobserve(entry.target);});},{threshold:.07,rootMargin:'0px 0px -28px'});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('in'));}
+    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
   </script>
 </body>
 </html>

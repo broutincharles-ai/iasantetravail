@@ -5,11 +5,11 @@ Site éditorial statique bilingue de [iasantetravail.com](https://www.iasantetra
 ## Architecture
 
 - `index.html` et `en/index.html` : accueils français et anglais ;
-- `comprendre/`, `usages-terrain/`, `risques-prevention/`, `evaluer/`, `droit-gouvernance/`, `a-propos/` : parcours canoniques ;
+- `comprendre/`, `ai-safety-agi/`, `usages-terrain/`, `evaluer/`, `droit-gouvernance/`, `a-propos/` : parcours français principaux ;
 - `assets/css/tokens.css` : couleurs, espaces, largeurs, typographie et accessibilité ;
 - `assets/css/layout.css` : grilles et rythmes communs ;
 - `assets/css/components.css` : navigation, footer et composants partagés ;
-- `assets/js/site-shell.js` : source unique de la navigation et du footer bilingues ;
+- `assets/js/site-shell.js` : navigation et footer des pages historiques et anglophones ; les pages françaises refondues embarquent leur propre mise en page ;
 - `mises-a-jour/` : méthode éditoriale et historique des changements ;
 - `_redirects` et pages historiques : conservation des anciennes adresses.
 
