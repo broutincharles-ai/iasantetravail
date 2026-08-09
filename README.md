@@ -10,7 +10,6 @@ Site éditorial statique bilingue de [iasantetravail.com](https://www.iasantetra
 - `assets/css/layout.css` : grilles et rythmes communs ;
 - `assets/css/components.css` : navigation, footer et composants partagés ;
 - `assets/js/site-shell.js` : navigation et footer des pages historiques et anglophones ; les pages françaises refondues embarquent leur propre mise en page ;
-- `mises-a-jour/` : méthode éditoriale et historique des changements ;
 - `_redirects` et pages historiques : conservation des anciennes adresses.
 
 La navigation reste fonctionnelle sans framework. Le contenu des pages est présent dans le HTML ; JavaScript ne sert qu’aux interactions, à l’enveloppe commune et aux outils d’évaluation.
@@ -25,7 +24,7 @@ node scripts/create-redirects.mjs
 node scripts/validate-site.mjs
 ```
 
-Après une modification éditoriale, mettre à jour la date visible, `dateModified`, le sitemap et la page `mises-a-jour/` quand le changement est substantiel. Les règles de fréquence sont décrites sur cette dernière page.
+Après une modification éditoriale, mettre à jour la date visible, `dateModified` et le sitemap quand le changement est substantiel.
 
 ## Publication
 
