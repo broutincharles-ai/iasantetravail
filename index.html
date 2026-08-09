@@ -96,14 +96,12 @@
     .artwork figcaption p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
     .artwork figcaption a { color: var(--terra); font-weight: 750; }
 
-    .credibility { display: grid; grid-template-columns: repeat(3, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .credibility > div { display: grid; grid-template-columns: 52px 1fr; gap: 15px; min-height: 110px; align-items: center; padding: 23px 28px; border-right: 1px solid var(--line); }
-    .credibility > div:first-child { padding-left: 0; }
-    .credibility > div:last-child { border-right: 0; }
-    .credibility b { color: var(--terra); font-family: var(--mono); font-size: 15px; }
-    .credibility strong, .credibility small { display: block; }
-    .credibility strong { font-size: 13px; }
-    .credibility small { margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .introduction { width: var(--wrap); margin: 0 auto; padding: 0 0 78px; }
+    .introduction-panel { padding: 38px 42px; border: 1px solid var(--green-dark); border-left: 6px solid var(--terra); display: grid; grid-template-columns: minmax(260px, .42fr) minmax(0, 1.58fr); gap: 58px; color: var(--paper); background: var(--green-dark); }
+    .introduction-panel .kicker { color: var(--lavender); }
+    .introduction-panel h2 { max-width: 370px; margin: 22px 0 0; color: var(--paper); font-size: 30px; font-weight: 570; letter-spacing: -.04em; line-height: 1.12; }
+    .introduction-copy { margin: 0; color: var(--cream); font-size: 17px; line-height: 1.7; }
+    .introduction-copy strong { color: var(--white); font-weight: 760; }
 
     .definition { display: grid; grid-template-columns: .82fr 1.18fr; gap: 95px; align-items: start; }
     .definition-copy { padding-top: 5px; }
@@ -225,9 +223,9 @@
       .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 62px; }
       .hero-copy { max-width: none; }
       .artwork { max-width: 780px; }
-      .credibility, .scope-grid, .causal-chain, .requirements { grid-template-columns: 1fr; }
-      .credibility > div { min-height: 88px; padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .credibility > div:last-child { border-bottom: 0; }
+      .scope-grid, .causal-chain, .requirements { grid-template-columns: 1fr; }
+      .introduction-panel { grid-template-columns: 1fr; gap: 24px; }
+      .introduction-panel h2 { max-width: 720px; }
       .definition, .section-head, .role-shell, .about, .newsletter { grid-template-columns: 1fr; gap: 38px; }
       .scope-card, .chain-step { min-height: 0; padding: 30px 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .scope-card:last-child, .chain-step:last-child { border-bottom: 0; }
@@ -255,6 +253,10 @@
       .hero-lede { font-size: 16px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .artwork figcaption { grid-template-columns: 1fr; }
+      .introduction { padding-bottom: 58px; }
+      .introduction-panel { padding: 25px 23px; }
+      .introduction-panel h2 { font-size: 29px; }
+      .introduction-copy { font-size: 15px; line-height: 1.65; }
       .section-head h2, .definition h2, .about h2, .newsletter h2 { font-size: 42px; }
       .gollac-head { padding: 24px 20px; }
       .gollac table { min-width: 650px; }
@@ -297,6 +299,7 @@
       <div class="page-nav-inner">
         <span class="page-nav-label">Sur cette page</span>
         <div class="page-nav-links">
+          <a href="#introduction">Introduction</a>
           <a href="#ai-safety">L’enjeu</a>
           <a href="#mecanismes">Effets sur le travail</a>
           <a href="#roles">Pour qui&nbsp;?</a>
@@ -315,7 +318,7 @@
         <p class="kicker line">Intelligence artificielle · Travail réel · Prévention</p>
         <h1>La sécurité de l’IA est aussi un enjeu de <em>santé au travail.</em></h1>
         <p class="hero-lede">La fiabilité du modèle ne suffit pas. Il faut aussi examiner les tâches, les responsabilités et les conditions de travail créées par son utilisation.</p>
-        <div class="hero-actions"><a class="button primary" href="#ai-safety">Comprendre l’enjeu <span>↓</span></a><a class="button secondary" href="#outils">Évaluer un projet</a></div>
+        <div class="hero-actions"><a class="button primary" href="#introduction">Comprendre l’enjeu <span>↓</span></a><a class="button secondary" href="#outils">Évaluer un projet</a></div>
         <div class="hero-proof"><span>Ressource indépendante</span><span>Article fondé sur 28 références</span><span>Prévention collective</span></div>
       </div>
 
@@ -329,10 +332,14 @@
       </figure>
     </section>
 
-    <section class="credibility" aria-label="Repères du site">
-      <div><b>02</b><span><strong>Publications professionnelles</strong><small>Travaux sur les LLM, les préconisations médicales et les risques psychosociaux.</small></span></div>
-      <div><b>SFST</b><span><strong>Expertise en santé au travail</strong><small>Projet porté par un médecin du travail, référent IA de la SFST.</small></span></div>
-      <div><b>↻</b><span><strong>Contenus sourcés et datés</strong><small>Les sources, les dates de mise à jour et les limites des connaissances sont indiquées.</small></span></div>
+    <section class="introduction" id="introduction" aria-labelledby="introduction-title">
+      <div class="introduction-panel">
+        <div>
+          <p class="kicker">Introduction</p>
+          <h2 id="introduction-title">Élargir ce que l’on entend par « sécurité ».</h2>
+        </div>
+        <p class="introduction-copy">Le débat sur l’<strong>AI safety</strong> reste encore largement centré sur les performances et les risques propres aux modèles — erreurs, biais, cybersécurité, mésusage — alors qu’il aborde beaucoup moins les <strong>risques liés à leur déploiement dans le travail</strong>. Pourtant, l’IA transforme l’organisation du travail, l’autonomie, la charge cognitive, la surveillance, la sécurité de l’emploi ou encore le maintien des compétences : des dimensions associées à des conséquences bien documentées sur la santé mentale et physique. Avec près d’<strong>un travailleur sur quatre dans le monde potentiellement exposé à l’IA générative</strong>, ce sont des centaines de millions de personnes qui pourraient être concernées. La sécurité de l’IA doit donc dépasser la seule sécurité du modèle et devenir un sujet commun aux <strong>laboratoires et chercheurs en IA, gouvernements, employeurs et professionnels de la prévention et de la santé au travail</strong>, afin d’évaluer et de prévenir ces effets dès la conception et avant le déploiement.</p>
+      </div>
     </section>
 
     <section class="section definition" id="ai-safety">

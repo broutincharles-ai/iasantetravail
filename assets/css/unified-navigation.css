@@ -1,5 +1,5 @@
 :root {
-  --navigation-wrap: min(100% - 40px, 1720px);
+  --navigation-wrap: min(100% - 48px, 1760px);
 }
 
 .site-header {
@@ -12,13 +12,13 @@
 
 .site-header .nav {
   width: var(--navigation-wrap);
-  min-height: 88px;
+  min-height: 92px;
   margin: 0 auto;
   border-bottom: 1px solid var(--line);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: clamp(18px, 2vw, 38px);
+  gap: clamp(22px, 2vw, 36px);
 }
 
 .site-header .brand {
@@ -64,17 +64,19 @@
 }
 
 .site-header .nav-links {
-  display: flex;
   width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   align-items: stretch;
-  justify-content: space-between;
-  gap: clamp(12px, 1vw, 20px);
-  overflow-x: auto;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, .72);
   color: var(--ink-soft);
   font-size: clamp(10.5px, .72vw, 12.5px);
-  font-weight: 690;
-  scrollbar-width: none;
-  white-space: nowrap;
+  font-weight: 710;
+  white-space: normal;
 }
 
 .site-header .nav-links::-webkit-scrollbar,
@@ -84,16 +86,25 @@
 
 .site-header .nav-links a {
   position: relative;
-  min-height: 88px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 clamp(9px, .8vw, 18px);
+  border-right: 1px solid var(--line);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  line-height: 1.18;
+  text-align: center;
+  transition: color .18s ease, background .18s ease;
 }
+
+.site-header .nav-links a:last-child { border-right: 0; }
 
 .site-header .nav-links a::after {
   position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
+  right: 12px;
+  bottom: 6px;
+  left: 12px;
   height: 2px;
   background: transparent;
   content: "";
@@ -102,6 +113,7 @@
 .site-header .nav-links a:hover,
 .site-header .nav-links a[aria-current="page"] {
   color: var(--terra);
+  background: var(--cream);
 }
 
 .site-header .nav-links a[aria-current="page"]::after {
@@ -216,14 +228,15 @@ main [id="methode"] {
   .site-header .brand-copy small { display: none; }
 
   .site-header .nav-links {
-    display: flex;
-    justify-content: flex-start;
-    gap: 21px;
-    font-size: 11px;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0;
+    font-size: clamp(9px, .95vw, 10.5px);
   }
 
   .site-header .nav-links a {
-    min-height: 36px;
+    min-height: 60px;
+    padding: 0 6px;
   }
 }
 
@@ -257,9 +270,14 @@ main [id="methode"] {
   }
 
   .site-header .nav-links {
-    gap: 18px;
-    font-size: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    font-size: 9.5px;
   }
+
+  .site-header .nav-links a { min-height: 52px; padding: 0 7px; }
+  .site-header .nav-links a:nth-child(4) { border-right: 0; }
+  .site-header .nav-links a:nth-child(-n + 4) { border-bottom: 1px solid var(--line); }
 
   .site-header .page-nav-inner {
     min-height: 39px;
