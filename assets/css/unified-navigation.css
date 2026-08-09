@@ -1,5 +1,5 @@
 :root {
-  --navigation-wrap: min(100% - 56px, 1440px);
+  --navigation-wrap: min(100% - 40px, 1720px);
 }
 
 .site-header {
@@ -18,7 +18,7 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: clamp(24px, 3vw, 52px);
+  gap: clamp(18px, 2vw, 38px);
 }
 
 .site-header .brand {
@@ -67,11 +67,11 @@
   display: flex;
   width: 100%;
   align-items: stretch;
-  justify-content: flex-end;
-  gap: clamp(14px, 1.45vw, 25px);
+  justify-content: space-between;
+  gap: clamp(12px, 1vw, 20px);
   overflow-x: auto;
   color: var(--ink-soft);
-  font-size: clamp(10px, .76vw, 12px);
+  font-size: clamp(10.5px, .72vw, 12.5px);
   font-weight: 690;
   scrollbar-width: none;
   white-space: nowrap;
