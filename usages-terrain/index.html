@@ -285,34 +285,41 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css">
+  <script defer src="/assets/js/unified-navigation.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="site-header">
     <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="https://www.iasantetravail.com/">
+      <a class="brand" href="https://www.iasantetravail.com/" aria-label="Accueil — IA et Santé au Travail">
         <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
         <span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span>
       </a>
       <div class="nav-links">
-        <a href="https://www.iasantetravail.com/comprendre/">Comprendre</a>
-        <a href="#parcours" aria-current="page">Usages &amp; terrain</a>
-        <a href="#avant">Avant</a>
-        <a href="#apres">Après</a>
-        <a href="#acces">Accès accompagné</a>
+        <a href="https://www.iasantetravail.com/comprendre/">Comprendre l’IA</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/" aria-current="page">Usages terrain</a>
+        <a href="https://www.iasantetravail.com/evaluer/">Évaluer</a>
+        <a href="https://www.iasantetravail.com/evaluer/impact/">Questionnaire court</a>
+        <a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a>
+        <a href="https://www.iasantetravail.com/a-propos/">À propos</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">L’IA dans les SPSTI</a>
+        <a href="https://www.iasantetravail.com/ai-safety-agi/">AI safety et AGI</a>
       </div>
-      <div class="nav-side">
-        <a class="language" href="https://www.iasantetravail.com/en/" aria-label="English version">EN</a>
-        <details class="menu-dropdown">
-          <summary>Menu</summary>
-          <div class="menu-panel">
-            <div class="menu-col"><span>Déployer</span><a href="#parcours">Les deux questionnaires</a><a href="#avant">Décider avant</a><a href="#pilote">Organiser un pilote</a><a href="#apres">Vérifier après</a></div>
-            <div class="menu-col"><span>Utiliser</span><a href="https://www.iasantetravail.com/evaluer/impact/">Évaluation initiale ↗</a><a href="https://www.iasantetravail.com/evaluer/impact/suivi.html">Suivi après déploiement ↗</a><a href="#methode">Méthode et limites</a><a href="#acces">Demander un accès accompagné</a></div>
-            <div class="menu-col"><span>Le site</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre l’IA ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos ↗</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter sur LinkedIn ↗</a></div>
-          </div>
-        </details>
-        <a class="nav-cta" href="https://www.iasantetravail.com/evaluer/impact/">Évaluer un projet <span>→</span></a>
+    </nav>
+    <nav class="page-nav" aria-label="Sommaire de la page">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">Sur cette page</span>
+        <div class="page-nav-links">
+          <a href="#parcours">Le parcours</a>
+          <a href="#avant">Avant le déploiement</a>
+          <a href="#pilote">Le pilote</a>
+          <a href="#apres">Après le déploiement</a>
+          <a href="#acces">Accès accompagné</a>
+          <a href="#methode">Méthode et limites</a>
+        </div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
     </nav>
   </header>
