@@ -2,223 +2,501 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Evaluate the impact of an AI project on work organisation and a model’s capabilities in French occupational health.">
-  <meta name="author" content="Dr Charles Broutin">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#F4EBDA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assessing the Psychosocial Effects of Workplace AI — AI &amp; Occupational Health</title>
+  <meta name="description" content="Methodological presentation of an exploratory questionnaire designed to assess the psychosocial effects of a workplace AI system before and after deployment.">
   <link rel="canonical" href="https://www.iasantetravail.com/en/evaluate/">
   <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/evaluate/">
   <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/">
   <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/evaluer/">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:site_name" content="AI &amp; Occupational Health">
-  <meta property="og:title" content="Evaluate an AI project through real work">
-  <meta property="og:description" content="Two complementary evaluations: the system’s impact on the organisation and its capabilities in French occupational health.">
+  <meta property="og:title" content="Assessing the Psychosocial Effects of Workplace AI">
+  <meta property="og:description" content="An exploratory 27-item, nine-dimension instrument for assessing psychosocial effects before and after workplace AI deployment.">
   <meta property="og:url" content="https://www.iasantetravail.com/en/evaluate/">
-  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-evaluer.jpg">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/voyage-life-youth-1280.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Evaluate an AI project — AI &amp; Occupational Health</title>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Evaluate an artificial-intelligence project","url":"https://www.iasantetravail.com/en/evaluate/","inLanguage":"en","description":"Evaluate the impact of an artificial-intelligence system on the organisation and its capabilities in French occupational health.","dateModified":"2026-07-19","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]}}</script>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="/assets/images/voyage-life-youth-1280.webp" type="image/webp">
-  <link rel="stylesheet" href="/assets/css/evaluer-v2.css?v=1.0">
-  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Assessing the Psychosocial Effects of Workplace AI","description":"Method and limitations of an exploratory questionnaire for workplace AI psychosocial risk assessment.","inLanguage":"en","dateModified":"2026-08-09","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician"},"mainEntityOfPage":"https://www.iasantetravail.com/en/evaluate/"}</script>
+  <style>
+    :root {
+      --ink: #17140f;
+      --ink-soft: #3f3931;
+      --muted: #625b52;
+      --terra: #a84e1f;
+      --terra-bright: #c94d24;
+      --green: #344f49;
+      --green-dark: #23383a;
+      --cream: #f4ebda;
+      --paper: #fff9f2;
+      --white: #fffdf9;
+      --lavender: #c9c2f2;
+      --lavender-dark: #4a4090;
+      --line: rgba(23, 20, 15, .16);
+      --line-light: rgba(244, 235, 218, .23);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --wrap: min(1440px, calc(100% - 80px));
+    }
 
-<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/components.css?v=1.3" rel="stylesheet"/>
-<script defer src="/assets/js/site-shell.js?v=1.3"></script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, summary { color: inherit; font: inherit; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
+    .skip-link:focus { transform: none; }
+
+    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
+    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
+    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
+    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
+    .brand-copy strong, .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
+    .nav-side { display: flex; align-items: center; gap: 10px; }
+    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
+    .nav-cta, .button.primary { color: #fff; background: var(--green); }
+    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
+    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
+    .button.secondary { border-color: var(--line); background: transparent; }
+    .button.secondary:hover { background: var(--cream); }
+    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
+    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
+
+    .menu-dropdown { position: relative; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary::-webkit-details-marker { display: none; }
+    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
+    .menu-dropdown[open] > summary::after { content: "−"; }
+    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .menu-col { display: grid; align-content: start; gap: 11px; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
+    .menu-col a:hover { color: var(--terra); }
+
+    .section { padding: 76px max(40px, calc(50% - 720px)); }
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker.line { display: flex; align-items: center; gap: 14px; }
+    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
+    .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
+
+    .hero { width: var(--wrap); min-height: 700px; margin: 0 auto; padding: 66px 0 48px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 68px; }
+    .hero-copy { max-width: 700px; }
+    .hero h1 { margin: 34px 0 28px; font-size: clamp(55px, 5.45vw, 84px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
+    .hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lede { max-width: 650px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .hero-context { max-width: 650px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .hero-context strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 28px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
+
+    .artwork { margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .artwork-label { min-height: 62px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 10px; }
+    .artwork-label strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
+    .artwork-label strong::before { content: ""; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+    .artwork img { width: 100%; aspect-ratio: 1.48 / 1; object-fit: cover; object-position: center; filter: saturate(.82) contrast(.96); }
+    .artwork figcaption { display: grid; grid-template-columns: 175px 1fr; gap: 25px; padding: 20px; border-top: 1px solid var(--line); }
+    .artwork figcaption span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 780; letter-spacing: .07em; line-height: 1.45; text-transform: uppercase; }
+    .artwork figcaption p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .artwork figcaption a { color: var(--terra); font-weight: 750; }
+
+    .instrument-facts { display: grid; grid-template-columns: repeat(4, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .instrument-facts article { min-height: 138px; padding: 24px 27px; border-right: 1px solid var(--line); }
+    .instrument-facts article:first-child { padding-left: 0; }
+    .instrument-facts article:last-child { border-right: 0; }
+    .instrument-facts b { color: var(--terra); font-size: 27px; font-weight: 520; letter-spacing: -.04em; }
+    .instrument-facts strong, .instrument-facts small { display: block; }
+    .instrument-facts strong { margin-top: 18px; font-size: 13px; }
+    .instrument-facts small { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .architecture { background: var(--cream); }
+    .architecture-shell { display: grid; grid-template-columns: 1.1fr .9fr; margin-top: 52px; border: 1px solid var(--line); }
+    .family-panel { padding: 32px; }
+    .family-panel + .family-panel { border-left: 1px solid var(--line); background: var(--paper); }
+    .family-panel > span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .family-panel h3 { margin: 31px 0 14px; font-size: 28px; letter-spacing: -.04em; }
+    .family-panel > p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .factor-list { display: grid; grid-template-columns: 1fr 1fr; margin-top: 28px; border-top: 1px solid var(--line); }
+    .factor-list div { min-height: 94px; padding: 17px 13px 13px 0; border-bottom: 1px solid var(--line); }
+    .factor-list div:nth-child(even) { padding-left: 14px; border-left: 1px solid var(--line); }
+    .factor-list span, .factor-list strong { display: block; }
+    .factor-list span { color: var(--terra); font-family: var(--mono); font-size: 8px; }
+    .factor-list strong { margin-top: 14px; font-size: 12px; line-height: 1.4; }
+    .ai-factor-list { margin-top: 28px; border-top: 1px solid var(--line); }
+    .ai-factor-list div { min-height: 94px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .ai-factor-list span, .ai-factor-list strong, .ai-factor-list small { display: block; }
+    .ai-factor-list span { color: var(--terra); font-family: var(--mono); font-size: 8px; }
+    .ai-factor-list strong { margin-top: 10px; font-size: 14px; }
+    .ai-factor-list small { margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .architecture-note { display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; padding: 24px 28px; border: 1px solid var(--line); border-top: 0; color: var(--paper); background: var(--green-dark); }
+    .architecture-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .architecture-note p { margin: 0; font-size: 16px; font-weight: 620; line-height: 1.5; }
+
+    .dimensions { background: var(--white); }
+    .dimension-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
+    .dimension-table table { width: 100%; min-width: 930px; border-collapse: collapse; }
+    .dimension-table th { padding: 15px 22px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    .dimension-table th:first-child { width: 26%; }
+    .dimension-table th:nth-child(2) { width: 35%; }
+    .dimension-table td { padding: 20px 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.5; vertical-align: top; }
+    .dimension-table tbody tr:first-child td { border-top: 0; }
+    .dimension-table td:first-child { color: var(--ink); font-weight: 720; }
+    .dimension-table tr.ai-row td:first-child { color: var(--terra); }
+    .table-index { display: inline-block; min-width: 35px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .origin-tag { display: inline-block; margin-top: 8px; padding: 4px 7px; border: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: 7px; font-weight: 800; text-transform: uppercase; }
+
+    .parallel { background: var(--paper); }
+    .parallel-grid { display: grid; grid-template-columns: 1fr 90px 1fr; margin-top: 52px; align-items: stretch; }
+    .time-card { padding: 31px; border: 1px solid var(--line); background: var(--cream); }
+    .time-card.post { background: var(--white); }
+    .time-card > span { color: var(--terra); font-family: var(--mono); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .time-card h3 { margin: 38px 0 15px; font-size: 28px; letter-spacing: -.04em; }
+    .time-card > p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .time-list { margin: 28px 0 0; padding: 0; list-style: none; }
+    .time-list li { position: relative; padding: 13px 0 13px 23px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .time-list li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+    .parallel-arrow { display: grid; place-items: center; color: var(--terra); font-family: var(--mono); font-size: 23px; }
+    .comparison-warning { display: grid; grid-template-columns: .58fr 1.42fr; gap: 42px; align-items: center; margin-top: 30px; padding: 27px 30px; color: var(--paper); background: var(--green-dark); }
+    .comparison-warning span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .comparison-warning p { margin: 0; color: var(--cream); font-size: 17px; font-weight: 620; line-height: 1.5; }
+    .context-fields { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 30px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .context-fields article { min-height: 142px; padding: 21px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .context-fields span { color: var(--terra); font-family: var(--mono); font-size: 8px; }
+    .context-fields strong { display: block; margin-top: 25px; font-size: 12px; line-height: 1.42; }
+
+    .scoring { color: var(--paper); background: var(--green-dark); }
+    .scoring .kicker { color: var(--lavender); }
+    .scoring .section-head > p { color: rgba(244, 235, 218, .7); }
+    .scale { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 52px; border: 1px solid var(--line-light); }
+    .scale-step { min-height: 130px; padding: 19px; border-right: 1px solid var(--line-light); }
+    .scale-step:last-child { border-right: 0; }
+    .scale-step b { color: var(--lavender); font-family: var(--mono); font-size: 22px; font-weight: 560; }
+    .scale-step strong, .scale-step small { display: block; }
+    .scale-step strong { margin-top: 24px; color: var(--cream); font-size: 11px; }
+    .scale-step small { margin-top: 6px; color: rgba(244, 235, 218, .5); font-size: 9px; line-height: 1.4; }
+    .scoring-rules { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 30px; border-top: 1px solid var(--line-light); }
+    .scoring-rule { min-height: 175px; padding: 24px 23px 20px 0; border-right: 1px solid var(--line-light); }
+    .scoring-rule + .scoring-rule { padding-left: 23px; }
+    .scoring-rule:last-child { border-right: 0; }
+    .scoring-rule span { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .scoring-rule strong { display: block; margin-top: 31px; color: var(--cream); font-size: 14px; line-height: 1.42; }
+    .no-score { display: grid; grid-template-columns: .55fr 1.45fr; gap: 42px; align-items: center; margin-top: 6px; padding: 27px 30px; border-left: 4px solid var(--terra); background: rgba(244, 235, 218, .07); }
+    .no-score span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .no-score p { margin: 0; color: var(--cream); font-size: 18px; font-weight: 650; line-height: 1.48; }
+
+    .versions { background: var(--cream); }
+    .version-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border: 1px solid var(--line); }
+    .version-card { min-height: 405px; padding: 32px; display: flex; flex-direction: column; background: rgba(255, 249, 242, .45); }
+    .version-card + .version-card { border-left: 1px solid var(--line); background: var(--paper); }
+    .version-top { display: flex; justify-content: space-between; gap: 20px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .version-card h3 { margin: 47px 0 16px; font-size: 30px; letter-spacing: -.045em; }
+    .version-card > p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .version-list { margin: 27px 0; padding: 0; list-style: none; }
+    .version-list li { position: relative; padding: 12px 0 12px 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.42; }
+    .version-list li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+    .version-card .button { align-self: flex-start; margin-top: auto; }
+    .version-note { padding: 22px 26px; border: 1px solid var(--line); border-top: 0; color: var(--muted); font-size: 12px; line-height: 1.52; }
+    .version-note strong { color: var(--ink); }
+
+    .validation { background: var(--white); }
+    .validation-track { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .validation-step { min-height: 260px; padding: 27px; border-right: 1px solid var(--line); }
+    .validation-step:last-child { border-right: 0; }
+    .validation-step span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .validation-step h3 { margin: 52px 0 13px; font-size: 18px; letter-spacing: -.025em; line-height: 1.2; }
+    .validation-step p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .participate { display: grid; grid-template-columns: 1.02fr .98fr; margin-top: 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
+    .participate-copy { padding: 35px 36px; }
+    .participate-copy span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .participate-copy h3 { max-width: 650px; margin: 24px 0 16px; font-size: 31px; letter-spacing: -.045em; line-height: 1.14; }
+    .participate-copy p { margin: 0; color: rgba(244, 235, 218, .72); font-size: 14px; line-height: 1.58; }
+    .participate-copy .button { margin-top: 27px; }
+    .participate-who { padding: 35px; border-left: 1px solid var(--line-light); display: grid; align-content: center; }
+    .participate-who strong { margin-bottom: 15px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .participate-who ul { margin: 0; padding: 0; list-style: none; }
+    .participate-who li { padding: 13px 0 13px 23px; border-top: 1px solid var(--line-light); color: var(--cream); font-size: 12px; line-height: 1.45; position: relative; }
+    .participate-who li::before { position: absolute; left: 0; color: var(--lavender); content: "→"; }
+    .references { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .references a, .references span { padding: 12px 14px; border: 1px solid var(--line); color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 750; }
+    .references a:hover { background: var(--cream); }
+
+    .newsletter { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; align-items: center; background: var(--lavender); }
+    .newsletter .kicker { color: var(--lavender-dark); }
+    .newsletter h2 { max-width: 850px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .newsletter-copy p { margin: 0; color: #423b65; font-size: 17px; line-height: 1.62; }
+    .newsletter-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .newsletter .secondary { border-color: rgba(74, 64, 144, .35); }
+    .newsletter-copy small { display: block; margin-top: 18px; color: #554e77; font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+
+    .site-footer { color: var(--cream); background: var(--ink); }
+    .footer-grid { width: var(--wrap); margin: 0 auto; padding: 58px 0 24px; display: grid; grid-template-columns: 1.5fr repeat(3, .65fr); gap: 58px; }
+    .footer-brand strong { font-size: 21px; }
+    .footer-brand p { max-width: 400px; margin: 16px 0 0; color: rgba(244, 235, 218, .62); font-size: 13px; line-height: 1.58; }
+    .footer-col { display: grid; align-content: start; gap: 9px; }
+    .footer-col span { margin-bottom: 7px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .7); font-size: 12px; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 25px; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(244, 235, 218, .17); color: rgba(244, 235, 218, .45); font-size: 10px; }
+
+    @media (max-width: 1220px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero h1 { font-size: clamp(52px, 6.6vw, 74px); }
+      .validation-track { grid-template-columns: repeat(3, 1fr); }
+      .validation-step { border-bottom: 1px solid var(--line); }
+      .validation-step:nth-child(3) { border-right: 0; }
+    }
+    @media (max-width: 920px) {
+      :root { --wrap: min(100% - 44px, 1440px); }
+      .section { padding: 64px 22px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
+      .hero-copy { max-width: none; }
+      .artwork { max-width: 780px; }
+      .section-head, .architecture-shell, .architecture-note, .comparison-warning, .no-score, .participate, .newsletter { grid-template-columns: 1fr; gap: 34px; }
+      .instrument-facts, .context-fields, .scoring-rules { grid-template-columns: 1fr 1fr; }
+      .instrument-facts article:nth-child(2) { border-right: 0; }
+      .instrument-facts article { border-bottom: 1px solid var(--line); }
+      .instrument-facts article:nth-child(3), .instrument-facts article:nth-child(4) { border-bottom: 0; }
+      .family-panel + .family-panel { border-left: 0; border-top: 1px solid var(--line); }
+      .parallel-grid { grid-template-columns: 1fr; gap: 0; }
+      .parallel-arrow { min-height: 70px; transform: rotate(90deg); }
+      .scale { grid-template-columns: repeat(4, 1fr); }
+      .scale-step { border-bottom: 1px solid var(--line-light); }
+      .scale-step:nth-child(4) { border-right: 0; }
+      .version-grid { grid-template-columns: 1fr; }
+      .version-card + .version-card { border-left: 0; border-top: 1px solid var(--line); }
+      .participate-who { border-left: 0; border-top: 1px solid var(--line-light); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-bottom { display: grid; }
+    }
+    @media (max-width: 640px) {
+      :root { --wrap: calc(100% - 30px); }
+      .section { padding: 54px 15px; }
+      .nav { min-height: 78px; gap: 14px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .brand-mark img { width: 31px; height: 31px; }
+      .brand-copy strong { font-size: 15px; }
+      .brand-copy small, .language, .nav-cta { display: none; }
+      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
+      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
+      .hero h1 { font-size: clamp(43px, 13.3vw, 59px); }
+      .hero-lede { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .artwork figcaption { grid-template-columns: 1fr; }
+      .section-head h2, .newsletter h2 { font-size: 40px; }
+      .instrument-facts, .context-fields, .scoring-rules, .validation-track { grid-template-columns: 1fr; }
+      .instrument-facts article { padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .instrument-facts article:last-child { border-bottom: 0 !important; }
+      .factor-list { grid-template-columns: 1fr; }
+      .factor-list div:nth-child(even) { padding-left: 0; border-left: 0; }
+      .scale { grid-template-columns: 1fr 1fr; }
+      .scale-step:nth-child(even) { border-right: 0; }
+      .scoring-rule { min-height: 0; padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
+      .scoring-rule + .scoring-rule { padding-left: 0; }
+      .version-card { min-height: 0; padding: 26px 21px; }
+      .version-card h3 { margin-top: 34px; font-size: 27px; }
+      .version-card .button { width: 100%; margin-top: 22px; }
+      .validation-step { min-height: 0; padding: 27px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .validation-step h3 { margin-top: 30px; }
+      .participate-copy, .participate-who { padding: 28px 24px; }
+      .participate-copy h3 { font-size: 27px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=1.1">
+  <script defer src="/assets/js/unified-navigation.js?v=1.0"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#contenu">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="AI and Occupational Health, home"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="https://www.iasantetravail.com/en/">Home</a>
-        <a href="https://www.iasantetravail.com/en/understand/">Understand</a>
-        <a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field</a>
-        <a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a>
-        <a class="active" href="#top" aria-current="page">Evaluate</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="Home — AI and Occupational Health">
+        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>AI &amp; Occupational Health</strong><small>Prevention · Real work</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.iasantetravail.com/en/understand/">Understand AI</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/">Field use</a>
+        <a href="https://www.iasantetravail.com/en/evaluate/" aria-current="page">Assess</a>
+        <a href="https://www.iasantetravail.com/en/evaluate/impact/">Short questionnaire</a>
         <a href="https://www.iasantetravail.com/en/legal-governance/">Law &amp; governance</a>
-        <a href="#capabilities">Resources</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">AI in OHS services</a>
+        <a href="https://www.iasantetravail.com/en/ai-safety-agi/">AI safety &amp; AGI</a>
+        <a href="https://www.iasantetravail.com/en/about/">About</a>
       </div>
-      <div class="nav-tools">
-        <button class="search-button" id="openSearch" type="button" aria-label="Search this page">⌕</button>
-        <div class="language" aria-label="Language"><a href="https://www.iasantetravail.com/evaluer/" lang="fr" hreflang="fr">FR</a><a class="active" href="https://www.iasantetravail.com/en/evaluate/" lang="en" aria-current="page">EN</a></div>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">☰</button>
-        <a class="nav-cta" href="https://www.iasantetravail.com/en/evaluate/impact/">Evaluate a project</a>
+      <a class="language-switch" href="https://www.iasantetravail.com/evaluer/" lang="fr" hreflang="fr" aria-label="Voir cette page en français">FR</a>
+    </nav>
+    <nav class="page-nav" aria-label="Page contents">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">On this page</span>
+        <div class="page-nav-links">
+          <a href="#instrument">The instrument</a>
+          <a href="#dimensions">Dimensions</a>
+          <a href="#temps">Before &amp; after</a>
+          <a href="#interpretation">Interpretation</a>
+          <a href="#versions">Versions</a>
+          <a href="#validation">Scientific validation</a>
+        </div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
     </nav>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero-frame">
-          <img src="/assets/images/voyage-life-youth-1280.webp" alt="Thomas Cole, The Voyage of Life: Youth, 1842" width="1280" height="876" fetchpriority="high">
-          <div class="hero-copy">
-            <p class="eyebrow">Evaluate · From the model to real work</p>
-            <h1 id="hero-title">Evaluate an AI system <em>from two complementary angles.</em></h1>
-            <p class="hero-lead">Assess what the system can do — capabilities, errors and stability — and what it changes in work: workload, autonomy, skills, collective activity and responsibilities.</p>
-          </div>
-          <p class="hero-credit">Thomas Cole, <cite>The Voyage of Life: Youth</cite>, 1842 · <a href="https://www.nga.gov/artworks/52451-voyage-life-youth" target="_blank" rel="noopener noreferrer">National Gallery of Art ↗</a></p>
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="kicker line">Assess · Instrument in development</p>
+        <h1>Assess what AI changes in work, <em>before and after.</em></h1>
+        <p class="hero-lede">I designed a questionnaire to structure the assessment of psychosocial effects directly associated with the introduction and use of an AI system at work.</p>
+        <p class="hero-context"><strong>Methodological status.</strong> This long form is a development instrument that has not been psychometrically validated. No clinical, regulatory or decision threshold has been established. Results support work analysis and collective discussion; they do not deliver a verdict.</p>
+        <div class="hero-actions"><a class="button primary" href="#instrument">Explore the instrument <span>↓</span></a><a class="button secondary" href="#versions">Choose a version</a></div>
+        <div class="hero-proof"><span>27 contextualised items</span><span>Two parallel forms T0 / T1</span><span>No total score</span></div>
+      </div>
+
+      <figure class="artwork">
+        <div class="artwork-label"><strong>Look at the journey, not only the destination</strong><span>Art · promise · evaluation</span></div>
+        <img src="https://www.iasantetravail.com/assets/images/voyage-life-youth-1280.webp" alt="The Voyage of Life: Youth, a Thomas Cole painting showing a young traveller steering his boat towards a luminous palace">
+        <figcaption>
+          <span>Thomas Cole<br>The Voyage of Life: Youth · 1842</span>
+          <p>The traveller heads confidently towards a luminous palace, not yet seeing the dangers ahead on the river. The work reminds us that a technological promise can capture all attention while its effects develop along the journey. The questionnaire is designed to describe that journey: what is anticipated before deployment, then what actually happens in the work. <a href="https://www.nga.gov/artworks/52451-voyage-life-youth" target="_blank" rel="noreferrer">View the artwork ↗</a></p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="instrument-facts" aria-label="Main questionnaire characteristics">
+      <article><b>27</b><strong>Contextualised items</strong><small>Three items per dimension to cover its content more fully.</small></article>
+      <article><b>9</b><strong>Dimensions analysed</strong><small>Six from Gollac and three AI-related mechanisms.</small></article>
+      <article><b>T0 / T1</b><strong>Two parallel forms</strong><small>Anticipated effects before, observed effects after.</small></article>
+      <article><b>0</b><strong>Permitted total score</strong><small>Each dimension and each incident must remain visible.</small></article>
+    </section>
+
+    <section class="section architecture" id="instrument">
+      <div class="section-head">
+        <div><p class="kicker">01 / Architecture</p><h2>The Gollac framework, supplemented by three AI-specific mechanisms.</h2></div>
+        <p>The instrument does not measure general concern about technology. Its questions describe concrete changes in workload, decisions, relationships and know-how.</p>
+      </div>
+      <div class="architecture-shell">
+        <div class="family-panel">
+          <span>18 items · Reference framework</span><h3>Six psychosocial risk factors.</h3><p>The six families in the Gollac report are applied to work changes caused or amplified by an AI system.</p>
+          <div class="factor-list"><div><span>G01–G03</span><strong>Work intensity and working time</strong></div><div><span>G04–G06</span><strong>Emotional demands</strong></div><div><span>G07–G09</span><strong>Autonomy and room for manoeuvre</strong></div><div><span>G10–G12</span><strong>Social relationships and recognition</strong></div><div><span>G13–G15</span><strong>Value conflicts</strong></div><div><span>G16–G18</span><strong>Job insecurity</strong></div></div>
         </div>
+        <div class="family-panel">
+          <span>9 items · Exploratory extension</span><h3>Three AI-related mechanisms.</h3><p>These additional dimensions make visible problems that may otherwise remain dispersed across the six general categories.</p>
+          <div class="ai-factor-list"><div><span>AI01–AI03</span><strong>Opacity and ability to challenge</strong><small>Understand the output, see uncertainty and obtain an effective human review.</small></div><div><span>AI04–AI06</span><strong>Cognitive review workload</strong><small>Prompt, review, correct and take responsibility for an output that is not fully under one’s control.</small></div><div><span>AI07–AI09</span><strong>Skill erosion</strong><small>Practise and transfer knowledge less, while becoming dependent on a system that may be unavailable or wrong.</small></div></div>
+        </div>
+      </div>
+      <div class="architecture-note"><span>Why three items per dimension?</span><p>A single question would poorly cover a complex phenomenon. Three formulations examine several expressions of the same dimension and support an initial subscale analysis.</p></div>
+    </section>
+
+    <section class="section dimensions" id="dimensions">
+      <div class="section-head">
+        <div><p class="kicker">02 / What is assessed</p><h2>Nine dimensions linked to observable work situations.</h2></div>
+        <p>Each dimension combines three questions. The examples below summarise their rationale without replacing the questionnaire’s full wording.</p>
+      </div>
+      <div class="dimension-table">
+        <table>
+          <thead><tr><th>Dimension</th><th>Change examined</th><th>Example signals</th></tr></thead>
+          <tbody>
+            <tr><td><span class="table-index">01</span>Work intensity and working time<br><span class="origin-tag">Gollac</span></td><td>Volume, pace, fragmentation and additional work required to use or review the tool.</td><td>More cases, multiple alerts, and review work that encroaches on breaks or working hours.</td></tr>
+            <tr><td><span class="table-index">02</span>Emotional demands<br><span class="origin-tag">Gollac</span></td><td>Difficult human situations created or concentrated by use of the system.</td><td>Complaints after an error, dehumanised communication, or fear of harming someone.</td></tr>
+            <tr><td><span class="table-index">03</span>Autonomy and decision-making<br><span class="origin-tag">Gollac</span></td><td>Ability to retain professional judgement, organise one’s work and depart from a recommendation.</td><td>Imposed method, automated priorities, or explicit or implicit penalty for refusing.</td></tr>
+            <tr><td><span class="table-index">04</span>Social relationships and recognition<br><span class="origin-tag">Gollac</span></td><td>Cooperation, responsibilities, and visibility of reasoning or review work.</td><td>Fewer useful exchanges, unclear responsibility after an error, or expertise made invisible.</td></tr>
+            <tr><td><span class="table-index">05</span>Value conflicts<br><span class="origin-tag">Gollac</span></td><td>Gap between what the tool or organisation requires and professional rules or work considered to be high quality.</td><td>Speed prioritised over safety, an output contrary to professional judgement, or loss of meaning.</td></tr>
+            <tr><td><span class="table-index">06</span>Job insecurity<br><span class="origin-tag">Gollac</span></td><td>Uncertainty about tasks, jobs, career paths and evaluation criteria.</td><td>Contradictory announcements, fear for employment, or an AI score influencing an HR decision.</td></tr>
+            <tr class="ai-row"><td><span class="table-index">07</span>Opacity and contestability<br><span class="origin-tag">AI extension</span></td><td>Understanding of data and criteria, visibility of limits and access to human review.</td><td>Unexplained output, hidden uncertainty, or no rapid appeal to someone with decision-making authority.</td></tr>
+            <tr class="ai-row"><td><span class="table-index">08</span>Cognitive review workload<br><span class="origin-tag">AI extension</span></td><td>Mental effort required to prompt, monitor, detect errors and take responsibility for the output.</td><td>Sustained vigilance, plausible errors that are hard to detect, or responsibility without control of the system.</td></tr>
+            <tr class="ai-row"><td><span class="table-index">09</span>Skill erosion<br><span class="origin-tag">AI extension</span></td><td>Maintenance of practice, learning by beginners, knowledge transfer and ability to act without the tool.</td><td>Training tasks removed, less practice of know-how, or dependency when the system fails or is wrong.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <div class="route-strip">
-      <div class="wrap route-grid" aria-label="Two evaluation pathways">
-        <a class="route-item" href="#organisation"><span class="route-index">01</span><span><strong>Effects of the AI system</strong><span>Work, workload, autonomy, collective activity and responsibilities.</span></span></a>
-        <a class="route-item" href="#capabilities"><span class="route-index">02</span><span><strong>Occupational-health capabilities</strong><span>Domain knowledge, reasoning and French-specific requirements.</span></span></a>
+    <section class="section parallel" id="temps">
+      <div class="section-head">
+        <div><p class="kicker">03 / Two observation points</p><h2>Compare what was planned with what actually happened.</h2></div>
+        <p>The 27 items exist in two parallel forms. The subject remains the same, but the reference period and wording change.</p>
       </div>
-    </div>
-
-    <section class="choices" id="organisation" aria-labelledby="choices-title">
-      <div class="wrap">
-        <div class="section-intro reveal">
-          <p class="eyebrow terra">Evaluation 01 · Effects of the AI system</p>
-          <h2 id="choices-title">Evaluate the system’s effects on real work.</h2>
-          <p>Before deployment, document anticipated effects and the conditions for a pilot. Afterwards, compare those assumptions with what is actually observed in real work.</p>
-        </div>
-
-        <div class="choice-grid">
-          <article class="choice-card before-card reveal">
-            <div class="choice-topline"><span>Before deployment</span><span class="choice-number">01</span></div>
-            <h3>Prepare the deployment.</h3>
-            <p class="choice-lead">Describe the task, the people concerned, anticipated effects and the conditions required for a limited and reversible pilot.</p>
-            <ul class="check-list">
-              <li><strong>Situation</strong><span>Task, data, actors and decisions affected</span></li>
-              <li><strong>Exposure</strong><span>Workload, autonomy, collective work, skills and responsibilities</span></li>
-              <li><strong>Decision</strong><span>Test conditions, preventive measures and stop criteria</span></li>
-            </ul>
-            <div class="facts" aria-label="Practical information"><span><b>18</b> questions</span><span><b>≈ 10 min</b></span><span><b>PDF</b> report</span></div>
-            <a class="button button-primary" href="https://www.iasantetravail.com/en/evaluate/impact/">Start the initial evaluation <span aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="choice-card after-card reveal">
-            <div class="choice-topline"><span>After deployment</span><span class="choice-number">02</span></div>
-            <h3>Observe the real effects.</h3>
-            <p class="choice-lead">Document, at a defined date, what the system actually changes in the activity with the people who use, oversee or experience it.</p>
-            <ul class="check-list">
-              <li><strong>Gap</strong><span>Compare initial promises with observed effects</span></li>
-              <li><strong>Signals</strong><span>Workload, errors, workarounds and collective functioning</span></li>
-              <li><strong>Correction</strong><span>Adjust, limit, suspend or withdraw where necessary</span></li>
-            </ul>
-            <div class="facts" aria-label="Practical information"><span><b>18</b> questions</span><span><b>Dated</b> follow-up</span><span><b>Local</b> code</span></div>
-            <a class="button button-light" href="https://www.iasantetravail.com/en/evaluate/impact/follow-up.html">Start the follow-up <span aria-hidden="true">→</span></a>
-          </article>
-        </div>
+      <div class="parallel-grid">
+        <article class="time-card"><span>T0 · Before deployment</span><h3>Anticipated effects.</h3><p>Answers concern the system’s planned operation and the most demanding situation reasonably foreseeable for the population concerned.</p><ul class="time-list"><li>Use case and level of automation</li><li>Productivity objectives and planned organisation</li><li>Review rules and appeal routes</li><li>Pilot conditions and ability to work without the tool</li></ul></article>
+        <div class="parallel-arrow" aria-hidden="true">→</div>
+        <article class="time-card post"><span>T1 · After deployment</span><h3>Observed effects.</h3><p>Answers concern the system as actually used over the previous four weeks, including informal practices.</p><ul class="time-list"><li>Review time and corrections</li><li>Incidents, workarounds and differences between teams</li><li>Effects on objectives and working relationships</li><li>Changes in skills and actual dependency</li></ul></article>
       </div>
+      <div class="comparison-warning"><span>A descriptive comparison</span><p>The T1 − T0 difference describes the gap between anticipated risk and observed effects; a positive value suggests deterioration. It should not yet be interpreted as a pure psychometric measure of change until measurement invariance has been established.</p></div>
+      <div class="context-fields" aria-label="Contextual information collected"><article><span>01</span><strong>Respondent role, sector and population concerned</strong></article><article><span>02</span><strong>Type of use, intensity and exposure frequency</strong></article><article><span>03</span><strong>Whether use is voluntary, expected or mandatory</strong></article><article><span>04</span><strong>Automated monitoring, dependency and critical incidents</strong></article></div>
     </section>
 
-    <section class="method" id="method" aria-labelledby="method-title">
-      <div class="wrap method-panel reveal">
-        <div class="method-copy">
-          <p class="eyebrow lavender">Method and limitations</p>
-          <h2 id="method-title">Support for observing and deciding — not a scientific score.</h2>
-          <p>The two questionnaires use the six psychosocial-risk dimensions from the Gollac report and three AI-related axes. They structure a situated discussion about work.</p>
-          <div class="method-actions" aria-label="What the tools support"><span><b>Observe</b> transformations</span><span><b>Compare</b> over time</span><span><b>Discuss</b> measures</span></div>
-        </div>
-        <aside class="scientific-note" aria-label="Scientific status of the tools">
-          <div class="status"><i></i> Tool status</div>
-          <h3>Exploratory and non-psychometric.</h3>
-          <p>Empirical questionnaires designed by <strong>Dr Charles Broutin</strong>. They have not been scientifically validated.</p>
-          <ul><li>Not an individual or collective diagnosis</li><li>Not evidence of compliance</li><li>Not a substitute for work analysis</li></ul>
-        </aside>
+    <section class="section scoring" id="interpretation"><span id="capacites" aria-hidden="true"></span><span id="capabilities" aria-hidden="true"></span>
+      <div class="section-head">
+        <div><p class="kicker">04 / Interpret without overinterpreting</p><h2>Provisional rules that keep uncertainty visible.</h2></div>
+        <p>Scoring organises answers; it does not manufacture artificial precision. Missing information, incidents and qualitative comments must remain visible.</p>
       </div>
+      <div class="scale" aria-label="Response scale"><div class="scale-step"><b>0</b><strong>Not at all true</strong><small>Favourable situation for this item.</small></div><div class="scale-step"><b>1</b><strong>Slightly true</strong><small>Weak signal.</small></div><div class="scale-step"><b>2</b><strong>Moderately true</strong><small>Intermediate situation.</small></div><div class="scale-step"><b>3</b><strong>Largely true</strong><small>Clear point of concern.</small></div><div class="scale-step"><b>4</b><strong>Completely true</strong><small>Least favourable situation.</small></div><div class="scale-step"><b>NE</b><strong>Not assessed</strong><small>Insufficient information.</small></div><div class="scale-step"><b>NA</b><strong>Not applicable</strong><small>The item does not apply to the system.</small></div></div>
+      <div class="scoring-rules"><article class="scoring-rule"><span>01</span><strong>A high score indicates a less favourable situation.</strong></article><article class="scoring-rule"><span>02</span><strong>A dimension mean can only be calculated if at least two of its three items are answered.</strong></article><article class="scoring-rule"><span>03</span><strong>NA and N/A are excluded from calculation and must not be replaced with an average value.</strong></article><article class="scoring-rule"><span>04</span><strong>Critical incidents and sentinel items are examined separately from any average.</strong></article></div>
+      <div class="no-score"><span>Essential rule</span><p>No total score should be calculated or published before content validity, factor structure, reliability, measurement invariance and sensitivity to change have been assessed.</p></div>
     </section>
 
-    <section class="capabilities" id="capabilities" aria-labelledby="capabilities-title">
-      <div class="wrap">
-        <div class="section-intro capability-intro reveal">
-          <p class="eyebrow terra">Evaluation 02 · Occupational capabilities</p>
-          <h2 id="capabilities-title">Evaluate a model’s capabilities in occupational health.</h2>
-          <p>Professional use is expanding faster than evaluation. Yet good performance in general medicine does not guarantee command of a French, regulatory and multidisciplinary specialty.</p>
-        </div>
-
-        <div class="editorial-method-grid" style="margin-bottom:28px">
-          <div class="editorial-method-card"><span class="method-status">Available today</span><h3>Understand the method</h3><p>Read the criteria, limits and conditions for a useful benchmark comparison.</p><a href="#capabilities">Review the method →</a></div>
-          <div class="editorial-method-card"><span class="method-status">Available today</span><h3>Run a local assessment</h3><p>Test the exact model, prompt, data, tools and human review process for the intended task.</p><a href="/en/evaluate/impact/">Assess effects on work →</a></div>
-          <div class="editorial-method-card"><span class="method-status">Coming later</span><h3>Specialised benchmark results</h3><p>Detailed results will follow protocol stabilisation and scientific publication.</p></div>
-        </div>
-
-        <article class="capability-panel reveal">
-          <header class="capability-head">
-            <div><span class="publication-badge">Specialised protocol · article submitted</span><h3>A high medical score is not enough.</h3></div>
-            <p>The useful question is not “which model is best?”, but “what does it actually know about the field, which errors does it make and for which tasks might it be worth testing?”</p>
-          </header>
-
-          <div class="capability-rows">
-            <section><span class="capability-index">01</span><h3>A hybrid field</h3><p>Occupational health combines medicine, labour law, exposure assessment, ergonomics, toxicology, psychosocial risks, work retention and dialogue with workplace stakeholders.</p></section>
-            <section><span class="capability-index">02</span><h3>A French corpus</h3><p>The Labour Code, occupational-disease tables, institutional guidance, doctrine and case law are poorly covered by international medical evaluations.</p></section>
-            <section><span class="capability-index">03</span><h3>Domain-specific errors</h3><p>An answer may be medically plausible but regulatorily wrong, legally correct but insufficient for prevention, or confuse medical advice with an employer’s decision.</p></section>
-          </div>
-
-          <aside class="benchmark-explainer" aria-labelledby="benchmark-definition-title">
-            <div><p class="eyebrow lavender">What a benchmark is</p><h3 id="benchmark-definition-title">A controlled comparison, not a league table.</h3></div>
-            <div class="benchmark-copy">
-              <p>Several models receive the same questions under the same conditions, and their answers are evaluated using the same rules. This protocol makes it possible to compare knowledge, reasoning, errors and stability.</p>
-              <p class="takeaway"><strong>Its value:</strong> identify candidate models and prepare a local evaluation. <strong>Its limit:</strong> it does not certify safety, compliance or usefulness in real work.</p>
-            </div>
-          </aside>
-        </article>
+    <section class="section versions" id="versions">
+      <div class="section-head">
+        <div><p class="kicker">05 / Choose the right form</p><h2>A long form for documentation. A short form to begin discussion.</h2></div>
+        <p>The two tools share the same broad objective, but differ in structure and level of detail. Their results should not be treated as directly interchangeable.</p>
       </div>
+      <div class="version-grid">
+        <article class="version-card"><div class="version-top"><span>Development long form</span><span>27 items</span></div><h3>Parallel T0 / T1 assessment.</h3><p>Three items per dimension, detailed contextual information, a critical incident item and two free-text fields.</p><ul class="version-list"><li>Nine dimensions and provisional subscales</li><li>Same anonymous code and scope at both times</li><li>Suitable for documented pilots and validation studies</li><li>No total score or decision threshold</li></ul><a class="button secondary" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Request the long form <span>↗</span></a></article>
+        <article class="version-card"><div class="version-top"><span>Interactive short form</span><span>18 questions · ≈ 10 min</span></div><h3>Initial online screening.</h3><p>A guided experience designed to quickly surface points requiring attention and prepare discussion of the project.</p><ul class="version-list"><li>Questionnaire available directly in the browser</li><li>No identifying data requested</li><li>Exploratory profile and exportable action plan</li><li>Discussion aid, not scientific validation</li></ul><a class="button primary" href="https://www.iasantetravail.com/en/evaluate/impact/">Use the short form <span>→</span></a></article>
+      </div>
+      <div class="version-note"><strong>Are you looking to compare the technical capabilities of several models?</strong> That requires a separate benchmark protocol. The “Understand” page explains how to read these evaluations without confusing them with deployment effects on work. <a href="https://www.iasantetravail.com/en/understand/#benchmarks" style="color:var(--terra);font-weight:750">Understand benchmarks →</a></div>
     </section>
 
-    <section class="author-byline" aria-label="Content author">
-      <div class="wrap author-row"><p>Written by <a href="https://www.iasantetravail.com/en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI representative for the SFST.</p><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></div>
+    <section class="section validation" id="validation">
+      <div class="section-head">
+        <div><p class="kicker">06 / Validation programme</p><h2>What remains to be demonstrated before calling this a scientific instrument.</h2></div>
+        <p>Transparency about this status prevents a useful framework from being prematurely treated as an exact measure. Each step must be documented before proposing a threshold or normative interpretation.</p>
+      </div>
+      <div class="validation-track">
+        <article class="validation-step"><span>01</span><h3>Content validity</h3><p>Check with workers, prevention professionals and experts that the items cover relevant situations and remain understandable.</p></article>
+        <article class="validation-step"><span>02</span><h3>Factor structure</h3><p>Examine whether answers actually organise according to the nine proposed dimensions.</p></article>
+        <article class="validation-step"><span>03</span><h3>Reliability</h3><p>Assess the consistency of items within a dimension and stability of results when the situation does not change.</p></article>
+        <article class="validation-step"><span>04</span><h3>T0 / T1 invariance</h3><p>Check that the same dimension is measured comparably before and after deployment.</p></article>
+        <article class="validation-step"><span>05</span><h3>Sensitivity to change</h3><p>Determine whether the instrument detects real change and only then discuss possible thresholds.</p></article>
+      </div>
+      <div class="participate">
+        <div class="participate-copy"><span>Fieldwork · Research · Collaboration</span><h3>Would you like to use the long form or contribute to its evaluation?</h3><p>Field feedback is particularly useful for examining how items are understood, their relevance across occupations and the conditions for future validation.</p><a class="button light" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contact Dr Charles Broutin on LinkedIn <span>↗</span></a></div>
+        <div class="participate-who"><strong>Possible discussions with</strong><ul><li>Employers and project leaders</li><li>HR, works councils and employee representatives</li><li>OHS services and prevention professionals</li><li>Academic teams and research organisations</li><li>Organisations preparing an AI pilot</li></ul></div>
+      </div>
+      <div class="references"><a href="https://www.inrs.fr/risques/psychosociaux/facteurs-risques.html" target="_blank" rel="noreferrer">INRS · Six psychosocial risk factors ↗</a><span>Gollac &amp; Bodier · Expert panel report · 2011</span><span>ISO 45003:2021 · Psychological health at work</span></div>
+    </section>
+
+    <section class="section newsletter" id="newsletter">
+      <div><p class="kicker">Independent newsletter</p><h2>Follow the tool’s development and research on AI at work.</h2></div>
+      <div class="newsletter-copy"><p>Monitoring of evaluation methods, professional uses and evidence that can improve prevention.</p><div class="newsletter-actions"><a class="button primary" href="https://substack.com/@charlesbroutin" target="_blank" rel="noreferrer">Explore the newsletter <span>↗</span></a><a class="button secondary" href="https://www.iasantetravail.com/en/about/">About the project</a></div><small>Subscribe on Substack · unsubscribe at any time</small></div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="https://www.iasantetravail.com/en/"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a><p>Sourced and dated guidance for analysing artificial intelligence through real work.</p></div>
-      <div class="footer-col"><h3>Pathways</h3><ul><li><a href="https://www.iasantetravail.com/en/understand/">Understand</a></li><li><a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field</a></li><li><a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a></li><li><a href="#top">Evaluate</a></li><li><a href="https://www.iasantetravail.com/en/legal-governance/">Law &amp; governance</a></li></ul></div>
-      <div class="footer-col"><h3>Evaluate</h3><ul><li><a href="#organisation">Effects of the AI system</a></li><li><a href="#capabilities">Occupational capabilities</a></li><li><a href="https://www.iasantetravail.com/en/evaluate/impact/">Before deployment</a></li><li><a href="https://www.iasantetravail.com/en/evaluate/impact/follow-up.html">After deployment</a></li></ul></div>
-      <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contact the author on LinkedIn ↗</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></li><li><a href="https://www.iasantetravail.com/en/legal-notice/">Legal notice</a></li><li><a href="https://www.iasantetravail.com/en/privacy/">Privacy</a></li></ul></div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><strong>AI &amp; Occupational Health</strong><p>An exploratory questionnaire and resources for analysing the effects of artificial intelligence in real work.</p></div>
+      <div class="footer-col"><span>Questionnaire</span><a href="#instrument">Architecture</a><a href="#dimensions">Dimensions</a><a href="#temps">T0 / T1</a><a href="#interpretation">Interpretation</a></div>
+      <div class="footer-col"><span>Use</span><a href="#versions">Choose a version</a><a href="https://www.iasantetravail.com/en/evaluate/impact/">Short form</a><a href="#validation">Validation</a><a href="https://www.iasantetravail.com/en/uses-and-field/">Deployment</a></div>
+      <div class="footer-col"><span>The site</span><a href="https://www.iasantetravail.com/en/understand/">Understand</a><a href="https://www.iasantetravail.com/en/about/">About</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      <div class="footer-bottom"><span>Questionnaire designed by Dr Charles Broutin, occupational physician and AI lead for the SFST.</span><span>© 2026 AI &amp; Occupational Health · Thomas Cole artwork in the public domain.</span></div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span><span>Thomas Cole artwork · public domain</span></div>
   </footer>
 
-  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
-    <div class="search-box">
-      <h2 class="sr-only" id="searchTitle">Search this page</h2>
-      <div class="search-top"><label class="sr-only" for="searchInput">Search</label><input class="search-input" id="searchInput" type="search" placeholder="e.g. follow-up, benchmark, workload…" autocomplete="off"><button class="close-search" id="closeSearch" type="button" aria-label="Close search">×</button></div>
-      <div class="search-results" id="searchResults" aria-live="polite"><p>Enter at least two characters.</p></div>
-    </div>
-  </div>
-
   <script>
-    const menuButton=document.getElementById('menuButton');
-    const navLinks=document.getElementById('navLinks');
-    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
-    navLinks.addEventListener('click',event=>{if(!event.target.closest('a'))return;navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')});
-    const searchModal=document.getElementById('searchModal');
-    const openSearch=document.getElementById('openSearch');
-    const closeSearch=document.getElementById('closeSearch');
-    const searchInput=document.getElementById('searchInput');
-    const searchResults=document.getElementById('searchResults');
-    const searchItems=[
-      {label:'Initial evaluation',detail:'Before deployment, anticipated effects and pilot conditions',href:'#organisation'},
-      {label:'Dated follow-up',detail:'After deployment, observed effects and corrective action',href:'#organisation'},
-      {label:'Method and limitations',detail:'Exploratory and non-psychometric status',href:'#method'},
-      {label:'Occupational capabilities',detail:'French context, domain knowledge and specific errors',href:'#capabilities'}
-    ];
-    function showSearch(){searchModal.hidden=false;document.body.classList.add('search-open');searchInput.focus()}
-    function hideSearch(){searchModal.hidden=true;document.body.classList.remove('search-open');openSearch.focus()}
-    function renderSearch(value){const query=value.trim().toLocaleLowerCase('en');if(query.length<2){searchResults.innerHTML='<p>Enter at least two characters.</p>';return}const found=searchItems.filter(item=>(item.label+' '+item.detail).toLocaleLowerCase('en').includes(query));searchResults.innerHTML=found.length?found.map(item=>`<a class="search-result" href="${item.href}"><strong>${item.label}</strong><span>${item.detail}</span></a>`).join(''):'<p>No result on this page.</p>'}
-    openSearch.addEventListener('click',showSearch);closeSearch.addEventListener('click',hideSearch);searchInput.addEventListener('input',event=>renderSearch(event.target.value));searchResults.addEventListener('click',event=>{if(event.target.closest('a'))hideSearch()});searchModal.addEventListener('click',event=>{if(event.target===searchModal)hideSearch()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!searchModal.hidden)hideSearch()});
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.08});
-    document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
   </script>
 </body>
 </html>
