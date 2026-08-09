@@ -23,7 +23,6 @@
     "/ai-safety-agi/": "/en/ai-safety-agi/",
     "/a-propos/": "/en/about/",
     "/ressources/modeles/": "/en/resources/models/",
-    "/mises-a-jour/": "/en/updates/",
     "/mentions-legales/": "/en/legal-notice/",
     "/confidentialite/": "/en/privacy/"
   };
@@ -49,13 +48,11 @@
     ["AI safety & AGI", "/en/ai-safety-agi/"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
     ["Model landscape", "/en/resources/models/"],
-    ["Sources & updates", "/en/updates/"],
     ["About", "/en/about/"]
   ] : [
     ["AI safety & AGI", "/ai-safety-agi/"],
     ["L’IA dans les SPSTI", "/usages-terrain/exemple-sante-travail/"],
     ["Panorama des modèles", "/ressources/modeles/"],
-    ["Sources & mises à jour", "/mises-a-jour/"],
     ["À propos", "/a-propos/"]
   ];
 
