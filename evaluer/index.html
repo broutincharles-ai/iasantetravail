@@ -304,34 +304,41 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css">
+  <script defer src="/assets/js/unified-navigation.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="site-header">
     <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="https://www.iasantetravail.com/">
+      <a class="brand" href="https://www.iasantetravail.com/" aria-label="Accueil — IA et Santé au Travail">
         <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
         <span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span>
       </a>
       <div class="nav-links">
-        <a href="https://www.iasantetravail.com/comprendre/">Comprendre</a>
-        <a href="https://www.iasantetravail.com/usages-terrain/">Usages &amp; terrain</a>
-        <a href="#instrument" aria-current="page">Évaluer</a>
-        <a href="#interpretation">Interpréter</a>
-        <a href="#validation">Validation</a>
+        <a href="https://www.iasantetravail.com/comprendre/">Comprendre l’IA</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/">Usages terrain</a>
+        <a href="https://www.iasantetravail.com/evaluer/" aria-current="page">Évaluer</a>
+        <a href="https://www.iasantetravail.com/evaluer/impact/">Questionnaire court</a>
+        <a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a>
+        <a href="https://www.iasantetravail.com/a-propos/">À propos</a>
+        <a href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">L’IA dans les SPSTI</a>
+        <a href="https://www.iasantetravail.com/ai-safety-agi/">AI safety et AGI</a>
       </div>
-      <div class="nav-side">
-        <a class="language" href="https://www.iasantetravail.com/en/" aria-label="English version">EN</a>
-        <details class="menu-dropdown">
-          <summary>Menu</summary>
-          <div class="menu-panel">
-            <div class="menu-col"><span>Le questionnaire</span><a href="#instrument">Architecture</a><a href="#dimensions">Neuf dimensions</a><a href="#temps">T0 avant · T1 après</a><a href="#interpretation">Règles d’interprétation</a></div>
-            <div class="menu-col"><span>Utiliser</span><a href="#versions">Choisir une version</a><a href="https://www.iasantetravail.com/evaluer/impact/">Forme courte interactive →</a><a href="#validation">Contribuer à la validation</a><a href="https://www.iasantetravail.com/usages-terrain/">Préparer un déploiement ↗</a></div>
-            <div class="menu-col"><span>Le site</span><a href="https://www.iasantetravail.com/comprendre/#benchmarks">Comprendre les benchmarks ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos ↗</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter sur LinkedIn ↗</a></div>
-          </div>
-        </details>
-        <a class="nav-cta" href="https://www.iasantetravail.com/evaluer/impact/">Forme courte <span>→</span></a>
+    </nav>
+    <nav class="page-nav" aria-label="Sommaire de la page">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">Sur cette page</span>
+        <div class="page-nav-links">
+          <a href="#instrument">L’instrument</a>
+          <a href="#dimensions">Les dimensions</a>
+          <a href="#temps">Avant et après</a>
+          <a href="#interpretation">Interprétation</a>
+          <a href="#versions">Les versions</a>
+          <a href="#validation">Validation scientifique</a>
+        </div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
     </nav>
   </header>
