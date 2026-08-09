@@ -2,293 +2,746 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Qualify artificial intelligence uses at work, identify applicable obligations, and organise documented governance.">
-  <meta name="author" content="Dr Charles Broutin">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#F4EBDA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workplace AI Law and Governance — AI &amp; Occupational Health</title>
+  <meta name="description" content="Qualify a workplace AI use, identify the applicable legal frameworks and organise a documented, reversible and monitored decision.">
   <link rel="canonical" href="https://www.iasantetravail.com/en/legal-governance/">
-  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/droit-gouvernance/">
   <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/legal-governance/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/droit-gouvernance/">
   <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/droit-gouvernance/">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:site_name" content="AI &amp; Occupational Health">
-  <meta property="og:title" content="Legal and governance — AI &amp; Occupational Health">
-  <meta property="og:description" content="AI Act, GDPR, French labour law, worker consultation, and prevention: start from actual use to organise decisions.">
+  <meta property="og:title" content="Workplace AI Law and Governance">
+  <meta property="og:description" content="Coordinate the EU AI Act, GDPR, labour law, social dialogue and occupational risk prevention around a specific workplace AI use.">
   <meta property="og:url" content="https://www.iasantetravail.com/en/legal-governance/">
-  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-droit.jpg">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/architects-dream-1280.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Legal and governance — AI &amp; Occupational Health</title>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="/assets/images/architects-dream-1280.webp" type="image/webp">
-  <link rel="stylesheet" href="/assets/css/droit-gouvernance-v2.css?v=1.0">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Legal and governance","url":"https://www.iasantetravail.com/en/legal-governance/","inLanguage":"en-GB","description":"Qualify artificial intelligence uses at work, identify applicable obligations, and organise documented governance.","dateModified":"2026-07-19","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]}}</script>
-  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Workplace AI Law and Governance","description":"A practical governance method for workplace AI under the EU AI Act, GDPR, labour law and occupational health duties.","inLanguage":"en","dateModified":"2026-08-09","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Occupational physician"},"mainEntityOfPage":"https://www.iasantetravail.com/en/legal-governance/"}</script>
+  <style>
+    :root {
+      --ink: #17140f;
+      --ink-soft: #3f3931;
+      --muted: #625b52;
+      --terra: #a84e1f;
+      --terra-bright: #c94d24;
+      --green: #344f49;
+      --green-dark: #23383a;
+      --cream: #f4ebda;
+      --paper: #fff9f2;
+      --white: #fffdf9;
+      --lavender: #c9c2f2;
+      --lavender-dark: #4a4090;
+      --line: rgba(23, 20, 15, .16);
+      --line-light: rgba(244, 235, 218, .23);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --wrap: min(1440px, calc(100% - 80px));
+    }
 
-<link href="/assets/css/tokens.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/layout.css?v=1.0" rel="stylesheet"/>
-<link href="/assets/css/components.css?v=1.3" rel="stylesheet"/>
-<script defer src="/assets/js/site-shell.js?v=1.3"></script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, select, summary { color: inherit; font: inherit; }
+    button { cursor: pointer; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
+    .skip-link:focus { transform: none; }
+
+    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
+    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
+    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
+    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
+    .brand-copy strong, .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
+    .nav-side { display: flex; align-items: center; gap: 10px; }
+    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
+    .nav-cta, .button.primary { color: #fff; background: var(--green); }
+    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
+    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
+    .button.secondary { border-color: var(--line); background: transparent; }
+    .button.secondary:hover { background: var(--cream); }
+    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
+    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
+
+    .menu-dropdown { position: relative; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary::-webkit-details-marker { display: none; }
+    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
+    .menu-dropdown[open] > summary::after { content: "−"; }
+    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .menu-col { display: grid; align-content: start; gap: 11px; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
+    .menu-col a:hover { color: var(--terra); }
+
+    .section { padding: 76px max(40px, calc(50% - 720px)); }
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker.line { display: flex; align-items: center; gap: 14px; }
+    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
+    .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
+
+    .hero { width: var(--wrap); min-height: 700px; margin: 0 auto; padding: 66px 0 48px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 68px; }
+    .hero-copy { max-width: 690px; }
+    .hero h1 { margin: 34px 0 28px; font-size: clamp(55px, 5.4vw, 83px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
+    .hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lede { max-width: 650px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .hero-note { max-width: 650px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .hero-note strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 28px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
+
+    .artwork { margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .artwork-label { min-height: 62px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 10px; }
+    .artwork-label strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
+    .artwork-label strong::before { content: ""; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+    .artwork img { width: 100%; aspect-ratio: 1.48 / 1; object-fit: cover; object-position: center; filter: saturate(.82) contrast(.96); }
+    .artwork figcaption { display: grid; grid-template-columns: 175px 1fr; gap: 25px; padding: 20px; border-top: 1px solid var(--line); }
+    .artwork figcaption span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 780; letter-spacing: .07em; line-height: 1.45; text-transform: uppercase; }
+    .artwork figcaption p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .artwork figcaption a { color: var(--terra); font-weight: 750; }
+
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .facts article { min-height: 138px; padding: 24px 27px; border-right: 1px solid var(--line); }
+    .facts article:first-child { padding-left: 0; }
+    .facts article:last-child { border-right: 0; }
+    .facts b { color: var(--terra); font-size: 27px; font-weight: 520; letter-spacing: -.04em; }
+    .facts strong, .facts small { display: block; }
+    .facts strong { margin-top: 18px; font-size: 13px; }
+    .facts small { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .qualify { background: var(--cream); }
+    .decision-shell { display: grid; grid-template-columns: 1.18fr .82fr; margin-top: 52px; border: 1px solid var(--line); }
+    .decision-flow { background: rgba(255, 249, 242, .45); }
+    .decision-row { display: grid; grid-template-columns: 70px 1fr 1.1fr; gap: 22px; align-items: center; min-height: 132px; padding: 23px 28px; border-bottom: 1px solid var(--line); }
+    .decision-row:last-child { border-bottom: 0; }
+    .decision-row > span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
+    .decision-row h3 { margin: 0; font-size: 20px; letter-spacing: -.03em; }
+    .decision-row p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .trigger-panel { padding: 32px; color: var(--cream); background: var(--green-dark); }
+    .trigger-panel .kicker { color: var(--lavender); }
+    .trigger-panel h3 { margin: 37px 0 16px; font-size: 29px; letter-spacing: -.04em; line-height: 1.15; }
+    .trigger-panel > p:not(.kicker) { margin: 0; color: rgba(244, 235, 218, .7); font-size: 13px; line-height: 1.58; }
+    .trigger-list { margin-top: 31px; border-top: 1px solid var(--line-light); }
+    .trigger-list div { display: grid; grid-template-columns: 38px 1fr; gap: 15px; padding: 17px 0; border-bottom: 1px solid var(--line-light); }
+    .trigger-list b { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .trigger-list strong, .trigger-list small { display: block; }
+    .trigger-list strong { font-size: 12px; }
+    .trigger-list small { margin-top: 6px; color: rgba(244, 235, 218, .62); font-size: 10px; line-height: 1.45; }
+
+    .frameworks { background: var(--white); }
+    .framework-list { margin-top: 52px; border: 1px solid var(--line); }
+    .framework-card { display: grid; grid-template-columns: 60px 1fr 1.2fr .72fr; gap: 26px; align-items: center; min-height: 176px; padding: 28px; border-bottom: 1px solid var(--line); }
+    .framework-card:last-child { border-bottom: 0; }
+    .framework-number { color: var(--terra); font-family: var(--mono); font-size: 11px; }
+    .framework-title span { display: inline-block; padding: 5px 8px; border: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: 7px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .framework-title h3 { margin: 18px 0 8px; font-size: 25px; letter-spacing: -.04em; }
+    .framework-title p, .framework-question p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.52; }
+    .framework-question small { display: block; margin-bottom: 10px; color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .framework-question strong { display: block; margin-bottom: 8px; font-size: 14px; line-height: 1.42; }
+    .framework-link { justify-self: end; color: var(--terra); font-size: 11px; font-weight: 760; line-height: 1.4; text-align: right; }
+    .framework-link:hover { text-decoration: underline; }
+    .cumulative-note { display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; padding: 26px 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
+    .cumulative-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .cumulative-note p { margin: 0; font-size: 17px; font-weight: 620; line-height: 1.5; }
+
+    .uses { background: var(--paper); }
+    .use-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
+    .use-table table { width: 100%; min-width: 990px; border-collapse: collapse; }
+    .use-table th { padding: 16px 21px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    .use-table th:first-child { width: 25%; }
+    .use-table td { padding: 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.52; vertical-align: top; }
+    .use-table tbody tr:first-child td { border-top: 0; }
+    .use-table td:first-child { color: var(--ink); font-weight: 720; }
+    .use-table td:last-child { color: var(--ink-soft); font-weight: 650; }
+    .use-index { display: inline-block; min-width: 35px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .use-tag { display: inline-block; margin-top: 9px; padding: 4px 7px; border: 1px solid var(--line); color: var(--terra); font-family: var(--mono); font-size: 7px; font-weight: 800; text-transform: uppercase; }
+    .matrix-note { margin: 18px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+
+    .timeline { color: var(--paper); background: var(--green-dark); }
+    .timeline .kicker { color: var(--lavender); }
+    .timeline .section-head > p { color: rgba(244, 235, 218, .68); }
+    .timeline-track { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 52px; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+    .timeline-step { min-height: 245px; padding: 25px 22px; border-right: 1px solid var(--line-light); }
+    .timeline-step:last-child { border-right: 0; }
+    .timeline-step.current { background: rgba(201, 194, 242, .09); }
+    .timeline-step time { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; }
+    .timeline-step strong, .timeline-step small { display: block; }
+    .timeline-step strong { margin-top: 48px; color: var(--cream); font-size: 15px; line-height: 1.35; }
+    .timeline-step small { margin-top: 12px; color: rgba(244, 235, 218, .63); font-size: 10px; line-height: 1.48; }
+    .timeline-update { display: grid; grid-template-columns: .52fr 1.48fr; gap: 40px; align-items: center; margin-top: 28px; padding: 27px 29px; border-left: 4px solid var(--terra); background: rgba(244, 235, 218, .06); }
+    .timeline-update span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline-update p { margin: 0; color: var(--cream); font-size: 15px; line-height: 1.55; }
+    .timeline-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .timeline-links a { padding: 12px 14px; border: 1px solid var(--line-light); color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 760; }
+
+    .roles { background: var(--cream); }
+    .role-picker { display: grid; grid-template-columns: .82fr 1.18fr; margin-top: 52px; border: 1px solid var(--line); background: var(--paper); }
+    .role-controls { padding: 34px; border-right: 1px solid var(--line); }
+    .role-controls label { display: block; margin-bottom: 13px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .role-controls select { width: 100%; min-height: 56px; padding: 0 16px; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--white); font-size: 14px; font-weight: 680; }
+    .role-controls p { margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .role-result { min-height: 290px; padding: 34px; color: var(--cream); background: var(--green-dark); }
+    .role-result > span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .role-result h3 { margin: 28px 0 13px; color: var(--paper); font-size: 29px; letter-spacing: -.04em; }
+    .role-result > p { margin: 0; color: rgba(244, 235, 218, .7); font-size: 13px; line-height: 1.58; }
+    .role-actions { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 28px; border-top: 1px solid var(--line-light); }
+    .role-actions div { padding: 17px 15px 0 0; border-right: 1px solid var(--line-light); }
+    .role-actions div + div { padding-left: 15px; }
+    .role-actions div:last-child { border-right: 0; }
+    .role-actions b { display: block; color: var(--lavender); font-family: var(--mono); font-size: 8px; }
+    .role-actions strong { display: block; margin-top: 12px; color: var(--cream); font-size: 10px; line-height: 1.42; }
+
+    .governance { background: var(--white); }
+    .governance-board { display: grid; grid-template-columns: 1.02fr .98fr; margin-top: 52px; border: 1px solid var(--line); }
+    .actor-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .actor-card { min-height: 164px; padding: 25px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .actor-card:nth-child(even) { border-right: 0; }
+    .actor-card:nth-last-child(-n+2) { border-bottom: 0; }
+    .actor-card span, .actor-card strong { display: block; }
+    .actor-card span { color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .actor-card strong { margin-top: 35px; font-size: 14px; line-height: 1.42; }
+    .gate-panel { padding: 32px; border-left: 1px solid var(--line); background: var(--cream); }
+    .gate-list { margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .gate-list li { display: grid; grid-template-columns: 42px 1fr; gap: 13px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .gate-list span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .gate-list strong, .gate-list small { display: block; }
+    .gate-list strong { font-size: 13px; }
+    .gate-list small { margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .consultation { background: var(--paper); }
+    .consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .consult-card { min-height: 315px; padding: 29px; border-right: 1px solid var(--line); }
+    .consult-card:last-child { border-right: 0; }
+    .consult-card > span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .consult-card h3 { margin: 58px 0 15px; font-size: 23px; letter-spacing: -.035em; }
+    .consult-card ul { margin: 0; padding: 0; list-style: none; }
+    .consult-card li { position: relative; padding: 10px 0 10px 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .consult-card li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+    .legal-note { margin: 25px 0 0; padding: 22px 25px; border-left: 4px solid var(--terra); color: var(--muted); background: var(--cream); font-size: 12px; line-height: 1.58; }
+    .legal-note strong { color: var(--ink); }
+
+    .dossier { background: var(--cream); }
+    .checklist-shell { display: grid; grid-template-columns: .62fr 1.38fr; margin-top: 52px; border: 1px solid var(--line); background: var(--paper); }
+    .checklist-summary { padding: 32px; border-right: 1px solid var(--line); color: var(--cream); background: var(--green-dark); }
+    .checklist-summary span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .checklist-count { margin: 39px 0 12px; color: var(--paper); font-size: 52px; font-weight: 480; letter-spacing: -.06em; }
+    .checklist-summary p { margin: 0; color: rgba(244, 235, 218, .7); font-size: 12px; line-height: 1.55; }
+    .checklist-track { height: 4px; margin: 28px 0 20px; background: rgba(244, 235, 218, .16); }
+    .checklist-fill { width: 0; height: 100%; background: var(--lavender); transition: width .2s ease; }
+    .checklist-summary button { margin-top: 15px; padding: 0; border: 0; color: var(--lavender); background: transparent; font-family: var(--mono); font-size: 9px; font-weight: 800; text-decoration: underline; }
+    .checklist { display: grid; grid-template-columns: 1fr 1fr; }
+    .check-item { position: relative; min-height: 146px; padding: 25px 24px 22px 58px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; }
+    .check-item:nth-child(even) { border-right: 0; }
+    .check-item:nth-last-child(-n+2) { border-bottom: 0; }
+    .check-item input { position: absolute; top: 26px; left: 24px; width: 18px; height: 18px; accent-color: var(--terra); }
+    .check-item strong, .check-item small { display: block; }
+    .check-item strong { font-size: 13px; line-height: 1.4; }
+    .check-item small { margin-top: 10px; color: var(--muted); font-size: 10px; line-height: 1.46; }
+    .check-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+    .references { background: var(--white); }
+    .reference-panel { display: grid; grid-template-columns: .72fr 1.28fr; margin-top: 52px; border: 1px solid var(--line); }
+    .reference-intro { padding: 34px; color: var(--cream); background: var(--green-dark); }
+    .reference-intro .kicker { color: var(--lavender); }
+    .reference-intro h3 { margin: 45px 0 16px; color: var(--paper); font-size: 31px; letter-spacing: -.045em; }
+    .reference-intro p { margin: 0; color: rgba(244, 235, 218, .7); font-size: 13px; line-height: 1.58; }
+    .reference-date { display: block; margin-top: 31px; padding-top: 18px; border-top: 1px solid var(--line-light); color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .source-list { padding: 12px 32px; }
+    .source-row { display: grid; grid-template-columns: 42px 1fr auto; gap: 18px; align-items: center; min-height: 79px; border-bottom: 1px solid var(--line); }
+    .source-row:last-child { border-bottom: 0; }
+    .source-row > span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
+    .source-row strong, .source-row small { display: block; }
+    .source-row strong { font-size: 12px; }
+    .source-row small { margin-top: 5px; color: var(--muted); font-size: 9px; }
+    .source-row a { color: var(--terra); font-size: 11px; font-weight: 760; }
+
+    .newsletter { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: end; background: var(--paper); }
+    .newsletter h2 { max-width: 800px; margin: 23px 0 0; font-size: clamp(42px, 4.8vw, 68px); font-weight: 480; letter-spacing: -.058em; line-height: 1.04; }
+    .newsletter-copy > p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.62; }
+    .newsletter-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
+    .newsletter-copy small { display: block; margin-top: 16px; color: var(--muted); font-size: 9px; }
+
+    .site-footer { padding: 55px max(40px, calc(50% - 720px)) 28px; color: var(--cream); background: var(--green-dark); }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, .72fr); gap: 58px; }
+    .footer-brand strong { color: var(--paper); font-size: 18px; }
+    .footer-brand p { max-width: 340px; margin: 18px 0 0; color: rgba(244, 235, 218, .6); font-size: 11px; line-height: 1.55; }
+    .footer-col { display: grid; align-content: start; gap: 11px; }
+    .footer-col span { margin-bottom: 6px; color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .75); font-size: 11px; }
+    .footer-col a:hover { color: var(--paper); }
+    .footer-bottom { grid-column: 1 / -1; margin-top: 32px; padding-top: 23px; border-top: 1px solid var(--line-light); display: flex; justify-content: space-between; gap: 24px; color: rgba(244, 235, 218, .5); font-family: var(--mono); font-size: 8px; line-height: 1.5; }
+
+    @media print {
+      .site-header, .hero-actions, .newsletter, .site-footer, .check-actions, .menu-dropdown { display: none !important; }
+      body { border-top: 0; background: #fff; }
+      .section { padding: 35px 0; }
+      .hero { min-height: 0; padding: 30px 0; }
+      .artwork img { max-height: 360px; }
+      .timeline { color: var(--ink); background: #fff; }
+      .timeline-step strong, .timeline-update p { color: var(--ink); }
+      .timeline-step small { color: var(--muted); }
+      .role-result, .trigger-panel, .checklist-summary, .reference-intro { color: var(--ink); background: var(--cream); }
+      .role-result h3, .role-result > p, .role-actions strong, .trigger-panel h3, .trigger-panel > p:not(.kicker), .trigger-list small, .reference-intro h3, .reference-intro p, .checklist-summary p, .checklist-count { color: var(--ink); }
+    }
+    @media (max-width: 1180px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero h1 { font-size: clamp(52px, 6.6vw, 74px); }
+      .timeline-track { grid-template-columns: repeat(3, 1fr); }
+      .timeline-step { border-bottom: 1px solid var(--line-light); }
+      .timeline-step:nth-child(3n) { border-right: 0; }
+      .framework-card { grid-template-columns: 50px 1fr 1.1fr; }
+      .framework-link { grid-column: 2 / -1; justify-self: start; text-align: left; }
+    }
+    @media (max-width: 920px) {
+      :root { --wrap: min(100% - 44px, 1440px); }
+      .section { padding: 64px 22px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
+      .hero-copy { max-width: none; }
+      .artwork { max-width: 780px; }
+      .section-head, .decision-shell, .cumulative-note, .timeline-update, .role-picker, .governance-board, .checklist-shell, .reference-panel, .newsletter { grid-template-columns: 1fr; gap: 34px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .facts article:nth-child(2) { border-right: 0; }
+      .facts article { border-bottom: 1px solid var(--line); }
+      .facts article:nth-child(3), .facts article:nth-child(4) { border-bottom: 0; }
+      .trigger-panel, .gate-panel, .role-controls { border: 0; border-top: 1px solid var(--line); }
+      .consult-grid { grid-template-columns: 1fr; }
+      .consult-card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .consult-card:last-child { border-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-bottom { display: grid; }
+    }
+    @media (max-width: 640px) {
+      :root { --wrap: calc(100% - 30px); }
+      .section { padding: 54px 15px; }
+      .nav { min-height: 78px; gap: 14px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; }
+      .brand-mark img { width: 31px; height: 31px; }
+      .brand-copy strong { font-size: 15px; }
+      .brand-copy small, .language, .nav-cta { display: none; }
+      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
+      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
+      .hero h1 { font-size: clamp(43px, 13.3vw, 59px); }
+      .hero-lede { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .artwork figcaption { grid-template-columns: 1fr; }
+      .section-head h2, .newsletter h2 { font-size: 40px; }
+      .facts, .actor-grid, .checklist { grid-template-columns: 1fr; }
+      .facts article { padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .facts article:last-child { border-bottom: 0 !important; }
+      .decision-row { grid-template-columns: 34px 1fr; padding: 22px 20px; }
+      .decision-row p { grid-column: 2; }
+      .framework-card { grid-template-columns: 34px 1fr; padding: 24px 19px; }
+      .framework-question, .framework-link { grid-column: 2; }
+      .timeline-track { grid-template-columns: 1fr 1fr; }
+      .timeline-step:nth-child(3n) { border-right: 1px solid var(--line-light); }
+      .timeline-step:nth-child(even) { border-right: 0; }
+      .role-actions { grid-template-columns: 1fr; }
+      .role-actions div, .role-actions div + div { padding: 14px 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
+      .role-actions div:last-child { border-bottom: 0; }
+      .actor-card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .actor-card:last-child { border-bottom: 0 !important; }
+      .actor-card strong { margin-top: 24px; }
+      .check-item { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .check-item:last-child { border-bottom: 0 !important; }
+      .source-row { grid-template-columns: 30px 1fr; padding: 16px 0; }
+      .source-row a { grid-column: 2; }
+      .source-list { padding: 10px 21px; }
+      .newsletter-actions { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=1.1">
+  <script defer src="/assets/js/unified-navigation.js?v=1.0"></script>
 </head>
-<body class="legal-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<body>
+  <a class="skip-link" href="#contenu">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="AI and Occupational Health, home"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="https://www.iasantetravail.com/en/">Home</a>
-        <a href="https://www.iasantetravail.com/en/understand/">Understand</a>
-        <a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field evidence</a>
-        <a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="Home — AI and Occupational Health">
+        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>AI &amp; Occupational Health</strong><small>Prevention · Real work</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.iasantetravail.com/en/understand/">Understand AI</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/">Field use</a>
         <a href="https://www.iasantetravail.com/en/evaluate/">Assess</a>
-        <a class="active" href="#top" aria-current="page">Legal &amp; governance</a>
-        <a href="#references">Resources</a>
+        <a href="https://www.iasantetravail.com/en/evaluate/impact/">Short questionnaire</a>
+        <a href="https://www.iasantetravail.com/en/legal-governance/" aria-current="page">Law &amp; governance</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">AI in OHS services</a>
+        <a href="https://www.iasantetravail.com/en/ai-safety-agi/">AI safety &amp; AGI</a>
+        <a href="https://www.iasantetravail.com/en/about/">About</a>
       </div>
-      <div class="nav-tools">
-        <button class="search-button" id="openSearch" type="button" aria-label="Search this page">⌕</button>
-        <div class="language" aria-label="Language selection"><a href="https://www.iasantetravail.com/droit-gouvernance/" lang="fr" hreflang="fr">FR</a><a class="active" href="https://www.iasantetravail.com/en/legal-governance/" lang="en" aria-current="page">EN</a></div>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">☰</button>
-        <a class="nav-cta" href="https://www.iasantetravail.com/en/evaluate/impact/">Assess a project</a>
+      <a class="language-switch" href="https://www.iasantetravail.com/droit-gouvernance/" lang="fr" hreflang="fr" aria-label="Voir cette page en français">FR</a>
+    </nav>
+    <nav class="page-nav" aria-label="Page contents">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">On this page</span>
+        <div class="page-nav-links">
+          <a href="#qualifier">Qualify the use</a>
+          <a href="#cadres">Legal frameworks</a>
+          <a href="#usages">Use cases</a>
+          <a href="#calendrier">Timeline</a>
+          <a href="#roles">Roles</a>
+          <a href="#gouvernance">Governance</a>
+          <a href="#consultation">CSE</a>
+          <a href="#dossier">Decision file</a>
+        </div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
     </nav>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero-frame">
-          <img src="/assets/images/architects-dream-1280.webp" alt="Thomas Cole, The Architect’s Dream, 1840" width="1280" height="786" fetchpriority="high">
-          <div class="hero-copy">
-            <p class="eyebrow">Legal &amp; governance · From use to decision</p>
-            <h1 id="hero-title">Govern AI <em>from its real-world use.</em></h1>
-            <p class="hero-lead">Qualify the use, involve the right actors, prepare consultation and authorise — or refuse — a documented, reversible and monitored pilot.</p>
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="kicker line">Law &amp; governance · From use to decision</p>
+        <h1>Govern AI through <em>what it actually changes.</em></h1>
+        <p class="hero-lede">Describe the use, identify applicable rules, involve the right people, and decide on a documented, reversible and monitored pilot.</p>
+        <p class="hero-note"><strong>The starting point is not the tool’s name.</strong> Duties depend on the task being changed, the people concerned, the data used and the possible consequences of a system output.</p>
+        <div class="hero-actions"><a class="button primary" href="#qualifier">Qualify a use <span>↓</span></a><a class="button secondary" href="#roles">See my role</a></div>
+        <div class="hero-proof"><span>Dated official sources</span><span>Four distinct frameworks</span><span>No automatic green light</span></div>
+      </div>
+
+      <figure class="artwork">
+        <div class="artwork-label"><strong>Give the decision an architecture</strong><span>Project · rules · responsibilities</span></div>
+        <img src="https://www.iasantetravail.com/assets/images/architects-dream-1280.webp" alt="Thomas Cole’s The Architect’s Dream, a vast landscape bringing together several monumental architectural styles">
+        <figcaption>
+          <span>Thomas Cole<br>The Architect’s Dream · 1840</span>
+          <p>Buildings from different periods and styles coexist in one landscape. Here, the artwork reminds us that an AI project never falls under a single text: the EU AI Act, data protection, labour law and prevention must be coordinated around a precise use. An impressive architecture on paper is not enough; pathways, responsibilities and stopping conditions must still be defined. <a href="https://www.mfa.org/collections/object/architects-dream-33254" target="_blank" rel="noreferrer">View the artwork ↗</a></p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="facts" aria-label="Essential principles">
+      <article><b>1 use</b><strong>Context-specific qualification</strong><small>The same technology may fall under different rules depending on the task and its effects.</small></article>
+      <article><b>4</b><strong>Frameworks to examine</strong><small>The AI Act, GDPR, labour law and prevention duties may all apply.</small></article>
+      <article><b>5</b><strong>Decision gates</strong><small>From a demonstrated need to real-world monitoring, with the ability to stop.</small></article>
+      <article><b>0</b><strong>Universal approval</strong><small>No single document is sufficient to authorise every use of a system.</small></article>
+    </section>
+
+    <section class="section qualify" id="qualifier">
+      <div class="section-head">
+        <div><p class="kicker">01 / Qualify the use</p><h2>Describe the system’s practical power before looking for the rule.</h2></div>
+        <p>Qualification starts neither from the provider’s brand nor from the word “assistance”. It starts from the activity, the data and the actual reach of the output.</p>
+      </div>
+      <div class="decision-shell">
+        <div class="decision-flow">
+          <article class="decision-row"><span>01</span><h3>Which task is being changed?</h3><p>Write, summarise, recommend, classify, recruit, assign a task, monitor or contribute to a decision.</p></article>
+          <article class="decision-row"><span>02</span><h3>Who is concerned?</h3><p>Applicants, workers, professionals, patients or service users — and the data used to describe or evaluate them.</p></article>
+          <article class="decision-row"><span>03</span><h3>What reach does the output have?</h3><p>A revisable draft, priority order, score, activity monitoring or a decision producing a significant effect.</p></article>
+          <article class="decision-row"><span>04</span><h3>How can human control be recovered?</h3><p>The reviewer’s competence and authority, ability to challenge, fallback solution and suspension conditions.</p></article>
+        </div>
+        <aside class="trigger-panel">
+          <p class="kicker">What this description triggers</p>
+          <h3>Four analyses conducted together, without conflating them.</h3>
+          <p>A project may be low-risk under the AI Act while still creating data protection, surveillance or occupational health issues.</p>
+          <div class="trigger-list">
+            <div><b>01</b><span><strong>Role and risk class</strong><small>Under the EU AI Act.</small></span></div>
+            <div><b>02</b><span><strong>Data processing</strong><small>Purposes, lawful bases, rights, security and any required DPIA.</small></span></div>
+            <div><b>03</b><span><strong>Information and consultation</strong><small>Depending on the project, workforce size and effects on work.</small></span></div>
+            <div><b>04</b><span><strong>Risk prevention</strong><small>Foreseeable effects on physical and mental health.</small></span></div>
           </div>
-          <p class="hero-credit">Thomas Cole, The Architect’s Dream, 1840</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section frameworks" id="cadres">
+      <div class="section-head">
+        <div><p class="kicker">02 / Identify the frameworks</p><h2>Four sets of rules answering different questions.</h2></div>
+        <p>Examining them separately avoids two errors: believing a system that is “not high-risk” presents no issue, or asking the DPO alone to decide the whole project.</p>
+      </div>
+      <div class="framework-list">
+        <article class="framework-card">
+          <div class="framework-number">01</div>
+          <div class="framework-title"><span>Progressive application</span><h3>EU Artificial Intelligence Act</h3><p>Qualify the system, use, organisation’s role and corresponding duties.</p></div>
+          <div class="framework-question"><small>Starting question</small><strong>Is the use prohibited, subject to a transparency duty or classified as high-risk?</strong><p>For a high-risk system used at work, the deployer must in particular organise competent human oversight, monitor operation and inform worker representatives and affected workers.</p></div>
+          <a class="framework-link" href="https://ai-act-service-desk.ec.europa.eu/en/ai-act" target="_blank" rel="noreferrer">Explore the official text ↗</a>
+        </article>
+        <article class="framework-card">
+          <div class="framework-number">02</div>
+          <div class="framework-title"><span>In force</span><h3>GDPR &amp; CNIL</h3><p>Define the purpose, lawful basis, necessary data, retention period and people’s rights.</p></div>
+          <div class="framework-question"><small>Starting question</small><strong>Which personal data enters or leaves the system, or is used to make a decision?</strong><p>In particular, examine whether a DPIA is required and the safeguards around a decision based solely on automated processing that produces legal or similarly significant effects.</p></div>
+          <a class="framework-link" href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noreferrer">CNIL DPIA method ↗</a>
+        </article>
+        <article class="framework-card">
+          <div class="framework-number">03</div>
+          <div class="framework-title"><span>In force</span><h3>Labour Code &amp; works council</h3><p>Make consequences for employment, organisation, working conditions and activity monitoring visible.</p></div>
+          <div class="framework-question"><small>Starting question</small><strong>Does the project change work enough to require information or consultation before the decision?</strong><p>The file must arrive early enough and contain sufficiently precise information for the opinion to still influence the project.</p></div>
+          <a class="framework-link" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noreferrer">Article L. 2312-8 ↗</a>
+        </article>
+        <article class="framework-card">
+          <div class="framework-number">04</div>
+          <div class="framework-title"><span>In force</span><h3>Prevention &amp; occupational risk assessment</h3><p>Assess the effects of change on physical and mental health in the work as it will actually be organised.</p></div>
+          <div class="framework-question"><small>Starting question</small><strong>Does the project change workload, autonomy, monitoring, responsibilities, skills or work collectives?</strong><p>The assessment must lead to prevention measures and be reviewed when the project or conditions of use change.</p></div>
+          <a class="framework-link" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noreferrer">Article L. 4121-3 ↗</a>
+        </article>
+      </div>
+      <div class="cumulative-note"><span>Remember</span><p>GDPR compliance does not establish AI Act compliance; applying the AI Act removes neither social dialogue nor the duty to prevent occupational risks.</p></div>
+    </section>
+
+    <section class="section uses" id="usages">
+      <div class="section-head">
+        <div><p class="kicker">03 / Read by use case</p><h2>The first useful document depends on what the system does.</h2></div>
+        <p>This matrix guides analysis. It replaces neither precise project qualification nor legal advice tailored to the situation.</p>
+      </div>
+      <div class="use-table">
+        <table>
+          <thead><tr><th>Intended use</th><th>Questions to examine first</th><th>Effects on work to document</th><th>First deliverable</th></tr></thead>
+          <tbody>
+            <tr><td><span class="use-index">01</span>Monitoring, synthesis, rephrasing<br><span class="use-tag">General assistance</span></td><td>Confidentiality, data sent to the provider, source reliability and transparency towards recipients.</td><td>Review time, new plausible errors, productivity expectations and maintaining the ability to work without the tool.</td><td>Use note, input rules and human review protocol.</td></tr>
+            <tr><td><span class="use-index">02</span>Recruitment, screening, mobility<br><span class="use-tag">Employment · potentially high-risk</span></td><td>Scope of Annex III, any exception, bias, personal data, the actual role of human intervention and information for applicants.</td><td>Hidden criteria, review workload, ability to challenge and responsibility for the decision.</td><td>AI Act qualification, data mapping, impact assessment and social dialogue file.</td></tr>
+            <tr><td><span class="use-index">03</span>Scheduling and task allocation<br><span class="use-tag">Work management</span></td><td>The system’s influence on access to tasks, schedules, assessment and decisions concerning workers.</td><td>Autonomy, intensification, fairness of allocation, workarounds and management discretion.</td><td>Before-and-after work mapping, challenge rules and pilot protocol.</td></tr>
+            <tr><td><span class="use-index">04</span>Activity and performance monitoring<br><span class="use-tag">Monitoring</span></td><td>Purpose, necessity, proportionality, prior information, data access and consequences of the score or alert.</td><td>Sense of surveillance, behavioural changes, unrealistic targets, relationships with management and psychosocial risks.</td><td>Necessity and proportionality test, DPIA where required, consultation and prevention measures.</td></tr>
+            <tr><td><span class="use-index">05</span>Health, fitness for work or medical data<br><span class="use-tag">Specialised analysis</span></td><td>Health data, professional secrecy, possible qualification as a medical device, separation of roles and security.</td><td>Clinical responsibility, trust, hard-to-detect errors, time pressure and recovery capacity during unavailability.</td><td>Legal, clinical, technical and organisational analysis before any pilot.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-note"><strong>Why “potentially high-risk”?</strong> Employment and worker-management uses are among the sensitive areas in the AI Act, but qualification depends on the system’s precise functions and the Regulation’s exceptions. The provider cannot decide this question alone for the deploying organisation.</p>
+    </section>
+
+    <section class="section timeline" id="calendrier">
+      <div class="section-head">
+        <div><p class="kicker">04 / AI Act timeline</p><h2>A regulation applied in stages — and already amended.</h2></div>
+        <p>The dates below reflect the official timeline consulted on 8 August 2026. They should be checked again for each project.</p>
+      </div>
+      <div class="timeline-track">
+        <article class="timeline-step"><time datetime="2024-08-01">1 AUG 2024</time><strong>Entry into force.</strong><small>The Regulation becomes the European reference framework.</small></article>
+        <article class="timeline-step"><time datetime="2025-02-02">2 FEB 2025</time><strong>Prohibitions and AI literacy.</strong><small>Prohibited practices and a duty to take measures ensuring a sufficient level of AI literacy.</small></article>
+        <article class="timeline-step"><time datetime="2025-08-02">2 AUG 2025</time><strong>General-purpose AI models.</strong><small>Initial duties for general-purpose model providers and governance rules.</small></article>
+        <article class="timeline-step"><time datetime="2026-07-27">27 JUL 2026</time><strong>AI Omnibus in force.</strong><small>The amending text sets, among other things, a new timeline for certain high-risk systems.</small></article>
+        <article class="timeline-step current"><time datetime="2026-08-02">2 AUG 2026</time><strong>General application.</strong><small>Most provisions become applicable; national authorities and the European AI Office oversee implementation.</small></article>
+        <article class="timeline-step"><time datetime="2027-12-02">2 DEC 2027</time><strong>High-risk uses under Annex III.</strong><small>Including certain systems used for employment and worker management.</small></article>
+        <article class="timeline-step"><time datetime="2028-08-02">2 AUG 2028</time><strong>Systems embedded in regulated products.</strong><small>Application of the rules for high-risk systems under Annex I.</small></article>
+      </div>
+      <div class="timeline-update"><span>Important update</span><p>The political agreement of 7 May 2026 is no longer the latest state of the law: the AI Omnibus entered into force on 27 July 2026. The general AI Act timeline remains progressive and some duties already apply.</p></div>
+      <div class="timeline-links"><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noreferrer">Official Commission timeline ↗</a><a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202601744" target="_blank" rel="noreferrer">Final AI Omnibus text ↗</a><a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noreferrer">Regulation (EU) 2024/1689 ↗</a></div>
+    </section>
+
+    <section class="section roles" id="roles">
+      <div class="section-head">
+        <div><p class="kicker">05 / Start from your role</p><h2>One project, different responsibilities.</h2></div>
+        <p>Choose your role to display the first work to undertake. The aim is not to split the law into silos, but to know who contributes which part of the file.</p>
+      </div>
+      <div class="role-picker">
+        <div class="role-controls">
+          <label for="roleSelect">My role in the project is…</label>
+          <select id="roleSelect">
+            <option value="direction">Employer or project lead</option>
+            <option value="rh">HR / HR director</option>
+            <option value="cse">Works council or employee representative</option>
+            <option value="dpo">Legal counsel / DPO</option>
+            <option value="spst">OHS service / prevention / occupational health</option>
+            <option value="achats">Procurement / information systems security</option>
+          </select>
+          <p>This pathway indicates a starting point, not an exhaustive list of duties. Stakeholders must compare their analyses before the decision.</p>
+        </div>
+        <div class="role-result" aria-live="polite">
+          <span id="roleEyebrow">Decision and responsibility</span>
+          <h3 id="roleTitle">Start from the work need, not from a tool already selected.</h3>
+          <p id="roleText">Describe the problem to solve, alternatives considered, expected outcome and the person accountable for launching, modifying or stopping the pilot.</p>
+          <div class="role-actions" id="roleActions"></div>
         </div>
       </div>
     </section>
 
-    <section class="summary" aria-labelledby="summary-title">
-      <div class="wrap summary-panel reveal">
-        <div>
-          <p class="eyebrow" style="color:var(--terra)">In 30 seconds</p>
-          <h2 id="summary-title">The law does not apply to “AI” in the abstract.</h2>
+    <section class="section governance" id="gouvernance">
+      <div class="section-head">
+        <div><p class="kicker">06 / Organise the decision</p><h2>Governance that also names who can say no.</h2></div>
+        <p>Each stakeholder examines one part of the project. The final decision must make trade-offs, disagreements, continuation conditions and the authority able to suspend use visible.</p>
+      </div>
+      <div class="governance-board">
+        <div class="actor-grid">
+          <article class="actor-card"><span>Project leadership</span><strong>Describes the need and scope, and owns the decision.</strong></article>
+          <article class="actor-card"><span>Legal counsel &amp; DPO</span><strong>Qualify the frameworks, processing and rights.</strong></article>
+          <article class="actor-card"><span>CSE</span><strong>Examines consequences for employment and work.</strong></article>
+          <article class="actor-card"><span>OHS service &amp; prevention</span><strong>Provide insight into effects on activity and health.</strong></article>
+          <article class="actor-card"><span>Professionals &amp; management</span><strong>Test actual use, errors and workarounds.</strong></article>
+          <article class="actor-card"><span>Procurement &amp; security</span><strong>Document the provider, access and reversibility.</strong></article>
         </div>
-        <div class="summary-copy">
-          <p>It applies to a specific use, in a particular organisation, involving identifiable people, data, and consequences.</p>
-          <ul class="summary-list">
-            <li>The AI Act, GDPR, French labour law, and occupational risk prevention may all apply at the same time.</li>
-            <li>Qualification should come before procurement, piloting, and consultation.</li>
-            <li>Initial compliance does not replace monitoring of effects on real work.</li>
-          </ul>
-          <div class="summary-meta"><span>Reading · 9 min</span><span>Checked · 19 July 2026</span><span>Official sources</span></div>
+        <aside class="gate-panel">
+          <p class="kicker">Five decision gates</p>
+          <ol class="gate-list">
+            <li><span>01</span><div><strong>Demonstrated need</strong><small>A precise work problem and alternative solutions examined.</small></div></li>
+            <li><span>02</span><div><strong>Qualified use</strong><small>Task, people, data, system role and applicable frameworks.</small></div></li>
+            <li><span>03</span><div><strong>Organised dialogue</strong><small>Information supplied early enough for discussion to change the project.</small></div></li>
+            <li><span>04</span><div><strong>Reversible pilot</strong><small>Duration, scope, appeal, stop criteria and fallback.</small></div></li>
+            <li><span>05</span><div><strong>Documented monitoring</strong><small>Errors, incidents, workload, autonomy, skills and the decision whether to continue.</small></div></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section consultation" id="consultation">
+      <div class="section-head">
+        <div><p class="kicker">07 / Prepare social dialogue</p><h2>A file that genuinely supports understanding and discussion of the project.</h2></div>
+        <p>A commercial demonstration describes neither the new work organisation nor the constraints that arise when the tool is used in imperfect situations.</p>
+      </div>
+      <div class="consult-grid">
+        <article class="consult-card"><span>Before the decision</span><h3>Make the project open to influence.</h3><ul><li>need, uses and alternatives examined</li><li>population and tasks concerned</li><li>provider documentation and data used</li><li>expected organisational change</li></ul></article>
+        <article class="consult-card"><span>During the pilot</span><h3>Document trade-offs.</h3><ul><li>human intervention and appeal rules</li><li>review workload and production targets</li><li>incidents, errors and workarounds</li><li>conditions for immediate suspension</li></ul></article>
+        <article class="consult-card"><span>After the pilot</span><h3>Return with evidence.</h3><ul><li>gaps between planned and actual work</li><li>effects on health, autonomy and skills</li><li>corrections actually implemented</li><li>reasoned decision to continue, modify or stop</li></ul></article>
+      </div>
+      <p class="legal-note"><strong>Legal note.</strong> Precise duties depend in particular on workforce size, the nature of the project and its effects. This page offers a general preparation method; it does not replace analysis of applicable law or legal advice tailored to the organisation.</p>
+    </section>
+
+    <section class="section dossier" id="dossier">
+      <div class="section-head">
+        <div><p class="kicker">08 / Assemble the file</p><h2>Eight concrete documents before authorising a pilot.</h2></div>
+        <p>The list below helps identify what is missing. Completing it is neither certification nor proof of compliance.</p>
+      </div>
+      <div class="checklist-shell">
+        <aside class="checklist-summary">
+          <span>Preparation indicator</span>
+          <div class="checklist-count" id="checkCount">0 / 8</div>
+          <p id="checkMessage">No document is yet marked as prepared in this session.</p>
+          <div class="checklist-track" aria-hidden="true"><div class="checklist-fill" id="checkFill"></div></div>
+          <p>The boxes remain only on this open page and are not sent anywhere.</p>
+          <button type="button" id="resetChecks">Reset the list</button>
+        </aside>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"><strong>Use and scope note</strong><small>Problem to solve, task, people concerned, frequency and exclusions.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Work before / planned work</strong><small>Task allocation, decisions, reviews and expected additional workload.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>AI Act qualification</strong><small>Nature of the system, organisation’s role, risk class and rationale.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Data mapping</strong><small>Purposes, lawful bases, flows, access, retention periods, processors and rights.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Required impact assessments</strong><small>DPIA, fundamental rights, occupational risks and occupational risk assessment updates as applicable.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Information and consultation file</strong><small>Documents supplied, timeline, answers and trade-offs still open.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Reversible pilot protocol</strong><small>Duration, population, observed criteria, appeal, stop and fallback.</small></label>
+          <label class="check-item"><input type="checkbox"><strong>Monitoring and incident plan</strong><small>Owners, useful logs, alerts, corrections, reassessment and final decision.</small></label>
+        </div>
+      </div>
+      <div class="check-actions"><button class="button secondary" type="button" id="printChecklist">Print this page</button><a class="button primary" href="https://www.iasantetravail.com/en/evaluate/impact/">Assess psychosocial effects <span>→</span></a></div>
+    </section>
+
+    <section class="section references" id="references">
+      <div class="section-head">
+        <div><p class="kicker">09 / Verify sources</p><h2>Official, dated texts linked to the question they inform.</h2></div>
+        <p>AI law changes rapidly. Links lead to official texts and methods so the framework can be checked at the time of decision.</p>
+      </div>
+      <div class="reference-panel">
+        <aside class="reference-intro">
+          <p class="kicker">Main sources</p>
+          <h3>Read the text before applying a label.</h3>
+          <p>Summaries aid navigation, but qualification must always be checked against the law in force, the exact use and the organisation’s context.</p>
+          <span class="reference-date">LAST VERIFIED · 8 AUGUST 2026</span>
+        </aside>
+        <div class="source-list">
+          <div class="source-row"><span>01</span><div><strong>European Commission</strong><small>Regulatory framework and official AI Act timeline.</small></div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noreferrer">Open ↗</a></div>
+          <div class="source-row"><span>02</span><div><strong>EUR-Lex</strong><small>Regulation (EU) 2024/1689 on artificial intelligence.</small></div><a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noreferrer">Read the text ↗</a></div>
+          <div class="source-row"><span>03</span><div><strong>EUR-Lex</strong><small>AI Omnibus entered into force on 27 July 2026.</small></div><a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202601744" target="_blank" rel="noreferrer">Read the text ↗</a></div>
+          <div class="source-row"><span>04</span><div><strong>CNIL</strong><small>Determine whether a data protection impact assessment is required.</small></div><a href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noreferrer">Open ↗</a></div>
+          <div class="source-row"><span>05</span><div><strong>Labour Code</strong><small>Article L. 2312-8 on works council responsibilities.</small></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noreferrer">Legifrance ↗</a></div>
+          <div class="source-row"><span>06</span><div><strong>Labour Code</strong><small>Article L. 2312-38 on recruitment methods, automated management and monitoring.</small></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035610275" target="_blank" rel="noreferrer">Legifrance ↗</a></div>
+          <div class="source-row"><span>07</span><div><strong>Labour Code</strong><small>Article L. 4121-3 on occupational risk assessment.</small></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noreferrer">Legifrance ↗</a></div>
         </div>
       </div>
     </section>
 
-    <nav class="wrap governance-steps" aria-label="Seven-step governance pathway">
-      <a href="#qualify"><span>01</span>Qualify the use</a>
-      <a href="#obligations"><span>02</span>Identify the frameworks</a>
-      <a href="#actors"><span>03</span>Involve the actors</a>
-      <a href="#consultation"><span>04</span>Prepare consultation</a>
-      <a href="#pilot"><span>05</span>Authorise the pilot</a>
-      <a href="#monitoring"><span>06</span>Document monitoring</a>
-      <a href="#references"><span>07</span>Review the sources</a>
-    </nav>
-
-    <section class="legal-section tint" id="qualify" aria-labelledby="qualify-title">
-      <div class="wrap">
-        <header class="legal-head reveal">
-          <div><p class="eyebrow" style="color:var(--terra)">Starting point · 01</p><h2 id="qualify-title">Start from the system’s actual authority.</h2></div>
-          <p>A model name or commercial promise is not enough. Legal qualification starts with four practical questions connected to the activity.</p>
-        </header>
-        <div class="decision-board reveal">
-          <div class="decision-flow">
-            <article><b>01</b><div><small>Use</small><h3>Which task is being transformed?</h3><p>Rewriting, recommending, ranking, allocating, monitoring, or deciding.</p></div></article>
-            <article><b>02</b><div><small>People &amp; data</small><h3>Who is affected?</h3><p>Applicants, workers, patients, professionals — and the data used to describe them.</p></div></article>
-            <article><b>03</b><div><small>Authority</small><h3>What can the output produce?</h3><p>Revisable assistance, guidance, control, or a significant decision.</p></div></article>
-            <article><b>04</b><div><small>Effects &amp; redress</small><h3>How can it be challenged or stopped?</h3><p>Human intervention, traceability, a route for appeal, and a fallback solution.</p></div></article>
-          </div>
-          <aside class="trigger-panel" aria-label="Consequences of qualification">
-            <p class="eyebrow">What this analysis triggers</p>
-            <div><b>01</b><span><strong>A risk classification</strong> under the AI Act.</span></div>
-            <div><b>02</b><span><strong>A data assessment</strong> under the GDPR.</span></div>
-            <div><b>03</b><span><strong>Social dialogue</strong> suited to the transformation.</span></div>
-            <div><b>04</b><span><strong>Occupational risk assessment</strong> for health and work.</span></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="legal-section" id="obligations" aria-labelledby="obligations-title">
-      <div class="wrap">
-        <header class="legal-head reveal">
-          <div><p class="eyebrow" style="color:var(--terra)">Obligations · 02</p><h2 id="obligations-title">Four frameworks that apply together.</h2></div>
-          <p>No single green light is sufficient. A project may fall outside the AI Act’s high-risk category and still remain sensitive in terms of data protection, social dialogue, or prevention.</p>
-        </header>
-        <div class="layer-list">
-          <article class="layer-card reveal">
-            <div class="layer-number">01</div><div class="layer-title"><span class="legal-status future">In force · progressive application</span><span>European Union</span><h3>AI Act</h3><p>Qualify the use, the organisation’s role, and the level of risk.</p></div><div class="layer-action"><small>Decisive question</small><strong>Is the use prohibited, subject to transparency duties, or classified as a high-risk system?</strong></div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Regulation and timeline ↗</a>
-          </article>
-          <article class="layer-card layer-data reveal">
-            <div class="layer-number">02</div><div class="layer-title"><span class="legal-status">In force</span><span>Personal data</span><h3>GDPR &amp; CNIL</h3><p>Define purpose, legal basis, data, rights, and security.</p></div><div class="layer-action"><small>Decisive question</small><strong>Is the processing likely to create high risk requiring a DPIA, or does it produce a significant fully automated decision?</strong></div><a href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noopener noreferrer">CNIL DPIA method ↗</a>
-          </article>
-          <article class="layer-card layer-work reveal">
-            <div class="layer-number">03</div><div class="layer-title"><span class="legal-status">In force</span><span>Work organisation</span><h3>French labour law &amp; CSE</h3><p>Inform and consult early enough for worker representatives to give a meaningful opinion.</p></div><div class="layer-action"><small>Decisive question</small><strong>Does the project affect organisation, working conditions, recruitment, automated workforce management, or activity monitoring?</strong></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noopener noreferrer">Article L. 2312-8 ↗</a>
-          </article>
-          <article class="layer-card layer-health reveal">
-            <div class="layer-number">04</div><div class="layer-title"><span class="legal-status">In force</span><span>Occupational health</span><h3>Prevention &amp; DUERP</h3><p>Assess physical and mental health risks in the actual organisation of work.</p></div><div class="layer-action"><small>Decisive question</small><strong>Does the project change workload, autonomy, monitoring, skills, responsibilities, or collective work?</strong></div><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noopener noreferrer">Article L. 4121-3 ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="legal-section tint" id="uses" aria-labelledby="uses-title">
-      <div class="wrap">
-        <header class="legal-head reveal">
-          <div><p class="eyebrow" style="color:var(--terra)">Read by use</p><h2 id="uses-title">Locate the first point of attention.</h2></div>
-          <p><span class="legal-status caution">Cautious interpretation · prevention guidance</span> This matrix is not an automatic legal classification. It indicates where to begin the assessment and which document to prepare first.</p>
-        </header>
-        <div class="use-table reveal" role="table" aria-label="Uses and points of attention">
-          <div class="use-row table-head" role="row"><span>Actual use</span><span>Point of attention</span><span>First deliverable</span></div>
-          <div class="use-row" role="row"><div><i class="level low">Moderate</i><strong>Research, summarising, rewriting</strong></div><p>Confidentiality, source reliability, and user information.</p><b>Use policy + human verification</b></div>
-          <div class="use-row" role="row"><div><i class="level high">High</i><strong>Recruitment, scoring, mobility</strong></div><p>Bias, personal data, human intervention, and individual rights.</p><b>AI Act qualification + DPIA</b></div>
-          <div class="use-row" role="row"><div><i class="level watch">Sensitive</i><strong>Scheduling and task allocation</strong></div><p>Autonomy, workload, decision criteria, and the ability to challenge outputs.</p><b>Work analysis + CSE dossier</b></div>
-          <div class="use-row" role="row"><div><i class="level high">Very high</i><strong>Control and monitoring</strong></div><p>Proportionality, information, activity monitoring, and psychosocial risks.</p><b>Proportionality test + consultation</b></div>
-          <div class="use-row" role="row"><div><i class="level high">Very high</i><strong>Health, fitness for work, medical data</strong></div><p>Confidentiality, health data, separation of roles, security, and medical supervision.</p><b>Specialist assessment before any pilot</b></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="legal-section" id="timeline" aria-labelledby="timeline-title">
-      <div class="wrap timeline-panel reveal">
-        <header><p class="eyebrow">AI Act · current legal timeline</p><h2 id="timeline-title">Progressive application.</h2><p>Dates should be checked again when a project is assessed: implementing texts and future amendments may refine the framework.</p></header>
-        <div class="timeline-track">
-          <article><time datetime="2024-08-01">1 Aug 2024</time><strong>Entry into force</strong><p>The regulation became the European reference framework.</p></article>
-          <article><time datetime="2025-02-02">2 Feb 2025</time><strong>First rules</strong><p>Prohibited practices, the AI-system definition, and AI literacy.</p></article>
-          <article><time datetime="2025-08-02">2 Aug 2025</time><strong>General-purpose AI</strong><p>Rules for GPAI models and governance provisions.</p></article>
-          <article class="current"><time datetime="2026-08-02">2 Aug 2026</time><strong>General application</strong><p>Most provisions become applicable, subject to the regulation’s exceptions.</p></article>
-        </div>
-        <p class="legal-update"><span class="legal-status future">Political agreement · 7 May 2026</span> The Commission reports that the political agreement on the “AI omnibus” moves the application of rules for certain high-risk systems to 2 December 2027 and for systems embedded in regulated products to 2 August 2028. Check formal publication of the amending text before relying on these dates.</p>
-        <a class="source-link" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">View the European Commission’s official timeline ↗</a>
-      </div>
-    </section>
-
-    <section class="legal-section tint" id="governance" aria-labelledby="governance-title">
-      <div class="wrap">
-        <header class="legal-head reveal">
-          <div><p class="eyebrow" style="color:var(--terra)">Governance · 03</p><h2 id="governance-title">A collective decision, not end-of-process approval.</h2></div>
-          <p>Each participant contributes a different part of the assessment. Governance makes trade-offs visible, avoids blind spots, and identifies who can suspend use.</p>
-        </header>
-        <div class="governance-board reveal">
-          <div class="role-grid" id="actors">
-            <article><span>Project leadership</span><strong>Defines the need and owns the decision</strong></article>
-            <article><span>Legal &amp; DPO</span><strong>Qualify the framework and the data</strong></article>
-            <article><span>Worker representatives</span><strong>Assess the transformation of work</strong></article>
-            <article><span>Occupational health service</span><strong>Clarifies effects on work and health</strong></article>
-            <article><span>Professionals &amp; managers</span><strong>Test actual use and its limits</strong></article>
-            <article><span>Procurement &amp; security</span><strong>Document the provider and technical control</strong></article>
-          </div>
-          <div class="gate-list" id="pilot">
-            <p class="eyebrow">Five decision gates</p>
-            <ol>
-              <li><span>01</span><div><strong>Demonstrated need</strong><small>A precise work problem, without starting from a tool already selected.</small></div></li>
-              <li><span>02</span><div><strong>Qualified use</strong><small>System role, data, people, and risk level.</small></div></li>
-              <li><span>03</span><div><strong>Organised dialogue</strong><small>Information and consultation early enough to influence the project.</small></div></li>
-              <li><span>04</span><div><strong>Reversible pilot</strong><small>Success criteria, warning signals, redress, and fallback solution.</small></div></li>
-              <li><span>05</span><div><strong>Documented monitoring</strong><small>Observed effects, incidents, corrections, and a decision to continue or stop.</small></div></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="legal-section" id="consultation" aria-labelledby="consultation-title">
-      <div class="wrap consult-panel reveal">
-        <div class="consult-intro"><p class="eyebrow">CSE · make consultation meaningful</p><h2 id="consultation-title">Provide a dossier that supports an informed opinion.</h2><p>A product demonstration is not enough. The dossier should describe the expected transformation of work, affected people, decision-making latitude, and planned monitoring.</p></div>
-        <div class="consult-grid">
-          <article><span>Before</span><h3>Make the project open to scrutiny</h3><ul><li>need and intended uses</li><li>affected population and tasks</li><li>alternatives considered</li></ul></article>
-          <article><span>During</span><h3>Document trade-offs</h3><ul><li>system data and criteria</li><li>human intervention and redress</li><li>expected effects on work</li></ul></article>
-          <article id="monitoring"><span>After</span><h3>Return with evidence</h3><ul><li>observed incidents and errors</li><li>workload, autonomy, and quality</li><li>corrections or withdrawal</li></ul></article>
-        </div>
-        <p class="legal-note"><strong>Note:</strong> obligations depend on factors including workforce size, the nature of the project, and its effects. This page provides a general method and does not replace legal advice tailored to the situation.</p>
-      </div>
-    </section>
-
-    <section class="reference-section" id="references" aria-labelledby="references-title">
-      <div class="wrap reference-panel reveal">
-        <div class="reference-copy"><p class="eyebrow">Official sources</p><h2 id="references-title">A dated framework to recheck when decisions are made.</h2><p>European and French rules evolve. The sources opposite were checked on 19 July 2026.</p><div class="reference-meta"><span>AI Act</span><span>GDPR</span><span>French labour law</span><span>Prevention</span></div></div>
-        <div class="reference-sources">
-          <h3>Reference texts</h3>
-          <div class="source-row"><b>01</b><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission — AI Act regulatory framework and timeline.</a></div>
-          <div class="source-row"><b>02</b><a href="https://www.cnil.fr/fr/realiser-une-analyse-dimpact-si-necessaire" target="_blank" rel="noopener noreferrer">CNIL — determining when a data protection impact assessment is required.</a></div>
-          <div class="source-row"><b>03</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 2312-8 on CSE responsibilities.</a></div>
-          <div class="source-row"><b>04</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035610275" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 2312-38 on recruitment, automated management, and monitoring.</a></div>
-          <div class="source-row"><b>05</b><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043893923" target="_blank" rel="noopener noreferrer">French Labour Code — Article L. 4121-3 on occupational risk assessment.</a></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap next-panel reveal" aria-labelledby="next-title">
-      <div><p class="eyebrow">From framework to action</p><h2 id="next-title">Assess a project through real work.</h2><p>Qualify the use, prepare the pilot, and organise monitoring before the tool becomes a new working norm.</p></div>
-      <div class="next-actions"><a class="button button-paper" href="https://www.iasantetravail.com/en/evaluate/impact/">Assess an AI project <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="author-byline" aria-label="Content author">
-      <div class="wrap author-row"><p>Written by <a href="https://www.iasantetravail.com/en/about/"><strong>Dr Charles Broutin</strong></a>, occupational physician and AI lead at the French Society of Occupational Health.</p><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></div>
+    <section class="section newsletter" id="newsletter">
+      <div><p class="kicker">Independent monitoring</p><h2>Follow the law without losing sight of real work.</h2></div>
+      <div class="newsletter-copy"><p>Monitoring of professional AI uses, changes in the legal framework and methods for preventing health effects.</p><div class="newsletter-actions"><a class="button primary" href="https://substack.com/@charlesbroutin" target="_blank" rel="noreferrer">Explore the newsletter <span>↗</span></a><a class="button secondary" href="https://www.iasantetravail.com/en/about/">About the project</a></div><small>Subscribe on Substack · unsubscribe at any time</small></div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="https://www.iasantetravail.com/en/"><span class="brand-mark" aria-hidden="true"></span><span>AI &amp; Occupational Health</span></a><p>Sourced and dated guidance for analysing artificial intelligence through real work.</p></div>
-      <div class="footer-col"><h3>Pathways</h3><ul><li><a href="https://www.iasantetravail.com/en/understand/">Understand</a></li><li><a href="https://www.iasantetravail.com/en/uses-and-field/">Uses &amp; field evidence</a></li><li><a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a></li><li><a href="https://www.iasantetravail.com/en/evaluate/">Assess</a></li><li><a href="#top">Legal &amp; governance</a></li></ul></div>
-      <div class="footer-col"><h3>Resources</h3><ul><li><a href="https://www.iasantetravail.com/en/resources/models/">Model landscape</a></li><li><a href="https://www.iasantetravail.com/en/about/">About and publications</a></li><li><a href="#references">Sources for this page</a></li><li><a href="https://www.iasantetravail.com/en/#newsletter">Newsletter</a></li></ul></div>
-      <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">Contact the author on LinkedIn ↗</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter ↗</a></li><li><a href="https://www.iasantetravail.com/en/legal-notice/">Legal notice</a></li><li><a href="https://www.iasantetravail.com/en/privacy/">Privacy</a></li></ul></div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><strong>AI &amp; Occupational Health</strong><p>Sourced and dated guidance for analysing AI systems through their uses and real work.</p></div>
+      <div class="footer-col"><span>Decide</span><a href="#qualifier">Qualify the use</a><a href="#cadres">Four frameworks</a><a href="#calendrier">Timeline</a><a href="#dossier">Pilot file</a></div>
+      <div class="footer-col"><span>Pathway</span><a href="https://www.iasantetravail.com/en/understand/">Understand</a><a href="https://www.iasantetravail.com/en/uses-and-field/">Field use</a><a href="https://www.iasantetravail.com/en/evaluate/">Assess</a><a href="https://www.iasantetravail.com/en/evaluate/impact/">Short questionnaire</a></div>
+      <div class="footer-col"><span>The site</span><a href="#references">Sources</a><a href="https://www.iasantetravail.com/en/about/">About</a><a href="#newsletter">Newsletter</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      <div class="footer-bottom"><span>Written by Dr Charles Broutin, occupational physician and AI lead for the SFST.</span><span>© 2026 AI &amp; Occupational Health · Thomas Cole artwork in the public domain.</span></div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span><span>Works by Thomas Cole · public domain</span></div>
   </footer>
 
-  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
-    <div class="search-box">
-      <h2 class="sr-only" id="searchTitle">Search this page</h2>
-      <div class="search-top"><label class="sr-only" for="searchInput">Search</label><input class="search-input" id="searchInput" type="search" placeholder="E.g. CSE, DPIA, monitoring…" autocomplete="off"><button class="close-search" id="closeSearch" type="button" aria-label="Close search">×</button></div>
-      <div class="search-results" id="searchResults" aria-live="polite"><p>Enter at least two characters.</p></div>
-    </div>
-  </div>
-
   <script>
-    const menuButton=document.getElementById('menuButton');
-    const navLinks=document.getElementById('navLinks');
-    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
-    navLinks.addEventListener('click',event=>{if(!event.target.closest('a'))return;navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')});
-    const searchModal=document.getElementById('searchModal');
-    const openSearch=document.getElementById('openSearch');
-    const closeSearch=document.getElementById('closeSearch');
-    const searchInput=document.getElementById('searchInput');
-    const searchResults=document.getElementById('searchResults');
-    const searchItems=[
-      {label:'Qualify the use',detail:'Task, people, data, authority, and redress',href:'#qualify'},
-      {label:'Four legal frameworks',detail:'AI Act, GDPR, French labour law, and prevention',href:'#obligations'},
-      {label:'Read by use',detail:'Level of attention and first deliverable',href:'#uses'},
-      {label:'AI Act timeline',detail:'Application dates for the regulation',href:'#timeline'},
-      {label:'Governance',detail:'Roles and decision gates',href:'#governance'},
-      {label:'CSE consultation',detail:'Organise meaningful worker consultation',href:'#consultation'},
-      {label:'Official sources',detail:'Checked and dated reference texts',href:'#references'}
-    ];
-    function showSearch(){searchModal.hidden=false;document.body.classList.add('search-open');searchInput.focus()}
-    function hideSearch(){searchModal.hidden=true;document.body.classList.remove('search-open');openSearch.focus()}
-    function renderSearch(value){const query=value.trim().toLocaleLowerCase('en');if(query.length<2){searchResults.innerHTML='<p>Enter at least two characters.</p>';return}const found=searchItems.filter(item=>(item.label+' '+item.detail).toLocaleLowerCase('en').includes(query));searchResults.innerHTML=found.length?found.map(item=>`<a class="search-result" href="${item.href}"><strong>${item.label}</strong><span>${item.detail}</span></a>`).join(''):'<p>No result on this page.</p>'}
-    openSearch.addEventListener('click',showSearch);closeSearch.addEventListener('click',hideSearch);searchInput.addEventListener('input',event=>renderSearch(event.target.value));searchResults.addEventListener('click',event=>{if(event.target.closest('a'))hideSearch()});searchModal.addEventListener('click',event=>{if(event.target===searchModal)hideSearch()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!searchModal.hidden)hideSearch()});
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.08});
-    document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+    const roleContent = {
+      direction: {
+        eyebrow: "Decision and responsibility",
+        title: "Start from the work need, not from a tool already selected.",
+        text: "Describe the problem to solve, alternatives considered, expected outcome and the person accountable for launching, modifying or stopping the pilot.",
+        actions: ["Name the project owner", "Define stop criteria", "Require a shared cross-functional file"]
+      },
+      rh: {
+        eyebrow: "Employment and organisation",
+        title: "Describe precisely what will change for each population.",
+        text: "Identify tasks removed, added or shifted, criteria that may influence an HR decision, and skills required to review or challenge the output.",
+        actions: ["Map work before / after", "Document HR criteria", "Prepare information and training"]
+      },
+      cse: {
+        eyebrow: "Information and consultation",
+        title: "Request the information needed to still influence the project.",
+        text: "Examine the need, alternatives, people concerned, actual power of the system, data, productivity objectives and planned post-pilot monitoring.",
+        actions: ["Have the exact use specified", "Request information on effects on work", "Set a date for pilot review"]
+      },
+      dpo: {
+        eyebrow: "Qualification and data",
+        title: "Link every data flow to a purpose and decision.",
+        text: "Map the data, qualify the organisation’s role under the AI Act, verify people’s rights and determine whether a DPIA or other assessments are required.",
+        actions: ["Trace flows and processors", "Qualify AI Act and GDPR", "Write safeguards and appeal routes"]
+      },
+      spst: {
+        eyebrow: "Work and prevention",
+        title: "Observe changes to work, not only acceptance of the tool.",
+        text: "Examine review workload, autonomy, value conflicts, monitoring, skills and work collectives, then connect findings to prevention measures.",
+        actions: ["Analyse concrete situations", "Identify exposed groups", "Propose monitoring indicators"]
+      },
+      achats: {
+        eyebrow: "Provider and technical control",
+        title: "Obtain necessary information before signing.",
+        text: "Check intended uses, known limits, data used, subcontracting, log retention, incident management and the practical ability to leave the solution.",
+        actions: ["Require system documentation", "Control data and incidents", "Plan reversibility and exit"]
+      }
+    };
+
+    const roleSelect = document.getElementById("roleSelect");
+    const roleEyebrow = document.getElementById("roleEyebrow");
+    const roleTitle = document.getElementById("roleTitle");
+    const roleText = document.getElementById("roleText");
+    const roleActions = document.getElementById("roleActions");
+
+    function renderRole() {
+      const role = roleContent[roleSelect.value];
+      roleEyebrow.textContent = role.eyebrow;
+      roleTitle.textContent = role.title;
+      roleText.textContent = role.text;
+      roleActions.innerHTML = role.actions.map((action, index) => `<div><b>0${index + 1}</b><strong>${action}</strong></div>`).join("");
+    }
+
+    const checkboxes = [...document.querySelectorAll(".check-item input")];
+    const checkCount = document.getElementById("checkCount");
+    const checkFill = document.getElementById("checkFill");
+    const checkMessage = document.getElementById("checkMessage");
+
+    function updateChecklist() {
+      const count = checkboxes.filter(input => input.checked).length;
+      checkCount.textContent = `${count} / ${checkboxes.length}`;
+      checkFill.style.width = `${(count / checkboxes.length) * 100}%`;
+      if (count === 0) checkMessage.textContent = "No document is yet marked as prepared in this session.";
+      else if (count === checkboxes.length) checkMessage.textContent = "All eight documents are marked as prepared. Their quality and collective consistency still need checking.";
+      else checkMessage.textContent = `${count} document${count > 1 ? "s" : ""} marked as prepared. This progress indicator is not a compliance score.`;
+    }
+
+    roleSelect.addEventListener("change", renderRole);
+    checkboxes.forEach(input => input.addEventListener("change", updateChecklist));
+    document.getElementById("resetChecks").addEventListener("click", () => { checkboxes.forEach(input => { input.checked = false; }); updateChecklist(); });
+    document.getElementById("printChecklist").addEventListener("click", () => window.print());
+    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
+    renderRole();
+    updateChecklist();
   </script>
 </body>
 </html>
