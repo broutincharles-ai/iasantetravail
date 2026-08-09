@@ -44,12 +44,12 @@
     .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
     .brand-copy strong, .brand-copy small { display: block; }
     .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
-    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
     .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
     .nav-side { display: flex; align-items: center; gap: 10px; }
     .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
-    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
+    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 14px; font-weight: 750; }
     .nav-cta, .button.primary { color: #fff; background: var(--green); }
     .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
     .nav-cta:hover, .button.primary:hover { background: var(--ink); }
@@ -59,33 +59,33 @@
     .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
 
     .menu-dropdown { position: relative; }
-    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
+    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 12px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
     .menu-dropdown > summary::-webkit-details-marker { display: none; }
     .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
     .menu-dropdown[open] > summary::after { content: "−"; }
     .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .menu-col { display: grid; align-content: start; gap: 11px; }
-    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
     .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
     .menu-col a:hover { color: var(--terra); }
 
     .section { padding: 76px max(40px, calc(50% - 720px)); }
-    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 12px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
     .kicker.line { display: flex; align-items: center; gap: 14px; }
     .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
     .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
     .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
-    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.65; }
 
     .hero { width: var(--wrap); min-height: 690px; margin: 0 auto; padding: 64px 0 48px; display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: 68px; }
     .hero-copy { max-width: 720px; }
     .hero h1 { margin: 34px 0 28px; font-size: clamp(55px, 5.35vw, 82px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
     .hero h1 em { color: var(--terra); font-style: normal; }
     .hero-lede { max-width: 660px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.62; }
-    .hero-note { max-width: 660px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .hero-note { max-width: 660px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 15px; line-height: 1.62; }
     .hero-note strong { color: var(--ink); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 28px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 28px; color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
     .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
 
     .pst-context { display: grid; grid-template-columns: minmax(260px, .62fr) minmax(0, 1.38fr); width: var(--wrap); margin: 0 auto 54px; border: 1px solid var(--green-dark); border-left: 6px solid var(--terra); color: var(--paper); background: var(--green-dark); }
@@ -93,162 +93,94 @@
     .pst-context .kicker { color: var(--lavender); }
     .pst-context h2 { margin: 28px 0 0; font-size: clamp(28px, 2.4vw, 38px); font-weight: 540; letter-spacing: -.045em; line-height: 1.12; }
     .pst-context-copy { padding: 36px; }
-    .pst-context-lede { max-width: 920px; margin: 0; color: var(--cream); font-size: 16px; line-height: 1.62; }
+    .pst-context-lede { max-width: 920px; margin: 0; color: var(--cream); font-size: 18px; line-height: 1.65; }
     .pst-context-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 30px; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
     .pst-context-grid article { min-height: 188px; padding: 24px 22px; border-right: 1px solid var(--line-light); }
     .pst-context-grid article:last-child { border-right: 0; }
-    .pst-context-grid span { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
-    .pst-context-grid strong { display: block; margin-top: 22px; color: var(--paper); font-size: 13px; }
-    .pst-context-grid p { margin: 9px 0 0; color: rgba(244, 235, 218, .7); font-size: 10px; line-height: 1.52; }
-    .pst-context-conclusion { margin: 27px 0 0; color: var(--cream); font-size: 13px; font-weight: 620; line-height: 1.58; }
-    .pst-context-source { margin: 17px 0 0; color: rgba(244, 235, 218, .58); font-family: var(--mono); font-size: 8px; line-height: 1.55; }
+    .pst-context-grid span { color: var(--lavender); font-family: var(--mono); font-size: 11px; }
+    .pst-context-grid strong { display: block; margin-top: 22px; color: var(--paper); font-size: 18px; line-height: 1.4; }
+    .pst-context-grid p { margin: 10px 0 0; color: rgba(244, 235, 218, .82); font-size: 16px; line-height: 1.65; }
+    .pst-context-conclusion { margin: 27px 0 0; color: var(--cream); font-size: 17px; font-weight: 620; line-height: 1.65; }
+    .pst-context-source { margin: 18px 0 0; color: rgba(244, 235, 218, .72); font-family: var(--mono); font-size: 12px; line-height: 1.62; }
     .pst-context-source a { color: var(--lavender); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .pst-context-source a:hover { color: var(--paper); }
 
-    .evidence-board { border: 1px solid var(--line); background: var(--white); }
-    .board-head { min-height: 65px; padding: 0 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
-    .board-head strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
-    .board-head strong::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-    .board-summary { min-height: 150px; padding: 27px; display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: center; }
-    .board-summary span, .board-summary strong, .board-summary small { display: block; }
-    .board-summary span { color: var(--terra); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
-    .board-summary strong { margin-top: 16px; font-size: 28px; letter-spacing: -.045em; }
-    .board-summary small { margin-top: 9px; color: var(--muted); font-size: 10px; line-height: 1.45; }
-    .evidence-badge { padding: 12px 14px; border: 1px solid var(--terra); color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .board-table-head, .board-row { display: grid; grid-template-columns: 1.1fr .72fr .7fr; gap: 20px; align-items: center; }
-    .board-table-head { min-height: 54px; padding: 0 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
-    .board-row { min-height: 82px; padding: 18px 25px; border-bottom: 1px solid var(--line); }
-    .board-row:last-of-type { border-bottom: 0; }
-    .board-row strong { font-size: 12px; }
-    .board-row span { color: var(--muted); font-size: 11px; }
-    .board-row b { justify-self: start; padding: 7px 9px; border: 1px solid var(--line); color: var(--green); font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
-    .board-row b.to-test { color: var(--terra); border-color: rgba(168, 78, 31, .45); }
-    .board-foot { padding: 16px 22px; border-top: 1px solid var(--line); color: var(--muted); background: rgba(244, 235, 218, .48); font-size: 10px; line-height: 1.48; }
-    .board-foot strong { color: var(--ink); }
-
-    .facts { display: grid; grid-template-columns: repeat(4, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .facts article { min-height: 138px; padding: 24px 27px; border-right: 1px solid var(--line); }
-    .facts article:first-child { padding-left: 0; }
-    .facts article:last-child { border-right: 0; }
-    .facts b { color: var(--terra); font-size: 27px; font-weight: 520; letter-spacing: -.04em; }
-    .facts strong, .facts small { display: block; }
-    .facts strong { margin-top: 18px; font-size: 13px; }
-    .facts small { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .artwork { margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .artwork-label { min-height: 62px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 11px; }
+    .artwork-label strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
+    .artwork-label strong::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .artwork img { width: 100%; aspect-ratio: 1.48 / 1; object-fit: cover; object-position: center; filter: saturate(.84) contrast(.97); }
+    .artwork figcaption { display: grid; grid-template-columns: 180px 1fr; gap: 26px; padding: 22px; border-top: 1px solid var(--line); }
+    .artwork figcaption span { color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .06em; line-height: 1.5; text-transform: uppercase; }
+    .artwork figcaption p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.62; }
+    .artwork figcaption a { color: var(--terra); font-weight: 750; }
 
     .uses { background: var(--cream); }
     .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
     .use-card { min-height: 280px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 249, 242, .5); }
     .use-card:nth-child(even) { background: var(--paper); }
-    .use-card > span { display: flex; justify-content: space-between; gap: 18px; color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+    .use-card > span { display: flex; justify-content: space-between; gap: 18px; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; }
     .use-card > span b { color: var(--muted); font-weight: 700; }
     .use-card h3 { margin: 51px 0 14px; font-size: 22px; letter-spacing: -.035em; }
-    .use-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
-    .use-card small { display: block; margin-top: 19px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 9px; line-height: 1.45; }
+    .use-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.62; }
+    .use-card small { display: block; margin-top: 19px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
     .use-card small strong { color: var(--terra); }
     .use-note { display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; padding: 26px 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
-    .use-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .use-note p { margin: 0; font-size: 17px; font-weight: 620; line-height: 1.5; }
+    .use-note span { color: var(--lavender); font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .use-note p { margin: 0; font-size: 19px; font-weight: 620; line-height: 1.55; }
 
     .study { background: var(--white); }
-    .study-card { display: grid; grid-template-columns: .78fr 1.22fr; margin-top: 52px; border: 1px solid var(--line); }
-    .study-intro { padding: 35px; color: var(--cream); background: var(--green-dark); }
+    .study-card { display: grid; grid-template-columns: 1.05fr .95fr; margin-top: 48px; border: 1px solid var(--line); }
+    .study-intro { padding: 40px; color: var(--cream); background: var(--green-dark); }
     .study-intro .kicker { color: var(--lavender); }
-    .study-intro h3 { margin: 45px 0 18px; color: var(--paper); font-size: 33px; letter-spacing: -.045em; line-height: 1.14; }
-    .study-intro p { margin: 0; color: rgba(244, 235, 218, .72); font-size: 13px; line-height: 1.6; }
+    .study-intro h3 { margin: 40px 0 18px; color: var(--paper); font-size: 34px; letter-spacing: -.045em; line-height: 1.14; }
+    .study-intro p { margin: 0; color: rgba(244, 235, 218, .82); font-size: 16px; line-height: 1.65; }
     .study-origin { margin-top: 24px !important; padding-top: 20px; border-top: 1px solid var(--line-light); }
     .study-origin strong { color: var(--lavender); }
     .study-intro .button { margin-top: 30px; }
-    .method-list { padding: 10px 32px; }
-    .method-row { display: grid; grid-template-columns: 48px 1fr; gap: 18px; min-height: 106px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-    .method-row:last-child { border-bottom: 0; }
-    .method-row > span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .method-row strong, .method-row small { display: block; }
-    .method-row strong { font-size: 14px; }
-    .method-row small { margin-top: 8px; color: var(--muted); font-size: 10px; line-height: 1.48; }
-
-    .criteria { background: var(--paper); }
-    .criteria-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
-    .criteria-table table { width: 100%; min-width: 980px; border-collapse: collapse; }
-    .criteria-table th { padding: 16px 21px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
-    .criteria-table th:first-child { width: 24%; }
-    .criteria-table td { padding: 20px 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.5; vertical-align: top; }
-    .criteria-table tbody tr:first-child td { border-top: 0; }
-    .criteria-table td:first-child { color: var(--ink); font-weight: 720; }
-    .criterion-index { display: inline-block; min-width: 35px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .criteria-table td:last-child { color: var(--ink-soft); font-weight: 650; }
-
-    .results { color: var(--paper); background: var(--green-dark); }
-    .results .kicker { color: var(--lavender); }
-    .results .section-head > p { color: rgba(244, 235, 218, .7); }
-    .result-strip { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 52px; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-    .result-metric { min-height: 180px; padding: 25px 22px; border-right: 1px solid var(--line-light); }
-    .result-metric:last-child { border-right: 0; }
-    .result-metric b { color: var(--lavender); font-size: 36px; font-weight: 500; letter-spacing: -.05em; }
-    .result-metric strong, .result-metric small { display: block; }
-    .result-metric strong { margin-top: 28px; color: var(--cream); font-size: 12px; }
-    .result-metric small { margin-top: 8px; color: rgba(244, 235, 218, .6); font-size: 9px; line-height: 1.45; }
-    .result-table { margin-top: 30px; border: 1px solid var(--line-light); overflow-x: auto; }
-    .result-table table { width: 100%; min-width: 820px; border-collapse: collapse; }
-    .result-table th { padding: 14px 18px; color: rgba(244, 235, 218, .62); background: rgba(244, 235, 218, .05); font-family: var(--mono); font-size: 8px; text-align: left; text-transform: uppercase; }
-    .result-table td { padding: 17px 18px; border-top: 1px solid var(--line-light); color: rgba(244, 235, 218, .7); font-size: 10px; line-height: 1.45; }
-    .result-table td:first-child { color: var(--cream); font-weight: 720; }
-    .result-table td:nth-child(2), .result-table td:nth-child(3) { color: var(--lavender); font-family: var(--mono); font-weight: 800; }
-    .interpretation-note { display: grid; grid-template-columns: .48fr 1.52fr; gap: 40px; align-items: center; margin-top: 28px; padding: 27px 30px; border-left: 4px solid var(--terra); background: rgba(244, 235, 218, .06); }
-    .interpretation-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .interpretation-note p { margin: 0; color: var(--cream); font-size: 16px; line-height: 1.55; }
-
-    .limits { background: var(--cream); }
-    .limit-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .limit-card { min-height: 285px; padding: 28px 25px; border-right: 1px solid var(--line); }
-    .limit-card:last-child { border-right: 0; }
-    .limit-card span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .limit-card h3 { margin: 52px 0 14px; font-size: 19px; letter-spacing: -.03em; }
-    .limit-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
-    .limit-rule { display: grid; grid-template-columns: .53fr 1.47fr; gap: 40px; align-items: center; margin-top: 29px; padding: 27px 30px; color: var(--paper); background: var(--green-dark); }
-    .limit-rule span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .limit-rule p { margin: 0; font-size: 17px; font-weight: 620; line-height: 1.5; }
+    .study-findings { padding: 12px 34px; background: var(--white); }
+    .study-finding { display: grid; grid-template-columns: 105px 1fr; gap: 24px; min-height: 118px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: center; }
+    .study-finding:last-child { border-bottom: 0; }
+    .study-finding b { color: var(--terra); font-size: 32px; font-weight: 540; letter-spacing: -.045em; }
+    .study-finding strong { display: block; font-size: 16px; }
+    .study-finding p { margin: 7px 0 0; color: var(--muted); font-size: 14px; line-height: 1.58; }
+    .study-note { display: grid; grid-template-columns: .45fr 1.55fr; gap: 40px; align-items: center; margin-top: 28px; padding: 28px 31px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
+    .study-note span { color: var(--lavender); font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .study-note p { margin: 0; color: var(--cream); font-size: 17px; line-height: 1.62; }
 
     .pilot { background: var(--white); }
     .pilot-flow { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .pilot-step { min-height: 278px; padding: 26px 22px; border-right: 1px solid var(--line); }
     .pilot-step:last-child { border-right: 0; }
-    .pilot-step span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .pilot-step h3 { margin: 52px 0 13px; font-size: 17px; letter-spacing: -.025em; }
-    .pilot-step p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
-    .pilot-panel { display: grid; grid-template-columns: 1fr 1fr; margin-top: 30px; border: 1px solid var(--line); }
-    .pilot-column { padding: 31px; }
-    .pilot-column + .pilot-column { border-left: 1px solid var(--line); background: var(--paper); }
-    .pilot-column > span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .pilot-column h3 { margin: 35px 0 14px; font-size: 25px; letter-spacing: -.04em; }
-    .pilot-column ul { margin: 0; padding: 0; list-style: none; }
-    .pilot-column li { position: relative; padding: 11px 0 11px 21px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.45; }
-    .pilot-column li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
+    .pilot-step span { color: var(--terra); font-family: var(--mono); font-size: 11px; }
+    .pilot-step h3 { margin: 52px 0 13px; font-size: 20px; letter-spacing: -.025em; }
+    .pilot-step p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.58; }
 
     .roles { background: var(--paper); }
     .role-table { margin-top: 52px; border: 1px solid var(--line); }
     .role-row { display: grid; grid-template-columns: .65fr 1fr 1fr; gap: 26px; min-height: 126px; padding: 24px 27px; border-bottom: 1px solid var(--line); align-items: center; }
     .role-row:last-child { border-bottom: 0; }
-    .role-row > strong { font-size: 15px; }
+    .role-row > strong { font-size: 17px; }
     .role-row div span, .role-row div strong { display: block; }
-    .role-row div span { color: var(--terra); font-family: var(--mono); font-size: 8px; font-weight: 800; text-transform: uppercase; }
-    .role-row div strong { margin-top: 10px; color: var(--muted); font-size: 11px; font-weight: 560; line-height: 1.48; }
+    .role-row div span { color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .role-row div strong { margin-top: 10px; color: var(--muted); font-size: 14px; font-weight: 560; line-height: 1.55; }
 
     .contact { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: end; color: var(--paper); background: var(--green-dark); }
     .contact .kicker { color: var(--lavender); }
     .contact h2 { max-width: 820px; margin: 24px 0 0; font-size: clamp(43px, 4.8vw, 68px); font-weight: 480; letter-spacing: -.058em; line-height: 1.04; }
-    .contact-copy > p { margin: 0; color: rgba(244, 235, 218, .72); font-size: 16px; line-height: 1.62; }
+    .contact-copy > p { margin: 0; color: rgba(244, 235, 218, .8); font-size: 18px; line-height: 1.65; }
     .contact-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
-    .contact-copy small { display: block; margin-top: 16px; color: rgba(244, 235, 218, .5); font-size: 9px; }
+    .contact-copy small { display: block; margin-top: 16px; color: rgba(244, 235, 218, .62); font-size: 11px; }
 
     .site-footer { padding: 55px max(40px, calc(50% - 720px)) 28px; color: var(--cream); background: #192c2e; }
     .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, .72fr); gap: 58px; }
     .footer-brand strong { color: var(--paper); font-size: 18px; }
-    .footer-brand p { max-width: 340px; margin: 18px 0 0; color: rgba(244, 235, 218, .6); font-size: 11px; line-height: 1.55; }
+    .footer-brand p { max-width: 340px; margin: 18px 0 0; color: rgba(244, 235, 218, .68); font-size: 13px; line-height: 1.58; }
     .footer-col { display: grid; align-content: start; gap: 11px; }
-    .footer-col span { margin-bottom: 6px; color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
-    .footer-col a { color: rgba(244, 235, 218, .75); font-size: 11px; }
+    .footer-col span { margin-bottom: 6px; color: var(--lavender); font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .footer-col a { color: rgba(244, 235, 218, .78); font-size: 13px; }
     .footer-col a:hover { color: var(--paper); }
-    .footer-bottom { grid-column: 1 / -1; margin-top: 32px; padding-top: 23px; border-top: 1px solid var(--line-light); display: flex; justify-content: space-between; gap: 24px; color: rgba(244, 235, 218, .5); font-family: var(--mono); font-size: 8px; line-height: 1.5; }
+    .footer-bottom { grid-column: 1 / -1; margin-top: 32px; padding-top: 23px; border-top: 1px solid var(--line-light); display: flex; justify-content: space-between; gap: 24px; color: rgba(244, 235, 218, .62); font-family: var(--mono); font-size: 11px; line-height: 1.58; }
 
     @media (max-width: 1180px) {
       .nav-links { display: none; }
@@ -263,22 +195,13 @@
       .section { padding: 64px 22px; }
       .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
       .hero-copy { max-width: none; }
-      .evidence-board { max-width: 760px; }
-      .section-head, .pst-context, .use-note, .study-card, .interpretation-note, .limit-rule, .contact { grid-template-columns: 1fr; gap: 34px; }
+      .artwork { max-width: 780px; }
+      .section-head, .pst-context, .use-note, .study-card, .study-note, .contact { grid-template-columns: 1fr; gap: 34px; }
       .pst-context-heading { border-right: 0; border-bottom: 1px solid var(--line-light); }
       .pst-context-grid { grid-template-columns: 1fr; }
       .pst-context-grid article { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
       .pst-context-grid article:last-child { border-bottom: 0; }
-      .facts { grid-template-columns: 1fr 1fr; }
-      .facts article:nth-child(2) { border-right: 0; }
-      .facts article { border-bottom: 1px solid var(--line); }
-      .facts article:nth-child(3), .facts article:nth-child(4) { border-bottom: 0; }
       .use-grid { grid-template-columns: 1fr 1fr; }
-      .limit-grid { grid-template-columns: 1fr 1fr; }
-      .limit-card:nth-child(2) { border-right: 0; }
-      .limit-card:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .pilot-panel { grid-template-columns: 1fr; }
-      .pilot-column + .pilot-column { border-left: 0; border-top: 1px solid var(--line); }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
       .footer-bottom { display: grid; }
     }
@@ -300,18 +223,13 @@
       .pst-context-heading, .pst-context-copy { padding: 25px 23px; }
       .pst-context h2 { font-size: 28px; }
       .section-head h2, .contact h2 { font-size: 40px; }
-      .facts, .use-grid, .result-strip, .limit-grid, .pilot-flow { grid-template-columns: 1fr; }
-      .facts article { padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
-      .facts article:last-child { border-bottom: 0 !important; }
-      .board-summary { grid-template-columns: 1fr; }
-      .evidence-badge { justify-self: start; }
-      .board-table-head, .board-row { grid-template-columns: 1fr .75fr; }
-      .board-table-head span:nth-child(2), .board-row span { display: none; }
+      .artwork figcaption, .study-finding { grid-template-columns: 1fr; }
+      .study-findings { padding: 8px 24px; }
+      .use-grid, .pilot-flow { grid-template-columns: 1fr; }
       .use-card { min-height: 0; }
       .use-card h3 { margin-top: 35px; }
-      .result-metric, .limit-card, .pilot-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light) !important; }
-      .limit-card, .pilot-step { border-bottom-color: var(--line) !important; }
-      .result-metric:last-child, .limit-card:last-child, .pilot-step:last-child { border-bottom: 0 !important; }
+      .pilot-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .pilot-step:last-child { border-bottom: 0 !important; }
       .role-row { grid-template-columns: 1fr; gap: 18px; }
       .contact-actions { flex-direction: column; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -349,9 +267,6 @@
           <a href="#pst5">Le PST 5</a>
           <a href="#usages">Usages possibles</a>
           <a href="#etude">Étude INRS</a>
-          <a href="#criteres">Critères</a>
-          <a href="#resultats">Résultats</a>
-          <a href="#limites">Limites</a>
           <a href="#pilote">Construire un pilote</a>
           <a href="#roles">Rôles</a>
           <a href="#contact">Contact</a>
@@ -372,16 +287,14 @@
         <div class="hero-proof"><span>Tâche limitée</span><span>Référence humaine</span><span>Décision conservée</span></div>
       </div>
 
-      <aside class="evidence-board" aria-label="État des usages présentés">
-        <div class="board-head"><strong>Usages en SPSTI</strong><span>État des preuves</span></div>
-        <div class="board-summary"><div><span>Un usage étudié</span><strong>Aide à la relecture</strong><small>Détection de défauts de formulation selon cinq critères prédéfinis.</small></div><div class="evidence-badge">INRS · TF 335</div></div>
-        <div class="board-table-head"><span>Usage</span><span>Place de l’humain</span><span>Statut</span></div>
-        <div class="board-row"><strong>Relire une préconisation</strong><span>Validation médicale</span><b>Étudié</b></div>
-        <div class="board-row"><strong>Interroger une base documentaire</strong><span>Vérification des sources</span><b class="to-test">À évaluer</b></div>
-        <div class="board-row"><strong>Préparer une analyse de prévention</strong><span>Analyse de terrain</span><b class="to-test">À évaluer</b></div>
-        <div class="board-row"><strong>Créer un support de formation</strong><span>Validation pédagogique</span><b class="to-test">À évaluer</b></div>
-        <div class="board-foot"><strong>Principe :</strong> aucune sortie n’est utilisée comme une décision clinique, une conclusion d’aptitude ou une preuve automatique.</div>
-      </aside>
+      <figure class="artwork">
+        <div class="artwork-label"><strong>Observer les deux versants</strong><span>Art · prévention · transformation</span></div>
+        <img src="https://www.iasantetravail.com/assets/images/oxbow-1280.webp" alt="The Oxbow de Thomas Cole, paysage partagé entre un orage sombre et une vallée lumineuse transformée par l’activité humaine">
+        <figcaption>
+          <span>Thomas Cole<br>The Oxbow · 1836</span>
+          <p>L’œuvre partage le paysage entre un territoire encore pris dans l’orage et une vallée déjà organisée par l’activité humaine. Dans le contexte du PST 5, cette coexistence éclaire l’ambivalence de l’IA : elle peut soutenir le travail tout en créant de nouveaux risques. Le rôle du SPSTI est précisément d’observer ces deux versants, sans confondre promesse technique et amélioration réelle des conditions de travail. <a href="https://www.metmuseum.org/art/collection/search/10497" target="_blank" rel="noreferrer">Voir l’œuvre au Met ↗</a></p>
+        </figcaption>
+      </figure>
     </section>
 
     <section class="pst-context" id="pst5" aria-labelledby="pst5-title">
@@ -399,13 +312,6 @@
         <p class="pst-context-conclusion">Pour un SPSTI, le cap est donc double : tester prudemment des usages professionnels bien délimités et observer ce que le déploiement de l’IA change dans les entreprises suivies — charge, autonomie, compétences, collectifs et risques professionnels.</p>
         <p class="pst-context-source">Source : Plan santé au travail 2026–2030, action 3.1.1, p. 44–45, et annexe 3, p. 154–156. <a href="https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf" target="_blank" rel="noreferrer">Consulter le document officiel ↗</a></p>
       </div>
-    </section>
-
-    <section class="facts" aria-label="Chiffres clés de l’étude INRS">
-      <article><b>385</b><strong>Préconisations analysées</strong><small>Un échantillon tiré au sort et distinct des exemples utilisés pour préparer le prompt.</small></article>
-      <article><b>5</b><strong>Critères de relecture</strong><small>De l’imprécision à la divulgation d’informations médicales.</small></article>
-      <article><b>74,6&nbsp;%</b><strong>Concordance globale</strong><small>Entre le modèle o1 et le consensus multidisciplinaire de référence.</small></article>
-      <article><b>0</b><strong>Hallucination observée</strong><small>Dans cet échantillon et avec ce protocole ; ce résultat n’est pas une garantie générale.</small></article>
     </section>
 
     <section class="section uses" id="usages">
@@ -426,90 +332,29 @@
 
     <section class="section study" id="etude">
       <div class="section-head">
-        <div><p class="kicker">02 / Le cas publié par l’INRS</p><h2>Tester l’IA comme second lecteur, pas comme auteur de la décision.</h2></div>
-        <p>L’étude porte sur la capacité du modèle de raisonnement o1 d’OpenAI à détecter des défauts dans des préconisations déjà rédigées.</p>
+        <div><p class="kicker">02 / Un exemple publié par l’INRS</p><h2>Une relecture assistée, évaluée sur une tâche précise.</h2></div>
+        <p>J’ai rédigé cette étude, publiée par l’INRS en juin 2026. Elle évalue l’aide apportée par un modèle de langage sans lui confier la consultation, la rédaction de l’avis ou la décision médicale.</p>
       </div>
       <div class="study-card">
         <div class="study-intro">
-          <p class="kicker">Références en Santé au Travail · TF 335</p>
-          <h3>Évaluer une tâche étroite contre une référence humaine.</h3>
-          <p>Le protocole n’évalue ni une consultation automatisée ni la génération intégrale d’une préconisation. Le modèle analyse uniquement le texte fourni selon cinq critères prédéfinis.</p>
-          <p class="study-origin"><strong>Point de départ.</strong> Une évaluation antérieure menée dans les Hauts-de-France avait classé 78&nbsp;% des préconisations comme comportant au moins un des cinq défauts recherchés.</p>
+          <p class="kicker">Références en Santé au Travail · TF 335 · Juin 2026</p>
+          <h3>Le modèle intervient uniquement comme second lecteur.</h3>
+          <p>Le modèle o1 a relu 385 préconisations médicales déjà rédigées et dépourvues d’éléments identifiants. Il recherchait cinq défauts définis à l’avance : imprécision, ambiguïté sur l’obligation, information hors annexe 4, changement de poste implicite et divulgation d’une donnée médicale ou personnelle.</p>
+          <p class="study-origin"><strong>Limite essentielle.</strong> L’étude mesure la détection de défauts de formulation. Elle ne mesure ni la qualité d’une consultation, ni l’effet sur la santé ou le maintien en emploi.</p>
           <a class="button light" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article complet sur le site de l’INRS <span>↗</span></a>
         </div>
-        <div class="method-list">
-          <div class="method-row"><span>01</span><div><strong>Une référence multidisciplinaire.</strong><small>Les réponses du modèle sont comparées à des préconisations ayant fait l’objet d’un consensus multidisciplinaire antérieur.</small></div></div>
-          <div class="method-row"><span>02</span><div><strong>Un prompt optimisé séparément.</strong><small>Cinq itérations sur cent préconisations, puis un nouveau test sur cinquante exemples, avant l’analyse finale.</small></div></div>
-          <div class="method-row"><span>03</span><div><strong>Un échantillon final indépendant.</strong><small>Le prompt validé est appliqué à 385 nouvelles préconisations tirées aléatoirement.</small></div></div>
-          <div class="method-row"><span>04</span><div><strong>Quatre issues possibles.</strong><small>Concordance, divergence justifiée après réévaluation, détection par excès ou erreur non repérée par le modèle.</small></div></div>
-          <div class="method-row"><span>05</span><div><strong>Des textes sans identité.</strong><small>Les préconisations transmises ne comportaient aucune information permettant d’identifier le salarié, l’entreprise, l’employeur, le médecin ou le service émetteur.</small></div></div>
+        <div class="study-findings" aria-label="Principaux résultats de l’étude">
+          <article class="study-finding"><b>74,6&nbsp;%</b><div><strong>Concordance globale</strong><p>Le modèle et le consensus multidisciplinaire aboutissent à la même évaluation.</p></div></article>
+          <article class="study-finding"><b>1,45&nbsp;%</b><div><strong>Erreurs non repérées</strong><p>Le consensus identifie un défaut que le modèle n’a pas signalé.</p></div></article>
+          <article class="study-finding"><b>0</b><div><strong>Hallucination observée</strong><p>Dans cet échantillon et avec ce protocole précis ; ce résultat n’est pas une garantie générale.</p></div></article>
         </div>
       </div>
-    </section>
-
-    <section class="section criteria" id="criteres">
-      <div class="section-head">
-        <div><p class="kicker">03 / Ce que le modèle recherchait</p><h2>Cinq défauts de formulation définis avant l’analyse.</h2></div>
-        <p>Le modèle ne devait pas inventer une meilleure préconisation. Il devait signaler la présence éventuelle de problèmes précis.</p>
-      </div>
-      <div class="criteria-table">
-        <table>
-          <thead><tr><th>Critère</th><th>Problème recherché</th><th>Exemple de point de vigilance</th><th>Pourquoi cela compte</th></tr></thead>
-          <tbody>
-            <tr><td><span class="criterion-index">01</span>Imprécision</td><td>Difficulté de compréhension ou d’application pour l’employeur.</td><td>Durée non définie, fréquence absente, fin imprécise ou mention « renouvelable » sans périodicité.</td><td>Une consigne floue peut être mal appliquée et fragiliser le maintien en emploi.</td></tr>
-            <tr><td><span class="criterion-index">02</span>Doute sur l’obligation</td><td>Formulation qui laisse croire qu’une mesure est facultative ou négociable.</td><td>Conditionnel, alternative non justifiée ou marge de choix introduite dans l’avis.</td><td>La force de la préconisation doit être comprise sans ambiguïté.</td></tr>
-            <tr><td><span class="criterion-index">03</span>Information hors annexe 4</td><td>Commentaire ou échange avec l’employeur qui ne constitue pas une mesure d’aménagement.</td><td>Information générale sans formulation d’une préconisation concrète.</td><td>Le document doit rester centré sur les mesures nécessaires au travail.</td></tr>
-            <tr><td><span class="criterion-index">04</span>Changement de poste déguisé</td><td>Préconisation d’un autre poste ou aménagement manifestement disproportionné.</td><td>Mesure qui revient de fait à écarter le salarié de son poste antérieur.</td><td>Une préconisation ne doit pas se substituer à une conclusion médicale appropriée.</td></tr>
-            <tr><td><span class="criterion-index">05</span>Secret médical et vie privée</td><td>Divulgation d’une information sur la santé ou la situation personnelle.</td><td>Diagnostic, arrêt maladie, invalidité, reconnaissance de handicap ou autre donnée médicale.</td><td>La communication à l’employeur doit préserver strictement le secret médical.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section results" id="resultats">
-      <div class="section-head">
-        <div><p class="kicker">04 / Résultats</p><h2>Un accord global élevé, mais très variable selon le critère.</h2></div>
-        <p>La moyenne ne doit pas masquer les différences : le modèle est très fiable sur certains défauts et beaucoup plus discutable sur d’autres.</p>
-      </div>
-      <div class="result-strip">
-        <article class="result-metric"><b>74,6&nbsp;%</b><strong>Concordances</strong><small>Le modèle et le consensus aboutissent à la même évaluation.</small></article>
-        <article class="result-metric"><b>10,5&nbsp;%</b><strong>Divergences justifiées</strong><small>Après réévaluation, l’analyse différente du modèle est considérée correcte.</small></article>
-        <article class="result-metric"><b>13,2&nbsp;%</b><strong>Détections par excès</strong><small>Le modèle applique les critères plus strictement que la référence humaine.</small></article>
-        <article class="result-metric"><b>1,45&nbsp;%</b><strong>Erreurs non repérées</strong><small>Le consensus identifie un défaut que le modèle n’a pas signalé.</small></article>
-        <article class="result-metric"><b>0&nbsp;%</b><strong>Hallucinations observées</strong><small>Aucune réponse inventée dans les 385 préconisations de cette étude.</small></article>
-      </div>
-      <div class="result-table">
-        <table>
-          <thead><tr><th>Critère</th><th>Concordance brute</th><th>Kappa de Cohen</th><th>Lecture</th></tr></thead>
-          <tbody>
-            <tr><td>Imprécision</td><td>61,3&nbsp;%</td><td>0,10</td><td>Accord faible ; le modèle signale beaucoup plus souvent une imprécision.</td></tr>
-            <tr><td>Doute sur l’obligation</td><td>45,5&nbsp;%</td><td>0,14</td><td>Accord faible et forte tendance à la détection par excès.</td></tr>
-            <tr><td>Information hors annexe 4</td><td>77,1&nbsp;%</td><td>0,13</td><td>Accord brut élevé, mais accord au-delà du hasard encore faible.</td></tr>
-            <tr><td>Changement de poste</td><td>93,0&nbsp;%</td><td>0,48</td><td>Accord modéré ; aucune divergence par défaut observée.</td></tr>
-            <tr><td>Secret médical ou vie privée</td><td>96,1&nbsp;%</td><td>0,82</td><td>Accord presque parfait ; aucune divergence par défaut observée.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="interpretation-note"><span>La bonne conclusion</span><p>Le modèle o1 apparaît prometteur comme outil de relecture. Les résultats ne démontrent ni qu’il sait rédiger seul une préconisation, ni qu’il améliore déjà la santé ou le maintien en emploi.</p></div>
-    </section>
-
-    <section class="section limits" id="limites">
-      <div class="section-head">
-        <div><p class="kicker">05 / Limites</p><h2>Ce que l’étude ne permet pas d’affirmer.</h2></div>
-        <p>La transparence sur ces limites évite de transformer un résultat encourageant en promesse générale sur tous les modèles ou tous les usages.</p>
-      </div>
-      <div class="limit-grid">
-        <article class="limit-card"><span>01</span><h3>Le contexte de travail manquait.</h3><p>Les évaluateurs et le modèle ne disposaient pas d’informations détaillées sur le poste, le salarié ou les contraintes particulières de l’entreprise.</p></article>
-        <article class="limit-card"><span>02</span><h3>Un seul modèle a été étudié.</h3><p>Les résultats concernent o1 dans les conditions précises de cette étude. Ils ne sont pas directement extrapolables à d’autres modèles.</p></article>
-        <article class="limit-card"><span>03</span><h3>Les performances évoluent vite.</h3><p>De nouveaux modèles peuvent dépasser o1 sur certains tests. Un protocole doit donc être rejoué lorsque le système ou le prompt change.</p></article>
-        <article class="limit-card"><span>04</span><h3>Aucun effet clinique n’a été mesuré.</h3><p>L’étude évalue la détection de défauts, pas la compréhension réelle par l’employeur, l’application de la mesure ou le maintien en emploi.</p></article>
-      </div>
-      <div class="limit-rule"><span>Zéro hallucination ne veut pas dire risque nul</span><p>Aucune hallucination n’a été observée dans cet échantillon parce que la tâche et le prompt étaient fortement encadrés. Un autre modèle, une autre consigne ou un texte différent peuvent produire d’autres erreurs.</p></div>
+      <div class="study-note"><span>Lecture prudente</span><p>Ces résultats sont prometteurs pour une aide à la relecture fortement encadrée. Ils concernent un seul modèle et une seule tâche, sans mesure d’un effet clinique. Le médecin du travail reste responsable de l’analyse, de la formulation et de la validation.</p></div>
     </section>
 
     <section class="section pilot" id="pilote">
       <div class="section-head">
-        <div><p class="kicker">06 / Construire un pilote en SPSTI</p><h2>Évaluer l’usage avant de chercher à le généraliser.</h2></div>
+        <div><p class="kicker">03 / Construire un pilote en SPSTI</p><h2>Évaluer l’usage avant de chercher à le généraliser.</h2></div>
         <p>Un pilote utile commence par une question mesurable et une référence humaine. Il doit aussi permettre de revenir au fonctionnement antérieur.</p>
       </div>
       <div class="pilot-flow">
@@ -520,15 +365,11 @@
         <article class="pilot-step"><span>05</span><h3>Mesurer les erreurs.</h3><p>Accord par critère, excès, défauts, temps gagné et nouvelle charge de vérification.</p></article>
         <article class="pilot-step"><span>06</span><h3>Décider collectivement.</h3><p>Poursuivre, corriger ou arrêter selon des résultats documentés et les effets sur le travail.</p></article>
       </div>
-      <div class="pilot-panel">
-        <div class="pilot-column"><span>Mesurer la performance</span><h3>Ce que fait le système.</h3><ul><li>erreurs repérées et erreurs manquées</li><li>différences selon les métiers et les cas</li><li>stabilité après changement de modèle ou de prompt</li><li>temps réellement économisé, corrections comprises</li></ul></div>
-        <div class="pilot-column"><span>Mesurer le travail</span><h3>Ce que le système fait aux équipes.</h3><ul><li>charge de vérification et interruptions</li><li>autonomie et possibilité de contester</li><li>évolution des compétences et de l’apprentissage</li><li>incidents, contournements et inégalités d’usage</li></ul></div>
-      </div>
     </section>
 
     <section class="section roles" id="roles">
       <div class="section-head">
-        <div><p class="kicker">07 / Répartir les responsabilités</p><h2>Un projet de service, pas un outil laissé à quelques utilisateurs.</h2></div>
+        <div><p class="kicker">04 / Répartir les responsabilités</p><h2>Un projet de service, pas un outil laissé à quelques utilisateurs.</h2></div>
         <p>Les métiers doivent pouvoir définir les critères, les limites et les situations dans lesquelles le système ne doit pas être utilisé.</p>
       </div>
       <div class="role-table">
@@ -549,7 +390,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand"><strong>IA &amp; Santé au Travail</strong><p>Des repères pour choisir, évaluer et encadrer les usages de l’intelligence artificielle dans le travail réel.</p></div>
-      <div class="footer-col"><span>Cette page</span><a href="#pst5">Le PST 5 et l’IA</a><a href="#usages">Usages</a><a href="#etude">Étude INRS</a><a href="#resultats">Résultats</a><a href="#pilote">Construire un pilote</a></div>
+      <div class="footer-col"><span>Cette page</span><a href="#pst5">Le PST 5 et l’IA</a><a href="#usages">Usages</a><a href="#etude">Étude INRS</a><a href="#pilote">Construire un pilote</a></div>
       <div class="footer-col"><span>Parcours</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a><a href="https://www.iasantetravail.com/usages-terrain/">Usages &amp; terrain</a><a href="https://www.iasantetravail.com/evaluer/">Évaluer</a><a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a></div>
       <div class="footer-col"><span>Ressources</span><a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Article INRS ↗</a><a href="https://www.iasantetravail.com/a-propos/">À propos</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.iasantetravail.com/confidentialite/">Confidentialité</a></div>
       <div class="footer-bottom"><span>Étude citée : C. Broutin, Références en Santé au Travail, TF 335, n° 186, juin 2026.</span><span>© 2026 IA &amp; Santé au Travail.</span></div>
