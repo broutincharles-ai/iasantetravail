@@ -6,289 +6,27 @@
   <title>Accompagner le déploiement d’une IA — IA &amp; Santé au Travail</title>
   <meta name="description" content="Évaluer un projet d’intelligence artificielle avant son déploiement, organiser un pilote réversible et suivre ses effets dans le travail réel.">
   <link rel="canonical" href="https://www.iasantetravail.com/usages-terrain/">
-  <style>
-    :root {
-      --ink: #17140f;
-      --ink-soft: #3f3931;
-      --muted: #625b52;
-      --terra: #a84e1f;
-      --terra-bright: #c94d24;
-      --green: #344f49;
-      --green-dark: #23383a;
-      --cream: #f4ebda;
-      --paper: #fff9f2;
-      --white: #fffdf9;
-      --lavender: #c9c2f2;
-      --lavender-dark: #4a4090;
-      --line: rgba(23, 20, 15, .16);
-      --line-light: rgba(244, 235, 218, .23);
-      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      --sans: Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      --wrap: min(1440px, calc(100% - 80px));
-    }
+  <link rel="stylesheet" href="/assets/css/usages-terrain-hub.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/components.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=2.2">
+  <script defer src="/assets/js/unified-navigation.js?v=2.1"></script>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--paper); }
-    body { margin: 0; border-top: 4px solid var(--ink); color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, summary { color: inherit; font: inherit; }
-    h1, h2, h3, p { text-wrap: pretty; }
-    :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
-    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 14px; color: #fff; background: var(--ink); transform: translateY(-150%); }
-    .skip-link:focus { transform: none; }
-
-    .site-header { position: sticky; z-index: 60; top: 0; background: rgba(255, 249, 242, .96); backdrop-filter: blur(14px); }
-    .nav { width: var(--wrap); min-height: 96px; margin: 0 auto; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .brand { display: inline-flex; align-items: center; gap: 16px; min-width: max-content; }
-    .brand-mark { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--ink); }
-    .brand-mark img { width: 37px; height: 37px; object-fit: contain; }
-    .brand-copy strong, .brand-copy small { display: block; }
-    .brand-copy strong { font-size: 19px; font-weight: 680; letter-spacing: -.03em; }
-    .brand-copy small { margin-top: 6px; color: var(--muted); font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: 25px; color: var(--ink-soft); font-size: 13px; font-weight: 670; }
-    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--terra); }
-    .nav-side { display: flex; align-items: center; gap: 10px; }
-    .language { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); color: var(--terra); font-weight: 780; }
-    .nav-cta, .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 24px; padding: 0 22px; border: 1px solid var(--green); font-size: 13px; font-weight: 750; }
-    .nav-cta, .button.primary { color: #fff; background: var(--green); }
-    .nav-cta span, .button.primary span { color: var(--lavender); font-size: 17px; }
-    .nav-cta:hover, .button.primary:hover { background: var(--ink); }
-    .button.secondary { border-color: var(--line); background: transparent; }
-    .button.secondary:hover { background: var(--cream); }
-    .button.light { border-color: var(--cream); color: var(--ink); background: var(--cream); }
-    .button.light:hover { color: #fff; border-color: var(--terra); background: var(--terra); }
-
-    .menu-dropdown { position: relative; }
-    .menu-dropdown > summary { display: grid; min-width: 76px; min-height: 50px; place-items: center; border: 1px solid var(--line); cursor: pointer; list-style: none; font-family: var(--mono); font-size: 10px; font-weight: 780; letter-spacing: .08em; text-transform: uppercase; }
-    .menu-dropdown > summary::-webkit-details-marker { display: none; }
-    .menu-dropdown > summary::after { content: "+"; margin-left: 8px; color: var(--terra); }
-    .menu-dropdown[open] > summary::after { content: "−"; }
-    .menu-panel { position: absolute; top: 59px; right: 0; width: min(760px, calc(100vw - 40px)); padding: 28px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 24px 55px rgba(23, 20, 15, .14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .menu-col { display: grid; align-content: start; gap: 11px; }
-    .menu-col > span { margin-bottom: 5px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
-    .menu-col a { padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; font-weight: 660; }
-    .menu-col a:hover { color: var(--terra); }
-
-    .section { padding: 76px max(40px, calc(50% - 720px)); }
-    .kicker { margin: 0; color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
-    .kicker.line { display: flex; align-items: center; gap: 14px; }
-    .kicker.line::before { content: ""; width: 26px; height: 1px; background: currentColor; }
-    .section-head { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .58fr); align-items: end; gap: 80px; }
-    .section-head h2 { max-width: 940px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
-    .section-head > p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.62; }
-
-    .hero { width: var(--wrap); min-height: 690px; margin: 0 auto; padding: 66px 0 48px; display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 68px; }
-    .hero-copy { max-width: 700px; }
-    .hero h1 { margin: 34px 0 28px; font-size: clamp(56px, 5.55vw, 86px); font-weight: 480; letter-spacing: -.064em; line-height: 1.01; }
-    .hero h1 em { color: var(--terra); font-style: normal; }
-    .hero-lede { max-width: 650px; margin: 0; color: var(--muted); font-size: 19px; line-height: 1.6; }
-    .hero-context { max-width: 650px; margin: 21px 0 0; padding-left: 18px; border-left: 3px solid var(--terra); color: var(--muted); font-size: 13px; line-height: 1.58; }
-    .hero-context strong { color: var(--ink); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 35px; }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 29px; color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; }
-    .hero-proof span::before { content: "✓"; margin-right: 8px; color: var(--terra); }
-
-    .artwork { margin: 0; border: 1px solid var(--line); background: var(--white); }
-    .artwork-label { min-height: 62px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 10px; }
-    .artwork-label strong { display: inline-flex; align-items: center; gap: 10px; color: var(--green); }
-    .artwork-label strong::before { content: ""; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
-    .artwork img { width: 100%; aspect-ratio: 1.48 / 1; object-fit: cover; object-position: center; filter: saturate(.82) contrast(.96); }
-    .artwork figcaption { display: grid; grid-template-columns: 175px 1fr; gap: 25px; padding: 20px; border-top: 1px solid var(--line); }
-    .artwork figcaption span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 780; letter-spacing: .07em; line-height: 1.45; text-transform: uppercase; }
-    .artwork figcaption p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-    .artwork figcaption a { color: var(--terra); font-weight: 750; }
-
-    .quick-read { display: grid; grid-template-columns: repeat(3, 1fr); width: var(--wrap); margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .quick-read article { min-height: 150px; padding: 25px 28px; border-right: 1px solid var(--line); }
-    .quick-read article:first-child { padding-left: 0; }
-    .quick-read article:last-child { border-right: 0; }
-    .quick-read span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
-    .quick-read h2 { margin: 26px 0 8px; font-size: 16px; letter-spacing: -.02em; }
-    .quick-read p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-
-    .pathways { background: var(--cream); }
-    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border: 1px solid var(--line); }
-    .tool-card { min-height: 420px; padding: 34px; display: flex; flex-direction: column; background: rgba(255, 249, 242, .42); }
-    .tool-card + .tool-card { border-left: 1px solid var(--line); background: var(--paper); }
-    .tool-top { display: flex; justify-content: space-between; gap: 20px; color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .tool-card h3 { max-width: 590px; margin: 50px 0 18px; font-size: 31px; letter-spacing: -.045em; line-height: 1.12; }
-    .tool-card > p { max-width: 620px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-    .tool-output { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 30px; border-top: 1px solid var(--line); }
-    .tool-output div { padding: 20px 14px 0 0; }
-    .tool-output div + div { padding-left: 14px; border-left: 1px solid var(--line); }
-    .tool-output small, .tool-output strong { display: block; }
-    .tool-output small { color: var(--terra); font-family: var(--mono); font-size: 8px; text-transform: uppercase; }
-    .tool-output strong { margin-top: 8px; font-size: 11px; line-height: 1.45; }
-    .tool-card .button { align-self: flex-start; margin-top: auto; }
-    .shared-trace { padding: 24px 28px; border: 1px solid var(--line); border-top: 0; display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; align-items: center; color: var(--paper); background: var(--green-dark); }
-    .shared-trace span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-    .shared-trace p { margin: 0; font-size: 16px; font-weight: 620; line-height: 1.5; }
-
-    .before { background: var(--white); }
-    .decision-table { margin-top: 52px; border: 1px solid var(--line); overflow-x: auto; }
-    .decision-table table { width: 100%; min-width: 920px; border-collapse: collapse; }
-    .decision-table th { padding: 15px 22px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
-    .decision-table th:first-child { width: 24%; }
-    .decision-table th:nth-child(2) { width: 42%; }
-    .decision-table td { padding: 21px 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.52; vertical-align: top; }
-    .decision-table tbody tr:first-child td { border-top: 0; }
-    .decision-table td:first-child { color: var(--ink); font-weight: 720; }
-    .decision-table td:last-child { color: var(--terra); }
-    .table-index { display: inline-block; min-width: 31px; color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .before-note { display: grid; grid-template-columns: .62fr 1.38fr; gap: 44px; align-items: center; margin-top: 30px; padding: 27px 30px; color: var(--paper); background: var(--green-dark); }
-    .before-note span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .before-note p { margin: 0; color: var(--cream); font-size: 17px; font-weight: 620; line-height: 1.5; }
-
-    .pilot { background: var(--paper); }
-    .pilot-chain { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .pilot-step { position: relative; min-height: 295px; padding: 29px; border-right: 1px solid var(--line); }
-    .pilot-step:last-child { border-right: 0; }
-    .pilot-step > span { color: var(--terra); font-family: var(--mono); font-size: 10px; }
-    .pilot-step h3 { margin: 62px 0 16px; font-size: 21px; letter-spacing: -.03em; line-height: 1.18; }
-    .pilot-step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
-    .pilot-step:not(:last-child)::after { position: absolute; z-index: 2; top: 50%; right: -10px; display: grid; width: 20px; height: 20px; place-items: center; color: var(--terra); background: var(--paper); content: "→"; font-size: 13px; }
-    .demo-gap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 58px; margin-top: 34px; padding: 28px 30px; border: 1px solid var(--line); background: var(--cream); }
-    .demo-gap h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; line-height: 1.2; }
-    .demo-gap ul { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 25px; margin: 0; padding: 0; list-style: none; }
-    .demo-gap li { position: relative; padding-left: 20px; color: var(--muted); font-size: 12px; line-height: 1.48; }
-    .demo-gap li::before { position: absolute; left: 0; color: var(--terra); content: "→"; }
-
-    .follow-up { color: var(--paper); background: var(--green-dark); }
-    .follow-up .kicker { color: var(--lavender); }
-    .follow-up .section-head > p { color: rgba(244, 235, 218, .7); }
-    .monitor-table { margin-top: 52px; border-top: 1px solid var(--line-light); }
-    .monitor-row { display: grid; grid-template-columns: 42px 210px minmax(260px, 1fr) minmax(230px, .7fr); gap: 24px; align-items: center; min-height: 120px; border-bottom: 1px solid var(--line-light); }
-    .monitor-row > span:first-child { color: var(--lavender); font-family: var(--mono); font-size: 10px; }
-    .monitor-row strong { font-size: 17px; letter-spacing: -.02em; }
-    .monitor-row p { margin: 0; color: rgba(244, 235, 218, .68); font-size: 12px; line-height: 1.5; }
-    .monitor-row b { color: var(--cream); font-size: 12px; line-height: 1.45; font-weight: 650; }
-    .monitor-head { min-height: 48px; color: rgba(244, 235, 218, .5); font-family: var(--mono); font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .follow-calendar { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; border: 1px solid var(--line-light); }
-    .calendar-step { min-height: 145px; padding: 22px; border-right: 1px solid var(--line-light); }
-    .calendar-step:last-child { border-right: 0; }
-    .calendar-step span { color: var(--lavender); font-family: var(--mono); font-size: 9px; }
-    .calendar-step strong { display: block; margin-top: 28px; font-size: 13px; line-height: 1.4; }
-    .calendar-note { margin: 17px 0 0; color: rgba(244, 235, 218, .55); font-size: 10px; }
-
-    .access { background: var(--cream); }
-    .role-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .role-card { min-height: 270px; padding: 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 249, 242, .45); }
-    .role-card > span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .role-card h3 { margin: 48px 0 14px; font-size: 20px; letter-spacing: -.03em; }
-    .role-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-    .contact-panel { display: grid; grid-template-columns: 1.02fr .98fr; margin-top: 30px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--green-dark); }
-    .contact-copy { padding: 35px 36px; }
-    .contact-copy span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .contact-copy h3 { max-width: 660px; margin: 24px 0 16px; font-size: 31px; letter-spacing: -.045em; line-height: 1.14; }
-    .contact-copy p { max-width: 650px; margin: 0; color: rgba(244, 235, 218, .72); font-size: 14px; line-height: 1.58; }
-    .contact-copy .button { margin-top: 27px; }
-    .contact-options { padding: 35px; border-left: 1px solid var(--line-light); display: grid; align-content: center; }
-    .contact-options strong { margin-bottom: 15px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
-    .contact-options ul { margin: 0; padding: 0; list-style: none; }
-    .contact-options li { padding: 13px 0 13px 23px; border-top: 1px solid var(--line-light); color: var(--cream); font-size: 12px; line-height: 1.45; position: relative; }
-    .contact-options li::before { position: absolute; left: 0; color: var(--lavender); content: "→"; }
-
-    .method { background: var(--white); }
-    .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border: 1px solid var(--line); }
-    .method-card { min-height: 220px; padding: 25px; border-right: 1px solid var(--line); }
-    .method-card:last-child { border-right: 0; }
-    .method-card span { color: var(--terra); font-family: var(--mono); font-size: 9px; }
-    .method-card h3 { margin: 42px 0 12px; font-size: 18px; letter-spacing: -.025em; }
-    .method-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.52; }
-    .source-strip { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
-    .source-strip a { padding: 12px 14px; border: 1px solid var(--line); color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 750; }
-    .source-strip a:hover { background: var(--cream); }
-
-    .newsletter { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; align-items: center; background: var(--lavender); }
-    .newsletter .kicker { color: var(--lavender-dark); }
-    .newsletter h2 { max-width: 850px; margin: 25px 0 0; font-size: clamp(43px, 4.6vw, 70px); font-weight: 480; letter-spacing: -.057em; line-height: 1.04; }
-    .newsletter-copy p { margin: 0; color: #423b65; font-size: 17px; line-height: 1.62; }
-    .newsletter-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-    .newsletter .secondary { border-color: rgba(74, 64, 144, .35); }
-    .newsletter-copy small { display: block; margin-top: 18px; color: #554e77; font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
-
-    .site-footer { color: var(--cream); background: var(--ink); }
-    .footer-grid { width: var(--wrap); margin: 0 auto; padding: 58px 0 24px; display: grid; grid-template-columns: 1.5fr repeat(3, .65fr); gap: 58px; }
-    .footer-brand strong { font-size: 21px; }
-    .footer-brand p { max-width: 400px; margin: 16px 0 0; color: rgba(244, 235, 218, .62); font-size: 13px; line-height: 1.58; }
-    .footer-col { display: grid; align-content: start; gap: 9px; }
-    .footer-col span { margin-bottom: 7px; color: var(--lavender); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
-    .footer-col a { color: rgba(244, 235, 218, .7); font-size: 12px; }
-    .footer-col a:hover { color: var(--cream); }
-    .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 25px; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(244, 235, 218, .17); color: rgba(244, 235, 218, .45); font-size: 10px; }
-
-    @media (max-width: 1220px) {
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr 1fr; gap: 42px; }
-      .hero h1 { font-size: clamp(53px, 6.8vw, 76px); }
-      .monitor-row { grid-template-columns: 38px 180px 1fr; }
-      .monitor-row b { grid-column: 3; padding-bottom: 18px; }
-      .monitor-head b { display: none; }
-      .role-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 920px) {
-      :root { --wrap: min(100% - 44px, 1440px); }
-      .section { padding: 64px 22px; }
-      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 60px; }
-      .hero-copy { max-width: none; }
-      .artwork { max-width: 780px; }
-      .section-head, .before-note, .shared-trace, .demo-gap, .contact-panel, .newsletter { grid-template-columns: 1fr; gap: 34px; }
-      .quick-read, .tool-grid, .pilot-chain, .follow-calendar, .method-grid { grid-template-columns: 1fr; }
-      .quick-read article { min-height: 0; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .quick-read article:last-child { border-bottom: 0; }
-      .tool-card { min-height: 390px; }
-      .tool-card + .tool-card { border-left: 0; border-top: 1px solid var(--line); }
-      .pilot-step { min-height: 0; padding: 29px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .pilot-step h3 { margin-top: 32px; }
-      .pilot-step::after { display: none !important; }
-      .demo-gap ul { grid-template-columns: 1fr; }
-      .follow-calendar .calendar-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light); }
-      .follow-calendar .calendar-step:last-child { border-bottom: 0; }
-      .contact-options { border-left: 0; border-top: 1px solid var(--line-light); }
-      .method-card { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .method-card:last-child { border-bottom: 0; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
-      .footer-bottom { display: grid; }
-    }
-    @media (max-width: 640px) {
-      :root { --wrap: calc(100% - 30px); }
-      .section { padding: 54px 15px; }
-      .nav { min-height: 78px; gap: 14px; }
-      .brand { gap: 10px; }
-      .brand-mark { width: 44px; height: 44px; }
-      .brand-mark img { width: 31px; height: 31px; }
-      .brand-copy strong { font-size: 15px; }
-      .brand-copy small, .language, .nav-cta { display: none; }
-      .menu-dropdown > summary { min-width: 68px; min-height: 44px; }
-      .menu-panel { right: -1px; width: calc(100vw - 30px); grid-template-columns: 1fr; max-height: calc(100vh - 100px); overflow: auto; }
-      .hero h1 { font-size: clamp(44px, 13.5vw, 60px); }
-      .hero-lede { font-size: 16px; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .artwork figcaption { grid-template-columns: 1fr; }
-      .section-head h2, .newsletter h2 { font-size: 40px; }
-      .tool-card { min-height: 0; padding: 25px 20px; }
-      .tool-card h3 { margin-top: 35px; font-size: 27px; }
-      .tool-output { grid-template-columns: 1fr; }
-      .tool-output div { padding: 16px 0; border-bottom: 1px solid var(--line); }
-      .tool-output div + div { padding-left: 0; border-left: 0; }
-      .tool-output div:last-child { border-bottom: 0; }
-      .tool-card .button { width: 100%; margin-top: 25px; }
-      .monitor-row { grid-template-columns: 30px 1fr; gap: 12px; padding: 20px 0; }
-      .monitor-row strong, .monitor-row p, .monitor-row b { grid-column: 2; }
-      .monitor-row b { padding-bottom: 0; }
-      .monitor-head { display: none; }
-      .role-grid { grid-template-columns: 1fr; }
-      .contact-copy, .contact-options { padding: 28px 24px; }
-      .contact-copy h3 { font-size: 27px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
-  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=1.1">
-  <script defer src="/assets/js/unified-navigation.js?v=1.0"></script>
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:title" content="Accompagner le déploiement d’une IA — IA & Santé au Travail">
+  <meta property="og:description" content="Évaluer un projet d’intelligence artificielle avant son déploiement, organiser un pilote réversible et suivre ses effets dans le travail réel.">
+  <meta property="og:url" content="https://www.iasantetravail.com/usages-terrain/">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/arcadian-state-1280.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Accompagner le déploiement d’une IA — IA & Santé au Travail","description":"Évaluer un projet d’intelligence artificielle avant son déploiement, organiser un pilote réversible et suivre ses effets dans le travail réel.","inLanguage":"fr","dateModified":"2026-08-09","url":"https://www.iasantetravail.com/usages-terrain/","author":{"@type":"Person","name":"Dr Charles Broutin","jobTitle":"Médecin du travail"},"publisher":{"@type":"Organization","name":"IA & Santé au Travail"}}</script>
 </head>
-<body>
+<body class="page-shell-v2 hero-editorial">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="site-header">
@@ -331,7 +69,6 @@
         <p class="kicker line">Usages &amp; terrain · Accompagnement au déploiement</p>
         <h1>Déployer une IA sans découvrir ses effets <em>après coup.</em></h1>
         <p class="hero-lede">Cadrez l’usage avant sa mise en place, organisez un pilote réversible, puis comparez les promesses aux effets réellement observés dans le travail.</p>
-        <p class="hero-context"><strong>Pourquoi un questionnaire&nbsp;?</strong> Pour rendre cette démarche concrète, j’ai conçu un outil exploratoire à partir des six familles de facteurs de risques psychosociaux définies par le rapport Gollac, complétées par trois dimensions liées à l’IA. Il sert à structurer la discussion et à faire apparaître des points de vigilance. Son efficacité et ses qualités de mesure n’ont pas, à ce jour, été démontrées scientifiquement.</p>
         <div class="hero-actions"><a class="button primary" href="#parcours">Choisir le bon questionnaire <span>↓</span></a><a class="button secondary" href="#acces">Être accompagné</a></div>
         <div class="hero-proof"><span>18 questions · environ 10 min</span><span>Données conservées localement</span><span>Rapport archivable</span></div>
       </div>
@@ -341,7 +78,7 @@
         <img src="https://www.iasantetravail.com/assets/images/arcadian-state-1280.webp" alt="The Course of Empire — The Arcadian or Pastoral State, œuvre de Thomas Cole montrant un paysage désormais cultivé et habité">
         <figcaption>
           <span>Thomas Cole<br>The Arcadian or Pastoral State · 1834</span>
-          <p>Dans le deuxième tableau de la série, le paysage s’organise : les habitants cultivent, construisent, naviguent et développent les arts. Mais certains signes annoncent déjà ce que cette transformation pourrait devenir. C’est précisément le moment du déploiement : celui où l’on peut encore choisir les usages à développer, les équilibres à préserver et les signaux qui imposeront de corriger ou d’arrêter. <a href="https://explorethomascole.org/project/the-arcadian-or-pastoral-state/" target="_blank" rel="noreferrer">Voir l’œuvre ↗</a></p>
+          <p>Le paysage s’organise : c’est encore le moment de choisir les usages, les équilibres et les motifs d’arrêt. <a href="https://explorethomascole.org/project/the-arcadian-or-pastoral-state/" target="_blank" rel="noreferrer">Voir l’œuvre ↗</a></p>
         </figcaption>
       </figure>
     </section>
@@ -480,9 +217,5 @@
       <div class="footer-bottom"><span>Rédigé par le Dr Charles Broutin, médecin du travail, référent IA de la SFST.</span><span>© 2026 IA &amp; Santé au Travail · Thomas Cole, œuvre dans le domaine public.</span></div>
     </div>
   </footer>
-
-  <script>
-    document.querySelectorAll(".menu-panel a").forEach(link => link.addEventListener("click", () => link.closest("details").removeAttribute("open")));
-  </script>
 </body>
 </html>

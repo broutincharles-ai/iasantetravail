@@ -22,6 +22,18 @@ const cssFiles = allFiles.filter(file => file.endsWith(".css"));
 const errors = [];
 let checkedLinks = 0;
 const htmlCache = new Map();
+const bilingualPages = new Map([
+  ["index.html", "en/index.html"],
+  ["comprendre/index.html", "en/understand/index.html"],
+  ["usages-terrain/index.html", "en/uses-and-field/index.html"],
+  ["risques-prevention/index.html", "en/risks-prevention/index.html"],
+  ["evaluer/index.html", "en/evaluate/index.html"],
+  ["evaluer/impact/index.html", "en/evaluate/impact/index.html"],
+  ["droit-gouvernance/index.html", "en/legal-governance/index.html"],
+  ["usages-terrain/exemple-sante-travail/index.html", "en/uses-and-field/occupational-health-example/index.html"],
+  ["ai-safety-agi/index.html", "en/ai-safety-agi/index.html"],
+  ["a-propos/index.html", "en/about/index.html"]
+]);
 
 async function cachedHtml(file) {
   if (!htmlCache.has(file)) htmlCache.set(file, await readFile(file, "utf8"));
@@ -105,6 +117,20 @@ for (const file of canonicalHtml) {
   if (!/<title[^>]*>[^<]+<\/title>/i.test(html)) errors.push(`${path.relative(root, file)}: title missing`);
   if (!/<meta[^>]+name=["']description["']/i.test(html)) errors.push(`${path.relative(root, file)}: meta description missing`);
   if (!/<link[^>]+rel=["']canonical["']/i.test(html) && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: canonical missing`);
+}
+
+for (const [frPage, enPage] of bilingualPages) {
+  for (const [relative, lang] of [[frPage, "fr"], [enPage, "en"]]) {
+    const html = await cachedHtml(path.join(root, relative));
+    const documentMarkup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
+    const h1Count = [...documentMarkup.matchAll(/<h1\b/gi)].length;
+    if (h1Count !== 1) errors.push(`${relative}: expected exactly one h1, found ${h1Count}`);
+    if (!new RegExp(`<html[^>]+lang=["']${lang}["']`, "i").test(html)) errors.push(`${relative}: html lang must be ${lang}`);
+    if (!/<link[^>]+rel=["']alternate["'][^>]+hreflang=["']fr["']/i.test(html)) errors.push(`${relative}: French hreflang missing`);
+    if (!/<link[^>]+rel=["']alternate["'][^>]+hreflang=["']en["']/i.test(html)) errors.push(`${relative}: English hreflang missing`);
+    const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
+    if (/<style\b/i.test(head)) errors.push(`${relative}: inline head style should be consolidated into shared CSS`);
+  }
 }
 
 if (errors.length) {
