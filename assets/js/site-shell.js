@@ -84,6 +84,7 @@
       <div class="system-nav-links" id="systemNavLinks">
         ${navItems.map(([label, href, key]) => `<a href="${href}"${key === activeKey ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </div>
+      <a class="system-language-switch" href="${isEnglish ? currentFr : currentEn}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}" aria-label="${isEnglish ? "View this page in French" : "View this page in English"}">${isEnglish ? "FR" : "EN"}</a>
       <button class="system-menu-button" type="button" aria-controls="systemNavLinks" aria-expanded="false">Menu</button>
     </nav>`;
 
