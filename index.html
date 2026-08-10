@@ -30,12 +30,13 @@
   <meta property="og:image" content="https://www.iasantetravail.com/assets/images/consummation-1800.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.iasantetravail.com/#website","url":"https://www.iasantetravail.com/","name":"IA & Santé au Travail","alternateName":"IA Santé au Travail","inLanguage":["fr","en"],"publisher":{"@id":"https://www.iasantetravail.com/a-propos/#person"}},{"@type":"WebPage","@id":"https://www.iasantetravail.com/#webpage","url":"https://www.iasantetravail.com/","name":"Sécurité de l’IA au travail et santé au travail","description":"Une approche de l’AI safety centrée sur le travail réel, les risques psychosociaux et la prévention.","isPartOf":{"@id":"https://www.iasantetravail.com/#website"},"about":[{"@type":"Thing","name":"Sécurité de l’IA au travail"},{"@type":"Thing","name":"Santé au travail"},{"@type":"Thing","name":"Déploiement de l’intelligence artificielle"},{"@type":"Thing","name":"Risques psychosociaux"},{"@type":"Thing","name":"Supervision humaine"}],"inLanguage":"fr-FR","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"}},{"@type":"Person","@id":"https://www.iasantetravail.com/a-propos/#person","name":"Charles Broutin","honorificPrefix":"Dr","jobTitle":"Médecin du travail","url":"https://www.iasantetravail.com/a-propos/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"],"knowsAbout":["Santé au travail","AI safety","Risques psychosociaux","Gouvernance de l’IA au travail","Grands modèles de langage"]}]}</script>
-  <link rel="stylesheet" href="/assets/css/home.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/home.css?v=2.2">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=2.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=2.1">
   <link rel="stylesheet" href="/assets/css/components.css?v=2.3">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=2.2">
   <script defer src="/assets/js/unified-navigation.js?v=2.1"></script>
+  <script defer src="/assets/js/home-role-selector.js?v=1.0"></script>
 </head>
 <body class="page-shell-v2 hero-manifesto">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -93,7 +94,33 @@
     <section class="introduction" id="enjeu" aria-labelledby="enjeu-title">
       <div class="introduction-panel">
         <div><p class="kicker">Le point de départ</p><h2 id="enjeu-title">Élargir ce que l’on entend par « sécurité ».</h2></div>
-        <p class="introduction-copy">Le débat sur l’<strong>AI safety</strong> reste surtout centré sur les performances et les risques propres aux modèles — erreurs, biais, cybersécurité, mésusage — et beaucoup moins sur les <strong>risques liés à leur déploiement dans le travail</strong>. Pourtant, l’IA transforme l’organisation, l’autonomie, la charge cognitive, la surveillance, l’emploi et les compétences. Avec près d’<strong>un travailleur sur quatre dans le monde potentiellement exposé à l’IA générative</strong>, la sécurité de l’IA doit aussi devenir un sujet commun aux chercheurs, aux pouvoirs publics, aux employeurs, aux représentants du personnel et aux professionnels de la prévention. Pour approfondir, consulter <a href="/ai-safety-agi/">les enjeux de l’AI safety et de l’AGI</a> ou <a href="/risques-prevention/">les risques psychosociaux liés à l’IA au travail</a>.</p>
+        <p class="introduction-copy">L’<strong>AI safety</strong> désigne l’ensemble des travaux visant à rendre les systèmes d’IA fiables, maîtrisables et sûrs, depuis leur conception jusqu’à leurs usages. Le débat sur l’<strong>AI safety</strong> reste surtout centré sur les performances et les risques propres aux modèles — erreurs, biais, cybersécurité, mésusage — et beaucoup moins sur les <strong>risques liés à leur déploiement dans le travail</strong>. Pourtant, l’IA transforme l’organisation, l’autonomie, la charge cognitive, la surveillance, l’emploi et les compétences. Avec près d’<strong>un travailleur sur quatre dans le monde potentiellement exposé à l’IA générative</strong>, la sécurité de l’IA doit aussi devenir un sujet commun aux chercheurs, aux pouvoirs publics, aux employeurs, aux représentants du personnel et aux professionnels de la prévention. Pour approfondir, consulter <a href="/ai-safety-agi/">les enjeux de l’AI safety et de l’AGI</a> ou <a href="/risques-prevention/">les risques psychosociaux liés à l’IA au travail</a>.</p>
+      </div>
+    </section>
+
+    <section class="section role-entry" id="pour-moi" aria-label="Pourquoi l’AI safety au travail me concerne" data-role-explainer data-locale="fr">
+      <div class="role-console">
+        <div class="role-prompt">
+          <span>Je suis</span>
+          <span class="role-select-wrap">
+            <select data-role-select aria-label="Choisissez votre métier ou votre rôle">
+              <option value="employee">salarié·e</option>
+              <option value="employer">employeur ou dirigeant·e</option>
+              <option value="hr">professionnel·le RH</option>
+              <option value="physician">médecin du travail</option>
+              <option value="osh">préventeur·rice / SPSTI</option>
+              <option value="representative">élu·e du personnel / CSE</option>
+              <option value="ai">responsable IA / data / numérique</option>
+              <option value="researcher">chercheur·se / concepteur·rice IA</option>
+              <option value="public">acteur public / régulateur</option>
+            </select>
+          </span>
+          <span class="role-reason">et l’AI safety au travail me concerne car&nbsp;:</span>
+        </div>
+        <div class="role-answer">
+          <p class="role-answer-text" data-role-answer aria-hidden="true"></p>
+          <p class="role-announcer" data-role-announcer aria-live="polite"></p>
+        </div>
       </div>
     </section>
 

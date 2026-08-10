@@ -35,12 +35,13 @@
   <meta name="twitter:description" content="Connect model safety with real work, worker health and responsible AI deployment.">
   <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/consummation-1800.jpg">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.iasantetravail.com/en/#website","url":"https://www.iasantetravail.com/en/","name":"AI & Occupational Health","alternateName":"AI Occupational Health","inLanguage":["en","fr"],"publisher":{"@id":"https://www.iasantetravail.com/en/about/#person"}},{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/#webpage","url":"https://www.iasantetravail.com/en/","name":"AI Safety at Work and Occupational Health","description":"A work-centred approach to AI safety, workplace AI deployment, occupational health and psychosocial risk prevention.","isPartOf":{"@id":"https://www.iasantetravail.com/en/#website"},"about":[{"@type":"Thing","name":"AI safety at work"},{"@type":"Thing","name":"Occupational health"},{"@type":"Thing","name":"Workplace AI deployment"},{"@type":"Thing","name":"Psychosocial risks"},{"@type":"Thing","name":"Human oversight"}],"inLanguage":"en-GB","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@id":"https://www.iasantetravail.com/en/about/#person"}},{"@type":"Person","@id":"https://www.iasantetravail.com/en/about/#person","name":"Charles Broutin","honorificPrefix":"Dr","jobTitle":"Occupational physician","url":"https://www.iasantetravail.com/en/about/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"],"knowsAbout":["Occupational health","AI safety","Psychosocial risks","Workplace AI governance","Large language models"]}]}</script>
-  <link rel="stylesheet" href="/assets/css/home.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/home.css?v=2.2">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=2.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=2.1">
   <link rel="stylesheet" href="/assets/css/components.css?v=2.3">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=2.2">
   <script defer src="/assets/js/unified-navigation.js?v=2.1"></script>
+  <script defer src="/assets/js/home-role-selector.js?v=1.0"></script>
 </head>
 <body class="page-shell-v2 hero-manifesto">
   <a class="skip-link" href="#content">Skip to main content</a>
@@ -95,7 +96,33 @@
       </figure>
     </section>
 
-    <section class="introduction" id="issue" aria-labelledby="issue-title"><div class="introduction-panel"><div><p class="kicker">Starting point</p><h2 id="issue-title">Broaden what we mean by “safety”.</h2></div><p class="introduction-copy">The <strong>AI safety</strong> debate still focuses primarily on model-level performance and risks — errors, bias, cybersecurity and misuse — and far less on the <strong>risks created when AI is deployed at work</strong>. Yet AI changes work organisation, autonomy, cognitive load, surveillance, jobs and skills. With nearly <strong>one in four workers worldwide potentially exposed to generative AI</strong>, AI safety must also become a shared concern for researchers, public authorities, employers, worker representatives and occupational safety and health professionals. Explore <a href="/en/ai-safety-agi/">AI safety, AGI and frontier-model risks</a> or review <a href="/en/risks-prevention/">AI-related psychosocial risks at work</a>.</p></div></section>
+    <section class="introduction" id="issue" aria-labelledby="issue-title"><div class="introduction-panel"><div><p class="kicker">Starting point</p><h2 id="issue-title">Broaden what we mean by “safety”.</h2></div><p class="introduction-copy"><strong>AI safety</strong> encompasses the research and practices used to make AI systems reliable, controllable and safe, from their design through to their use. The <strong>AI safety</strong> debate still focuses primarily on model-level performance and risks — errors, bias, cybersecurity and misuse — and far less on the <strong>risks created when AI is deployed at work</strong>. Yet AI changes work organisation, autonomy, cognitive load, surveillance, jobs and skills. With nearly <strong>one in four workers worldwide potentially exposed to generative AI</strong>, AI safety must also become a shared concern for researchers, public authorities, employers, worker representatives and occupational safety and health professionals. Explore <a href="/en/ai-safety-agi/">AI safety, AGI and frontier-model risks</a> or review <a href="/en/risks-prevention/">AI-related psychosocial risks at work</a>.</p></div></section>
+
+    <section class="section role-entry" id="why-me" aria-label="Why AI safety at work concerns me" data-role-explainer data-locale="en">
+      <div class="role-console">
+        <div class="role-prompt">
+          <span>I am</span>
+          <span class="role-select-wrap">
+            <select data-role-select aria-label="Choose your occupation or role">
+              <option value="employee">an employee</option>
+              <option value="employer">an employer or executive</option>
+              <option value="hr">an HR professional</option>
+              <option value="physician">an occupational physician</option>
+              <option value="osh">an OSH professional / OHS service member</option>
+              <option value="representative">a worker representative / works council member</option>
+              <option value="ai">an AI / data / digital lead</option>
+              <option value="researcher">an AI researcher / developer</option>
+              <option value="public">a public authority / regulator</option>
+            </select>
+          </span>
+          <span class="role-reason">and AI safety at work concerns me because:</span>
+        </div>
+        <div class="role-answer">
+          <p class="role-answer-text" data-role-answer aria-hidden="true"></p>
+          <p class="role-announcer" data-role-announcer aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
 
     <section class="section home-paths" id="path"><div class="section-head"><div><p class="kicker">01 / A clear path</p><h2>From the technical system to health outcomes.</h2></div><p>Three steps to ask the right questions before deployment, then verify what changes in real work.</p></div><div class="path-bands">
       <a href="/en/understand/"><span>01</span><strong>Understand</strong><p>I want to understand what these systems can actually do.</p><b>Explore the foundations →</b></a>
