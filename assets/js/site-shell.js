@@ -10,7 +10,7 @@
 
   if (!window.__IASTShellReady && !document.querySelector('script[src*="/assets/js/unified-navigation.js"]')) {
     const script = document.createElement("script");
-    script.src = "/assets/js/unified-navigation.js?v=3.4";
+    script.src = "/assets/js/unified-navigation.js?v=3.6";
     document.head.appendChild(script);
   }
 })();

@@ -25,6 +25,7 @@
     "/evaluer/impact/suivi.html": "/en/evaluate/impact/follow-up.html",
     "/droit-gouvernance/": "/en/legal-governance/",
     "/ai-safety-agi/": "/en/ai-safety-agi/",
+    "/research/": "/en/research/",
     "/a-propos/": "/en/about/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
@@ -32,21 +33,27 @@
   };
 
   const reversePairs = Object.fromEntries(Object.entries(pairs).map(([fr, en]) => [en, fr]));
-  const translationUrl = isEnglish ? (reversePairs[path] || "/") : (pairs[path] || "/en/");
+  const isResearchPath = /^\/(?:en\/)?research\//.test(path);
+  const isFrenchRiskSubpage = /^\/risques-prevention\/.+/.test(path);
+  const researchTranslationUrl = isEnglish ? path.replace(/^\/en/, "") : `/en${path}`;
+  const translationUrl = isResearchPath
+    ? researchTranslationUrl
+    : isFrenchRiskSubpage ? "/en/risks-prevention/"
+    : isEnglish ? (reversePairs[path] || "/") : (pairs[path] || "/en/");
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
     ["Occupational risks", "/en/risks-prevention/", "risks"],
     ["Assess", "/en/evaluate/", "evaluate"],
     ["Govern", "/en/legal-governance/", "governance"],
-    ["Research", "/en/about/#publications", "research"],
+    ["Research", "/en/research/", "research"],
     ["About", "/en/about/", "about"]
   ] : [
     ["Comprendre", "/comprendre/", "understand"],
-    ["Risques professionnels", "/risques-prevention/", "risks"],
+    ["Risques", "/risques-prevention/", "risks"],
     ["Évaluer", "/evaluer/", "evaluate"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
-    ["Recherche", "/a-propos/#publications", "research"],
+    ["Recherche", "/research/", "research"],
     ["À propos", "/a-propos/", "about"]
   ];
 
@@ -79,7 +86,7 @@
     if (/^\/(?:en\/risks-prevention|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
-    if (/^\/(?:en\/about|a-propos)/.test(path) && window.location.hash === "#publications") return "research";
+    if (/^\/(?:en\/)?research\//.test(path)) return "research";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";
   })();

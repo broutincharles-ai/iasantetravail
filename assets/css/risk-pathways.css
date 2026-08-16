@@ -1,0 +1,289 @@
+.risk-hub-page,
+.economic-risk-page {
+  --risk-ink: #171a18;
+  --risk-muted: #4d534e;
+  --risk-paper: #f3efe6;
+  --risk-paper-light: #f8f4ec;
+  --risk-terra: #a83e27;
+  --risk-terra-deep: #7f2f1e;
+  --risk-terra-wash: #ead8d1;
+  --risk-line: rgba(23, 26, 24, 0.2);
+  --risk-wide: min(1540px, calc(100% - clamp(40px, 7vw, 120px)));
+  color: var(--risk-ink);
+  background: var(--risk-paper);
+}
+
+.risk-hub-page main,
+.economic-risk-page main { background: var(--risk-paper); }
+
+.risk-hub-page main a:focus-visible,
+.economic-risk-page main a:focus-visible {
+  outline-color: var(--risk-terra);
+  outline-offset: 5px;
+}
+
+.risk-path-kicker,
+.economic-kicker,
+.economic-section-number,
+.economic-aside > span {
+  margin: 0;
+  color: var(--risk-terra);
+  font: 700 10px/1.3 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.risk-hub-hero {
+  width: var(--risk-wide);
+  min-height: clamp(300px, 34vh, 430px);
+  margin-inline: auto;
+  padding: clamp(62px, 7vw, 110px) 0 clamp(48px, 6vw, 86px);
+  border-bottom: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  gap: clamp(24px, 4vw, 70px);
+  align-items: start;
+}
+
+.risk-hub-hero > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.4fr);
+  gap: clamp(40px, 7vw, 120px);
+  align-items: end;
+}
+
+.risk-hub-hero h1 {
+  max-width: 980px;
+  margin: 0;
+  color: var(--risk-ink);
+  font-family: var(--serif);
+  font-size: clamp(58px, 6.8vw, 112px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+}
+
+.risk-hub-hero > div > p {
+  max-width: 470px;
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.risk-pathway-grid {
+  width: var(--risk-wide);
+  margin: 0 auto;
+  border-left: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.risk-pathway {
+  min-height: clamp(390px, 47vh, 570px);
+  padding: clamp(30px, 4vw, 62px);
+  border-right: 1px solid var(--risk-line);
+  border-bottom: 1px solid var(--risk-line);
+  display: flex;
+  flex-direction: column;
+  color: var(--risk-ink);
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.risk-pathway--health { background: var(--risk-paper-light); }
+.risk-pathway--economic { background: var(--risk-terra-wash); }
+.risk-pathway:hover { background: #e5ccc2; }
+
+.risk-pathway-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--risk-muted);
+  font: 650 9px/1.4 var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.risk-pathway-meta span:first-child { color: var(--risk-terra); font-size: 14px; }
+
+.risk-pathway-copy { margin: auto 0; padding: clamp(52px, 6vw, 100px) 0; }
+.risk-pathway-copy h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--risk-ink);
+  font-family: var(--serif);
+  font-size: clamp(48px, 5vw, 82px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.93;
+  transition: color 180ms ease, transform 180ms ease;
+}
+.risk-pathway-copy p { max-width: 620px; margin: 24px 0 0; color: var(--risk-muted); font-size: 15px; line-height: 1.65; }
+.risk-pathway-action { color: var(--risk-terra-deep); font: 700 10px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.risk-pathway-action i { display: inline-block; margin-left: 7px; font-style: normal; transition: transform 180ms ease; }
+.risk-pathway:hover h2 { color: var(--risk-terra-deep); transform: translateY(-3px); }
+.risk-pathway:hover .risk-pathway-action i { transform: translateX(6px); }
+
+.risk-hub-note {
+  width: var(--risk-wide);
+  margin: 0 auto;
+  padding: clamp(34px, 4vw, 56px) 0 clamp(80px, 9vw, 140px);
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: clamp(24px, 4vw, 70px);
+}
+.risk-hub-note span { color: var(--risk-terra); font: 700 9px/1.4 var(--mono); letter-spacing: 0.1em; }
+.risk-hub-note p { grid-column: 2; max-width: 880px; margin: 0; color: var(--risk-muted); font-family: var(--serif); font-size: clamp(24px, 2.4vw, 38px); line-height: 1.25; }
+
+/* Long-form economic and social risk pathway */
+.economic-hero {
+  width: var(--risk-wide);
+  min-height: clamp(620px, calc(100svh - 76px), 920px);
+  margin-inline: auto;
+  padding: clamp(56px, 6vw, 96px) 0 clamp(70px, 7vw, 118px);
+  border-bottom: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto 1fr auto;
+  gap: 24px;
+}
+.economic-back { grid-column: 1 / 4; color: var(--risk-muted); font: 650 10px/1.4 var(--mono); letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+.economic-back:hover { color: var(--risk-terra); }
+.economic-kicker { grid-column: 4 / 13; }
+.economic-hero h1 {
+  grid-column: 2 / 12;
+  align-self: center;
+  max-width: 1400px;
+  margin: clamp(44px, 6vw, 90px) 0;
+  color: var(--risk-ink);
+  font-family: var(--serif);
+  font-size: clamp(65px, 8.1vw, 140px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.87;
+}
+.economic-hero-bottom { grid-column: 4 / 12; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr); gap: clamp(40px, 7vw, 110px); align-items: end; }
+.economic-hero-bottom > p { margin: 0; color: var(--risk-muted); font-family: var(--serif); font-size: clamp(22px, 2.1vw, 34px); line-height: 1.28; }
+.economic-scenario-note { padding: 20px 22px; border-left: 3px solid var(--risk-terra); background: var(--risk-terra-wash); }
+.economic-scenario-note span { display: block; margin-bottom: 8px; color: var(--risk-terra-deep); font: 700 9px/1.3 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.economic-scenario-note p { margin: 0; color: var(--risk-muted); font-size: 14px; line-height: 1.55; }
+.economic-source-link { display: inline-block; margin-top: 14px; color: var(--risk-terra-deep); font-size: 13px; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.economic-source-link:hover { color: var(--risk-terra); }
+
+.economic-progression {
+  width: var(--risk-wide);
+  margin-inline: auto;
+  border-bottom: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.economic-progression span { min-height: 86px; padding: 24px; border-right: 1px solid var(--risk-line); display: flex; align-items: center; color: var(--risk-muted); font: 650 10px/1.3 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.economic-progression span:first-child { border-left: 1px solid var(--risk-line); color: var(--risk-terra); }
+
+.economic-opening,
+.economic-content-section,
+.economic-conclusion {
+  width: var(--risk-wide);
+  margin-inline: auto;
+  padding: clamp(90px, 10vw, 170px) 0;
+  border-bottom: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: 2.5fr 7fr 2.5fr;
+  gap: clamp(28px, 4vw, 70px);
+}
+.economic-opening > div,
+.economic-content-section > div,
+.economic-conclusion > div { grid-column: 2; max-width: 860px; }
+.economic-opening { padding-top: clamp(100px, 12vw, 210px); }
+.economic-opening > div > p:first-child { color: var(--risk-ink); font-family: var(--serif); font-size: clamp(31px, 3.1vw, 52px); letter-spacing: -0.03em; line-height: 1.16; }
+.economic-content-section h2,
+.economic-conclusion h2 { margin: 0 0 clamp(46px, 5vw, 76px); color: var(--risk-ink); font-family: var(--serif); font-size: clamp(52px, 5.8vw, 94px); font-weight: 400; letter-spacing: -0.055em; line-height: 0.92; }
+.economic-content-section h3 { margin: 70px 0 24px; color: var(--risk-terra-deep); font-family: var(--serif); font-size: clamp(34px, 3.2vw, 52px); font-weight: 400; letter-spacing: -0.04em; line-height: 1; }
+.economic-opening p,
+.economic-content-section p,
+.economic-conclusion p { margin: 0; color: var(--risk-muted); font-family: var(--serif); font-size: clamp(20px, 1.6vw, 26px); line-height: 1.65; }
+.economic-opening p + p,
+.economic-content-section p + p,
+.economic-conclusion p + p { margin-top: 27px; }
+.economic-content-section ul { margin: 34px 0; padding: 0; border-top: 1px solid var(--risk-line); list-style: none; }
+.economic-content-section li { position: relative; padding: 17px 0 17px 28px; border-bottom: 1px solid var(--risk-line); color: var(--risk-muted); font-size: 16px; line-height: 1.55; }
+.economic-content-section li::before { position: absolute; top: 25px; left: 2px; width: 8px; height: 8px; background: var(--risk-terra); content: ""; }
+.economic-content-section blockquote { margin: 54px 0; padding: 34px 0 34px clamp(24px, 4vw, 58px); border-left: 3px solid var(--risk-terra); color: var(--risk-ink); }
+.economic-content-section blockquote p { color: var(--risk-ink); font-size: clamp(28px, 2.8vw, 46px); line-height: 1.25; }
+.economic-content-section strong { color: var(--risk-ink); font-weight: 600; }
+.economic-content-section em { color: var(--risk-terra-deep); }
+.economic-section-number { padding-top: 10px; }
+.economic-aside { grid-column: 3; align-self: start; padding: 26px; border-left: 1px solid var(--risk-line); }
+.economic-aside p { margin: 12px 0 0; color: var(--risk-muted); font-size: 13px; line-height: 1.55; }
+.economic-conclusion > div { padding: clamp(36px, 5vw, 72px); background: var(--risk-terra-wash); }
+.economic-conclusion blockquote { margin: 0; }
+.economic-conclusion blockquote p { color: var(--risk-ink); font-family: var(--serif); font-size: clamp(34px, 3.4vw, 58px); line-height: 1.12; }
+
+@media (max-width: 1024px) {
+  .risk-hub-page,
+  .economic-risk-page { --risk-wide: min(100% - 56px, 960px); }
+  .risk-hub-hero { grid-template-columns: 1fr; }
+  .risk-hub-hero > div { grid-template-columns: 1fr; gap: 28px; }
+  .risk-pathway-copy h2 { font-size: clamp(46px, 6vw, 68px); }
+  .economic-hero h1 { grid-column: 1 / 13; }
+  .economic-hero-bottom { grid-column: 3 / 13; }
+  .economic-opening,
+  .economic-content-section,
+  .economic-conclusion { grid-template-columns: 2fr 8fr 2fr; }
+}
+
+@media (max-width: 768px) {
+  .risk-hub-page,
+  .economic-risk-page { --risk-wide: calc(100% - 36px); }
+  .risk-hub-hero { padding-top: 58px; }
+  .risk-hub-hero h1 { font-size: clamp(55px, 12.8vw, 82px); }
+  .risk-pathway-grid { grid-template-columns: 1fr; }
+  .risk-pathway { min-height: 440px; }
+  .risk-hub-note { grid-template-columns: 1fr; gap: 18px; }
+  .risk-hub-note p { grid-column: 1; }
+  .economic-hero { min-height: 0; display: block; }
+  .economic-kicker { margin-top: 46px; }
+  .economic-hero h1 { margin: 70px 0 56px; font-size: clamp(58px, 13vw, 92px); }
+  .economic-hero-bottom { grid-template-columns: 1fr; gap: 28px; }
+  .economic-progression { grid-template-columns: 1fr 1fr; }
+  .economic-progression span:nth-child(3) { border-left: 1px solid var(--risk-line); }
+  .economic-opening,
+  .economic-content-section,
+  .economic-conclusion { grid-template-columns: 42px 1fr; gap: 18px; }
+  .economic-opening > div,
+  .economic-content-section > div,
+  .economic-conclusion > div { grid-column: 2; }
+  .economic-aside { display: none; }
+}
+
+@media (max-width: 430px) {
+  .risk-hub-page,
+  .economic-risk-page { --risk-wide: calc(100% - 28px); }
+  .risk-hub-hero { padding-top: 48px; }
+  .risk-hub-hero h1 { font-size: 52px; }
+  .risk-hub-hero > div > p { font-size: 15px; }
+  .risk-pathway { min-height: 410px; padding: 26px 22px; }
+  .risk-pathway-meta { display: grid; }
+  .risk-pathway-copy h2 { font-size: 46px; }
+  .economic-hero { padding-top: 40px; }
+  .economic-hero h1 { font-size: clamp(50px, 14.5vw, 66px); }
+  .economic-hero-bottom > p { font-size: 24px; }
+  .economic-progression span { min-height: 74px; padding: 18px 14px; font-size: 8px; }
+  .economic-opening,
+  .economic-content-section,
+  .economic-conclusion { grid-template-columns: 30px 1fr; gap: 12px; padding-block: 80px; }
+  .economic-content-section h2,
+  .economic-conclusion h2 { font-size: 48px; }
+  .economic-content-section h3 { font-size: 35px; }
+  .economic-opening p,
+  .economic-content-section p,
+  .economic-conclusion p { font-size: 20px; line-height: 1.58; }
+  .economic-conclusion > div { padding: 26px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .risk-pathway,
+  .risk-pathway-copy h2,
+  .risk-pathway-action i { transition: none; }
+}

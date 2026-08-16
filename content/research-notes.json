@@ -1,0 +1,515 @@
+[
+  {
+    "slug": "ai-expands-the-job",
+    "type": "NOTE",
+    "date": "2026-08-16",
+    "topics": ["ai-work", "worker-health"],
+    "author": "Dr Charles Broutin",
+    "featured": true,
+    "source": "LinkedIn — Charles Broutin",
+    "sourceUrl": "https://lnkd.in/eXQVjKqV",
+    "originUrl": "https://lnkd.in/eXQVjKqV",
+    "title": {
+      "fr": "Quand l’IA élargit le métier avant de le remplacer",
+      "en": "When AI expands the job before it replaces it"
+    },
+    "abstract": {
+      "fr": "L’IA permet d’accomplir des tâches historiquement associées à d’autres professions. Cette autonomie apparente peut aussi déplacer la charge, les responsabilités et le travail de vérification.",
+      "en": "AI lets workers perform tasks historically associated with other professions. This apparent autonomy may also shift workload, responsibility and verification work."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Les frontières du métier deviennent plus poreuses",
+          "paragraphs": [
+            "Un rapport d’OpenAI indique que 43,5 % des messages professionnels adressés à ChatGPT et portant sur une tâche spécifique concernent une activité historiquement associée à une autre profession. Un commercial peut explorer lui-même un jeu de données ; un professionnel du marketing peut dépanner un site ou écrire un script simple.",
+            "Cette évolution peut élargir l’autonomie et raccourcir les délais. Mais elle peut aussi ajouter des missions sans retirer la charge initiale, déplacer le travail de contrôle vers des personnes qui ne disposent pas toujours du temps ou de l’expertise nécessaires, et rendre plus incertaines les frontières de responsabilité."
+          ]
+        },
+        {
+          "heading": "Observer le travail qui s’ajoute",
+          "paragraphs": [
+            "Du point de vue de la santé au travail, le sujet n’est donc pas seulement la substitution des emplois. Il concerne aussi l’intensité du travail, l’autonomie réelle, les rapports sociaux, les conflits de valeurs et l’insécurité liée à l’évolution des compétences attendues.",
+            "Une organisation sûre rend visible ce travail nouveau : vérification, arbitrage, récupération après erreur, apprentissage et coordination avec les spécialistes. Elle ne confond pas capacité technique et capacité professionnelle à répondre des conséquences."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Job boundaries are becoming porous",
+          "paragraphs": [
+            "An OpenAI report indicates that 43.5% of work-related ChatGPT messages concerning a specific task involve an activity historically associated with another occupation. A salesperson can explore a dataset; a marketing professional can troubleshoot a website or write a simple script.",
+            "This may widen autonomy and shorten delays. It may also add duties without removing existing workload, move verification to people who lack time or specialist expertise, and blur accountability."
+          ]
+        },
+        {
+          "heading": "Observe the work that is added",
+          "paragraphs": [
+            "From an occupational-health perspective, the issue is not limited to job substitution. It also concerns work intensity, real autonomy, social relations, value conflicts and insecurity around changing skill expectations.",
+            "A safe organisation makes this new work visible: verification, arbitration, recovery after error, learning and coordination with specialists. It does not confuse technical capability with the professional capacity to answer for consequences."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "L’expansion silencieuse d’un poste peut précéder de longtemps toute automatisation visible. La prévention doit examiner ce que l’IA ajoute, retire et déplace dans le travail réel.",
+      "en": "The silent expansion of a job can precede visible automation by years. Prevention must examine what AI adds, removes and shifts in real work."
+    }
+  },
+  {
+    "slug": "ai-managers-work",
+    "type": "FIELD NOTE",
+    "date": "2026-08-15",
+    "topics": ["algorithmic-management", "worker-health"],
+    "author": "Dr Charles Broutin",
+    "featured": true,
+    "source": "IA Santé Travail — note de terrain",
+    "sourceUrl": "/risques-prevention/",
+    "originUrl": "",
+    "title": {
+      "fr": "Que se passe-t-il lorsque le manager est une IA ?",
+      "en": "What happens when the manager is an AI?"
+    },
+    "abstract": {
+      "fr": "Quand un système distribue les tâches, mesure l’activité ou recommande une décision, il modifie l’autorité sans nécessairement rendre la responsabilité plus claire.",
+      "en": "When a system assigns tasks, measures activity or recommends a decision, it changes authority without necessarily making responsibility clearer."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Une autorité distribuée",
+          "paragraphs": [
+            "Le management algorithmique ne remplace pas toujours un responsable par une machine identifiable. Il répartit souvent l’autorité entre un modèle, une interface, des objectifs paramétrés, des données historiques et les personnes qui doivent appliquer ou contester la recommandation.",
+            "Cette distribution peut accélérer la coordination. Elle peut aussi rendre difficile l’identification de celui qui fixe réellement la norme, explique une décision ou assume une erreur."
+          ]
+        },
+        {
+          "heading": "Préserver une capacité de discussion",
+          "paragraphs": [
+            "Une décision assistée doit rester intelligible pour les personnes concernées. Elles doivent savoir quelles données ont compté, qui peut corriger le système et comment faire valoir une situation que le modèle ne représente pas.",
+            "L’enjeu de prévention est moins de désigner l’algorithme comme manager que de vérifier si l’organisation maintient une autorité humaine joignable, compétente et responsable."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Distributed authority",
+          "paragraphs": [
+            "Algorithmic management does not always replace a manager with an identifiable machine. It often distributes authority across a model, an interface, configured targets, historical data and the people expected to apply or challenge a recommendation.",
+            "This can speed up coordination. It can also make it difficult to identify who actually sets the norm, explains a decision or owns an error."
+          ]
+        },
+        {
+          "heading": "Preserve the capacity to discuss",
+          "paragraphs": [
+            "An assisted decision must remain understandable to those affected. They need to know which data mattered, who can correct the system and how to raise a situation the model does not represent.",
+            "The prevention question is not whether the algorithm should be called a manager, but whether the organisation retains an accessible, competent and accountable human authority."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Quand l’autorité devient diffuse, la contestation et la réparation peuvent disparaître alors même que le contrôle du travail augmente.",
+      "en": "When authority becomes diffuse, challenge and repair can disappear even as control over work increases."
+    }
+  },
+  {
+    "slug": "occupational-health-ai-safety",
+    "type": "RESEARCH",
+    "date": "2026-08-14",
+    "topics": ["ai-safety", "worker-health"],
+    "author": "Dr Charles Broutin",
+    "featured": true,
+    "source": "IA Santé Travail — programme de recherche",
+    "sourceUrl": "/risques-prevention/",
+    "originUrl": "",
+    "title": {
+      "fr": "La santé au travail est un enjeu d’AI safety",
+      "en": "Occupational health is an AI safety issue"
+    },
+    "abstract": {
+      "fr": "Un modèle peut être techniquement fiable et néanmoins rendre le travail plus intense, moins autonome ou plus incertain. La sécurité doit inclure les effets du système déployé sur les personnes.",
+      "en": "A model can be technically reliable and still make work more intense, less autonomous or more uncertain. Safety must include the effects of the deployed system on people."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Du modèle au système de travail",
+          "paragraphs": [
+            "L’AI safety étudie généralement la fiabilité, la robustesse, le contrôle ou le mésusage des modèles. Au travail, ces propriétés ne décrivent pourtant qu’une partie du risque. Une IA entre dans une organisation avec des objectifs, des délais, des asymétries de pouvoir et des règles de responsabilité.",
+            "Le système réellement déployé est l’interaction entre le modèle, la tâche, les travailleurs, l’organisation et les modalités de mise en œuvre. Sa sécurité ne peut donc pas être déduite d’un benchmark technique."
+          ]
+        },
+        {
+          "heading": "La santé comme propriété du déploiement",
+          "paragraphs": [
+            "Charge cognitive, intensification, surveillance, autonomie, qualité empêchée et insécurité professionnelle peuvent être affectées sans incident spectaculaire. Ces effets progressifs sont néanmoins des défaillances de sécurité lorsqu’ils dégradent durablement la santé ou la capacité d’agir.",
+            "Élargir l’AI safety à la santé au travail consiste à observer ces transformations avant le déploiement, puis dans l’activité réelle, avec les travailleurs et les professionnels de la prévention."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "From the model to the work system",
+          "paragraphs": [
+            "AI safety commonly studies model reliability, robustness, control and misuse. At work, these properties describe only part of the risk. AI enters an organisation shaped by targets, deadlines, power asymmetries and rules of responsibility.",
+            "The system actually deployed is the interaction between model, task, workers, organisation and implementation choices. Its safety cannot be inferred from a technical benchmark."
+          ]
+        },
+        {
+          "heading": "Health as a property of deployment",
+          "paragraphs": [
+            "Cognitive load, intensification, surveillance, autonomy, prevented quality and employment insecurity can change without a spectacular incident. Yet these gradual effects are safety failures when they durably damage health or the capacity to act.",
+            "Extending AI safety to occupational health means observing these transformations before deployment and then in real activity, with workers and prevention professionals."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "La sécurité d’une IA au travail ne se limite pas à ce que fait le modèle : elle dépend aussi de ce que son déploiement fait aux travailleurs.",
+      "en": "Safety at work is not limited to what a model does; it also depends on what its deployment does to workers."
+    }
+  },
+  {
+    "slug": "compliance-does-not-make-deployment-safe",
+    "type": "POLICY NOTE",
+    "date": "2026-08-13",
+    "topics": ["governance-prevention", "ai-safety"],
+    "author": "Dr Charles Broutin",
+    "featured": true,
+    "source": "IA Santé Travail — analyse de gouvernance",
+    "sourceUrl": "/droit-gouvernance/",
+    "originUrl": "",
+    "title": {
+      "fr": "La conformité ne suffit pas à rendre un déploiement sûr",
+      "en": "Compliance does not make AI deployment safe"
+    },
+    "abstract": {
+      "fr": "Une classification juridique établit des obligations. Elle ne remplace ni l’analyse du travail réel, ni la discussion des usages, ni le suivi des effets après déploiement.",
+      "en": "Legal classification creates obligations. It does not replace analysis of real work, discussion of use or monitoring after deployment."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Le droit fixe un plancher",
+          "paragraphs": [
+            "La conformité aide à identifier des responsabilités, des documents et des contrôles nécessaires. Elle offre un langage commun pour traiter les données, informer les personnes et encadrer certains systèmes à risque.",
+            "Mais un projet conforme peut encore être mal adapté à la tâche, dégrader la qualité du travail ou déplacer silencieusement la responsabilité vers l’utilisateur."
+          ]
+        },
+        {
+          "heading": "La prévention examine la situation",
+          "paragraphs": [
+            "La sécurité demande de confronter les règles au travail réellement effectué : marges de manœuvre, exceptions, délais, capacité de contrôle, compétences et effets sur les collectifs.",
+            "Le droit répond à la question de ce qui est permis et exigé. La prévention ajoute une autre question : dans ces conditions précises, ce déploiement protège-t-il durablement les personnes ?"
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Law sets a floor",
+          "paragraphs": [
+            "Compliance helps identify necessary responsibilities, documentation and controls. It provides a common language for handling data, informing people and governing certain high-risk systems.",
+            "Yet a compliant project can still be poorly fitted to the task, damage work quality or quietly move responsibility onto the user."
+          ]
+        },
+        {
+          "heading": "Prevention examines the situation",
+          "paragraphs": [
+            "Safety requires testing rules against work as actually performed: room for manoeuvre, exceptions, deadlines, control capacity, skills and effects on collectives.",
+            "Law addresses what is permitted and required. Prevention adds another question: under these precise conditions, does this deployment protect people over time?"
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Confondre conformité et sécurité crée un angle mort précisément là où les effets organisationnels apparaissent.",
+      "en": "Confusing compliance with safety creates a blind spot precisely where organisational effects emerge."
+    }
+  },
+  {
+    "slug": "ai-changes-work-before-employment",
+    "type": "NOTE",
+    "date": "2026-08-12",
+    "topics": ["ai-work", "worker-health"],
+    "author": "Dr Charles Broutin",
+    "featured": false,
+    "source": "LinkedIn — Charles Broutin",
+    "sourceUrl": "https://lnkd.in/eu-DM7pq",
+    "originUrl": "https://lnkd.in/eu-DM7pq",
+    "title": {
+      "fr": "L’IA transforme le travail avant de transformer l’emploi",
+      "en": "AI changes work before it changes employment"
+    },
+    "abstract": {
+      "fr": "La transformation commence par le sens du métier, la reconnaissance, l’autonomie et la valeur de l’expertise — bien avant qu’un poste ne disparaisse.",
+      "en": "Transformation begins with meaning, recognition, autonomy and the value of expertise — long before a job disappears."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Le futur est déjà distribué de manière inégale",
+          "paragraphs": [
+            "Lorsque l’IA s’approche du cœur d’un métier — chercher, créer, juger ou être reconnu pour une expertise — l’effet professionnel ne se résume pas à une mesure de productivité. Il touche l’identité, le sens et la place de chacun dans le collectif.",
+            "L’anxiété liée à l’obsolescence, la perte de reconnaissance, le sentiment de dépossession, les conflits de valeurs ou la réduction de l’autonomie peuvent apparaître avant toute suppression d’emploi."
+          ]
+        },
+        {
+          "heading": "Donner du temps à l’appropriation",
+          "paragraphs": [
+            "La technologie peut transformer une activité plus vite que les travailleurs et les collectifs ne peuvent en reconstruire les règles. L’organisation doit donc créer du temps de discussion, préserver les savoir-faire et reconnaître les nouvelles formes de contribution.",
+            "Une transformation durable ne demande pas seulement aux personnes de suivre le rythme du modèle. Elle fait évoluer les objectifs, les rôles et les critères de qualité avec elles."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "The future is already unevenly distributed",
+          "paragraphs": [
+            "When AI approaches the heart of a profession — searching, creating, judging or being recognised for expertise — its occupational effect cannot be reduced to productivity. It affects identity, meaning and each person’s place in the collective.",
+            "Obsolescence anxiety, loss of recognition, dispossession, value conflicts and reduced autonomy can appear before any job is removed."
+          ]
+        },
+        {
+          "heading": "Make time for appropriation",
+          "paragraphs": [
+            "Technology can change an activity faster than workers and collectives can rebuild its rules. Organisations must create time for discussion, preserve know-how and recognise new forms of contribution.",
+            "A durable transformation does not merely ask people to keep pace with the model. It evolves targets, roles and quality criteria with them."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Attendre les chiffres de l’emploi pour agir revient à ignorer les transformations sanitaires et professionnelles déjà présentes.",
+      "en": "Waiting for employment statistics means overlooking occupational and health transformations already under way."
+    }
+  },
+  {
+    "slug": "hidden-work-created-by-ai",
+    "type": "FIELD NOTE",
+    "date": "2026-08-11",
+    "topics": ["worker-health", "ai-work"],
+    "author": "Dr Charles Broutin",
+    "featured": false,
+    "source": "IA Santé Travail — observation organisationnelle",
+    "sourceUrl": "/risques-prevention/",
+    "originUrl": "",
+    "title": {
+      "fr": "Le travail invisible créé par l’IA",
+      "en": "The hidden work created by AI"
+    },
+    "abstract": {
+      "fr": "Vérifier, reformuler, intégrer, signaler et récupérer après erreur : l’automatisation supprime certaines opérations mais en crée d’autres, souvent non comptabilisées.",
+      "en": "Checking, reframing, integrating, reporting and recovering from error: automation removes some operations while creating others that often go uncounted."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "La production accélère, le contrôle demeure",
+          "paragraphs": [
+            "Un système génératif produit rapidement une réponse, mais quelqu’un doit encore en vérifier l’exactitude, la légalité et l’adéquation. Cette vigilance est un travail : elle demande du temps, des compétences, de l’attention et une autorité suffisante pour refuser la sortie.",
+            "Lorsque ce travail n’est pas reconnu, le gain affiché par l’outil peut être obtenu au prix d’une intensification silencieuse."
+          ]
+        },
+        {
+          "heading": "Mesurer la chaîne complète",
+          "paragraphs": [
+            "L’évaluation devrait inclure la préparation des données, la formulation des demandes, la vérification, la correction, la documentation et la récupération après incident.",
+            "Le bon indicateur n’est pas seulement le temps de génération. C’est le temps total nécessaire pour produire un résultat dont une personne peut réellement répondre."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Production accelerates; control remains",
+          "paragraphs": [
+            "A generative system produces an answer quickly, but someone must still verify its accuracy, legality and fitness. This vigilance is work: it requires time, skills, attention and sufficient authority to reject the output.",
+            "When that work is not recognised, the tool’s visible gain may be purchased through silent intensification."
+          ]
+        },
+        {
+          "heading": "Measure the complete chain",
+          "paragraphs": [
+            "Evaluation should include data preparation, prompting, verification, correction, documentation and recovery after incidents.",
+            "The relevant indicator is not generation time alone. It is the total time needed to produce an outcome for which a person can genuinely take responsibility."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Un gain de productivité incomplet peut devenir une charge transférée et invisible. Ce qui n’est pas mesuré ne disparaît pas.",
+      "en": "An incomplete productivity gain can become shifted, invisible workload. Work does not disappear because it is unmeasured."
+    }
+  },
+  {
+    "slug": "responsibility-for-safe-ai-deployment",
+    "type": "POLICY NOTE",
+    "date": "2026-08-10",
+    "topics": ["governance-prevention", "ai-safety"],
+    "author": "Dr Charles Broutin",
+    "featured": false,
+    "source": "IA Santé Travail — cadre de gouvernance",
+    "sourceUrl": "/droit-gouvernance/",
+    "originUrl": "",
+    "title": {
+      "fr": "Qui est responsable d’un déploiement sûr de l’IA au travail ?",
+      "en": "Who is responsible for safe AI deployment at work?"
+    },
+    "abstract": {
+      "fr": "Fournisseur, direction, métiers, informatique, représentants du personnel et prévention voient chacun une partie du système. La sécurité dépend de leur coordination explicite.",
+      "en": "Providers, management, business teams, IT, worker representatives and prevention specialists each see part of the system. Safety depends on explicit coordination."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Une responsabilité qui ne peut pas être déléguée au modèle",
+          "paragraphs": [
+            "Le fournisseur connaît le modèle ; l’employeur organise le travail ; les utilisateurs voient les écarts dans l’activité ; les représentants et professionnels de la prévention observent les effets collectifs et sanitaires. Aucun acteur ne possède seul toutes les informations.",
+            "La responsabilité devient fragile lorsque chacun suppose qu’un autre a vérifié la sécurité ou lorsque la décision finale est attribuée à la recommandation technique."
+          ]
+        },
+        {
+          "heading": "Organiser les boucles de décision",
+          "paragraphs": [
+            "Un déploiement sûr nomme le propriétaire de chaque risque, prévoit des critères d’arrêt et rend les incidents visibles. Il distingue celui qui propose, celui qui autorise, celui qui utilise et celui qui peut suspendre.",
+            "La gouvernance n’est pas une réunion ponctuelle. C’est une boucle qui relie conception, décision, usage, signalement et correction."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Responsibility cannot be delegated to the model",
+          "paragraphs": [
+            "The provider knows the model; the employer organises work; users see discrepancies in activity; representatives and prevention professionals observe collective and health effects. No actor holds all the information alone.",
+            "Responsibility becomes fragile when everyone assumes someone else checked safety, or when the final decision is attributed to a technical recommendation."
+          ]
+        },
+        {
+          "heading": "Organise decision loops",
+          "paragraphs": [
+            "Safe deployment names the owner of each risk, defines stop criteria and makes incidents visible. It distinguishes who proposes, authorises, uses and can suspend.",
+            "Governance is not a one-off meeting. It is a loop connecting design, decision, use, reporting and correction."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Une responsabilité distribuée sans articulation devient facilement une absence de responsabilité opérationnelle.",
+      "en": "Distributed responsibility without coordination can easily become an absence of operational accountability."
+    }
+  },
+  {
+    "slug": "managers-misread-ai-productivity",
+    "type": "RESEARCH",
+    "date": "2026-08-09",
+    "topics": ["ai-work", "algorithmic-management"],
+    "author": "Dr Charles Broutin",
+    "featured": false,
+    "source": "LinkedIn — analyse d’une étude organisationnelle",
+    "sourceUrl": "https://lnkd.in/e5gTANRa",
+    "originUrl": "https://lnkd.in/e5gTANRa",
+    "title": {
+      "fr": "L’IA peut améliorer la productivité. Les managers ne savent pas toujours où.",
+      "en": "AI can improve productivity. Managers may not know where."
+    },
+    "abstract": {
+      "fr": "Seulement 7,8 % des managers étudiés anticipent correctement des effets différents selon les tâches. Une performance hétérogène peut alors devenir une attente homogène.",
+      "en": "Only 7.8% of managers in the study correctly anticipate differing effects across tasks. Heterogeneous performance can then become a homogeneous expectation."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Une moyenne devient une norme",
+          "paragraphs": [
+            "L’étude distingue des tâches sur lesquelles l’IA améliore fortement la performance et d’autres sur lesquelles elle la dégrade. Pourtant, seulement 7,8 % des managers anticipent correctement cette différence et 92,2 % attendent une amélioration sur l’ensemble des tâches.",
+            "Le risque organisationnel apparaît lorsqu’un effet technologique hétérogène est transformé en une attente homogène : objectifs relevés, délais raccourcis ou usage imposé indépendamment de la tâche et de la personne."
+          ]
+        },
+        {
+          "heading": "Changer l’unité d’analyse",
+          "paragraphs": [
+            "Le bénéfice ne dépend pas uniquement de la tâche, du modèle et du travailleur. Il dépend aussi de l’organisation et des modalités du déploiement : formation, droit au doute, vérification, charge et capacité à signaler les échecs.",
+            "Mieux déployer l’IA suppose de ne pas seulement adapter les travailleurs à l’outil, mais aussi d’adapter l’organisation et l’usage de l’outil au travail réel."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "An average becomes a norm",
+          "paragraphs": [
+            "The study distinguishes tasks on which AI markedly improves performance from others on which it degrades it. Yet only 7.8% of managers correctly anticipate this distinction, while 92.2% expect improvement across all tasks.",
+            "Organisational risk emerges when a heterogeneous technological effect becomes a homogeneous expectation: raised targets, shortened deadlines or mandatory use regardless of task and person."
+          ]
+        },
+        {
+          "heading": "Change the unit of analysis",
+          "paragraphs": [
+            "Benefit does not depend only on task, model and worker. It also depends on organisation and deployment choices: training, permission to doubt, verification, workload and the capacity to report failure.",
+            "Better deployment means not only adapting workers to the tool, but adapting the organisation and use of the tool to real work."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Si les bénéfices sont généralisés à tort, l’organisation risque de corriger le travailleur alors que le problème vient de la tâche, du modèle ou du déploiement.",
+      "en": "If benefits are wrongly generalised, the organisation may try to correct the worker when the problem lies in the task, model or deployment."
+    }
+  },
+  {
+    "slug": "france-ai-occupational-health",
+    "type": "POLICY NOTE",
+    "date": "2026-08-08",
+    "topics": ["governance-prevention", "worker-health"],
+    "author": "Dr Charles Broutin",
+    "featured": false,
+    "source": "Plan santé au travail 2026–2030",
+    "sourceUrl": "/usages-terrain/exemple-sante-travail/",
+    "originUrl": "",
+    "title": {
+      "fr": "La France commence à traiter l’IA comme un enjeu de santé au travail",
+      "en": "France is beginning to treat AI as an occupational-health issue"
+    },
+    "abstract": {
+      "fr": "Le Plan santé au travail 2026–2030 inscrit les transformations liées à l’IA dans la prévention et prévoit la création d’un observatoire national de l’IA au travail.",
+      "en": "France’s 2026–2030 occupational-health plan places AI-related transformations within prevention and calls for a national observatory on AI at work."
+    },
+    "content": {
+      "fr": [
+        {
+          "heading": "Un objet explicite de prévention",
+          "paragraphs": [
+            "Le Plan santé au travail 2026–2030 demande que les transformations liées à l’IA soient concertées, respectueuses des conditions de travail et évaluées à partir de leurs effets réels. Il envisage l’IA à la fois comme outil de prévention et comme source possible de risques professionnels.",
+            "Ce déplacement institutionnel est important : il fait entrer les usages de l’IA dans les questions ordinaires d’organisation, de dialogue social et de santé, plutôt que de les laisser au seul domaine technique."
+          ]
+        },
+        {
+          "heading": "Passer du principe à l’observation",
+          "paragraphs": [
+            "L’observatoire annoncé pourra produire des connaissances utiles si les données restent reliées aux situations de travail, aux métiers et aux modalités concrètes de déploiement.",
+            "Les services de prévention et de santé au travail ont ici un rôle : documenter les deux versants de l’IA, accompagner la discussion et suivre les effets dans le temps."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "An explicit object of prevention",
+          "paragraphs": [
+            "France’s 2026–2030 occupational-health plan asks that AI-related transformations be discussed, respectful of working conditions and evaluated through their real effects. It treats AI both as a prevention tool and as a possible source of occupational risk.",
+            "This institutional shift matters: it brings AI use into ordinary questions of organisation, social dialogue and health instead of leaving it solely to technical teams."
+          ]
+        },
+        {
+          "heading": "Move from principle to observation",
+          "paragraphs": [
+            "The planned observatory can produce useful knowledge if its data remain connected to work situations, occupations and concrete deployment choices.",
+            "Occupational-health and prevention services have a role here: documenting both sides of AI, supporting discussion and monitoring effects over time."
+          ]
+        }
+      ]
+    },
+    "whyItMatters": {
+      "fr": "Reconnaître l’IA comme sujet de prévention permet d’agir avant que ses effets organisationnels ne deviennent invisibles ou normalisés.",
+      "en": "Recognising AI as a prevention issue makes it possible to act before organisational effects become invisible or normalised."
+    }
+  }
+]

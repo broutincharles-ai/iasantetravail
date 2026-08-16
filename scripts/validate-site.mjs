@@ -32,6 +32,7 @@ const bilingualPages = new Map([
   ["droit-gouvernance/index.html", "en/legal-governance/index.html"],
   ["usages-terrain/exemple-sante-travail/index.html", "en/uses-and-field/occupational-health-example/index.html"],
   ["ai-safety-agi/index.html", "en/ai-safety-agi/index.html"],
+  ["research/index.html", "en/research/index.html"],
   ["a-propos/index.html", "en/about/index.html"]
 ]);
 

@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
+const ignoredDirectories = new Set([".git", "demo-recherche", "newsletter-backend", "node_modules"]);
 
 async function htmlFiles(directory = root) {
   const entries = await readdir(directory, { withFileTypes: true });
