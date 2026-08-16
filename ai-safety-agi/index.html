@@ -29,12 +29,12 @@
   <meta property="og:image:alt" content="Thomas Cole, Destruction, 1836 — puissance technique et perte de maîtrise">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.iasantetravail.com/ai-safety-agi/#article","headline":"AI safety et AGI : lois d’échelle, benchmarks et risques","description":"Un guide critique sur l’AGI, les lois d’échelle, les capacités des modèles de pointe, les benchmarks et la sécurité.","image":"https://www.iasantetravail.com/assets/images/destruction-1280.webp","inLanguage":"fr-FR","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"mainEntityOfPage":{"@id":"https://www.iasantetravail.com/ai-safety-agi/#webpage"},"about":[{"@type":"Thing","name":"AI safety"},{"@type":"Thing","name":"Intelligence artificielle générale"},{"@type":"Thing","name":"Lois d’échelle"},{"@type":"Thing","name":"Benchmarks d’intelligence artificielle"},{"@type":"Thing","name":"Sécurité du déploiement"}]},{"@type":"WebPage","@id":"https://www.iasantetravail.com/ai-safety-agi/#webpage","url":"https://www.iasantetravail.com/ai-safety-agi/","name":"AI safety et AGI","isPartOf":{"@id":"https://www.iasantetravail.com/#website"},"inLanguage":"fr-FR"},{"@type":"Person","@id":"https://www.iasantetravail.com/a-propos/#person","name":"Charles Broutin","honorificPrefix":"Dr","jobTitle":"Médecin du travail","url":"https://www.iasantetravail.com/a-propos/","sameAs":["https://www.linkedin.com/in/charles-broutin-a03932201"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.iasantetravail.com/"},{"@type":"ListItem","position":2,"name":"AI safety et AGI","item":"https://www.iasantetravail.com/ai-safety-agi/"}]}]}</script>
-  <link rel="stylesheet" href="/assets/css/ai-safety-agi.css?v=2.1">
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=2.1">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=2.1">
-  <link rel="stylesheet" href="/assets/css/components.css?v=2.2">
-  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=2.2">
-  <script defer src="/assets/js/unified-navigation.js?v=2.1"></script>
+  <link rel="stylesheet" href="/assets/css/ai-safety-agi.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.2">
+  <script defer src="/assets/js/unified-navigation.js?v=3.4"></script>
 </head>
 <body class="page-shell-v2 hero-editorial">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -85,11 +85,11 @@
       </div>
 
       <figure class="hero-artwork">
-        <div class="artwork-label"><strong>Puissance sans maîtrise</strong></div>
+        <div class="artwork-label"><strong>Quand la maîtrise cède</strong></div>
         <img src="https://www.iasantetravail.com/assets/images/destruction-1280.webp" alt="The Course of Empire — Destruction, œuvre de Thomas Cole montrant une cité monumentale envahie, incendiée et submergée par le chaos">
         <figcaption>
           <span>Thomas Cole<br>Destruction · 1836</span>
-          <p>Dans la série de Cole, l’apogée de la cité est suivie d’un effondrement brutal lorsque ses moyens de maîtrise ne suffisent plus. Sans en faire une prédiction, cette page utilise l’œuvre pour distinguer puissance et sécurité : le changement d’échelle et les benchmarks décrivent certaines capacités d’un modèle, mais ne démontrent ni sa robustesse, ni son alignement, ni la sûreté de son déploiement dans la société et le travail. <a href="https://explorethomascole.org/project/destruction/" target="_blank" rel="noreferrer">Voir l’œuvre ↗</a></p>
+          <p>La cité paraît puissante jusqu’au moment où les équilibres qui la soutiennent cèdent. L’œuvre rappelle que performance et maîtrise apparente ne suffisent pas : sans vigilance, capacité de recul et possibilité d’interrompre, un système peut rapidement se fragiliser et basculer. <a href="https://explorethomascole.org/project/destruction/" target="_blank" rel="noreferrer">Voir l’œuvre ↗</a></p>
         </figcaption>
       </figure>
     </section>
@@ -132,7 +132,7 @@
       <div class="scaling-layout">
         <figure class="research-figure">
           <div class="figure-meta"><span>Données expérimentales publiées</span><span>Figure 1 · 2020</span></div>
-          <div class="figure-frame"><img src="https://ar5iv.labs.arxiv.org/html/2001.08361/assets/x1.png" alt="Trois graphiques issus de Kaplan et al. montrant que la perte de test diminue régulièrement lorsque le calcul, le volume de données et le nombre de paramètres augmentent, sur des axes logarithmiques" loading="lazy"></div>
+          <div class="figure-frame"><img src="/assets/images/scaling-laws-kaplan-figure-1.png" alt="Trois graphiques issus de Kaplan et al. montrant que la perte de test diminue régulièrement lorsque le calcul, le volume de données et le nombre de paramètres augmentent, sur des axes logarithmiques" width="1920" height="675" loading="lazy" decoding="async"></div>
           <figcaption><strong>Comment lire ce graphique.</strong> Chaque point correspond à une expérience d’entraînement. Les droites noires sont les relations de puissance ajustées par les chercheurs ; plus la « test loss » est basse, meilleure est la prédiction du texte. Les trois panneaux montrent une amélioration régulière avec le calcul, les données et les paramètres, à condition que les deux autres facteurs ne deviennent pas limitants. <a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noreferrer">Kaplan et al., <em>Scaling Laws for Neural Language Models</em> ↗</a></figcaption>
           <div class="figure-reading" aria-label="Lecture des trois panneaux du graphique"><span><b>À gauche</b>Perte en fonction du calcul utilisé.</span><span><b>Au centre</b>Perte en fonction du nombre de jetons.</span><span><b>À droite</b>Perte en fonction du nombre de paramètres.</span></div>
         </figure>

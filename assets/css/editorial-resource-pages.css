@@ -65,6 +65,32 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.risk-resource-page .risk-thesis {
+  width: var(--resource-wrap);
+  margin-inline: auto;
+  padding: clamp(52px, 6vw, 82px) 0 clamp(34px, 4vw, 54px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(150px, .3fr) minmax(0, 1.7fr);
+  gap: clamp(34px, 6vw, 88px);
+  align-items: start;
+}
+.risk-resource-page .risk-thesis h2 {
+  max-width: 970px;
+  margin: 0;
+  font-size: clamp(2.5rem, 4.6vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.risk-resource-page .risk-thesis p:last-child {
+  max-width: 780px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.risk-resource-page .quick-read { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
 .resource-page .quick-read article { min-height: 168px; padding: 27px 30px; border-right: 1px solid var(--line); }
 .resource-page .quick-read article:first-child { padding-left: 0; }
 .resource-page .quick-read article:last-child { border-right: 0; }
@@ -135,6 +161,46 @@
 .source-links a:first-child { padding-top: 0; }
 .source-links a:last-child { border-bottom: 0; }
 .source-links a:hover { color: var(--terra-interactive); }
+
+.risk-resource-page #epidemiologie .cause-card > span {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+.risk-resource-page #epidemiologie .cause-card h3 { margin-top: 40px; }
+.risk-resource-page .source-panel + .contact-band { margin-top: 42px; }
+
+.risk-resource-page #mecanismes {
+  color: var(--ink);
+  background: var(--cream);
+}
+.risk-resource-page #mecanismes .resource-heading > p { color: var(--muted); }
+.risk-resource-page #mecanismes .kicker { color: var(--terra-interactive); }
+.risk-resource-page #mecanismes .ai-factor-grid { border-color: var(--line); }
+.risk-resource-page #mecanismes .ai-factor {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, .28);
+}
+.risk-resource-page #mecanismes .ai-factor > span { color: var(--terra-interactive); }
+.risk-resource-page #mecanismes .ai-factor h3 { color: var(--ink); }
+.risk-resource-page #mecanismes .ai-factor p { color: var(--muted); }
+.risk-resource-page #mecanismes .ai-factor b { color: var(--ink-soft); }
+
+.risk-resource-page .contact-band {
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--terra-interactive);
+  color: var(--ink);
+  background: var(--terracotta-wash);
+}
+.risk-resource-page .contact-band h2 {
+  max-width: 570px;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+}
+.risk-resource-page .contact-band p { color: var(--muted); }
+.risk-resource-page .contact-band a { color: var(--terra-interactive); }
 
 .model-family-grid { margin-top: 52px; border: 1px solid var(--line); display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
 .model-family { min-height: 345px; padding: 31px; border-right: 1px solid var(--line); display: flex; flex-direction: column; }
@@ -208,6 +274,8 @@
   .resource-page .hero { padding-block: 43px; gap: 34px; }
   .resource-page .hero-copy h1 { max-width: 15ch; font-size: clamp(2.65rem, 12vw, 4rem); }
   .resource-page .hero-lede { font-size: 16px; }
+  .risk-resource-page .risk-thesis { grid-template-columns: 1fr; gap: 22px; }
+  .risk-resource-page .risk-thesis h2 { font-size: clamp(2.35rem, 11vw, 3.6rem); }
   .resource-page .artwork figcaption { grid-template-columns: 1fr; }
   .resource-page .quick-read,
   .cause-grid,
@@ -246,5 +314,6 @@
   .resource-section { padding: 58px 14px; }
   .resource-heading h2 { font-size: clamp(2.5rem, 12vw, 3.8rem); }
   .source-panel, .contact-band { grid-template-columns: 1fr; gap: 27px; padding: 25px; }
+  .risk-resource-page .contact-band { grid-template-columns: 1fr; }
   .update-entry { grid-template-columns: 1fr; gap: 12px; }
 }

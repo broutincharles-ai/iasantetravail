@@ -65,10 +65,13 @@ for (const file of htmlFiles) {
   const duplicates = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicates.length) errors.push(`${path.relative(root, file)}: duplicate id(s): ${duplicates.join(", ")}`);
 
-  const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
-  const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
-  if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
-    errors.push(`${path.relative(root, file)}: expected exactly one Google tag, found ${googleTagLoaders} loader(s) and ${googleTagConfigs} config(s)`);
+  const isRedirect = /\bnoindex\b/i.test(html) || /http-equiv=["']refresh["']/i.test(html);
+  if (!isRedirect) {
+    const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
+    const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
+    if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
+      errors.push(`${path.relative(root, file)}: expected exactly one Google tag, found ${googleTagLoaders} loader(s) and ${googleTagConfigs} config(s)`);
+    }
   }
 
   for (const match of markup.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {

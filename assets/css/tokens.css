@@ -1,24 +1,30 @@
 :root {
-  --ink: #17140f;
-  --ink-soft: #3f3931;
-  --cream: #f4ebda;
-  --paper: #fff9f2;
-  --white: #fffdf9;
-  --terra: #a84e1f;
-  --terra-bright: #c94d24;
-  --terra-interactive: #873a16;
-  --prevention: #344f49;
-  --governance: #23383a;
+  --ink: #171a18;
+  --ink-soft: #3f443f;
+  --cream: #eee8dc;
+  --paper: #f3efe6;
+  --paper-light: #f7f3ea;
+  --white: #faf7f0;
+  --terra: #a83e27;
+  --terra-bright: #c85a3a;
+  --terra-interactive: #87301f;
+  --prevention: #1f3730;
+  --terracotta-deep: #8f5747;
+  --terracotta-soft: #d9b3a5;
+  --terracotta-wash: #ead8d1;
+  --governance: var(--terracotta-deep);
   --green: var(--prevention);
   --green-dark: var(--governance);
-  --lavender: #c9c2f2;
-  --lavender-accessible: #4a4090;
+  --lavender: #dda895;
+  --lavender-accessible: #7f3f2f;
   --lavender-dark: var(--lavender-accessible);
-  --muted: #5f584f;
-  --line: rgba(23, 20, 15, 0.16);
-  --line-strong: rgba(23, 20, 15, 0.3);
-  --line-light: rgba(244, 235, 218, 0.24);
-  --shadow-soft: 0 16px 38px -34px rgba(23, 20, 15, 0.48);
+  --sand: #dda895;
+  --olive: #66715b;
+  --muted: #5b615b;
+  --line: rgba(23, 26, 24, 0.17);
+  --line-strong: rgba(23, 26, 24, 0.34);
+  --line-light: rgba(243, 239, 230, 0.24);
+  --shadow-soft: none;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -29,14 +35,17 @@
   --space-7: 48px;
   --space-8: 64px;
   --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
 
-  --content-max: 1440px;
+  --content-max: 1400px;
   --content-wide: 1760px;
   --reading-max: 760px;
   --radius-sm: 0;
   --radius-md: 2px;
   --radius-lg: 4px;
-  --sans: Inter, Geist, "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --serif: Newsreader, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Instrument Sans", Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --wrap: min(var(--content-max), calc(100% - 80px));
   --focus-ring: 0 0 0 3px var(--paper), 0 0 0 6px var(--terra-interactive);
@@ -76,14 +85,19 @@ h1, h2, h3, p { text-wrap: pretty; }
 [hidden] { display: none !important; }
 
 h1,
-h2,
-h3 {
-  font-family: var(--sans);
-  font-weight: 650;
-  letter-spacing: -0.04em;
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.035em;
 }
 
-.serif { font-family: "Fraunces", Georgia, serif; }
+h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.serif { font-family: var(--serif); }
 
 a,
 button,

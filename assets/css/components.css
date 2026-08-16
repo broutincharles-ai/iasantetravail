@@ -402,6 +402,8 @@
 }
 
 /* Editorial generation: square geometry, typographic hierarchy, little shadow. */
+.page-shell-v2 .hero-proof { display: none; }
+
 .page-shell-v2 .button,
 .page-shell-v2 .btn {
   min-height: 48px;

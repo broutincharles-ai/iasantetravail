@@ -37,7 +37,7 @@
     .facts small { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 
     .qualify { background: var(--cream); }
-    .decision-shell { display: grid; grid-template-columns: 1.18fr .82fr; margin-top: 52px; border: 1px solid var(--line); }
+    .decision-shell { display: block; margin-top: 52px; border: 1px solid var(--line); }
     .decision-flow { background: rgba(255, 249, 242, .45); }
     .decision-row { display: grid; grid-template-columns: 70px 1fr 1.1fr; gap: 22px; align-items: center; min-height: 132px; padding: 23px 28px; border-bottom: 1px solid var(--line); }
     .decision-row:last-child { border-bottom: 0; }
@@ -168,11 +168,11 @@
 
     .references { background: var(--white); }
     .reference-panel { display: grid; grid-template-columns: .72fr 1.28fr; margin-top: 52px; border: 1px solid var(--line); }
-    .reference-intro { padding: 34px; color: var(--cream); background: var(--green-dark); }
-    .reference-intro .kicker { color: var(--lavender); }
-    .reference-intro h3 { margin: 45px 0 16px; color: var(--paper); font-size: 31px; letter-spacing: -.045em; }
-    .reference-intro p { margin: 0; color: rgba(244, 235, 218, .7); font-size: 13px; line-height: 1.58; }
-    .reference-date { display: block; margin-top: 31px; padding-top: 18px; border-top: 1px solid var(--line-light); color: var(--lavender); font-family: var(--mono); font-size: 9px; }
+    .reference-intro { padding: 34px; color: var(--ink); border-right: 1px solid var(--line); background: var(--paper-light); }
+    .reference-intro .kicker { color: var(--terra-interactive); }
+    .reference-intro h3 { margin: 45px 0 16px; color: var(--ink); font-size: 31px; letter-spacing: -.045em; }
+    .reference-intro p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.58; }
+    .reference-date { display: block; margin-top: 31px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: 9px; }
     .source-list { padding: 12px 32px; }
     .source-row { display: grid; grid-template-columns: 42px 1fr auto; gap: 18px; align-items: center; min-height: 79px; border-bottom: 1px solid var(--line); }
     .source-row:last-child { border-bottom: 0; }

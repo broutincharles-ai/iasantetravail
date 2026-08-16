@@ -7,9 +7,9 @@
       --terra-bright: #ce4520;
       --lavender: #c9c2f2;
       --lavender-dark: #4a4090;
-      --green: #3d5b52;
-      --night: #23383a;
-      --night-deep: #17292a;
+      --green: #9a6857;
+      --night: #8f5747;
+      --night-deep: #714638;
       --muted: #5f584f;
       --line: rgba(23,20,15,.14);
       --light-line: rgba(255,249,242,.18);
@@ -362,7 +362,7 @@
       overflow: hidden;
       border-radius: 28px;
       color: var(--paper);
-      background: radial-gradient(circle at 88% 10%,rgba(201,194,242,.18),transparent 23rem),linear-gradient(135deg,#315048,var(--night));
+      background: radial-gradient(circle at 88% 10%,rgba(201,194,242,.18),transparent 23rem),linear-gradient(135deg,#a66f5b,var(--night));
       box-shadow: var(--shadow);
     }
     .reference-copy { padding: clamp(34px,6vw,68px); border-right: 1px solid var(--light-line); }
