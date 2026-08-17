@@ -266,9 +266,21 @@
   .risk-pathway { min-height: 410px; padding: 26px 22px; }
   .risk-pathway-meta { display: grid; }
   .risk-pathway-copy h2 { font-size: 46px; }
-  .economic-hero { padding-top: 40px; }
-  .economic-hero h1 { font-size: clamp(50px, 14.5vw, 66px); }
-  .economic-hero-bottom > p { font-size: 24px; }
+  .economic-hero { padding-top: 30px; }
+  .economic-kicker {
+    max-width: 100%;
+    margin-top: 34px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    line-height: 1.55;
+  }
+  .economic-hero h1 {
+    margin: 48px 0 42px;
+    font-size: clamp(44px, 12.4vw, 52px);
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+  }
+  .economic-hero-bottom > p { font-size: 22px; }
   .economic-progression span { min-height: 74px; padding: 18px 14px; font-size: 8px; }
   .economic-opening,
   .economic-content-section,
@@ -280,6 +292,11 @@
   .economic-content-section p,
   .economic-conclusion p { font-size: 20px; line-height: 1.58; }
   .economic-conclusion > div { padding: 26px 22px; }
+}
+
+@media (max-width: 350px) {
+  .risk-hub-hero h1 { font-size: 48px; }
+  .economic-hero h1 { font-size: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
