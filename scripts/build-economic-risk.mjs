@@ -168,8 +168,8 @@ const html = `<!doctype html>
   <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
-  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.2">
-  <link rel="stylesheet" href="/assets/css/risk-pathways.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.3">
+  <link rel="stylesheet" href="/assets/css/risk-pathways.css?v=1.1">
   <script defer src="/assets/js/unified-navigation.js?v=3.7"></script>
 </head>
 <body class="page-shell-v2 economic-risk-page">

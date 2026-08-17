@@ -4,7 +4,7 @@
   if (!document.querySelector('link[href*="/assets/css/unified-navigation.css"]')) {
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
-    stylesheet.href = "/assets/css/unified-navigation.css?v=3.1";
+    stylesheet.href = "/assets/css/unified-navigation.css?v=3.3";
     document.head.appendChild(stylesheet);
   }
 
