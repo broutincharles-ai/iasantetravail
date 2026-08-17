@@ -299,6 +299,16 @@
   .economic-hero h1 { font-size: 42px; }
 }
 
+@media (max-width: 768px) {
+  .economic-opening {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .economic-opening > .economic-section-number,
+  .economic-opening > div { grid-column: 1; }
+  .economic-opening > .economic-section-number { padding-top: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .risk-pathway,
   .risk-pathway-copy h2,
