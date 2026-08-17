@@ -46,40 +46,24 @@
     ["Occupational risks", "/en/risks-prevention/", "risks"],
     ["Assess", "/en/evaluate/", "evaluate"],
     ["Govern", "/en/legal-governance/", "governance"],
-    ["Research", "/en/research/", "research"],
+    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
     ["About", "/en/about/", "about"]
   ] : [
     ["Comprendre", "/comprendre/", "understand"],
     ["Risques", "/risques-prevention/", "risks"],
     ["Évaluer", "/evaluer/", "evaluate"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
-    ["Recherche", "/research/", "research"],
+    ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
     ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
   ];
 
   const explore = isEnglish ? [
     ["Uses & field", "/en/uses-and-field/"],
-    ["AI safety & AGI", "/en/ai-safety-agi/"],
-    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
     ["Model landscape", "/en/resources/models/"]
   ] : [
     ["Usages & terrain", "/usages-terrain/"],
-    ["AI safety & AGI", "/ai-safety-agi/"],
-    ["L’IA dans les SPSTI", "/usages-terrain/exemple-sante-travail/"],
     ["Panorama des modèles", "/ressources/modeles/"]
-  ];
-
-  const resources = isEnglish ? [
-    ["AI safety & AGI", "/en/ai-safety-agi/"],
-    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
-    ["Model landscape", "/en/resources/models/"],
-    ["About", "/en/about/"]
-  ] : [
-    ["AI safety & AGI", "/ai-safety-agi/"],
-    ["L’IA dans les SPSTI", "/usages-terrain/exemple-sante-travail/"],
-    ["Panorama des modèles", "/ressources/modeles/"],
-    ["À propos", "/a-propos/"]
   ];
 
   const activeKey = (() => {
@@ -87,7 +71,7 @@
     if (/^\/(?:en\/risks-prevention|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
-    if (/^\/(?:en\/)?research\//.test(path)) return "research";
+    if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
     if (/^\/lecture\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";
@@ -96,8 +80,6 @@
   const activeAttribute = key => key === activeKey ? ' aria-current="page"' : "";
   const primaryLinks = primary.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("");
   const exploreLinks = explore.map(([label, href]) => `<a href="${href}"${path === href ? ' aria-current="page"' : ""}>${label}</a>`).join("");
-  const resourceLinks = resources.map(([label, href]) => `<a href="${href}"${path === href ? ' aria-current="page"' : ""}>${label}</a>`).join("");
-  const resourceIsCurrent = resources.some(([, href]) => path === href);
   const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
   const existingPageNav = existingHeader?.querySelector(".page-nav");
   const legacyPageToc = document.querySelector("main .page-toc");
@@ -122,10 +104,6 @@
       </a>
       <div class="system-desktop-navigation">
         <div class="system-primary-links">${primaryLinks}</div>
-        <details class="system-resources${resourceIsCurrent ? " is-current" : ""}">
-          <summary>${isEnglish ? "Resources" : "Ressources"}</summary>
-          <div class="system-resources-panel">${resourceLinks}</div>
-        </details>
       </div>
       <a class="system-language-switch" href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}" aria-label="${isEnglish ? "View this page in French" : "View this page in English"}">${isEnglish ? "FR" : "EN"}</a>
       <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
@@ -140,7 +118,6 @@
 
   const menuButton = header.querySelector(".system-menu-button");
   const mobilePanel = header.querySelector(".system-mobile-panel");
-  const resourcesMenu = header.querySelector(".system-resources");
   const closeMenu = (restoreFocus = false) => {
     header.classList.remove("is-open");
     document.body.classList.remove("system-menu-open");
@@ -158,11 +135,8 @@
 
   menuButton.addEventListener("click", () => header.classList.contains("is-open") ? closeMenu() : openMenu());
   mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", () => closeMenu()));
-  resourcesMenu?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => resourcesMenu.removeAttribute("open")));
   document.addEventListener("click", event => { if (!header.contains(event.target)) closeMenu(); });
-  document.addEventListener("click", event => { if (resourcesMenu && !resourcesMenu.contains(event.target)) resourcesMenu.removeAttribute("open"); });
   document.addEventListener("keydown", event => { if (event.key === "Escape" && header.classList.contains("is-open")) closeMenu(true); });
-  document.addEventListener("keydown", event => { if (event.key === "Escape") resourcesMenu?.removeAttribute("open"); });
   window.matchMedia("(min-width: 1121px)").addEventListener?.("change", event => { if (event.matches) closeMenu(); });
 
   const pageNav = header.querySelector(".page-nav");
