@@ -54,6 +54,7 @@
     ["Évaluer", "/evaluer/", "evaluate"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Recherche", "/research/", "research"],
+    ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
   ];
 
@@ -87,6 +88,7 @@
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
     if (/^\/(?:en\/)?research\//.test(path)) return "research";
+    if (/^\/lecture\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";
   })();

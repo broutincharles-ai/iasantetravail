@@ -162,7 +162,7 @@ function stylesAndScripts(detail = false) {
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.2">
   <link rel="stylesheet" href="/assets/css/research.css?v=1.1">
-  <script defer src="/assets/js/unified-navigation.js?v=3.6"></script>${detail ? "" : `\n  <script defer src="/assets/js/research-filters.js?v=1.0"></script>`}`;
+  <script defer src="/assets/js/unified-navigation.js?v=3.7"></script>${detail ? "" : `\n  <script defer src="/assets/js/research-filters.js?v=1.0"></script>`}`;
 }
 
 function fallbackHeader(lang, pageNav = "") {
