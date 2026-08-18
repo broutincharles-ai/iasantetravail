@@ -79,7 +79,6 @@
 
   const activeAttribute = key => key === activeKey ? ' aria-current="page"' : "";
   const primaryLinks = primary.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("");
-  const exploreLinks = explore.map(([label, href]) => `<a href="${href}"${path === href ? ' aria-current="page"' : ""}>${label}</a>`).join("");
   const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
   const existingPageNav = existingHeader?.querySelector(".page-nav");
   const legacyPageToc = document.querySelector("main .page-toc");
@@ -109,7 +108,6 @@
       <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
         <div class="system-mobile-group"><span class="system-mobile-label">${isEnglish ? "Main" : "Principal"}</span>${primaryLinks}</div>
-        <div class="system-mobile-group"><span class="system-mobile-label">${isEnglish ? "Explore" : "Explorer"}</span>${exploreLinks}</div>
       </div>
     </nav>${pageNavMarkup}`;
 
