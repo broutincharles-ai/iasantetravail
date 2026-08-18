@@ -1,0 +1,10 @@
+# IA & Santé au Travail
+
+Repères indépendants, sourcés et datés pour comprendre, évaluer et gouverner l’intelligence artificielle à partir du travail réel et de la santé.
+
+- https://www.iasantetravail.com/ — Accueil et parcours principaux sur l’intelligence artificielle au travail.
+- https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels.
+- https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.
+- https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.
+- https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
+- https://www.iasantetravail.com/a-propos/ — Auteur, démarche éditoriale, publications et champ de travail du site.

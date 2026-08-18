@@ -1,0 +1,183 @@
+.psychosocial-breadcrumb {
+  width: var(--resource-wrap);
+  margin: 0 auto;
+  padding: 24px 0 0;
+}
+
+.psychosocial-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font: 700 10px/1.5 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.psychosocial-breadcrumb li + li::before {
+  margin-right: 10px;
+  color: var(--terra);
+  content: "→";
+}
+
+.psychosocial-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.psychosocial-breadcrumb a:hover { color: var(--terra-interactive); }
+
+.risk-resource-page .article-meta {
+  max-width: 720px;
+  margin: -8px 0 22px;
+  color: var(--muted);
+  font: 700 10px/1.6 var(--mono);
+}
+
+.risk-resource-page .article-meta a,
+.psychosocial-inline-link {
+  color: var(--terra-interactive);
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.psychosocial-essential {
+  padding: clamp(62px, 7vw, 92px) max(40px, calc(50% - 720px));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.psychosocial-essential-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, .42fr) minmax(0, 1.58fr);
+  gap: clamp(42px, 7vw, 92px);
+}
+
+.psychosocial-essential h2 {
+  margin: 22px 0 0;
+  font-size: clamp(42px, 4.6vw, 68px);
+  line-height: 1;
+}
+
+.page-essentiel-answer {
+  max-width: 940px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 19px;
+  line-height: 1.72;
+}
+
+.psychosocial-essential-points {
+  margin: 34px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.psychosocial-essential-points li {
+  min-height: 86px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.psychosocial-essential-points span {
+  color: var(--terra-interactive);
+  font: 800 10px/1.5 var(--mono);
+}
+
+.psychosocial-essential-points strong { color: var(--ink); }
+
+.psychosocial-citation-sentence {
+  margin: 30px 0 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--terra);
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.68;
+}
+
+.psychosocial-citation-sentence a {
+  color: var(--terra-interactive);
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.psychosocial-author-card {
+  margin-top: 34px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.psychosocial-author-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Lisibilité des sous-parties sur écran. */
+.risk-resource-page .cause-card p,
+.risk-resource-page .health-column li,
+.risk-resource-page .ai-factor p,
+.risk-resource-page .factor-card p {
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.risk-resource-page .cause-card small,
+.risk-resource-page .ai-factor b,
+.risk-resource-page .factor-card b {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.risk-resource-page .source-links a {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.risk-resource-page .health-note {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.risk-resource-page .quick-read p {
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.risk-resource-page .health-note a {
+  color: var(--paper);
+  font-weight: 750;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .psychosocial-essential { padding-inline: 22px; }
+  .psychosocial-essential-layout { grid-template-columns: 1fr; gap: 26px; }
+}
+
+@media (max-width: 640px) {
+  .psychosocial-breadcrumb { width: calc(100% - 30px); }
+  .psychosocial-essential { padding-inline: 15px; }
+  .page-essentiel-answer { font-size: 17px; }
+  .psychosocial-essential-points li {
+    grid-template-columns: 42px minmax(0, 1fr);
+    font-size: 14px;
+  }
+  .risk-resource-page .article-meta { font-size: 9px; }
+}
