@@ -1,0 +1,76 @@
+.home-article-meta {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font: 700 10px/1.6 var(--mono);
+}
+
+.home-article-meta a,
+.home-inline-link {
+  color: var(--terra-interactive);
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.home-essentiel {
+  padding-block: clamp(58px, 7vw, 92px);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.home-essentiel .page-essentiel-answer {
+  max-width: 64ch;
+  margin: 0;
+  padding-left: clamp(16px, 2vw, 26px);
+  border-left: 3px solid var(--terra);
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: clamp(19px, 1.6vw, 23px);
+  font-weight: 420;
+  letter-spacing: -.01em;
+  line-height: 1.55;
+}
+
+.home-essentiel-points {
+  margin: 34px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.home-essentiel-points li {
+  min-height: 82px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 20px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.home-essentiel-points span {
+  color: var(--terra-interactive);
+  font: 800 10px/1.5 var(--mono);
+}
+
+.home-essentiel-points strong { color: var(--ink); }
+
+.home-publication-evidence {
+  padding-left: 18px;
+  border-left: 3px solid var(--terra);
+  color: var(--ink-soft) !important;
+}
+
+.home-publication-evidence strong { color: var(--ink); }
+
+@media (max-width: 680px) {
+  .home-article-meta { font-size: 9px; }
+  .home-essentiel-points li {
+    grid-template-columns: 42px minmax(0, 1fr);
+    font-size: 14px;
+  }
+}
