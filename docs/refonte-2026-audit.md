@@ -6,7 +6,7 @@
 - Deux générations visuelles coexistent. Les pages récentes utilisent un bandeau éditorial carré avec les œuvres de Thomas Cole, mais 18 d’entre elles embarquent encore chacune entre 19 et 29 Ko de CSS dans leur HTML. Les pages plus anciennes s’appuient sur `site.css`, `components.css`, `layout.css` et des feuilles propres aux rubriques.
 - Dix paires français/anglais contiennent un bloc CSS strictement identique dans chaque langue. La duplication est donc évitable sans modifier leur contenu.
 - Deux shells concurrents sont actifs : `site-shell.js` sur l’ancienne génération et `unified-navigation.js` sur les démos intégrées. Les deux fabriquent navigation et pied de page, avec des structures et des points de rupture différents.
-- La navigation récente expose huit liens de même niveau, dont le questionnaire, AI safety, le cas SPSTI et À propos. Sur petit écran, elle devient une grille de huit cases au lieu d’un menu hiérarchisé. La page Risques n’est pas présente dans ce bandeau récent.
+- La navigation récente expose huit liens de même niveau, dont le questionnaire, une ancienne rubrique sur les modèles de pointe, le cas SPSTI et À propos. Sur petit écran, elle devient une grille de huit cases au lieu d’un menu hiérarchisé. La page Risques n’est pas présente dans ce bandeau récent.
 - Les pages principales récentes conservent la bonne identité visuelle, mais elles reprennent presque toutes le même grand hero texte + œuvre + trois repères. Le rôle de chaque page est donc moins net qu’il ne devrait l’être.
 - La page d’accueil est riche mais trop proche d’une page de fond : elle répète des développements ensuite présents dans Comprendre, Risques et Évaluer.
 - La page Évaluer explique surtout la méthode. Elle ne présente pas immédiatement les trois situations d’usage : avant déploiement, après déploiement, et approfondissement méthodologique.
@@ -25,12 +25,12 @@ Navigation principale, limitée à cinq entrées :
 4. Évaluer
 5. Droit & gouvernance
 
-Un menu secondaire « Ressources » regroupe AI safety & AGI, le cas SPSTI, le panorama des modèles, les sources et mises à jour, et À propos. Le bouton distinct « Évaluer un projet » mène directement au questionnaire court.
+Un menu secondaire « Ressources » regroupe les capacités et limites des modèles, le cas SPSTI, le panorama des modèles, les sources et mises à jour, et À propos. Le bouton distinct « Évaluer un projet » mène directement au questionnaire court.
 
 Les pages sont réparties entre trois variantes de hero :
 
 - **Manifeste** : accueil uniquement, œuvre et thèse fortes ;
-- **Éditorial** : Comprendre, Risques, Droit, AI safety, avec œuvre recadrée et contenu visible plus tôt ;
+- **Éditorial** : Comprendre, Risques, Droit et ressources techniques, avec œuvre recadrée et contenu visible plus tôt ;
 - **Outil** : Évaluer et questionnaires, avec choix ou formulaire prioritaire.
 
 ## Stratégie technique

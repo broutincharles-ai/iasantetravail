@@ -5,7 +5,9 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const notes = JSON.parse(await readFile(path.join(root, "content/research-notes.json"), "utf8"));
 const site = "https://www.iasantetravail.com";
-const modified = "2026-08-16";
+const siteName = "IA Santé Travail";
+const modifiedFor = note => note.modified || note.date;
+const listingModified = notes.map(modifiedFor).sort().at(-1);
 
 const languages = {
   fr: {
@@ -101,12 +103,12 @@ const languages = {
 const topicLabels = {
   "ai-work": { fr: "IA & travail", en: "AI & Work" },
   "worker-health": { fr: "Santé des travailleurs", en: "Worker Health" },
-  "ai-safety": { fr: "AI safety", en: "AI Safety" },
+  "risk-prevention": { fr: "Risques & prévention", en: "Risk & Prevention" },
   "algorithmic-management": { fr: "Management algorithmique", en: "Algorithmic Management" },
   "governance-prevention": { fr: "Gouvernance & prévention", en: "Governance & Prevention" }
 };
 
-const filterOrder = ["ai-work", "worker-health", "ai-safety", "algorithmic-management", "governance-prevention"];
+const filterOrder = ["ai-work", "worker-health", "risk-prevention", "algorithmic-management", "governance-prevention"];
 
 function escapeHtml(value = "") {
   return String(value)
@@ -187,17 +189,18 @@ function listingHead(lang) {
   const alternate = `${site}${t.alternateListing}`;
   const title = lang === "fr" ? "Research — IA, travail et santé au travail" : "Research — AI, work and occupational health";
   const description = lang === "fr"
-    ? "Recherche, notes et observations sur l’IA, l’organisation du travail, la santé des travailleurs et la sécurité des déploiements."
-    : "Research, notes and observations on AI, work organisation, worker health and safe deployment.";
+    ? "Recherche, notes et observations sur l’IA, l’organisation du travail, la santé des travailleurs et la prévention des risques liés aux déploiements."
+    : "Research, notes and observations on AI, work organisation, worker health and the prevention of deployment-related risks.";
+  const authorUrl = `${site}${lang === "fr" ? "/a-propos/" : "/en/about/"}`;
   const itemList = notes.map((note, index) => ({
     "@type": "ListItem", position: index + 1, url: `${site}${noteUrl(note, lang)}`, name: note.title[lang]
   }));
   const structured = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "CollectionPage", "@id": `${canonical}#page`, url: canonical, name: title, description, inLanguage: t.code, dateModified: modified, mainEntity: { "@id": `${canonical}#list` } },
+      { "@type": "CollectionPage", "@id": `${canonical}#page`, url: canonical, name: title, description, inLanguage: t.code, dateModified: listingModified, mainEntity: { "@id": `${canonical}#list` } },
       { "@type": "ItemList", "@id": `${canonical}#list`, numberOfItems: notes.length, itemListElement: itemList },
-      { "@type": "Person", "@id": `${site}/a-propos/#person`, name: "Charles Broutin", honorificPrefix: "Dr", jobTitle: lang === "fr" ? "Médecin du travail" : "Occupational physician", url: `${site}${lang === "fr" ? "/a-propos/" : "/en/about/"}` }
+      { "@type": "Person", "@id": `${authorUrl}#person`, name: "Charles Broutin", honorificPrefix: "Dr", jobTitle: lang === "fr" ? "Médecin du travail" : "Occupational physician", url: authorUrl }
     ]
   };
   return `${analytics()}
@@ -214,7 +217,7 @@ function listingHead(lang) {
   <link rel="alternate" hreflang="x-default" href="${site}/research/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="${t.locale}">
-  <meta property="og:site_name" content="${escapeHtml(t.brand)}">
+  <meta property="og:site_name" content="${siteName}">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${canonical}">
@@ -307,20 +310,22 @@ function articleStructuredData(note, lang) {
   const t = languages[lang];
   const url = `${site}${noteUrl(note, lang)}`;
   const description = note.abstract[lang];
+  const authorUrl = `${site}${lang === "fr" ? "/a-propos/" : "/en/about/"}`;
+  const authorId = `${authorUrl}#person`;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": note.type === "RESEARCH" ? "ScholarlyArticle" : "Article",
         "@id": `${url}#article`, headline: note.title[lang], description, inLanguage: t.code,
-        datePublished: note.date, dateModified: modified, articleSection: note.type,
+        datePublished: note.date, dateModified: modifiedFor(note), articleSection: note.type,
         keywords: note.topics.map(topic => topicName(topic, lang)).join(", "),
-        author: { "@id": `${site}/a-propos/#person` },
+        author: { "@id": authorId },
         mainEntityOfPage: { "@id": `${url}#page` },
         isPartOf: { "@id": `${site}${t.listing}#page` }
       },
       { "@type": "WebPage", "@id": `${url}#page`, url, name: note.title[lang], description, inLanguage: t.code },
-      { "@type": "Person", "@id": `${site}/a-propos/#person`, name: "Charles Broutin", honorificPrefix: "Dr", jobTitle: lang === "fr" ? "Médecin du travail" : "Occupational physician", url: `${site}${lang === "fr" ? "/a-propos/" : "/en/about/"}` },
+      { "@type": "Person", "@id": authorId, name: "Charles Broutin", honorificPrefix: "Dr", jobTitle: lang === "fr" ? "Médecin du travail" : "Occupational physician", url: authorUrl },
       { "@type": "BreadcrumbList", itemListElement: [
         { "@type": "ListItem", position: 1, name: lang === "fr" ? "Accueil" : "Home", item: `${site}${t.home}` },
         { "@type": "ListItem", position: 2, name: "Research", item: `${site}${t.listing}` },
@@ -350,13 +355,13 @@ function detailHead(note, lang) {
   <link rel="alternate" hreflang="x-default" href="${site}${noteUrl(note, "fr")}">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="${t.locale}">
-  <meta property="og:site_name" content="${escapeHtml(t.brand)}">
+  <meta property="og:site_name" content="${siteName}">
   <meta property="og:title" content="${escapeHtml(note.title[lang])}">
   <meta property="og:description" content="${escapeHtml(note.abstract[lang])}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${site}/assets/images/og-risques.jpg">
   <meta property="article:published_time" content="${note.date}">
-  <meta property="article:modified_time" content="${modified}">
+  <meta property="article:modified_time" content="${modifiedFor(note)}">
   <meta property="article:section" content="${escapeHtml(note.type)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(note.title[lang])}">
@@ -431,11 +436,11 @@ for (const lang of Object.keys(languages)) {
 
 const sitemapPath = path.join(root, "sitemap.xml");
 const sitemap = await readFile(sitemapPath, "utf8");
-const researchSitemapUrls = Object.keys(languages).flatMap(lang => [
-  languages[lang].listing,
-  ...notes.map(note => noteUrl(note, lang))
+const researchSitemapEntries = Object.keys(languages).flatMap(lang => [
+  { url: languages[lang].listing, modified: listingModified },
+  ...notes.map(note => ({ url: noteUrl(note, lang), modified: modifiedFor(note) }))
 ]);
-const sitemapBlock = `<!-- research:start -->\n${researchSitemapUrls.map(url => `<url><loc>${site}${url}</loc><lastmod>${modified}</lastmod></url>`).join("\n")}\n<!-- research:end -->`;
+const sitemapBlock = `<!-- research:start -->\n${researchSitemapEntries.map(entry => `<url><loc>${site}${entry.url}</loc><lastmod>${entry.modified}</lastmod></url>`).join("\n")}\n<!-- research:end -->`;
 const nextSitemap = sitemap.includes("<!-- research:start -->")
   ? sitemap.replace(/<!-- research:start -->[\s\S]*?<!-- research:end -->/, sitemapBlock)
   : sitemap.replace("</urlset>", `${sitemapBlock}\n</urlset>`);

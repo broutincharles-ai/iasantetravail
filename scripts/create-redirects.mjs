@@ -4,17 +4,26 @@ import path from "node:path";
 const root = process.cwd();
 const redirects = {
   "apropos/index.html": "/a-propos/",
-  "modeles/index.html": "/ressources/modeles/",
+  "modeles/index.html": "/comprendre/",
   "risques/index.html": "/risques-prevention/",
-  "impact/index.html": "/evaluer/impact/",
-  "impact/suivi.html": "/evaluer/impact/suivi.html",
-  "evaluer/benchmark/index.html": "/evaluer/#capacites",
-  "en/evaluate/benchmark/index.html": "/en/evaluate/#capabilities",
+  "impact/index.html": "/evaluer/",
+  "impact/suivi.html": "/evaluer/",
+  "evaluer/benchmark/index.html": "/comprendre/#benchmarks",
+  "en/evaluate/benchmark/index.html": "/en/understand/#benchmarks",
   "legislation/index.html": "/droit-gouvernance/",
-  "pratique/index.html": "/usages-terrain/",
-  "terrain/index.html": "/usages-terrain/retours-terrain/",
+  "pratique/index.html": "/usages-terrain/exemple-sante-travail/",
+  "terrain/index.html": "/usages-terrain/exemple-sante-travail/",
   "macroeconomie/index.html": "/comprendre/",
-  "labor-ia/index.html": "/usages-terrain/"
+  "labor-ia/index.html": "/usages-terrain/exemple-sante-travail/",
+  "accompagner-en-amont/index.html": "/usages-terrain/exemple-sante-travail/",
+  "en-pratique/index.html": "/usages-terrain/exemple-sante-travail/",
+  "ia-préconisations/index.html": "/usages-terrain/exemple-sante-travail/",
+  "l-ia-facteur-de-bien-etre/index.html": "/risques-prevention/",
+  "ia-santé-au-travail/index.html": "/",
+  "ai-safety-agi/index.html": "/comprendre/",
+  "en/ai-safety-agi/index.html": "/en/understand/",
+  "research/occupational-health-ai-safety/index.html": "/lecture/",
+  "en/research/occupational-health-ai-safety/index.html": "/en/reading/"
 };
 
 for (const [file, destination] of Object.entries(redirects)) {

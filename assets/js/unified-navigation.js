@@ -18,14 +18,12 @@
     "/usages-terrain/exemple-sante-travail/": "/en/uses-and-field/occupational-health-example/",
     "/usages-terrain/avant-deploiement/": "/en/uses-and-field/before-deployment/",
     "/usages-terrain/retours-terrain/": "/en/uses-and-field/after-deployment/",
-    "/risques-prevention/": "/en/risks-prevention/",
+    "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
     "/evaluer/": "/en/evaluate/",
-    "/evaluer/benchmark/": "/en/evaluate/benchmark/",
     "/evaluer/impact/": "/en/evaluate/impact/",
     "/evaluer/impact/suivi.html": "/en/evaluate/impact/follow-up.html",
     "/droit-gouvernance/": "/en/legal-governance/",
-    "/ai-safety-agi/": "/en/ai-safety-agi/",
-    "/research/": "/en/research/",
+    "/lecture/": "/en/reading/",
     "/a-propos/": "/en/about/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
@@ -34,11 +32,9 @@
 
   const reversePairs = Object.fromEntries(Object.entries(pairs).map(([fr, en]) => [en, fr]));
   const isResearchPath = /^\/(?:en\/)?research\//.test(path);
-  const isFrenchRiskSubpage = /^\/risques-prevention\/.+/.test(path);
   const researchTranslationUrl = isEnglish ? path.replace(/^\/en/, "") : `/en${path}`;
   const translationUrl = isResearchPath
     ? researchTranslationUrl
-    : isFrenchRiskSubpage ? "/en/risks-prevention/"
     : isEnglish ? (reversePairs[path] || "/") : (pairs[path] || "/en/");
 
   const primary = isEnglish ? [
@@ -47,6 +43,7 @@
     ["Assess", "/en/evaluate/", "evaluate"],
     ["Govern", "/en/legal-governance/", "governance"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
+    ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
     ["Comprendre", "/comprendre/", "understand"],
@@ -58,21 +55,13 @@
     ["À propos", "/a-propos/", "about"]
   ];
 
-  const explore = isEnglish ? [
-    ["Uses & field", "/en/uses-and-field/"],
-    ["Model landscape", "/en/resources/models/"]
-  ] : [
-    ["Usages & terrain", "/usages-terrain/"],
-    ["Panorama des modèles", "/ressources/modeles/"]
-  ];
-
   const activeKey = (() => {
     if (/^\/(?:en\/)?(?:understand|comprendre)/.test(path)) return "understand";
     if (/^\/(?:en\/risks-prevention|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
     if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
-    if (/^\/lecture\//.test(path)) return "reading";
+    if (/^\/(?:en\/reading|lecture)\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";
   })();
@@ -194,7 +183,6 @@
     <div class="system-footer-grid">
       <div><a class="system-brand" href="${isEnglish ? "/en/" : "/"}"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong></span></a><p>${isEnglish ? "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health." : "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé."}</p></div>
       <div><h2>${isEnglish ? "Pathways" : "Parcours"}</h2><ul>${primary.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></div>
-      <div><h2>${isEnglish ? "Explore" : "Explorer"}</h2><ul>${explore.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></div>
       <div><h2>${isEnglish ? "Follow" : "Suivre"}</h2><ul><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer">Newsletter ↗</a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li><li><a href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}">${isEnglish ? "Version française" : "English version"}</a></li><li><a href="${isEnglish ? "/en/privacy/" : "/confidentialite/"}">${isEnglish ? "Privacy" : "Confidentialité"}</a></li><li><a href="${isEnglish ? "/en/legal-notice/" : "/mentions-legales/"}">${isEnglish ? "Legal notice" : "Mentions légales"}</a></li></ul></div>
     </div>
     <div class="system-footer-bottom"><span>© 2026 ${isEnglish ? "AI & Occupational Health — Independent editorial initiative." : "IA & Santé au Travail — Initiative éditoriale indépendante."}</span><span>${isEnglish ? "Thomas Cole paintings · public domain" : "Œuvres de Thomas Cole · domaine public"}</span></div>`;

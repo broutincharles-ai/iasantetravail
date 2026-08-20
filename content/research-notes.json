@@ -114,37 +114,38 @@
     }
   },
   {
-    "slug": "occupational-health-ai-safety",
+    "slug": "occupational-health-ai-prevention",
     "type": "RESEARCH",
     "date": "2026-08-14",
-    "topics": ["ai-safety", "worker-health"],
+    "modified": "2026-08-20",
+    "topics": ["risk-prevention", "worker-health"],
     "author": "Dr Charles Broutin",
     "featured": true,
     "source": "IA Santé Travail — programme de recherche",
     "sourceUrl": "/risques-prevention/",
     "originUrl": "",
     "title": {
-      "fr": "La santé au travail est un enjeu d’AI safety",
-      "en": "Occupational health is an AI safety issue"
+      "fr": "Prévenir les effets de l’IA sur la santé au travail",
+      "en": "Preventing the effects of AI on occupational health"
     },
     "abstract": {
-      "fr": "Un modèle peut être techniquement fiable et néanmoins rendre le travail plus intense, moins autonome ou plus incertain. La sécurité doit inclure les effets du système déployé sur les personnes.",
-      "en": "A model can be technically reliable and still make work more intense, less autonomous or more uncertain. Safety must include the effects of the deployed system on people."
+      "fr": "Un modèle peut être techniquement fiable et néanmoins rendre le travail plus intense, moins autonome ou plus incertain. L’évaluation doit inclure les effets du système déployé sur les personnes.",
+      "en": "A model can be technically reliable and still make work more intense, less autonomous or more uncertain. Assessment must include the effects of the deployed system on people."
     },
     "content": {
       "fr": [
         {
           "heading": "Du modèle au système de travail",
           "paragraphs": [
-            "L’AI safety étudie généralement la fiabilité, la robustesse, le contrôle ou le mésusage des modèles. Au travail, ces propriétés ne décrivent pourtant qu’une partie du risque. Une IA entre dans une organisation avec des objectifs, des délais, des asymétries de pouvoir et des règles de responsabilité.",
-            "Le système réellement déployé est l’interaction entre le modèle, la tâche, les travailleurs, l’organisation et les modalités de mise en œuvre. Sa sécurité ne peut donc pas être déduite d’un benchmark technique."
+            "La fiabilité, la robustesse, le contrôle et le mésusage des modèles sont des dimensions techniques importantes. Au travail, elles ne décrivent pourtant qu’une partie du risque. Une IA entre dans une organisation avec des objectifs, des délais, des asymétries de pouvoir et des règles de responsabilité.",
+            "Le système réellement déployé est l’interaction entre le modèle, la tâche, les travailleurs, l’organisation et les modalités de mise en œuvre. Ses effets sur le travail ne peuvent donc pas être déduits d’un benchmark technique."
           ]
         },
         {
-          "heading": "La santé comme propriété du déploiement",
+          "heading": "La santé comme dimension du déploiement",
           "paragraphs": [
-            "Charge cognitive, intensification, surveillance, autonomie, qualité empêchée et insécurité professionnelle peuvent être affectées sans incident spectaculaire. Ces effets progressifs sont néanmoins des défaillances de sécurité lorsqu’ils dégradent durablement la santé ou la capacité d’agir.",
-            "Élargir l’AI safety à la santé au travail consiste à observer ces transformations avant le déploiement, puis dans l’activité réelle, avec les travailleurs et les professionnels de la prévention."
+            "Charge cognitive, intensification, surveillance, autonomie, qualité empêchée et insécurité professionnelle peuvent être affectées sans incident spectaculaire. Ces effets progressifs constituent des signaux de risque lorsqu’ils dégradent durablement la santé ou la capacité d’agir.",
+            "Prévenir les effets de l’IA sur la santé au travail consiste à observer ces transformations avant le déploiement, puis dans l’activité réelle, avec les travailleurs et les professionnels de la prévention."
           ]
         }
       ],
@@ -152,29 +153,30 @@
         {
           "heading": "From the model to the work system",
           "paragraphs": [
-            "AI safety commonly studies model reliability, robustness, control and misuse. At work, these properties describe only part of the risk. AI enters an organisation shaped by targets, deadlines, power asymmetries and rules of responsibility.",
-            "The system actually deployed is the interaction between model, task, workers, organisation and implementation choices. Its safety cannot be inferred from a technical benchmark."
+            "Model reliability, robustness, control and misuse are important technical dimensions. At work, they describe only part of the risk. AI enters an organisation shaped by targets, deadlines, power asymmetries and rules of responsibility.",
+            "The system actually deployed is the interaction between model, task, workers, organisation and implementation choices. Its effects on work cannot be inferred from a technical benchmark."
           ]
         },
         {
-          "heading": "Health as a property of deployment",
+          "heading": "Health as a dimension of deployment",
           "paragraphs": [
-            "Cognitive load, intensification, surveillance, autonomy, prevented quality and employment insecurity can change without a spectacular incident. Yet these gradual effects are safety failures when they durably damage health or the capacity to act.",
-            "Extending AI safety to occupational health means observing these transformations before deployment and then in real activity, with workers and prevention professionals."
+            "Cognitive load, intensification, surveillance, autonomy, prevented quality and employment insecurity can change without a spectacular incident. These gradual changes are risk signals when they durably damage health or the capacity to act.",
+            "Preventing the effects of AI on occupational health means observing these transformations before deployment and then in real activity, with workers and prevention professionals."
           ]
         }
       ]
     },
     "whyItMatters": {
-      "fr": "La sécurité d’une IA au travail ne se limite pas à ce que fait le modèle : elle dépend aussi de ce que son déploiement fait aux travailleurs.",
-      "en": "Safety at work is not limited to what a model does; it also depends on what its deployment does to workers."
+      "fr": "L’évaluation d’une IA au travail ne se limite pas à ce que fait le modèle : elle examine aussi ce que son déploiement fait aux travailleurs.",
+      "en": "Workplace AI assessment is not limited to what a model does; it also examines what deployment does to workers."
     }
   },
   {
     "slug": "compliance-does-not-make-deployment-safe",
     "type": "POLICY NOTE",
     "date": "2026-08-13",
-    "topics": ["governance-prevention", "ai-safety"],
+    "modified": "2026-08-20",
+    "topics": ["governance-prevention", "risk-prevention"],
     "author": "Dr Charles Broutin",
     "featured": true,
     "source": "IA Santé Travail — analyse de gouvernance",
@@ -345,7 +347,8 @@
     "slug": "responsibility-for-safe-ai-deployment",
     "type": "POLICY NOTE",
     "date": "2026-08-10",
-    "topics": ["governance-prevention", "ai-safety"],
+    "modified": "2026-08-20",
+    "topics": ["governance-prevention", "risk-prevention"],
     "author": "Dr Charles Broutin",
     "featured": false,
     "source": "IA Santé Travail — cadre de gouvernance",

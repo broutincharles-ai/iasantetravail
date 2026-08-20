@@ -1,14 +1,15 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { INDEXABLE_FILES } from "./indexing-scope.mjs";
 
 const root = process.cwd();
-const ignoredDirectories = new Set([".git", "demo-recherche", "newsletter-backend", "node_modules"]);
+const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
 
 async function htmlFiles(directory = root) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
-    if (ignoredDirectories.has(entry.name)) continue;
+    if (ignoredDirectories.has(entry.name) || entry.name.startsWith("demo-")) continue;
     const absolute = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...await htmlFiles(absolute));
     else if (entry.name.endsWith(".html")) files.push(absolute);
@@ -50,6 +51,8 @@ function publicUrl(file) {
 
 const records = [];
 for (const file of await htmlFiles()) {
+  const relative = path.relative(root, file).split(path.sep).join("/");
+  if (!INDEXABLE_FILES.has(relative)) continue;
   const html = await readFile(file, "utf8");
   if (/name=["']robots["'][^>]+noindex/i.test(html) || /http-equiv=["']refresh["']/i.test(html)) continue;
   const url = publicUrl(file);
