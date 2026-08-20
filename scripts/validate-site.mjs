@@ -1,5 +1,6 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { INDEXABLE_FILES, INDEXABLE_PAIRS, publicUrl } from "./indexing-scope.mjs";
 
 const root = process.cwd();
 const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
@@ -8,7 +9,7 @@ async function files(directory = root) {
   const entries = await readdir(directory, { withFileTypes: true });
   const result = [];
   for (const entry of entries) {
-    if (ignoredDirectories.has(entry.name)) continue;
+    if (ignoredDirectories.has(entry.name) || entry.name.startsWith("demo-")) continue;
     const absolute = path.join(directory, entry.name);
     if (entry.isDirectory()) result.push(...await files(absolute));
     else result.push(absolute);
@@ -22,19 +23,9 @@ const cssFiles = allFiles.filter(file => file.endsWith(".css"));
 const errors = [];
 let checkedLinks = 0;
 const htmlCache = new Map();
-const bilingualPages = new Map([
-  ["index.html", "en/index.html"],
-  ["comprendre/index.html", "en/understand/index.html"],
-  ["usages-terrain/index.html", "en/uses-and-field/index.html"],
-  ["risques-prevention/index.html", "en/risks-prevention/index.html"],
-  ["evaluer/index.html", "en/evaluate/index.html"],
-  ["evaluer/impact/index.html", "en/evaluate/impact/index.html"],
-  ["droit-gouvernance/index.html", "en/legal-governance/index.html"],
-  ["usages-terrain/exemple-sante-travail/index.html", "en/uses-and-field/occupational-health-example/index.html"],
-  ["ai-safety-agi/index.html", "en/ai-safety-agi/index.html"],
-  ["research/index.html", "en/research/index.html"],
-  ["a-propos/index.html", "en/about/index.html"]
-]);
+const indexableTitles = new Map();
+const indexableDescriptions = new Map();
+const bilingualPages = new Map(INDEXABLE_PAIRS.map(({ fr, en }) => [fr, en]));
 
 async function cachedHtml(file) {
   if (!htmlCache.has(file)) htmlCache.set(file, await readFile(file, "utf8"));
@@ -57,8 +48,29 @@ function metaContent(html, name) {
   return tag?.match(/content=["']([^"']*)/i)?.[1] || "";
 }
 
+function metadataCount(head, attribute, value) {
+  return (head.match(new RegExp(`<meta\\b(?=[^>]*${attribute}=["']${value}["'])[^>]*>`, "gi")) || []).length;
+}
+
+function linkCount(head, rel) {
+  return (head.match(new RegExp(`<link\\b(?=[^>]*rel=["']${rel}["'])[^>]*>`, "gi")) || []).length;
+}
+
+function linkHref(head, rel) {
+  const tag = (head.match(/<link\b[^>]*>/gi) || [])
+    .find(candidate => new RegExp(`rel=["']${rel}["']`, "i").test(candidate));
+  return tag?.match(/href=["']([^"']*)/i)?.[1] || "";
+}
+
+function alternateHref(head, lang) {
+  const tag = (head.match(/<link\b[^>]*>/gi) || [])
+    .find(candidate => /rel=["']alternate["']/i.test(candidate) && new RegExp(`hreflang=["']${lang}["']`, "i").test(candidate));
+  return tag?.match(/href=["']([^"']*)/i)?.[1] || "";
+}
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
+  const relative = path.relative(root, file).split(path.sep).join("/");
   const markup = html
     .replace(/<script\b[\s\S]*?<\/script>/gi, "")
     .replace(/<style\b[\s\S]*?<\/style>/gi, "");
@@ -66,8 +78,11 @@ for (const file of htmlFiles) {
   const duplicates = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicates.length) errors.push(`${path.relative(root, file)}: duplicate id(s): ${duplicates.join(", ")}`);
 
-  const isRedirect = /\bnoindex\b/i.test(html) || /http-equiv=["']refresh["']/i.test(html);
-  if (!isRedirect) {
+  const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+  const shouldIndex = INDEXABLE_FILES.has(relative);
+  if (shouldIndex && hasNoindex) errors.push(`${relative}: allowlisted page must be indexable`);
+  if (!shouldIndex && !hasNoindex) errors.push(`${relative}: page outside the 16-URL allowlist must be noindex`);
+  if (shouldIndex) {
     const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
     const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
     if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
@@ -124,34 +139,99 @@ for (const file of cssFiles) {
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
-  if (/\bnoindex\b/i.test(html) || /http-equiv=["']refresh["']/i.test(html)) continue;
+  const relative = path.relative(root, file).split(path.sep).join("/");
+  if (!INDEXABLE_FILES.has(relative)) continue;
+  const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
   const hasSharedShell = /site-shell\.js/.test(html);
   const hasInlineShell = /<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(html)
     && /<footer\b[^>]*class=["'][^"']*\bsite-footer\b/i.test(html);
   if (!hasSharedShell && !hasInlineShell) errors.push(`${path.relative(root, file)}: navigation shell missing`);
-  const title = html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1].replace(/&amp;/g, "&").trim() || "";
-  const description = metaContent(html, "description").trim();
+  const titleCount = [...head.matchAll(/<title\b/gi)].length;
+  const descriptionCount = metadataCount(head, "name", "description");
+  const canonicalCount = linkCount(head, "canonical");
+  const title = head.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1].replace(/&amp;/g, "&").trim() || "";
+  const description = metaContent(head, "description").trim();
   const documentMarkup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
   const h1Count = [...documentMarkup.matchAll(/<h1\b/gi)].length;
+  if (titleCount !== 1) errors.push(`${path.relative(root, file)}: expected exactly one title in head, found ${titleCount}`);
+  if (descriptionCount !== 1) errors.push(`${path.relative(root, file)}: expected exactly one meta description, found ${descriptionCount}`);
+  if (canonicalCount !== 1 && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: expected exactly one canonical, found ${canonicalCount}`);
   if (!title) errors.push(`${path.relative(root, file)}: title missing`);
   else if (title.length > 70) errors.push(`${path.relative(root, file)}: title is ${title.length} characters; keep it at 70 or fewer`);
   if (!description) errors.push(`${path.relative(root, file)}: meta description missing`);
   else if (description.length > 180) errors.push(`${path.relative(root, file)}: meta description is ${description.length} characters; keep it at 180 or fewer`);
+  if (title) {
+    if (indexableTitles.has(title)) errors.push(`${relative}: duplicate title also used by ${indexableTitles.get(title)}`);
+    else indexableTitles.set(title, relative);
+  }
+  if (description) {
+    if (indexableDescriptions.has(description)) errors.push(`${relative}: duplicate meta description also used by ${indexableDescriptions.get(description)}`);
+    else indexableDescriptions.set(description, relative);
+  }
   if (h1Count !== 1) errors.push(`${path.relative(root, file)}: expected exactly one h1, found ${h1Count}`);
-  if (!/<link[^>]+rel=["']canonical["']/i.test(html) && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: canonical missing`);
+  const requiredSocialMetadata = [
+    ["property", "og:title"], ["property", "og:description"], ["property", "og:url"],
+    ["property", "og:type"], ["property", "og:site_name"], ["name", "twitter:card"],
+    ["name", "twitter:title"], ["name", "twitter:description"]
+  ];
+  for (const [attribute, value] of requiredSocialMetadata) {
+    const count = metadataCount(head, attribute, value);
+    if (count !== 1) errors.push(`${path.relative(root, file)}: expected exactly one ${value}, found ${count}`);
+  }
+  const canonical = linkHref(head, "canonical");
+  if (canonical && !canonical.startsWith("https://www.iasantetravail.com/")) {
+    errors.push(`${path.relative(root, file)}: canonical must use the absolute www HTTPS domain`);
+  }
+  const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
+  if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
+  if (/(?:ai[ -]?safety|sécurité (?:de l[’']ia|ia)|agi safety|frontier ai)/i.test(html)) {
+    errors.push(`${path.relative(root, file)}: legacy AI-safety positioning remains in indexable content`);
+  }
+}
+
+const robots = await readFile(path.join(root, "robots.txt"), "utf8");
+if (!/^Sitemap: https:\/\/www\.iasantetravail\.com\/sitemap\.xml$/m.test(robots)) {
+  errors.push("robots.txt: canonical sitemap declaration missing");
+}
+if (/Disallow:\s*\/$/m.test(robots)) errors.push("robots.txt: site root must not be blocked");
+
+const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
+const expectedSitemapUrls = new Set(INDEXABLE_PAIRS.flatMap(({ fr, en }) => [publicUrl(fr), publicUrl(en)]));
+const actualSitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
+for (const expected of expectedSitemapUrls) {
+  if (!actualSitemapUrls.has(expected)) errors.push(`sitemap.xml: allowlisted URL missing: ${expected}`);
+}
+for (const actual of actualSitemapUrls) {
+  if (!expectedSitemapUrls.has(actual)) errors.push(`sitemap.xml: URL outside the 16-page allowlist: ${actual}`);
+}
+if (actualSitemapUrls.size !== 16) errors.push(`sitemap.xml: expected exactly 16 URLs, found ${actualSitemapUrls.size}`);
+
+for (const [indexFile, languageFiles] of [
+  ["assets/js/search-index.js", INDEXABLE_PAIRS.map(({ fr }) => fr)],
+  ["assets/js/search-index-en.js", INDEXABLE_PAIRS.map(({ en }) => en)]
+]) {
+  const source = await readFile(path.join(root, indexFile), "utf8");
+  const records = JSON.parse(source.replace(/^window\.SEARCH_INDEX\s*=\s*/, "").replace(/;\s*$/, ""));
+  const expectedUrls = new Set(languageFiles.map(relative => relative === "index.html" ? "" : relative.replace(/index\.html$/, "")));
+  const actualUrls = new Set(records.map(record => record.url));
+  if (records.length !== 8) errors.push(`${indexFile}: expected exactly 8 pages, found ${records.length}`);
+  for (const expected of expectedUrls) if (!actualUrls.has(expected)) errors.push(`${indexFile}: missing ${expected || "/"}`);
+  for (const actual of actualUrls) if (!expectedUrls.has(actual)) errors.push(`${indexFile}: unexpected ${actual}`);
 }
 
 for (const [frPage, enPage] of bilingualPages) {
+  const expected = { fr: publicUrl(frPage), en: publicUrl(enPage) };
   for (const [relative, lang] of [[frPage, "fr"], [enPage, "en"]]) {
     const html = await cachedHtml(path.join(root, relative));
     const documentMarkup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
     const h1Count = [...documentMarkup.matchAll(/<h1\b/gi)].length;
     if (h1Count !== 1) errors.push(`${relative}: expected exactly one h1, found ${h1Count}`);
     if (!new RegExp(`<html[^>]+lang=["']${lang}["']`, "i").test(html)) errors.push(`${relative}: html lang must be ${lang}`);
-    if (!/<link[^>]+rel=["']alternate["'][^>]+hreflang=["']fr["']/i.test(html)) errors.push(`${relative}: French hreflang missing`);
-    if (!/<link[^>]+rel=["']alternate["'][^>]+hreflang=["']en["']/i.test(html)) errors.push(`${relative}: English hreflang missing`);
     const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
-    if (/<style\b/i.test(head)) errors.push(`${relative}: inline head style should be consolidated into shared CSS`);
+    if (!alternateHref(head, "fr")) errors.push(`${relative}: French hreflang missing`);
+    if (!alternateHref(head, "en")) errors.push(`${relative}: English hreflang missing`);
+    if (alternateHref(head, "fr") !== expected.fr) errors.push(`${relative}: French hreflang must point to ${expected.fr}`);
+    if (alternateHref(head, "en") !== expected.en) errors.push(`${relative}: English hreflang must point to ${expected.en}`);
   }
 }
 

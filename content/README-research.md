@@ -7,7 +7,7 @@ La source unique de la section Research est `content/research-notes.json`.
 3. Utiliser uniquement les sujets suivants pour conserver les filtres :
    - `ai-work`
    - `worker-health`
-   - `ai-safety`
+   - `risk-prevention`
    - `algorithmic-management`
    - `governance-prevention`
 4. Régénérer les pages et le sitemap :
