@@ -41,6 +41,12 @@ function match(html, expression) {
   return text(html.match(expression)?.[1] || "");
 }
 
+function metaContent(html, name) {
+  const tag = (html.match(/<meta\b[^>]*>/gi) || [])
+    .find(candidate => new RegExp(`name=["']${name}["']`, "i").test(candidate));
+  return text(tag?.match(/content=(["'])([\s\S]*?)\1/i)?.[2] || "");
+}
+
 function publicUrl(file) {
   const relative = path.relative(root, file).split(path.sep).join("/");
   if (relative === "index.html") return "";
@@ -60,8 +66,7 @@ for (const file of await htmlFiles()) {
 
   const language = html.match(/<html[^>]+lang=["']([^"']+)/i)?.[1]?.toLowerCase() || "fr";
   const title = match(html, /<title[^>]*>([\s\S]*?)<\/title>/i).replace(/\s+[—|]\s+(?:IA & Santé au Travail|AI & Occupational Health).*$/i, "");
-  const description = match(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)
-    || match(html, /<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i);
+  const description = metaContent(html, "description");
   const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || html;
   const keywords = text(main).slice(0, 2600);
   if (title) records.push({ language, title, description, keywords, url });
