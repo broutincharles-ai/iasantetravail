@@ -1,6 +1,6 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { INDEXABLE_FILES, INDEXABLE_PAIRS, publicUrl } from "./indexing-scope.mjs";
+import { INDEXABLE_FILES, INDEXABLE_PAIRS, INDEXABLE_SINGLETONS, publicUrl } from "./indexing-scope.mjs";
 
 const root = process.cwd();
 const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
@@ -45,6 +45,11 @@ const entries = INDEXABLE_PAIRS.flatMap(({ fr, en, lastmod }) => {
     `  <url>\n    <loc>${enUrl}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>\n    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}"/>\n  </url>`
   ];
 });
+
+for (const { file, lang, lastmod } of INDEXABLE_SINGLETONS) {
+  const url = publicUrl(file);
+  entries.push(`  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${url}"/>\n  </url>`);
+}
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

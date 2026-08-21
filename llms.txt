@@ -7,4 +7,5 @@ Repères indépendants, sourcés et datés pour comprendre, évaluer et gouverne
 - https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.
 - https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.
 - https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
+- https://www.iasantetravail.com/formation/ — Parcours libre d’autoformation sur les usages de l’IA en SPSTI, ses limites, ses effets et la prévention des risques.
 - https://www.iasantetravail.com/a-propos/ — Auteur, démarche éditoriale, publications et champ de travail du site.

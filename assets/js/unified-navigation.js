@@ -39,18 +39,19 @@
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
-    ["Occupational risks", "/en/risks-prevention/", "risks"],
-    ["Assess", "/en/evaluate/", "evaluate"],
-    ["Govern", "/en/legal-governance/", "governance"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
+    ["Assess", "/en/evaluate/", "evaluate"],
+    ["Occupational risks", "/en/risks-prevention/", "risks"],
+    ["Govern", "/en/legal-governance/", "governance"],
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
+    ["Formation", "/formation/", "training"],
     ["Comprendre", "/comprendre/", "understand"],
-    ["Risques", "/risques-prevention/", "risks"],
-    ["Évaluer", "/evaluer/", "evaluate"],
-    ["Gouverner", "/droit-gouvernance/", "governance"],
     ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
+    ["Évaluer", "/evaluer/", "evaluate"],
+    ["Risques", "/risques-prevention/", "risks"],
+    ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
   ];
@@ -61,6 +62,7 @@
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
     if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
+    if (/^\/formation\//.test(path)) return "training";
     if (/^\/(?:en\/reading|lecture)\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";

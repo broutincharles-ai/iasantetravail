@@ -1,6 +1,12 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import { INDEXABLE_FILES, INDEXABLE_PAIRS, publicUrl } from "./indexing-scope.mjs";
+import {
+  INDEXABLE_EN_FILES,
+  INDEXABLE_FILES,
+  INDEXABLE_FR_FILES,
+  INDEXABLE_PAIRS,
+  publicUrl
+} from "./indexing-scope.mjs";
 
 const root = process.cwd();
 const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
@@ -45,7 +51,7 @@ function targetPath(source, raw) {
 function metaContent(html, name) {
   const tag = (html.match(/<meta\b[^>]*>/gi) || [])
     .find(candidate => new RegExp(`name=["']${name}["']`, "i").test(candidate));
-  return tag?.match(/content=["']([^"']*)/i)?.[1] || "";
+  return tag?.match(/content=(["'])([\s\S]*?)\1/i)?.[2] || "";
 }
 
 function metadataCount(head, attribute, value) {
@@ -81,7 +87,7 @@ for (const file of htmlFiles) {
   const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
   const shouldIndex = INDEXABLE_FILES.has(relative);
   if (shouldIndex && hasNoindex) errors.push(`${relative}: allowlisted page must be indexable`);
-  if (!shouldIndex && !hasNoindex) errors.push(`${relative}: page outside the 16-URL allowlist must be noindex`);
+  if (!shouldIndex && !hasNoindex) errors.push(`${relative}: page outside the indexable allowlist must be noindex`);
   if (shouldIndex) {
     const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
     const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
@@ -196,25 +202,25 @@ if (!/^Sitemap: https:\/\/www\.iasantetravail\.com\/sitemap\.xml$/m.test(robots)
 if (/Disallow:\s*\/$/m.test(robots)) errors.push("robots.txt: site root must not be blocked");
 
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
-const expectedSitemapUrls = new Set(INDEXABLE_PAIRS.flatMap(({ fr, en }) => [publicUrl(fr), publicUrl(en)]));
+const expectedSitemapUrls = new Set([...INDEXABLE_FILES].map(publicUrl));
 const actualSitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
 for (const expected of expectedSitemapUrls) {
   if (!actualSitemapUrls.has(expected)) errors.push(`sitemap.xml: allowlisted URL missing: ${expected}`);
 }
 for (const actual of actualSitemapUrls) {
-  if (!expectedSitemapUrls.has(actual)) errors.push(`sitemap.xml: URL outside the 16-page allowlist: ${actual}`);
+  if (!expectedSitemapUrls.has(actual)) errors.push(`sitemap.xml: URL outside the indexable allowlist: ${actual}`);
 }
-if (actualSitemapUrls.size !== 16) errors.push(`sitemap.xml: expected exactly 16 URLs, found ${actualSitemapUrls.size}`);
+if (actualSitemapUrls.size !== expectedSitemapUrls.size) errors.push(`sitemap.xml: expected exactly ${expectedSitemapUrls.size} URLs, found ${actualSitemapUrls.size}`);
 
 for (const [indexFile, languageFiles] of [
-  ["assets/js/search-index.js", INDEXABLE_PAIRS.map(({ fr }) => fr)],
-  ["assets/js/search-index-en.js", INDEXABLE_PAIRS.map(({ en }) => en)]
+  ["assets/js/search-index.js", INDEXABLE_FR_FILES],
+  ["assets/js/search-index-en.js", INDEXABLE_EN_FILES]
 ]) {
   const source = await readFile(path.join(root, indexFile), "utf8");
   const records = JSON.parse(source.replace(/^window\.SEARCH_INDEX\s*=\s*/, "").replace(/;\s*$/, ""));
   const expectedUrls = new Set(languageFiles.map(relative => relative === "index.html" ? "" : relative.replace(/index\.html$/, "")));
   const actualUrls = new Set(records.map(record => record.url));
-  if (records.length !== 8) errors.push(`${indexFile}: expected exactly 8 pages, found ${records.length}`);
+  if (records.length !== languageFiles.length) errors.push(`${indexFile}: expected exactly ${languageFiles.length} pages, found ${records.length}`);
   for (const expected of expectedUrls) if (!actualUrls.has(expected)) errors.push(`${indexFile}: missing ${expected || "/"}`);
   for (const actual of actualUrls) if (!expectedUrls.has(actual)) errors.push(`${indexFile}: unexpected ${actual}`);
 }

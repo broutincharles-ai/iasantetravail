@@ -135,6 +135,8 @@
 }
 .risk-hub-note span { color: var(--risk-terra); font: 700 9px/1.4 var(--mono); letter-spacing: 0.1em; }
 .risk-hub-note p { grid-column: 2; max-width: 880px; margin: 0; color: var(--risk-muted); font-family: var(--serif); font-size: clamp(24px, 2.4vw, 38px); line-height: 1.25; }
+.risk-hub-note a { color: var(--risk-terra-deep); text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.risk-hub-note a:hover { color: var(--risk-terra); }
 
 /* Long-form economic and social risk pathway */
 .economic-hero {

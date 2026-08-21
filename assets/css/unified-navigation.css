@@ -170,6 +170,7 @@
 .site-system-header .page-nav {
   border-top: 1px solid var(--line);
   background: rgba(247, 243, 234, 0.94);
+  pointer-events: auto;
 }
 
 .site-system-header .page-nav-inner {
