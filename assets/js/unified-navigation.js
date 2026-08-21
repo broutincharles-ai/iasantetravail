@@ -39,18 +39,18 @@
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
-    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
-    ["Assess", "/en/evaluate/", "evaluate"],
     ["Occupational risks", "/en/risks-prevention/", "risks"],
+    ["Assess", "/en/evaluate/", "evaluate"],
+    ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
     ["Govern", "/en/legal-governance/", "governance"],
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
     ["Formation", "/formation/", "training"],
     ["Comprendre", "/comprendre/", "understand"],
-    ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
-    ["Évaluer", "/evaluer/", "evaluate"],
     ["Risques", "/risques-prevention/", "risks"],
+    ["Évaluer", "/evaluer/", "evaluate"],
+    ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
