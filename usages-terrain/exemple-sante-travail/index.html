@@ -13,17 +13,19 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>L’IA en SPSTI : usages, étude INRS et PST 5 | IA &amp; Santé au Travail</title>
-  <meta name="description" content="Six usages de l’IA en SPSTI avec supervision humaine, les résultats de l’étude INRS TF 335 (74,6 % de concordance) et les orientations du PST 5 2026–2030.">
+  <title>IA en SPSTI : usages, risques et méthode | IA Santé Travail</title>
+  <meta name="description" content="Guide sourcé sur l’IA en SPSTI : usages documentés, charte Présanse, risques, données de santé, évaluation et méthode pour conduire un pilote.">
   <meta name="author" content="Dr Charles Broutin">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <link rel="canonical" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
-  <link rel="stylesheet" href="/assets/css/spsti.css?v=2.3">
+  <link rel="author" href="https://www.iasantetravail.com/a-propos/#person">
+  <link rel="stylesheet" href="/assets/css/spsti.css?v=2.4">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.4">
   <script defer src="/assets/js/unified-navigation.js?v=4.3"></script>
+  <script defer src="/assets/js/spsti-hub.js?v=1.0"></script>
 
   <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
   <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
@@ -32,17 +34,21 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:site_name" content="IA Santé Travail">
-  <meta property="og:title" content="L’IA en SPSTI : usages, étude INRS et PST 5 | IA &amp; Santé au Travail">
-  <meta property="og:description" content="Six usages de l’IA en SPSTI avec supervision humaine, les résultats de l’étude INRS TF 335 (74,6 % de concordance) et les orientations du PST 5 2026–2030.">
+  <meta property="og:title" content="IA en SPSTI : usages, risques et méthode">
+  <meta property="og:description" content="Un guide sourcé pour choisir, encadrer et évaluer un usage de l’IA dans un service de prévention et de santé au travail.">
   <meta property="og:url" content="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
   <meta property="og:image" content="https://www.iasantetravail.com/assets/images/oxbow-1280.webp">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="870">
+  <meta property="og:image:alt" content="The Oxbow de Thomas Cole, entre orage et vallée lumineuse">
   <meta property="article:published_time" content="2026-07-13">
-  <meta property="article:modified_time" content="2026-08-17">
+  <meta property="article:modified_time" content="2026-08-22">
   <meta property="article:author" content="https://www.iasantetravail.com/a-propos/#person">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="L’IA en SPSTI : usages, étude INRS et PST 5 | IA &amp; Santé au Travail">
-  <meta name="twitter:description" content="Six usages de l’IA en SPSTI avec supervision humaine, les résultats de l’étude INRS TF 335 (74,6 % de concordance) et les orientations du PST 5 2026–2030.">
+  <meta name="twitter:title" content="IA en SPSTI : usages, risques et méthode">
+  <meta name="twitter:description" content="Usages documentés, charte Présanse, risques, évaluation et méthode de pilote en SPSTI.">
   <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/oxbow-1280.webp">
+  <meta name="twitter:image:alt" content="The Oxbow de Thomas Cole, entre orage et vallée lumineuse">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,31 +64,45 @@
         "@type": "WebPage",
         "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#webpage",
         "url": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/",
-        "name": "L’IA en SPSTI : usages, étude INRS et PST 5",
+        "name": "IA en SPSTI : usages, risques et bonnes pratiques",
+        "description": "Guide sourcé sur les usages, les risques, la gouvernance et l’évaluation de l’intelligence artificielle dans les SPSTI.",
         "inLanguage": "fr-FR",
         "isPartOf": {"@id": "https://www.iasantetravail.com/#website"},
-        "breadcrumb": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#breadcrumb"}
+        "breadcrumb": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#breadcrumb"},
+        "primaryImageOfPage": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#primaryimage"},
+        "mainEntity": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#article"},
+        "datePublished": "2026-07-13",
+        "dateModified": "2026-08-22"
       },
       {
         "@type": "Article",
         "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#article",
-        "headline": "L’IA en SPSTI : usages, étude INRS et PST 5",
-        "description": "Six usages de l’IA en SPSTI avec supervision humaine, les résultats de l’étude INRS TF 335 (74,6 % de concordance) et les orientations du PST 5 2026–2030.",
+        "headline": "IA en SPSTI : usages, risques et bonnes pratiques",
+        "description": "Guide sourcé sur les usages, les risques, la gouvernance et l’évaluation de l’intelligence artificielle dans les SPSTI.",
         "inLanguage": "fr-FR",
         "mainEntityOfPage": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#webpage"},
         "isPartOf": {"@id": "https://www.iasantetravail.com/#website"},
         "datePublished": "2026-07-13",
-        "dateModified": "2026-08-17",
-        "image": "https://www.iasantetravail.com/assets/images/oxbow-1280.webp",
+        "dateModified": "2026-08-22",
+        "image": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#primaryimage"},
         "author": {"@id": "https://www.iasantetravail.com/a-propos/#person"},
         "publisher": {"@id": "https://www.iasantetravail.com/#organization"},
+        "isAccessibleForFree": true,
+        "articleSection": ["Usages en SPSTI", "Risques", "Charte Présanse", "Shadow IA", "Évaluation", "Pilote", "Gouvernance"],
+        "keywords": ["IA en SPSTI", "intelligence artificielle en santé au travail", "charte IA Présanse", "Shadow IA", "médecine du travail", "prévention des risques professionnels"],
         "about": [
           {"@type": "Thing", "name": "Intelligence artificielle en santé au travail"},
           {"@type": "Thing", "name": "SPSTI"},
           {"@type": "Thing", "name": "Plan santé au travail 2026–2030"},
           {"@type": "Thing", "name": "Médecine du travail"}
         ],
-        "citation": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#tf335"},
+        "citation": [
+          {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#tf335"},
+          {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-charte"},
+          {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-usages"},
+          {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-shadow"},
+          {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#pst5"}
+        ],
         "mentions": {"@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#pst5"},
         "speakable": {
           "@type": "SpeakableSpecification",
@@ -95,6 +115,7 @@
         "name": "Charles Broutin",
         "honorificPrefix": "Dr",
         "jobTitle": "Médecin du travail",
+        "url": "https://www.iasantetravail.com/a-propos/",
         "affiliation": {"@type": "Organization", "name": "Société Française de Santé au Travail"},
         "sameAs": ["https://www.linkedin.com/in/charles-broutin-a03932201"]
       },
@@ -102,7 +123,17 @@
         "@type": "Organization",
         "@id": "https://www.iasantetravail.com/#organization",
         "name": "IA & Santé au Travail",
-        "url": "https://www.iasantetravail.com/"
+        "url": "https://www.iasantetravail.com/",
+        "logo": "https://www.iasantetravail.com/assets/images/logo.png"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#primaryimage",
+        "contentUrl": "https://www.iasantetravail.com/assets/images/oxbow-1280.webp",
+        "width": 1280,
+        "height": 870,
+        "caption": "The Oxbow de Thomas Cole, paysage partagé entre un orage et une vallée lumineuse",
+        "creditText": "Thomas Cole, The Oxbow, 1836 — The Metropolitan Museum of Art"
       },
       {
         "@type": "ScholarlyArticle",
@@ -113,6 +144,30 @@
         "isPartOf": {"@type": "Periodical", "name": "Références en Santé au Travail"},
         "datePublished": "2026-06",
         "url": "https://www.inrs.fr/media.html?refINRS=TF+335"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-charte",
+        "name": "Charte pour une utilisation éthique et responsable de l’intelligence artificielle en SPSTI",
+        "publisher": {"@type": "Organization", "name": "Présanse"},
+        "datePublished": "2025",
+        "url": "https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-usages",
+        "name": "Intelligence artificielle en SPSTI : cas d’usage et retours de terrain",
+        "publisher": {"@type": "Organization", "name": "Présanse"},
+        "datePublished": "2025-11",
+        "url": "https://www.presanse.fr/informations-mensuelles/n-146-novembre-2025/"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/#presanse-shadow",
+        "name": "Intelligence artificielle en SPSTI : sensibilisation, méthode et Shadow IA",
+        "publisher": {"@type": "Organization", "name": "Présanse"},
+        "datePublished": "2025-11",
+        "url": "https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf"
       },
       {
         "@type": "CreativeWork",
@@ -133,7 +188,7 @@
   }
   </script>
 </head>
-<body class="page-shell-v2 hero-editorial">
+<body class="page-shell-v2 hero-editorial spsti-hub">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="site-header">
@@ -157,13 +212,16 @@
       <div class="page-nav-inner">
         <span class="page-nav-label">Sur cette page</span>
         <div class="page-nav-links">
-          <a href="#essentiel">L’essentiel</a>
-          <a href="#pst5">Le PST 5</a>
-          <a href="#usages">Usages possibles</a>
-          <a href="#etude">Étude INRS</a>
-          <a href="#pilote">Construire un pilote</a>
-          <a href="#roles">Rôles</a>
-          <a href="#contact">Contact</a>
+          <a href="#essentiel">En bref</a>
+          <a href="#usages">Usages</a>
+          <a href="#terrain">Terrain</a>
+          <a href="#charte">Charte</a>
+          <a href="#prioriser">Prioriser</a>
+          <a href="#shadow">Shadow IA</a>
+          <a href="#etude">Étude</a>
+          <a href="#pilote">Pilote</a>
+          <a href="#questions">Questions</a>
+          <a href="#sources">Sources</a>
         </div>
         <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
@@ -181,18 +239,18 @@
 
     <section class="hero" id="accueil">
       <div class="hero-copy">
-        <p class="kicker line">SPSTI · Usages professionnels · Supervision humaine</p>
-        <h1>L’IA peut aider un SPSTI quand <em>la tâche est précise.</em></h1>
-        <p class="article-meta">Auteur : Dr Charles Broutin, médecin du travail, référent IA de la SFST · Mis à jour le <time datetime="2026-08-17">17 août 2026</time></p>
-        <p class="hero-lede">Relire un document, retrouver une source, structurer des observations ou préparer une formation : l’intérêt ne vient pas de « l’IA » en général, mais d’un usage limité que l’on peut tester et corriger.</p>
-        <p class="hero-note"><strong>Un exemple évalué.</strong> Une étude publiée par l’Institut national de recherche et de sécurité (INRS) en juin 2026 a testé un modèle de langage comme second lecteur de préconisations médicales. Elle montre un potentiel réel, mais pas une capacité à remplacer le médecin du travail.</p>
-        <div class="hero-actions"><a class="button primary" href="#etude">Voir l’étude et ses résultats <span>↓</span></a><a class="button secondary" href="#usages">Explorer les usages</a></div>
-        <div class="hero-proof"><span>Tâche limitée</span><span>Référence humaine</span><span>Décision conservée</span></div>
+        <p class="kicker line">Guide pratique · SPSTI · Sources 2025–2026</p>
+        <h1>IA en SPSTI&nbsp;: partir du <em>besoin réel.</em></h1>
+        <p class="article-meta">Auteur : Dr Charles Broutin, médecin du travail, référent IA de la SFST · Mis à jour le <time datetime="2026-08-22">22 août 2026</time></p>
+        <p class="hero-lede">L’intelligence artificielle peut assister la documentation, la prévention, la relation adhérents, les fonctions support et certains usages médicaux supervisés. Sa valeur dépend de la tâche, des données et des conséquences d’une erreur.</p>
+        <p class="hero-note"><strong>Le principe commun.</strong> Commencer par une tâche précise, employer le minimum de données nécessaire, mesurer les erreurs et conserver une personne identifiée capable de contrôler la sortie. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Charte Présanse, 2025 ↗</a></p>
+        <div class="hero-actions"><a class="button primary" href="#usages">Explorer les usages <span>↓</span></a><a class="button secondary" href="#prioriser">Tester la matrice</a></div>
+        <div class="hero-proof"><span>Sources au fil du texte</span><span>Risques distingués</span><span>Décision humaine</span></div>
       </div>
 
       <figure class="artwork">
         <div class="artwork-label"><strong>Entre deux versants</strong></div>
-        <img src="https://www.iasantetravail.com/assets/images/oxbow-1280.webp" alt="The Oxbow de Thomas Cole, paysage partagé entre un orage sombre et une vallée lumineuse transformée par l’activité humaine">
+        <img src="https://www.iasantetravail.com/assets/images/oxbow-1280.webp" width="1280" height="870" fetchpriority="high" decoding="async" alt="The Oxbow de Thomas Cole, paysage partagé entre un orage sombre et une vallée lumineuse transformée par l’activité humaine">
         <figcaption>
           <span>Thomas Cole<br>The Oxbow · 1836</span>
           <p>Entre l’orage et la vallée, le paysage tient dans un équilibre incertain. L’œuvre rappelle que tout usage prometteur doit être regardé dans ses deux versants : ce qu’il améliore et ce qu’il peut fragiliser si ses effets ne sont pas observés. <a href="https://www.metmuseum.org/art/collection/search/10497" target="_blank" rel="noreferrer">Voir l’œuvre au Met ↗</a></p>
@@ -204,11 +262,11 @@
       <div class="page-essential-layout">
         <div><p class="kicker">L’essentiel</p><h2 id="essential-title">Ce qu’il faut retenir.</h2></div>
         <div>
-          <p class="page-essential-answer">Dans un <strong>Service de Prévention et de Santé au Travail Interentreprises (SPSTI)</strong>, l’intelligence artificielle peut déjà soutenir plusieurs tâches sous supervision : relecture, recherche documentaire, structuration d’informations, formation, contrôle de complétude ou encore tâches administratives. Une étude publiée dans <cite>Références en Santé au Travail</cite> (INRS, juin 2026) a notamment montré <strong>74,6 % de concordance entre un modèle d’IA utilisé comme second lecteur et un consensus multidisciplinaire</strong> pour l’analyse de préconisations médicales. Ces outils restent des aides : <strong>l’analyse clinique et la décision demeurent sous la responsabilité du médecin du travail</strong>. Le Plan santé au travail 2026–2030 (PST 5) inscrit désormais le développement de ces usages — et la prévention des risques associés — parmi les enjeux de la santé au travail.</p>
+          <p class="page-essential-answer">Dans un <strong>Service de Prévention et de Santé au Travail Interentreprises (SPSTI)</strong>, les usages évoqués vont des tâches administratives et de relation adhérents aux activités de prévention et à certains usages médicaux supervisés. Présanse en documente plusieurs catégories et trois retours de terrain. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse, Informations mensuelles n°&nbsp;146 ↗</a> Une étude publiée dans <cite>Références en Santé au Travail</cite> a par ailleurs observé <strong>74,6&nbsp;% de concordance</strong> entre le modèle o1 utilisé comme second lecteur et un consensus multidisciplinaire sur 385 préconisations. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS, TF&nbsp;335 ↗</a> Ces éléments ne donnent aucun feu vert général&nbsp;: le niveau de vigilance dépend des données, de la tâche et des conséquences d’une erreur.</p>
           <div class="essential-points">
-            <article><span>01</span><strong>Tâche étroite · Référence humaine · Décision conservée.</strong></article>
-            <article><span>02</span><strong>385 préconisations · 5 défauts recherchés · 74,6 % de concordance.</strong></article>
-            <article><span>03</span><strong>Le PST 5 qualifie les SPST d’« acteurs pivots » face à l’IA au travail.</strong></article>
+            <article><span>01</span><strong>5 familles d’usages décrites par Présanse.</strong><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Source ↗</a></article>
+            <article><span>02</span><strong>10 principes pour encadrer l’IA en SPSTI.</strong><a class="card-source" href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Source ↗</a></article>
+            <article><span>03</span><strong>385 préconisations · 74,6&nbsp;% de concordance.</strong><a class="card-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Source ↗</a></article>
           </div>
           <p class="related-questions"><a href="/comprendre/#questions">Quelles questions poser avant un usage professionnel de l’IA&nbsp;?</a><a href="/evaluer/">Comment évaluer un projet d’IA avant son déploiement&nbsp;?</a></p>
         </div>
@@ -234,26 +292,118 @@
 
     <section class="section uses" id="usages">
       <div class="section-head">
-        <div><p class="kicker">01 / Où l’IA peut être utile</p><h2>Où l’IA peut-elle être utile dans un SPSTI&nbsp;?</h2></div>
-        <p>Six usages concrets, avec une responsabilité humaine clairement définie. À l’exception du cas de relecture présenté plus bas, ces usages sont des pistes à expérimenter et à évaluer dans chaque service.</p>
+        <div><p class="kicker">01 / Quels usages de l’IA dans un SPSTI&nbsp;?</p><h2>Cinq familles. Des niveaux de preuve et de risque différents.</h2></div>
+        <p>Présanse regroupe les cas évoqués dans les SPSTI en cinq familles. Cette classification décrit un champ d’usages&nbsp;; elle ne démontre pas l’efficacité de chaque outil. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présentation Présanse ↗</a></p>
       </div>
-      <div class="use-grid">
-        <article class="use-card"><span>01 · Médecine du travail <b>Usage étudié</b></span><h3>Relire la forme d’une préconisation.</h3><p>Repérer une formulation ambiguë, une obligation implicite, une information inutile ou un risque de divulgation avant transmission.</p><small><strong>L’humain garde :</strong> l’analyse du poste, la formulation finale, la décision et la signature.</small></article>
-        <article class="use-card"><span>02 · Tous métiers <b>Piste à tester</b></span><h3>Interroger une documentation interne.</h3><p>Retrouver un protocole, une fiche de risque ou une procédure à partir d’une base contrôlée, avec les sources affichées dans la réponse.</p><small><strong>L’humain garde :</strong> la vérification de la source, de sa date et de son application au cas.</small></article>
-        <article class="use-card"><span>03 · Prévention <b>Piste à tester</b></span><h3>Structurer des observations de terrain.</h3><p>Regrouper des notes par thème, préparer une synthèse et faire ressortir les informations manquantes avant l’analyse collective.</p><small><strong>L’humain garde :</strong> l’observation, l’interprétation, la hiérarchisation et les mesures proposées.</small></article>
-        <article class="use-card"><span>04 · Formation <b>Piste à tester</b></span><h3>Préparer des cas et des supports.</h3><p>Produire des variantes d’une situation, des questions de discussion ou une première trame adaptée au métier des participants.</p><small><strong>L’humain garde :</strong> les objectifs, la validité du contenu et l’animation pédagogique.</small></article>
-        <article class="use-card"><span>05 · Qualité <b>Piste à tester</b></span><h3>Repérer les dossiers incomplets.</h3><p>Vérifier la présence de rubriques attendues ou signaler une incohérence formelle sans attribuer automatiquement un niveau de risque au salarié.</p><small><strong>L’humain garde :</strong> l’accès au dossier, l’interprétation et toute action qui en découle.</small></article>
-        <article class="use-card"><span>06 · Administration <b>Piste à tester</b></span><h3>Alléger des tâches répétitives.</h3><p>Préparer un message, classer une demande non médicale ou reformuler une information pratique dans un langage plus accessible.</p><small><strong>L’humain garde :</strong> le traitement des exceptions et la validation avant envoi.</small></article>
+      <div class="family-grid">
+        <article class="hub-family"><span>01 · Pratiques médicales</span><h3>Assister, jamais conclure.</h3><p>Transcription, synthèse, recherche documentaire ou seconde lecture&nbsp;: le niveau de vigilance augmente dès que des données de santé ou une décision individuelle sont concernées.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usages cités par Présanse ↗</a></article>
+        <article class="hub-family"><span>02 · Prévention</span><h3>Structurer le terrain.</h3><p>Fiches d’entreprise, exploration de DUERP, regroupement d’observations ou préparation de plans d’action&nbsp;: chaque tâche doit être évaluée séparément.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usages cités par Présanse ↗</a></article>
+        <article class="hub-family"><span>03 · Fonctions support</span><h3>Réduire la ressaisie.</h3><p>Recherche interne, tickets CRM, reporting, planification et assistance aux processus administratifs ou qualité.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usages cités par Présanse ↗</a></article>
+        <article class="hub-family"><span>04 · Relation adhérents</span><h3>Orienter les demandes.</h3><p>Callbots, prise de rendez-vous et réponses simples, avec reprise humaine pour les exceptions et les situations complexes.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usages cités par Présanse ↗</a></article>
+        <article class="hub-family"><span>05 · Innovation transversale</span><h3>Veiller et former.</h3><p>Veille scientifique et réglementaire, supports de formation, contenus et exploration contrôlée de nouveaux services.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usages cités par Présanse ↗</a></article>
       </div>
-      <div class="use-note"><span>Ce qui ne doit pas être automatisé</span><p>L’aptitude, l’orientation clinique, l’évaluation individuelle d’un salarié ou une décision de prévention ne peuvent pas être déduites d’une sortie de modèle sans jugement professionnel et sans le contexte du travail.</p></div>
+
+      <div class="evidence-browser">
+        <div class="filter-bar"><span>Filtrer les usages par statut</span><div class="filters" aria-label="Filtres des usages"><button class="filter active" type="button" data-filter="all">Tous</button><button class="filter" type="button" data-filter="documented">Terrain documenté</button><button class="filter" type="button" data-filter="study">Étude publiée</button><button class="filter" type="button" data-filter="sensitive">Usage sensible</button></div></div>
+        <div class="table-scroll" tabindex="0" aria-label="Tableau des usages, défilement horizontal possible">
+          <table class="usage-table">
+            <thead><tr><th>Usage</th><th>Statut et source</th><th>Sensibilité</th><th>Supervision nécessaire</th></tr></thead>
+            <tbody>
+              <tr data-tags="documented"><td>Callbot pour demandes simples</td><td><span class="status">Terrain documenté</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">SPSTI 19-24 ↗</a></td><td>Modérée selon les données</td><td>Escalade vers une équipe humaine</td></tr>
+              <tr data-tags="documented"><td>Administration des formations</td><td><span class="status">Terrain documenté</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">MT71 ↗</a></td><td>Faible à modérée</td><td>Contrôle des exceptions et des envois</td></tr>
+              <tr data-tags="study sensitive"><td>Seconde lecture de préconisations</td><td><span class="status study-status">Étude publiée</span><a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS TF&nbsp;335 ↗</a></td><td>Élevée</td><td>Validation et signature médicales</td></tr>
+              <tr data-tags="sensitive"><td>Aide au DUERP ou à la fiche d’entreprise</td><td><span class="status sensitive-status">À évaluer par tâche</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Usage évoqué ↗</a></td><td>Variable</td><td>Analyse du travail par les préventeurs</td></tr>
+              <tr data-tags="sensitive"><td>Synthèse d’informations médicales</td><td><span class="status sensitive-status">Usage sensible</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Charte Présanse ↗</a></td><td>Très élevée</td><td>Environnement autorisé et validation clinique</td></tr>
+              <tr data-tags="sensitive"><td>Scoring ou priorisation individuelle</td><td><span class="status sensitive-status">Vigilance maximale</span><a class="table-source" href="/droit-gouvernance/#qualifier">Analyser le cadre ↗</a></td><td>Très élevée</td><td>Analyse formelle avant toute décision</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="light-note"><span>Limite à garder visible</span><p>La présence d’un usage dans une présentation sectorielle n’établit ni sa performance ni sa conformité. La tâche, les données, le fournisseur et le circuit de décision doivent être examinés dans chaque service.</p></div>
+    </section>
+
+    <section class="section terrain-section" id="terrain">
+      <div class="section-head">
+        <div><p class="kicker">02 / Ce qui existe déjà en France</p><h2>Trois retours de terrain, trois problèmes opérationnels.</h2></div>
+        <p>Présanse a présenté ces expériences en novembre 2025. Elles documentent des démarches réelles, sans constituer à elles seules une preuve d’efficacité généralisable. <a class="source-inline" href="https://www.presanse.fr/informations-mensuelles/n-146-novembre-2025/" target="_blank" rel="noreferrer">Article Présanse ↗</a></p>
+      </div>
+      <div class="terrain-grid">
+        <article class="terrain-card"><span>SPSTI 19-24 · Relation adhérents</span><h3>Absorber les pics d’appels.</h3><p>Un callbot traite des demandes simples, répond ou redirige. L’équipe humaine reste disponible pour les situations complexes et les demandes hors scénario.</p><p class="measure"><strong>À mesurer&nbsp;:</strong> transferts, erreurs d’orientation, abandons, satisfaction et charge de reprise.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Témoignage Présanse ↗</a></article>
+        <article class="terrain-card"><span>MT71 · Administration</span><h3>Alléger l’organisation des formations.</h3><p>Un assistant intervient sur les préinscriptions, modifications, échanges avec les adhérents et ressaisies d’informations liées aux sensibilisations.</p><p class="measure"><strong>À mesurer&nbsp;:</strong> corrections, exceptions, temps complet et qualité des échanges.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Témoignage Présanse ↗</a></article>
+        <article class="terrain-card"><span>AST74 · Gouvernance</span><h3>Créer une fonction IA dédiée.</h3><p>Une fonction transversale pilote la transformation, relie la stratégie à l’organisation et coordonne conformité, sécurité et priorisation.</p><p class="measure"><strong>À mesurer&nbsp;:</strong> décisions tracées, formation, incidents et capacité réelle à suspendre un projet.</p><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Témoignage Présanse ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section charter-section" id="charte">
+      <div class="section-head">
+        <div><p class="kicker">03 / Charte IA de Présanse</p><h2>Dix principes à traduire en décisions quotidiennes.</h2></div>
+        <p>La charte est présentée comme un modèle adaptable et intégrable à la charte informatique du service. Les formulations ci-dessous en donnent une traduction opérationnelle. <a class="source-inline" href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Page officielle ↗</a></p>
+      </div>
+      <div class="principles-grid">
+        <article><span>01</span><strong>Supervision humaine</strong><p>Identifier qui contrôle, valide, conteste et assume l’usage.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 1 ↗</a></article>
+        <article><span>02</span><strong>Données médicales</strong><p>Ne pas transmettre de donnée personnelle ou de santé à un outil non autorisé.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 2 ↗</a></article>
+        <article><span>03</span><strong>Transparence</strong><p>Documenter l’outil, sa finalité, ses limites et le rôle exact de l’IA.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 3 ↗</a></article>
+        <article><span>04</span><strong>Équité</strong><p>Rechercher les biais et les effets différenciés selon les publics.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 4 ↗</a></article>
+        <article><span>05</span><strong>Traçabilité</strong><p>Documenter les usages, validations, erreurs, incidents et corrections.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 5 ↗</a></article>
+        <article><span>06</span><strong>Gouvernance</strong><p>Définir les responsables, le circuit de décision et les conditions d’arrêt.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 6 ↗</a></article>
+        <article><span>07</span><strong>Usage proportionné</strong><p>Partir d’un besoin réel et choisir le système le moins intrusif possible.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 7 ↗</a></article>
+        <article><span>08</span><strong>Sécurité et fiabilité</strong><p>Évaluer l’environnement, les accès, les erreurs et les dépendances.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 8 ↗</a></article>
+        <article><span>09</span><strong>Formation</strong><p>Former avant l’usage et maintenir les compétences professionnelles.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 9 ↗</a></article>
+        <article><span>10</span><strong>Écoresponsabilité</strong><p>Ne pas mobiliser l’IA lorsque l’utilité n’est pas démontrée.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe 10 ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section matrix-section" id="prioriser">
+      <div class="section-head">
+        <div><p class="kicker">04 / Comment prioriser les usages&nbsp;?</p><h2>Valeur métier × complexité × données × conséquence d’une erreur.</h2></div>
+        <p>Présanse propose de croiser valeur métier et complexité. Cette matrice ajoute la sensibilité des données et la conséquence d’une erreur. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Matrice Présanse ↗</a></p>
+      </div>
+      <div class="project-tabs" role="tablist" aria-label="Exemples de projets IA">
+        <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="documentation">Assistant documentaire</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="callbot">Callbot adhérents</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="formation">Administration formation</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="relecture">Seconde lecture</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="synthese">Synthèse médicale</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="scoring">Scoring individuel</button>
+      </div>
+      <div class="matrix-lab">
+        <div class="matrix-plot-wrap">
+          <div class="matrix-title"><span>Matrice valeur / risque</span><strong id="matrixStatus">Tester en priorité</strong></div>
+          <div class="matrix-plot" aria-label="Position du projet selon sa valeur métier et son risque global"><span class="quadrant q1">Forte valeur<br>Risque maîtrisable</span><span class="quadrant q2">Évaluation formelle<br>avant tout pilote</span><span class="quadrant q3">Action secondaire</span><span class="quadrant q4">Fausse bonne idée</span><i class="matrix-dot" id="matrixDot"></i></div>
+        </div>
+        <div class="matrix-detail" aria-live="polite">
+          <span id="projectType">Tous métiers · documentation</span><h3 id="projectTitle">Assistant documentaire interne</h3><p id="projectDescription">Retrouver un protocole ou une fiche de risque dans une base contrôlée, avec les sources affichées dans la réponse.</p>
+          <div class="score-list"><div class="score-row"><span>Valeur métier</span><div class="score-track"><i id="valueBar" style="width:80%"></i></div><b id="valueScore">4</b></div><div class="score-row"><span>Complexité</span><div class="score-track"><i id="complexityBar" style="width:40%"></i></div><b id="complexityScore">2</b></div><div class="score-row"><span>Sensibilité des données</span><div class="score-track"><i id="dataBar" style="width:40%"></i></div><b id="dataScore">2</b></div><div class="score-row"><span>Conséquence d’une erreur</span><div class="score-track"><i id="errorBar" style="width:40%"></i></div><b id="errorScore">2</b></div></div>
+          <div class="verdict"><span>Orientation</span><strong id="verdictText">Bon candidat à un pilote limité sur une base contrôlée, avec citation des sources et vérification humaine.</strong></div>
+          <p class="matrix-caveat">Notation illustrative sur 5. Le profil réel dépend des données, du fournisseur, de l’intégration, du public et du circuit de décision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shadow-section" id="shadow">
+      <div class="section-head">
+        <div><p class="kicker">05 / Shadow IA en SPSTI</p><h2>Le risque existe avant le déploiement officiel.</h2></div>
+        <p>Présanse emploie le terme «&nbsp;Shadow IA&nbsp;» pour décrire des usages non validés ni supervisés, avec notamment le risque d’introduire des informations sensibles dans des chatbots publics. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf" target="_blank" rel="noreferrer">Support Présanse ↗</a></p>
+      </div>
+      <div class="shadow-layout">
+        <div class="shadow-intro"><span>Signal faible, risque immédiat</span><h3>«&nbsp;Je voulais juste gagner cinq minutes.&nbsp;»</h3><p>Une consigne floue, un outil personnel et un copier-coller suffisent pour qu’une donnée sensible quitte le cadre prévu. La charte Présanse interdit l’introduction de données personnelles, médicales ou identifiantes dans un outil non validé par le service. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Bonnes pratiques Présanse ↗</a></p></div>
+        <div class="shadow-steps"><article><span>01</span><div><strong>Cartographier les usages existants.</strong><p>Comprendre les pratiques, besoins et contournements sans les rendre clandestins.</p></div></article><article><span>02</span><div><strong>Fixer les données interdites.</strong><p>Donner des exemples concrets pour les données personnelles et de santé.</p></div></article><article><span>03</span><div><strong>Proposer des solutions autorisées.</strong><p>Répondre aux besoins réels avec un cadre utilisable par les équipes.</p></div></article><article><span>04</span><div><strong>Former et documenter les incidents.</strong><p>Faire progresser le cadre à partir des erreurs et difficultés observées.</p></div></article></div>
+      </div>
+    </section>
+
+    <section class="section voices-section" id="professionnels">
+      <div class="section-head">
+        <div><p class="kicker">06 / Ce que disent les professionnels</p><h2>De l’intérêt, avec une demande claire de preuve et de cadre.</h2></div>
+        <p>Ces deux enquêtes publiées en 2026 décrivent des attitudes déclarées. Elles n’établissent pas l’efficacité d’un outil, mais éclairent les conditions d’acceptation.</p>
+      </div>
+      <div class="voice-grid">
+        <article><b>83&nbsp;%</b><strong>Privilégient IA + jugement clinique.</strong><p>Enquête auprès de 237 médecins du travail franciliens.</p><a class="card-source" href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Étude 2026 ↗</a></article>
+        <article><b>94&nbsp;%</b><strong>Citent la validation scientifique parmi les critères prioritaires.</strong><p>Devant la fiabilité des résultats (84&nbsp;%) et la protection des données (81&nbsp;%).</p><a class="card-source" href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Étude 2026 ↗</a></article>
+        <article><b>91,2&nbsp;%</b><strong>Déclarent un intérêt pour une formation à l’IA.</strong><p>Enquête distincte auprès de 80 professionnels de santé au travail.</p><a class="card-source" href="https://www.sciencedirect.com/science/article/pii/S1775878526008052" target="_blank" rel="noreferrer">Étude 2026 ↗</a></article>
+      </div>
     </section>
 
     <section class="section study" id="etude">
       <div class="section-head">
-        <div><p class="kicker">02 / Un exemple publié par l’INRS</p><h2>Une relecture assistée, évaluée sur une tâche précise.</h2></div>
-        <p>J’ai rédigé cette étude, publiée par l’INRS en juin 2026. Elle évalue l’aide apportée par un modèle de langage sans lui confier la consultation, la rédaction de l’avis ou la décision médicale.</p>
+        <div><p class="kicker">07 / Un exemple publié par l’INRS</p><h2>Une relecture assistée, évaluée sur une tâche précise.</h2></div>
+        <p>Cette étude, publiée par l’INRS en juin 2026, évalue l’aide apportée par un modèle de langage sans lui confier la consultation, la rédaction de l’avis ou la décision médicale. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Article INRS ↗</a></p>
       </div>
-      <p class="study-citable">Dans l’étude de Charles Broutin, « <cite>L’intelligence artificielle en santé au travail : évaluation de son potentiel pour renforcer la précision et la clarté des préconisations médicales</cite> » (<cite>Références en Santé au Travail</cite>, TF 335, INRS, juin 2026), le modèle a atteint 74,6 % de concordance globale avec le consensus multidisciplinaire sur 385 préconisations.</p>
+      <p class="study-citable">Dans l’étude de Charles Broutin, « <cite>L’intelligence artificielle en santé au travail : évaluation de son potentiel pour renforcer la précision et la clarté des préconisations médicales</cite> », le modèle a atteint 74,6&nbsp;% de concordance globale avec le consensus multidisciplinaire sur 385 préconisations. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Références en Santé au Travail, TF&nbsp;335 ↗</a></p>
       <div class="study-card">
         <div class="study-intro">
           <p class="kicker">Références en Santé au Travail · TF 335 · Juin 2026</p>
@@ -263,9 +413,9 @@
           <a class="button light" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article complet sur le site de l’INRS <span>↗</span></a>
         </div>
         <div class="study-findings" aria-label="Principaux résultats de l’étude">
-          <article class="study-finding"><b>74,6&nbsp;%</b><div><strong>Concordance globale</strong><p>Le modèle et le consensus multidisciplinaire aboutissent à la même évaluation.</p></div></article>
-          <article class="study-finding"><b>1,45&nbsp;%</b><div><strong>Erreurs non repérées</strong><p>Le consensus identifie un défaut que le modèle n’a pas signalé.</p></div></article>
-          <article class="study-finding"><b>0</b><div><strong>Hallucination observée</strong><p>Dans cet échantillon et avec ce protocole précis ; ce résultat n’est pas une garantie générale.</p></div></article>
+          <article class="study-finding"><b>74,6&nbsp;%</b><div><strong>Concordance globale</strong><p>Le modèle et le consensus multidisciplinaire aboutissent à la même évaluation.</p><a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Résultat publié ↗</a></div></article>
+          <article class="study-finding"><b>1,45&nbsp;%</b><div><strong>Erreurs non repérées</strong><p>Le consensus identifie un défaut que le modèle n’a pas signalé.</p><a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Résultat publié ↗</a></div></article>
+          <article class="study-finding"><b>0</b><div><strong>Hallucination observée</strong><p>Dans cet échantillon et avec ce protocole précis&nbsp;; ce résultat n’est pas une garantie générale.</p><a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Résultat publié ↗</a></div></article>
         </div>
       </div>
       <div class="study-note"><span>Lecture prudente</span><p>Ces résultats sont prometteurs pour une aide à la relecture fortement encadrée. Ils concernent un seul modèle et une seule tâche, sans mesure d’un effet clinique. Le médecin du travail reste responsable de l’analyse, de la formulation et de la validation.</p></div>
@@ -273,24 +423,28 @@
 
     <section class="section pilot" id="pilote">
       <div class="section-head">
-        <div><p class="kicker">03 / Construire un pilote en SPSTI</p><h2>Comment construire un pilote IA en SPSTI&nbsp;?</h2></div>
-        <p>Évaluer l’usage avant de chercher à le généraliser. Un pilote utile commence par une question mesurable et une référence humaine. Il doit aussi permettre de revenir au fonctionnement antérieur.</p>
+        <div><p class="kicker">08 / Construire un pilote en SPSTI</p><h2>Besoin → valeur → données → risque → pilote → décision.</h2></div>
+        <p>Présanse recommande de commencer petit, mesurer les impacts, ajuster puis étendre progressivement. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Démarche Présanse ↗</a></p>
       </div>
       <div class="pilot-flow">
-        <article class="pilot-step"><span>01</span><h3>Choisir une tâche étroite.</h3><p>Un problème récurrent, corrigible et distinct de la décision clinique.</p></article>
-        <article class="pilot-step"><span>02</span><h3>Établir la référence.</h3><p>Un jeu de cas évalué par des professionnels selon des critères explicites.</p></article>
-        <article class="pilot-step"><span>03</span><h3>Protéger les données.</h3><p>Minimisation, hébergement adapté, accès limité et absence d’identifiants inutiles.</p></article>
-        <article class="pilot-step"><span>04</span><h3>Tester en parallèle.</h3><p>Le modèle travaille en second lecteur sans modifier le circuit habituel.</p></article>
-        <article class="pilot-step"><span>05</span><h3>Mesurer les erreurs.</h3><p>Accord par critère, excès, défauts, temps gagné et nouvelle charge de vérification.</p></article>
-        <article class="pilot-step"><span>06</span><h3>Décider collectivement.</h3><p>Poursuivre, corriger ou arrêter selon des résultats documentés et les effets sur le travail.</p></article>
+        <article class="pilot-step"><span>01</span><h3>Décrire le besoin.</h3><p>Une tâche récurrente, un problème observable et les professionnels concernés.</p></article>
+        <article class="pilot-step"><span>02</span><h3>Estimer la valeur.</h3><p>Qualité attendue, temps complet et bénéfice pour la mission du service.</p></article>
+        <article class="pilot-step"><span>03</span><h3>Auditer les données.</h3><p>Nature, nécessité, accès, conservation, hébergement et minimisation.</p></article>
+        <article class="pilot-step"><span>04</span><h3>Anticiper l’erreur.</h3><p>Ce qui peut mal se passer, qui peut le voir et qui peut interrompre l’usage.</p></article>
+        <article class="pilot-step"><span>05</span><h3>Tester en parallèle.</h3><p>Comparer à une référence humaine sans modifier immédiatement le circuit habituel.</p></article>
+        <article class="pilot-step"><span>06</span><h3>Décider collectivement.</h3><p>Poursuivre, corriger ou arrêter selon des résultats et effets documentés.</p></article>
+      </div>
+      <div class="measurement-grid">
+        <article><span>Mesurer le système</span><h3>Ce que fait l’outil.</h3><ul><li>erreurs repérées, erreurs manquées et réponses inventées</li><li>stabilité après changement de modèle ou de consigne</li><li>temps gagné après vérification et correction</li><li>différences entre les cas, métiers et publics</li></ul></article>
+        <article><span>Mesurer le travail</span><h3>Ce que l’outil fait aux équipes.</h3><ul><li>charge de contrôle, interruptions et exceptions</li><li>autonomie, contestation et responsabilité réelle</li><li>évolution des compétences et du collectif</li><li>incidents, contournements et inégalités d’usage</li></ul></article>
       </div>
       <p class="section-link-row">Pour préparer ce test, consultez la <a href="/evaluer/">méthode d’évaluation avant et après déploiement</a>, puis utilisez le <a href="/evaluer/impact/">questionnaire court sur les effets du projet d’IA</a>. Pour reprendre ces notions dans l’ordre, suivez le <a href="/#parcours">parcours d’IA Santé Travail</a>.</p>
     </section>
 
     <section class="section roles" id="roles">
       <div class="section-head">
-        <div><p class="kicker">04 / Répartir les responsabilités</p><h2>Un projet de service, pas un outil laissé à quelques utilisateurs.</h2></div>
-        <p>Les métiers doivent pouvoir définir les critères, les limites et les situations dans lesquelles le système ne doit pas être utilisé.</p>
+        <div><p class="kicker">09 / Répartir les responsabilités</p><h2>Un projet de service, pas un outil laissé à quelques utilisateurs.</h2></div>
+        <p>La charte Présanse demande une gouvernance claire et la définition de qui contrôle, valide et suit les usages. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principe de gouvernance ↗</a></p>
       </div>
       <div class="role-table">
         <article class="role-row"><strong>Médecins et infirmiers</strong><div><span>Apport</span><strong>Définir les cas, la référence professionnelle et les erreurs inacceptables.</strong></div><div><span>Responsabilité</span><strong>Conserver l’interprétation clinique et la validation de toute sortie utilisée.</strong></div></article>
@@ -302,16 +456,59 @@
       <p class="role-governance">Le rôle du CSE et l’organisation de la décision sont détaillés dans les <a href="/droit-gouvernance/">repères de droit et de gouvernance de l’IA au travail</a>.</p>
     </section>
 
-    <section class="section contact" id="contact">
-      <div><p class="kicker">Utilisation en SPSTI · Formation · Recherche</p><h2>Vous souhaitez discuter d’un pilote ou de l’étude&nbsp;?</h2></div>
-      <div class="contact-copy"><p>Présentez la tâche envisagée, les professionnels concernés, les données utilisées et ce que vous souhaitez mesurer. L’échange peut porter sur le choix du cas d’usage, le protocole d’évaluation ou les effets sur le travail.</p><div class="contact-actions"><a class="button light" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contacter le Dr Charles Broutin <span>↗</span></a><a class="button secondary" style="color:var(--cream);border-color:var(--line-light)" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Lire l’article INRS</a></div><small>Contact professionnel sur LinkedIn · article accessible sur le site de l’INRS</small></div>
+    <section class="section answer-section" id="questions" aria-labelledby="questions-title">
+      <div class="section-head">
+        <div><p class="kicker">10 / Réponses directes</p><h2 id="questions-title">Cinq questions fréquentes sur l’IA en SPSTI.</h2></div>
+        <p>Ces réponses courtes résument les points de décision. Chaque affirmation renvoie vers la source ou la section détaillée correspondante.</p>
+      </div>
+      <div class="answer-grid">
+        <article class="answer-card">
+          <h3>Quels usages de l’IA sont pertinents dans un SPSTI&nbsp;?</h3>
+          <p><strong>Les premiers candidats sont des tâches précises et vérifiables</strong>&nbsp;: recherche documentaire interne, administration des formations, orientation de demandes simples ou préparation de documents. Les usages médicaux et individuels exigent une vigilance plus forte, car les conséquences d’une erreur et la sensibilité des données augmentent. <a href="#usages">Comparer les usages</a> · <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Peut-on utiliser une IA grand public avec des données de santé&nbsp;?</h3>
+          <p><strong>Non, pas si l’outil n’est pas autorisé par le service.</strong> La charte Présanse demande de ne saisir aucune donnée personnelle, médicale ou identifiable dans un outil non validé. Le cadre doit préciser l’hébergement, les accès, la finalité et les responsabilités avant tout usage. <a href="#shadow">Voir le risque de Shadow IA</a> · <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Charte Présanse ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Comment choisir un premier pilote d’IA en SPSTI&nbsp;?</h3>
+          <p><strong>Choisir une forte valeur métier avec un risque maîtrisable.</strong> Le pilote doit partir d’un besoin observable, utiliser le minimum de données, rendre les erreurs visibles et pouvoir être arrêté sans perturber le circuit habituel. <a href="#prioriser">Tester la matrice</a> · <a href="#pilote">Suivre les six étapes</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>L’IA peut-elle décider à la place du médecin du travail&nbsp;?</h3>
+          <p><strong>Non.</strong> Dans l’étude publiée par l’INRS, le modèle intervient comme second lecteur d’un texte déjà rédigé&nbsp;; il ne réalise ni la consultation, ni la décision, ni la signature. Le médecin reste responsable de l’analyse, de la formulation et de la validation. <a href="#etude">Lire les résultats et leurs limites</a> · <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS TF&nbsp;335 ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Que faut-il mesurer pendant un pilote&nbsp;?</h3>
+          <p><strong>Mesurer à la fois le système et le travail.</strong> Il faut suivre les erreurs repérées ou manquées, la stabilité et le temps complet après correction, mais aussi la charge de contrôle, l’autonomie, les compétences, les incidents et les inégalités d’usage. <a href="#pilote">Voir les indicateurs</a> · <a href="/evaluer/">Consulter la méthode d’évaluation</a></p>
+        </article>
+      </div>
     </section>
+
+    <section class="section sources-section" id="sources">
+      <div class="section-head">
+        <div><p class="kicker">11 / Sources de référence</p><h2>Remonter au document d’origine avant de décider.</h2></div>
+        <p>Les liens ci-dessous complètent les références placées au fil de la page. Les documents officiels et les articles scientifiques restent la base de toute décision juridique, médicale ou technique.</p>
+      </div>
+      <div class="sources-grid">
+        <article><span>Gouvernance sectorielle</span><h3>Charte IA de Présanse</h3><p>Les dix principes et les bonnes pratiques proposées aux SPSTI.</p><a href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Page officielle ↗</a><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">PDF complet ↗</a></article>
+        <article><span>Retours de terrain</span><h3>Présanse, novembre 2025</h3><p>SPSTI 19-24, MT71, AST74, familles d’usages et matrice de priorisation.</p><a href="https://www.presanse.fr/informations-mensuelles/n-146-novembre-2025/" target="_blank" rel="noreferrer">Article ↗</a><a href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Synthèse PDF ↗</a></article>
+        <article><span>Shadow IA et méthode</span><h3>Support Présanse</h3><p>Sensibilisation, cas d’usage, données, pilote et usages non encadrés.</p><a href="https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf" target="_blank" rel="noreferrer">Consulter le support ↗</a></article>
+        <article><span>Étude publiée</span><h3>INRS — TF 335</h3><p>Protocole et résultats sur la seconde lecture de préconisations médicales.</p><a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Consulter l’article ↗</a></article>
+        <article><span>Acceptabilité</span><h3>Médecins du travail franciliens</h3><p>237 répondants, complémentarité clinique, validation et protection des données.</p><a href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Consulter l’étude ↗</a></article>
+        <article><span>Formation</span><h3>Enquête KAP</h3><p>80 professionnels de santé au travail et intérêt déclaré pour la formation.</p><a href="https://www.sciencedirect.com/science/article/pii/S1775878526008052" target="_blank" rel="noreferrer">Consulter l’étude ↗</a></article>
+        <article><span>Cadre national</span><h3>Plan santé au travail 2026–2030</h3><p>Objectif 3, sous-action 3.1.1 et rôle des services de prévention.</p><a href="https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf" target="_blank" rel="noreferrer">Document officiel ↗</a></article>
+        <article><span>Données personnelles</span><h3>CNIL</h3><p>Repères officiels sur l’intelligence artificielle et le RGPD.</p><a href="https://www.cnil.fr/fr/intelligence-artificielle" target="_blank" rel="noreferrer">Consulter ↗</a></article>
+        <article><span>Données de santé</span><h3>Hébergement certifié HDS</h3><p>Référentiel et liste des hébergeurs certifiés.</p><a href="https://esante.gouv.fr/offres-services/hds/liste-des-hebergeurs-certifies" target="_blank" rel="noreferrer">Agence du Numérique en Santé ↗</a></article>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand"><strong>IA &amp; Santé au Travail</strong><p>Des repères pour choisir, évaluer et encadrer les usages de l’intelligence artificielle dans le travail réel.</p></div>
-      <div class="footer-col"><span>Cette page</span><a href="#essentiel">L’essentiel</a><a href="#pst5">Le PST 5 et l’IA</a><a href="#usages">Usages</a><a href="#etude">Étude INRS</a><a href="#pilote">Construire un pilote</a></div>
+      <div class="footer-col"><span>Cette page</span><a href="#essentiel">En bref</a><a href="#usages">Usages</a><a href="#terrain">Terrain</a><a href="#charte">Charte</a><a href="#prioriser">Prioriser</a><a href="#questions">Questions</a><a href="#sources">Sources</a></div>
       <div class="footer-col"><span>Parcours</span><a href="https://www.iasantetravail.com/comprendre/">Comprendre</a><a href="https://www.iasantetravail.com/evaluer/">Évaluer</a><a href="https://www.iasantetravail.com/droit-gouvernance/">Droit &amp; gouvernance</a><a href="https://www.iasantetravail.com/a-propos/">À propos</a></div>
       <div class="footer-bottom"><span>Étude citée : C. Broutin, Références en Santé au Travail, TF 335, n° 186, juin 2026.</span><span>© 2026 IA &amp; Santé au Travail.</span></div>
     </div>
