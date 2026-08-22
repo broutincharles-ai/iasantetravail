@@ -201,6 +201,11 @@ if (!/^Sitemap: https:\/\/www\.iasantetravail\.com\/sitemap\.xml$/m.test(robots)
 }
 if (/Disallow:\s*\/$/m.test(robots)) errors.push("robots.txt: site root must not be blocked");
 
+const languageRouting = await readFile(path.join(root, "assets/js/language-routing.js"), "utf8");
+if (/\blocation\.(?:replace|assign)\s*\(|\blocation\.href\s*=/.test(languageRouting)) {
+  errors.push("assets/js/language-routing.js: explicit language URLs must not redirect automatically");
+}
+
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const expectedSitemapUrls = new Set([...INDEXABLE_FILES].map(publicUrl));
 const actualSitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
