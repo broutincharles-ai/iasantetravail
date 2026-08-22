@@ -5,8 +5,8 @@ Site éditorial statique bilingue de [iasantetravail.com](https://www.iasantetra
 ## Architecture
 
 - `index.html` et `en/index.html` : accueils français et anglais ;
-- neuf pages françaises sont indexables : accueil, `formation/`, `comprendre/`, `risques-prevention/`, `evaluer/`, `droit-gouvernance/`, `usages-terrain/exemple-sante-travail/`, `lecture/` et `a-propos/` ;
-- leurs huit équivalents anglais existants sont les seules autres pages indexables (la formation n’a pas encore de version anglaise) ; la liste blanche est centralisée dans `scripts/indexing-scope.mjs` ;
+- huit pages françaises sont indexables : accueil, `comprendre/`, `risques-prevention/`, `evaluer/`, `droit-gouvernance/`, `usages-terrain/exemple-sante-travail/`, `lecture/` et `a-propos/` ;
+- leurs huit équivalents anglais sont les seules autres pages indexables ; la liste blanche est centralisée dans `scripts/indexing-scope.mjs` ;
 - `assets/css/tokens.css` : couleurs, espaces, largeurs, typographie et accessibilité ;
 - `assets/css/layout.css` : grilles et rythmes communs ;
 - `assets/css/components.css` : navigation, footer et composants partagés ;
@@ -28,7 +28,7 @@ node scripts/build-search-index.mjs
 node scripts/validate-site.mjs
 ```
 
-Le validateur refuse toute dix-huitième URL indexable. Il contrôle aussi que le sitemap et les index de recherche contiennent exactement neuf pages FR et huit pages EN, puis vérifie les liens locaux, les identifiants, les métadonnées SEO, le JSON-LD, les variantes linguistiques et le tag Google.
+Le validateur refuse toute dix-septième URL indexable. Il contrôle aussi que le sitemap et les index de recherche contiennent exactement huit pages FR et huit pages EN, puis vérifie les liens locaux, les identifiants, les métadonnées SEO, le JSON-LD, les variantes linguistiques et le tag Google.
 
 ## IndexNow
 

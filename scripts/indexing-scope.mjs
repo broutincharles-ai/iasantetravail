@@ -9,9 +9,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-08-20" }
 ];
 
-export const INDEXABLE_SINGLETONS = [
-  { file: "formation/index.html", lang: "fr", lastmod: "2026-08-21" }
-];
+export const INDEXABLE_SINGLETONS = [];
 
 export const INDEXABLE_FR_FILES = [
   ...INDEXABLE_PAIRS.map(({ fr }) => fr),

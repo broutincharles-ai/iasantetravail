@@ -46,7 +46,6 @@
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
-    ["Formation", "/formation/", "training"],
     ["Comprendre", "/comprendre/", "understand"],
     ["Risques", "/risques-prevention/", "risks"],
     ["Évaluer", "/evaluer/", "evaluate"],
@@ -62,13 +61,13 @@
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
     if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
-    if (/^\/formation\//.test(path)) return "training";
     if (/^\/(?:en\/reading|lecture)\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";
     return "";
   })();
 
   const activeAttribute = key => key === activeKey ? ' aria-current="page"' : "";
+  const homeAttribute = path === (isEnglish ? "/en/" : "/") ? ' aria-current="page"' : "";
   const primaryLinks = primary.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("");
   const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
   const existingPageNav = existingHeader?.querySelector(".page-nav");
@@ -88,7 +87,7 @@
   header.className = "site-system-header";
   header.innerHTML = `
     <nav class="system-nav" aria-label="${isEnglish ? "Main navigation" : "Navigation principale"}">
-      <a class="system-brand" href="${isEnglish ? "/en/" : "/"}" aria-label="${isEnglish ? "AI & Occupational Health, home" : "IA et Santé au Travail, accueil"}">
+      <a class="system-brand" href="${isEnglish ? "/en/" : "/"}"${homeAttribute} aria-label="${isEnglish ? "AI & Occupational Health, home" : "IA et Santé au Travail, accueil"}">
         <span class="system-brand-mark" aria-hidden="true"></span>
         <span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong><small>${isEnglish ? "Independent publication" : "Publication indépendante"}</small></span>
       </a>

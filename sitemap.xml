@@ -112,10 +112,4 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/a-propos/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/a-propos/"/>
   </url>
-  <url>
-    <loc>https://www.iasantetravail.com/formation/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/formation/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/formation/"/>
-  </url>
 </urlset>
