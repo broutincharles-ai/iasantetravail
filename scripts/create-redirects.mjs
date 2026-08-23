@@ -14,7 +14,6 @@ const redirects = {
   "pratique/index.html": "/usages-terrain/exemple-sante-travail/",
   "terrain/index.html": "/usages-terrain/exemple-sante-travail/",
   "macroeconomie/index.html": "/comprendre/",
-  "labor-ia/index.html": "/usages-terrain/exemple-sante-travail/",
   "accompagner-en-amont/index.html": "/usages-terrain/exemple-sante-travail/",
   "en-pratique/index.html": "/usages-terrain/exemple-sante-travail/",
   "ia-préconisations/index.html": "/usages-terrain/exemple-sante-travail/",

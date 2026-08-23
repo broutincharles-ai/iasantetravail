@@ -13,7 +13,7 @@
 - Le questionnaire court reste fonctionnel et local, mais son introduction retarde encore l’accès à l’action. Il doit devenir une vraie interface outil et non une page éditoriale supplémentaire.
 - Plusieurs pages récentes françaises n’ont pas encore leurs liens `hreflang`, alors que leurs équivalents anglais existent.
 - Le validateur local passe sur l’état initial : 47 HTML, 19 CSS, 539 références locales et aucun identifiant dupliqué. Ce contrôle ne détecte toutefois ni l’incohérence des deux shells, ni l’excès de CSS en ligne, ni la qualité responsive du menu.
-- Les anciennes routes déjà préservées couvrent notamment `/apropos/`, `/pratique/`, `/risques/`, `/labor-ia/`, `/legislation/`, `/modeles/`, `/impact/` et `/terrain/`. Les anciennes URL citées dans le cahier des charges (`/accompagner-en-amont/`, `/en-pratique/`, `/ia-préconisations/`, `/l-ia-facteur-de-bien-etre/`) ne sont présentes ni dans l’arborescence actuelle ni dans l’historique Git accessible ; elles doivent donc être ajoutées explicitement comme routes de compatibilité.
+- Les anciennes routes déjà préservées couvrent notamment `/apropos/`, `/pratique/`, `/risques/`, `/legislation/`, `/modeles/`, `/impact/` et `/terrain/`. Les anciennes URL citées dans le cahier des charges (`/accompagner-en-amont/`, `/en-pratique/`, `/ia-préconisations/`, `/l-ia-facteur-de-bien-etre/`) ne sont présentes ni dans l’arborescence actuelle ni dans l’historique Git accessible ; elles doivent donc être ajoutées explicitement comme routes de compatibilité.
 
 ## Architecture cible retenue
 
