@@ -10,7 +10,14 @@ export const INDEXABLE_PAIRS = [
 ];
 
 export const INDEXABLE_SINGLETONS = [
-  { file: "risques-prevention/index.html", lang: "fr", lastmod: "2026-08-27" }
+  { file: "risques-prevention/index.html", lang: "fr", lastmod: "2026-08-27" },
+  { file: "risques-prevention/economique-social/index.html", lang: "fr", lastmod: "2026-08-16" },
+  { file: "lecture/agents-ia-workaholisme/index.html", lang: "fr", lastmod: "2026-08-24" },
+  { file: "lecture/frontieres-metiers-ia/index.html", lang: "fr", lastmod: "2026-07-27" },
+  { file: "lecture/ia-deploiement-travail-reel/index.html", lang: "fr", lastmod: "2026-07-16" },
+  { file: "lecture/ia-sens-metier-mathematiques/index.html", lang: "fr", lastmod: "2026-07-25" },
+  { file: "lecture/management-agentique/index.html", lang: "fr", lastmod: "2026-08-04" },
+  { file: "lecture/travailleurs-ia-risques-psychosociaux/index.html", lang: "fr", lastmod: "2026-08-27" }
 ];
 
 export const INDEXABLE_FR_FILES = [

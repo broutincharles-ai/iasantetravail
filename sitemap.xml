@@ -29,12 +29,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/comprendre/"/>
   </url>
   <url>
-    <loc>https://www.iasantetravail.com/risques-prevention/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/"/>
-  </url>
-  <url>
     <loc>https://www.iasantetravail.com/risques-prevention/psychosociaux/</loc>
     <lastmod>2026-08-27</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/psychosociaux/"/>
@@ -50,42 +44,42 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/evaluer/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/evaluate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/evaluer/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/evaluate/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/evaluate/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/evaluer/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/droit-gouvernance/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/droit-gouvernance/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/legal-governance/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/droit-gouvernance/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/legal-governance/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/legal-governance/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/droit-gouvernance/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/droit-gouvernance/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/"/>
@@ -117,5 +111,53 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/a-propos/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/a-propos/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/risques-prevention/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/risques-prevention/economique-social/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/agents-ia-workaholisme/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/agents-ia-workaholisme/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/agents-ia-workaholisme/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/frontieres-metiers-ia/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/frontieres-metiers-ia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/frontieres-metiers-ia/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/ia-deploiement-travail-reel/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/ia-deploiement-travail-reel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/ia-deploiement-travail-reel/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/ia-sens-metier-mathematiques/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/ia-sens-metier-mathematiques/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/ia-sens-metier-mathematiques/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/management-agentique/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/management-agentique/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/management-agentique/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/"/>
   </url>
 </urlset>
