@@ -573,6 +573,47 @@ body.reading-redesign {
 .article-side-note strong { color: var(--reading-ink); font-family: var(--serif, Georgia, serif); font-size: 24px; font-weight: 400; line-height: 1.1; }
 .article-side-note p { margin: 16px 0 0; color: var(--reading-muted); font-size: 12px; line-height: 1.65; }
 
+.article-publication {
+  border-top: 1px solid var(--reading-line);
+  background: var(--reading-paper);
+}
+
+.article-publication-inner {
+  width: var(--reading-wide);
+  margin-inline: auto;
+  padding: clamp(62px, 7vw, 104px) 0;
+}
+
+.article-publication dl {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  border-top: 1px solid rgba(31, 35, 32, 0.42);
+}
+
+.article-publication dl > div {
+  min-height: 96px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 92px);
+  align-items: start;
+}
+
+.article-publication dt {
+  color: var(--reading-muted);
+  font: 800 10px/1.45 var(--mono, monospace);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.article-publication dd {
+  margin: 0;
+  color: #414641;
+  font-size: clamp(14px, 1.25vw, 18px);
+  line-height: 1.55;
+}
+
 .article-end {
   color: #f5f0e7;
   background: var(--reading-dark);
@@ -641,6 +682,7 @@ body.reading-redesign {
   .article-prose p, .article-prose li { font-size: 16px; }
   .article-prose h2 { margin-top: 68px; }
   .article-prose blockquote { padding-left: 22px; }
+  .article-publication dl > div { min-height: 0; grid-template-columns: 1fr; gap: 7px; }
   .article-end-inner { grid-template-columns: 1fr; align-items: start; }
 }
 
