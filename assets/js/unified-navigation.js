@@ -14,10 +14,7 @@
   const pairs = {
     "/": "/en/",
     "/comprendre/": "/en/understand/",
-    "/usages-terrain/": "/en/uses-and-field/",
     "/usages-terrain/exemple-sante-travail/": "/en/uses-and-field/occupational-health-example/",
-    "/usages-terrain/avant-deploiement/": "/en/uses-and-field/before-deployment/",
-    "/usages-terrain/retours-terrain/": "/en/uses-and-field/after-deployment/",
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
     "/evaluer/": "/en/evaluate/",
     "/evaluer/impact/": "/en/evaluate/impact/",
@@ -31,16 +28,21 @@
   };
 
   const reversePairs = Object.fromEntries(Object.entries(pairs).map(([fr, en]) => [en, fr]));
+  const mergedFrenchDestinations = {
+    "/en/uses-and-field/": "/evaluer/",
+    "/en/uses-and-field/before-deployment/": "/evaluer/#avant",
+    "/en/uses-and-field/after-deployment/": "/evaluer/#apres"
+  };
   const isResearchPath = /^\/(?:en\/)?research\//.test(path);
   const researchTranslationUrl = isEnglish ? path.replace(/^\/en/, "") : `/en${path}`;
   const translationUrl = isResearchPath
     ? researchTranslationUrl
-    : isEnglish ? (reversePairs[path] || "/") : (pairs[path] || "/en/");
+    : isEnglish ? (reversePairs[path] || mergedFrenchDestinations[path] || "/") : (pairs[path] || "/en/");
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
     ["Occupational risks", "/en/risks-prevention/", "risks"],
-    ["Assess", "/en/evaluate/", "evaluate"],
+    ["Assess & deploy", "/en/evaluate/", "evaluate"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
     ["Govern", "/en/legal-governance/", "governance"],
     ["Reading", "/en/reading/", "reading"],
@@ -48,7 +50,7 @@
   ] : [
     ["Comprendre", "/comprendre/", "understand"],
     ["Risques", "/risques-prevention/", "risks"],
-    ["Évaluer", "/evaluer/", "evaluate"],
+    ["Évaluer & déployer", "/evaluer/", "evaluate"],
     ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Lecture", "/lecture/", "reading"],

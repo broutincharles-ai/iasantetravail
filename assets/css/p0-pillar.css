@@ -1,0 +1,439 @@
+/* P0 consolidation: merged evaluation/deployment pillar, risk hub and legal timeline. */
+
+.merged-evaluate-page .hero {
+  background: linear-gradient(135deg, #f5f0e7 0%, #eee3d2 58%, #e2d0b8 100%);
+}
+
+.merged-evaluate-page .hero-context {
+  max-width: 780px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent, #a84e1f);
+  background: rgba(255, 255, 255, 0.56);
+  line-height: 1.58;
+}
+
+.merged-evaluate-page .tool-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.merged-evaluate-page .tool-card {
+  min-width: 0;
+}
+
+.merged-evaluate-page .tool-card--pilot {
+  background: var(--terra);
+  color: #f8f4ec;
+}
+
+.merged-evaluate-page .tool-card--pilot .tool-top,
+.merged-evaluate-page .tool-card--pilot p,
+.merged-evaluate-page .tool-card--pilot small {
+  color: rgba(248, 244, 236, 0.76);
+}
+
+.merged-evaluate-page .tool-card--pilot h3,
+.merged-evaluate-page .tool-card--pilot strong {
+  color: #fffdf8;
+}
+
+.merged-evaluate-page .tool-card--pilot .tool-output {
+  border-color: rgba(255, 253, 248, .28);
+}
+
+.merged-evaluate-page .tool-card--pilot .tool-output div + div {
+  border-color: rgba(255, 253, 248, .22);
+}
+
+.merged-evaluate-page .tool-card--pilot .button.light {
+  border-color: #fffaf4;
+  color: var(--terra-interactive);
+  background: #fffaf4;
+}
+
+/* Keep the monitoring table readable on a light editorial background. */
+.merged-evaluate-page .follow-up {
+  color: var(--ink);
+  background: var(--white);
+}
+
+.merged-evaluate-page .follow-up .kicker,
+.merged-evaluate-page .monitor-row > span:first-child,
+.merged-evaluate-page .calendar-step span {
+  color: var(--terra);
+}
+
+.merged-evaluate-page .follow-up .section-head > p,
+.merged-evaluate-page .monitor-row p {
+  color: var(--muted);
+}
+
+.merged-evaluate-page .monitor-table,
+.merged-evaluate-page .monitor-row,
+.merged-evaluate-page .follow-calendar,
+.merged-evaluate-page .calendar-step {
+  border-color: var(--line);
+}
+
+.merged-evaluate-page .monitor-row b {
+  color: var(--ink);
+}
+
+.merged-evaluate-page .monitor-head {
+  color: var(--muted);
+}
+
+.merged-evaluate-page .follow-calendar {
+  background: var(--paper-light);
+}
+
+/* Compact five-step scientific validation roadmap. */
+.merged-evaluate-page .validation-roadmap {
+  margin-top: 46px;
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  background: var(--paper-light);
+}
+
+.merged-evaluate-page .validation-roadmap .validation-step {
+  min-height: 220px;
+  padding: 24px 22px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+
+.merged-evaluate-page .validation-roadmap .validation-step:last-child {
+  border-right: 0;
+}
+
+.merged-evaluate-page .validation-roadmap .validation-step span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fffaf4;
+  background: var(--terra);
+  font: 700 10px/1 var(--mono);
+}
+
+.merged-evaluate-page .validation-roadmap .validation-step h3 {
+  margin: 32px 0 12px;
+  font-size: 20px;
+  line-height: 1.18;
+}
+
+.merged-evaluate-page .validation-roadmap .validation-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.merged-evaluate-page .journey-decision {
+  width: min(1440px, calc(100% - clamp(40px, 8vw, 128px)));
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 70px);
+  background: #1e302c;
+  color: #fffdf8;
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 6vw, 90px);
+  align-items: center;
+}
+
+.merged-evaluate-page .journey-decision span {
+  color: #d9a46f;
+  font: 700 10px/1.4 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.merged-evaluate-page .journey-decision h2 {
+  margin: 12px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 62px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.merged-evaluate-page .journey-decision p {
+  margin: 0;
+  color: rgba(255, 253, 248, .78);
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.65;
+}
+
+.merged-evaluate-page .instrument-facts {
+  margin-top: clamp(70px, 9vw, 130px);
+}
+
+.merged-evaluate-page .method-link-row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.merged-evaluate-page .validation-status {
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid rgba(30, 48, 44, .2);
+  background: #f7f2e9;
+  color: #414943;
+  line-height: 1.65;
+}
+
+/* Full risk hub */
+.risk-hub-page .risk-hub-hero {
+  min-height: clamp(470px, 56vh, 720px);
+}
+
+.risk-hub-page .risk-hub-hero > div {
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr);
+}
+
+.risk-hub-answer {
+  width: var(--risk-wide);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 88px) 0;
+  border-bottom: 1px solid var(--risk-line);
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: clamp(24px, 4vw, 70px);
+}
+
+.risk-hub-answer > div { grid-column: 2; }
+.risk-hub-answer h2,
+.risk-cluster-section h2 {
+  margin: 0;
+  color: var(--risk-ink);
+  font-family: var(--serif);
+  font-size: clamp(42px, 4.7vw, 76px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .98;
+}
+
+.risk-hub-answer p {
+  margin: 26px 0 0;
+  color: var(--risk-muted);
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 31px);
+  line-height: 1.48;
+}
+
+.risk-answer-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.risk-answer-actions a {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--risk-terra-deep);
+  display: inline-flex;
+  align-items: center;
+  color: var(--risk-terra-deep);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.risk-answer-actions a:first-child { background: var(--risk-terra-deep); color: #fff; }
+
+.risk-cluster-section {
+  width: var(--risk-wide);
+  margin: 0 auto;
+  padding: clamp(74px, 9vw, 140px) 0;
+  border-bottom: 1px solid var(--risk-line);
+}
+
+.risk-section-head {
+  margin-bottom: clamp(36px, 5vw, 70px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  gap: clamp(30px, 6vw, 90px);
+  align-items: end;
+}
+
+.risk-section-head > p {
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.risk-family-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--risk-line);
+  border-left: 1px solid var(--risk-line);
+}
+
+.risk-family-card {
+  min-height: 290px;
+  padding: clamp(24px, 3vw, 42px);
+  border-right: 1px solid var(--risk-line);
+  border-bottom: 1px solid var(--risk-line);
+  background: var(--risk-paper-light);
+}
+
+.risk-family-card > span {
+  color: var(--risk-terra);
+  font: 700 10px/1.3 var(--mono);
+  letter-spacing: .1em;
+}
+
+.risk-family-card h3 {
+  margin: 38px 0 16px;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2.4vw, 42px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.risk-family-card p {
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.risk-matrix-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--risk-line);
+  background: #fbf8f1;
+}
+
+.risk-matrix {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.risk-matrix th,
+.risk-matrix td {
+  padding: 18px 20px;
+  border-right: 1px solid var(--risk-line);
+  border-bottom: 1px solid var(--risk-line);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.risk-matrix th {
+  background: #ead8d1;
+  color: var(--risk-terra-deep);
+  font: 700 10px/1.3 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.risk-matrix td { color: var(--risk-muted); font-size: 14px; }
+.risk-matrix td:first-child { color: var(--risk-ink); font-weight: 700; }
+
+.risk-prevention-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--risk-line);
+  border: 1px solid var(--risk-line);
+}
+
+.risk-prevention-step {
+  padding: clamp(24px, 3vw, 38px);
+  background: var(--risk-paper-light);
+}
+
+.risk-prevention-step b {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--risk-terra);
+  font: 700 11px/1 var(--mono);
+}
+
+.risk-prevention-step h3 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.risk-prevention-step p {
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Current AI Act timeline */
+.legal-update-callout {
+  margin: 30px 0 42px;
+  padding: clamp(24px, 3vw, 38px);
+  border-left: 4px solid #a84e1f;
+  background: #f3e6dc;
+}
+
+.legal-update-callout > span {
+  color: #8a3b1d;
+  font: 700 10px/1.4 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.legal-update-callout h3 {
+  margin: 10px 0 16px;
+  font-family: var(--serif);
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 400;
+}
+
+.legal-timeline {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(83, 54, 39, .2);
+}
+
+.legal-timeline article,
+.legal-timeline > div { padding: 20px; background: #fffaf5; }
+.legal-timeline b,
+.legal-timeline time { display: block; color: #8a3b1d; font-size: 13px; font-weight: 700; }
+.legal-timeline p { margin: 9px 0 0; color: #514a45; font-size: 13px; line-height: 1.55; }
+.legal-update-callout > p { margin: 22px 0 0; color: #514a45; line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .merged-evaluate-page .tool-grid,
+  .risk-family-grid { grid-template-columns: 1fr 1fr; }
+  .merged-evaluate-page .validation-roadmap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .merged-evaluate-page .validation-roadmap .validation-step { min-height: 190px; border-bottom: 1px solid var(--line); }
+  .merged-evaluate-page .validation-roadmap .validation-step:nth-child(2n) { border-right: 0; }
+  .risk-prevention-steps { grid-template-columns: 1fr 1fr; }
+  .legal-timeline { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .merged-evaluate-page .tool-grid,
+  .merged-evaluate-page .validation-roadmap,
+  .risk-family-grid,
+  .risk-prevention-steps,
+  .legal-timeline { grid-template-columns: 1fr; }
+  .merged-evaluate-page .validation-roadmap .validation-step {
+    min-height: 0;
+    padding: 22px;
+    border-right: 0;
+  }
+  .merged-evaluate-page .validation-roadmap .validation-step h3 { margin-top: 20px; }
+  .merged-evaluate-page .journey-decision,
+  .risk-section-head { grid-template-columns: 1fr; }
+  .risk-hub-answer { grid-template-columns: 1fr; }
+  .risk-hub-answer > div { grid-column: 1; }
+}
