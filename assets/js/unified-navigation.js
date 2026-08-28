@@ -51,7 +51,7 @@
     ["Comprendre", "/comprendre/", "understand"],
     ["Risques", "/risques-prevention/", "risks"],
     ["Évaluer & déployer", "/evaluer/", "evaluate"],
-    ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
+    ["IA et SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
     ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]

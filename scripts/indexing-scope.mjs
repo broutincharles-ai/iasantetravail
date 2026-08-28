@@ -1,10 +1,10 @@
 export const INDEXABLE_PAIRS = [
-  { fr: "index.html", en: "en/index.html", lastmod: "2026-08-22" },
+  { fr: "index.html", en: "en/index.html", lastmod: "2026-08-28" },
   { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-08-20" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-08-27" },
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-08-20" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-08-20" },
-  { fr: "usages-terrain/exemple-sante-travail/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-08-22" },
+  { fr: "usages-terrain/exemple-sante-travail/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-08-28" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-08-27" },
   { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-08-20" }
 ];

@@ -276,7 +276,7 @@ body.spsti-hub .pst-context-source { font-size: 13px; }
 .filter:hover,
 .filter.active { color: var(--paper); border-color: var(--terra); background: var(--terra); }
 .table-scroll { overflow-x: auto; }
-.usage-table { width: 100%; min-width: 920px; border-collapse: collapse; }
+.usage-table { width: 100%; min-width: 1280px; border-collapse: collapse; }
 .usage-table th { padding: 17px 20px; color: var(--muted); background: var(--cream); font-family: var(--mono); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-align: left; text-transform: uppercase; }
 .usage-table td { padding: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; line-height: 1.55; vertical-align: top; }
 .usage-table td:first-child { color: var(--ink); font-weight: 720; }
@@ -371,6 +371,34 @@ body.spsti-hub .study-finding p { font-size: 15px; }
 
 body.spsti-hub .pilot-step p { font-size: 15px; line-height: 1.62; }
 body.spsti-hub .pilot-step h3 { font-size: 21px; }
+.editorial-method {
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 58px 0 84px;
+  display: grid;
+  grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(42px, 7vw, 100px);
+}
+.editorial-method h2 { max-width: 560px; margin: 18px 0 0; font-size: clamp(32px, 3.3vw, 50px); letter-spacing: -.045em; line-height: 1.08; }
+.editorial-method-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.editorial-method-grid article { min-height: 245px; padding: 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-light); }
+.editorial-method-grid article:nth-child(2) { background: var(--cream); }
+.editorial-method-grid span { color: var(--terra); font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.editorial-method-grid strong { display: block; margin-top: 42px; font-size: 18px; line-height: 1.35; }
+.editorial-method-grid p { margin: 13px 0 0; color: var(--muted); font-size: 14px; line-height: 1.62; }
+
+.training-section { background: var(--white); }
+.training-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.training-grid article { min-height: 290px; padding: 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-light); }
+.training-grid article:nth-child(2) { background: var(--cream); }
+.training-grid span { color: var(--terra); font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.training-grid h3 { margin: 54px 0 16px; font-size: 25px; letter-spacing: -.035em; line-height: 1.2; }
+.training-grid p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.training-callout { margin: 28px 0 0; padding: 26px 30px; border-left: 5px solid var(--terra); color: var(--muted); background: var(--cream); font-size: 15px; line-height: 1.68; }
+.training-callout strong { color: var(--ink); }
+.training-callout a,
+.section-link-row a { color: var(--terra-interactive, var(--terra)); font-weight: 720; text-decoration: underline; text-underline-offset: 4px; }
+.section-link-row { margin: 24px 0 0; font-size: 15px; }
 .measurement-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 34px; border: 1px solid var(--line); }
 .measurement-grid article { padding: 36px 40px; background: var(--white); }
 .measurement-grid article + article { border-left: 1px solid var(--line); background: var(--cream); }
@@ -402,6 +430,9 @@ body.spsti-hub .pilot-step h3 { font-size: 21px; }
   .principles-grid article { grid-template-columns: 38px .75fr 1fr; }
 }
 @media (max-width: 920px) {
+  .editorial-method { grid-template-columns: 1fr; }
+  .editorial-method-grid,
+  .training-grid { grid-template-columns: 1fr; }
   .family-grid { grid-template-columns: repeat(2, 1fr); }
   .terrain-grid,
   .principles-grid,
@@ -423,6 +454,9 @@ body.spsti-hub .pilot-step h3 { font-size: 21px; }
   .measurement-grid article + article { border-top: 1px solid var(--line); border-left: 0; }
 }
 @media (max-width: 640px) {
+  .editorial-method { width: calc(100% - 30px); padding: 48px 0 62px; }
+  .editorial-method-grid article,
+  .training-grid article { min-height: 0; }
   body.spsti-hub .site-system-header .page-nav-links { font-size: 11px; }
   .family-grid,
   .terrain-grid,
