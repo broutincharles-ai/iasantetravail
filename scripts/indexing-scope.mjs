@@ -17,7 +17,8 @@ export const INDEXABLE_SINGLETONS = [
   { file: "lecture/ia-deploiement-travail-reel/index.html", lang: "fr", lastmod: "2026-07-16" },
   { file: "lecture/ia-sens-metier-mathematiques/index.html", lang: "fr", lastmod: "2026-07-25" },
   { file: "lecture/management-agentique/index.html", lang: "fr", lastmod: "2026-08-04" },
-  { file: "lecture/travailleurs-ia-risques-psychosociaux/index.html", lang: "fr", lastmod: "2026-08-27" }
+  { file: "lecture/travailleurs-ia-risques-psychosociaux/index.html", lang: "fr", lastmod: "2026-08-27" },
+  { file: "cse/index.html", lang: "fr", lastmod: "2026-08-28" }
 ];
 
 export const INDEXABLE_FR_FILES = [

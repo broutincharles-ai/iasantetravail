@@ -50,9 +50,10 @@
   ] : [
     ["Comprendre", "/comprendre/", "understand"],
     ["Risques", "/risques-prevention/", "risks"],
+    ["IA en SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
+    ["Gouvernance", "/droit-gouvernance/", "governance"],
+    ["CSE", "/cse/", "cse"],
     ["Évaluer & déployer", "/evaluer/", "evaluate"],
-    ["IA et SPSTI", "/usages-terrain/exemple-sante-travail/", "spsti"],
-    ["Gouverner", "/droit-gouvernance/", "governance"],
     ["Lecture", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
   ];
@@ -62,6 +63,7 @@
     if (/^\/(?:en\/risks-prevention|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
+    if (/^\/cse\//.test(path)) return "cse";
     if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
     if (/^\/(?:en\/reading|lecture)\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";

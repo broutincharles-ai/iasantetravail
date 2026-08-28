@@ -160,4 +160,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/"/>
   </url>
+  <url>
+    <loc>https://www.iasantetravail.com/cse/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/"/>
+  </url>
 </urlset>
