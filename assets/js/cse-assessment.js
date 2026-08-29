@@ -13,15 +13,6 @@
   };
 
   const elements = {
-    card: document.getElementById("dossierCard"),
-    answered: document.getElementById("answeredCount"),
-    progress: document.getElementById("answerProgress"),
-    autonomy: document.getElementById("autonomyPill"),
-    title: document.getElementById("outcomeTitle"),
-    text: document.getElementById("outcomeText"),
-    documented: document.getElementById("documentedCount"),
-    partial: document.getElementById("partialCount"),
-    missing: document.getElementById("missingCount"),
     recommendation: document.getElementById("spstRecommendation"),
     summaryTitle: document.getElementById("summary-title"),
     summaryText: document.getElementById("summaryText"),
@@ -47,19 +38,10 @@
     const recommendSpst = workImpact === "identified" || workImpact === "uncertain" || (autonomy !== null && autonomy >= 3);
     const [title, text] = outcomes[tone];
 
-    elements.answered.textContent = String(values.length);
-    elements.progress.style.width = `${values.length * 10}%`;
-    elements.autonomy.textContent = autonomy === null ? "Autonomie ?" : `Autonomie A${autonomy}`;
-    elements.title.textContent = title;
-    elements.text.textContent = text;
     elements.summaryTitle.textContent = title;
     elements.summaryText.textContent = text;
-    elements.documented.textContent = String(documented);
-    elements.partial.textContent = String(partial);
-    elements.missing.textContent = String(missing);
     elements.recommendation.hidden = !recommendSpst;
     elements.summarySpst.hidden = !recommendSpst;
-    elements.card.className = `dossier-card tone-${tone}`;
   };
 
   document.querySelectorAll(".question-card").forEach(card => {

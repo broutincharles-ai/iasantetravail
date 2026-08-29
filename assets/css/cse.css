@@ -14,17 +14,15 @@
 
 .cse-hero {
   width: var(--wrap);
-  min-height: 700px;
+  min-height: 640px;
   margin: 0 auto;
   padding: clamp(58px, 6vw, 86px) 0;
-  display: grid;
-  grid-template-columns: minmax(0, .96fr) minmax(470px, 1.04fr);
+  display: flex;
   align-items: center;
-  gap: clamp(50px, 6vw, 88px);
 }
-.cse-hero-copy { max-width: 730px; }
+.cse-hero-copy { max-width: 1180px; }
 .cse-hero h1 {
-  max-width: 12ch;
+  max-width: 1100px;
   margin: 29px 0 25px;
   font-family: var(--serif);
   font-size: clamp(3.8rem, 5.6vw, 5.8rem);
@@ -33,8 +31,8 @@
   letter-spacing: -.055em;
 }
 .cse-hero h1 em { color: var(--terra-interactive); font-style: normal; }
-.cse-lede { max-width: 670px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.65; }
-.cse-meta { max-width: 670px; margin: 18px 0 0; color: var(--muted); font: 700 9px/1.65 var(--mono); }
+.cse-lede { max-width: 790px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.65; }
+.cse-meta { max-width: 790px; margin: 18px 0 0; color: var(--muted); font: 700 9px/1.65 var(--mono); }
 .cse-meta a { color: var(--terra-interactive); text-decoration: underline; text-underline-offset: 3px; }
 .cse-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 11px; }
 .cse-button {
@@ -56,32 +54,6 @@
 .cse-button:hover { color: var(--paper); background: var(--ink); }
 .cse-proof { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font: 700 9px/1.4 var(--mono); text-transform: uppercase; }
 .cse-proof span::before { margin-right: 7px; color: var(--terra-interactive); content: "✓"; }
-
-.dossier-card { border: 1px solid var(--line); background: var(--paper-light); box-shadow: 18px 18px 0 var(--terracotta-wash); }
-.dossier-card > header { min-height: 62px; padding: 0 21px; border-bottom: 1px solid var(--line); display: flex; align-items: center; color: var(--ink-soft); font: 720 10px/1 var(--mono); text-transform: uppercase; }
-.dossier-card > header small { margin-left: auto; color: var(--muted); font: inherit; }
-.live-dot { width: 8px; height: 8px; margin-right: 10px; border-radius: 50%; background: #c3921f; }
-.tone-green .live-dot { background: var(--prevention); }
-.tone-orange .live-dot { background: #b85d27; }
-.tone-red .live-dot { background: #9d382e; }
-.dossier-score { min-height: 108px; padding: 22px 21px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.dossier-score > div { display: flex; align-items: baseline; gap: 8px; }
-.dossier-score strong { font-family: var(--serif); font-size: 53px; font-weight: 400; line-height: 1; }
-.dossier-score div span { color: var(--muted); font: 700 9px/1 var(--mono); text-transform: uppercase; }
-.level-pill { padding: 9px 11px; border: 1px solid var(--terracotta-soft); color: var(--terra-interactive); font: 740 9px/1 var(--mono); text-transform: uppercase; }
-.mini-track { height: 5px; margin: 0 21px; background: var(--cream); }
-.mini-track span { display: block; width: 0; height: 100%; background: var(--terra); transition: width .2s ease; }
-.dossier-outcome { min-height: 200px; padding: 28px 21px 24px; }
-.dossier-outcome > span { color: var(--muted); font: 720 8px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
-.dossier-outcome h2 { max-width: 520px; margin: 21px 0 11px; font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.04; letter-spacing: -.04em; }
-.dossier-outcome p, .dossier-note { color: var(--muted); line-height: 1.55; }
-.dossier-outcome p { margin: 0; font-size: 13px; }
-.dossier-stats { margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); }
-.dossier-stats div { min-height: 78px; padding: 17px; }
-.dossier-stats div + div { border-left: 1px solid var(--line); }
-.dossier-stats dt { color: var(--muted); font: 700 8px/1.2 var(--mono); text-transform: uppercase; }
-.dossier-stats dd { margin: 9px 0 0; font-size: 19px; }
-.dossier-note { margin: 0; padding: 15px 21px; background: var(--terracotta-wash); font-size: 10px; }
 
 .cse-section { padding: clamp(76px, 8vw, 112px) max(40px, calc(50% - 700px)); }
 .cse-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(310px, .6fr); align-items: end; gap: clamp(50px, 6vw, 90px); }
@@ -202,8 +174,6 @@
 .legal-note { margin-top: 30px; padding: 20px 22px; border-left: 4px solid var(--terra); color: var(--paper); background: var(--ink); font-size: 13px; line-height: 1.6; }
 
 @media (max-width: 1080px) {
-  .cse-hero { grid-template-columns: 1fr; }
-  .dossier-card { max-width: 760px; }
   .cse-heading, .cse-heading.split, .cse-summary { grid-template-columns: 1fr; gap: 32px; }
   .why-grid { grid-template-columns: 1fr 1fr; }
   .question-card { grid-template-columns: 85px 1fr; padding: 24px 0; }
@@ -217,8 +187,6 @@
   .cse-hero { width: calc(100% - 30px); min-height: 0; padding: 50px 0 58px; }
   .cse-hero h1 { font-size: clamp(3rem, 13vw, 4.2rem); }
   .cse-actions { flex-direction: column; }
-  .dossier-card { box-shadow: 9px 9px 0 var(--terracotta-wash); }
-  .dossier-score { align-items: flex-start; flex-direction: column; }
   .cse-section, .cse-summary { padding: 62px 15px; }
   .cse-heading h2, .cse-summary h2 { font-size: clamp(2.6rem, 11vw, 3.7rem); }
   .direct-answer { padding: 22px 20px; }
@@ -246,9 +214,8 @@
 }
 
 @media print {
-  .site-system-header, .cse-hero-copy, .cse-why, .cse-health, .autonomy, .cse-method, .cse-faq, .cse-legal, .site-system-footer, .cse-actions, .summary-actions { display: none !important; }
-  .cse-hero, .checklist, .cse-summary { width: 100%; min-height: 0; padding: 20px; display: block; color: #000; background: #fff; }
-  .dossier-card { box-shadow: none; page-break-after: always; }
+  .site-system-header, .cse-hero, .cse-why, .cse-health, .autonomy, .cse-method, .cse-faq, .cse-legal, .site-system-footer, .cse-actions, .summary-actions { display: none !important; }
+  .checklist, .cse-summary { width: 100%; min-height: 0; padding: 20px; display: block; color: #000; background: #fff; }
   .question-card { min-height: 0; padding: 14px 0; grid-template-columns: 50px 1fr 310px; break-inside: avoid; }
   .cse-heading { display: block; }
   .cse-summary h2, .cse-summary > div > p:not(.cse-kicker) { color: #000; }
