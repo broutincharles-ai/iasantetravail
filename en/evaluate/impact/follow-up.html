@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="/assets/js/language-routing.js?v=1.0"></script>
+  <script src="/assets/js/language-routing.js?v=1.1"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKEJVY4XVC"></script>
   <script>
@@ -55,7 +55,7 @@
 <link href="/assets/css/components.css?v=3.1" rel="stylesheet"/>
 <link href="/assets/css/unified-navigation.css?v=3.4" rel="stylesheet"/>
 <link href="/assets/css/follow-up-v2.css?v=2.0" rel="stylesheet"/>
-<script defer src="/assets/js/unified-navigation.js?v=4.3"></script>
+<script defer src="/assets/js/unified-navigation.js?v=4.5"></script>
 </head>
 
 <body class="page-shell-v2 hero-tool inner-page page-evaluer page-impact page-impact-refined" data-page="en-evaluate" data-root="../../../">
@@ -107,13 +107,13 @@
 <div class="intro-copy">
 <span class="eyebrow">After deployment · dated follow-up</span>
 <h1>Monitor the effects of AI <em>in real work</em></h1>
-<p class="intro-lead">Choose a defined observation period and document effects on workload, autonomy, skills, collective work, service quality and human oversight.</p>
+<p class="intro-lead">Choose a precise observation period and document the effects observed on workload, autonomy, skills, work teams and the quality of the work.</p>
 <div class="intro-actions"><button class="btn btn-primary" id="heroStart" type="button">Start follow-up</button><a class="btn btn-ghost" href="index.html">Return to pre-deployment assessment</a></div>
 <div aria-label="Practical information" class="intro-facts"><span><strong>10 min</strong><small>indicative duration</small></span><span><strong>18</strong><small>questions</small></span><span><strong>Dated</strong><small>longitudinal comparison</small></span><span><strong>Anonymous</strong><small>local project code</small></span></div>
 <p class="intro-result-line">Use the same anonymous code at each follow-up to compare reports without identifying the organisation.</p>
 </div>
 </div>
-<div class="status-note"><span aria-hidden="true">i</span><p><strong>Exploratory, non-psychometric tool.</strong> The result supports observation and corrective action; it is not a diagnosis or proof of compliance.</p></div>
+<div class="status-note"><span aria-hidden="true">i</span><p><strong>Exploratory, non-psychometric tool.</strong> The follow-up reuses the six psychosocial-risk factors of the Gollac report and three AI-specific axes. It is a support for observation and discussion, not a diagnosis or proof of compliance.</p></div>
 </div>
 </section>
 
@@ -146,7 +146,7 @@
 
 <form class="step" data-step="context" id="contextStep" novalidate>
 <div class="step-heading"><div><span class="step-index">Step 1</span><h3>Timeline and context</h3></div><p>Dates and an anonymous code allow longitudinal comparison without identifying the project.</p></div>
-<div class="followup-context-note"><strong>Anonymous code:</strong> do not use the organisation, site, product or provider name.</div>
+<div class="followup-context-note"><strong>Anonymous code:</strong> use the same code at every follow-up. Do not use the name of the organisation, a site, a product or a provider.</div>
 <div class="form-grid">
 <fieldset class="field-card"><legend>Anonymous project code</legend><div class="code-row"><input id="projectCode" maxlength="16" pattern="[A-Za-z0-9-]{4,16}" required type="text"/><button class="btn btn-ghost" id="generateCode" type="button">Generate</button></div><small>4–16 letters, numbers or hyphens.</small></fieldset>
 <fieldset class="field-card"><legend>Baseline assessment date</legend><input id="baselineDate" required type="date"/></fieldset>
@@ -185,9 +185,10 @@
 <article class="priority-card glass-soft"><span class="mini-kicker">Actions</span><h3>Priority corrections</h3><div class="priority-list" id="topPriorities"></div></article>
 </div>
 <div class="report-toolbar"><div><span class="mini-kicker">Dated report</span><h3>Follow-up report</h3></div><div class="toolbar-actions"><button class="btn btn-ghost" id="downloadHtml" type="button">Download HTML</button><button class="btn btn-ghost" id="downloadJson" type="button">Download JSON</button><button class="btn btn-ghost" id="printSimple" type="button">Print</button><button class="btn btn-primary" id="printReport" type="button">Download PDF</button></div></div>
-<div class="generated-report" id="generatedReport"></div>
-<details class="result-extras"><summary>Archiving and local history</summary><div class="result-extras-body">
+<div class="generated-report" id="generatedReport"></div><p class="microcopy print-tip">The A4 report is generated directly, without headers or URLs added by the browser.</p>
+<details class="result-extras"><summary>Archiving, history and voluntary contribution</summary><div class="result-extras-body">
 <section class="archive-section glass-soft"><div><span class="mini-kicker">Longitudinal archive</span><h3>Keep this dated review</h3><p>Generate the A4 PDF directly and retain it with previous reports using the same anonymous code.</p></div><button class="btn btn-primary" id="archivePdf" type="button">Create PDF now</button></section>
+<section class="email-contribution glass-soft"><div><span class="mini-kicker">Voluntary contribution</span><h3>Share an anonymous result</h3><p>Once you have checked that it contains nothing identifiable, you may send the PDF to <a href="mailto:santetravailia@gmail.com">santetravailia@gmail.com</a>.</p><p class="microcopy">Nothing is sent automatically.</p></div><a class="btn btn-secondary" href="mailto:santetravailia@gmail.com?subject=Anonymous%20result%20-%20dated%20follow-up%20AI%20and%20work">Prepare the email</a></section>
 <section class="followup-history glass-soft"><span class="mini-kicker">Local history</span><h3>Reviews stored in this browser</h3><div class="history-list" id="historyList"></div></section>
 </div></details>
 <div class="result-actions-bottom"><a class="btn btn-secondary" href="index.html">New pre-deployment assessment</a><button class="btn btn-ghost" id="restartAssessment" type="button">New follow-up</button></div>

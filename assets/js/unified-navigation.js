@@ -31,6 +31,7 @@
     "/lecture/management-agentique/": "/en/reading/agentic-management/",
     "/lecture/travailleurs-ia-risques-psychosociaux/": "/en/reading/ai-workers-psychosocial-risks/",
     "/a-propos/": "/en/about/",
+    "/methode-editoriale/": "/en/editorial-method/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
     "/confidentialite/": "/en/privacy/"
