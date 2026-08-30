@@ -14,13 +14,22 @@
   const pairs = {
     "/": "/en/",
     "/comprendre/": "/en/understand/",
+    "/risques-prevention/": "/en/risks/",
     "/usages-terrain/exemple-sante-travail/": "/en/uses-and-field/occupational-health-example/",
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
+    "/risques-prevention/economique-social/": "/en/risks/economic-social/",
     "/evaluer/": "/en/evaluate/",
     "/evaluer/impact/": "/en/evaluate/impact/",
     "/evaluer/impact/suivi.html": "/en/evaluate/impact/follow-up.html",
     "/droit-gouvernance/": "/en/legal-governance/",
+    "/cse/": "/en/cse/",
     "/lecture/": "/en/reading/",
+    "/lecture/agents-ia-workaholisme/": "/en/reading/ai-agents-workaholism/",
+    "/lecture/frontieres-metiers-ia/": "/en/reading/ai-occupational-boundaries/",
+    "/lecture/ia-deploiement-travail-reel/": "/en/reading/ai-deployment-real-work/",
+    "/lecture/ia-sens-metier-mathematiques/": "/en/reading/ai-meaning-work-mathematics/",
+    "/lecture/management-agentique/": "/en/reading/agentic-management/",
+    "/lecture/travailleurs-ia-risques-psychosociaux/": "/en/reading/ai-workers-psychosocial-risks/",
     "/a-propos/": "/en/about/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
@@ -41,10 +50,11 @@
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
-    ["Occupational risks", "/en/risks-prevention/", "risks"],
+    ["Occupational risks", "/en/risks/", "risks"],
     ["Assess & deploy", "/en/evaluate/", "evaluate"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
     ["Govern", "/en/legal-governance/", "governance"],
+    ["CSE", "/en/cse/", "cse"],
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
@@ -60,10 +70,10 @@
 
   const activeKey = (() => {
     if (/^\/(?:en\/)?(?:understand|comprendre)/.test(path)) return "understand";
-    if (/^\/(?:en\/risks-prevention|risques-prevention)/.test(path)) return "risks";
+    if (/^\/(?:en\/risks(?:-prevention|\/)|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
     if (/^\/(?:en\/legal-governance|droit-gouvernance)/.test(path)) return "governance";
-    if (/^\/cse\//.test(path)) return "cse";
+    if (/^\/(?:en\/)?cse\//.test(path)) return "cse";
     if (/^\/(?:en\/uses-and-field\/occupational-health-example|usages-terrain\/exemple-sante-travail)/.test(path)) return "spsti";
     if (/^\/(?:en\/reading|lecture)\//.test(path)) return "reading";
     if (/^\/(?:en\/about|a-propos)/.test(path)) return "about";

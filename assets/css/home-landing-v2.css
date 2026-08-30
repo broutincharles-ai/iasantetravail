@@ -3,6 +3,38 @@
 .home-landing-v2 .formation-artwork img { object-position: center 44%; }
 .home-landing-v2 .formation-hero .home-article-meta { max-width: 650px; }
 
+.home-proof-assets {
+  width: 100%;
+  padding-inline: max(40px, calc(50% - 700px));
+  background: #e8e0d2;
+}
+
+.home-proof-grid {
+  margin-top: 58px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.home-proof-card {
+  min-height: 390px;
+  padding: 31px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(243, 239, 230, .5);
+}
+
+.home-proof-card > span { color: var(--terra); font: 800 9px/1.2 var(--mono); letter-spacing: .1em; }
+.home-proof-card h3 { max-width: 15ch; margin: auto 0 18px; font-family: var(--serif); font-size: clamp(27px, 2.4vw, 38px); font-weight: 400; line-height: 1.05; letter-spacing: -.035em; }
+.home-proof-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.62; }
+.home-proof-card a { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--terra); font-size: 12px; font-weight: 800; }
+.home-proof-note { margin: 30px 0 0 auto; max-width: 910px; padding: 25px 0 0 26px; border-top: 1px solid var(--line); border-left: 4px solid var(--terra); }
+.home-proof-note a { display: flex; justify-content: space-between; gap: 40px; font-family: var(--serif); font-size: 24px; line-height: 1.35; }
+.home-proof-note span { color: var(--terra); font-family: var(--sans); font-size: 12px; font-weight: 800; }
+
 .formation-method-home {
   width: 100%;
   padding-inline: max(40px, calc(50% - 700px));
@@ -71,12 +103,16 @@
 }
 
 @media (max-width: 900px) {
-  .formation-method-home { width: 100%; padding-inline: 22px; }
+  .formation-method-home, .home-proof-assets { width: 100%; padding-inline: 22px; }
+  .home-proof-grid { grid-template-columns: 1fr; }
+  .home-proof-card { min-height: 300px; }
 }
 
 @media (max-width: 640px) {
   .home-landing-v2 .formation-hero h1 { max-width: 12ch; }
-  .formation-method-home { padding-inline: 15px; }
+  .formation-method-home, .home-proof-assets { padding-inline: 15px; }
+  .home-proof-card { min-height: 270px; padding: 26px 22px; }
+  .home-proof-note a { flex-direction: column; gap: 15px; font-size: 22px; }
   .method-flow-home { grid-template-columns: 1fr; }
   .method-flow-home li,
   .method-flow-home li:last-child { min-height: 200px; grid-column: auto; }

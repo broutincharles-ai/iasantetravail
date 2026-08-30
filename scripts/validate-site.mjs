@@ -74,6 +74,16 @@ function alternateHref(head, lang) {
   return tag?.match(/href=["']([^"']*)/i)?.[1] || "";
 }
 
+function schemaTypes(entity) {
+  const value = entity?.["@type"];
+  return Array.isArray(value) ? value : value ? [value] : [];
+}
+
+function topLevelSchemaNodes(value) {
+  const roots = Array.isArray(value) ? value : [value];
+  return roots.flatMap(root => Array.isArray(root?.["@graph"]) ? root["@graph"] : [root]);
+}
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   const relative = path.relative(root, file).split(path.sep).join("/");
@@ -120,9 +130,41 @@ for (const file of htmlFiles) {
 
   for (const block of html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
-      JSON.parse(block[1]);
+      const schema = JSON.parse(block[1]);
+      if (shouldIndex) {
+        for (const entity of topLevelSchemaNodes(schema)) {
+          const types = schemaTypes(entity);
+          const entityId = String(entity["@id"] || "");
+          const entityUrl = String(entity.url || "");
+          const hasExternalCanonicalUrl = entityUrl && !entityUrl.startsWith("https://www.iasantetravail.com/");
+          const isSiteEntity = !hasExternalCanonicalUrl && (
+            entityId.startsWith("https://www.iasantetravail.com/")
+            || entityUrl.startsWith("https://www.iasantetravail.com/")
+          );
+          const isEditorialArticle = types.some(type => ["Article", "TechArticle", "MedicalWebPage"].includes(type))
+            && (entity.mainEntityOfPage || isSiteEntity);
+          if (isEditorialArticle && !entity.datePublished) errors.push(`${relative}: editorial article JSON-LD requires datePublished`);
+          if (isEditorialArticle && !entity.dateModified) errors.push(`${relative}: editorial article JSON-LD requires dateModified`);
+          if (isSiteEntity && entity.author) {
+            if (entity.author["@id"] !== "https://www.iasantetravail.com/a-propos/#person") {
+              errors.push(`${relative}: JSON-LD author must reuse the stable Person @id`);
+            }
+          }
+          if (isSiteEntity && entity.publisher) {
+            if (entity.publisher["@id"] !== "https://www.iasantetravail.com/#organization") {
+              errors.push(`${relative}: JSON-LD publisher must reuse the stable Organization @id`);
+            }
+          }
+        }
+      }
     } catch {
       errors.push(`${path.relative(root, file)}: invalid JSON-LD`);
+    }
+  }
+
+  for (const match of html.matchAll(/https:\/\/(?:[a-z]{2}\.)?linkedin\.com\/in\/[^"'\s<]+/gi)) {
+    if (match[0] !== "https://www.linkedin.com/in/charles-broutin-a03932201") {
+      errors.push(`${relative}: unexpected LinkedIn identity URL ${match[0]}`);
     }
   }
 }
@@ -243,6 +285,34 @@ for (const [frPage, enPage] of bilingualPages) {
     if (!alternateHref(head, "en")) errors.push(`${relative}: English hreflang missing`);
     if (alternateHref(head, "fr") !== expected.fr) errors.push(`${relative}: French hreflang must point to ${expected.fr}`);
     if (alternateHref(head, "en") !== expected.en) errors.push(`${relative}: English hreflang must point to ${expected.en}`);
+  }
+}
+
+for (const [frPage, enPage] of [["evaluer/impact/suivi.html", "en/evaluate/impact/follow-up.html"]]) {
+  const expected = { fr: publicUrl(frPage), en: publicUrl(enPage) };
+  for (const [relative, lang] of [[frPage, "fr"], [enPage, "en"]]) {
+    const html = await cachedHtml(path.join(root, relative));
+    const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
+    if (alternateHref(head, "fr") !== expected.fr) errors.push(`${relative}: T1 French hreflang must point to ${expected.fr}`);
+    if (alternateHref(head, "en") !== expected.en) errors.push(`${relative}: T1 English hreflang must point to ${expected.en}`);
+    if (!alternateHref(head, "x-default")) errors.push(`${relative}: T1 x-default hreflang missing`);
+    if (!new RegExp(`<html[^>]+lang=["']${lang}["']`, "i").test(html)) errors.push(`${relative}: html lang must be ${lang}`);
+  }
+}
+
+for (const relative of [
+  "index.html",
+  "comprendre/index.html",
+  "risques-prevention/index.html",
+  "risques-prevention/psychosociaux/index.html",
+  "evaluer/index.html",
+  "droit-gouvernance/index.html",
+  "usages-terrain/exemple-sante-travail/index.html",
+  "a-propos/index.html"
+]) {
+  const html = await cachedHtml(path.join(root, relative));
+  if (!/href=["'](?:https:\/\/www\.iasantetravail\.com)?\/methode-editoriale\//i.test(html)) {
+    errors.push(`${relative}: visible link to the editorial method is missing`);
   }
 }
 

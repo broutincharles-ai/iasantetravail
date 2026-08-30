@@ -48,7 +48,8 @@
         "name": "IA Santé Travail",
         "alternateName": "IA & Santé au Travail",
         "inLanguage": ["fr", "en"],
-        "publisher": {"@id": "https://www.iasantetravail.com/a-propos/#person"}
+        "publisher": {"@id": "https://www.iasantetravail.com/#organization"},
+        "publishingPrinciples": "https://www.iasantetravail.com/methode-editoriale/"
       },
       {
         "@type": "WebPage",
@@ -100,7 +101,14 @@
           "Gouvernance de l’IA au travail"
         ],
         "description": "Médecin du travail, référent IA de la Société Française de Santé au Travail.",
-        "affiliation": {"@type": "Organization", "name": "Société Française de Santé au Travail"}
+        "affiliation": {"@type": "Organization", "@id": "https://www.societefrancaisedesanteautravail.fr/#organization", "name": "Société Française de Santé au Travail", "url": "https://www.societefrancaisedesanteautravail.fr/"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.iasantetravail.com/#organization",
+        "name": "IA & Santé au Travail",
+        "url": "https://www.iasantetravail.com/",
+        "founder": {"@id": "https://www.iasantetravail.com/a-propos/#person"}
       },
       {
         "@type": "ItemList",
@@ -147,7 +155,7 @@
     <nav class="page-nav" aria-label="Sommaire de la page">
       <div class="page-nav-inner">
         <span class="page-nav-label">Sur cette page</span>
-        <div class="page-nav-links"><a href="#essentiel">L’essentiel</a><a href="#deux-lectures">Deux dimensions</a><a href="#parcours">Parcours</a><a href="#publics">Publics</a><a href="#pour-vous">Pour vous</a><a href="#particularite">Double lecture</a><a href="#methode">Méthode</a></div>
+        <div class="page-nav-links"><a href="#essentiel">L’essentiel</a><a href="#preuves">Preuves</a><a href="#deux-lectures">Deux dimensions</a><a href="#parcours">Parcours</a><a href="#publics">Publics</a><a href="#pour-vous">Pour vous</a><a href="#particularite">Double lecture</a><a href="#methode">Méthode</a></div>
         <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
     </nav>
@@ -180,6 +188,19 @@
         <div><p class="formation-kicker">L’essentiel</p><h2 id="positioning-title">Une ressource d’information, de formation et de prévention.</h2></div>
         <div><p class="page-essentiel-answer">En santé au travail, l’intelligence artificielle est à la fois un outil professionnel et une transformation de l’organisation. Ses effets sur la charge, l’autonomie, les compétences, les collectifs et la santé dépendent de l’usage réel, des objectifs et des conditions de déploiement — pas seulement des performances du modèle.</p><p>IA Santé Travail propose un parcours libre pour comprendre les systèmes, identifier les risques, évaluer les usages, organiser la prévention et gouverner les déploiements.</p></div>
       </div>
+    </section>
+
+    <section class="formation-section home-proof-assets" id="preuves" aria-labelledby="proof-assets-title">
+      <div class="formation-section-head">
+        <div><p class="formation-kicker">Trois actifs vérifiables</p><h2 id="proof-assets-title">Accéder directement aux preuves et aux outils.</h2></div>
+        <p>Le site ne repose pas uniquement sur des pages de synthèse : il relie une publication institutionnelle, une page de référence sur les RPS et un outil exploratoire transparent.</p>
+      </div>
+      <div class="home-proof-grid">
+        <article class="home-proof-card"><span>RPS · PAGE DE RÉFÉRENCE</span><h3>Six facteurs, trois mécanismes et des mesures de prévention.</h3><p>Une synthèse française des transformations psychosociales possibles, fondée sur le travail réel et des sources primaires.</p><a href="/risques-prevention/psychosociaux/">Lire l’analyse RPS <b>→</b></a></article>
+        <article class="home-proof-card"><span>INRS · TF 335</span><h3>Une étude publiée sur 385 préconisations médicales.</h3><p>La page SPSTI expose la méthode, les résultats, les limites et les conditions d’un usage comme second lecteur.</p><a href="/usages-terrain/exemple-sante-travail/#etude">Examiner l’étude et ses limites <b>→</b></a></article>
+        <article class="home-proof-card"><span>T0 · OUTIL EXPLORATOIRE</span><h3>Évaluer avant de lancer un pilote.</h3><p>Dix-huit questions pour rendre discutables la tâche, la charge de contrôle, l’autonomie, les compétences et les critères d’arrêt.</p><a href="/evaluer/impact/">Ouvrir le questionnaire T0 <b>→</b></a></article>
+      </div>
+      <p class="home-proof-note"><a href="/methode-editoriale/">Comment les sources, les niveaux de preuve et les corrections sont-ils gérés&nbsp;? <span>Lire la méthode éditoriale →</span></a></p>
     </section>
 
     <section class="formation-section formation-competencies" id="deux-lectures" aria-labelledby="competencies-title">
@@ -284,6 +305,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><p>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</p></footer>
+  <footer class="site-footer"><p>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante. <a href="/methode-editoriale/">Méthode éditoriale</a> · <a href="/a-propos/">Auteur</a></p></footer>
 </body>
 </html>

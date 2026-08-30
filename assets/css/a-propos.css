@@ -85,6 +85,20 @@
     .publication-bridge span { color: var(--lavender); font-family: var(--mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
     .publication-bridge p { margin: 0; font-size: 15px; line-height: 1.55; }
 
+    .identity-method { background: var(--cream); }
+    .identity-proof-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .identity-proof-card { min-height: 310px; padding: 30px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .identity-proof-card > span, .identity-policy > div > span { color: var(--terra); font-family: var(--mono); font-size: 9px; font-weight: 800; letter-spacing: .1em; }
+    .identity-proof-card h3 { margin: auto 0 16px; font-size: 25px; letter-spacing: -.035em; }
+    .identity-proof-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.58; }
+    .identity-proof-card a { margin-top: 22px; display: flex; justify-content: space-between; color: var(--terra); font-size: 11px; font-weight: 800; }
+    .identity-policy { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; border-left: 4px solid var(--terra); background: var(--paper); }
+    .identity-policy > div { min-height: 280px; padding: 34px; display: flex; flex-direction: column; }
+    .identity-policy > div + div { border-left: 1px solid var(--line); }
+    .identity-policy h3 { margin: 40px 0 14px; font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.1; }
+    .identity-policy p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.62; }
+    .identity-policy .button { align-self: flex-start; margin-top: auto; }
+
     .interventions { background: var(--cream); }
     .activity-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .activity-card { min-height: 300px; padding: 29px; border-right: 1px solid var(--line); }
@@ -172,7 +186,7 @@
       .portrait-zone { min-height: 285px; }
       .portrait-zone img { width: min(220px, 76%); }
       .section-head h2 { font-size: 40px; }
-      .facts, .principles, .publication-grid, .activity-grid, .intervention-board, .newsletter-grid { grid-template-columns: 1fr; }
+      .facts, .principles, .publication-grid, .identity-proof-grid, .identity-policy, .activity-grid, .intervention-board, .newsletter-grid { grid-template-columns: 1fr; }
       .facts article { padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line) !important; }
       .facts article:last-child { border-bottom: 0 !important; }
       .principle { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line-light) !important; }
@@ -183,6 +197,10 @@
       .publication-card + .publication-card { border-left: 0; border-top: 0; }
       .publication-ref, .publication-link { grid-column: 1; }
       .publication-link { margin-top: 6px; }
+      .identity-proof-card { min-height: 250px; }
+      .identity-policy > div { min-height: 0; }
+      .identity-policy > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      .identity-policy .button { width: 100%; margin-top: 25px; }
       .activity-card, .intervention-detail { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .activity-card:last-child, .intervention-detail:last-child { border-bottom: 0; }
       .activity-card h3 { margin-top: 35px; }

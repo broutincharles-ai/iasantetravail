@@ -317,16 +317,6 @@ function initSubstackIntegration(){
  addSubstackToFooter();
  enrichAuthorStructuredData();
 
- document.addEventListener('click',event=>{
-  const link=event.target.closest('a[data-substack-source]');
-  if(!link || typeof window.plausible!=='function')return;
-  window.plausible('Substack CTA',{
-   props:{
-    source:link.dataset.substackSource||'unknown',
-    language:isEN?'en':'fr'
-   }
-  });
- });
 }
 initSubstackIntegration();
 
