@@ -51,10 +51,10 @@
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
     ["Occupational risks", "/en/risks/", "risks"],
-    ["Assess & deploy", "/en/evaluate/", "evaluate"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
     ["Govern", "/en/legal-governance/", "governance"],
     ["CSE", "/en/cse/", "cse"],
+    ["Assess & deploy", "/en/evaluate/", "evaluate"],
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [

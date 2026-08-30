@@ -1,4 +1,6 @@
-<!doctype html>
+import { writeFile } from "node:fs/promises";
+
+const html = `<!doctype html>
 <html lang="en">
 <head>
   <script src="/assets/js/language-routing.js?v=1.1"></script>
@@ -31,4 +33,7 @@
     <section class="formation-section formation-method-home" id="method"><div class="formation-section-head"><div><p class="formation-kicker">05 / Method</p><h2>Model → Use → Organisation → Real activity → Health.</h2></div><p>The model matters, but effects emerge from the whole work system.</p></div><ol class="method-chain-home"><li><span>01</span><strong>Model</strong><small>capabilities · limits · data</small></li><li><span>02</span><strong>Use</strong><small>task · population · decision</small></li><li><span>03</span><strong>Organisation</strong><small>targets · deadlines · control</small></li><li><span>04</span><strong>Real activity</strong><small>workload · autonomy · skills</small></li><li><span>05</span><strong>Health</strong><small>physical · psychological · social effects</small></li></ol></section>
     <section class="formation-section formation-next"><div><p class="formation-kicker">First step</p><h2>Understand the system before choosing a use.</h2></div><div><p>The Understand page introduces the vocabulary, explains how models work and why technical capability is not sufficient for professional reliability.</p><a class="button primary" href="/en/understand/">Start the pathway <span>→</span></a></div></section>
   </main><footer class="site-footer"><p>© 2026 AI &amp; Occupational Health — Independent editorial initiative. <a href="/methode-editoriale/">Editorial method</a> · <a href="/en/about/">Author</a></p></footer>
-</body></html>
+</body></html>`;
+
+await writeFile(new URL("../en/index.html", import.meta.url), html);
+console.log("Built English homepage from the French visual system.");
