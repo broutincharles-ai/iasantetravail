@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const projects = {
+  const projectsFr = {
     documentation: {
       type: "Tous métiers · documentation",
       title: "Assistant documentaire interne",
@@ -51,6 +51,59 @@
       verdict: "Risque disproportionné au regard de la valeur décrite. Revenir au besoin et rechercher une solution moins intrusive et non individuelle."
     }
   };
+
+  const projectsEn = {
+    documentation: {
+      type: "All professions · documentation",
+      title: "Internal documentation assistant",
+      description: "Find a protocol or risk sheet in a controlled knowledge base, with sources displayed in the answer.",
+      value: 4, complexity: 2, data: 2, error: 2,
+      status: "Priority candidate",
+      verdict: "A good candidate for a limited pilot on a controlled knowledge base, with source citations and human verification."
+    },
+    callbot: {
+      type: "Member relations · reception",
+      title: "Callbot for routine enquiries",
+      description: "Answer routine questions, direct callers and transfer requests that fall outside the defined scenario.",
+      value: 4, complexity: 3, data: 3, error: 3,
+      status: "Supervised pilot",
+      verdict: "Test within a non-medical scope, with human escalation, an error log and monitoring of abandoned calls."
+    },
+    formation: {
+      type: "Support function · training",
+      title: "Training administration",
+      description: "Prepare pre-registrations, changes and administrative communications concerning awareness sessions.",
+      value: 4, complexity: 2, data: 2, error: 2,
+      status: "Priority candidate",
+      verdict: "A credible candidate if exceptions remain visible and end-to-end time, including corrections, is measured."
+    },
+    relecture: {
+      type: "Medical practice · second reader",
+      title: "Review of medical recommendations",
+      description: "Identify drafting defects in an existing text without producing the decision or signing it.",
+      value: 5, complexity: 3, data: 4, error: 4,
+      status: "Formal assessment",
+      verdict: "A promising but sensitive use: data minimisation, an authorised environment, a professional reference and medical validation are required."
+    },
+    synthese: {
+      type: "Medical practice · synthesis",
+      title: "Synthesis of medical information",
+      description: "Prepare a synthesis of clinical or occupational information that may inform a consultation.",
+      value: 4, complexity: 4, data: 5, error: 5,
+      status: "High vigilance",
+      verdict: "Do not launch as an informal experiment. Analysis of the data, security, purpose and clinical integration is essential."
+    },
+    scoring: {
+      type: "Individual decision · prioritisation",
+      title: "Automated individual scoring",
+      description: "Assign a score to a person to prioritise follow-up, an intervention or an occupational decision.",
+      value: 2, complexity: 5, data: 5, error: 5,
+      status: "Reject as currently framed",
+      verdict: "The risk is disproportionate to the stated value. Return to the need and seek a less intrusive, non-individual solution."
+    }
+  };
+
+  const projects = document.documentElement.lang.toLowerCase().startsWith("en") ? projectsEn : projectsFr;
 
   const tabs = [...document.querySelectorAll(".project-tab")];
   const matrix = document.querySelector(".matrix-lab");

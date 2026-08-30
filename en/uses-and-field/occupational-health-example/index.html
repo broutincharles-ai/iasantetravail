@@ -13,61 +13,372 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI and SPSTI: uses, risks and method | AI & Occupational Health</title>
+  <meta name="description" content="Sourced guide on AI in SPSTI: real use cases, Présanse charter, health data, AI Act, risks and method for launching a pilot.">
+  <meta name="author" content="Dr Charles Broutin">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <title>AI in Occupational Health Services and France’s PST 5</title>
-  <meta name="description" content="What France’s Occupational Health Plan 2026–2030 says about AI at work, practical AI uses in occupational health services and results from INRS study TF 335.">
   <link rel="canonical" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
-  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
-  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
-  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_GB">
-  <meta property="og:site_name" content="IA Santé Travail">
-<meta property="og:title" content="AI in Occupational Health Services and France’s PST 5">
-  <meta property="og:description" content="France’s Occupational Health Plan on AI at work, practical OHS uses and results from INRS study TF 335.">
-  <meta property="og:url" content="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
-  <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AI in Occupational Health Services and France’s PST 5">
-  <meta name="twitter:description" content="France’s Occupational Health Plan on AI at work, practical OHS uses and results from INRS study TF 335.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#article","headline":"AI in Occupational Health Services and France’s PST 5","description":"France’s Occupational Health Plan 2026–2030 on AI at work, potential occupational health service AI uses and results of INRS study TF 335.","inLanguage":"en","datePublished":"2026-07-13","dateModified":"2026-08-27","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"citation":["https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf","https://www.inrs.fr/media.html?refINRS=TF+335"],"mainEntityOfPage":"https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/","publishingPrinciples":"https://www.iasantetravail.com/methode-editoriale/"}</script>
+  <link rel="author" href="https://www.iasantetravail.com/a-propos/#person">
   <link rel="stylesheet" href="/assets/css/spsti.css?v=2.5">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=3.4">
   <script defer src="/assets/js/unified-navigation.js?v=4.5"></script>
+  <script defer src="/assets/js/spsti-hub.js?v=1.1"></script>
+
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:site_name" content="IA Occupational Health">
+  <meta property="og:title" content="AI and SPSTI: uses, risks and method">
+  <meta property="og:description" content="Real use cases, health data, AI Act and method for launching a responsible AI pilot in a SPSTI.">
+  <meta property="og:url" content="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/oxbow-1280.webp">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="870">
+  <meta property="og:image:alt" content="The Oxbow by Thomas Cole, between storm and bright valley">
+  <meta property="article:published_time" content="2026-07-13">
+  <meta property="article:modified_time" content="2026-08-28">
+  <meta property="article:author" content="https://www.iasantetravail.com/a-propos/#person">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI and SPSTI: uses, risks and method">
+  <meta name="twitter:description" content="Real use cases, Présanse charter, risks, AI Act and pilot method in SPSTI.">
+  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/oxbow-1280.webp">
+  <meta name="twitter:image:alt" content="The Oxbow by Thomas Cole, between storm and sunlit valley">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.iasantetravail.com/#website",
+      "url": "https://www.iasantetravail.com/",
+      "name": "AI & Occupational Health",
+      "inLanguage": [
+        "fr",
+        "en"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#webpage",
+      "url": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/",
+      "name": "AI and SPSTI: uses, risks and method",
+      "description": "Sourced guide on the uses, risks, governance and evaluation of artificial intelligence in SPSTI.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://www.iasantetravail.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#primaryimage"
+      },
+      "mainEntity": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#article"
+      },
+      "datePublished": "2026-07-13",
+      "dateModified": "2026-08-28"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#article",
+      "headline": "AI and SPSTI: uses, risks and method",
+      "description": "Sourced guide on the uses, risks, governance and evaluation of artificial intelligence in SPSTI.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://www.iasantetravail.com/#website"
+      },
+      "datePublished": "2026-07-13",
+      "dateModified": "2026-08-28",
+      "image": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#primaryimage"
+      },
+      "author": {
+        "@id": "https://www.iasantetravail.com/a-propos/#person"
+      },
+      "publisher": {
+        "@id": "https://www.iasantetravail.com/#organization"
+      },
+      "isAccessibleForFree": true,
+      "articleSection": [
+        "Uses in SPSTI",
+        "Risks",
+        "Présanse Charter",
+        "Shadow AI",
+        "Evaluation",
+        "Pilot",
+        "Training",
+        "Governance"
+      ],
+      "keywords": [
+        "AI and SPSTI",
+        "AI in SPSTI",
+        "artificial intelligence in occupational health",
+        "IA Présanse charter",
+        "Shadow AI",
+        "AI SPSTI training",
+        "occupational medicine",
+        "occupational risk prevention"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Artificial intelligence in occupational health"
+        },
+        {
+          "@type": "Thing",
+          "name": "SPSTI"
+        },
+        {
+          "@type": "Thing",
+          "name": "Occupational health plan 2026–2030"
+        },
+        {
+          "@type": "Thing",
+          "name": "Occupational medicine"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#tf335"
+        },
+        {
+          "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-charte"
+        },
+        {
+          "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-usages"
+        },
+        {
+          "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-shadow"
+        },
+        {
+          "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#pst5"
+        }
+      ],
+      "mentions": {
+        "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#pst5"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".page-essential-answer"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.iasantetravail.com/a-propos/#person",
+      "name": "Charles Broutin",
+      "honorificPrefix": "Dr",
+      "jobTitle": "Occupational physician",
+      "url": "https://www.iasantetravail.com/en/about/",
+      "affiliation": {
+        "@type": "Organisation",
+        "name": "Société Française de Santé au Travail"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/charles-broutin-a03932201"
+      ]
+    },
+    {
+      "@type": "Organisation",
+      "@id": "https://www.iasantetravail.com/#organization",
+      "name": "AI & Occupational Health",
+      "url": "https://www.iasantetravail.com/",
+      "logo": "https://www.iasantetravail.com/assets/images/logo.png"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#primaryimage",
+      "contentUrl": "https://www.iasantetravail.com/assets/images/oxbow-1280.webp",
+      "width": 1280,
+      "height": 870,
+      "caption": "The Oxbow by Thomas Cole, landscape shared between a storm and a bright valley",
+      "creditText": "Thomas Cole, The Oxbow, 1836 — The Metropolitan Museum of Art"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#tf335",
+      "name": "Artificial intelligence in occupational health: evaluation of its potential to strengthen the precision and clarity of medical recommendations",
+      "author": {
+        "@id": "https://www.iasantetravail.com/a-propos/#person"
+      },
+      "publisher": {
+        "@type": "Organisation",
+        "name": "INRS"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "References in Occupational Health"
+      },
+      "datePublished": "2026-06",
+      "url": "https://www.inrs.fr/media.html?refINRS=TF+335"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-charte",
+      "name": "Charter for the ethical and responsible use of artificial intelligence in SPSTI",
+      "publisher": {
+        "@type": "Organisation",
+        "name": "Présanse"
+      },
+      "datePublished": "2025",
+      "url": "https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-usages",
+      "name": "Artificial intelligence in SPSTI: use cases and field feedback",
+      "publisher": {
+        "@type": "Organisation",
+        "name": "Présanse"
+      },
+      "datePublished": "2025-11",
+      "url": "https://www.presanse.fr/informations-mensuelles/n-146-novembre-2025/"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#presanse-shadow",
+      "name": "Artificial intelligence in SPSTI: awareness, method and Shadow AI",
+      "publisher": {
+        "@type": "Organisation",
+        "name": "Présanse"
+      },
+      "datePublished": "2025-11",
+      "url": "https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#pst5",
+      "name": "Occupational health plan 2026–2030",
+      "url": "https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#faq",
+      "inLanguage": "fr-FR",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does “AI and SPSTI” mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a SPSTI, artificial intelligence can assist with administrative, documentary, prevention, member relations tasks and certain strictly supervised medical uses. It does not replace either the analysis of the work or the decision of the professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What uses of AI are relevant in a SPSTI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first candidates are precise and verifiable tasks: internal documentary research, administration of training, guidance of simple requests or preparation of documents. Medical and individual uses require greater vigilance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we use consumer AI with health data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, not if the tool is not authorized by the service. The framework must specify hosting, access, purpose, data admitted and responsibilities before any use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to choose a first AI pilot in SPSTI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a task with high business value and manageable risk. The pilot must start from an observable need, use the minimum amount of data, make errors visible and be able to be stopped without disrupting the usual circuit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI decide on behalf of the occupational physician?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Artificial intelligence can assist with a defined task, but the occupational physician retains responsibility for the analysis, interpretation, formulation, decision and validation of any output used."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should be measured during a pilot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both the system and the work should be measured: errors, stability, complete time after correction, control load, autonomy, skills, incidents and inequalities of use."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.iasantetravail.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Field uses",
+          "item": "https://www.iasantetravail.com/usages-terrain/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI and SPSTI",
+          "item": "https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body class="page-shell-v2 hero-editorial spsti-hub">
   <a class="skip-link" href="#contenu">Skip to main content</a>
 
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="https://www.iasantetravail.com/en/" aria-label="Home — AI and Occupational Health">
-        <span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
-        <span class="brand-copy"><strong>AI &amp; Occupational Health</strong><small>Prevention · Real work</small></span>
-      </a>
+      <a class="brand" href="/en/" aria-label="Home — AI and Occupational Health"><span class="brand-mark"><img src="https://www.iasantetravail.com/assets/images/logo.png" alt=""></span>
+        <span class="brand-copy"><strong>AI &amp; Occupational Health</strong><small>Prevention · Real Work</small></span></a>
       <div class="nav-links">
-        <a href="https://www.iasantetravail.com/en/understand/">Understand AI</a>
-        <a href="https://www.iasantetravail.com/en/uses-and-field/">Field use</a>
+        <a href="https://www.iasantetravail.com/en/understand/">Understand</a>
+        <a href="https://www.iasantetravail.com/en/risks/">Risks</a>
         <a href="https://www.iasantetravail.com/en/evaluate/">Assess</a>
-        <a href="https://www.iasantetravail.com/en/evaluate/impact/">Short questionnaire</a>
-        <a href="https://www.iasantetravail.com/en/legal-governance/">Law &amp; governance</a>
-        <a href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/" aria-current="page">AI in OHS services</a>
-        <a href="https://www.iasantetravail.com/en/risks-prevention/">Risks &amp; prevention</a>
+        <a href="https://www.iasantetravail.com/en/legal-governance/">Govern</a>
+        <a href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/" aria-current="page">AI and SPSTI</a>
+        <a href="https://www.iasantetravail.com/en/reading/">Reading</a>
         <a href="https://www.iasantetravail.com/en/about/">About</a>
       </div>
-      <a class="language-switch" href="https://www.iasantetravail.com/usages-terrain/exemple-sante-travail/" lang="fr" hreflang="fr" aria-label="Voir cette page en français">FR</a>
+      <a class="language-switch" href="/usages-terrain/exemple-sante-travail/" lang="fr" hreflang="fr" aria-label="View this page in French">FR</a>
     </nav>
-    <nav class="page-nav" aria-label="Page contents">
+    <nav class="page-nav" aria-label="Page summary">
       <div class="page-nav-inner">
         <span class="page-nav-label">On this page</span>
         <div class="page-nav-links">
-          <a href="#pst5">France’s PST 5</a>
-          <a href="#usages">Potential uses</a>
-          <a href="#etude">INRS study</a>
-          <a href="#pilote">Build a pilot</a>
-          <a href="#roles">Roles</a>
-          <a href="#contact">Contact</a>
+          <a href="#essentiel">In brief</a>
+          <a href="#usages">Uses</a>
+          <a href="#terrain">Field</a>
+          <a href="#charte">Charter</a>
+          <a href="#prioriser">Prioritise</a>
+          <a href="#shadow">Shadow AI</a>
+          <a href="#etude">Study</a>
+          <a href="#pilote">Pilot</a>
+          <a href="#formation">Training</a>
+          <a href="#questions">Questions</a>
+          <a href="#sources">Sources</a>
         </div>
         <span class="page-progress" aria-hidden="true"><i></i></span>
       </div>
@@ -75,123 +386,580 @@
   </header>
 
   <main id="contenu">
+    <nav class="spsti-breadcrumb" aria-label="Film by Ariane">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/evaluate/">Evaluate &amp; deploy</a></li>
+        <li aria-current="page">AI and <abbr title="inter-company prevention and occupational health services">SPSTI</abbr>
+</li>
+      </ol>
+    </nav>
+
     <section class="hero" id="accueil">
       <div class="hero-copy">
-        <p class="kicker line">OHS services · Professional uses · Human oversight</p>
-        <h1>AI can support an OHS service when <em>the task is precise.</em></h1>
-        <p class="hero-lede">Reviewing a document, finding a source, structuring observations or preparing training: value does not come from “AI” in general, but from a limited use that can be tested and corrected.</p>
-        <p class="hero-note"><strong>An evaluated example.</strong> A study published by INRS in June 2026 tested a language model as a second reader of occupational physician recommendations. It shows genuine potential, but not an ability to replace the occupational physician.</p>
-        <div class="hero-actions"><a class="button primary" href="#etude">See the study and results <span>↓</span></a><a class="button secondary" href="#usages">Explore the uses</a></div>
-        <div class="hero-proof"><span>Limited task</span><span>Human reference</span><span>Decision retained</span></div>
+        <p class="kicker line">Practical guide · SPSTI · Sources 2025–2026</p>
+        <h1>AI and SPSTI: uses, risks and <em>deployment method.</em>
+</h1>
+        <p class="article-meta">Author: Dr Charles Broutin, occupational physician, AI lead of the SFST · Updated on <time datetime="2026-08-28">August 28, 2026</time></p>
+        <p class="hero-lede">In an Inter-company Prevention and Occupational Health Service (SPSTI), artificial intelligence can assist with documentation, administration, prevention, member relations and certain strictly supervised medical uses. It does not replace either the analysis of the work or the decision of the professional.</p>
+        <p class="hero-note"><strong>The common principle.</strong> Start with a specific task, use the minimum necessary data, measure the errors and keep an identified person capable of controlling the output. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Charte Présanse, 2025 ↗</a></p>
+        <div class="hero-actions">
+<a class="button primary" href="#usages">Explore uses <span>↓</span></a><a class="button secondary" href="#prioriser">Test the matrix</a>
+</div>
+        <div class="hero-proof">
+<span>Sources throughout the text</span><span>Distinguished risks</span><span>Human decision</span>
+</div>
       </div>
 
       <figure class="artwork">
-        <div class="artwork-label"><strong>Between two sides</strong></div>
-        <img src="https://www.iasantetravail.com/assets/images/oxbow-1280.webp" alt="Thomas Cole’s The Oxbow, a landscape divided between a dark storm and a luminous valley transformed by human activity">
-        <figcaption>
-          <span>Thomas Cole<br>The Oxbow · 1836</span>
-          <p>Between the storm and the valley, the landscape rests in an uncertain balance. The work reminds us that every promising use must be considered from both sides: what it improves and what it may make fragile if its effects are not observed. <a href="https://www.metmuseum.org/art/collection/search/10497" target="_blank" rel="noreferrer">View the painting at The Met ↗</a></p>
-        </figcaption>
+        <div class="artwork-label"><strong>Between two slopes</strong></div>
+        <img src="https://www.iasantetravail.com/assets/images/oxbow-1280.webp" width="1280" height="870" fetchpriority="high" decoding="async" alt="The Oxbow by Thomas Cole, landscape shared between a dark storm and a bright valley transformed by human activity">
+        <figcaption><span>Thomas Cole<br>The Oxbow · 1836</span>
+          <p>Between the storm and the valley, the landscape remains in an uncertain balance. The work reminds us that any promising use must be looked at on both sides: what it improves and what it can weaken if its effects are not observed. <a href="https://www.metmuseum.org/art/collection/search/10497" target="_blank" rel="noreferrer">See the work at the Met ↗</a></p></figcaption>
       </figure>
     </section>
+
+    <section class="page-essential" id="essentiel" aria-labelledby="essential-title">
+      <div class="page-essential-layout">
+        <div>
+<p class="kicker">Direct answer</p>
+<h2 id="essential-title">What does “AI and SPSTI” mean?</h2>
+</div>
+        <div>
+          <p class="page-essential-answer"><strong>“AI and SPSTI” refers to the uses of artificial intelligence systems in inter-company prevention and occupational health services.</strong>They may concern administrative tasks, member relations, prevention and certain supervised medical uses. Présanse documents five families of uses and three field returns. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse, Monthly Information n° 146 ↗</a> A study published in <cite>References in Occupational Health</cite> has also observed <strong>74.6% agreement</strong> between the o1 model used as a second reader and a multidisciplinary consensus on 385 recommendations. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS, TF 335 ↗</a> These elements do not give any general green light: each use must be evaluated according to the task, the data and the consequences of an error.</p>
+          <div class="essential-points">
+            <article><span>01</span><strong>5 families of uses described by Présanse.</strong><a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Source ↗</a></article>
+            <article><span>02</span><strong>10 principles for supervising AI in SPSTI.</strong><a class="card-source" href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Source ↗</a></article>
+            <article><span>03</span><strong>385 recommendations · 74.6% agreement.</strong><a class="card-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Source ↗</a></article>
+          </div>
+          <p class="related-questions"><a href="/en/understand/#questions">What questions should you ask before professional use of AI?</a><a href="/en/evaluate/">How to evaluate an AI project before its deployment?</a></p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="editorial-method" aria-labelledby="editorial-method-title">
+      <div>
+<p class="kicker">Editorial method</p>
+<h2 id="editorial-method-title">Claims linked to their level of evidence.</h2>
+</div>
+      <div class="editorial-method-grid">
+        <article><span>01 · Selection</span><strong>Primary sources first.</strong><p>Official texts, scientific publications, sectoral documents and field feedback identified.</p></article>
+        <article><span>02 · Qualification</span><strong>Fact, example or hypothesis.</strong><p>A use mentioned is not presented as effective without a published evaluation or contextualized result.</p></article>
+        <article><span>03 · Updated</span><strong>Verified and dated.</strong><p>Sources and formulations were revised on August 28, 2026. Limits remain visible when knowledge is incomplete.</p></article>
+      </div>
+    </aside>
 
     <section class="pst-context" id="pst5" aria-labelledby="pst5-title">
       <div class="pst-context-heading">
         <p class="kicker">PST 5 · 2026–2030</p>
-        <h2 id="pst5-title">France’s national plan makes AI at work an occupational health issue.</h2>
+        <h2 id="pst5-title">What does PST 5 provide for AI at work?</h2>
       </div>
       <div class="pst-context-copy">
-        <p class="pst-context-lede">Under Objective 3, France’s Occupational Health Plan 2026–2030 states that AI-related transformations should be introduced through consultation, protect working conditions and be assessed through their real effects. Sub-action 3.1.1 provides for a national Observatory for AI at Work, led by Anact.</p>
+        <p class="pst-context-lede"><strong>The national plan makes AI at work an occupational health priority.</strong> In its objective 3, the Occupational Health Plan 2026–2030 requires that transformations linked to AI be concerted, respectful of working conditions and evaluated based on their real effects. Sub-action 3.1.1 provides for the creation of a national observatory for AI at work, led by the National Agency for the Improvement of Working Conditions (Anact).</p>
         <div class="pst-context-grid">
-          <article><span>01</span><strong>Investigate both sides.</strong><p>PST 5 calls for evidence on AI as a tool for preventing occupational risks and improving working conditions, while also examining AI systems and their uses as possible sources of occupational risk.</p></article>
-          <article><span>02</span><strong>Produce evidence that supports action.</strong><p>The plan provides for quantitative and qualitative studies, experiments, training, webinars, and practical tools and methods that can turn findings into prevention measures.</p></article>
-          <article><span>03</span><strong>Give OHS services a defined role.</strong><p>Annex 3 calls them “pivotal actors”. It asks them to contribute evidence on AI with Présanse and Anact, while adopting a measured use of AI in their own activities.</p></article>
+          <article><span>01</span><strong>Study both sides.</strong><p>The PST 5 wants to document AI as a tool for prevention and improvement of working conditions, but also AI systems and their uses as possible sources of occupational risks.</p></article>
+          <article><span>02</span><strong>Produce useful knowledge.</strong><p>The plan provides for quantitative and qualitative studies, experiments, training, webinars as well as tools and methods to move from findings to action.</p></article>
+          <article><span>03</span><strong>Give an explicit role to SPST.</strong><p>Appendix 3 describes prevention and occupational health services as “pivotal players”. It asks them to contribute to knowledge about AI with Présanse and Anact, while developing a reasoned use of AI in their own activities.</p></article>
         </div>
-        <p class="pst-context-conclusion">For an inter-company occupational health service (SPSTI), the task is therefore twofold: test clearly bounded professional uses with care, and observe what AI deployment changes in client organisations — workload, autonomy, skills, teams and occupational risks.</p>
-        <p class="pst-context-source">Source: France’s Occupational Health Plan 2026–2030, Action 3.1.1, pp. 44–45, and Annex 3, pp. 154–156. <a href="https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf" target="_blank" rel="noreferrer">Read the official document (French) ↗</a></p>
+        <p class="pst-context-conclusion">For a SPSTI, the goal is therefore twofold: cautiously test well-defined professional uses and observe what the deployment of AI changes in the companies monitored — load, autonomy, skills, collectives and occupational risks.</p>
+        <p class="pst-context-source">Source: Occupational health plan 2026–2030, action 3.1.1, p. 44–45, and annex 3, p. 154–156. <a href="https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf" target="_blank" rel="noreferrer">Consult the official document ↗</a></p>
       </div>
     </section>
 
     <section class="section uses" id="usages">
       <div class="section-head">
-        <div><p class="kicker">01 / Where AI may help</p><h2>Six concrete uses with clearly defined human responsibility.</h2></div>
-        <p>Except for the review case presented below, these uses are possibilities to experiment with and assess in each service.</p>
+        <div>
+<p class="kicker">01 / What uses of AI in a SPSTI?</p>
+<h2>Five families. Different levels of evidence and risk.</h2>
+</div>
+        <p>Présanse groups the cases mentioned in the SPSTI into five families. This classification describes a field of uses; it does not demonstrate the effectiveness of each tool. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse presentation ↗</a></p>
       </div>
-      <div class="use-grid">
-        <article class="use-card"><span>01 · Occupational medicine <b>Studied use</b></span><h3>Review the wording of a recommendation.</h3><p>Identify ambiguous wording, an implicit obligation, unnecessary information or a disclosure risk before transmission.</p><small><strong>Humans retain:</strong> work-post analysis, final wording, decision and signature.</small></article>
-        <article class="use-card"><span>02 · All occupations <b>Use to test</b></span><h3>Query internal documentation.</h3><p>Retrieve a protocol, risk sheet or procedure from a controlled repository, with sources shown in the answer.</p><small><strong>Humans retain:</strong> verification of the source, its date and its applicability to the case.</small></article>
-        <article class="use-card"><span>03 · Prevention <b>Use to test</b></span><h3>Structure field observations.</h3><p>Group notes by theme, prepare a synthesis and surface missing information before collective analysis.</p><small><strong>Humans retain:</strong> observation, interpretation, prioritisation and proposed measures.</small></article>
-        <article class="use-card"><span>04 · Training <b>Use to test</b></span><h3>Prepare cases and materials.</h3><p>Produce variants of a situation, discussion questions or an initial outline adapted to participants’ occupations.</p><small><strong>Humans retain:</strong> objectives, content validity and teaching.</small></article>
-        <article class="use-card"><span>05 · Quality <b>Use to test</b></span><h3>Identify incomplete files.</h3><p>Check for expected sections or flag a formal inconsistency without automatically assigning a risk level to the worker.</p><small><strong>Humans retain:</strong> access to the file, interpretation and any resulting action.</small></article>
-        <article class="use-card"><span>06 · Administration <b>Use to test</b></span><h3>Reduce repetitive tasks.</h3><p>Prepare a message, classify a non-medical request or rephrase practical information in more accessible language.</p><small><strong>Humans retain:</strong> exception handling and validation before sending.</small></article>
+      <div class="family-grid">
+        <article class="hub-family"><span>01 · Medical practices</span><h3>Assist, never conclude.</h3>
+<p>Transcription, synthesis, documentary research or second reading: the level of vigilance increases as soon as health data or an individual decision is concerned.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Uses cited by Présanse ↗</a></article>
+        <article class="hub-family"><span>02 · Prevention</span><h3>Structuring the field.</h3>
+<p>Company files, exploration of DUERP, grouping of observations or preparation of action plans: each task must be evaluated separately.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Uses cited by Présanse ↗</a></article>
+        <article class="hub-family"><span>03 · Support functions</span><h3>Reduce duplicate data entry.</h3>
+<p>Internal research, CRM tickets, reporting, planning and assistance with administrative or quality processes.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Uses cited by Présanse ↗</a></article>
+        <article class="hub-family"><span>04 · Member relations</span><h3>Direct requests.</h3>
+<p>Callbots, appointment scheduling and simple responses, with human response for exceptions and complex situations.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Uses cited by Présanse ↗</a></article>
+        <article class="hub-family"><span>05 · Transversal innovation</span><h3>Monitor developments and train teams.</h3>
+<p>Scientific and regulatory monitoring, training materials, content and controlled exploration of new services.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Uses cited by Présanse ↗</a></article>
       </div>
-      <div class="use-note"><span>What must not be automated</span><p>Fitness for work, clinical direction, individual worker assessment or a prevention decision cannot be inferred from a model output without professional judgement and the work context.</p></div>
+
+      <div class="evidence-browser">
+        <div class="filter-bar">
+<span>Filtering uses by status</span><div class="filters" aria-label="Use filters">
+<button class="filter active" type="button" data-filter="all">All</button><button class="filter" type="button" data-filter="documented">Documented field</button><button class="filter" type="button" data-filter="study">Published study</button><button class="filter" type="button" data-filter="sensitive">Sensitive use</button>
+</div>
+</div>
+        <div class="table-scroll" tabindex="0" aria-label="Table of uses, horizontal scrolling possible">
+          <table class="usage-table">
+            <thead><tr>
+<th>Usage</th>
+<th>Main profession</th>
+<th>Status and source</th>
+<th>Data and risk</th>
+<th>Useful indicator</th>
+<th>Supervision required</th>
+</tr></thead>
+            <tbody>
+              <tr data-tags="documented">
+<td>Callbot for simple requests</td>
+<td>Member relations</td>
+<td>
+<span class="status">Documented field</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">SPSTI 19-24 ↗</a>
+</td>
+<td>Contact data · moderate risk depending on the scenario</td>
+<td>Orientation errors, abandonments, restarts</td>
+<td>Escalation to a human team</td>
+</tr>
+              <tr data-tags="documented">
+<td>Training administration</td>
+<td>Assistants · support functions</td>
+<td>
+<span class="status">Documented terrain</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">MT71 ↗</a>
+</td>
+<td>Administrative data · low to moderate risk</td>
+<td>Corrections, exceptions, end-to-end time</td>
+<td>Control of exceptions and shipments</td>
+</tr>
+              <tr data-tags="study sensitive">
+<td>Second reading of recommendations</td>
+<td>Occupational physician</td>
+<td>
+<span class="status study-status">Published study</span><a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS TF 335 ↗</a>
+</td>
+<td>Deidentified text · high risk</td>
+<td>Defects spotted, missed defects, hallucinations</td>
+<td>Medical validation and signature</td>
+</tr>
+              <tr data-tags="sensitive">
+<td>Help with DUERP or company file</td>
+<td>IPRP · preventers</td>
+<td>
+<span class="status sensitive-status">To be evaluated by task</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Use mentioned ↗</a>
+</td>
+<td>Field data · variable risk</td>
+<td>Omissions, corrections, quality of the action plan</td>
+<td>Analysis of the work by the prevention officers</td>
+</tr>
+              <tr data-tags="sensitive">
+<td>Synthesis of medical information</td>
+<td>Occupational physicians · occupational-health nurses</td>
+<td>
+<span class="status sensitive-status">Sensitive use</span><a class="table-source" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Charte Présanse ↗</a>
+</td>
+<td>Health data · very high risk</td>
+<td>Errors, omissions, accesses and incidents</td>
+<td>Authorized environment and clinical validation</td>
+</tr>
+              <tr data-tags="sensitive">
+<td>Scoring or individual prioritisation</td>
+<td>Management · medical teams</td>
+<td>
+<span class="status sensitive-status">Maximum vigilance</span><a class="table-source" href="/en/legal-governance/#qualifier">Analyse the framework ↗</a>
+</td>
+<td>Individual data · potentially strong consequences</td>
+<td>False positives, false negatives, differences between groups</td>
+<td>Formal analysis before any decision</td>
+</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="light-note">
+<span>Limit to keep visible</span><p>The presence of a use in a sectoral presentation establishes neither its performance nor its conformity. The task, the data, the supplier and the decision-making circuit must be examined in each service.</p>
+</div>
+    </section>
+
+    <section class="section terrain-section" id="terrain">
+      <div class="section-head">
+        <div>
+<p class="kicker">02 / What already exists in France</p>
+<h2>Three examples from the field, three operational problems.</h2>
+</div>
+        <p>Présanse presented these experiences in November 2025. They document real approaches but do not, on their own, constitute evidence of generalisable effectiveness. <a class="source-inline" href="https://www.presanse.fr/nouvelles-mensuelles/n-146-november-2025/" target="_blank" rel="noreferrer">Présanse article ↗</a></p>
+      </div>
+      <div class="terrain-grid">
+        <article class="terrain-card"><span>SPSTI 19-24 · Member relations</span><h3>Absorb call peaks.</h3>
+<p>A callbot handles simple requests, responds or redirects. The human team remains available for complex situations and non-scenario requests.</p>
+<p class="measure"><strong>To measure:</strong> transfers, orientation errors, abandonments, satisfaction and rework burden.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse Testimony ↗</a></article>
+        <article class="terrain-card"><span>MT71 · Administration</span><h3>Streamline training administration.</h3>
+<p>An assistant handles pre-registrations, changes, communications with member companies and duplicate entry of information related to awareness sessions.</p>
+<p class="measure"><strong>To measure:</strong> corrections, exceptions, end-to-end time and quality of exchanges.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse Testimony ↗</a></article>
+        <article class="terrain-card"><span>AST74 · Governance</span><h3>Create a dedicated AI function.</h3>
+<p>A cross-functional function drives the transformation, links strategy to the organisation and coordinates compliance, security and prioritisation.</p>
+<p class="measure"><strong>To measure:</strong> traced decisions, training, incidents and real capacity to suspend a project.</p>
+<a class="card-source" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse Testimony ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section charter-section" id="charte">
+      <div class="section-head">
+        <div>
+<p class="kicker">03 / Présanse AI Charter</p>
+<h2>Ten principles to translate into daily decisions.</h2>
+</div>
+        <p>The charter is presented as an adaptable model that can be integrated into the service's IT charter. The formulations below give an operational translation. <a class="source-inline" href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Official page ↗</a></p>
+      </div>
+      <div class="principles-grid">
+        <article><span>01</span><strong>Human supervision</strong><p>Identify who controls, validates, contests and assumes use.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 1 ↗</a></article>
+        <article><span>02</span><strong>Medical data</strong><p>Do not transmit personal or health data to an unauthorised tool.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 2 ↗</a></article>
+        <article><span>03</span><strong>Transparency</strong><p>Document the tool, its purpose, its limits and the exact role of AI.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 3 ↗</a></article>
+        <article><span>04</span><strong>Equity</strong><p>Look for biases and differentiated effects according to audiences.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 4 ↗</a></article>
+        <article><span>05</span><strong>Traceability</strong><p>Document uses, validations, errors, incidents and corrections.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 5 ↗</a></article>
+        <article><span>06</span><strong>Governance</strong><p>Define those responsible, the decision circuit and the stopping conditions.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 6 ↗</a></article>
+        <article><span>07</span><strong>Proportionate use</strong><p>Start from a real need and choose the least intrusive system possible.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 7 ↗</a></article>
+        <article><span>08</span><strong>Security and reliability</strong><p>Evaluate the environment, access, errors and dependencies.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 8 ↗</a></article>
+        <article><span>09</span><strong>Training</strong><p>Train before use and maintain professional skills.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 9 ↗</a></article>
+        <article><span>10</span><strong>Eco-responsibility</strong><p>Do not mobilize AI when the usefulness is not demonstrated.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle 10 ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section matrix-section" id="prioriser">
+      <div class="section-head">
+        <div>
+<p class="kicker">04 / How to prioritise uses?</p>
+<h2>Business value × complexity × data × consequence of an error.</h2>
+</div>
+        <p>Présanse proposes to combine business value and complexity. This matrix adds the sensitivity of the data and the consequence of an error. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Matrice Présanse ↗</a></p>
+      </div>
+      <div class="project-tabs" role="tablist" aria-label="Examples of AI projects">
+        <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="documentation">Documentary assistant</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="callbot">Callbot members</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="formation">Administration training</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="relecture">Second reading</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="synthese">Medical summary</button><button class="project-tab" type="button" role="tab" aria-selected="false" data-project="scoring">Individual scoring</button>
+      </div>
+      <div class="matrix-lab">
+        <div class="matrix-plot-wrap">
+          <div class="matrix-title">
+<span>Value / risk matrix</span><strong id="matrixStatus">Test as a priority</strong>
+</div>
+          <div class="matrix-plot" aria-label="Position of the project according to its business value and its overall risk">
+<span class="quadrant q1">High value<br>Controllable risk</span><span class="quadrant q2">Formal evaluation<br>before any pilot</span><span class="quadrant q3">Secondary action</span><span class="quadrant q4">Wrong good idea</span><i class="matrix-dot" id="matrixDot"></i>
+</div>
+        </div>
+        <div class="matrix-detail" aria-live="polite">
+          <span id="projectType">All professions · documentation</span><h3 id="projectTitle">Internal documentation assistant</h3>
+<p id="projectDescription">Find a protocol or risk sheet in a controlled database, with the sources displayed in the response.</p>
+          <div class="score-list">
+<div class="score-row">
+<span>Business value</span><div class="score-track"><i id="valueBar" style="width:80%"></i></div>
+<b id="valueScore">4</b>
+</div>
+<div class="score-row">
+<span>Complexity</span><div class="score-track"><i id="complexityBar" style="width:40%"></i></div>
+<b id="complexityScore">2</b>
+</div>
+<div class="score-row">
+<span>Data sensitivity</span><div class="score-track"><i id="dataBar" style="width:40%"></i></div>
+<b id="dataScore">2</b>
+</div>
+<div class="score-row">
+<span>Consequence of an error</span><div class="score-track"><i id="errorBar" style="width:40%"></i></div>
+<b id="errorScore">2</b>
+</div>
+</div>
+          <div class="verdict">
+<span>Orientation</span><strong id="verdictText">Good candidate for a limited pilot on a controlled basis, with citation of sources and human verification.</strong>
+</div>
+          <p class="matrix-caveat">Illustrative rating out of 5. Actual profile depends on data, provider, integration, audience and decision circuit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shadow-section" id="shadow">
+      <div class="section-head">
+        <div>
+<p class="kicker">05 / Shadow AI in SPSTI</p>
+<h2>The risk exists before official deployment.</h2>
+</div>
+        <p>Présanse uses the term “Shadow AI” to describe uses that are not validated or supervised, including the risk of introducing sensitive information into public chatbots. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf" target="_blank" rel="noreferrer">Présanse Support ↗</a></p>
+      </div>
+      <div class="shadow-layout">
+        <div class="shadow-intro">
+<span>Weak signal, immediate risk</span><h3>“I just wanted to save five minutes.”</h3>
+<p>A vague instruction, a personal tool and a copy and paste are enough for sensitive data to leave the intended framework. The Présanse charter prohibits the introduction of personal, medical or identifying data into a tool not validated by the service. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Présanse best practices ↗</a></p>
+</div>
+        <div class="shadow-steps">
+<article><span>01</span><div>
+<strong>Mapping uses</strong><p>Understand practices, needs and workarounds without making them clandestine.</p>
+</div></article><article><span>02</span><div>
+<strong>Fix prohibited data.</strong><p>Give concrete examples for personal and health data.</p>
+</div></article><article><span>03</span><div>
+<strong>Propose solutions authorized.</strong><p>Meet real needs with a framework usable by the teams.</p>
+</div></article><article><span>04</span><div>
+<strong>Train and document incidents.</strong><p>Advance the framework based on errors and difficulties observed.</p>
+</div></article>
+</div>
+      </div>
+    </section>
+
+    <section class="section voices-section" id="professionnels">
+      <div class="section-head">
+        <div>
+<p class="kicker">06 / What the professionals say</p>
+<h2>Interest, with a clear demand for evidence and safeguards.</h2>
+</div>
+        <p>These two surveys published in 2026 describe declared attitudes. They do not establish the effectiveness of a tool, but shed light on the conditions of acceptance.</p>
+      </div>
+      <div class="voice-grid">
+        <article><b>83 %</b><strong>Prefer AI combined with clinical judgement.</strong><p>Survey of 237 occupational physicians in the Ile-de-France region.</p>
+<a class="card-source" href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Study 2026 ↗</a></article>
+        <article><b>94 %</b><strong>Cite scientific validation among the priority criteria.</strong><p>Ahead of the reliability of results (84%) and data protection (81%).</p>
+<a class="card-source" href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Study 2026 ↗</a></article>
+        <article><b>91,2 %</b><strong>Declare an interest in AI training.</strong><p>Separate survey of 80 occupational health professionals.</p>
+<a class="card-source" href="https://www.sciencedirect.com/science/article/pii/S1775878526008052" target="_blank" rel="noreferrer">Study 2026 ↗</a></article>
+      </div>
     </section>
 
     <section class="section study" id="etude">
       <div class="section-head">
-        <div><p class="kicker">02 / An example published by INRS</p><h2>AI-assisted review, evaluated on one precise task.</h2></div>
-        <p>I authored this study, published by INRS in June 2026. It evaluates support from a language model without delegating the consultation, the drafting of the recommendation or the medical decision.</p>
+        <div>
+<p class="kicker">07 / An example published by INRS</p>
+<h2>Assisted proofreading, evaluated on a clearly defined task.</h2>
+</div>
+        <p>This study, published by INRS in June 2026, evaluates the help provided by a language model without entrusting it with the consultation, the drafting of the opinion or the medical decision. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS article ↗</a></p>
       </div>
+      <p class="study-citable">In the study by Charles Broutin, “<cite>Artificial intelligence in occupational health: evaluation of its potential to strengthen the precision and clarity of medical recommendations</cite> ”, the model achieved 74.6% overall agreement with the multidisciplinary consensus on 385 recommendations. <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">References in Occupational Health, TF 335 ↗</a></p>
       <div class="study-card">
         <div class="study-intro">
-          <p class="kicker">Références en Santé au Travail · TF 335 · June 2026</p>
-          <h3>The model acts only as a second reader.</h3>
-          <p>The o1 model reviewed 385 medical recommendations that had already been written and contained no identifying information. It looked for five predefined defects: imprecision, ambiguity about obligation, information outside Annex 4, an implicit job change and disclosure of medical or personal information.</p>
-          <p class="study-origin"><strong>Essential limitation.</strong> The study measures detection of wording defects. It does not assess consultation quality or effects on health and job retention.</p>
+          <p class="kicker">References in Occupational Health · TF 335 · June 2026</p>
+          <h3>The model only acts as a second reader.</h3>
+          <p>The o1 model reread 385 medical recommendations already written and devoid of identifying elements. It was looking for five defects defined in advance: imprecision, ambiguity on the obligation, information outside Annex 4, implicit change of position and disclosure of medical or personal data.</p>
+          <p class="study-origin"><strong>Essential limit.</strong> The study measures the detection of wording defects. It does not measure the quality of a consultation, nor the effect on health or continued employment.</p>
           <a class="button light" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Read the full article on the INRS website <span>↗</span></a>
         </div>
-        <div class="study-findings" aria-label="Main study results">
-          <article class="study-finding"><b>74.6%</b><div><strong>Overall agreement</strong><p>The model and the multidisciplinary consensus reach the same assessment.</p></div></article>
-          <article class="study-finding"><b>1.45%</b><div><strong>Missed errors</strong><p>The consensus identifies a defect that the model did not flag.</p></div></article>
-          <article class="study-finding"><b>0</b><div><strong>Observed hallucinations</strong><p>In this sample and under this precise protocol; the result is not a general guarantee.</p></div></article>
+        <div class="study-findings" aria-label="Main results of the study">
+          <article class="study-finding"><b>74,6 %</b><div>
+<strong>Overall agreement</strong><p>The model and the multidisciplinary consensus lead to the same evaluation.</p>
+<a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Result published ↗</a>
+</div></article>
+          <article class="study-finding"><b>1,45 %</b><div>
+<strong>Errors not spotted</strong><p>The consensus identifies a defect that the model did not report.</p>
+<a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Result published ↗</a>
+</div></article>
+          <article class="study-finding"><b>0</b><div>
+<strong>Hallucination observed</strong><p>In this sample and with this precise protocol; this result is not a general guarantee.</p>
+<a class="table-source" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Result published ↗</a>
+</div></article>
         </div>
       </div>
-      <div class="study-note"><span>Cautious interpretation</span><p>These results are promising for tightly controlled review support. They concern one model and one task, with no measurement of clinical effects. The occupational physician remains responsible for analysis, wording and validation.</p></div>
+      <div class="study-note">
+<span>Careful reading</span><p>These results are promising for highly supervised proofreading assistance. They concern a single model and a single task, without measuring a clinical effect. The occupational physician remains responsible for the analysis, formulation and validation.</p>
+</div>
     </section>
 
     <section class="section pilot" id="pilote">
       <div class="section-head">
-        <div><p class="kicker">03 / Build a pilot in an OHS service</p><h2>Evaluate the use before trying to scale it.</h2></div>
-        <p>A useful pilot begins with a measurable question and a human reference. It must also allow a return to the previous way of working.</p>
+        <div>
+<p class="kicker">08 / Building a pilot in SPSTI</p>
+<h2>Need → value → data → risk → pilot → decision.</h2>
+</div>
+        <p>Présanse recommends starting small, measure the impacts, adjust then gradually expand. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse approach ↗</a></p>
       </div>
       <div class="pilot-flow">
-        <article class="pilot-step"><span>01</span><h3>Choose a narrow task.</h3><p>A recurring, correctable problem distinct from the clinical decision.</p></article>
-        <article class="pilot-step"><span>02</span><h3>Establish the reference.</h3><p>A set of cases assessed by professionals using explicit criteria.</p></article>
-        <article class="pilot-step"><span>03</span><h3>Protect the data.</h3><p>Minimisation, appropriate hosting, limited access and no unnecessary identifiers.</p></article>
-        <article class="pilot-step"><span>04</span><h3>Test in parallel.</h3><p>The model acts as a second reader without changing the usual process.</p></article>
-        <article class="pilot-step"><span>05</span><h3>Measure errors.</h3><p>Agreement by criterion, over-detections, missed defects, time saved and new review workload.</p></article>
-        <article class="pilot-step"><span>06</span><h3>Decide collectively.</h3><p>Continue, correct or stop based on documented results and effects on work.</p></article>
+        <article class="pilot-step"><span>01</span><h3>Describe the need.</h3>
+<p>A recurring task, an observable problem and the professionals involved.</p></article>
+        <article class="pilot-step"><span>02</span><h3>Estimate the value.</h3>
+<p>Expected quality, end-to-end time and benefit for the service's mission.</p></article>
+        <article class="pilot-step"><span>03</span><h3>Audit the data.</h3>
+<p>Nature, necessity, access, conservation, hosting and minimisation.</p></article>
+        <article class="pilot-step"><span>04</span><h3>Anticipate the error.</h3>
+<p>What can go wrong, who can see it and who can interrupt use.</p></article>
+        <article class="pilot-step"><span>05</span><h3>Test in parallel.</h3>
+<p>Compare to a human reference without immediately modifying the usual circuit.</p></article>
+        <article class="pilot-step"><span>06</span><h3>Decide collectively.</h3>
+<p>Continue, correct or stop based on documented results and effects.</p></article>
       </div>
+      <div class="measurement-grid">
+        <article><span>Measure the system</span><h3>What the tool does.</h3>
+<ul>
+<li>spotted errors, missed errors and invented responses</li>
+<li>stability after change model or instructions</li>
+<li>time saved after verification and correction</li>
+<li>differences between cases, business and public</li>
+</ul></article>
+        <article><span>Measure the work</span><h3>What the tool does for the teams.</h3>
+<ul>
+<li>control load, interruptions and exceptions</li>
+<li>autonomy, contestation and real responsibility</li>
+<li>evolution of skills and the collective</li>
+<li>incidents, circumventions and inequalities of use</li>
+</ul></article>
+      </div>
+      <p class="section-link-row">To prepare for this test, consult the <a href="/en/evaluate/">evaluation method before and after deployment</a>, then use the <a href="/en/evaluate/impact/">short questionnaire on the effects of the AI project</a>. To take these concepts in order, follow the <a href="/en/#pathways">Workplace Health AI course</a>.</p>
     </section>
 
     <section class="section roles" id="roles">
       <div class="section-head">
-        <div><p class="kicker">04 / Allocate responsibilities</p><h2>A service-wide project, not a tool left to a few users.</h2></div>
-        <p>Professionals must be able to define the criteria, limits and situations in which the system must not be used.</p>
+        <div>
+<p class="kicker">09 / Distribute responsibilities</p>
+<h2>A service project, not a tool left to a few users.</h2>
+</div>
+        <p>The Présanse charter requires clear governance and the definition of who controls, validates and monitors uses. <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Principle of governance ↗</a></p>
       </div>
       <div class="role-table">
-        <article class="role-row"><strong>Physicians and nurses</strong><div><span>Contribution</span><strong>Define cases, the professional reference and unacceptable errors.</strong></div><div><span>Responsibility</span><strong>Retain clinical interpretation and validation of every output used.</strong></div></article>
-        <article class="role-row"><strong>Risk prevention specialists, ergonomists and psychologists</strong><div><span>Contribution</span><strong>Describe work situations and the pilot’s organisational effects.</strong></div><div><span>Responsibility</span><strong>Prevent an automated synthesis from replacing field analysis.</strong></div></article>
-        <article class="role-row"><strong>Assistants and administrative teams</strong><div><span>Contribution</span><strong>Identify repetitive tasks, exceptions and information needs.</strong></div><div><span>Responsibility</span><strong>Report the actual correction workload and errors affecting service users.</strong></div></article>
-        <article class="role-row"><strong>Leadership, DPO and IT</strong><div><span>Contribution</span><strong>Organise the contract, data, access, security and monitoring.</strong></div><div><span>Responsibility</span><strong>Provide the means to stop use and inform the relevant bodies.</strong></div></article>
-        <article class="role-row"><strong>Works council and employee representatives</strong><div><span>Contribution</span><strong>Examine consequences for occupations, workload, autonomy and skills.</strong></div><div><span>Responsibility</span><strong>Request a documented review before any wider rollout.</strong></div></article>
+        <article class="role-row"><strong>Occupational physicians and nurses</strong><div>
+<span>Input</span><strong>Define cases, professional reference and unacceptable errors.</strong>
+</div>
+<div>
+<span>Responsibility</span><strong>Retain the clinical interpretation and validation of any output used.</strong>
+</div></article>
+        <article class="role-row"><strong>Risk prevention stakeholders professionals (IPRP), ergonomists and psychologists</strong><div>
+<span>Input</span><strong>Describe the work situations and organisational effects of the pilot.</strong>
+</div>
+<div>
+<span>Responsibility</span><strong>Avoid an automatic synthesis replacing field analysis.</strong>
+</div></article>
+        <article class="role-row"><strong>Assistants and administrative teams</strong><div>
+<span>Input</span><strong>Identify repetitive tasks, exceptions and information needs.</strong>
+</div>
+<div>
+<span>Responsibility</span><strong>Report the real correction load and the errors that reach users.</strong>
+</div></article>
+        <article class="role-row"><strong>Management, DPO and IT</strong><div>
+<span>Input</span><strong>Organize the contract, data, access, security and monitoring.</strong>
+</div>
+<div>
+<span>Responsibility</span><strong>Provide the means to stop the use and inform the authorities concerned.</strong>
+</div></article>
+        <article class="role-row"><strong>CSE and staff representatives</strong><div>
+<span>Input</span><strong>Examine the consequences on jobs, workload, autonomy and skills.</strong>
+</div>
+<div>
+<span>Responsibility</span><strong>Request documented feedback before any generalization.</strong>
+</div></article>
+      </div>
+      <p class="role-governance">The role of the CSE and the organisation of decision-making are detailed in the <a href="/en/legal-governance/">law and governance benchmarks for AI at work</a>.</p>
+    </section>
+
+    <section class="section training-section" id="formation" aria-labelledby="training-title">
+      <div class="section-head">
+        <div>
+<p class="kicker">10 / AI training and literacy</p>
+<h2 id="training-title">Train each profession before deployment.</h2>
+</div>
+        <p>Useful training is not limited to using a tool. It connects capabilities, boundaries, data, verification, accountability, and effects on actual work.</p>
+      </div>
+      <div class="training-grid">
+        <article><span>Common Core</span><h3>Understand before you use.</h3>
+<p>How models work, plausible errors, information protection, recourse, and human accountability.</p></article>
+        <article><span>Situations profession</span><h3>Train on real tasks.</h3>
+<p>Use separate cases for occupational physicians, nurses, prevention professionals, assistants, management, the DPO and IT, with the unacceptable errors for each profession.</p></article>
+        <article><span>Organisation</span><h3>Maintain the ability to control.</h3>
+<p>Verification time, right to challenge, reporting of incidents, updating of skills and shutdown conditions.</p></article>
+      </div>
+      <p class="training-callout"><strong>Article 4 of the AI Act requires suppliers and deployers to take measures to ensure a sufficient level of mastery of AI.</strong> The expected level depends in particular on knowledge, experience, training, context of use and the people concerned. <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noreferrer">Consult the European regulation ↗</a></p>
+      <p class="section-link-row"><a href="/en/legal-governance/#ai-act">Putting training back into the governance framework</a></p>
+    </section>
+
+    <section class="section answer-section" id="questions" aria-labelledby="questions-title">
+      <div class="section-head">
+        <div>
+<p class="kicker">11 / Direct answers</p>
+<h2 id="questions-title">Six frequently asked questions about AI and SPSTI.</h2>
+</div>
+        <p>These short answers summarize the decision points. Each statement refers to the corresponding source or detailed section.</p>
+      </div>
+      <div class="answer-grid">
+        <article class="answer-card">
+          <h3>What does “AI and SPSTI” mean?</h3>
+          <p><strong>This concerns the uses of artificial intelligence systems in inter-company prevention and occupational health services.</strong> AI can assist administrative, documentary, prevention, member relations tasks and certain strictly supervised medical uses. It does not replace either the analysis of the work or the decision of the professional. <a href="#essential">Read the full answer</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Which uses of AI are relevant in a SPSTI?</h3>
+          <p><strong>The first candidates are precise and verifiable tasks</strong>: internal documentary research, administration of training, guidance of simple requests or preparation of documents. Medical and individual uses require greater vigilance, because the consequences of an error and the sensitivity of the data increase. <a href="#usages">Compare uses</a> · <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">Présanse ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Can we use consumer AI with health data?</h3>
+          <p><strong>No, not if the tool is not authorized by the service.</strong> The Présanse charter requires that no personal, medical or identifiable data be entered into an unvalidated tool. The framework must specify hosting, access, purpose and responsibilities before any use. <a href="#shadow">See the risk of Shadow AI</a> · <a class="source-inline" href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Présanse Charter ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>How to choose a first AI pilot in SPSTI?</h3>
+          <p><strong>Choose a strong business value with a manageable risk.</strong> The pilot must start from an observable need, use the minimum amount of data, make errors visible and be able to be stopped without disrupting the usual circuit. <a href="#prioritise">Test the matrix</a> · <a href="#pilot">Follow the six steps</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>Can AI decide on behalf of the occupational physician?</h3>
+          <p><strong>No.</strong> In the study published by INRS, the model acts as a second reader of an existing text; it does not conduct the consultation, make the decision or sign the recommendation. The occupational physician remains responsible for analysis, formulation and validation. <a href="#etude">Read the results and their limits</a> · <a class="source-inline" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS TF 335 ↗</a></p>
+        </article>
+        <article class="answer-card">
+          <h3>What should be measured during a pilot?</h3>
+          <p><strong>Measure both the system and the work.</strong> It is necessary to monitor the errors spotted or missed, the stability and the complete time after correction, but also the control load, autonomy, skills, incidents and inequalities of use. <a href="#pilot">See the indicators</a> · <a href="/en/evaluate/">Consult the evaluation method</a></p>
+        </article>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div><p class="kicker">Use in OHS services · Training · Research</p><h2>Would you like to discuss a pilot or the study?</h2></div>
-      <div class="contact-copy"><p>Describe the intended task, professionals concerned, data used and what you want to measure. The discussion may cover use-case selection, the evaluation protocol or effects on work.</p><div class="contact-actions"><a class="button light" href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">Contact Dr Charles Broutin <span>↗</span></a><a class="button secondary" style="color:var(--cream);border-color:var(--line-light)" href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Read the INRS article</a></div><small>Professional contact on LinkedIn · article available on the INRS website</small></div>
+    <section class="section sources-section" id="sources">
+      <div class="section-head">
+        <div>
+<p class="kicker">12 / Reference sources</p>
+<h2>Go back to the original document before deciding.</h2>
+</div>
+        <p>The links below complete the references placed throughout the page. Official documents and scientific articles remain the basis for any legal, medical or technical decision.</p>
+      </div>
+      <div class="sources-grid">
+        <article><span>Sectoral governance</span><h3>Présanse AI Charter</h3>
+<p>The ten principles and good practices proposed to the SPSTI.</p>
+<a href="https://www.presanse.fr/ressources-sant%C3%A9-travail/charte-intelligence-artificielle-en-spsti-de-presanse/" target="_blank" rel="noreferrer">Official page ↗</a><a href="https://www.presanse.fr/wp-content/uploads/2025/12/charte_ia_presanse_2025.pdf" target="_blank" rel="noreferrer">Complete PDF ↗</a></article>
+        <article><span>Field feedback</span><h3>Présanse, November 2025</h3>
+<p>SPSTI 19-24, MT71, AST74, use families and matrix of prioritisation.</p>
+<a href="https://www.presanse.fr/informations-mensuelles/n-146-novembre-2025/" target="_blank" rel="noreferrer">Article ↗</a><a href="https://www.presanse.fr/wp-content/uploads/2025/11/im146_une_IA-SPSTI_1-3.pdf" target="_blank" rel="noreferrer">PDF summary ↗</a></article>
+        <article><span>Shadow AI and method</span><h3>Presanse Support</h3>
+<p>Awareness raising, use cases, data, pilot and unsupervised uses.</p>
+<a href="https://www.presanse.fr/wp-content/uploads/2025/11/doc_synthese.pdf" target="_blank" rel="noreferrer">Consult support ↗</a></article>
+        <article><span>Published study</span><h3>INRS — TF 335</h3>
+<p>Protocol and results on the second reading of medical recommendations.</p>
+<a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">Consult the article ↗</a></article>
+        <article><span>Acceptability</span><h3>Occupational physicians in the Ile-de-France region</h3>
+<p>237 respondents, clinical complementarity, validation and data protection.</p>
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S1775878526007988" target="_blank" rel="noreferrer">Consult the study ↗</a></article>
+        <article><span>Training</span><h3>KAP survey</h3>
+<p>80 occupational health professionals and declared interest in training.</p>
+<a href="https://www.sciencedirect.com/science/article/pii/S1775878526008052" target="_blank" rel="noreferrer">Consult the study ↗</a></article>
+        <article><span>National framework</span><h3>Occupational health plan 2026–2030</h3>
+<p>Objective 3, sub-action 3.1.1 and role of prevention services.</p>
+<a href="https://travail-emploi.gouv.fr/sites/travail-emploi/files/2026-06/WEB_PST5_0.pdf" target="_blank" rel="noreferrer">Official document ↗</a></article>
+        <article><span>Personal data</span><h3>CNIL</h3>
+<p>Official benchmarks on artificial intelligence and the GDPR.</p>
+<a href="https://www.cnil.fr/fr/intelligence-artificielle" target="_blank" rel="noreferrer">Consult ↗</a></article>
+        <article><span>Health data</span><h3>HDS certified hosting</h3>
+<p>Repository and list of certified hosts.</p>
+<a href="https://esante.gouv.fr/offres-services/hds/liste-des-hebergeurs-certifies" target="_blank" rel="noreferrer">Digital Health Agency ↗</a></article>
+      </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand"><strong>AI &amp; Occupational Health</strong><p>Guidance for selecting, evaluating and governing AI uses in real work.</p></div>
-      <div class="footer-col"><span>This page</span><a href="#pst5">France’s PST 5 and AI</a><a href="#usages">Uses</a><a href="#etude">INRS study</a><a href="#pilote">Build a pilot</a></div>
-      <div class="footer-col"><span>Pathway</span><a href="https://www.iasantetravail.com/en/understand/">Understand</a><a href="https://www.iasantetravail.com/en/uses-and-field/">Field use</a><a href="https://www.iasantetravail.com/en/evaluate/">Assess</a><a href="https://www.iasantetravail.com/en/legal-governance/">Law &amp; governance</a></div>
-      <div class="footer-col"><span>Resources</span><a href="https://www.inrs.fr/media.html?refINRS=TF+335" target="_blank" rel="noreferrer">INRS article ↗</a><a href="https://www.iasantetravail.com/en/about/">About</a><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.iasantetravail.com/en/privacy/">Privacy</a></div>
-      <div class="footer-bottom"><span>Cited study: C. Broutin, Références en Santé au Travail, TF 335, no. 186, June 2026.</span><span>© 2026 AI &amp; Occupational Health.</span></div>
+      <div class="footer-brand">
+<strong>AI &amp; Occupational Health</strong><p>Guidelines for choosing, evaluating and supervising the uses of artificial intelligence in the workplace real.</p>
+</div>
+      <div class="footer-col">
+<span>This page</span><a href="#essentiel">In brief</a><a href="#usages">Uses</a><a href="#terrain">Field</a><a href="#charte">Charter</a><a href="#prioriser">Prioritise</a><a href="#formation">Training</a><a href="#questions">Questions</a><a href="#sources">Sources</a>
+</div>
+      <div class="footer-col">
+<span>Course</span><a href="https://www.iasantetravail.com/en/understand/">Understand</a><a href="https://www.iasantetravail.com/en/evaluate/">Assess</a><a href="https://www.iasantetravail.com/en/legal-governance/">Law &amp; governance</a><a href="/en/editorial-method/">Editorial method</a><a href="https://www.iasantetravail.com/en/about/">About</a>
+</div>
+      <div class="footer-bottom">
+<span>Study cited: C. Broutin, References in Occupational Health, TF 335, n° 186, June 2026.</span><span>© 2026 AI &amp; Occupational Health.</span>
+</div>
     </div>
   </footer>
 </body>

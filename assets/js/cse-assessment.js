@@ -4,8 +4,14 @@
   const answers = new Map();
   let autonomy = null;
   let workImpact = null;
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
 
-  const outcomes = {
+  const outcomes = isEnglish ? {
+    green: ["Sufficient information", "The file gives the CSE a structured basis on which to begin its deliberation."],
+    yellow: ["Additional information required", "Some answers are still missing to understand the system and its effects."],
+    orange: ["In-depth assessment recommended", "The level of autonomy or number of partial answers calls for closer examination."],
+    red: ["Insufficient safeguards", "Essential arrangements for human control, incidents or suspension have not been established."]
+  } : {
     green: ["Informations suffisantes", "Le dossier permet au CSE d’engager la délibération sur une base structurée."],
     yellow: ["Informations complémentaires nécessaires", "Des réponses manquent encore pour comprendre le système et ses effets."],
     orange: ["Évaluation approfondie recommandée", "Le niveau d’autonomie ou le nombre de réponses partielles appelle un examen renforcé."],
