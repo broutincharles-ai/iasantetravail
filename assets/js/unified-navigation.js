@@ -24,6 +24,7 @@
     "/droit-gouvernance/": "/en/legal-governance/",
     "/cse/": "/en/cse/",
     "/lecture/": "/en/reading/",
+    "/lecture/ingenierie-code-ia/": "/en/reading/engineering-ai-code/",
     "/lecture/agents-ia-workaholisme/": "/en/reading/ai-agents-workaholism/",
     "/lecture/frontieres-metiers-ia/": "/en/reading/ai-occupational-boundaries/",
     "/lecture/ia-deploiement-travail-reel/": "/en/reading/ai-deployment-real-work/",

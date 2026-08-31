@@ -114,17 +114,31 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/lecture/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/reading/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/ingenierie-code-ia/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/ingenierie-code-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/engineering-ai-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/ingenierie-code-ia/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/reading/engineering-ai-code/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/ingenierie-code-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/engineering-ai-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/ingenierie-code-ia/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/lecture/agents-ia-workaholisme/</loc>
