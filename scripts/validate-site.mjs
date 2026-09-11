@@ -307,7 +307,7 @@ for (const relative of [
   "risques-prevention/psychosociaux/index.html",
   "evaluer/index.html",
   "droit-gouvernance/index.html",
-  "usages-terrain/exemple-sante-travail/index.html",
+  "ia-en-spst/index.html",
   "a-propos/index.html"
 ]) {
   const html = await cachedHtml(path.join(root, relative));

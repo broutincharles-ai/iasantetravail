@@ -6,7 +6,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-08-30" },
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-08-20" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-08-30" },
-  { fr: "usages-terrain/exemple-sante-travail/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-08-30" },
+  { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-09-11" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-08-31" },
   { fr: "lecture/ingenierie-code-ia/index.html", en: "en/reading/engineering-ai-code/index.html", lastmod: "2026-08-31" },
   { fr: "lecture/agents-ia-workaholisme/index.html", en: "en/reading/ai-agents-workaholism/index.html", lastmod: "2026-08-30" },
