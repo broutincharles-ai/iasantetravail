@@ -62,7 +62,8 @@ function cseBody({ kicker, h1, lead, sections }) {
   };
 }
 
-async function page({ route, fr, title, description, kicker, h1, lead, sections, css = "lecture-v2.css?v=1.1", date = "2026-08-30", type = "Article", extra = "", layout = "reading" }) {
+async function page({ route, fr, title, description, kicker, h1, lead, sections, css = "lecture-v2.css?v=1.1", date = "2026-08-30", type = "Article", extra = "", layout = "reading", preserveExisting = false }) {
+  if (preserveExisting) return;
   const canonical = `${origin}${route}`;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -196,8 +197,9 @@ const readings = [
 ];
 for (const item of readings) await page(item);
 
+// The bilingual CSE tool is maintained directly to preserve its full interactive markup.
 await page({
-  route: "/en/cse/", fr: "/cse/", css: "cse.css?v=1.1", layout: "cse", type: "WebPage", title: "CSE and AI at work: 10 questions before an opinion", description: "An operational framework for the French Social and Economic Committee to assess an AI system before issuing its opinion.", kicker: "CSE · AI AT WORK · OPERATIONAL FRAMEWORK", h1: "CSE and artificial intelligence at work: <em>assess a project before issuing an opinion</em>", lead: "A practical framework to help the Social and Economic Committee (CSE), the French employee-representation body, obtain useful information, examine effects on work and make missing safeguards visible.", extra: '\n  <script defer src="/assets/js/cse-assessment-en.js?v=1.1"></script>',
+  route: "/en/cse/", fr: "/cse/", preserveExisting: true, css: "cse.css?v=1.1", layout: "cse", type: "WebPage", title: "CSE and AI at work: 10 questions before an opinion", description: "An operational framework for the French Social and Economic Committee to assess an AI system before issuing its opinion.", kicker: "CSE · AI AT WORK · OPERATIONAL FRAMEWORK", h1: "CSE and artificial intelligence at work: <em>assess a project before issuing an opinion</em>", lead: "A practical framework to help the Social and Economic Committee (CSE), the French employee-representation body, obtain useful information, examine effects on work and make missing safeguards visible.", extra: '\n  <script defer src="/assets/js/cse-assessment-en.js?v=1.1"></script>',
   sections: [
     { heading: "Why should the CSE engage with AI at work?", content: p("An AI deployment does not merely change a tool. It can redistribute decisions, targets, verification work, autonomy, skills, monitoring and accountability. Where consultation is required, the CSE can examine these transformations collectively while choices remain open.") },
     { heading: "The ten questions to ask before the opinion", content: `<div class="question-list">${[
