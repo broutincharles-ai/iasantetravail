@@ -4,7 +4,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-08-30" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-08-30" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-08-30" },
-  { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-08-20" },
+  { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-09-12" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-09-12" },
   { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-09-11" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-12" },
