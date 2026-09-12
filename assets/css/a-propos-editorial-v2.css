@@ -303,6 +303,22 @@ body.page-shell-v2.hero-profile.about-editorial-v2 main > .hero h1 {
 }
 
 .about-editorial-v2 .action-figure-wide img { object-position: center 51%; }
+.about-editorial-v2 .action-figure-istnf {
+  width: min(100%, 860px);
+  margin-right: auto;
+  margin-left: auto;
+}
+.about-editorial-v2 .action-figure-istnf .action-image-window {
+  height: auto;
+  aspect-ratio: 1450 / 1088;
+}
+.about-editorial-v2 .action-figure-istnf img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
 .about-editorial-v2 .action-figure figcaption {
   padding: 15px 17px;
   display: grid;
