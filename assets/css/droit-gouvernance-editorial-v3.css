@@ -1,0 +1,759 @@
+/* Shared bilingual editorial treatment for the workplace AI governance pillar. */
+body.governance-editorial-v3 {
+  --frame: 1120px;
+  --wrap: min(var(--frame), calc(100% - 48px));
+  --navigation-wrap: min(1440px, calc(100% - 64px));
+  --paper: #f7f3ea;
+  --paper-light: #faf7f0;
+  --paper-soft: #faf7f0;
+  --white: #faf7f0;
+  --cream: #f0eadf;
+  --paper-deep: #f0eadf;
+  --ink: #171a18;
+  --ink-soft: #3f443f;
+  --muted: #5b615b;
+  --brick: #87301f;
+  --terra: #a83e27;
+  --terra-interactive: #87301f;
+  --green: #87301f;
+  --green-dark: #f0eadf;
+  --lavender: #87301f;
+  --line: rgba(23, 26, 24, .17);
+  --line-strong: rgba(23, 26, 24, .3);
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Instrument Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+}
+
+.governance-editorial-v3 main { overflow: clip; }
+.governance-editorial-v3 a { text-underline-offset: 3px; }
+
+.governance-editorial-v3 .governance-breadcrumb {
+  width: var(--wrap);
+  padding-top: 24px;
+}
+
+.governance-editorial-v3 .governance-breadcrumb ol {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+
+body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero {
+  width: var(--wrap);
+  min-height: 0;
+  margin-inline: auto;
+  padding: 64px 0 68px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(400px, .97fr);
+  gap: 58px;
+  align-items: start;
+}
+
+body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero > .hero-copy { max-width: none; }
+
+body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero h1 {
+  max-width: 680px;
+  margin: 24px 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(56px, 5.45vw, 76px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .96;
+}
+
+body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero h1 em { color: var(--brick); }
+
+.governance-editorial-v3 .article-meta {
+  max-width: 650px;
+  margin: 0 0 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 500 11px/1.55 var(--sans);
+  letter-spacing: 0;
+}
+
+.governance-editorial-v3 .hero-lede {
+  max-width: 650px;
+  color: var(--ink-soft);
+  font-size: 19px;
+  line-height: 1.48;
+}
+
+.governance-editorial-v3 .hero-note {
+  max-width: 650px;
+  margin: 18px 0 0;
+  padding: 17px 0 0;
+  border-top: 1px solid var(--line);
+  border-left: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.governance-editorial-v3 .hero-actions { margin-top: 27px; gap: 10px; }
+
+.governance-editorial-v3 .button {
+  min-height: 50px;
+  padding: 12px 17px;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.governance-editorial-v3 .button.primary {
+  color: var(--paper-soft);
+  border-color: var(--brick);
+  background: var(--brick);
+}
+
+.governance-editorial-v3 .button:hover {
+  color: var(--paper-soft);
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.governance-editorial-v3 .hero-proof {
+  margin-top: 20px;
+  gap: 7px 15px;
+  color: var(--muted);
+  font: 500 11px/1.5 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.governance-editorial-v3 .hero-proof span::before { content: none; }
+.governance-editorial-v3 .hero-proof span + span::before {
+  content: "·";
+  margin-right: 15px;
+  color: var(--brick);
+}
+
+.governance-editorial-v3 .artwork {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .artwork-label {
+  min-height: 0;
+  padding: 14px 17px;
+  border-bottom: 1px solid var(--line);
+  color: var(--brick);
+  font: 600 11px/1.5 var(--mono);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.governance-editorial-v3 .artwork-label strong { color: var(--brick); font-weight: 600; }
+.governance-editorial-v3 .artwork-label strong::before { content: none; }
+.governance-editorial-v3 .artwork img {
+  width: 100%;
+  height: 404px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
+.governance-editorial-v3 .artwork figcaption {
+  grid-template-columns: .72fr 1.28fr;
+  gap: 20px;
+  padding: 17px;
+}
+
+.governance-editorial-v3 .artwork figcaption span {
+  color: var(--brick);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+.governance-editorial-v3 .artwork figcaption p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.governance-editorial-v3 .brief,
+.governance-editorial-v3 .section {
+  width: var(--wrap);
+  margin: 0 auto;
+  padding: 72px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent !important;
+}
+
+.governance-editorial-v3 .brief-layout {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 31px;
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .brief h2 {
+  margin: 13px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(42px, 4.2vw, 56px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+
+.governance-editorial-v3 .brief-answer {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.governance-editorial-v3 .brief-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 29px;
+  border: 1px solid var(--line);
+}
+
+.governance-editorial-v3 .brief-card {
+  min-height: 236px;
+  padding: 23px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .brief-card:nth-child(even) {
+  border-right: 0;
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .brief-card:nth-last-child(-n + 2) { border-bottom: 0; }
+.governance-editorial-v3 .brief-card span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .brief-card h3 {
+  margin: 30px 0 11px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+.governance-editorial-v3 .brief-card strong { font-size: 14px; line-height: 1.48; }
+.governance-editorial-v3 .brief-card p { font-size: 13px; line-height: 1.55; }
+
+.governance-editorial-v3 .brief-warning,
+.governance-editorial-v3 .cumulative-note,
+.governance-editorial-v3 .legal-note {
+  color: var(--ink-soft);
+  border-left: 2px solid var(--brick);
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .brief-warning {
+  margin-top: 24px;
+  padding: 18px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.governance-editorial-v3 .brief-warning strong,
+.governance-editorial-v3 .cumulative-note p,
+.governance-editorial-v3 .legal-note strong { color: var(--ink); }
+
+.governance-editorial-v3 .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .65fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.governance-editorial-v3 .section-head-solo {
+  display: block;
+}
+
+.governance-editorial-v3 .section-head-solo > div { max-width: 820px; }
+
+.governance-editorial-v3 .section-head h2 {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(39px, 4.2vw, 56px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+
+.governance-editorial-v3 .section-head .kicker { margin-bottom: 13px; }
+.governance-editorial-v3 .section-head > p {
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.governance-editorial-v3 .kicker {
+  color: var(--brick);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .09em;
+}
+
+.governance-editorial-v3 .answer-lede {
+  max-width: 880px;
+  margin: 27px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+  border-left: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.governance-editorial-v3 .decision-shell {
+  margin-top: 35px;
+  border: 1px solid var(--line);
+}
+
+.governance-editorial-v3 .decision-row {
+  min-height: 118px;
+  padding: 22px 25px;
+  grid-template-columns: 56px minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 22px;
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .decision-row:nth-child(even) { background: var(--paper-deep); }
+.governance-editorial-v3 .decision-row > span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .decision-row h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+.governance-editorial-v3 .decision-row p { font-size: 14px; line-height: 1.58; }
+
+.governance-editorial-v3 .legal-update-callout {
+  margin: 35px 0 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brick);
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .legal-update-callout > span {
+  color: var(--brick);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.governance-editorial-v3 .legal-update-callout h3 {
+  margin: 11px 0 0;
+  font-size: clamp(32px, 3vw, 44px);
+  line-height: 1.04;
+}
+
+.governance-editorial-v3 .legal-timeline {
+  margin-top: 25px;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: transparent;
+}
+
+.governance-editorial-v3 .legal-timeline article {
+  min-height: 188px;
+  padding: 20px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .legal-timeline article:nth-child(even) { background: var(--paper-deep); }
+.governance-editorial-v3 .legal-timeline b { color: var(--brick); font-size: 13px; }
+.governance-editorial-v3 .legal-timeline p { color: var(--muted); font-size: 13px; line-height: 1.55; }
+.governance-editorial-v3 .legal-update-callout > p { color: var(--muted); font-size: 14px; line-height: 1.62; }
+
+.governance-editorial-v3 .framework-list {
+  margin-top: 35px;
+  border: 1px solid var(--line);
+}
+
+.governance-editorial-v3 .framework-card {
+  min-height: 0;
+  padding: 25px 24px;
+  grid-template-columns: 42px minmax(0, 1fr) minmax(0, 1.2fr) 150px;
+  gap: 24px;
+  align-items: start;
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .framework-card:nth-child(even) { background: var(--paper-deep); }
+.governance-editorial-v3 .framework-number { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .framework-title span { color: var(--brick); font-size: 9px; font-weight: 600; }
+.governance-editorial-v3 .framework-title h3 {
+  margin: 18px 0 11px;
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 1.07;
+}
+.governance-editorial-v3 .framework-title p,
+.governance-editorial-v3 .framework-question p,
+.governance-editorial-v3 .framework-question ul { color: var(--muted); font-size: 14px; line-height: 1.58; }
+.governance-editorial-v3 .framework-question small { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .framework-question strong { font-size: 15px; line-height: 1.48; }
+.governance-editorial-v3 .framework-link {
+  justify-self: start;
+  color: var(--brick);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.governance-editorial-v3 .cumulative-note {
+  margin-top: 0;
+  padding: 22px 25px;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.governance-editorial-v3 .cumulative-note span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .cumulative-note p { font-size: 16px; font-weight: 600; line-height: 1.55; }
+
+.governance-editorial-v3 .use-table {
+  margin-top: 35px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brick);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .use-table table {
+  min-width: 980px;
+  table-layout: fixed;
+}
+
+.governance-editorial-v3 .use-table th {
+  padding: 16px 17px;
+  border-right: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--paper-deep);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  vertical-align: bottom;
+}
+
+.governance-editorial-v3 .use-table th:last-child,
+.governance-editorial-v3 .use-table td:last-child { border-right: 0; }
+.governance-editorial-v3 .use-table thead th:first-child { width: 24%; }
+.governance-editorial-v3 .use-table td,
+.governance-editorial-v3 .use-table tbody th[scope="row"] {
+  padding: 18px 17px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--paper-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.governance-editorial-v3 .use-table tbody tr:nth-child(even) td,
+.governance-editorial-v3 .use-table tbody tr:nth-child(even) th { background: var(--paper-deep); }
+.governance-editorial-v3 .use-table tbody th[scope="row"] { color: var(--ink); font-weight: 600; }
+.governance-editorial-v3 .use-index { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .use-tag { color: var(--brick); font-size: 9px; font-weight: 600; }
+.governance-editorial-v3 .matrix-note { margin-top: 18px; font-size: 14px; line-height: 1.62; }
+
+.governance-editorial-v3 .role-picker {
+  margin-top: 35px;
+  grid-template-columns: 320px minmax(0, 1fr);
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .role-controls {
+  padding: 27px;
+  border-right: 1px solid var(--line);
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .role-controls label { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .role-controls select { background: var(--paper-soft); font-size: 15px; font-weight: 600; }
+.governance-editorial-v3 .role-controls p { font-size: 14px; line-height: 1.6; }
+.governance-editorial-v3 .role-deck { border-top: 0; }
+.governance-editorial-v3 .role-deck details { background: var(--paper-soft); }
+.governance-editorial-v3 .role-deck details:nth-child(even) { background: var(--paper-deep); }
+.governance-editorial-v3 .role-deck summary { min-height: 67px; padding: 15px 21px; }
+.governance-editorial-v3 .role-deck summary b { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .role-deck summary strong { font-size: 15px; font-weight: 600; }
+.governance-editorial-v3 .role-deck summary::after { color: var(--brick); }
+.governance-editorial-v3 .role-body { padding: 0 22px 24px 77px; }
+.governance-editorial-v3 .role-body h3 { font-family: var(--serif); font-size: 27px; font-weight: 400; line-height: 1.1; }
+.governance-editorial-v3 .role-body p { font-size: 14px; line-height: 1.6; }
+.governance-editorial-v3 .role-body ul { background: transparent; border: 1px solid var(--line); }
+.governance-editorial-v3 .role-body li { border-right: 1px solid var(--line); background: var(--paper); font-size: 12px; }
+.governance-editorial-v3 .role-body li:last-child { border-right: 0; }
+
+.governance-editorial-v3 .governance-board {
+  margin-top: 35px;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, .88fr);
+  border: 1px solid var(--line);
+}
+
+.governance-editorial-v3 .actor-card {
+  min-height: 150px;
+  padding: 23px;
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .actor-card:nth-child(2),
+.governance-editorial-v3 .actor-card:nth-child(3),
+.governance-editorial-v3 .actor-card:nth-child(6) { background: var(--paper-deep); }
+.governance-editorial-v3 .actor-card span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .actor-card strong { margin-top: 29px; font-size: 16px; font-weight: 600; line-height: 1.48; }
+.governance-editorial-v3 .gate-panel { padding: 27px; border-left: 1px solid var(--line); background: var(--paper-deep); }
+.governance-editorial-v3 .gate-list { margin-top: 24px; }
+.governance-editorial-v3 .gate-list li { padding: 15px 0; }
+.governance-editorial-v3 .gate-list span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .gate-list strong { font-size: 15px; }
+.governance-editorial-v3 .gate-list small { font-size: 13px; line-height: 1.5; }
+
+.governance-editorial-v3 .consult-grid {
+  margin-top: 35px;
+  border: 1px solid var(--line);
+}
+
+.governance-editorial-v3 .consult-card {
+  min-height: 292px;
+  padding: 25px;
+  border-bottom: 0;
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .consult-card:nth-child(even) { background: var(--paper-deep); }
+.governance-editorial-v3 .consult-card > span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .consult-card h3 {
+  margin: 36px 0 16px;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+.governance-editorial-v3 .consult-card li { font-size: 13px; line-height: 1.5; }
+.governance-editorial-v3 .legal-note { margin-top: 21px; padding: 18px 20px; font-size: 14px; line-height: 1.62; }
+
+.governance-editorial-v3 .checklist-shell {
+  margin-top: 35px;
+  grid-template-columns: 330px minmax(0, 1fr);
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .checklist-summary {
+  padding: 28px;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .checklist-summary span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .checklist-count { margin: 32px 0 12px; color: var(--brick); font-family: var(--serif); font-size: 52px; }
+.governance-editorial-v3 .checklist-summary p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.governance-editorial-v3 .checklist-summary p + p { margin-top: 14px; }
+.governance-editorial-v3 .checklist-track { background: rgba(23, 26, 24, .12); }
+.governance-editorial-v3 .checklist-fill { background: var(--brick); }
+.governance-editorial-v3 .checklist-summary button { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .check-item { min-height: 136px; background: var(--paper-soft); }
+.governance-editorial-v3 .check-item:nth-child(2),
+.governance-editorial-v3 .check-item:nth-child(3),
+.governance-editorial-v3 .check-item:nth-child(6),
+.governance-editorial-v3 .check-item:nth-child(7) { background: var(--paper-deep); }
+.governance-editorial-v3 .check-item strong { font-size: 15px; }
+.governance-editorial-v3 .check-item small { font-size: 13px; line-height: 1.5; }
+.governance-editorial-v3 .check-actions { margin-top: 22px; gap: 10px; }
+
+.governance-editorial-v3 .faq-list {
+  max-width: 960px;
+  margin-top: 35px;
+}
+
+.governance-editorial-v3 .faq-list details:nth-child(even) { background: rgba(240, 234, 223, .42); }
+.governance-editorial-v3 .faq-list summary { padding: 22px 18px 22px 0; font-size: 17px; font-weight: 600; }
+.governance-editorial-v3 .faq-list summary::after { color: var(--brick); }
+.governance-editorial-v3 .faq-answer { padding-bottom: 23px; }
+.governance-editorial-v3 .faq-answer p { font-size: 14px; line-height: 1.65; }
+
+.governance-editorial-v3 .reference-panel {
+  margin-top: 35px;
+  grid-template-columns: .75fr 1.25fr;
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+
+.governance-editorial-v3 .reference-intro {
+  padding: 30px;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper-deep);
+}
+
+.governance-editorial-v3 .reference-intro .kicker { color: var(--brick); }
+.governance-editorial-v3 .reference-intro h3 { margin: 36px 0 15px; color: var(--ink); font-family: var(--serif); font-size: 31px; font-weight: 400; line-height: 1.08; }
+.governance-editorial-v3 .reference-intro p { color: var(--muted); font-size: 14px; line-height: 1.62; }
+.governance-editorial-v3 .reference-date { color: var(--muted); font-size: 10px; }
+.governance-editorial-v3 .source-list { padding: 9px 28px; }
+.governance-editorial-v3 .source-row { min-height: 76px; }
+.governance-editorial-v3 .source-row > span { color: var(--brick); font-size: 10px; font-weight: 600; }
+.governance-editorial-v3 .source-row strong { font-size: 14px; }
+.governance-editorial-v3 .source-row small { font-size: 12px; line-height: 1.48; }
+.governance-editorial-v3 .source-row a { color: var(--brick); font-size: 13px; font-weight: 600; }
+.governance-editorial-v3 .author-card { margin-top: 22px; padding: 21px 24px; background: var(--paper-soft); }
+.governance-editorial-v3 .author-card p { font-size: 14px; line-height: 1.62; }
+
+.governance-editorial-v3 :focus-visible {
+  outline: 2px solid var(--brick);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1040px) {
+  body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero { grid-template-columns: 1fr; }
+  .governance-editorial-v3 .artwork { max-width: 760px; }
+  .governance-editorial-v3 .brief-layout { grid-template-columns: 150px minmax(0, 1fr); }
+  .governance-editorial-v3 .framework-card { grid-template-columns: 40px minmax(0, .9fr) minmax(0, 1.1fr); }
+  .governance-editorial-v3 .framework-link { grid-column: 2 / -1; }
+  .governance-editorial-v3 .role-picker,
+  .governance-editorial-v3 .governance-board,
+  .governance-editorial-v3 .checklist-shell,
+  .governance-editorial-v3 .reference-panel { grid-template-columns: 1fr; }
+  .governance-editorial-v3 .role-controls,
+  .governance-editorial-v3 .gate-panel,
+  .governance-editorial-v3 .checklist-summary,
+  .governance-editorial-v3 .reference-intro {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .governance-editorial-v3 .gate-panel { border-left: 0; }
+}
+
+@media (max-width: 760px) {
+  body.governance-editorial-v3 {
+    --wrap: min(100% - 32px, var(--frame));
+    --navigation-wrap: calc(100% - 32px);
+  }
+
+  body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero { padding: 46px 0 52px; gap: 38px; }
+  body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero h1 { font-size: clamp(48px, 14vw, 64px); }
+  .governance-editorial-v3 .hero-lede { font-size: 18px; }
+  .governance-editorial-v3 .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .governance-editorial-v3 .hero-actions .button { width: 100%; }
+  .governance-editorial-v3 .hero-proof span + span::before { display: none; }
+  .governance-editorial-v3 .artwork img { height: 62vw; min-height: 255px; }
+  .governance-editorial-v3 .artwork figcaption { grid-template-columns: 1fr; }
+
+  .governance-editorial-v3 .brief,
+  .governance-editorial-v3 .section { padding: 52px 0; }
+  .governance-editorial-v3 .brief-layout { padding: 24px; grid-template-columns: 1fr; gap: 22px; }
+  .governance-editorial-v3 .brief-grid,
+  .governance-editorial-v3 .section-head,
+  .governance-editorial-v3 .legal-timeline,
+  .governance-editorial-v3 .cumulative-note,
+  .governance-editorial-v3 .consult-grid,
+  .governance-editorial-v3 .actor-grid,
+  .governance-editorial-v3 .checklist,
+  .governance-editorial-v3 .role-body ul { grid-template-columns: 1fr; }
+
+  .governance-editorial-v3 .brief-card,
+  .governance-editorial-v3 .brief-card:nth-child(even) {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .governance-editorial-v3 .brief-card:last-child { border-bottom: 0; }
+  .governance-editorial-v3 .section-head { gap: 20px; }
+  .governance-editorial-v3 .section-head > p { margin-top: 0; }
+  .governance-editorial-v3 .section-head h2 { font-size: clamp(36px, 11vw, 48px); }
+
+  .governance-editorial-v3 .decision-row {
+    min-height: 0;
+    padding: 22px 20px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 15px;
+  }
+  .governance-editorial-v3 .decision-row p { grid-column: 2; }
+  .governance-editorial-v3 .decision-row h3 { font-size: 24px; }
+
+  .governance-editorial-v3 .legal-update-callout { padding: 24px 20px; }
+  .governance-editorial-v3 .legal-timeline article { min-height: 0; }
+  .governance-editorial-v3 .framework-card {
+    padding: 24px 19px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .governance-editorial-v3 .framework-title,
+  .governance-editorial-v3 .framework-question,
+  .governance-editorial-v3 .framework-link { grid-column: 2; }
+  .governance-editorial-v3 .framework-title h3 { font-size: 27px; }
+  .governance-editorial-v3 .cumulative-note { gap: 10px; }
+  .governance-editorial-v3 .use-table table { min-width: 940px; }
+
+  .governance-editorial-v3 .role-controls { padding: 24px; }
+  .governance-editorial-v3 .role-body { padding-left: 22px; }
+  .governance-editorial-v3 .role-body li { border-right: 0; border-bottom: 1px solid var(--line); }
+  .governance-editorial-v3 .role-body li:last-child { border-bottom: 0; }
+  .governance-editorial-v3 .actor-card,
+  .governance-editorial-v3 .check-item {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line) !important;
+  }
+  .governance-editorial-v3 .actor-card:last-child,
+  .governance-editorial-v3 .check-item:last-child { border-bottom: 0 !important; }
+  .governance-editorial-v3 .consult-card {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .governance-editorial-v3 .consult-card:last-child { border-bottom: 0; }
+
+  .governance-editorial-v3 .source-list { padding: 9px 20px; }
+  .governance-editorial-v3 .source-row {
+    padding: 16px 0;
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+  .governance-editorial-v3 .source-row a { grid-column: 2; }
+  .governance-editorial-v3 .faq-list summary { padding-right: 0; font-size: 16px; }
+  .governance-editorial-v3 .faq-answer { padding-right: 0; }
+}
+
+@media (max-width: 430px) {
+  .governance-editorial-v3 .governance-breadcrumb { padding-top: 18px; }
+  body.page-shell-v2.hero-editorial.governance-editorial-v3 main > .hero h1 { font-size: clamp(44px, 13vw, 56px); }
+  .governance-editorial-v3 .article-meta { font-size: 10px; }
+  .governance-editorial-v3 .brief-layout,
+  .governance-editorial-v3 .legal-update-callout,
+  .governance-editorial-v3 .role-controls,
+  .governance-editorial-v3 .gate-panel,
+  .governance-editorial-v3 .checklist-summary,
+  .governance-editorial-v3 .reference-intro { padding: 22px 19px; }
+}
+
+@media print {
+  .governance-editorial-v3 .site-system-header,
+  .governance-editorial-v3 .hero-actions,
+  .governance-editorial-v3 .check-actions,
+  .governance-editorial-v3 .site-system-footer { display: none !important; }
+  .governance-editorial-v3 .brief,
+  .governance-editorial-v3 .section { width: 100%; padding: 34px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
