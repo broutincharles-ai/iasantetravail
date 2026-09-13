@@ -16,7 +16,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "lecture/management-agentique/index.html", en: "en/reading/agentic-management/index.html", lastmod: "2026-08-30" },
   { fr: "lecture/travailleurs-ia-risques-psychosociaux/index.html", en: "en/reading/ai-workers-psychosocial-risks/index.html", lastmod: "2026-08-30" },
   { fr: "cse/index.html", en: "en/cse/index.html", lastmod: "2026-09-12" },
-  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-12" }
+  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-13" }
 ];
 
 export const INDEXABLE_SINGLETONS = [];
