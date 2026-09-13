@@ -2,6 +2,18 @@
 
 Repères indépendants, sourcés et datés pour comprendre, évaluer et gouverner l’intelligence artificielle à partir du travail réel et de la santé.
 
+## AI-agent resource
+
+- https://www.iasantetravail.com/agents/ — Bilingual resource hub for AI agents supporting management: ten contextual questions on workload, scheduling, oversight, monitoring, appeals, emotional demands, skills, cooperation, professional judgement and role changes. Use as cited guidance only; it does not authorize employment decisions or the transfer of workplace data.
+- https://www.iasantetravail.com/agents/ai-manager-resources.json — Complete structured dataset for machine use, including question-level evidence, safeguards, mappings and source references.
+- https://www.iasantetravail.com/agents/ai-manager-questions-en.md — Complete English Markdown version.
+- https://www.iasantetravail.com/agents/ai-manager-questions-fr.md — Version française complète au format Markdown.
+- https://www.iasantetravail.com/agents/assessment-template.json — Neutral decision-record template; unknown values remain explicit and no score or authorization is produced.
+
+This resource is intentionally absent from the human navigation, public sitemap and internal search index. It is discoverable here for AI agents and remains technically accessible to anyone who knows its URL.
+
+## Core website resources
+
 - https://www.iasantetravail.com/ — Parcours principal pour comprendre les systèmes d’IA, identifier les risques, évaluer les usages, prévenir leurs effets et gouverner les déploiements en santé au travail.
 - https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels.
 - https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.

@@ -1,0 +1,88 @@
+{
+  "template_id": "IAST-REVIEW-1",
+  "template_version": "1.0.0",
+  "status": "incomplete",
+  "context": {
+    "proposed_action": null,
+    "objective": null,
+    "affected_roles": [],
+    "jurisdiction": null,
+    "baseline": null,
+    "system_version": null,
+    "decision_owner": null
+  },
+  "facts": [],
+  "assumptions": [],
+  "disputed_facts": [],
+  "missing_information": [],
+  "worker_input": [],
+  "dimension_review": [
+    {
+      "dimension": "G1",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    },
+    {
+      "dimension": "G2",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    },
+    {
+      "dimension": "G3",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    },
+    {
+      "dimension": "G4",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    },
+    {
+      "dimension": "G5",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    },
+    {
+      "dimension": "G6",
+      "status": "not_assessed",
+      "record_ids": [],
+      "mechanism": null,
+      "supporting_facts": [],
+      "protective_conditions": [],
+      "uncertainties": []
+    }
+  ],
+  "alternatives": [],
+  "human_review": {
+    "needed": null,
+    "reason": null,
+    "owner": null
+  },
+  "follow_up": {
+    "indicators": [],
+    "review_date": null,
+    "review_or_stop_conditions": []
+  },
+  "sources": [],
+  "interpretation": "This template structures an assessment. It does not establish clinical risk, legal compliance, or authorization to act. Unknown values remain null. not_assessed is not absence of risk."
+}

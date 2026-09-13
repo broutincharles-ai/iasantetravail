@@ -243,6 +243,75 @@ if (!/^Sitemap: https:\/\/www\.iasantetravail\.com\/sitemap\.xml$/m.test(robots)
 }
 if (/Disallow:\s*\/$/m.test(robots)) errors.push("robots.txt: site root must not be blocked");
 
+const agentResourceRelative = "agents/index.html";
+const agentResourceUrl = "https://www.iasantetravail.com/agents/";
+const agentMachineResources = [
+  ["agents/ai-manager-resources.json", `${agentResourceUrl}ai-manager-resources.json`],
+  ["agents/ai-manager-questions-en.md", `${agentResourceUrl}ai-manager-questions-en.md`],
+  ["agents/ai-manager-questions-fr.md", `${agentResourceUrl}ai-manager-questions-fr.md`],
+  ["agents/assessment-template.json", `${agentResourceUrl}assessment-template.json`]
+];
+const agentResource = await cachedHtml(path.join(root, agentResourceRelative));
+const agentResourceHead = agentResource.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
+if (!/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(agentResourceHead)) {
+  errors.push(`${agentResourceRelative}: agent resource must remain noindex`);
+}
+if (linkHref(agentResourceHead, "canonical") !== agentResourceUrl) {
+  errors.push(`${agentResourceRelative}: canonical must point to ${agentResourceUrl}`);
+}
+if (INDEXABLE_FILES.has(agentResourceRelative)) {
+  errors.push(`${agentResourceRelative}: agent resource must remain outside the public indexing allowlist`);
+}
+const agentResourceMarkup = agentResource.replace(/<script\b[\s\S]*?<\/script>/gi, "").replace(/<style\b[\s\S]*?<\/style>/gi, "");
+if ([...agentResourceMarkup.matchAll(/<h1\b/gi)].length !== 1) {
+  errors.push(`${agentResourceRelative}: expected exactly one h1`);
+}
+if (/\bdata:[^\s"')]+/i.test(agentResource)) {
+  errors.push(`${agentResourceRelative}: embedded data URI remains; expose machine resources and assets as normal files`);
+}
+const embeddedAgentDataMatch = agentResource.match(/<script[^>]+id=["']agent-resource-data["'][^>]*>([\s\S]*?)<\/script>/i);
+let embeddedAgentData;
+try {
+  embeddedAgentData = JSON.parse(embeddedAgentDataMatch?.[1] || "");
+} catch {
+  errors.push(`${agentResourceRelative}: embedded agent resource JSON is invalid`);
+}
+try {
+  const exportedAgentData = JSON.parse(await readFile(path.join(root, "agents/ai-manager-resources.json"), "utf8"));
+  if (JSON.stringify(exportedAgentData) !== JSON.stringify(embeddedAgentData)) {
+    errors.push("agents/ai-manager-resources.json: exported data must match the HTML resource payload");
+  }
+  if (exportedAgentData.questions?.length !== 10) {
+    errors.push("agents/ai-manager-resources.json: expected exactly ten management questions");
+  }
+} catch {
+  errors.push("agents/ai-manager-resources.json: invalid or missing JSON");
+}
+try {
+  const exportedTemplate = JSON.parse(await readFile(path.join(root, "agents/assessment-template.json"), "utf8"));
+  if (JSON.stringify(exportedTemplate) !== JSON.stringify(embeddedAgentData?.template)) {
+    errors.push("agents/assessment-template.json: exported template must match the HTML resource payload");
+  }
+} catch {
+  errors.push("agents/assessment-template.json: invalid or missing JSON");
+}
+for (const file of htmlFiles) {
+  const relative = path.relative(root, file).split(path.sep).join("/");
+  if (!INDEXABLE_FILES.has(relative)) continue;
+  const markup = (await cachedHtml(file)).replace(/<script\b[\s\S]*?<\/script>/gi, "").replace(/<style\b[\s\S]*?<\/style>/gi, "");
+  if (/href=["'](?:https:\/\/www\.iasantetravail\.com)?\/agents\//i.test(markup)) {
+    errors.push(`${relative}: human-facing indexed page must not link to the agent-only resource`);
+  }
+}
+
+const llms = await readFile(path.join(root, "llms.txt"), "utf8");
+if (!llms.includes(agentResourceUrl)) {
+  errors.push("llms.txt: agent resource declaration missing");
+}
+for (const [, url] of agentMachineResources) {
+  if (!llms.includes(url)) errors.push(`llms.txt: machine-readable agent resource missing: ${url}`);
+}
+
 const languageRouting = await readFile(path.join(root, "assets/js/language-routing.js"), "utf8");
 if (/\blocation\.(?:replace|assign)\s*\(|\blocation\.href\s*=/.test(languageRouting)) {
   errors.push("assets/js/language-routing.js: explicit language URLs must not redirect automatically");
@@ -251,6 +320,7 @@ if (/\blocation\.(?:replace|assign)\s*\(|\blocation\.href\s*=/.test(languageRout
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const expectedSitemapUrls = new Set([...INDEXABLE_FILES].map(publicUrl));
 const actualSitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
+if (actualSitemapUrls.has(agentResourceUrl)) errors.push("sitemap.xml: agent resource must remain absent");
 for (const expected of expectedSitemapUrls) {
   if (!actualSitemapUrls.has(expected)) errors.push(`sitemap.xml: allowlisted URL missing: ${expected}`);
 }
