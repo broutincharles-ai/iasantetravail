@@ -1,6 +1,6 @@
 export const INDEXABLE_PAIRS = [
   { fr: "index.html", en: "en/index.html", lastmod: "2026-09-11" },
-  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-08-20" },
+  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-09-12" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-08-30" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-08-30" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-08-30" },
@@ -16,8 +16,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "lecture/management-agentique/index.html", en: "en/reading/agentic-management/index.html", lastmod: "2026-08-30" },
   { fr: "lecture/travailleurs-ia-risques-psychosociaux/index.html", en: "en/reading/ai-workers-psychosocial-risks/index.html", lastmod: "2026-08-30" },
   { fr: "cse/index.html", en: "en/cse/index.html", lastmod: "2026-09-12" },
-  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-12" },
-  { fr: "methode-editoriale/index.html", en: "en/editorial-method/index.html", lastmod: "2026-08-30" }
+  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-12" }
 ];
 
 export const INDEXABLE_SINGLETONS = [];

@@ -300,22 +300,6 @@ for (const [frPage, enPage] of [["evaluer/impact/suivi.html", "en/evaluate/impac
   }
 }
 
-for (const relative of [
-  "index.html",
-  "comprendre/index.html",
-  "risques-prevention/index.html",
-  "risques-prevention/psychosociaux/index.html",
-  "evaluer/index.html",
-  "droit-gouvernance/index.html",
-  "ia-en-spst/index.html",
-  "a-propos/index.html"
-]) {
-  const html = await cachedHtml(path.join(root, relative));
-  if (!/href=["'](?:https:\/\/www\.iasantetravail\.com)?\/methode-editoriale\//i.test(html)) {
-    errors.push(`${relative}: visible link to the editorial method is missing`);
-  }
-}
-
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
