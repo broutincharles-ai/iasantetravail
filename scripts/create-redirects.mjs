@@ -20,7 +20,6 @@ const redirects = {
   "ia-préconisations/index.html": "/ia-en-spst/",
   "ia-rps/index.html": "/risques-prevention/psychosociaux/",
   "les-llms/index.html": "/comprendre/",
-  "labor-ia/index.html": "/risques-prevention/",
   "intelligence-artificielle/index.html": "/comprendre/",
   "le-prompting/index.html": "/comprendre/",
   "recommandations-has-2025/index.html": "/ia-en-spst/",
