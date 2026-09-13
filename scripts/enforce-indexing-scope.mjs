@@ -4,6 +4,7 @@ import { INDEXABLE_FILES, INDEXABLE_PAIRS, INDEXABLE_SINGLETONS, publicUrl } fro
 
 const root = process.cwd();
 const ignoredDirectories = new Set([".git", "newsletter-backend", "node_modules"]);
+const llmsDiscoveryLink = '<link rel="describedby" type="text/plain" href="/llms.txt">';
 
 async function htmlFiles(directory = root) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -25,13 +26,30 @@ function setRobots(html, content) {
   return html.replace(/(<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n  ${tag}`);
 }
 
+function setLlmsDiscovery(html, enabled) {
+  if (!enabled) return html;
+  const tags = html.match(/<link\b[^>]*>/gi) || [];
+  const alreadyLinked = tags.some(tag => (
+    /\brel=["']describedby["']/i.test(tag)
+    && /\bhref=["']\/llms\.txt["']/i.test(tag)
+  ));
+  if (alreadyLinked) return html;
+  return html.replace(/<\/head>/i, `  ${llmsDiscoveryLink}\n</head>`);
+}
+
 let indexableCount = 0;
 let excludedCount = 0;
 for (const file of await htmlFiles()) {
   const relative = path.relative(root, file).split(path.sep).join("/");
   const html = await readFile(file, "utf8");
   const indexable = INDEXABLE_FILES.has(relative);
-  const next = setRobots(html, indexable ? "index,follow,max-image-preview:large" : "noindex,follow");
+  const robotsContent = indexable
+    ? "index,follow,max-image-preview:large"
+    : relative === "agents/index.html"
+      ? "noindex,follow,noarchive"
+      : "noindex,follow";
+  let next = setRobots(html, robotsContent);
+  next = setLlmsDiscovery(next, indexable);
   if (next !== html) await writeFile(file, next, "utf8");
   if (indexable) indexableCount += 1;
   else excludedCount += 1;
@@ -42,7 +60,7 @@ const entries = INDEXABLE_PAIRS.flatMap(({ fr, en, lastmod }) => {
   const enUrl = publicUrl(en);
   return [
     `  <url>\n    <loc>${frUrl}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}"/>\n    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}"/>\n  </url>`,
-    `  <url>\n    <loc>${enUrl}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>\n    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}"/>\n  </url>`
+    `  <url>\n    <loc>${enUrl}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}"/>\n    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}"/>\n  </url>`
   ];
 });
 

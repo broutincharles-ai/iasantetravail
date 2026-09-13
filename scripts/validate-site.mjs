@@ -68,6 +68,11 @@ function linkHref(head, rel) {
   return tag?.match(/href=["']([^"']*)/i)?.[1] || "";
 }
 
+function linksByRel(head, rel) {
+  return (head.match(/<link\b[^>]*>/gi) || [])
+    .filter(candidate => new RegExp(`rel=["']${rel}["']`, "i").test(candidate));
+}
+
 function alternateHref(head, lang) {
   const tag = (head.match(/<link\b[^>]*>/gi) || [])
     .find(candidate => /rel=["']alternate["']/i.test(candidate) && new RegExp(`hreflang=["']${lang}["']`, "i").test(candidate));
@@ -197,6 +202,7 @@ for (const file of htmlFiles) {
   const titleCount = [...head.matchAll(/<title\b/gi)].length;
   const descriptionCount = metadataCount(head, "name", "description");
   const canonicalCount = linkCount(head, "canonical");
+  const describedbyLinks = linksByRel(head, "describedby");
   const title = head.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1].replace(/&amp;/g, "&").trim() || "";
   const description = metaContent(head, "description").trim();
   const documentMarkup = html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
@@ -204,6 +210,11 @@ for (const file of htmlFiles) {
   if (titleCount !== 1) errors.push(`${path.relative(root, file)}: expected exactly one title in head, found ${titleCount}`);
   if (descriptionCount !== 1) errors.push(`${path.relative(root, file)}: expected exactly one meta description, found ${descriptionCount}`);
   if (canonicalCount !== 1 && !file.endsWith("404.html")) errors.push(`${path.relative(root, file)}: expected exactly one canonical, found ${canonicalCount}`);
+  if (describedbyLinks.length !== 1) {
+    errors.push(`${relative}: expected exactly one llms.txt discovery link, found ${describedbyLinks.length}`);
+  } else if (!/\bhref=["']\/llms\.txt["']/i.test(describedbyLinks[0]) || !/\btype=["']text\/plain["']/i.test(describedbyLinks[0])) {
+    errors.push(`${relative}: describedby link must target /llms.txt with type text/plain`);
+  }
   if (!title) errors.push(`${path.relative(root, file)}: title missing`);
   else if (title.length > 70) errors.push(`${path.relative(root, file)}: title is ${title.length} characters; keep it at 70 or fewer`);
   if (!description) errors.push(`${path.relative(root, file)}: meta description missing`);
@@ -258,6 +269,10 @@ if (!/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(agent
 }
 if (linkHref(agentResourceHead, "canonical") !== agentResourceUrl) {
   errors.push(`${agentResourceRelative}: canonical must point to ${agentResourceUrl}`);
+}
+const agentDescribedbyLinks = linksByRel(agentResourceHead, "describedby");
+if (agentDescribedbyLinks.length !== 1 || !/\bhref=["']\/llms\.txt["']/i.test(agentDescribedbyLinks[0]) || !/\btype=["']text\/plain["']/i.test(agentDescribedbyLinks[0])) {
+  errors.push(`${agentResourceRelative}: expected one describedby link to /llms.txt with type text/plain`);
 }
 if (INDEXABLE_FILES.has(agentResourceRelative)) {
   errors.push(`${agentResourceRelative}: agent resource must remain outside the public indexing allowlist`);
