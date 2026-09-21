@@ -1,0 +1,53 @@
+/* Editorial home introduction: shared French and English layout. */
+html body.page-headings main .home-editorial-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  align-items: center;
+  gap: 44px;
+  width: min(100%, 820px);
+  margin: 35px auto 31px;
+  text-align: left;
+}
+html body.page-headings main .home-editorial-intro .formation-hero-lede {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+}
+html body.page-headings main .home-editorial-intro .formation-hero-note {
+  max-width: none;
+  margin: 0;
+  border-left: 1px solid var(--line);
+  padding: 3px 0 3px 35px;
+  font-size: 16px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+html body.page-headings main .home-editorial-intro .formation-hero-note strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (max-width: 680px) {
+  html body.page-headings main .home-editorial-intro {
+    width: min(100%, 460px);
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin: 30px auto 28px;
+  }
+  html body.page-headings main .home-editorial-intro .formation-hero-lede {
+    font-size: 25px;
+    line-height: 1.35;
+  }
+  html body.page-headings main .home-editorial-intro .formation-hero-note {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 20px 0 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
