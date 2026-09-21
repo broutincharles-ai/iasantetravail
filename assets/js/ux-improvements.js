@@ -51,7 +51,7 @@
     document.body.classList.add('ux-search-active');
     input.focus(); status.textContent = ready ? text.initial : text.loading;
     try {
-      indexPromise ||= fetch(`/assets/data/search-${en ? 'en' : 'fr'}.json?v=1.0`).then(response => {
+      indexPromise ||= fetch(`/assets/data/search-${en ? 'en' : 'fr'}.json?v=1.1`).then(response => {
         if (!response.ok) throw Error('Search index unavailable');
         return response.json();
       });

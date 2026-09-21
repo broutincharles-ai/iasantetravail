@@ -26,3 +26,12 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 - https://www.iasantetravail.com/en/publications/ — English summaries of both publications, with methods, findings and limitations; the INRS study appears first.
 - https://www.iasantetravail.com/en/actions/ — Seminars and presentations in Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference.
+
+## Detailed research summaries / Résumés détaillés
+
+These pages distinguish the original journal article from its author-written website summary, and include methods, findings, limitations and links to the original source.
+
+- https://www.iasantetravail.com/publications/ia-preconisations-medicales/ — Étude INRS (juin 2026) : analyse de 385 préconisations médicales avec le modèle o1, résultats et limites.
+- https://www.iasantetravail.com/en/publications/ai-medical-recommendations/ — English summary of the INRS study on AI-assisted review of medical recommendations.
+- https://www.iasantetravail.com/publications/llm-risques-psychosociaux/ — Revue générale (août 2025) sur les LLM, les risques psychosociaux au travail et les pistes de prévention. DOI : 10.1016/j.admp.2025.102877.
+- https://www.iasantetravail.com/en/publications/llm-psychosocial-risks/ — English summary of the narrative review on LLMs and psychosocial risks at work.

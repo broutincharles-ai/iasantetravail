@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  for (const [name, version] of [["unified-navigation", "4.0"], ["ux-improvements", "1.0"]]) {
+  for (const [name, version] of [["unified-navigation", "4.1"], ["ux-improvements", "1.0"]]) {
     if (document.querySelector(`link[href*="/assets/css/${name}.css"]`)) continue;
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
@@ -12,7 +12,7 @@
   const loadInteractions = () => {
     if (window.__IASTUXReady || document.querySelector('script[src*="/assets/js/ux-improvements.js"]')) return;
     const script = document.createElement("script");
-    script.src = "/assets/js/ux-improvements.js?v=1.0";
+    script.src = "/assets/js/ux-improvements.js?v=1.1";
     document.head.appendChild(script);
   };
   if (window.__IASTShellReady) {
@@ -24,7 +24,7 @@
     existing.addEventListener("load", loadInteractions, { once: true });
   } else {
     const script = document.createElement("script");
-    script.src = "/assets/js/unified-navigation.js?v=5.6";
+    script.src = "/assets/js/unified-navigation.js?v=6.0";
     script.addEventListener("load", loadInteractions, { once: true });
     document.head.appendChild(script);
   }

@@ -1,0 +1,17 @@
+/* Loaded only when scripting is disabled. Keep all navigation and content usable. */
+.system-menu-button, .system-mobile-panel, [data-site-search] { display: none !important; }
+.reveal { opacity: 1 !important; transform: none !important; }
+.site-system-header .page-nav-label { cursor: default; }
+.site-system-header .page-nav-label::after { content: none; }
+@media (max-width: 1120px) {
+  .site-system-header { position: relative; }
+  .system-nav { grid-template-columns: minmax(0, 1fr) auto; }
+  .system-language-switch { grid-column: 2; grid-row: 1; }
+  .system-desktop-navigation { display: block; grid-column: 1 / -1; grid-row: 2; padding-bottom: 10px; }
+  .system-primary-links { flex-wrap: wrap; gap: 0 22px; }
+  .system-primary-links > a, .system-nav-group summary { min-height: 44px; }
+  .system-nav-dropdown { left: 0; max-width: calc(100vw - 40px); }
+}
+@media (max-width: 760px) {
+  .site-system-header .page-nav-links { display: flex; flex-wrap: wrap; gap: 0 16px; }
+}

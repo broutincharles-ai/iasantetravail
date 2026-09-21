@@ -24,5 +24,9 @@
   "/lecture/travailleurs-ia-risques-psychosociaux/": "/en/reading/ai-workers-psychosocial-risks/",
   "/a-propos/": "/en/about/",
   "/mentions-legales/": "/en/legal-notice/",
-  "/confidentialite/": "/en/privacy/"
+  "/confidentialite/": "/en/privacy/",
+  "/publications/": "/en/publications/",
+  "/actions/": "/en/actions/",
+  "/publications/ia-preconisations-medicales/": "/en/publications/ai-medical-recommendations/",
+  "/publications/llm-risques-psychosociaux/": "/en/publications/llm-psychosocial-risks/"
 }

@@ -195,10 +195,16 @@ for (const file of htmlFiles) {
   const relative = path.relative(root, file).split(path.sep).join("/");
   if (!INDEXABLE_FILES.has(relative)) continue;
   const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
-  const hasSharedShell = /site-shell\.js/.test(html);
-  const hasInlineShell = /<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(html)
-    && /<footer\b[^>]*class=["'][^"']*\bsite-footer\b/i.test(html);
-  if (!hasSharedShell && !hasInlineShell) errors.push(`${path.relative(root, file)}: navigation shell missing`);
+  const staticHeader = html.match(/<header\b[^>]*class=["'][^"']*\bsite-system-header\b[^>]*>[\s\S]*?<\/header>/i)?.[0] || "";
+  const hasStaticFooter = /<footer\b[^>]*class=["'][^"']*\bsite-system-footer\b/i.test(html);
+  if (!staticHeader || !hasStaticFooter) errors.push(`${relative}: indexable pages require static navigation and footer`);
+  const english = relative.startsWith("en/");
+  const requiredNavigation = english
+    ? ["/en/understand/", "/en/risks/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
+    : ["/comprendre/", "/risques-prevention/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
+  for (const href of requiredNavigation) {
+    if (!staticHeader.includes(`href="${href}"`)) errors.push(`${relative}: missing static navigation link to ${href}`);
+  }
   const titleCount = [...head.matchAll(/<title\b/gi)].length;
   const descriptionCount = metadataCount(head, "name", "description");
   const canonicalCount = linkCount(head, "canonical");
@@ -231,12 +237,26 @@ for (const file of htmlFiles) {
   const requiredSocialMetadata = [
     ["property", "og:title"], ["property", "og:description"], ["property", "og:url"],
     ["property", "og:type"], ["property", "og:site_name"], ["name", "twitter:card"],
-    ["name", "twitter:title"], ["name", "twitter:description"]
+    ["name", "twitter:title"], ["name", "twitter:description"],
+    ["property", "og:image"], ["property", "og:image:alt"], ["name", "twitter:image"], ["name", "twitter:image:alt"]
   ];
   for (const [attribute, value] of requiredSocialMetadata) {
     const count = metadataCount(head, attribute, value);
     if (count !== 1) errors.push(`${path.relative(root, file)}: expected exactly one ${value}, found ${count}`);
   }
+  const socialImage = metaContent(head.replaceAll("property=", "name="), "og:image");
+  if (!socialImage.startsWith("https://www.iasantetravail.com/assets/images/")) errors.push(`${relative}: social image must use a canonical site asset`);
+  else {
+    const imagePath = path.join(root, new URL(socialImage).pathname);
+    try {
+      const imageBytes = await readFile(imagePath);
+      if (imageBytes.toString("hex", 0, 8) !== "89504e470d0a1a0a") throw new Error("PNG expected");
+      const width = metaContent(head.replaceAll("property=", "name="), "og:image:width");
+      const height = metaContent(head.replaceAll("property=", "name="), "og:image:height");
+      if (Number(width) !== imageBytes.readUInt32BE(16) || Number(height) !== imageBytes.readUInt32BE(20)) errors.push(`${relative}: social image dimensions disagree with the file`);
+    } catch { errors.push(`${relative}: missing or invalid social image`); }
+  }
+  if (metaContent(head, "twitter:image") !== socialImage) errors.push(`${relative}: Twitter image must match Open Graph image`);
   const canonical = linkHref(head, "canonical");
   if (canonical && !canonical.startsWith("https://www.iasantetravail.com/")) {
     errors.push(`${path.relative(root, file)}: canonical must use the absolute www HTTPS domain`);

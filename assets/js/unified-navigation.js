@@ -1,25 +1,8 @@
 (() => {
   "use strict";
-
-  if (window.__IASTShellReady) return;
-  window.__IASTShellReady = true;
-
-  const path = window.location.pathname.replace(/\/index\.html$/, "/");
-  // Preserve incoming links to the sections moved out of the About page.
-  if (path === "/a-propos/" && ["#publications", "#actions-menees"].includes(window.location.hash)) {
-    window.location.replace(window.location.hash === "#publications" ? "/publications/" : "/actions/");
-    return;
-  }
-  if (path === "/en/about/" && ["#publications", "#actions-menees", "#activities"].includes(window.location.hash)) {
-    window.location.replace(window.location.hash === "#publications" ? "/en/publications/" : "/en/actions/");
-    return;
-  }
-  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en") || path.startsWith("/en/");
-
-  if (["/confidentialite/", "/mentions-legales/", "/en/privacy/", "/en/legal-notice/"].includes(path)) {
-    document.body.classList.add("page-shell-v2", "legal-refresh");
-  }
-
+  // Shared by the static build and browser enhancement: one source of navigation links.
+  function renderNavigationShell(pathname, isEnglish, pageNavMarkup = "") {
+  const path = pathname.replace(/\/index\.html$/, "/");
   const pairs = {
     "/": "/en/",
     "/comprendre/": "/en/understand/",
@@ -42,6 +25,8 @@
     "/lecture/travailleurs-ia-risques-psychosociaux/": "/en/reading/ai-workers-psychosocial-risks/",
     "/a-propos/": "/en/about/",
     "/publications/": "/en/publications/",
+    "/publications/ia-preconisations-medicales/": "/en/publications/ai-medical-recommendations/",
+    "/publications/llm-risques-psychosociaux/": "/en/publications/llm-psychosocial-risks/",
     "/actions/": "/en/actions/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
@@ -111,26 +96,10 @@
         return `<a href="${href}"${activeAttribute(key)}>${label}</a>`;
       }
       const current = group.links.some(([, , key]) => key === activeKey);
-      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}"><button type="button" class="ux-search-open" data-site-search>${isEnglish ? "Search the site" : "Rechercher dans le site"}<span aria-hidden="true">⌕</span></button>${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
+      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}"><button type="button" class="ux-search-open" data-site-search hidden>${isEnglish ? "Search the site" : "Rechercher dans le site"}<span aria-hidden="true">⌕</span></button>${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
     }).join("");
   const primaryLinks = renderPrimary("desktop");
-  const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
-  const existingPageNav = existingHeader?.querySelector(".page-nav");
-  const legacyPageToc = document.querySelector("main .page-toc");
-  const legacyPageLinks = [...(legacyPageToc?.querySelectorAll('a[href^="#"]') || [])]
-    .map(link => `<a href="${link.getAttribute("href")}">${link.textContent.trim()}</a>`)
-    .join("");
-  const pageNavMarkup = existingPageNav
-    ? existingPageNav.outerHTML
-    : legacyPageLinks
-      ? `<nav class="page-nav" aria-label="${isEnglish ? "Page contents" : "Sommaire de la page"}"><div class="page-nav-inner"><span class="page-nav-label">${isEnglish ? "On this page" : "Sur cette page"}</span><div class="page-nav-links">${legacyPageLinks}</div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>`
-      : "";
-
-  if (legacyPageToc && !existingPageNav) legacyPageToc.remove();
-
-  const header = document.createElement("header");
-  header.className = "site-system-header";
-  header.innerHTML = `
+  const headerMarkup = `
     <nav class="system-nav" aria-label="${isEnglish ? "Main navigation" : "Navigation principale"}">
       <a class="system-brand" href="${isEnglish ? "/en/" : "/"}"${homeAttribute} aria-label="${isEnglish ? "AI & Occupational Health, home" : "IA et Santé au Travail, accueil"}">
         <span class="system-brand-mark" aria-hidden="true"></span>
@@ -145,9 +114,67 @@
         <div class="system-mobile-group"><span class="system-mobile-label">${isEnglish ? "Main" : "Principal"}</span>${renderPrimary("mobile")}</div>
       </div>
     </nav>${pageNavMarkup}`;
+  const footerMarkup = `
+    <div class="system-footer-grid">
+      <div class="system-footer-intro"><a class="system-brand" href="${isEnglish ? "/en/" : "/"}"${homeAttribute}><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong></span></a><p>${isEnglish ? "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health." : "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé."}</p></div>
+      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">${isEnglish ? "Pathways" : "Parcours"}</h2><ul>${primary.filter(([, , key]) => !["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}</ul></nav>
+      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul>${primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}<li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "Newsletter (opens in a new tab)" : "Newsletter (ouvre dans un nouvel onglet)"}">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "LinkedIn (opens in a new tab)" : "LinkedIn (ouvre dans un nouvel onglet)"}">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
+      <nav class="system-footer-group system-footer-information" aria-labelledby="systemFooterInformation"><h2 id="systemFooterInformation">${isEnglish ? "Information" : "Informations"}</h2><ul><li><a href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}">${isEnglish ? "Version française" : "English version"}</a></li><li><a href="${isEnglish ? "/en/privacy/" : "/confidentialite/"}">${isEnglish ? "Privacy" : "Confidentialité"}</a></li><li><a href="${isEnglish ? "/en/legal-notice/" : "/mentions-legales/"}">${isEnglish ? "Legal notice" : "Mentions légales"}</a></li></ul></nav>
+    </div>
+    <div class="system-footer-bottom"><span>© 2026 ${isEnglish ? "AI & Occupational Health — Independent editorial initiative." : "IA & Santé au Travail — Initiative éditoriale indépendante."}</span></div>`;
+  return { headerMarkup, footerMarkup };
+  }
 
-  if (existingHeader) existingHeader.replaceWith(header);
-  else document.body.insertBefore(header, document.body.firstChild?.nextSibling || document.body.firstChild);
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = { renderNavigationShell };
+    return;
+  }
+(() => {
+  "use strict";
+
+  if (window.__IASTShellReady) return;
+  window.__IASTShellReady = true;
+
+  const path = window.location.pathname.replace(/\/index\.html$/, "/");
+  // Preserve incoming links to the sections moved out of the About page.
+  if (path === "/a-propos/" && ["#publications", "#actions-menees"].includes(window.location.hash)) {
+    window.location.replace(window.location.hash === "#publications" ? "/publications/" : "/actions/");
+    return;
+  }
+  if (path === "/en/about/" && ["#publications", "#actions-menees", "#activities"].includes(window.location.hash)) {
+    window.location.replace(window.location.hash === "#publications" ? "/en/publications/" : "/en/actions/");
+    return;
+  }
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en") || path.startsWith("/en/");
+
+  if (["/confidentialite/", "/mentions-legales/", "/en/privacy/", "/en/legal-notice/"].includes(path)) {
+    document.body.classList.add("page-shell-v2", "legal-refresh");
+  }
+
+  const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
+  const existingPageNav = existingHeader?.querySelector(".page-nav");
+  const legacyPageToc = document.querySelector("main .page-toc");
+  const legacyPageLinks = [...(legacyPageToc?.querySelectorAll('a[href^="#"]') || [])]
+    .map(link => `<a href="${link.getAttribute("href")}">${link.textContent.trim()}</a>`)
+    .join("");
+  const pageNavMarkup = existingPageNav
+    ? existingPageNav.outerHTML
+    : legacyPageLinks
+      ? `<nav class="page-nav" aria-label="${isEnglish ? "Page contents" : "Sommaire de la page"}"><div class="page-nav-inner"><span class="page-nav-label">${isEnglish ? "On this page" : "Sur cette page"}</span><div class="page-nav-links">${legacyPageLinks}</div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>`
+      : "";
+
+  if (legacyPageToc && !existingPageNav) legacyPageToc.remove();
+
+  const { headerMarkup, footerMarkup } = renderNavigationShell(path, isEnglish, pageNavMarkup);
+  const hasStaticHeader = existingHeader?.dataset.navigationVersion === "6.0";
+  const header = hasStaticHeader ? existingHeader : document.createElement("header");
+  if (!hasStaticHeader) {
+    header.className = "site-system-header";
+    header.innerHTML = headerMarkup;
+    if (existingHeader) existingHeader.replaceWith(header);
+    else document.body.insertBefore(header, document.body.firstChild?.nextSibling || document.body.firstChild);
+  }
+  header.querySelectorAll("[data-site-search]").forEach(button => { button.hidden = false; });
 
   const dropdowns = [...header.querySelectorAll(".system-nav-group")];
   const closeDropdowns = () => dropdowns.forEach(group => { group.open = false; });
@@ -278,21 +305,17 @@
   window.addEventListener("load", scheduleReadingPosition);
   scheduleReadingPosition();
 
-  const footer = document.createElement("footer");
-  footer.className = "site-system-footer";
-  footer.innerHTML = `
-    <div class="system-footer-grid">
-      <div class="system-footer-intro"><a class="system-brand" href="${isEnglish ? "/en/" : "/"}"${homeAttribute}><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong></span></a><p>${isEnglish ? "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health." : "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé."}</p></div>
-      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">${isEnglish ? "Pathways" : "Parcours"}</h2><ul>${primary.filter(([, , key]) => !["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}</ul></nav>
-      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul>${primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}<li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "Newsletter (opens in a new tab)" : "Newsletter (ouvre dans un nouvel onglet)"}">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "LinkedIn (opens in a new tab)" : "LinkedIn (ouvre dans un nouvel onglet)"}">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
-      <nav class="system-footer-group system-footer-information" aria-labelledby="systemFooterInformation"><h2 id="systemFooterInformation">${isEnglish ? "Information" : "Informations"}</h2><ul><li><a href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}">${isEnglish ? "Version française" : "English version"}</a></li><li><a href="${isEnglish ? "/en/privacy/" : "/confidentialite/"}">${isEnglish ? "Privacy" : "Confidentialité"}</a></li><li><a href="${isEnglish ? "/en/legal-notice/" : "/mentions-legales/"}">${isEnglish ? "Legal notice" : "Mentions légales"}</a></li></ul></nav>
-    </div>
-    <div class="system-footer-bottom"><span>© 2026 ${isEnglish ? "AI & Occupational Health — Independent editorial initiative." : "IA & Santé au Travail — Initiative éditoriale indépendante."}</span></div>`;
-
   const existingFooter = document.querySelector("body > footer");
-  if (existingFooter) existingFooter.replaceWith(footer);
-  else document.body.appendChild(footer);
+  if (existingFooter?.dataset.navigationVersion !== "6.0") {
+    const footer = document.createElement("footer");
+    footer.className = "site-system-footer";
+    footer.innerHTML = footerMarkup;
+    if (existingFooter) existingFooter.replaceWith(footer);
+    else document.body.appendChild(footer);
+  }
 
   document.querySelectorAll(".reveal").forEach(element => element.classList.add("in"));
   document.documentElement.classList.add("site-system-ready");
+})();
+
 })();

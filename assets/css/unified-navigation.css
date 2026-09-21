@@ -454,3 +454,6 @@ main section[id], main [id] { scroll-margin-top: 118px; }
 @media print {
   .site-system-header, .site-system-footer { display: none !important; }
 }
+
+/* The search control is enabled only after its JavaScript enhancement loads. */
+[data-site-search][hidden] { display: none; }
