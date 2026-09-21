@@ -4,13 +4,13 @@
   if (!document.querySelector('link[href*="/assets/css/unified-navigation.css"]')) {
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
-    stylesheet.href = "/assets/css/unified-navigation.css?v=3.3";
+    stylesheet.href = "/assets/css/unified-navigation.css?v=4.0";
     document.head.appendChild(stylesheet);
   }
 
   if (!window.__IASTShellReady && !document.querySelector('script[src*="/assets/js/unified-navigation.js"]')) {
     const script = document.createElement("script");
-    script.src = "/assets/js/unified-navigation.js?v=3.8";
+    script.src = "/assets/js/unified-navigation.js?v=5.5";
     document.head.appendChild(script);
   }
 })();

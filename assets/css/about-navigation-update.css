@@ -1,0 +1,4 @@
+/* The training belongs to the author’s background, not the numbered events. */
+.about-editorial-v2 .personal-training-head { grid-template-columns: minmax(0, 1fr); }
+.about-editorial-v2 .journey { display: block; }
+.about-editorial-v2 .journey > .section-head { margin-bottom: 32px; }

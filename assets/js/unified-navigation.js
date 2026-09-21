@@ -5,6 +5,15 @@
   window.__IASTShellReady = true;
 
   const path = window.location.pathname.replace(/\/index\.html$/, "/");
+  // Preserve incoming links to the sections moved out of the About page.
+  if (path === "/a-propos/" && ["#publications", "#actions-menees"].includes(window.location.hash)) {
+    window.location.replace(window.location.hash === "#publications" ? "/publications/" : "/actions/");
+    return;
+  }
+  if (path === "/en/about/" && ["#publications", "#actions-menees", "#activities"].includes(window.location.hash)) {
+    window.location.replace(window.location.hash === "#publications" ? "/en/publications/" : "/en/actions/");
+    return;
+  }
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en") || path.startsWith("/en/");
 
   if (["/confidentialite/", "/mentions-legales/", "/en/privacy/", "/en/legal-notice/"].includes(path)) {
@@ -32,6 +41,8 @@
     "/lecture/management-agentique/": "/en/reading/agentic-management/",
     "/lecture/travailleurs-ia-risques-psychosociaux/": "/en/reading/ai-workers-psychosocial-risks/",
     "/a-propos/": "/en/about/",
+    "/publications/": "/en/publications/",
+    "/actions/": "/en/actions/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",
     "/confidentialite/": "/en/privacy/"
@@ -53,9 +64,11 @@
     ["Understand", "/en/understand/", "understand"],
     ["Occupational risks", "/en/risks/", "risks"],
     ["AI in OHS services", "/en/uses-and-field/occupational-health-example/", "spsti"],
-    ["Govern", "/en/legal-governance/", "governance"],
+    ["Governance", "/en/legal-governance/", "governance"],
     ["CSE", "/en/cse/", "cse"],
     ["Assess & deploy", "/en/evaluate/", "evaluate"],
+    ["Publications", "/en/publications/", "publications"],
+    ["Activities", "/en/actions/", "actions"],
     ["Reading", "/en/reading/", "reading"],
     ["About", "/en/about/", "about"]
   ] : [
@@ -65,11 +78,15 @@
     ["Gouvernance", "/droit-gouvernance/", "governance"],
     ["CSE", "/cse/", "cse"],
     ["Évaluer & déployer", "/evaluer/", "evaluate"],
-    ["Lecture", "/lecture/", "reading"],
+    ["Publications", "/publications/", "publications"],
+    ["Actions", "/actions/", "actions"],
+    ["Lectures", "/lecture/", "reading"],
     ["À propos", "/a-propos/", "about"]
   ];
 
   const activeKey = (() => {
+    if (/^\/(?:en\/)?publications\//.test(path)) return "publications";
+    if (/^\/(?:en\/)?actions\//.test(path)) return "actions";
     if (/^\/(?:en\/)?(?:understand|comprendre)/.test(path)) return "understand";
     if (/^\/(?:en\/risks(?:-prevention|\/)|risques-prevention)/.test(path)) return "risks";
     if (/^\/(?:en\/evaluate|evaluer)/.test(path)) return "evaluate";
@@ -83,7 +100,20 @@
 
   const activeAttribute = key => key === activeKey ? ' aria-current="page"' : "";
   const homeAttribute = path === (isEnglish ? "/en/" : "/") ? ' aria-current="page"' : "";
-  const primaryLinks = primary.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("");
+  const navigationGroups = [
+    { label: isEnglish ? "Knowledge" : "Connaissances", key: "knowledge", links: primary.filter(([, , key]) => ["understand", "risks", "spsti", "governance", "cse"].includes(key)) },
+    { link: isEnglish ? ["Tools", "/en/evaluate/", "evaluate"] : ["Outils", "/evaluer/", "evaluate"] },
+    ...primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(link => ({ link }))
+  ];
+  const renderPrimary = surface => navigationGroups.map(group => {
+      if (group.link) {
+        const [label, href, key] = group.link;
+        return `<a href="${href}"${activeAttribute(key)}>${label}</a>`;
+      }
+      const current = group.links.some(([, , key]) => key === activeKey);
+      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}">${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
+    }).join("");
+  const primaryLinks = renderPrimary("desktop");
   const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
   const existingPageNav = existingHeader?.querySelector(".page-nav");
   const legacyPageToc = document.querySelector("main .page-toc");
@@ -112,16 +142,38 @@
       <a class="system-language-switch" href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}" aria-label="${isEnglish ? "View this page in French" : "View this page in English"}">${isEnglish ? "FR" : "EN"}</a>
       <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
-        <div class="system-mobile-group"><span class="system-mobile-label">${isEnglish ? "Main" : "Principal"}</span>${primaryLinks}</div>
+        <div class="system-mobile-group"><span class="system-mobile-label">${isEnglish ? "Main" : "Principal"}</span>${renderPrimary("mobile")}</div>
       </div>
     </nav>${pageNavMarkup}`;
 
   if (existingHeader) existingHeader.replaceWith(header);
   else document.body.insertBefore(header, document.body.firstChild?.nextSibling || document.body.firstChild);
 
+  const dropdowns = [...header.querySelectorAll(".system-nav-group")];
+  const closeDropdowns = () => dropdowns.forEach(group => { group.open = false; });
+  dropdowns.forEach(group => {
+    group.addEventListener("toggle", () => {
+      if (group.open) dropdowns.forEach(other => { if (other !== group) other.open = false; });
+    });
+    group.addEventListener("focusout", () => {
+      requestAnimationFrame(() => {
+        if (!group.contains(document.activeElement)) group.open = false;
+      });
+    });
+  });
+  header.addEventListener("keydown", event => {
+    const group = event.target.closest(".system-nav-group");
+    if (event.key === "Escape" && group?.open) {
+      event.stopPropagation();
+      group.open = false;
+      group.querySelector("summary").focus();
+    }
+  });
+
   const menuButton = header.querySelector(".system-menu-button");
   const mobilePanel = header.querySelector(".system-mobile-panel");
   const closeMenu = (restoreFocus = false) => {
+    closeDropdowns();
     header.classList.remove("is-open");
     document.body.classList.remove("system-menu-open");
     menuButton.setAttribute("aria-expanded", "false");
@@ -133,14 +185,14 @@
     document.body.classList.add("system-menu-open");
     menuButton.setAttribute("aria-expanded", "true");
     mobilePanel.setAttribute("aria-hidden", "false");
-    requestAnimationFrame(() => mobilePanel.querySelector("a")?.focus());
+    requestAnimationFrame(() => mobilePanel.querySelector("summary, a")?.focus());
   };
 
   menuButton.addEventListener("click", () => header.classList.contains("is-open") ? closeMenu() : openMenu());
   mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", () => closeMenu()));
   document.addEventListener("click", event => { if (!header.contains(event.target)) closeMenu(); });
   document.addEventListener("keydown", event => { if (event.key === "Escape" && header.classList.contains("is-open")) closeMenu(true); });
-  window.matchMedia("(min-width: 1121px)").addEventListener?.("change", event => { if (event.matches) closeMenu(); });
+  window.matchMedia("(min-width: 1121px)").addEventListener?.("change", event => { closeMenu(); });
 
   const pageNav = header.querySelector(".page-nav");
   const pageNavLabel = pageNav?.querySelector(".page-nav-label");
@@ -198,11 +250,11 @@
   footer.innerHTML = `
     <div class="system-footer-grid">
       <div class="system-footer-intro"><a class="system-brand" href="${isEnglish ? "/en/" : "/"}"${homeAttribute}><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>${isEnglish ? "AI & Occupational Health" : "IA & Santé au Travail"}</strong></span></a><p>${isEnglish ? "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health." : "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé."}</p></div>
-      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">${isEnglish ? "Pathways" : "Parcours"}</h2><ul>${primary.filter(([, , key]) => !["reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}</ul></nav>
-      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul>${primary.filter(([, , key]) => ["reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}<li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "Newsletter (opens in a new tab)" : "Newsletter (ouvre dans un nouvel onglet)"}">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "LinkedIn (opens in a new tab)" : "LinkedIn (ouvre dans un nouvel onglet)"}">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
+      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">${isEnglish ? "Pathways" : "Parcours"}</h2><ul>${primary.filter(([, , key]) => !["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}</ul></nav>
+      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul>${primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(([label, href, key]) => `<li><a href="${href}"${activeAttribute(key)}>${label}</a></li>`).join("")}<li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "Newsletter (opens in a new tab)" : "Newsletter (ouvre dans un nouvel onglet)"}">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "LinkedIn (opens in a new tab)" : "LinkedIn (ouvre dans un nouvel onglet)"}">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
       <nav class="system-footer-group system-footer-information" aria-labelledby="systemFooterInformation"><h2 id="systemFooterInformation">${isEnglish ? "Information" : "Informations"}</h2><ul><li><a href="${translationUrl}" lang="${isEnglish ? "fr" : "en"}" hreflang="${isEnglish ? "fr" : "en"}">${isEnglish ? "Version française" : "English version"}</a></li><li><a href="${isEnglish ? "/en/privacy/" : "/confidentialite/"}">${isEnglish ? "Privacy" : "Confidentialité"}</a></li><li><a href="${isEnglish ? "/en/legal-notice/" : "/mentions-legales/"}">${isEnglish ? "Legal notice" : "Mentions légales"}</a></li></ul></nav>
     </div>
-    <div class="system-footer-bottom"><span>© 2026 ${isEnglish ? "AI & Occupational Health — Independent editorial initiative." : "IA & Santé au Travail — Initiative éditoriale indépendante."}</span><span>${isEnglish ? "Thomas Cole paintings · public domain" : "Œuvres de Thomas Cole · domaine public"}</span></div>`;
+    <div class="system-footer-bottom"><span>© 2026 ${isEnglish ? "AI & Occupational Health — Independent editorial initiative." : "IA & Santé au Travail — Initiative éditoriale indépendante."}</span></div>`;
 
   const existingFooter = document.querySelector("body > footer");
   if (existingFooter) existingFooter.replaceWith(footer);

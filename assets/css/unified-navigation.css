@@ -68,6 +68,70 @@
 .system-primary-links { gap: clamp(18px, 2vw, 34px); }
 .system-desktop-navigation { gap: clamp(18px, 2vw, 30px); }
 
+/* Compact French navigation, using the site's existing type and color tokens. */
+.system-nav-group { position: relative; }
+.system-nav-group summary {
+  min-height: var(--shell-height);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 560;
+  list-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.system-nav-group summary::-webkit-details-marker { display: none; }
+.system-nav-group summary::after { content: "+"; color: var(--terra-interactive); }
+.system-nav-group[open] summary::after { content: "−"; }
+.system-nav-group[open] summary,
+.system-nav-group.is-current summary { color: var(--terra-interactive); }
+.system-nav-group summary:focus-visible { outline: 2px solid var(--terra-interactive); outline-offset: 3px; }
+.system-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  z-index: 30;
+  width: 270px;
+  padding: 10px 20px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-light);
+  box-shadow: 0 16px 30px rgba(23, 26, 24, .08);
+}
+.system-primary-links .system-nav-dropdown a {
+  min-height: 48px;
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  white-space: normal;
+}
+.system-primary-links .system-nav-dropdown a:last-child { border-bottom: 0; }
+.system-primary-links .system-nav-dropdown a::after { content: none; }
+@media (max-width: 1120px) {
+  .system-mobile-group .system-nav-group summary {
+    min-height: 50px;
+    padding: 12px 4px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .system-mobile-group .system-nav-dropdown {
+    position: static;
+    width: 100%;
+    padding: 0 0 10px 17px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    box-shadow: none;
+  }
+  .system-mobile-group .system-nav-dropdown a { font-family: var(--sans); font-size: 16px; }
+}
+
 .system-primary-links a {
   position: relative;
   min-height: var(--shell-height);

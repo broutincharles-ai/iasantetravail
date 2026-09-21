@@ -1,0 +1,95 @@
+/* One title scale for every page, including articles and secondary routes. */
+:root {
+  --page-title-font: "Instrument Sans", Arial, sans-serif;
+  --page-title-size: clamp(40px, 5.3vw, 76px);
+}
+/* Page introductions share a centered composition, using the site's existing sans face. */
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) {
+  padding-top: clamp(46px, 5.5vw, 78px);
+  padding-bottom: clamp(46px, 5vw, 70px);
+  text-align: center;
+}
+html body.page-headings main .artwork-free-hero > :is(.hero-copy, .formation-hero-copy, .reading-hero-copy, .cse-hero-copy) {
+  margin-inline: auto;
+  padding-top: 0;
+}
+html body.page-headings h1 {
+  font-family: var(--page-title-font) !important;
+  font-size: var(--page-title-size) !important;
+  font-weight: 500 !important;
+  line-height: 1.13 !important;
+  letter-spacing: -.035em !important;
+  text-wrap: balance;
+  color: var(--ink, #171a18);
+  width: auto !important;
+  max-width: min(100%, 1040px) !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word;
+}
+html body.page-headings h1 :is(em, strong, span) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+  font-style: normal;
+  font-weight: inherit;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) h1 {
+  max-width: 940px !important;
+  margin: 20px auto 26px;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.kicker, .formation-kicker, .reading-eyebrow, .cse-kicker) {
+  justify-content: center;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .11em;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.kicker, .formation-kicker, .reading-eyebrow, .cse-kicker)::before {
+  display: none;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-lede, .formation-hero-lede, .reading-hero-lede, .cse-lede) {
+  max-width: 730px;
+  margin-inline: auto;
+  font-size: 18px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+html body.page-headings main .artwork-free-hero :is(.hero-note, .formation-hero-note, .risk-hero-focus) {
+  max-width: 700px;
+  margin-inline: auto;
+  text-wrap: pretty;
+}
+html body.page-headings main .artwork-free-hero :is(.home-article-meta, .article-meta, .cse-meta) {
+  max-width: 700px;
+  margin-inline: auto;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-actions, .formation-hero-actions, .reading-hero-actions, .cse-actions, .hero-proof, .formation-hero-meta, .cse-proof, .reading-hero-stats) {
+  justify-content: center;
+  margin-inline: auto;
+}
+/* Long scientific article titles use a restrained, readable hierarchy. */
+html body.page-headings.collection-page .section-head h2 {
+  max-width: 980px;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-size: clamp(27px, 2.7vw, 38px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+@media (max-width: 600px) {
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) h1 { margin-block: 18px 23px; }
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-lede, .formation-hero-lede, .reading-hero-lede, .cse-lede) { font-size: 16px; }
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-actions, .formation-hero-actions, .reading-hero-actions, .cse-actions) { width: 100%; }
+}
+/* Allow narrow article columns to shrink without pushing text outside the page. */
+@media (max-width: 480px) {
+  .page-headings .demo-section-main h2,
+  .page-headings :is(.research-why, .economic-content-section, .economic-opening) > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

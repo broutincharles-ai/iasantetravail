@@ -1,0 +1,23 @@
+/* Preserve the original design; reclaim the columns occupied by paintings. */
+html body main .artwork-free-hero {
+  grid-template-columns: minmax(0, 1fr) !important;
+  min-height: 0;
+  gap: 0;
+}
+html body main .artwork-free-hero > :is(.hero-copy, .formation-hero-copy, .reading-hero-copy, .cse-hero-copy) {
+  width: 100%;
+  max-width: 940px !important;
+}
+html body main .artwork-free-hero h1 {
+  width: auto !important;
+  max-width: 940px !important;
+}
+html body main .artwork-free-hero :is(.hero-lede, .formation-hero-lede, .reading-hero-lede, .cse-lede) {
+  max-width: 760px;
+}
+/* Four research articles retain their original card styles without an empty tile. */
+@media (min-width: 761px) {
+  .research-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .research-feature-grid .research-feature { grid-column: auto; grid-row: auto; }
+}
+.artwork-free-frame .veil { display: none; }

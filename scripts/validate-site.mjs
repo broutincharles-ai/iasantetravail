@@ -243,7 +243,7 @@ for (const file of htmlFiles) {
   }
   const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
-  const allowsAiSafetyPositioning = relative === "a-propos/index.html" || relative === "en/about/index.html";
+  const allowsAiSafetyPositioning = ["a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html"].includes(relative);
   if (!allowsAiSafetyPositioning && /(?:ai[ -]?safety|sécurité (?:de l[’']ia|ia)|agi safety|frontier ai)/i.test(html)) {
     errors.push(`${path.relative(root, file)}: legacy AI-safety positioning remains in indexable content`);
   }
