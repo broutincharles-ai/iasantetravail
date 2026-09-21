@@ -1,0 +1,43 @@
+/* Functional states only: no changes to the site's resting layout, type or palette. */
+.ux-search-open {
+  width: 100%; min-height: 46px; padding: 12px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border: 0; border-bottom: 1px solid var(--line); background: transparent;
+  color: var(--terra-interactive); font: 500 13px/1.4 var(--sans); text-align: left; cursor: pointer;
+}
+.ux-search-open span { font-size: 22px; }
+.ux-search-dialog {
+  width: min(680px, calc(100% - 32px)); max-height: min(760px, calc(100dvh - 48px));
+  margin: 8vh auto auto; padding: 30px; overflow-y: auto;
+  border: 1px solid var(--line-strong); background: var(--paper-light, #f9f6ef);
+  color: var(--ink); box-shadow: 0 24px 64px rgb(23 26 24 / 15%);
+  font-family: var(--sans);
+}
+.ux-search-dialog::backdrop { background: rgb(23 26 24 / 28%); }
+.ux-search-heading { display: flex; gap: 24px; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.ux-search-dialog h2 { margin: 0; font: 400 30px/1.15 var(--serif); letter-spacing: -.02em; }
+.ux-search-close { flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: 400 24px/1 var(--sans); cursor: pointer; }
+.ux-search-dialog label { display: block; margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.ux-search-dialog input { width: 100%; min-height: 50px; padding: 12px 14px; border: 1px solid var(--line-strong); background: var(--paper); color: var(--ink); font: 400 17px/1.5 var(--sans); }
+.ux-search-status { margin: 18px 0 8px; font-size: 12px; color: var(--muted); }
+.ux-search-results { margin: 0; padding: 0; list-style: none; }
+.ux-search-results li { border-top: 1px solid var(--line); }
+.ux-search-results a { display: block; padding: 17px 4px; color: var(--ink); text-decoration: none; }
+.ux-search-results strong { display: block; font: 500 20px/1.25 var(--serif); }
+.ux-search-results span { display: block; margin-top: 7px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.ux-search-results a:hover strong { color: var(--terra-interactive); }
+.ux-search-hint { margin: 22px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+html body .ux-reading-title-link { color: inherit; font: inherit; line-height: inherit; letter-spacing: inherit; text-decoration: none; }
+html body .ux-reading-title-link:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .12em; }
+main :is(section[id], [id]) { scroll-margin-top: var(--ux-anchor-offset, 130px); }
+main[tabindex="-1"]:focus, main :is(section, h1, h2, h3, div)[tabindex="-1"]:focus { outline: none; }
+.ux-field-error { display: block; margin-top: 8px; color: var(--eval-brick, var(--terra-interactive)); font-size: 13px; line-height: 1.5; }
+.field :is(input, select, textarea)[aria-invalid="true"] { border-color: var(--eval-brick, var(--terra-interactive)); }
+@media (max-width: 760px) {
+  .ux-search-dialog { margin-top: 16px; max-height: calc(100dvh - 32px); padding: 20px; }
+  .ux-search-dialog h2 { font-size: 26px; }
+}
+@media print { .ux-search-dialog { display: none !important; } }
+
+.reading-editorial-v3 .ux-reading-sorted > .reading-index-entry { width: var(--reading-wide); margin-inline: auto; }
+body.ux-search-active { overflow: hidden; }

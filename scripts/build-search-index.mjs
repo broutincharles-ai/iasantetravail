@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { INDEXABLE_FILES } from "./indexing-scope.mjs";
 
@@ -78,4 +78,7 @@ const english = records.filter(item => item.language.startsWith("en")).map(({ la
 
 await writeFile(path.join(root, "assets/js/search-index.js"), `window.SEARCH_INDEX = ${JSON.stringify(french)};\n`, "utf8");
 await writeFile(path.join(root, "assets/js/search-index-en.js"), `window.SEARCH_INDEX = ${JSON.stringify(english)};\n`, "utf8");
+await mkdir(path.join(root, "assets/data"), { recursive: true });
+await writeFile(path.join(root, "assets/data/search-fr.json"), JSON.stringify(french), "utf8");
+await writeFile(path.join(root, "assets/data/search-en.json"), JSON.stringify(english), "utf8");
 console.log(`Search index: ${french.length} French pages, ${english.length} English pages.`);

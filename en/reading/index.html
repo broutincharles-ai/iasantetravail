@@ -33,11 +33,13 @@
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=4.0">
   <link rel="stylesheet" href="/assets/css/lecture-v2.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/lecture-editorial-v3.css?v=1.0">
-  <script defer src="/assets/js/unified-navigation.js?v=5.5"></script>
+  <script defer src="/assets/js/unified-navigation.js?v=5.6"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Reading — Track what is changing", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "What happens to engineering when AI writes code engineers no longer understand line by line?", "url": "https://www.iasantetravail.com/en/reading/engineering-ai-code/"}, {"@type": "ListItem", "position": 2, "name": "Are the people building AI exposed to particular psychosocial risks?", "url": "https://www.iasantetravail.com/en/reading/ai-workers-psychosocial-risks/"}, {"@type": "ListItem", "position": 3, "name": "When AI agents never sleep, can humans still switch off?", "url": "https://www.iasantetravail.com/en/reading/ai-agents-workaholism/"}, {"@type": "ListItem", "position": 4, "name": "What happens when AI becomes the manager?", "url": "https://www.iasantetravail.com/en/reading/agentic-management/"}, {"@type": "ListItem", "position": 5, "name": "Ten advances in mathematics and theoretical computer science", "url": "https://openai.com/index/ten-advances-in-mathematics/"}, {"@type": "ListItem", "position": 6, "name": "Is AI redrawing the boundaries between occupations?", "url": "https://www.iasantetravail.com/en/reading/ai-occupational-boundaries/"}, {"@type": "ListItem", "position": 7, "name": "What happens when AI reaches the heart of an occupation?", "url": "https://www.iasantetravail.com/en/reading/ai-meaning-work-mathematics/"}, {"@type": "ListItem", "position": 8, "name": "Is high-performing AI enough to improve work?", "url": "https://www.iasantetravail.com/en/reading/ai-deployment-real-work/"}, {"@type": "ListItem", "position": 9, "name": "Policy on the AI Exponential", "url": "https://darioamodei.com/post/policy-on-the-ai-exponential"}, {"@type": "ListItem", "position": 10, "name": "The Intelligence Curse", "url": "https://intelligence-curse.ai/"}]}</script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
 <link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
 <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.0">
+<script defer src="/assets/js/ux-improvements.js?v=1.0"></script>
 </head>
 <body class="page-headings page-shell-v2 reading-redesign reading-editorial-v3">
   <a class="skip-link" href="#content">Skip to main content</a>
@@ -95,32 +97,6 @@
     </section>
   </main>
   <footer class="site-footer"><p>© 2026 AI &amp; Occupational Health</p></footer>
-  <script>
-    (() => {
-      const lead = document.querySelector('[data-featured]');
-      const list = document.querySelector('[data-reading-list]');
-      const rows = [...list.querySelectorAll('[data-reading-entry]')];
-      const entries = [lead, ...rows];
-      const sort = document.querySelector('[data-reading-sort]');
-      const theme = document.querySelector('[data-reading-theme]');
-      const result = document.querySelector('[data-reading-result]');
-      const empty = document.querySelector('[data-reading-empty]');
-      const render = () => {
-        const direction = sort.value === 'newest' ? -1 : 1;
-        [...rows].sort((a, b) => a.dataset.date.localeCompare(b.dataset.date) * direction).forEach(row => list.append(row));
-        const visible = entries.filter(entry => theme.value === 'all' || entry.dataset.theme === theme.value);
-        entries.forEach(entry => entry.hidden = !visible.includes(entry));
-        visible.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date) * direction).forEach((entry, index) => {
-          const number = entry.querySelector('[data-entry-number]');
-          if (number) number.textContent = `${String(index + 1).padStart(2, '0')} / ${String(visible.length).padStart(2, '0')}`;
-        });
-        result.textContent = `${visible.length} ${visible.length === 1 ? 'text shown' : 'texts shown'}`;
-        empty.hidden = visible.length !== 0;
-      };
-      sort.addEventListener('change', render);
-      theme.addEventListener('change', render);
-      render();
-    })();
-  </script>
+  <script defer src="/assets/js/reading-ux.js?v=1.0"></script>
 </body>
 </html>

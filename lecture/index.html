@@ -39,11 +39,13 @@
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=4.0">
   <link rel="stylesheet" href="/assets/css/lecture-v2.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/lecture-editorial-v3.css?v=1.0">
-  <script defer src="/assets/js/unified-navigation.js?v=5.5"></script>
+  <script defer src="/assets/js/unified-navigation.js?v=5.6"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Lecture — Suivre ce qui change", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Que devient le métier d’ingénieur quand l’IA écrit un code qu’il ne comprend plus ligne par ligne ?", "url": "https://www.iasantetravail.com/lecture/ingenierie-code-ia/"}, {"@type": "ListItem", "position": 2, "name": "Ceux qui construisent l’IA sont-ils exposés à des risques psychosociaux particuliers ?", "url": "https://www.iasantetravail.com/lecture/travailleurs-ia-risques-psychosociaux/"}, {"@type": "ListItem", "position": 3, "name": "Quand les agents IA ne dorment jamais, les humains peuvent-ils encore décrocher ?", "url": "https://www.iasantetravail.com/lecture/agents-ia-workaholisme/"}, {"@type": "ListItem", "position": 4, "name": "Que se passe-t-il quand une IA devient le manager ?", "url": "https://www.iasantetravail.com/lecture/management-agentique/"}, {"@type": "ListItem", "position": 5, "name": "Dix avancées en mathématiques et en informatique théorique", "url": "https://openai.com/index/ten-advances-in-mathematics/"}, {"@type": "ListItem", "position": 6, "name": "L’IA redessine-t-elle les frontières entre les métiers ?", "url": "https://www.iasantetravail.com/lecture/frontieres-metiers-ia/"}, {"@type": "ListItem", "position": 7, "name": "Que se passe-t-il quand l’IA atteint le cœur d’un métier ?", "url": "https://www.iasantetravail.com/lecture/ia-sens-metier-mathematiques/"}, {"@type": "ListItem", "position": 8, "name": "Une IA performante suffit-elle à améliorer le travail ?", "url": "https://www.iasantetravail.com/lecture/ia-deploiement-travail-reel/"}, {"@type": "ListItem", "position": 9, "name": "Policy on the AI Exponential", "url": "https://darioamodei.com/post/policy-on-the-ai-exponential"}, {"@type": "ListItem", "position": 10, "name": "The Intelligence Curse", "url": "https://intelligence-curse.ai/"}]}</script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
 <link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
 <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.0">
+<script defer src="/assets/js/ux-improvements.js?v=1.0"></script>
 </head>
 <body class="page-headings page-shell-v2 reading-redesign reading-editorial-v3">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -184,47 +186,6 @@
 
   <footer class="site-footer"><p>© 2026 IA &amp; Santé au Travail</p></footer>
 
-  <script>
-    (() => {
-      const lead = document.querySelector('[data-featured]');
-      const list = document.querySelector('[data-reading-list]');
-      const rows = [...list.querySelectorAll('[data-reading-entry]')];
-      const entries = [lead, ...rows];
-      const sort = document.querySelector('[data-reading-sort]');
-      const theme = document.querySelector('[data-reading-theme]');
-      const result = document.querySelector('[data-reading-result]');
-      const empty = document.querySelector('[data-reading-empty]');
-
-      const render = () => {
-        const direction = sort.value === 'newest' ? -1 : 1;
-        [...rows]
-          .sort((a, b) => a.dataset.date.localeCompare(b.dataset.date) * direction)
-          .forEach((row) => list.append(row));
-
-        const visible = entries.filter((entry) => {
-          const matches = theme.value === 'all' || entry.dataset.theme === theme.value;
-          entry.hidden = !matches;
-          return matches;
-        });
-
-        const numbered = [];
-        if (!lead.hidden) numbered.push(lead);
-        numbered.push(...[...rows].filter((row) => !row.hidden).sort((a, b) => {
-          return a.dataset.date.localeCompare(b.dataset.date) * direction;
-        }));
-
-        numbered.forEach((entry, index) => {
-          entry.querySelector('[data-entry-number]').textContent = `${String(index + 1).padStart(2, '0')} / ${String(numbered.length).padStart(2, '0')}`;
-        });
-
-        result.textContent = `${visible.length} ${visible.length === 1 ? 'texte affiché' : 'textes affichés'}`;
-        empty.hidden = visible.length !== 0;
-      };
-
-      sort.addEventListener('change', render);
-      theme.addEventListener('change', render);
-      render();
-    })();
-  </script>
+  <script defer src="/assets/js/reading-ux.js?v=1.0"></script>
 </body>
 </html>

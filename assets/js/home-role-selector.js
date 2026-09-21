@@ -26,50 +26,56 @@
     }
   };
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  document.querySelectorAll("[data-role-explainer]").forEach((root) => {
+  const routes = {
+    fr: {
+      employee: ["/risques-prevention/psychosociaux/", "Comprendre les effets sur mon travail"],
+      employer: ["/evaluer/", "Évaluer mon projet d’IA"],
+      hr: ["/evaluer/", "Évaluer les effets sur les équipes"],
+      physician: ["/ia-en-spst/", "Explorer les usages en SPST"],
+      osh: ["/risques-prevention/", "Repérer les risques professionnels"],
+      representative: ["/cse/", "Préparer le dialogue social"],
+      ai: ["/evaluer/", "Évaluer les effets de mon outil"],
+      researcher: ["/publications/", "Consulter les deux publications"],
+      public: ["/droit-gouvernance/", "Explorer les repères de gouvernance"]
+    },
+    en: {
+      employee: ["/en/risks-prevention/", "Understand the effects on my work"],
+      employer: ["/en/evaluate/", "Assess my AI project"],
+      hr: ["/en/evaluate/", "Assess the effects on teams"],
+      physician: ["/en/uses-and-field/occupational-health-example/", "Explore AI uses in OHS services"],
+      osh: ["/en/risks/", "Identify occupational risks"],
+      representative: ["/en/cse/", "Prepare for social dialogue"],
+      ai: ["/en/evaluate/", "Assess the effects of my tool"],
+      researcher: ["/en/publications/", "Read the two publications"],
+      public: ["/en/legal-governance/", "Explore governance guidance"]
+    }
+  };
+  document.querySelectorAll("[data-role-explainer]").forEach(root => {
     const locale = root.dataset.locale === "en" ? "en" : "fr";
     const select = root.querySelector("[data-role-select]");
     const output = root.querySelector("[data-role-answer]");
     const announcer = root.querySelector("[data-role-announcer]");
-    let timer = 0;
-
-    if (!select || !output || !announcer) return;
-
-    const render = (key, animate = true) => {
-      const text = content[locale][key];
-      if (!text) return;
-
-      window.clearTimeout(timer);
-      announcer.textContent = "";
-
-      if (!animate || reduceMotion.matches) {
-        output.classList.remove("is-typing");
-        output.textContent = text;
-        announcer.textContent = text;
-        return;
-      }
-
-      output.textContent = "";
-      output.classList.add("is-typing");
-      let index = 0;
-
-      const typeNextChunk = () => {
-        index = Math.min(index + 5, text.length);
-        output.textContent = text.slice(0, index);
-        if (index < text.length) {
-          timer = window.setTimeout(typeNextChunk, 9);
-        } else {
-          output.classList.remove("is-typing");
-          announcer.textContent = text;
-        }
-      };
-
-      timer = window.setTimeout(typeNextChunk, 120);
+    const link = root.querySelector(".home-role-follow");
+    if (!select || !output || !link) return;
+    try {
+      const saved = sessionStorage.getItem("iast-ux-role");
+      if (content[locale][saved]) select.value = saved;
+    } catch {}
+    const render = (announce = false) => {
+      const key = select.value;
+      output.classList.remove("is-typing");
+      output.textContent = content[locale][key];
+      const [href, label] = routes[locale][key];
+      link.href = href;
+      link.replaceChildren(document.createTextNode(label + " "));
+      const arrow = document.createElement("span");
+      arrow.setAttribute("aria-hidden", "true"); arrow.textContent = "→"; link.append(arrow);
+      if (announcer) announcer.textContent = announce ? content[locale][key] : "";
     };
-
-    select.addEventListener("change", () => render(select.value));
-    render(select.value);
+    select.addEventListener("change", () => {
+      render(true);
+      try { sessionStorage.setItem("iast-ux-role", select.value); } catch {}
+    });
+    render();
   });
 })();

@@ -111,7 +111,7 @@
         return `<a href="${href}"${activeAttribute(key)}>${label}</a>`;
       }
       const current = group.links.some(([, , key]) => key === activeKey);
-      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}">${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
+      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}"><button type="button" class="ux-search-open" data-site-search>${isEnglish ? "Search the site" : "Rechercher dans le site"}<span aria-hidden="true">⌕</span></button>${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
     }).join("");
   const primaryLinks = renderPrimary("desktop");
   const existingHeader = document.querySelector("body > header.site-header, body > header.site-system-header") || document.querySelector("body > nav.nav");
@@ -172,7 +172,11 @@
 
   const menuButton = header.querySelector(".system-menu-button");
   const mobilePanel = header.querySelector(".system-mobile-panel");
+  const inertedByMenu = new Set();
   const closeMenu = (restoreFocus = false) => {
+    inertedByMenu.forEach(element => { element.inert = false; });
+    inertedByMenu.clear();
+    menuButton.textContent = "Menu";
     closeDropdowns();
     header.classList.remove("is-open");
     document.body.classList.remove("system-menu-open");
@@ -181,11 +185,15 @@
     if (restoreFocus) menuButton.focus();
   };
   const openMenu = () => {
+    document.querySelectorAll("body > main, body > footer").forEach(element => {
+      if (!element.inert) { element.inert = true; inertedByMenu.add(element); }
+    });
+    menuButton.textContent = isEnglish ? "Close" : "Fermer";
     header.classList.add("is-open");
     document.body.classList.add("system-menu-open");
     menuButton.setAttribute("aria-expanded", "true");
     mobilePanel.setAttribute("aria-hidden", "false");
-    requestAnimationFrame(() => mobilePanel.querySelector("summary, a")?.focus());
+    requestAnimationFrame(() => mobilePanel.querySelector("summary, a, button")?.focus());
   };
 
   menuButton.addEventListener("click", () => header.classList.contains("is-open") ? closeMenu() : openMenu());
@@ -193,6 +201,15 @@
   document.addEventListener("click", event => { if (!header.contains(event.target)) closeMenu(); });
   document.addEventListener("keydown", event => { if (event.key === "Escape" && header.classList.contains("is-open")) closeMenu(true); });
   window.matchMedia("(min-width: 1121px)").addEventListener?.("change", event => { closeMenu(); });
+
+  header.addEventListener("keydown", event => {
+    if (event.key !== "Tab" || !header.classList.contains("is-open")) return;
+    const focusable = [...header.querySelectorAll('a[href], button, summary')].filter(element => element.getClientRects().length && !element.disabled);
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  document.addEventListener("iast:close-menu", () => closeMenu());
 
   const pageNav = header.querySelector(".page-nav");
   const pageNavLabel = pageNav?.querySelector(".page-nav-label");
@@ -202,15 +219,26 @@
   if (pageNav && pageNavLabel) {
     const linksId = pageNav.querySelector(".page-nav-links")?.id || "pageNavLinks";
     pageNav.querySelector(".page-nav-links")?.setAttribute("id", linksId);
-    pageNavLabel.setAttribute("role", "button");
-    pageNavLabel.setAttribute("tabindex", "0");
+    const tocMedia = window.matchMedia("(max-width: 760px)");
+    const updateTocControl = () => {
+      if (tocMedia.matches) { pageNavLabel.setAttribute("role", "button"); pageNavLabel.tabIndex = 0; pageNavLabel.setAttribute("aria-expanded", String(pageNav.classList.contains("is-open"))); }
+      else { pageNavLabel.removeAttribute("role"); pageNavLabel.removeAttribute("tabindex"); pageNavLabel.removeAttribute("aria-expanded"); pageNav.classList.remove("is-open"); }
+    };
+    tocMedia.addEventListener("change", updateTocControl);
     pageNavLabel.setAttribute("aria-controls", linksId);
     pageNavLabel.setAttribute("aria-expanded", "false");
+    updateTocControl();
     const togglePageNav = () => {
+      if (!tocMedia.matches) return;
       const open = pageNav.classList.toggle("is-open");
       pageNavLabel.setAttribute("aria-expanded", String(open));
     };
     pageNavLabel.addEventListener("click", togglePageNav);
+    pageNav.addEventListener("keydown", event => {
+      if (event.key === "Escape" && pageNav.classList.contains("is-open")) {
+        event.stopPropagation(); pageNav.classList.remove("is-open"); pageNavLabel.setAttribute("aria-expanded", "false"); pageNavLabel.focus();
+      }
+    });
     pageNavLabel.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -219,7 +247,7 @@
     });
     pageNavLinks.forEach(link => link.addEventListener("click", () => {
       pageNav.classList.remove("is-open");
-      pageNavLabel.setAttribute("aria-expanded", "false");
+      if (tocMedia.matches) pageNavLabel.setAttribute("aria-expanded", "false");
     }));
   }
 
@@ -227,23 +255,28 @@
     if (link.getAttribute("href") === `#${id}`) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  const sections = pageNavLinks.map(link => document.querySelector(link.getAttribute("href"))).filter(Boolean);
-  if (sections.length && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActiveSection(visible.target.id);
-    }, { rootMargin: "-32% 0px -58% 0px", threshold: [0, 0.2, 0.5] });
-    sections.forEach(section => observer.observe(section));
-  }
-
-  const updateProgress = () => {
-    if (!pageProgress) return;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const ratio = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
-    pageProgress.style.width = `${ratio * 100}%`;
+  const sections = pageNavLinks.map(link => document.getElementById(decodeURIComponent(link.hash.slice(1)))).filter(Boolean);
+  let framePending = false;
+  const updateReadingPosition = () => {
+    framePending = false;
+    const threshold = header.getBoundingClientRect().height + 24;
+    let current = "";
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= threshold) current = section.id;
+    }
+    setActiveSection(current);
+    if (pageProgress) {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      pageProgress.style.width = `${scrollable > 0 ? Math.min(100, Math.max(0, window.scrollY / scrollable * 100)) : 0}%`;
+    }
   };
-  updateProgress();
-  window.addEventListener("scroll", updateProgress, { passive: true });
+  const scheduleReadingPosition = () => {
+    if (!framePending) { framePending = true; requestAnimationFrame(updateReadingPosition); }
+  };
+  window.addEventListener("scroll", scheduleReadingPosition, { passive: true });
+  window.addEventListener("resize", scheduleReadingPosition);
+  window.addEventListener("load", scheduleReadingPosition);
+  scheduleReadingPosition();
 
   const footer = document.createElement("footer");
   footer.className = "site-system-footer";
