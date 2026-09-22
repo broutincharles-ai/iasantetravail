@@ -62,7 +62,9 @@
     ["IA en SPST", "/ia-en-spst/", "spsti"],
     ["Gouvernance", "/droit-gouvernance/", "governance"],
     ["CSE", "/cse/", "cse"],
-    ["Évaluer & déployer", "/evaluer/", "evaluate"],
+    ["Outils", "/outils/", "tools"],
+    ["Préconisations", "/outils/preconisations/", "preconisations"],
+    ["Évaluer le déploiement", "/evaluer/", "evaluate"],
     ["Publications", "/publications/", "publications"],
     ["Actions", "/actions/", "actions"],
     ["Lectures", "/lecture/", "reading"],
@@ -70,6 +72,8 @@
   ];
 
   const activeKey = (() => {
+    if (path.startsWith("/outils/preconisations/")) return "preconisations";
+    if (path.startsWith("/outils/")) return "tools";
     if (/^\/(?:en\/)?publications\//.test(path)) return "publications";
     if (/^\/(?:en\/)?actions\//.test(path)) return "actions";
     if (/^\/(?:en\/)?(?:understand|comprendre)/.test(path)) return "understand";
@@ -87,7 +91,9 @@
   const homeAttribute = path === (isEnglish ? "/en/" : "/") ? ' aria-current="page"' : "";
   const navigationGroups = [
     { label: isEnglish ? "Knowledge" : "Connaissances", key: "knowledge", links: primary.filter(([, , key]) => ["understand", "risks", "spsti", "governance", "cse"].includes(key)) },
-    { link: isEnglish ? ["Tools", "/en/evaluate/", "evaluate"] : ["Outils", "/evaluer/", "evaluate"] },
+    isEnglish
+      ? { link: ["Tools", "/en/evaluate/", "evaluate"] }
+      : { label: "Outils", key: "tools", links: [["Tous les outils", "/outils/", "tools"], ["Préconisations", "/outils/preconisations/", "preconisations"], ["Évaluer le déploiement", "/evaluer/", "evaluate"]] },
     ...primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(link => ({ link }))
   ];
   const renderPrimary = surface => navigationGroups.map(group => {
@@ -96,7 +102,7 @@
         return `<a href="${href}"${activeAttribute(key)}>${label}</a>`;
       }
       const current = group.links.some(([, , key]) => key === activeKey);
-      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}"><button type="button" class="ux-search-open" data-site-search hidden>${isEnglish ? "Search the site" : "Rechercher dans le site"}<span aria-hidden="true">⌕</span></button>${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
+      return `<details class="system-nav-group${current ? " is-current" : ""}"><summary aria-controls="${surface}-${group.key}">${group.label}</summary><div class="system-nav-dropdown" id="${surface}-${group.key}">${group.key === "knowledge" ? `<button type="button" class="ux-search-open" data-site-search hidden>${isEnglish ? "Search the site" : "Rechercher dans le site"}<span aria-hidden="true">⌕</span></button>` : ""}${group.links.map(([label, href, key]) => `<a href="${href}"${activeAttribute(key)}>${label}</a>`).join("")}</div></details>`;
     }).join("");
   const primaryLinks = renderPrimary("desktop");
   const headerMarkup = `
@@ -136,6 +142,11 @@
   window.__IASTShellReady = true;
 
   const path = window.location.pathname.replace(/\/index\.html$/, "/");
+  // Préconisations now has its own page in Tools.
+  if (path === "/evaluer/" && window.location.hash === "#preconisations") {
+    window.location.replace("/outils/preconisations/");
+    return;
+  }
   // Preserve incoming links to the sections moved out of the About page.
   if (path === "/a-propos/" && ["#publications", "#actions-menees"].includes(window.location.hash)) {
     window.location.replace(window.location.hash === "#publications" ? "/publications/" : "/actions/");
@@ -166,7 +177,7 @@
   if (legacyPageToc && !existingPageNav) legacyPageToc.remove();
 
   const { headerMarkup, footerMarkup } = renderNavigationShell(path, isEnglish, pageNavMarkup);
-  const hasStaticHeader = existingHeader?.dataset.navigationVersion === "6.0";
+  const hasStaticHeader = existingHeader?.dataset.navigationVersion === "6.1";
   const header = hasStaticHeader ? existingHeader : document.createElement("header");
   if (!hasStaticHeader) {
     header.className = "site-system-header";
@@ -306,7 +317,7 @@
   scheduleReadingPosition();
 
   const existingFooter = document.querySelector("body > footer");
-  if (existingFooter?.dataset.navigationVersion !== "6.0") {
+  if (existingFooter?.dataset.navigationVersion !== "6.1") {
     const footer = document.createElement("footer");
     footer.className = "site-system-footer";
     footer.innerHTML = footerMarkup;

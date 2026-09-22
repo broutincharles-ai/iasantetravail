@@ -14,13 +14,14 @@ for (const file of INDEXABLE_FILES) {
   if (!headerMatch) throw new Error(`${file}: expected an existing header`);
   const pageNav = headerMatch[0].match(/<nav\b[^>]*class="page-nav"[^>]*>[\s\S]*?<\/nav>/)?.[0] || '';
   const { headerMarkup, footerMarkup } = renderNavigationShell(route, english, pageNav);
-  html = html.replace(headerMatch[0], `<header class="site-system-header" data-navigation-version="6.0">${headerMarkup}</header>`);
+  html = html.replace(headerMatch[0], `<header class="site-system-header" data-navigation-version="6.1">${headerMarkup}</header>`);
   const footer = /<footer\b[^>]*class="[^"]*\b(?:site-footer|site-system-footer)\b[^"]*"[^>]*>[\s\S]*?<\/footer>/;
   if (!footer.test(html)) throw new Error(`${file}: expected an existing footer`);
-  html = html.replace(footer, `<footer class="site-system-footer" data-navigation-version="6.0">${footerMarkup}</footer>`);
+  html = html.replace(footer, `<footer class="site-system-footer" data-navigation-version="6.1">${footerMarkup}</footer>`);
   if (!html.includes('/assets/css/navigation-nojs.css')) {
     html = html.replace('</head>', '<noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=1.0"></noscript>\n</head>');
   }
+  html = html.replace(/unified-navigation\.js\?v=[\d.]+/g, "unified-navigation.js?v=6.1");
   await writeFile(file, html);
 }
 console.log(`Rendered static navigation on ${INDEXABLE_FILES.size} indexable pages.`);

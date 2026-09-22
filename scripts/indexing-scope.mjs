@@ -23,7 +23,10 @@ export const INDEXABLE_PAIRS = [
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" }
 ];
 
-export const INDEXABLE_SINGLETONS = [];
+export const INDEXABLE_SINGLETONS = [
+  { file: "outils/index.html", lang: "fr", lastmod: "2026-09-22" },
+  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-22" }
+];
 
 export const INDEXABLE_FR_FILES = [
   ...INDEXABLE_PAIRS.map(({ fr }) => fr),

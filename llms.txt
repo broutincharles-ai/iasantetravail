@@ -16,6 +16,8 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 - https://www.iasantetravail.com/ — Parcours principal pour comprendre les systèmes d’IA, identifier les risques, évaluer les usages, prévenir leurs effets et gouverner les déploiements en santé au travail.
 - https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels.
+- https://www.iasantetravail.com/outils/ — Deux outils : Préconisations et évaluation du déploiement de l’IA.
+- https://www.iasantetravail.com/outils/preconisations/ — Présentation de Préconisations, outil expérimental non validé, et du fonctionnement de Jev. Textes fictifs uniquement.
 - https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.
 - https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.
 - https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
