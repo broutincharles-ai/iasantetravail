@@ -21,16 +21,16 @@
   <meta property="og:title" content="Évaluer et suivre un usage d’IA à partir du travail réel">
   <meta property="og:description" content="Neuf axes, un radar synthétique et un suivi T0–T2+ pour documenter collectivement un usage d’IA sans produire de feu vert automatique.">
   <meta property="og:url" content="https://www.iasantetravail.com/evaluer/">
-  <meta property="article:modified_time" content="2026-09-12">
+  <meta property="article:modified_time" content="2026-09-22">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Évaluer et suivre un usage d’IA au travail">
   <meta name="twitter:description" content="Un outil T0–T2+ fondé sur neuf axes du travail réel, avec suivi des points d’attention individuels.">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["WebPage","WebApplication"],"@id":"https://www.iasantetravail.com/evaluer/#outil","url":"https://www.iasantetravail.com/evaluer/","name":"Évaluer et suivre un usage d’IA au travail","description":"Outil exploratoire de suivi T0–T2+ structuré selon neuf axes du travail réel.","applicationCategory":"BusinessApplication","operatingSystem":"Navigateur web","inLanguage":"fr-FR","dateModified":"2026-09-12","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.iasantetravail.com/"},{"@type":"ListItem","position":2,"name":"Évaluer et suivre","item":"https://www.iasantetravail.com/evaluer/"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["WebPage","WebApplication"],"@id":"https://www.iasantetravail.com/evaluer/#outil","url":"https://www.iasantetravail.com/evaluer/","name":"Évaluer et suivre un usage d’IA au travail","description":"Outil exploratoire de suivi T0–T2+ structuré selon neuf axes du travail réel.","applicationCategory":"BusinessApplication","operatingSystem":"Navigateur web","inLanguage":"fr-FR","dateModified":"2026-09-22","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.iasantetravail.com/"},{"@type":"ListItem","position":2,"name":"Évaluer et suivre","item":"https://www.iasantetravail.com/evaluer/"}]}]}</script>
   <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=4.1">
-  <link rel="stylesheet" href="/assets/css/evaluer-work-monitor-v3.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/evaluer-work-monitor-v3.css?v=2.3">
   <script defer src="/assets/js/unified-navigation.js?v=6.0"></script>
   <script defer src="/assets/js/evaluer-work-monitor-v3-fr.js?v=2.2"></script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
@@ -69,6 +69,7 @@
       <div class="page-nav-inner">
         <span class="page-nav-label">Sur cette page</span>
         <div class="page-nav-links">
+          <a href="#preconisations">Préconisations</a>
           <a href="#demarche">Démarche</a>
           <a href="#outil">Évaluer</a>
           <a href="#decider">Décider</a>
@@ -80,6 +81,32 @@
     </nav></header>
 
   <main id="contenu">
+    <aside class="preconisations-feature" id="preconisations" aria-labelledby="preconisations-title">
+      <div class="preconisations-feature-head">
+        <div>
+          <p class="eval-kicker">À découvrir dans les outils · Expérimental</p>
+          <h2 id="preconisations-title">Préconisations</h2>
+          <p class="preconisations-feature-lede">Une aide à la relecture des préconisations en santé au travail, selon cinq critères : clarté, portée de l’avis, contenu de l’annexe 4, maintien au poste et confidentialité.</p>
+        </div>
+        <a class="eval-button eval-button-primary" href="https://preconisations-app.vercel.app/" target="_blank" rel="noopener noreferrer">Ouvrir Préconisations <span aria-hidden="true">↗</span><span class="preconisations-sr-only"> (nouvel onglet)</span></a>
+      </div>
+      <p class="preconisations-feature-notice"><strong>Outil non validé · Textes fictifs uniquement.</strong> Ne saisissez aucune donnée sensible ni aucun élément identifiant un médecin, un salarié, un employeur ou un SPST. En mode Analyse Jev, le texte et le contexte passent par le serveur de l’application puis sont envoyés à TypeSafe.</p>
+      <details class="jev-explanation">
+        <summary>Comment Jev fonctionne-t-il, comparé à un LLM conversationnel ?</summary>
+        <div class="jev-comparison">
+          <section aria-labelledby="llm-title"><h3 id="llm-title">Un LLM conversationnel</h3><p>Il peut rédiger, reformuler ou expliquer en générant du texte. Il peut aussi être configuré pour renvoyer des catégories ou un format structuré.</p></section>
+          <section aria-labelledby="jev-title"><h3 id="jev-title">Jev, selon TypeSafe</h3><p>Il interprète le texte et choisit parmi des réponses définies à l’avance, avec des probabilités. Son entraînement, appelé RLCD, vise des décisions calibrées : les probabilités doivent correspondre aux résultats observés sur de nombreuses prédictions.</p></section>
+        </div>
+        <h3>Dans l’atelier Préconisations</h3>
+        <ol class="jev-workflow">
+          <li><span>01</span><div><strong>Texte et contexte</strong><p>Le contexte du poste aide à interpréter la préconisation.</p></div></li>
+          <li><span>02</span><div><strong>Cinq questions indépendantes</strong><p>Chaque critère a sa définition, ses conditions de détection et ses exclusions.</p></div></li>
+          <li><span>03</span><div><strong>Trois réponses possibles</strong><p>Présent, absent ou informations insuffisantes, pour chaque critère.</p></div></li>
+        </ol>
+        <p>Les conseils affichés sont préécrits. Jev ne rédige ni justification de son classement ni nouvelle préconisation. Le format structuré et la calibration ne garantissent pas la justesse d’une réponse individuelle. Cet usage reste non validé ; ses performances en français doivent être évaluées.</p>
+        <p class="jev-sources">Sources : <a href="https://docs.typesafe.ai/concepts/system-one" target="_blank" rel="noopener noreferrer">TypeSafe · System One</a>, <a href="https://docs.typesafe.ai/introduction/machine-learning-primer" target="_blank" rel="noopener noreferrer">entraînement RLCD</a>, <a href="https://docs.typesafe.ai/models" target="_blank" rel="noopener noreferrer">modèles et langues</a>, <a href="https://docs.mistral.ai/studio/conversations/structured-output" target="_blank" rel="noopener noreferrer">Mistral · sorties structurées des LLM</a>.</p>
+      </details>
+    </aside>
     <section class="eval-hero" id="accueil">
       <div class="eval-hero-copy">
         <p class="eval-kicker">Outil exploratoire · Avant, pendant et après déploiement</p>
