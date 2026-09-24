@@ -25,7 +25,7 @@ export const INDEXABLE_PAIRS = [
 
 export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-09-22" },
-  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-22" }
+  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
 
 export const INDEXABLE_FR_FILES = [

@@ -7,6 +7,8 @@ const require = createRequire(import.meta.url);
 const { renderNavigationShell } = require('../assets/js/unified-navigation.js');
 
 for (const file of INDEXABLE_FILES) {
+  // This page is generated from the Préconisations app and keeps its own navigation.
+  if (file === "outils/preconisations/index.html") continue;
   let html = await readFile(file, 'utf8');
   const english = file.startsWith('en/');
   const route = '/' + file.replace(/index\.html$/, '');

@@ -103,7 +103,7 @@ for (const file of htmlFiles) {
   const shouldIndex = INDEXABLE_FILES.has(relative);
   if (shouldIndex && hasNoindex) errors.push(`${relative}: allowlisted page must be indexable`);
   if (!shouldIndex && !hasNoindex) errors.push(`${relative}: page outside the indexable allowlist must be noindex`);
-  if (shouldIndex) {
+  if (shouldIndex && relative !== "outils/preconisations/index.html") {
     const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
     const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
     if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
@@ -197,9 +197,11 @@ for (const file of htmlFiles) {
   const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
   const staticHeader = html.match(/<header\b[^>]*class=["'][^"']*\bsite-system-header\b[^>]*>[\s\S]*?<\/header>/i)?.[0] || "";
   const hasStaticFooter = /<footer\b[^>]*class=["'][^"']*\bsite-system-footer\b/i.test(html);
-  if (!staticHeader || !hasStaticFooter) errors.push(`${relative}: indexable pages require static navigation and footer`);
+  const isPreconisationsApp = relative === "outils/preconisations/index.html";
+  if (!isPreconisationsApp && (!staticHeader || !hasStaticFooter)) errors.push(`${relative}: indexable pages require static navigation and footer`);
   const english = relative.startsWith("en/");
-  const requiredNavigation = english
+  if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
+  const requiredNavigation = isPreconisationsApp ? [] : english
     ? ["/en/understand/", "/en/risks/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
     : ["/comprendre/", "/risques-prevention/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
   for (const href of requiredNavigation) {
