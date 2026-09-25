@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/outils/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/"/>
   </url>
@@ -319,5 +319,11 @@
     <lastmod>2026-09-25</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/preconisations/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/preconisations/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/outils/claude-skills/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/claude-skills/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/claude-skills/"/>
   </url>
 </urlset>
