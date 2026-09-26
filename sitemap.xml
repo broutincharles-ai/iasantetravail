@@ -340,4 +340,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/human-in-the-loop/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/humain-dans-la-boucle/"/>
   </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/sante-travail-securite-ia/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
+  </url>
 </urlset>

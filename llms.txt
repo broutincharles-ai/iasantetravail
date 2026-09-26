@@ -41,3 +41,6 @@ These pages distinguish the original journal article from its author-written web
 
 - https://www.iasantetravail.com/lecture/humain-dans-la-boucle/ — Analyse du Dr Charles Broutin sur la supervision des agents IA, la fatigue d’approbation, la déqualification et les risques psychosociaux. Publiée le 26 septembre 2026 à partir du position paper « AI Agents Push Humans Out of the Loop ».
 - https://www.iasantetravail.com/en/reading/human-in-the-loop/ — English translation of Dr Charles Broutin’s analysis of AI agent oversight, approval fatigue, deskilling and psychosocial risks, published on 26 September 2026.
+
+- https://www.iasantetravail.com/lecture/sante-travail-securite-ia/ — Analyse du Dr Charles Broutin sur les conditions de travail des équipes des laboratoires d’IA et la fiabilité de leurs contrôles de sécurité : charge, fatigue, conflits de valeurs et capacité à alerter. Publiée le 26 septembre 2026.
+- https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/ — English translation of Dr Charles Broutin’s analysis of occupational health in frontier AI laboratories and the reliability of human safety checks, published on 26 September 2026.

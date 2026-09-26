@@ -265,7 +265,12 @@ for (const file of htmlFiles) {
   }
   const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
-  const allowsAiSafetyPositioning = ["a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html"].includes(relative);
+  // This reading and its collection listings discuss AI safety through working conditions.
+  const allowsAiSafetyPositioning = [
+    "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
+    "lecture/index.html", "en/reading/index.html",
+    "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html"
+  ].includes(relative);
   if (!allowsAiSafetyPositioning && /(?:ai[ -]?safety|sécurité (?:de l[’']ia|ia)|agi safety|frontier ai)/i.test(html)) {
     errors.push(`${path.relative(root, file)}: legacy AI-safety positioning remains in indexable content`);
   }

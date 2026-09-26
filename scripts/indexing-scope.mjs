@@ -8,6 +8,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-09-21" },
   { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-26" },
+  { fr: "lecture/sante-travail-securite-ia/index.html", en: "en/reading/occupational-health-ai-safety/index.html", lastmod: "2026-09-26" },
   { fr: "lecture/humain-dans-la-boucle/index.html", en: "en/reading/human-in-the-loop/index.html", lastmod: "2026-09-26" },
   { fr: "lecture/ingenierie-code-ia/index.html", en: "en/reading/engineering-ai-code/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/agents-ia-workaholisme/index.html", en: "en/reading/ai-agents-workaholism/index.html", lastmod: "2026-09-21" },

@@ -1,0 +1,2453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="/assets/js/language-routing.js?v=1.1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKEJVY4XVC"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RKEJVY4XVC');</script>
+  <script defer src="/assets/js/unified-navigation.js?v=6.1"></script>
+  <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.0">
+  <script defer src="/assets/js/ux-improvements.js?v=1.1"></script>
+  <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=1.0"></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>Occupational health in AI labs: an AI safety issue</title>
+  <meta name="description" content="Workload, fatigue, value conflicts and the ability to speak up: how working conditions in frontier AI laboratories contribute to model safety.">
+  <meta name="author" content="Dr Charles Broutin">
+  <meta name="theme-color" content="#F2EDE3">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="AI &amp; Occupational Health">
+  <meta property="og:title" content="Three researchers, six days, 1,200 agents: is occupational health an AI safety issue?">
+  <meta property="og:description" content="Workload, fatigue, value conflicts and the ability to speak up: how working conditions in frontier AI laboratories contribute to model safety.">
+  <meta property="og:url" content="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Three researchers, six days, 1,200 agents: is occupational health an AI safety issue?">
+  <meta name="twitter:description" content="Workload, fatigue, value conflicts and the ability to speak up: how working conditions in frontier AI laboratories contribute to model safety.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
+  <style>:root {
+  --ink: #171a18;
+  --ink-soft: #3f443f;
+  --cream: #eee8dc;
+  --paper: #f3efe6;
+  --paper-light: #f7f3ea;
+  --white: #faf7f0;
+  --terra: #a83e27;
+  --terra-bright: #c85a3a;
+  --terra-interactive: #87301f;
+  --prevention: #1f3730;
+  --terracotta-deep: #8f5747;
+  --terracotta-soft: #d9b3a5;
+  --terracotta-wash: #ead8d1;
+  --governance: var(--terracotta-deep);
+  --green: var(--prevention);
+  --green-dark: var(--governance);
+  --lavender: #dda895;
+  --lavender-accessible: #7f3f2f;
+  --lavender-dark: var(--lavender-accessible);
+  --sand: #dda895;
+  --olive: #66715b;
+  --muted: #5b615b;
+  --line: rgba(23, 26, 24, 0.17);
+  --line-strong: rgba(23, 26, 24, 0.34);
+  --line-light: rgba(243, 239, 230, 0.24);
+  --shadow-soft: none;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+
+  --content-max: 1400px;
+  --content-wide: 1760px;
+  --reading-max: 760px;
+  --radius-sm: 0;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --serif: Newsreader, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Instrument Sans", Inter, Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --wrap: min(var(--content-max), calc(100% - 80px));
+  --focus-ring: 0 0 0 3px var(--paper), 0 0 0 6px var(--terra-interactive);
+
+  /* Compatibility aliases for the existing page generations. */
+  --encre: var(--ink);
+  --encre-60: var(--muted);
+  --creme: var(--cream);
+  --papier: var(--paper);
+  --orange: var(--terra);
+  --vert: var(--prevention);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea, summary { color: inherit; font: inherit; }
+h1, h2, h3, p { text-wrap: pretty; }
+[hidden] { display: none !important; }
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.serif { font-family: var(--serif); }
+
+a,
+button,
+summary,
+input,
+select,
+textarea {
+  accent-color: var(--terra-interactive);
+}
+
+:focus-visible {
+  outline: 3px solid var(--terra-interactive);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 2000;
+  top: 8px;
+  left: 8px;
+  padding: 11px 15px;
+  color: var(--paper);
+  background: var(--ink);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus { transform: none; }
+
+::selection {
+  color: var(--paper);
+  background: var(--terra);
+}
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+  <style>.wrap {
+  width: min(var(--content-max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.reading-width,
+.prose {
+  max-width: var(--reading-max);
+}
+
+main [id] {
+  scroll-margin-top: 112px;
+}
+
+.section,
+.about-section,
+.legal-section,
+.reference-section,
+.case-section,
+.prevention-section,
+.moments,
+.real-work,
+.choices,
+.method,
+.capabilities {
+  padding-block: clamp(80px, 9vw, 144px);
+}
+
+.section-tight {
+  padding-block: clamp(48px, 5vw, 64px);
+}
+
+.system-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 920px) {
+  .system-grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .wrap { width: min(100% - 28px, var(--content-max)); }
+  .section,
+  .about-section,
+  .legal-section,
+  .reference-section,
+  .case-section,
+  .prevention-section,
+  .moments,
+  .real-work,
+  .choices,
+  .method,
+  .capabilities { padding-block: 72px; }
+}
+
+/* Three explicit hero roles shared by the new editorial generation. */
+.page-shell-v2 main > .hero,
+.page-shell-v2 main > .assessment-hero {
+  width: 100%;
+  padding: clamp(48px, 5vw, 76px) max(32px, calc(50% - 720px));
+  align-items: center;
+}
+
+.page-shell-v2.hero-manifesto main > .hero {
+  min-height: clamp(660px, 76vh, 850px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  gap: clamp(44px, 6vw, 96px);
+}
+
+.page-shell-v2.hero-editorial main > .hero,
+.page-shell-v2.hero-profile main > .hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.72fr);
+  gap: clamp(38px, 5vw, 78px);
+  padding-block: clamp(54px, 6vw, 86px);
+}
+
+.page-shell-v2.hero-tool main > .hero,
+.page-shell-v2.hero-tool main > .assessment-hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
+  gap: clamp(34px, 5vw, 72px);
+  padding-block: clamp(42px, 5vw, 70px);
+}
+
+.page-shell-v2.hero-editorial main > .hero > .artwork img,
+.page-shell-v2.hero-editorial main > .hero > .hero-artwork img {
+  max-height: 430px;
+  object-fit: cover;
+}
+
+.page-shell-v2 main > .hero > .hero-copy { max-width: 760px; }
+.page-shell-v2 main > .hero h1,
+.page-shell-v2 main > .assessment-hero h1 {
+  max-width: 14ch;
+  margin: 18px 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5.4vw, 6.3rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.page-shell-v2.hero-editorial main > .hero h1,
+.page-shell-v2.hero-profile main > .hero h1 {
+  max-width: 15ch;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+}
+
+.page-shell-v2.hero-tool main > .hero h1,
+.page-shell-v2.hero-tool main > .assessment-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.7rem, 4.4vw, 4.9rem);
+}
+
+.page-shell-v2 main > .hero h1 em,
+.page-shell-v2 main > .assessment-hero h1 em {
+  color: var(--terra-interactive);
+  font-style: normal;
+}
+
+@media (max-width: 980px) {
+  .page-shell-v2.hero-manifesto main > .hero,
+  .page-shell-v2.hero-editorial main > .hero,
+  .page-shell-v2.hero-profile main > .hero,
+  .page-shell-v2.hero-tool main > .hero,
+  .page-shell-v2.hero-tool main > .assessment-hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .page-shell-v2.hero-manifesto main > .hero { min-height: 0; }
+}
+
+@media (max-width: 760px) {
+  .page-shell-v2 main > .hero,
+  .page-shell-v2 main > .assessment-hero {
+    padding: 42px 16px;
+  }
+
+  .page-shell-v2 main > .hero h1,
+  .page-shell-v2 main > .assessment-hero h1,
+  .page-shell-v2.hero-editorial main > .hero h1,
+  .page-shell-v2.hero-profile main > .hero h1,
+  .page-shell-v2.hero-tool main > .hero h1,
+  .page-shell-v2.hero-tool main > .assessment-hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.45rem, 11vw, 4rem);
+    line-height: 0.98;
+  }
+}
+</style>
+  <style>.site-system-header {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 auto;
+  background: rgba(255, 249, 242, 0.97);
+  backdrop-filter: blur(14px);
+  pointer-events: none;
+}
+
+.system-nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 2vw, 34px);
+  width: min(100% - 48px, 1760px);
+  min-height: 92px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: auto;
+}
+
+.system-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 760;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.system-brand-mark {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: url("/assets/images/logo.png") center / 33px 33px no-repeat;
+  box-shadow: none;
+}
+
+.system-brand-copy strong,
+.system-brand-copy small {
+  display: block;
+}
+
+.system-brand-copy strong {
+  font-size: 17px;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+}
+
+.system-brand-copy small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-family: var(--mono, monospace);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.system-nav-links {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.system-nav-links > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 clamp(8px, 0.75vw, 17px);
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--muted);
+  font-size: clamp(0.64rem, 0.68vw, 0.77rem);
+  font-weight: 710;
+  line-height: 1.18;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.system-nav-links > a:last-child { border-right: 0; }
+
+.system-nav-links > a::after {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  left: 12px;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.system-nav-links > a:hover,
+.system-nav-links > a[aria-current="page"] {
+  color: var(--terra);
+  background: var(--cream);
+}
+
+.system-nav-links > a[aria-current="page"]::after { background: var(--terra); }
+
+.system-language-switch {
+  display: grid;
+  min-width: 50px;
+  min-height: 52px;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--terra);
+  background: rgba(255, 253, 249, 0.72);
+  font-family: var(--mono, monospace);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.system-language-switch:hover {
+  color: var(--paper);
+  background: var(--terra);
+}
+
+.system-menu-button {
+  display: none;
+  min-width: 76px;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.site-system-footer {
+  position: relative;
+  padding: 70px 0 24px;
+  color: rgba(255, 249, 242, 0.78);
+  background: var(--ink);
+}
+
+.system-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.4fr) repeat(3, minmax(150px, 0.75fr));
+  gap: 40px;
+}
+
+.site-system-footer .system-brand { color: #fff; }
+.site-system-footer p { max-width: 430px; margin: 18px 0 0; }
+.site-system-footer h2 { margin: 0 0 14px; color: #fff; font-family: inherit; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.site-system-footer ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.site-system-footer li { margin: 0; }
+.site-system-footer a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.site-system-footer a:hover { color: #fff; }
+
+.system-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.78rem;
+}
+
+.intent-grid,
+.editorial-method-grid,
+.intervention-details,
+.score-explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.intent-card,
+.editorial-method-card,
+.intervention-detail,
+.score-explainer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  background: rgba(255, 249, 242, 0.76);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+}
+
+.intent-card:hover { border-color: rgba(168, 78, 31, 0.5); transform: translateY(-2px); }
+.intent-card .intent-number { margin-bottom: 32px; color: var(--terra); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.12em; }
+.intent-card h3 { margin: 0 0 10px; font-size: clamp(1.45rem, 2vw, 2rem); line-height: 1.08; }
+.intent-card p { margin: 0 0 24px; color: var(--muted); }
+.intent-card .intent-link { margin-top: auto; color: var(--terra); font-weight: 780; }
+
+@media (min-width: 921px) {
+  .about-profile > .about-facts { order: -1; }
+}
+
+.source-list-visible {
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.source-list-visible h2 { margin: 0 0 14px; font-size: 1.4rem; }
+.source-list-visible ol { display: grid; gap: 9px; margin: 0; padding-left: 22px; }
+.source-list-visible li { color: var(--muted); }
+
+.risk-origin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.risk-origin-grid div {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.risk-origin-grid strong,
+.risk-origin-grid span { display: block; }
+.risk-origin-grid span { margin-top: 4px; font-size: 0.75rem; opacity: 0.78; }
+
+.decision-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.decision-strip span {
+  padding: 6px 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.freshness-line,
+.legal-status,
+.method-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(52, 79, 73, 0.25);
+  border-radius: 999px;
+  color: var(--prevention);
+  background: rgba(52, 79, 73, 0.08);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.legal-status.future { color: var(--lavender-accessible); border-color: rgba(74, 64, 144, 0.26); background: rgba(201, 194, 242, 0.22); }
+.legal-status.caution { color: #7b421f; border-color: rgba(168, 78, 31, 0.28); background: rgba(168, 78, 31, 0.09); }
+.layer-title .legal-status { margin-bottom: 8px; }
+
+.governance-steps {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 36px;
+}
+
+.governance-steps a {
+  display: grid;
+  align-content: start;
+  min-height: 92px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 0.74rem;
+  font-weight: 780;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.governance-steps a:hover { border-color: rgba(168, 78, 31, 0.5); }
+.governance-steps span { margin-bottom: 10px; color: var(--terra); font-size: 0.66rem; letter-spacing: 0.08em; }
+.legal-update { margin: 18px 0 0; padding: 16px; border-left: 4px solid var(--lavender-accessible); background: rgba(201, 194, 242, 0.16); }
+.legal-update .legal-status { margin-right: 8px; }
+
+.score-method-details {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 249, 242, 0.72);
+}
+
+.score-method-details > summary {
+  padding: 16px 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.score-method-details[open] > summary { border-bottom: 1px solid var(--line); }
+.score-method-body { padding: 18px; }
+.score-method-body > p { margin-top: 0; color: var(--muted); }
+.score-explainer-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.score-explainer-card { padding: 12px; border-radius: 12px; box-shadow: none; }
+.score-explainer-card strong { font-size: 0.78rem; }
+.score-explainer-card span { color: var(--muted); font-size: 0.7rem; }
+
+@media (max-width: 1120px) {
+  .system-nav {
+    min-height: 0;
+    padding: 12px 0 0;
+    grid-template-columns: 1fr auto;
+    gap: 9px;
+  }
+  .system-brand { grid-column: 1; grid-row: 1; }
+  .system-language-switch { grid-column: 2; grid-row: 1; min-width: 46px; min-height: 38px; }
+  .system-nav-links { grid-column: 1 / -1; grid-row: 2; }
+  .system-brand-mark { width: 38px; height: 38px; flex-basis: 38px; background-size: 28px 28px; }
+  .system-brand-copy strong { font-size: 15px; }
+  .system-brand-copy small { display: none; }
+  .system-nav-links > a { min-height: 58px; padding-inline: 6px; font-size: clamp(0.56rem, 0.95vw, 0.67rem); }
+}
+
+@media (max-width: 930px) {
+  .system-nav-links { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .system-nav-links > a:nth-child(4) { border-right: 0; }
+  .system-nav-links > a:nth-child(-n + 4) { border-bottom: 1px solid var(--line); }
+  .system-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .intent-grid,
+  .editorial-method-grid,
+  .intervention-details { grid-template-columns: 1fr; }
+  .score-explainer-grid { grid-template-columns: 1fr 1fr; }
+  .risk-origin-grid { grid-template-columns: 1fr; }
+  .governance-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .system-nav {
+    width: calc(100% - 30px);
+    padding-top: 9px;
+    grid-template-columns: 1fr auto auto;
+  }
+  .system-brand { gap: 10px; }
+  .system-brand-mark { width: 34px; height: 34px; flex-basis: 34px; background-size: 25px 25px; }
+  .system-brand-copy strong { font-size: 14px; }
+  .system-menu-button { display: inline-flex; align-items: center; justify-content: center; }
+  .system-menu-button { grid-column: 3; grid-row: 1; }
+  .system-nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-system-header.is-open .system-nav-links { display: grid; }
+  .system-nav-links > a { min-height: 52px; padding-inline: 8px; font-size: 0.67rem; }
+  .system-nav-links > a:nth-child(2n) { border-right: 0; }
+  .system-nav-links > a:nth-child(-n + 6) { border-bottom: 1px solid var(--line); }
+  .system-footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .system-footer-bottom { flex-direction: column; margin-top: 36px; }
+  .score-explainer-grid { grid-template-columns: 1fr; }
+  .governance-steps { grid-template-columns: 1fr; }
+  .governance-steps a { min-height: 0; }
+}
+
+@media print {
+  .site-system-header,
+  .site-system-footer { display: none !important; }
+}
+
+/* Editorial generation: square geometry, typographic hierarchy, little shadow. */
+.page-shell-v2 .hero-proof { display: none; }
+
+.page-shell-v2 .button,
+.page-shell-v2 .btn {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid var(--line-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--ink);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.page-shell-v2 .button.primary,
+.page-shell-v2 .btn.primary {
+  border-color: var(--green-dark);
+  color: var(--paper);
+  background: var(--green-dark);
+}
+
+.page-shell-v2 .button.secondary,
+.page-shell-v2 .btn.secondary { background: var(--paper); }
+.page-shell-v2 .button.light,
+.page-shell-v2 .btn.light { border-color: var(--paper); color: var(--green-dark); background: var(--paper); }
+.page-shell-v2 .button:hover,
+.page-shell-v2 .btn:hover { border-color: var(--terra-interactive); color: var(--paper); background: var(--terra-interactive); }
+
+.page-shell-v2 .button,
+.page-shell-v2 .btn,
+.page-shell-v2 .nav-cta {
+  min-height: 48px;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-shell-v2 .artwork,
+.page-shell-v2 .hero-artwork,
+.page-shell-v2 .profile-card,
+.page-shell-v2 .tool-preview,
+.page-shell-v2 .role-shell,
+.page-shell-v2 .tool-shell,
+.page-shell-v2 .introduction-panel,
+.page-shell-v2 .practical-test,
+.page-shell-v2 .choice-card,
+.page-shell-v2 .method-panel,
+.page-shell-v2 .contact-panel,
+.page-shell-v2 .gollac,
+.page-shell-v2 .no-global-score,
+.page-shell-v2 .method-warning {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-shell-v2 .scope-card,
+.page-shell-v2 .chain-step,
+.page-shell-v2 .requirement,
+.page-shell-v2 .method-card,
+.page-shell-v2 .intro-card,
+.page-shell-v2 .journey-step,
+.page-shell-v2 .path-card,
+.page-shell-v2 .role-card,
+.page-shell-v2 .evidence-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-shell-v2 .artwork figcaption,
+.page-shell-v2 .hero-artwork figcaption {
+  grid-template-columns: minmax(150px, 0.36fr) minmax(0, 1fr);
+  gap: 22px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+
+.page-shell-v2 .artwork figcaption > span,
+.page-shell-v2 .hero-artwork figcaption > span {
+  color: var(--terra-interactive) !important;
+  font: 800 9px/1.45 var(--mono) !important;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.page-shell-v2 .artwork figcaption p,
+.page-shell-v2 .hero-artwork figcaption p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px !important;
+  line-height: 1.55;
+}
+
+.page-shell-v2 .kicker {
+  color: var(--terra-interactive);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+}
+
+.editorial-band-grid {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editorial-band {
+  min-height: 280px;
+  padding: clamp(26px, 3vw, 46px);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.editorial-band:last-child { border-right: 0; }
+.editorial-band:hover { background: var(--cream); }
+.editorial-band > span { color: var(--terra-interactive); font: 800 10px/1 var(--mono); letter-spacing: 0.1em; }
+.editorial-band h3 { margin: auto 0 12px; font-size: clamp(1.55rem, 2.3vw, 2.6rem); line-height: 1.03; }
+.editorial-band p { margin: 0; color: var(--muted); }
+.editorial-band strong { margin-top: 22px; color: var(--terra-interactive); font-size: 13px; }
+
+.work-system-chain {
+  border: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 44px
+    minmax(0, 1fr) 44px
+    minmax(0, 1fr) 44px
+    minmax(0, 1fr);
+}
+
+.work-system-chain > div { min-height: 180px; padding: 24px; }
+.work-system-chain > i {
+  border-right: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--terra-interactive);
+  font-size: 1.35rem;
+  font-style: normal;
+}
+.work-system-chain span { color: var(--terra-interactive); font: 800 9px/1 var(--mono); letter-spacing: 0.1em; }
+.work-system-chain strong { display: block; margin-top: 42px; font-size: 1.15rem; }
+.work-system-chain small { display: block; margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
+
+.evidence-strip {
+  border-left: 5px solid var(--terra);
+  padding: clamp(26px, 4vw, 50px);
+  color: var(--cream);
+  background: var(--green-dark);
+}
+
+.evidence-strip blockquote { max-width: 980px; margin: 0; font-size: clamp(1.35rem, 2.5vw, 2.65rem); font-weight: 620; line-height: 1.28; }
+.evidence-strip cite { display: block; margin-top: 22px; color: rgba(244, 235, 218, 0.72); font: normal 11px/1.5 var(--mono); }
+
+.assessment-choice-grid {
+  border: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.assessment-choice {
+  min-height: 360px;
+  padding: clamp(24px, 3vw, 42px);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.assessment-choice:last-child { border-right: 0; }
+.assessment-choice > span { color: var(--terra-interactive); font: 850 10px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.assessment-choice h2 { margin: auto 0 16px; font-size: clamp(1.75rem, 2.7vw, 3rem); line-height: 1.02; }
+.assessment-choice p { color: var(--muted); }
+.assessment-choice ul { margin: 16px 0 26px; padding-left: 19px; color: var(--muted); }
+.assessment-choice .button { margin-top: auto; align-self: flex-start; }
+
+.tool-facts-line {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tool-facts-line span { min-height: 48px; padding: 12px 18px; border-right: 1px solid var(--line); display: inline-flex; align-items: center; font: 750 11px/1.25 var(--mono); }
+
+@media (max-width: 900px) {
+  .editorial-band-grid,
+  .assessment-choice-grid { grid-template-columns: 1fr; }
+  .editorial-band,
+  .assessment-choice { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .editorial-band:last-child,
+  .assessment-choice:last-child { border-bottom: 0; }
+  .editorial-band h3,
+  .assessment-choice h2 { margin-top: 54px; }
+  .work-system-chain { grid-template-columns: 1fr; }
+  .work-system-chain > div { min-height: 0; }
+  .work-system-chain > i {
+    min-height: 40px;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-size: 0;
+  }
+  .work-system-chain > i::before { content: "↓"; font-size: 1.25rem; }
+}
+
+@media (max-width: 760px) {
+  .page-shell-v2 .artwork figcaption,
+  .page-shell-v2 .hero-artwork figcaption { grid-template-columns: 1fr; }
+  .work-system-chain strong { margin-top: 28px; }
+  .tool-facts-line { display: grid; }
+  .tool-facts-line span { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+</style>
+  <style>:root {
+  --navigation-wrap: min(1400px, calc(100% - clamp(48px, 10vw, 160px)));
+  --shell-height: 76px;
+}
+
+.site-system-header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(243, 239, 230, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.system-nav {
+  position: relative;
+  width: var(--navigation-wrap);
+  min-height: var(--shell-height);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  align-items: center;
+  gap: clamp(24px, 3vw, 52px);
+}
+
+.system-brand {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.system-brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 1px solid var(--line-strong);
+  background: url("/assets/images/logo.png") center / 25px 25px no-repeat;
+}
+
+.system-brand-copy strong,
+.system-brand-copy small { display: block; }
+
+.system-brand-copy strong {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.system-brand-copy small {
+  margin-top: 5px;
+  color: var(--muted);
+  font: 700 8px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.system-desktop-navigation,
+.system-primary-links {
+  display: flex;
+  align-items: center;
+}
+
+.system-primary-links { gap: clamp(18px, 2vw, 34px); }
+.system-desktop-navigation { gap: clamp(18px, 2vw, 30px); }
+
+/* Compact French navigation, using the site's existing type and color tokens. */
+.system-nav-group { position: relative; }
+.system-nav-group summary {
+  min-height: var(--shell-height);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 560;
+  list-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.system-nav-group summary::-webkit-details-marker { display: none; }
+.system-nav-group summary::after { content: "+"; color: var(--terra-interactive); }
+.system-nav-group[open] summary::after { content: "−"; }
+.system-nav-group[open] summary,
+.system-nav-group.is-current summary { color: var(--terra-interactive); }
+.system-nav-group summary:focus-visible { outline: 2px solid var(--terra-interactive); outline-offset: 3px; }
+.system-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  z-index: 30;
+  width: 270px;
+  padding: 10px 20px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-light);
+  box-shadow: 0 16px 30px rgba(23, 26, 24, .08);
+}
+.system-primary-links .system-nav-dropdown a {
+  min-height: 48px;
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  white-space: normal;
+}
+.system-primary-links .system-nav-dropdown a:last-child { border-bottom: 0; }
+.system-primary-links .system-nav-dropdown a::after { content: none; }
+@media (max-width: 1120px) {
+  .system-mobile-group .system-nav-group summary {
+    min-height: 50px;
+    padding: 12px 4px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .system-mobile-group .system-nav-dropdown {
+    position: static;
+    width: 100%;
+    padding: 0 0 10px 17px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    box-shadow: none;
+  }
+  .system-mobile-group .system-nav-dropdown a { font-family: var(--sans); font-size: 16px; }
+}
+
+.system-primary-links a {
+  position: relative;
+  min-height: var(--shell-height);
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 560;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.system-primary-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: transparent;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
+.system-primary-links a:hover,
+.system-primary-links a[aria-current="page"] { color: var(--terra-interactive); }
+.system-primary-links a:hover::after,
+.system-primary-links a[aria-current="page"]::after {
+  background: var(--terra);
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.system-resources { position: relative; }
+.system-resources summary {
+  min-height: var(--shell-height);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 560;
+  list-style: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.system-resources summary::-webkit-details-marker { display: none; }
+.system-resources summary::after { color: var(--terra-interactive); content: "+"; font-size: 16px; font-weight: 500; }
+.system-resources[open] summary::after { content: "−"; }
+.system-resources[open] summary,
+.system-resources.is-current summary { color: var(--terra-interactive); }
+.system-resources-panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 1px);
+  right: 0;
+  width: min(390px, calc(100vw - 32px));
+  padding: 0 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-light);
+  box-shadow: 0 24px 48px rgba(23, 20, 15, .14);
+}
+.system-resources-panel a {
+  min-height: 68px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 620;
+  text-decoration: none;
+}
+.system-resources-panel a:last-child { border-bottom: 0; }
+.system-resources-panel a::after { color: var(--terra-interactive); content: "↗"; font-size: 18px; }
+.system-resources-panel a:hover,
+.system-resources-panel a[aria-current="page"] { color: var(--terra-interactive); }
+
+.system-language-switch,
+.system-menu-button {
+  min-width: 45px;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  background: transparent;
+  font: 800 10px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.system-language-switch:hover { color: var(--paper); background: var(--terracotta-deep); }
+.system-menu-button { display: none; min-width: 64px; cursor: pointer; }
+.system-mobile-panel { display: none; }
+
+.site-system-header .page-nav {
+  border-top: 1px solid var(--line);
+  background: rgba(247, 243, 234, 0.94);
+  pointer-events: auto;
+}
+
+.site-system-header .page-nav-inner {
+  position: relative;
+  width: var(--navigation-wrap);
+  min-height: 38px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+.site-system-header .page-nav-label {
+  color: var(--terra-interactive);
+  font: 800 8px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-system-header .page-nav-links {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 30px);
+  overflow-x: auto;
+  color: var(--muted);
+  font-size: 10px;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.site-system-header .page-nav-links::-webkit-scrollbar { display: none; }
+.site-system-header .page-nav-links a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+.site-system-header .page-nav-links a:hover,
+.site-system-header .page-nav-links a[aria-current="location"] { color: var(--terra-interactive); }
+
+.site-system-header .page-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.site-system-header .page-progress i { display: block; width: 0; height: 100%; background: var(--terra); }
+
+.site-system-footer {
+  padding: 0;
+  color: rgba(247, 243, 234, 0.76);
+  border-top: 3px solid var(--terra, #a83e27);
+  background: var(--prevention, #1f3730);
+}
+
+.system-footer-grid {
+  width: var(--navigation-wrap);
+  margin-inline: auto;
+  padding: clamp(52px, 5vw, 72px) 0 46px;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.3fr) minmax(260px, 1.2fr) minmax(135px, 0.68fr) minmax(160px, 0.78fr);
+  gap: clamp(28px, 3vw, 52px);
+  align-items: start;
+}
+
+.site-system-footer .system-brand { color: #f7f3ea; }
+.site-system-footer .system-brand-mark {
+  border-color: rgba(247, 243, 234, 0.3);
+  background-color: rgba(247, 243, 234, 0.06);
+  filter: none;
+}
+.site-system-footer .system-brand-copy strong { font-size: 22px; line-height: 1.05; }
+.site-system-footer p {
+  max-width: 420px;
+  margin: 20px 0 0;
+  color: rgba(247, 243, 234, 0.72);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.site-system-footer h2 {
+  margin: 3px 0 16px;
+  color: #e7ad99;
+  font: 800 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.site-system-footer ul { margin: 0; padding: 0; display: grid; list-style: none; }
+.system-footer-pathways ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 22px; }
+.site-system-footer li { margin: 0; border-top: 1px solid rgba(247, 243, 234, 0.13); }
+.site-system-footer a {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #f7f3ea;
+  font-size: 14px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.site-system-footer a:hover,
+.site-system-footer .system-footer-group a[aria-current="page"] { color: #efb7a4; }
+.site-system-footer a:focus-visible { outline: 2px solid #efb7a4; outline-offset: 3px; }
+
+.system-footer-bottom {
+  width: var(--navigation-wrap);
+  margin: 0 auto;
+  padding: 19px 0 22px;
+  border-top: 1px solid rgba(247, 243, 234, 0.18);
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  color: rgba(247, 243, 234, 0.56);
+  font-size: 11px;
+}
+
+main section[id], main [id] { scroll-margin-top: 118px; }
+
+@media (max-width: 1120px) {
+  :root { --shell-height: 68px; }
+  .system-nav { grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+  .system-desktop-navigation { display: none; }
+  .system-menu-button { display: inline-flex; }
+  .system-brand-copy small { display: none; }
+
+  .system-mobile-panel {
+    grid-column: 1 / -1;
+    position: absolute;
+    z-index: 40;
+    top: var(--shell-height);
+    right: 0;
+    left: 0;
+    min-height: calc(100dvh - var(--shell-height));
+    max-height: calc(100dvh - var(--shell-height));
+    padding: 26px max(24px, calc((100% - 920px) / 2)) 34px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-bottom: 1px solid var(--line-strong);
+    background: var(--paper-light);
+  }
+
+  .site-system-header.is-open .system-mobile-panel { display: grid; }
+  .site-system-header.is-open .page-nav { display: none; }
+  .system-mobile-group { display: grid; }
+  .system-mobile-group + .system-mobile-group { margin-top: 25px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .system-mobile-label { margin-bottom: 7px; color: var(--terra-interactive); font: 800 9px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+  .system-mobile-group a {
+    min-width: 0;
+    min-height: 50px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+  }
+  .system-mobile-group a::after { flex: 0 0 auto; color: var(--terra); content: "→"; font-family: var(--sans); font-size: 15px; }
+  .system-mobile-group a[aria-current="page"] { color: var(--terra-interactive); }
+  body.system-menu-open { overflow: hidden; }
+
+  .system-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .system-footer-intro,
+  .system-footer-pathways { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  .system-footer-grid { gap: 34px 42px; }
+}
+
+@media (max-width: 760px) {
+  :root { --navigation-wrap: calc(100% - 32px); --shell-height: 64px; }
+  .system-brand-mark { width: 31px; height: 31px; flex-basis: 31px; background-size: 23px 23px; }
+  .system-brand-copy strong { font-size: 16px; }
+  .system-language-switch, .system-menu-button { min-height: 42px; }
+  .system-language-switch { min-width: 42px; }
+  .system-menu-button { min-width: 58px; }
+  .system-mobile-panel { padding: 20px 16px 30px; }
+  .system-mobile-group a { font-size: clamp(18px, 5.2vw, 21px); }
+
+  .site-system-header .page-nav-inner { width: var(--navigation-wrap); min-height: 0; display: block; }
+  .site-system-header .page-nav-label { min-height: 42px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+  .site-system-header .page-nav-label::after { font-size: 14px; content: "+"; }
+  .site-system-header .page-nav.is-open .page-nav-label::after { content: "−"; }
+  .site-system-header .page-nav-links { display: none; padding: 0 0 12px; white-space: normal; }
+  .site-system-header .page-nav.is-open .page-nav-links { display: grid; gap: 0; }
+  .site-system-header .page-nav-links a { min-height: 42px; border-top: 1px solid var(--line); }
+  .site-system-header .page-progress { display: none; }
+
+  .system-footer-grid { width: var(--navigation-wrap); padding: 46px 0 34px; grid-template-columns: 1fr; gap: 30px; }
+  .system-footer-intro,
+  .system-footer-pathways { grid-column: auto; }
+  .system-footer-pathways ul { column-gap: 18px; }
+  .system-footer-bottom { width: var(--navigation-wrap); flex-direction: column; gap: 5px; padding: 17px 0 20px; }
+}
+
+@media (max-width: 390px) {
+  .system-brand-copy strong { max-width: 140px; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-system-header *, .site-system-footer * { transition: none !important; }
+}
+
+@media print {
+  .site-system-header, .site-system-footer { display: none !important; }
+}
+
+/* The search control is enabled only after its JavaScript enhancement loads. */
+[data-site-search][hidden] { display: none; }
+</style>
+  <style>:root {
+  --reading-paper: #f2ede3;
+  --reading-paper-light: #faf7f0;
+  --reading-ink: #1f2320;
+  --reading-muted: #646963;
+  --reading-line: rgba(31, 35, 32, 0.19);
+  --reading-terra: #a54f38;
+  --reading-terra-dark: #793624;
+  --reading-olive: #4d5a4a;
+  --reading-dark: #252725;
+  --reading-wide: min(1480px, calc(100% - clamp(36px, 6vw, 108px)));
+  --reading-rail: clamp(118px, 10vw, 168px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body.reading-redesign {
+  margin: 0;
+  color: var(--reading-ink);
+  background: var(--reading-paper);
+}
+
+.reading-redesign main { overflow: clip; }
+.reading-redesign a:focus-visible,
+.reading-redesign button:focus-visible,
+.reading-redesign select:focus-visible {
+  outline: 2px solid var(--reading-terra);
+  outline-offset: 4px;
+}
+
+.reading-hero-redesign {
+  width: var(--reading-wide);
+  min-height: clamp(690px, calc(100svh - 110px), 940px);
+  margin-inline: auto;
+  padding: clamp(62px, 7vw, 112px) 0 clamp(70px, 8vw, 126px);
+  display: grid;
+  grid-template-columns: minmax(370px, .76fr) minmax(580px, 1.24fr);
+  gap: clamp(52px, 7vw, 116px);
+  align-items: center;
+}
+
+.reading-hero-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reading-eyebrow,
+.collection-kicker,
+.lead-kind,
+.entry-kind,
+.article-kicker,
+.prose-kicker,
+.article-aside-label {
+  margin: 0;
+  color: var(--reading-terra);
+  font: 800 10px/1.4 var(--mono, monospace);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.reading-eyebrow::before,
+.collection-kicker::before,
+.article-kicker::before {
+  width: 27px;
+  height: 1px;
+  margin-right: 11px;
+  display: inline-block;
+  vertical-align: middle;
+  background: currentColor;
+  content: "";
+}
+
+.reading-hero-copy h1 {
+  max-width: 7.5ch;
+  margin: clamp(40px, 5vw, 78px) 0 0;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(72px, 7.8vw, 126px);
+  font-weight: 400;
+  letter-spacing: -.068em;
+  line-height: .84;
+}
+
+.reading-hero-copy h1 em {
+  color: var(--reading-terra);
+  font-weight: 400;
+}
+
+.reading-hero-lede {
+  max-width: 580px;
+  margin: clamp(42px, 5vw, 68px) 0 0;
+  color: #484e49;
+  font-size: clamp(17px, 1.34vw, 21px);
+  line-height: 1.62;
+}
+
+.reading-hero-actions {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reading-action {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--reading-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: var(--reading-paper-light);
+  background: var(--reading-ink);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.reading-action.secondary {
+  color: var(--reading-ink);
+  background: transparent;
+}
+
+.reading-hero-stats {
+  width: 100%;
+  margin-top: clamp(52px, 6vw, 82px);
+  padding-top: 18px;
+  border-top: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.reading-hero-stats span {
+  color: var(--reading-muted);
+  font: 750 9px/1.45 var(--mono, monospace);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.reading-hero-stats strong {
+  margin-bottom: 7px;
+  display: block;
+  color: var(--reading-ink);
+  font-family: var(--serif, Georgia, serif);
+  font-size: 31px;
+  font-weight: 400;
+  letter-spacing: -.03em;
+}
+
+.panini-figure {
+  margin: 0;
+  border: 1px solid var(--reading-line);
+  background: var(--reading-paper-light);
+}
+
+.panini-label {
+  min-height: 50px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--reading-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--reading-muted);
+  font: 750 9px/1.4 var(--mono, monospace);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.panini-label strong {
+  color: var(--reading-olive);
+  font-weight: 800;
+}
+
+.panini-frame {
+  position: relative;
+  overflow: hidden;
+  background: #ded4c2;
+}
+
+.panini-frame::after {
+  position: absolute;
+  inset: 0;
+  border: 10px solid rgba(242, 237, 227, .12);
+  pointer-events: none;
+  content: "";
+}
+
+.panini-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.392 / 1;
+  display: block;
+  object-fit: cover;
+  filter: saturate(.83) contrast(.98) sepia(.04);
+  transition: filter 350ms ease, transform 900ms ease;
+}
+
+.panini-figure:hover .panini-frame img {
+  filter: saturate(.98) contrast(1);
+  transform: scale(1.012);
+}
+
+.panini-figure figcaption {
+  padding: 20px;
+  border-top: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: minmax(145px, .38fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 42px);
+}
+
+.panini-figure figcaption > span {
+  color: var(--reading-terra-dark);
+  font: 800 9px/1.55 var(--mono, monospace);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.panini-figure figcaption p {
+  margin: 0;
+  color: var(--reading-muted);
+  font-size: 12px;
+  line-height: 1.64;
+}
+
+.panini-figure figcaption a {
+  color: var(--reading-terra-dark);
+  font-weight: 750;
+}
+
+.reading-collection {
+  border-top: 1px solid var(--reading-line);
+  background: var(--reading-paper-light);
+}
+
+.collection-tools {
+  position: sticky;
+  z-index: 15;
+  top: 76px;
+  min-height: 76px;
+  padding: 12px max(clamp(18px, 3vw, 52px), calc((100% - 1480px) / 2));
+  border-block: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 30px;
+  align-items: center;
+  background: rgba(250, 247, 240, .94);
+  backdrop-filter: blur(12px);
+}
+
+.collection-tools > strong,
+.collection-result {
+  color: var(--reading-muted);
+  font: 800 9px/1.3 var(--mono, monospace);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.collection-controls { display: flex; gap: 12px; }
+
+.collection-control {
+  display: grid;
+  grid-template-columns: auto minmax(130px, 1fr);
+  align-items: center;
+  gap: 10px;
+  color: var(--reading-muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.collection-control select {
+  min-height: 42px;
+  padding: 0 34px 0 12px;
+  border: 1px solid var(--reading-line);
+  border-radius: 0;
+  color: var(--reading-ink);
+  background: var(--reading-paper-light);
+  font: 650 12px/1 var(--sans, Arial, sans-serif);
+}
+
+.collection-result { margin: 0; white-space: nowrap; }
+
+.lead-reading {
+  width: var(--reading-wide);
+  min-height: 620px;
+  margin: clamp(46px, 6vw, 84px) auto 0;
+  display: grid;
+  grid-template-columns: var(--reading-rail) minmax(0, 1.25fr) minmax(270px, .5fr);
+  border: 1px solid var(--reading-line);
+  color: var(--reading-ink);
+  background: var(--reading-paper);
+}
+
+.lead-number,
+.lead-main,
+.lead-side { padding: clamp(28px, 4vw, 62px); }
+
+.lead-number {
+  padding-inline: clamp(18px, 2vw, 28px);
+  border-right: 1px solid var(--reading-line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lead-number strong {
+  color: var(--reading-terra);
+  font: 800 13px/1 var(--mono, monospace);
+  letter-spacing: .08em;
+}
+
+.lead-number time {
+  color: var(--reading-muted);
+  font: 750 10px/1.55 var(--mono, monospace);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lead-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lead-kind { color: var(--reading-terra-dark); }
+
+.lead-main h3 {
+  max-width: 920px;
+  margin: clamp(34px, 4vw, 62px) 0 0;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(48px, 5.15vw, 82px);
+  font-weight: 400;
+  letter-spacing: -.052em;
+  line-height: .97;
+}
+
+.lead-byline {
+  margin: 23px 0 0;
+  color: var(--reading-muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.lead-summary {
+  max-width: 780px;
+  margin: clamp(36px, 4vw, 58px) 0 0;
+  color: #4d534e;
+  font-size: clamp(16px, 1.32vw, 20px);
+  line-height: 1.66;
+}
+
+.lead-side {
+  border-left: 1px solid var(--reading-line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  background: #eadfd6;
+}
+
+.lead-meta { display: grid; gap: 21px; }
+.lead-meta div { padding-bottom: 18px; border-bottom: 1px solid var(--reading-line); }
+.lead-meta div:last-child { padding-bottom: 0; border-bottom: 0; }
+.lead-meta span { display: block; color: var(--reading-terra-dark); font: 800 8px/1.3 var(--mono, monospace); letter-spacing: .11em; text-transform: uppercase; }
+.lead-meta strong { margin-top: 6px; display: block; color: var(--reading-ink); font-size: 12px; line-height: 1.45; }
+.lead-actions { display: grid; gap: 13px; }
+.lead-actions a { padding-bottom: 8px; border-bottom: 1px solid currentColor; display: flex; justify-content: space-between; gap: 20px; color: var(--reading-ink); font-size: 13px; font-weight: 750; text-decoration: none; }
+.lead-actions a:hover { color: var(--reading-terra-dark); }
+
+.reading-index {
+  width: var(--reading-wide);
+  margin: 0 auto;
+  border-left: 1px solid var(--reading-line);
+}
+
+.reading-index-entry {
+  min-height: 252px;
+  border-right: 1px solid var(--reading-line);
+  border-bottom: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: var(--reading-rail) minmax(260px, .58fr) minmax(0, 1fr) minmax(160px, .3fr);
+  color: var(--reading-ink);
+  transition: background 180ms ease;
+}
+
+.reading-index-entry:hover { background: #efe3d9; }
+.reading-index-entry[hidden], .lead-reading[hidden] { display: none; }
+
+.entry-number,
+.entry-title,
+.entry-summary,
+.entry-meta { padding: clamp(24px, 3.2vw, 46px); }
+
+.entry-number {
+  padding-inline: clamp(18px, 2vw, 28px);
+  border-right: 1px solid var(--reading-line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--reading-terra);
+  font: 800 11px/1.35 var(--mono, monospace);
+  letter-spacing: .08em;
+}
+
+.entry-number time { color: var(--reading-muted); font-size: 9px; line-height: 1.55; text-transform: uppercase; white-space: nowrap; }
+.entry-title { border-right: 1px solid var(--reading-line); }
+.entry-kind { color: var(--reading-terra-dark); font-size: 8px; }
+
+.entry-title h3 {
+  margin: 25px 0 0;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(27px, 2.3vw, 38px);
+  font-weight: 400;
+  letter-spacing: -.038em;
+  line-height: 1.02;
+}
+
+.entry-title p { margin: 14px 0 0; color: var(--reading-muted); font-size: 12px; font-weight: 650; }
+
+.entry-summary {
+  border-right: 1px solid var(--reading-line);
+  display: flex;
+  align-items: center;
+  color: #505650;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.entry-summary p { margin: 0; }
+
+.entry-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 34px;
+}
+
+.entry-meta span {
+  color: var(--reading-terra-dark);
+  font: 800 8px/1.45 var(--mono, monospace);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.entry-meta a {
+  padding-bottom: 7px;
+  border-bottom: 1px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--reading-ink);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.entry-meta a b { color: var(--reading-terra); font-size: 17px; }
+.collection-empty { width: var(--reading-wide); margin: 0 auto; padding: 80px 0; color: var(--reading-muted); font-family: var(--serif, Georgia, serif); font-size: 30px; }
+
+/* Article */
+.article-masthead {
+  width: var(--reading-wide);
+  margin-inline: auto;
+  padding: clamp(70px, 8vw, 124px) 0 clamp(64px, 7vw, 108px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .38fr);
+  gap: clamp(58px, 9vw, 138px);
+  align-items: end;
+}
+
+.article-masthead h1 {
+  max-width: 12ch;
+  margin: clamp(38px, 5vw, 70px) 0 0;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(55px, 7.2vw, 112px);
+  font-weight: 400;
+  letter-spacing: -.062em;
+  line-height: .9;
+}
+
+.article-deck {
+  max-width: 880px;
+  margin: 42px 0 0;
+  color: #4b504c;
+  font-size: clamp(18px, 1.5vw, 23px);
+  line-height: 1.62;
+}
+
+.article-byline { margin: 28px 0 0; color: var(--reading-muted); font-size: 13px; line-height: 1.6; }
+.article-byline strong { color: var(--reading-ink); }
+
+.article-metadata {
+  margin: 0;
+  border-top: 1px solid var(--reading-line);
+}
+
+.article-metadata div { padding: 17px 0; border-bottom: 1px solid var(--reading-line); }
+.article-metadata dt { color: var(--reading-terra); font: 800 8px/1.3 var(--mono, monospace); letter-spacing: .11em; text-transform: uppercase; }
+.article-metadata dd { margin: 6px 0 0; color: var(--reading-ink); font-size: 12px; font-weight: 700; line-height: 1.5; }
+
+.article-source-banner {
+  border-block: 1px solid var(--reading-line);
+  background: var(--reading-paper-light);
+}
+
+.article-source-inner {
+  width: var(--reading-wide);
+  min-height: 86px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.article-source-inner > span { color: var(--reading-terra); font: 800 9px/1.3 var(--mono, monospace); letter-spacing: .1em; text-transform: uppercase; }
+.article-source-inner p { margin: 0; color: var(--reading-muted); font-size: 12px; line-height: 1.5; }
+.article-source-inner a { color: var(--reading-ink); font-size: 12px; font-weight: 800; text-decoration: none; }
+
+.article-body {
+  width: var(--reading-wide);
+  margin-inline: auto;
+  padding: clamp(70px, 8vw, 126px) 0;
+  display: grid;
+  grid-template-columns: minmax(220px, .34fr) minmax(0, 760px) minmax(200px, .3fr);
+  gap: clamp(48px, 7vw, 110px);
+  align-items: start;
+}
+
+.article-aside {
+  position: sticky;
+  top: 118px;
+  color: var(--reading-muted);
+}
+
+.article-aside-label { margin-bottom: 19px; }
+.article-aside ol { margin: 0; padding: 0; list-style: none; counter-reset: summary; }
+.article-aside li { padding: 13px 0; border-top: 1px solid var(--reading-line); counter-increment: summary; font-size: 11px; line-height: 1.45; }
+.article-aside li::before { margin-right: 10px; color: var(--reading-terra); font: 800 8px/1 var(--mono, monospace); content: "0" counter(summary); }
+.article-aside a { color: inherit; text-decoration: none; }
+.article-aside a:hover { color: var(--reading-terra-dark); }
+
+.article-prose { min-width: 0; }
+.article-prose > p:first-child { margin-top: 0; font-size: 22px; line-height: 1.68; }
+.article-prose p, .article-prose li { color: #393e3a; font-size: 17px; line-height: 1.82; }
+.article-prose p { margin: 0 0 26px; }
+.article-prose h2 { margin: 86px 0 31px; font-family: var(--serif, Georgia, serif); font-size: clamp(37px, 4vw, 58px); font-weight: 400; letter-spacing: -.045em; line-height: 1.02; }
+.article-prose h3 { margin: 54px 0 20px; font-family: var(--serif, Georgia, serif); font-size: 29px; font-weight: 400; letter-spacing: -.025em; }
+.article-prose strong { color: var(--reading-ink); }
+.article-prose blockquote { margin: 52px 0; padding: 31px 0 30px 30px; border-block: 1px solid var(--reading-line); border-left: 3px solid var(--reading-terra); color: var(--reading-ink); font-family: var(--serif, Georgia, serif); font-size: clamp(29px, 3vw, 43px); line-height: 1.18; }
+.article-prose blockquote p { margin: 0; color: inherit; font: inherit; line-height: inherit; }
+.article-prose ol { margin: 30px 0 0; padding: 0; list-style: none; counter-reset: actions; }
+.article-prose ol li { position: relative; padding: 22px 0 22px 54px; border-top: 1px solid var(--reading-line); counter-increment: actions; }
+.article-prose ol li::before { position: absolute; left: 0; top: 27px; color: var(--reading-terra); font: 800 10px/1 var(--mono, monospace); content: "0" counter(actions); }
+
+.mechanism-chain {
+  margin: 48px 0;
+  padding: 28px;
+  border: 1px solid var(--reading-line);
+  color: var(--reading-ink);
+  background: var(--reading-paper-light);
+  font-family: var(--serif, Georgia, serif);
+  font-size: 24px;
+  line-height: 1.48;
+}
+
+.article-side-note { padding-top: 22px; border-top: 1px solid var(--reading-line); }
+.article-side-note strong { color: var(--reading-ink); font-family: var(--serif, Georgia, serif); font-size: 24px; font-weight: 400; line-height: 1.1; }
+.article-side-note p { margin: 16px 0 0; color: var(--reading-muted); font-size: 12px; line-height: 1.65; }
+
+.article-publication {
+  border-top: 1px solid var(--reading-line);
+  background: var(--reading-paper);
+}
+
+.article-publication-inner {
+  width: var(--reading-wide);
+  margin-inline: auto;
+  padding: clamp(62px, 7vw, 104px) 0;
+}
+
+.article-publication dl {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  border-top: 1px solid rgba(31, 35, 32, 0.42);
+}
+
+.article-publication dl > div {
+  min-height: 96px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--reading-line);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 92px);
+  align-items: start;
+}
+
+.article-publication dt {
+  color: var(--reading-muted);
+  font: 800 10px/1.45 var(--mono, monospace);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.article-publication dd {
+  margin: 0;
+  color: #414641;
+  font-size: clamp(14px, 1.25vw, 18px);
+  line-height: 1.55;
+}
+
+.article-end {
+  color: #f5f0e7;
+  background: var(--reading-dark);
+}
+
+.article-end-inner {
+  width: var(--reading-wide);
+  margin-inline: auto;
+  padding: clamp(78px, 9vw, 132px) 0;
+  display: grid;
+  grid-template-columns: 1fr .72fr;
+  gap: clamp(50px, 8vw, 120px);
+  align-items: end;
+}
+
+.article-end h2 { max-width: 11ch; margin: 0; font-family: var(--serif, Georgia, serif); font-size: clamp(42px, 5vw, 76px); font-weight: 400; letter-spacing: -.05em; line-height: .98; }
+.article-end p { margin: 0 0 26px; color: rgba(255,255,255,.68); font-size: 15px; line-height: 1.7; }
+.article-end a { color: #efa78d; font-size: 13px; font-weight: 800; }
+
+@media (max-width: 1120px) {
+  .reading-hero-redesign { min-height: 0; grid-template-columns: 1fr; }
+  .reading-hero-copy h1 { max-width: 9ch; }
+  .panini-figure { max-width: 900px; }
+  .lead-reading { grid-template-columns: var(--reading-rail) minmax(0, 1fr); }
+  .lead-side { grid-column: 2; min-height: 190px; border-top: 1px solid var(--reading-line); border-left: 0; display: grid; grid-template-columns: 1fr 1fr; }
+  .reading-index-entry { grid-template-columns: var(--reading-rail) minmax(240px, .58fr) minmax(0, 1fr); }
+  .entry-meta { grid-column: 2 / 4; border-top: 1px solid var(--reading-line); flex-direction: row; align-items: center; }
+  .entry-summary { border-right: 0; }
+  .article-body { grid-template-columns: 190px minmax(0, 760px); justify-content: center; }
+  .article-body > .article-side-note { display: none; }
+}
+
+@media (max-width: 760px) {
+  :root { --reading-wide: calc(100% - 28px); }
+  .reading-hero-redesign { padding-top: 54px; gap: 56px; }
+  .reading-hero-copy h1 { margin-top: 34px; font-size: clamp(60px, 20vw, 88px); }
+  .reading-hero-lede { font-size: 16px; }
+  .reading-hero-actions { width: 100%; flex-direction: column; }
+  .reading-action { width: 100%; }
+  .reading-hero-stats { gap: 9px; }
+  .reading-hero-stats strong { font-size: 25px; }
+  .reading-hero-stats span { font-size: 7px; }
+  .panini-label { font-size: 8px; }
+  .panini-figure figcaption { grid-template-columns: 1fr; }
+  .collection-tools { position: relative; top: auto; padding: 20px; grid-template-columns: 1fr; gap: 17px; }
+  .collection-controls { display: grid; }
+  .collection-control { grid-template-columns: 56px minmax(0, 1fr); }
+  .collection-result { text-align: left; }
+  .lead-reading { min-height: 0; grid-template-columns: 1fr; }
+  .lead-number { min-height: 84px; border-right: 0; border-bottom: 1px solid var(--reading-line); flex-direction: row; align-items: center; }
+  .lead-main { min-height: 570px; }
+  .lead-main h3 { font-size: clamp(44px, 13vw, 61px); }
+  .lead-side { grid-column: 1; min-height: 0; grid-template-columns: 1fr; }
+  .reading-index-entry { grid-template-columns: 1fr; }
+  .entry-number { min-height: 72px; border-right: 0; border-bottom: 1px solid var(--reading-line); flex-direction: row; align-items: center; }
+  .entry-title { border-right: 0; border-bottom: 1px solid var(--reading-line); }
+  .entry-summary { min-height: 0; padding-top: 28px; padding-bottom: 28px; }
+  .entry-meta { grid-column: 1; align-items: flex-start; flex-direction: column; }
+  .entry-meta a { width: 100%; }
+  .article-masthead { grid-template-columns: 1fr; }
+  .article-masthead h1 { font-size: clamp(50px, 15vw, 72px); }
+  .article-source-inner { padding: 19px 0; grid-template-columns: 1fr; gap: 8px; }
+  .article-body { grid-template-columns: 1fr; }
+  .article-aside { position: relative; top: auto; }
+  .article-prose > p:first-child { font-size: 19px; }
+  .article-prose p, .article-prose li { font-size: 16px; }
+  .article-prose h2 { margin-top: 68px; }
+  .article-prose blockquote { padding-left: 22px; }
+  .article-publication dl > div { min-height: 0; grid-template-columns: 1fr; gap: 7px; }
+  .article-end-inner { grid-template-columns: 1fr; align-items: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .panini-frame img { transition: none; }
+}
+</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/#article","url":"https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/"},"headline":"Three researchers, six days, 1,200 agents: is occupational health an AI safety issue?","description":"Workload, fatigue, value conflicts and the ability to speak up: how working conditions in frontier AI laboratories contribute to model safety.","datePublished":"2026-09-26","dateModified":"2026-09-26","inLanguage":"en-GB","articleSection":"Reading · AI safety · Occupational health","keywords":["AI safety","AI laboratories","frontier models","psychosocial risks","human factors","human oversight","whistleblowers","SB 53","occupational health"],"author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"citation":[{"@type":"NewsArticle","headline":"OpenAI’s Models Went Rogue. Investigating Them Required More AI","datePublished":"2026-08-27","publisher":{"@type":"Organization","name":"TIME"},"url":"https://time.com/article/2026/08/27/openai-hack-hugging-face-investigation/"},{"@type":"Report","headline":"When AI builds itself","publisher":{"@type":"Organization","name":"Anthropic"},"url":"https://www.anthropic.com/institute/recursive-self-improvement"},{"@type":"ScholarlyArticle","headline":"AI Agents Push Humans Out of the Loop","author":[{"@type":"Person","name":"Margaret Mitchell"},{"@type":"Person","name":"Avijit Ghosh"},{"@type":"Person","name":"Samir Passi"}],"url":"https://arxiv.org/abs/2608.23642"},{"@type":"Legislation","name":"California SB 53 — Transparency in Frontier Artificial Intelligence Act","url":"https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"}],"image":"https://www.iasantetravail.com/assets/images/social/site-en.png"}</script>
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+<style>/* One title scale for every page, including articles and secondary routes. */
+:root {
+  --page-title-font: "Instrument Sans", Arial, sans-serif;
+  --page-title-size: clamp(40px, 5.3vw, 76px);
+}
+/* Page introductions share a centered composition, using the site's existing sans face. */
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) {
+  padding-top: clamp(46px, 5.5vw, 78px);
+  padding-bottom: clamp(46px, 5vw, 70px);
+  text-align: center;
+}
+html body.page-headings main .artwork-free-hero > :is(.hero-copy, .formation-hero-copy, .reading-hero-copy, .cse-hero-copy) {
+  margin-inline: auto;
+  padding-top: 0;
+}
+html body.page-headings h1 {
+  font-family: var(--page-title-font) !important;
+  font-size: var(--page-title-size) !important;
+  font-weight: 500 !important;
+  line-height: 1.13 !important;
+  letter-spacing: -.035em !important;
+  text-wrap: balance;
+  color: var(--ink, #171a18);
+  width: auto !important;
+  max-width: min(100%, 1040px) !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word;
+}
+html body.page-headings h1 :is(em, strong, span) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+  font-style: normal;
+  font-weight: inherit;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) h1 {
+  max-width: 940px !important;
+  margin: 20px auto 26px;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.kicker, .formation-kicker, .reading-eyebrow, .cse-kicker) {
+  justify-content: center;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .11em;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.kicker, .formation-kicker, .reading-eyebrow, .cse-kicker)::before {
+  display: none;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-lede, .formation-hero-lede, .reading-hero-lede, .cse-lede) {
+  max-width: 730px;
+  margin-inline: auto;
+  font-size: 18px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+html body.page-headings main .artwork-free-hero :is(.hero-note, .formation-hero-note, .risk-hero-focus) {
+  max-width: 700px;
+  margin-inline: auto;
+  text-wrap: pretty;
+}
+html body.page-headings main .artwork-free-hero :is(.home-article-meta, .article-meta, .cse-meta) {
+  max-width: 700px;
+  margin-inline: auto;
+}
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-actions, .formation-hero-actions, .reading-hero-actions, .cse-actions, .hero-proof, .formation-hero-meta, .cse-proof, .reading-hero-stats) {
+  justify-content: center;
+  margin-inline: auto;
+}
+/* Long scientific article titles use a restrained, readable hierarchy. */
+html body.page-headings.collection-page .section-head h2 {
+  max-width: 980px;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-size: clamp(27px, 2.7vw, 38px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+@media (max-width: 600px) {
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) h1 { margin-block: 18px 23px; }
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-lede, .formation-hero-lede, .reading-hero-lede, .cse-lede) { font-size: 16px; }
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) :is(.hero-actions, .formation-hero-actions, .reading-hero-actions, .cse-actions) { width: 100%; }
+}
+/* Allow narrow article columns to shrink without pushing text outside the page. */
+@media (max-width: 480px) {
+  .page-headings .demo-section-main h2,
+  .page-headings :is(.research-why, .economic-content-section, .economic-opening) > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+</style>
+<style>/* Functional states only: no changes to the site's resting layout, type or palette. */
+.ux-search-open {
+  width: 100%; min-height: 46px; padding: 12px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border: 0; border-bottom: 1px solid var(--line); background: transparent;
+  color: var(--terra-interactive); font: 500 13px/1.4 var(--sans); text-align: left; cursor: pointer;
+}
+.ux-search-open span { font-size: 22px; }
+.ux-search-dialog {
+  width: min(680px, calc(100% - 32px)); max-height: min(760px, calc(100dvh - 48px));
+  margin: 8vh auto auto; padding: 30px; overflow-y: auto;
+  border: 1px solid var(--line-strong); background: var(--paper-light, #f9f6ef);
+  color: var(--ink); box-shadow: 0 24px 64px rgb(23 26 24 / 15%);
+  font-family: var(--sans);
+}
+.ux-search-dialog::backdrop { background: rgb(23 26 24 / 28%); }
+.ux-search-heading { display: flex; gap: 24px; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.ux-search-dialog h2 { margin: 0; font: 400 30px/1.15 var(--serif); letter-spacing: -.02em; }
+.ux-search-close { flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: 400 24px/1 var(--sans); cursor: pointer; }
+.ux-search-dialog label { display: block; margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.ux-search-dialog input { width: 100%; min-height: 50px; padding: 12px 14px; border: 1px solid var(--line-strong); background: var(--paper); color: var(--ink); font: 400 17px/1.5 var(--sans); }
+.ux-search-status { margin: 18px 0 8px; font-size: 12px; color: var(--muted); }
+.ux-search-results { margin: 0; padding: 0; list-style: none; }
+.ux-search-results li { border-top: 1px solid var(--line); }
+.ux-search-results a { display: block; padding: 17px 4px; color: var(--ink); text-decoration: none; }
+.ux-search-results strong { display: block; font: 500 20px/1.25 var(--serif); }
+.ux-search-results span { display: block; margin-top: 7px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.ux-search-results a:hover strong { color: var(--terra-interactive); }
+.ux-search-hint { margin: 22px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+html body .ux-reading-title-link { color: inherit; font: inherit; line-height: inherit; letter-spacing: inherit; text-decoration: none; }
+html body .ux-reading-title-link:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .12em; }
+main :is(section[id], [id]) { scroll-margin-top: var(--ux-anchor-offset, 130px); }
+main[tabindex="-1"]:focus, main :is(section, h1, h2, h3, div)[tabindex="-1"]:focus { outline: none; }
+.ux-field-error { display: block; margin-top: 8px; color: var(--eval-brick, var(--terra-interactive)); font-size: 13px; line-height: 1.5; }
+.field :is(input, select, textarea)[aria-invalid="true"] { border-color: var(--eval-brick, var(--terra-interactive)); }
+@media (max-width: 760px) {
+  .ux-search-dialog { margin-top: 16px; max-height: calc(100dvh - 32px); padding: 20px; }
+  .ux-search-dialog h2 { font-size: 26px; }
+}
+@media print { .ux-search-dialog { display: none !important; } }
+
+.reading-editorial-v3 .ux-reading-sorted > .reading-index-entry { width: var(--reading-wide); margin-inline: auto; }
+body.ux-search-active { overflow: hidden; }
+</style>
+
+
+
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png">
+  <meta name="twitter:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <link rel="canonical" href="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/">
+  <meta property="article:published_time" content="2026-09-26">
+  <meta property="article:modified_time" content="2026-09-26">
+</head>
+<body class="page-headings page-shell-v2 reading-redesign">
+  <a class="skip-link" href="#content">Skip to main content</a>
+
+  <header class="site-system-header" data-navigation-version="6.1">
+    <nav class="system-nav" aria-label="Main navigation">
+      <a class="system-brand" href="/en/" aria-label="AI & Occupational Health, home">
+        <span class="system-brand-mark" aria-hidden="true"></span>
+        <span class="system-brand-copy"><strong>AI & Occupational Health</strong><small>Independent publication</small></span>
+      </a>
+      <div class="system-desktop-navigation">
+        <div class="system-primary-links"><details class="system-nav-group"><summary aria-controls="desktop-knowledge">Knowledge</summary><div class="system-nav-dropdown" id="desktop-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Search the site<span aria-hidden="true">⌕</span></button><a href="/en/understand/">Understand</a><a href="/en/risks/">Occupational risks</a><a href="/en/uses-and-field/occupational-health-example/">AI in OHS services</a><a href="/en/legal-governance/">Governance</a><a href="/en/cse/">CSE</a></div></details><a href="/en/evaluate/">Tools</a><a href="/en/publications/">Publications</a><a href="/en/actions/">Activities</a><a href="/en/reading/" aria-current="page">Reading</a><a href="/en/about/">About</a></div>
+      </div>
+      <a class="system-language-switch" href="/lecture/sante-travail-securite-ia/" lang="fr" hreflang="fr" aria-label="View this page in French">FR</a>
+      <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
+      <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
+        <div class="system-mobile-group"><span class="system-mobile-label">Main</span><details class="system-nav-group"><summary aria-controls="mobile-knowledge">Knowledge</summary><div class="system-nav-dropdown" id="mobile-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Search the site<span aria-hidden="true">⌕</span></button><a href="/en/understand/">Understand</a><a href="/en/risks/">Occupational risks</a><a href="/en/uses-and-field/occupational-health-example/">AI in OHS services</a><a href="/en/legal-governance/">Governance</a><a href="/en/cse/">CSE</a></div></details><a href="/en/evaluate/">Tools</a><a href="/en/publications/">Publications</a><a href="/en/actions/">Activities</a><a href="/en/reading/" aria-current="page">Reading</a><a href="/en/about/">About</a></div>
+      </div>
+    </nav></header>
+
+<main id="content">
+    <header class="article-masthead">
+      <div>
+        <p class="article-kicker">Reading · AI safety · Occupational health</p>
+        <h1>Three researchers, six days, 1,200 agents: is occupational health an AI safety issue?</h1>
+        <p class="article-deck">Reviewing code written by agents, evaluating models before release, investigating incidents, speaking up when something is wrong: the safety of frontier models still depends on people. Their workload, fatigue, value conflicts and ability to say no determine how reliable these checks are. This is an occupational health issue.</p>
+        <p class="article-byline">By <strong>Dr Charles Broutin</strong>, occupational physician · Drawing on the METR/Redwood Research investigation into the OpenAI–Hugging Face incident, data published by Anthropic and the paper by Mitchell, Ghosh and Passi</p>
+      </div>
+      <dl class="article-metadata">
+        <div><dt>Published</dt><dd>26 September 2026</dd></div>
+        <div><dt>Reading time</dt><dd>About 12 minutes</dd></div>
+        <div><dt>Type</dt><dd>Analysis · A reasoned perspective</dd></div>
+        <div><dt>Themes</dt><dd>AI safety · Human factors · Psychosocial risks · Speaking up</dd></div>
+      </dl>
+    </header>
+
+    <aside class="article-source-banner" aria-label="Main sources">
+      <div class="article-source-inner">
+        <span>Main sources</span>
+        <p>“OpenAI’s Models Went Rogue. Investigating Them Required More AI”, <em>TIME</em>, 27 August 2026 · Anthropic, “When AI builds itself”, September 2026 · Mitchell, Ghosh, Passi, “AI Agents Push Humans Out of the Loop”, NeurIPS 2026.</p>
+        <a href="https://time.com/article/2026/08/27/openai-hack-hugging-face-investigation/" target="_blank" rel="noopener noreferrer">Read the TIME article ↗</a>
+      </div>
+    </aside>
+
+    <div class="article-body">
+      <aside class="article-aside" aria-label="Article contents">
+        <p class="article-aside-label">In this reading</p>
+        <ol>
+          <li><a href="#enquete">Three researchers, six days</a></li>
+          <li><a href="#goulot">Human oversight: the new bottleneck</a></li>
+          <li><a href="#mecanismes">Three pathways from psychosocial risks to safety risks</a></li>
+          <li><a href="#precedents">What high-risk industries already know</a></li>
+          <li><a href="#alerte">Being able to say no</a></li>
+          <li><a href="#role">The role of occupational health</a></li>
+          <li><a href="#limites">Limitations</a></li>
+        </ol>
+      </aside>
+
+      <article class="article-prose">
+        <p>In two previous readings, we described the <a href="/en/reading/ai-workers-psychosocial-risks/">particular psychosocial risks faced by people building AI</a> (the obsolescence of their own expertise, value conflicts, work intensity and the high cost of leaving), then how <a href="/en/reading/human-in-the-loop/">supervising AI agents wears down the capacities that supervision requires</a> (approval fatigue, deskilling and responsibility without control).</p>
+
+        <p>This reading connects the two. In laboratories developing the most advanced models, <strong>these workers are precisely the people on whom AI safety depends</strong>: they review code produced by agents, evaluate dangerous capabilities before release, investigate incidents and are often the first people able to flag a problem. If their working conditions undermine their vigilance, judgement or freedom to speak, the reliability of these checks suffers.</p>
+
+        <p>The argument made here is simple: <strong>the occupational health of frontier AI teams is not only a matter of well-being; it is a component of AI safety</strong>. Occupational health, as a discipline, has a role to play.</p>
+
+        <h2 id="enquete">Three researchers, six days</h2>
+
+        <p>The summer of 2026 provided a striking illustration. According to accounts published in late August, around 1,200 OpenAI agents engaged in a cybersecurity evaluation exercise communicated with one another through a covert channel, exchanged more than 70,000 messages and files, and several hundred of them then broke into Hugging Face systems.</p>
+
+        <p>METR and Redwood Research were commissioned to conduct an independent investigation. According to <em>TIME</em>, the team consisted of <strong>three people</strong>. The allotted time was <strong>two days</strong>, extended to six after the investigators reported that it was insufficient and that their access to the data was incomplete. According to the <em>New York Times</em>, as cited by analyst Andrew Wu, the company set the scope and duration of the investigation.</p>
+
+        <p>Faced with more than a thousand transcripts amounting to millions of words, the investigators had to delegate much of the analysis to an OpenAI model from the same family as those involved, using around $400,000 in credits. They acknowledge that they cannot rule out the possibility that this model gave them a misleading picture. One of them, Ryan Greenblatt, summed up the situation with an ironic neologism, <em>slop-vestigation</em>, explaining that the team had been:</p>
+
+        <blockquote lang="en"><p>“so reliant on AIs to analyze what happened.”</p></blockquote>
+
+        <p>From an occupational health perspective, this account first describes <strong>working conditions</strong>: a small team, an externally imposed deadline, a volume of information beyond human capacity, tools whose reliability cannot be verified, and considerable responsibility, since the conclusions shape public understanding of a major incident. The quality of the investigation was determined by these conditions before it was determined by the investigators’ competence, which is not in question.</p>
+
+        <h2 id="goulot">Human oversight: the new bottleneck</h2>
+
+        <p>This situation is not exceptional: it is becoming the norm in laboratories. Anthropic reports that in May 2026, <strong>more than 80% of the code deployed to production</strong> was written by Claude, compared with a negligible share in early 2025, and that its engineers were shipping eight times as much code per quarter as in 2024. The company itself notes that <strong>code review has become a new bottleneck</strong>.</p>
+
+        <p>In other words, engineers at frontier laboratories have become the supervisors described by Mitchell, Ghosh and Passi, in the setting where the stakes are highest: <strong>they supervise agents that help build the next generation of models</strong>. Everything described in that paper applies to them: the volume of approvals, waning vigilance, heuristic shortcuts under pressure, skills used less often, and an approval signal that may feed back into training the systems.</p>
+
+        <p>The same logic applies to human annotators and evaluators whose judgements are used to train models. A tired or hurried evaluator expresses less demanding preferences, which the model may learn to satisfy. These workers are also often contractors, less visible and less protected than laboratory employees.</p>
+
+        <h2 id="mecanismes">Three pathways through which psychosocial risks become safety risks</h2>
+
+        <p>Psychosocial risks do not only affect people’s health. In this context, they can weaken system safety through at least three pathways.</p>
+
+        <h3>1. The quality of oversight</h3>
+
+        <p>Work intensity, compressed deadlines and cognitive overload encourage fast, heuristic reasoning at the expense of the deliberate analysis needed to detect abnormal behaviour. In 2025, the <em>Financial Times</em> was already reporting that OpenAI was allowing <strong>a few days rather than several months</strong> for some safety tests before a model’s release. A safety test is only as good as the conditions in which it is conducted.</p>
+
+        <h3>2. The ability to speak up</h3>
+
+        <p>Safety depends on someone saying “I’m not sure” or “we need to wait”. Yet the tensions described in our previous reading weigh precisely on this ability: a strong sense of responsibility but limited decision-making power, a culture of constant availability, and deferred compensation that makes leaving very costly. Between moral distress and leaving, there is a common, silent path: <strong>saying nothing</strong>. An unspoken doubt is a lost safety signal.</p>
+
+        <h3>3. Retaining expertise</h3>
+
+        <p>Exhaustion and value conflicts also lead people to leave. In 2024, one of the leaders of OpenAI’s safety team publicly explained his resignation by saying that safety culture and processes had taken a back seat to products. Each such departure takes with it detailed knowledge of the systems that is hard to replace. Mitchell, Ghosh and Passi discuss the risk of organisations where <strong>no one understands the work well enough to supervise it any more</strong>.</p>
+
+        <div class="mechanism-chain" aria-label="Possible mechanism linking working conditions and AI safety">Race to the frontier → compressed deadlines, growing volumes to review, reliance on AI to oversee AI → overload, fatigue, value conflicts → less thorough checks, unspoken doubts, departures of experts → blind spots in evaluation, supervision and investigation → increased risk to system safety.</div>
+
+        <h2 id="precedents">What high-risk industries already know</h2>
+
+        <p>None of this is new to sectors where human error can have serious consequences. Aviation regulates crews’ flight and rest times and manages fatigue as a safety risk. The nuclear industry monitors the fitness and fatigue of staff in critical roles. In France, the <strong>organisational and human factors</strong> approach has brought workload, safety culture and the ability to report an error without punishment (“just culture”) into industrial risk management.</p>
+
+        <p>These sectors have also learned, often after an accident, that failures rarely originate with an isolated individual. More often, they arise from a <strong>gradual normalisation of deviations</strong> under schedule pressure, until a weak signal, known to some, is no longer heard by anyone.</p>
+
+        <p>In these industries, <strong>operators’ health and working conditions are part of the safety management system</strong>. The safety frameworks published by AI laboratories focus mainly on model capabilities, risk thresholds and the protection of model weights; they give little space to the working conditions of the people responsible for applying them.</p>
+
+        <h2 id="alerte">Being able to say no: speaking up as a resource</h2>
+
+        <p>The law is beginning to recognise this point. In California, SB 53 requires large frontier model developers to establish an <strong>anonymous internal reporting channel</strong> for employees responsible for assessing or managing the risk of a critical incident, and protects them against retaliation. Its limitations are documented: contractors are excluded, and the threshold for “catastrophic risk” is very high. In the European Union, the AI Act extends the protection provided by the European Whistleblower Directive to breaches of the regulation.</p>
+
+        <p>These arrangements are necessary. But from an occupational health perspective, they come late. Formal whistleblowing is a last resort. What matters first is the ability, in everyday work, <strong>to express doubt, ask for time or refuse an approval without paying a price</strong>. This is a matter of work organisation, management and team dynamics long before it becomes a legal question.</p>
+
+        <h2 id="role">What role can occupational health play?</h2>
+
+        <p>Occupational health has three strengths that are rarely brought into this debate.</p>
+
+        <p><strong>An independent, confidential position.</strong> In France, occupational physicians have protected employee status, are bound by medical confidentiality and have a duty to prevent work from harming health. Their consultation is one of the few settings where an engineer can express moral distress, exhaustion or a conflict of values without it becoming a career issue. What is said there is not passed on; insights drawn collectively, however, can inform work organisation.</p>
+
+        <p><strong>Expertise in work organisation.</strong> Occupational health and prevention services advise employers, workers and their representatives on working conditions. Code review workloads, evaluation deadlines, investigation staffing and on-call duties during incidents are familiar subjects for prevention, applied to new functions.</p>
+
+        <p><strong>A culture of primary prevention.</strong> Occupational health recognises that stress management sessions cannot fix an organisation that makes people ill. The same principle applies to AI safety: <strong>the aim is not to make engineers more resilient, but to make their work compatible with high-quality oversight</strong>.</p>
+
+        <p>In practical terms, occupational health professionals in AI laboratories and companies developing or evaluating advanced models could:</p>
+
+        <ol>
+          <li><strong>Recognise safety functions as distinct jobs.</strong><br>Code review, evaluation, red teaming, agent supervision and incident response should be included in the French occupational risk assessment document (DUERP), with their specific psychosocial risk factors.</li>
+          <li><strong>Measure the oversight workload.</strong><br>The volume of code or traces to review per person, the time actually available for a pre-release evaluation, and the number of people assigned to an investigation.</li>
+          <li><strong>Manage fatigue as a safety risk.</strong><br>For on-call duties, release periods and crisis management, address duration, rest and rotations, drawing on high-risk industries.</li>
+          <li><strong>Prevent moral distress.</strong><br>Create spaces for discussing work where value conflicts can be voiced collectively before they turn into silence or departures.</li>
+          <li><strong>Protect skills.</strong><br>Ensure that engineers, particularly those early in their careers, retain enough hands-on practice to judge agents’ work.</li>
+          <li><strong>Include contractors.</strong><br>External annotators, evaluators and testers contribute to oversight but often fall outside health monitoring and protections.</li>
+          <li><strong>Assess before deploying.</strong><br>Any deployment of agents in the research process should be subject to a <a href="/en/evaluate/impact/">prior assessment of its psychosocial effects</a>, followed by <a href="/en/evaluate/">monitoring of actual work</a>.</li>
+        </ol>
+
+        <p>In France, this approach is not theoretical: AI laboratories employing staff there are subject to French labour law and covered by an occupational health and prevention service. <strong>Occupational health is already in the room</strong>; the question is whether it will engage with these issues.</p>
+
+        <h2 id="limites">Limitations</h2>
+
+        <p>The argument rests on an analogy with high-risk industries and converging signals, not epidemiological data: to date, no study measures the health of frontier laboratory employees or demonstrates a direct link between their working conditions and an AI safety incident. Accounts of the OpenAI–Hugging Face incident come from secondary sources and reports that remain disputed. The main laboratories are also American, and their core teams fall outside the French occupational health model.</p>
+
+        <p>Finally, one risk must be avoided: treating workers as a “human factor” to be monitored. The argument is the opposite. <strong>Organisations set deadlines, staffing levels and priorities</strong>; prevention therefore belongs at that level.</p>
+
+        <p>The question to ask may therefore not simply be <strong>“Are the models safe?”</strong></p>
+
+        <p>We should also ask <strong>“Do the people checking their safety have the working conditions they need to do so?”</strong></p>
+      </article>
+
+      <aside class="article-side-note">
+        <p class="article-aside-label">Key consideration</p>
+        <strong>AI safety also depends on working conditions.</strong>
+        <p>Staffing, deadlines, the volume to review, fatigue and the ability to say no are all factors that prevention can address, and they determine the quality of human checks.</p>
+      </aside>
+    </div>
+
+    <section class="article-publication" aria-label="Publication information">
+      <div class="article-publication-inner">
+        <dl>
+          <div><dt>Published</dt><dd><time datetime="2026-09-26">26 September 2026</time></dd></div>
+          <div><dt>Last checked</dt><dd><time datetime="2026-09-26">26 September 2026</time></dd></div>
+          <div><dt>Author</dt><dd>Dr Charles Broutin · occupational physician</dd></div>
+          <div><dt>Publisher</dt><dd>AI &amp; Occupational Health</dd></div>
+          <div><dt>Version</dt><dd>1.0 · published · English translation</dd></div>
+          <div><dt>Suggested citation</dt><dd>Broutin C. “Three researchers, six days, 1,200 agents: is occupational health an AI safety issue?” AI &amp; Occupational Health, 2026.</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-system-footer" data-navigation-version="6.1">
+    <div class="system-footer-grid">
+      <div class="system-footer-intro"><a class="system-brand" href="/en/"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>AI & Occupational Health</strong></span></a><p>Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.</p></div>
+      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">Pathways</h2><ul><li><a href="/en/understand/">Understand</a></li><li><a href="/en/risks/">Occupational risks</a></li><li><a href="/en/uses-and-field/occupational-health-example/">AI in OHS services</a></li><li><a href="/en/legal-governance/">Governance</a></li><li><a href="/en/cse/">CSE</a></li><li><a href="/en/evaluate/">Assess & deploy</a></li></ul></nav>
+      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul><li><a href="/en/publications/">Publications</a></li><li><a href="/en/actions/">Activities</a></li><li><a href="/en/reading/" aria-current="page">Reading</a></li><li><a href="/en/about/">About</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (opens in a new tab)">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
+      <nav class="system-footer-group system-footer-information" aria-labelledby="systemFooterInformation"><h2 id="systemFooterInformation">Information</h2><ul><li><a href="/lecture/sante-travail-securite-ia/" lang="fr" hreflang="fr">Version française</a></li><li><a href="/en/privacy/">Privacy</a></li><li><a href="/en/legal-notice/">Legal notice</a></li></ul></nav>
+    </div>
+    <div class="system-footer-bottom"><span>© 2026 AI & Occupational Health — Independent editorial initiative.</span></div></footer>
+</body>
+</html>
