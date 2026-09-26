@@ -38,3 +38,5 @@ These pages distinguish the original journal article from its author-written web
 - https://www.iasantetravail.com/en/publications/ai-medical-recommendations/ — English summary of the INRS study on AI-assisted review of medical recommendations.
 - https://www.iasantetravail.com/publications/llm-risques-psychosociaux/ — Revue générale (août 2025) sur les LLM, les risques psychosociaux au travail et les pistes de prévention. DOI : 10.1016/j.admp.2025.102877.
 - https://www.iasantetravail.com/en/publications/llm-psychosocial-risks/ — English summary of the narrative review on LLMs and psychosocial risks at work.
+
+- https://www.iasantetravail.com/lecture/humain-dans-la-boucle/ — Analyse du Dr Charles Broutin sur la supervision des agents IA, la fatigue d’approbation, la déqualification et les risques psychosociaux. Publiée le 26 septembre 2026 à partir du position paper « AI Agents Push Humans Out of the Loop ».

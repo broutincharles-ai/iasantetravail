@@ -24,6 +24,7 @@ export const INDEXABLE_PAIRS = [
 ];
 
 export const INDEXABLE_SINGLETONS = [
+  { file: "lecture/humain-dans-la-boucle/index.html", lang: "fr", lastmod: "2026-09-26" },
   { file: "outils/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }

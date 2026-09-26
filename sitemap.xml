@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/lecture/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/"/>
@@ -325,5 +325,11 @@
     <lastmod>2026-09-25</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/claude-skills/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/claude-skills/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/lecture/humain-dans-la-boucle/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/humain-dans-la-boucle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/humain-dans-la-boucle/"/>
   </url>
 </urlset>
