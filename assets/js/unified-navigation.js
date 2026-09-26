@@ -16,6 +16,7 @@
     "/droit-gouvernance/": "/en/legal-governance/",
     "/cse/": "/en/cse/",
     "/lecture/": "/en/reading/",
+    "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
     "/lecture/ingenierie-code-ia/": "/en/reading/engineering-ai-code/",
     "/lecture/agents-ia-workaholisme/": "/en/reading/ai-agents-workaholism/",
     "/lecture/frontieres-metiers-ia/": "/en/reading/ai-occupational-boundaries/",

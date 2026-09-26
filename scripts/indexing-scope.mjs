@@ -7,7 +7,8 @@ export const INDEXABLE_PAIRS = [
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-09-21" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-09-21" },
   { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-09-21" },
-  { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-21" },
+  { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-26" },
+  { fr: "lecture/humain-dans-la-boucle/index.html", en: "en/reading/human-in-the-loop/index.html", lastmod: "2026-09-26" },
   { fr: "lecture/ingenierie-code-ia/index.html", en: "en/reading/engineering-ai-code/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/agents-ia-workaholisme/index.html", en: "en/reading/ai-agents-workaholism/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/frontieres-metiers-ia/index.html", en: "en/reading/ai-occupational-boundaries/index.html", lastmod: "2026-09-21" },
@@ -24,7 +25,6 @@ export const INDEXABLE_PAIRS = [
 ];
 
 export const INDEXABLE_SINGLETONS = [
-  { file: "lecture/humain-dans-la-boucle/index.html", lang: "fr", lastmod: "2026-09-26" },
   { file: "outils/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
