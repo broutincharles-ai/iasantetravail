@@ -23,7 +23,7 @@ for (const file of INDEXABLE_FILES) {
   if (!html.includes('/assets/css/navigation-nojs.css')) {
     html = html.replace('</head>', '<noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=1.0"></noscript>\n</head>');
   }
-  html = html.replace(/unified-navigation\.js\?v=[\d.]+/g, "unified-navigation.js?v=6.1");
+  html = html.replace(/unified-navigation\.js\?v=[\d.]+/g, "unified-navigation.js?v=6.2");
   await writeFile(file, html);
 }
 console.log(`Rendered static navigation on ${INDEXABLE_FILES.size} indexable pages.`);

@@ -75,6 +75,7 @@
 
   const activeKey = (() => {
     if (path.startsWith("/outils/preconisations/")) return "preconisations";
+    if (path.startsWith("/outils/claude-skills/")) return "claude-skills";
     if (path.startsWith("/outils/")) return "tools";
     if (/^\/(?:en\/)?publications\//.test(path)) return "publications";
     if (/^\/(?:en\/)?actions\//.test(path)) return "actions";
@@ -95,7 +96,7 @@
     { label: isEnglish ? "Knowledge" : "Connaissances", key: "knowledge", links: primary.filter(([, , key]) => ["understand", "risks", "spsti", "governance", "cse"].includes(key)) },
     isEnglish
       ? { link: ["Tools", "/en/evaluate/", "evaluate"] }
-      : { label: "Outils", key: "tools", links: [["Tous les outils", "/outils/", "tools"], ["Préconisations", "/outils/preconisations/", "preconisations"], ["Évaluer le déploiement", "/evaluer/", "evaluate"]] },
+      : { label: "Outils", key: "tools", links: [["Tous les outils", "/outils/", "tools"], ["Claude Skills", "/outils/claude-skills/", "claude-skills"], ["Préconisations", "/outils/preconisations/", "preconisations"], ["Évaluer le déploiement", "/evaluer/", "evaluate"]] },
     ...primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(link => ({ link }))
   ];
   const renderPrimary = surface => navigationGroups.map(group => {
