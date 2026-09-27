@@ -5,6 +5,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-09-21" },
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-09-21" },
+  { fr: "outils/fiches-prevention/index.html", en: "en/tools/prevention-fact-sheets/index.html", lastmod: "2026-09-27" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-09-21" },
   { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-26" },
@@ -27,7 +28,6 @@ export const INDEXABLE_PAIRS = [
 
 export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-09-27" },
-  { file: "outils/fiches-prevention/index.html", lang: "fr", lastmod: "2026-09-27" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];

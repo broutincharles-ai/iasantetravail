@@ -11,6 +11,7 @@
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
     "/risques-prevention/economique-social/": "/en/risks/economic-social/",
     "/evaluer/": "/en/evaluate/",
+    "/outils/fiches-prevention/": "/en/tools/prevention-fact-sheets/",
     "/evaluer/impact/": "/en/evaluate/impact/",
     "/evaluer/impact/suivi.html": "/en/evaluate/impact/follow-up.html",
     "/droit-gouvernance/": "/en/legal-governance/",
@@ -42,13 +43,10 @@
     "/en/uses-and-field/after-deployment/": "/evaluer/#apres"
   };
   const isResearchPath = /^\/(?:en\/)?research\//.test(path);
-  const existingEnglishContent = {
-    "/outils/fiches-prevention/": "/en/risks-prevention/"
-  };
   const researchTranslationUrl = isEnglish ? path.replace(/^\/en/, "") : `/en${path}`;
   const translationUrl = isResearchPath
     ? researchTranslationUrl
-    : isEnglish ? (reversePairs[path] || mergedFrenchDestinations[path] || "/") : (pairs[path] || existingEnglishContent[path] || "/en/");
+    : isEnglish ? (reversePairs[path] || mergedFrenchDestinations[path] || "/") : (pairs[path] || "/en/");
 
   const primary = isEnglish ? [
     ["Understand", "/en/understand/", "understand"],
@@ -57,6 +55,7 @@
     ["Governance", "/en/legal-governance/", "governance"],
     ["CSE", "/en/cse/", "cse"],
     ["Assess & deploy", "/en/evaluate/", "evaluate"],
+    ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/", "fiches-prevention"],
     ["Publications", "/en/publications/", "publications"],
     ["Activities", "/en/actions/", "actions"],
     ["Reading", "/en/reading/", "reading"],
@@ -80,7 +79,7 @@
   const activeKey = (() => {
     if (path.startsWith("/outils/preconisations/")) return "preconisations";
     if (path.startsWith("/outils/claude-skills/")) return "claude-skills";
-    if (path.startsWith("/outils/fiches-prevention/")) return "fiches-prevention";
+    if (/^\/(?:outils\/fiches-prevention|en\/tools\/prevention-fact-sheets)\//.test(path)) return "fiches-prevention";
     if (path.startsWith("/outils/")) return "tools";
     if (/^\/(?:en\/)?publications\//.test(path)) return "publications";
     if (/^\/(?:en\/)?actions\//.test(path)) return "actions";
@@ -100,7 +99,7 @@
   const navigationGroups = [
     { label: isEnglish ? "Knowledge" : "Connaissances", key: "knowledge", links: primary.filter(([, , key]) => ["understand", "risks", "spsti", "governance", "cse"].includes(key)) },
     isEnglish
-      ? { link: ["Tools", "/en/evaluate/", "evaluate"] }
+      ? { label: "Tools", key: "tools", links: [["Assess & deploy", "/en/evaluate/", "evaluate"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/", "fiches-prevention"]] }
       : { label: "Outils", key: "tools", links: [["Tous les outils", "/outils/", "tools"], ["Claude Skills", "/outils/claude-skills/", "claude-skills"], ["Préconisations", "/outils/preconisations/", "preconisations"], ["Évaluer le déploiement", "/evaluer/", "evaluate"], ["Fiches de prévention", "/outils/fiches-prevention/", "fiches-prevention"]] },
     ...primary.filter(([, , key]) => ["publications", "actions", "reading", "about"].includes(key)).map(link => ({ link }))
   ];

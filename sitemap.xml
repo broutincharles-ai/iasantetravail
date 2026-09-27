@@ -358,6 +358,14 @@
     <loc>https://www.iasantetravail.com/outils/fiches-prevention/</loc>
     <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/tools/prevention-fact-sheets/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/tools/prevention-fact-sheets/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/tools/prevention-fact-sheets/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
   </url>
 </urlset>
