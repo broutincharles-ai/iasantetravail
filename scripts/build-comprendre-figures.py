@@ -62,12 +62,15 @@ def a(s: str) -> str:
     return escape(s, quote=True)
 
 
+NUMS: dict[str, int] = {}
+
+
 def figure(fid: str, num: int, kind: str, title: str, body: str, note: str, extra: str = "", scroll: bool = False) -> str:
     body_html = (f'<div class="fig-scroll">{body}</div>'
                  '<p class="fig-swipe" aria-hidden="true">← Faites glisser pour voir tout le graphique →</p>') if scroll else body
     return (
         f'<figure class="fig" id="{fid}">\n'
-        f'        <div class="fig-head"><span>Figure {num} · {kind}</span><h3>{title}</h3></div>\n'
+        f'        <div class="fig-head"><span>Figure {NUMS.get(fid, num)} · {kind}</span><h3>{title}</h3></div>\n'
         f"        {body_html}\n"
         f"        <figcaption>{note}</figcaption>{extra}\n"
         f"      </figure>"
@@ -121,15 +124,16 @@ COMPUTE = [
     ("GPT-4", "2023-03", 2.1e25, True, (-10, 4, "end")),
     ("Llama 3.1 405B", "2024-07", 3.8e25, False, (0, 22, "middle")),
     ("GPT-4.5", "2025-02", 3.8e26, True, (-10, 4, "end")),
-    ("Grok 4", "2025-07", 5.0e26, True, (0, -13, "middle")),
+    ("Grok 4", "2025-07", 5.0e26, True, (10, 16, "start")),
+    ("GPT-6 Astra", "2026-09", 1.0e27, True, (-10, -8, "end")),
 ]
 
 
 def fig_compute() -> str:
     W, H = 740, 380
     L, R, T, B = 64, 712, 34, 330
-    x0, x1 = 2011.5, 2026.0
-    y0, y1 = 17, 27
+    x0, x1 = 2011.5, 2027.0
+    y0, y1 = 17, 28
 
     def X(t):
         return L + (t - x0) / (x1 - x0) * (R - L)
@@ -137,18 +141,18 @@ def fig_compute() -> str:
     def Y(v):
         return B - (math.log10(v) - y0) / (y1 - y0) * (B - T)
 
-    out = [f'<svg class="fig-svg" viewBox="0 0 {W} {H}" role="img" aria-label="Nuage de points, échelle logarithmique : le calcul d’entraînement passe de 4,7 × 10¹⁷ FLOP pour AlexNet en 2012 à environ 5 × 10²⁶ FLOP pour Grok 4 en 2025, soit environ un milliard de fois plus.">']
-    for e in range(y0, y1 + 1, 2):
+    out = [f'<svg class="fig-svg" viewBox="0 0 {W} {H}" role="img" aria-label="Nuage de points, échelle logarithmique : le calcul d’entraînement passe de 4,7 × 10¹⁷ FLOP pour AlexNet en 2012 à environ 10²⁷ FLOP pour GPT-6 Astra en 2026, soit plus de deux milliards de fois plus.">']
+    for e in range(y0, y1 + 1, 2):  # 17, 19, … 27
         y = Y(10 ** e)
         out.append(f'<line class="fx-grid" x1="{L}" x2="{R}" y1="{y:.1f}" y2="{y:.1f}"/>')
         out.append(f'<text class="fx-tick" x="{L - 8}" y="{y + 4:.1f}" text-anchor="end">10{str(e).translate(SUP)}</text>')
-    for yr in range(2012, 2027, 2):
+    for yr in range(2012, 2028, 2):
         out.append(f'<text class="fx-tick" x="{X(yr):.1f}" y="{B + 20}" text-anchor="middle">{yr}</text>')
     out.append(f'<line class="fx-axis" x1="{L}" x2="{R}" y1="{B}" y2="{B}"/>')
     out.append(f'<text class="fx-title" x="{L - 50}" y="16">FLOP d’entraînement · échelle logarithmique, chaque ligne = × 100</text>')
     # headline annotation
-    out.append(f'<text class="fx-note-strong" x="{L + 14}" y="{T + 22}">≈ 1 milliard de fois plus de calcul</text>')
-    out.append(f'<text class="fx-note" x="{L + 14}" y="{T + 40}">entre AlexNet (2012) et Grok 4 (2025)</text>')
+    out.append(f'<text class="fx-note-strong" x="{L + 14}" y="{T + 22}">× 2 milliards de calcul en 14 ans</text>')
+    out.append(f'<text class="fx-note" x="{L + 14}" y="{T + 40}">entre AlexNet (2012) et GPT-6 Astra (2026)</text>')
     for name, d, v, est, (dx, dy, anchor) in COMPUTE:
         x, y = X(decimal_year(d)), Y(v)
         tip = f"{name} · {month_label(d)} · {sci(v)} FLOP" + (" (estimation Epoch AI)" if est else "")
@@ -171,9 +175,11 @@ def fig_compute() -> str:
     table = ('\n        <details class="fig-data"><summary>Voir les données</summary><table><thead><tr><th>Modèle</th><th>Date</th>'
              f'<th>Calcul (FLOP)</th><th>Statut</th></tr></thead><tbody>{rows}</tbody></table></details>')
     note = ('Source : <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noreferrer">Epoch AI, base « AI Models »</a>, '
-            "consultée en septembre 2026. Les fournisseurs ne publient plus le calcul de leurs modèles phares : "
-            "les valeurs récentes sont des estimations. Un FLOP est une opération de calcul élémentaire.")
-    return figure("fig-calcul", 2, "Données", "Le calcul consacré à l’entraînement a été multiplié par un milliard en treize ans.", "".join(out), note, table, scroll=True)
+            "mise à jour le 26 septembre 2026. Les fournisseurs ne publient plus le calcul de leurs modèles phares : "
+            "les valeurs récentes sont des estimations (GPT-6 Astra : au moins 100 000 puces GB200 selon Epoch). "
+            "Aucune estimation n’est encore publiée pour Claude Opus 5.5, Fable 5.1 ou Gemini 3.x. "
+            "Un FLOP est une opération de calcul élémentaire.")
+    return figure("fig-calcul", 2, "Données", "Le calcul consacré à l’entraînement a été multiplié par plus de deux milliards en quatorze ans.", "".join(out), note, table, scroll=True)
 
 
 # ---------------------------------------------------------------------------
@@ -324,11 +330,17 @@ METR = [
     ("Claude Mythos Preview", "2026-04", 1044.78, 508.88, 3304.26, (-10, -8, "end")),
 ]
 
+# Measured by METR but not state of the art, shown in grey (blog post, not on the chart page)
+METR_OTHER = [
+    ("GPT-5.6 Sol", "2026-06", 678.0, 300.0, 2400.0, (10, 4, "start"),
+     "mesure très incertaine : triche fréquente détectée ; non retenu comme modèle de pointe"),
+]
+
 
 def fig_metr() -> str:
     W, H = 760, 400
     L, R, T, B = 64, 736, 30, 344
-    x0, x1 = 2018.8, 2026.6
+    x0, x1 = 2018.8, 2027.2
     ly0, ly1 = math.log10(0.01), math.log10(3000)
 
     def X(t):
@@ -368,19 +380,30 @@ def fig_metr() -> str:
         if lab:
             dx, dy, anchor = lab
             o.append(f'<text class="fx-label" x="{x + dx:.1f}" y="{y + dy:.1f}" text-anchor="{anchor}">{a(name)} · {duration(v)}</text>')
+    for name, d, v, lo, hi, (dx, dy, anchor), caveat in METR_OTHER:
+        x, y = X(decimal_year(d)), Y(v)
+        tip = f"{name} · {month_label(d)} · ≈ {duration(v)} (IC 95 % : {duration(lo)} – {duration(hi)}) · {caveat}"
+        o.append(f'<g class="fx-point" tabindex="0" data-tip="{a(tip)}"><circle class="fx-hit" cx="{x:.1f}" cy="{y:.1f}" r="11"/>'
+                 f'<circle class="fx-dot is-out" cx="{x:.1f}" cy="{y:.1f}" r="4.5"/></g>')
+        o.append(f'<text class="fx-note" x="{x + dx:.1f}" y="{y + dy:.1f}" text-anchor="{anchor}">{a(name)}</text>')
     o.append(f'<text class="fx-note-strong" x="{X(2019.2):.1f}" y="{Y(60) - 22:.1f}">Doublement tous les 7 mois environ</text>')
     o.append(f'<text class="fx-note" x="{X(2019.2):.1f}" y="{Y(60) - 5:.1f}">de 2019 à 2025, et tous les 3 mois environ depuis 2024</text>')
     o.append("</svg>")
     rows = "".join(
         f"<tr><td>{a(n)}</td><td>{month_label(d)}</td><td>{duration(v)}</td><td>{duration(lo)} – {duration(hi)}</td></tr>"
         for n, d, v, lo, hi, _ in METR
+    ) + "".join(
+        f"<tr><td>{a(n)} (hors modèles de pointe)</td><td>{month_label(d)}</td><td>≈ {duration(v)}</td><td>{duration(lo)} – {duration(hi)}</td></tr>"
+        for n, d, v, lo, hi, _, _c in METR_OTHER
     )
     table = ('\n        <details class="fig-data"><summary>Voir les données</summary><table><thead><tr><th>Modèle</th><th>Sortie</th>'
              f'<th>Horizon à 50 %</th><th>IC 95 %</th></tr></thead><tbody>{rows}</tbody></table></details>')
     note = ('Source : <a href="https://metr.org/time-horizons/" target="_blank" rel="noreferrer">METR, Time Horizon 1.1</a>, données de mai 2026 '
-            "(modèles de pointe à leur sortie ; survolez un point pour le détail). Lecture : GPT-5 réussit une fois sur deux des tâches "
-            "qui demandent environ 3 h 20 à un expert. Tâches surtout de programmation et de recherche logicielle ; les intervalles "
-            "de confiance sont larges.")
+            "(modèles de pointe à leur sortie), complétées par le rapport de METR sur GPT-5.6 Sol (juin 2026, point gris). "
+            "Lecture : GPT-5 réussit une fois sur deux des tâches qui demandent environ 3 h 20 à un expert. "
+            "Au 27 septembre 2026, METR n’a publié aucune mesure pour Claude Opus 5.5, Fable 5.1 ou GPT-6 Astra : "
+            "les modèles les plus avancés dépassent déjà ce que ses tâches permettent de mesurer. "
+            "Tâches surtout de programmation ; intervalles de confiance larges.")
     return figure("fig-horizon", 5, "Données", "Les tâches qu’un agent mène seul sont passées de quelques secondes à plusieurs heures.", "".join(o), note, table, scroll=True)
 
 
@@ -488,11 +511,198 @@ def fig_chc() -> str:
             + "".join(rows) + scale + "</div>")
     note = ('Source : <a href="https://www.agidefinition.ai/" target="_blank" rel="noreferrer">Hendrycks, Bengio et al., « A Definition of AGI », 2025</a>, '
             "tableau 1, fondé sur le modèle CHC des aptitudes cognitives humaines. Le stockage en mémoire à long terme reste à zéro : "
-            "le modèle n’apprend rien durablement d’une conversation à l’autre, sauf mémoire externe ajoutée par l’outil.")
+            "le modèle n’apprend rien durablement d’une conversation à l’autre, sauf mémoire externe ajoutée par l’outil. "
+            "Au 27 septembre 2026, aucun modèle plus récent n’a été évalué avec cette grille.")
     return figure("fig-profil", 8, "Données", "Un profil irrégulier : très fort en connaissances, nul en mémoire durable.", body, note)
 
 
+# ---------------------------------------------------------------------------
+# Training pipeline (diagram, HTML so it can stack on phones)
+# ---------------------------------------------------------------------------
+TRAINING = [
+    ("01", "Pré-entraîner",
+     "Textes du web, livres, code : des milliers de milliards de jetons",
+     "Prédire le jeton suivant, comparer avec la vraie suite, corriger les paramètres. Des milliards de fois.",
+     "Modèle de base", "Complète du texte sans suivre de consignes. Savoir figé à une date de coupure.", True),
+    ("02", "Ajuster",
+     "Dialogues exemplaires rédigés ou validés par des personnes",
+     "Imiter ces réponses modèles : suivre une consigne, un ton, un format.",
+     "Assistant", "Répond aux demandes, refuse certaines d’entre elles.", False),
+    ("03", "Renforcer",
+     "Réponses comparées par des personnes, ou par une IA guidée par des principes écrits",
+     "Un modèle de récompense note chaque réponse ; l’assistant s’ajuste pour être mieux noté.",
+     "Assistant aligné", "Plus utile et plus prudent, mais ce qui plaît peut l’emporter sur ce qui est exact.", False),
+    ("04", "Raisonner",
+     "Problèmes à solution vérifiable : mathématiques, code, tests automatiques",
+     "Essayer de nombreuses pistes, vérifier le résultat, renforcer les raisonnements qui aboutissent.",
+     "Modèle de raisonnement", "Calcule plus longtemps avant de répondre, en étapes intermédiaires.", False),
+    ("05", "Évaluer, déployer",
+     "Tests de capacités et de risques, équipes chargées d’attaquer le modèle",
+     "Mesurer, ajouter des protections, décider de la mise sur le marché.",
+     "Modèle déployé", "Mis à jour et surveillé : chaque version est un objet daté.", False),
+]
+
+LOOP_SVG = (
+    '<svg class="tr-loop" viewBox="0 0 200 92" role="img" aria-label="Boucle d’apprentissage : prédire, comparer, corriger.">'
+    '<defs><marker id="tr-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+    '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>'
+    '<rect class="dg-chip" x="4" y="8" width="72" height="26" rx="2"/><text class="dg-text" x="40" y="25" text-anchor="middle">prédire</text>'
+    '<rect class="dg-chip" x="124" y="8" width="72" height="26" rx="2"/><text class="dg-text" x="160" y="25" text-anchor="middle">comparer</text>'
+    '<rect class="dg-chip" x="64" y="58" width="72" height="26" rx="2"/><text class="dg-text" x="100" y="75" text-anchor="middle">corriger</text>'
+    '<path class="dg-line" d="M78,21 H122" marker-end="url(#tr-arrow)"/>'
+    '<path class="dg-line" d="M160,36 V71 H138" marker-end="url(#tr-arrow)"/>'
+    '<path class="dg-line" d="M62,71 H40 V36" marker-end="url(#tr-arrow)"/>'
+    '</svg>'
+)
+
+
+def fig_training() -> str:
+    stages = []
+    for num, name, rec, does, out_name, out_desc, key in TRAINING:
+        loop = LOOP_SVG if num == "01" else ""
+        stages.append(
+            f'<li class="tr-stage{" is-key" if key else ""}">'
+            f'<p class="tr-step"><b>{num}</b>{a(name)}</p>'
+            f'<div class="tr-in"><small class="tr-lane-m">Reçoit</small>{a(rec)}</div>'
+            f'<div class="tr-do"><small class="tr-lane-m">Fait</small>{a(does)}{loop}</div>'
+            f'<div class="tr-out"><small class="tr-lane-m">Obtient</small><strong>{a(out_name)}</strong>{a(out_desc)}</div>'
+            "</li>"
+        )
+    body = (
+        '<div class="tr">'
+        '<div class="tr-lanes" aria-hidden="true"><span></span><span>Ce qu’il reçoit</span><span>Ce qu’il fait</span><span>Ce qui en sort</span></div>'
+        '<ol class="tr-stages">' + "".join(stages) + "</ol>"
+        '<div class="tr-scale"><div class="tr-scale-a"><small>Ordre de grandeur</small>Llama 3.1 405B (Meta, 2024) : '
+        '15 600 milliards de jetons, 31 millions d’heures de calcul sur processeurs graphiques, jusqu’à 16 000 puces en parallèle.</div>'
+        '<div class="tr-scale-b"><small>Étapes 02 à 05</small>Beaucoup moins de données, mais plus coûteuses : chaque exemple est rédigé, '
+        'comparé ou vérifié. La part du calcul consacrée au renforcement augmente depuis l’arrivée des modèles de raisonnement.</div></div>'
+        '<p class="tr-return">↺ Les défauts repérés en test ou après le déploiement alimentent l’entraînement de la version suivante.</p>'
+        "</div>"
+    )
+    note = ('Schéma simplifié : l’ordre et le poids des étapes varient d’un laboratoire à l’autre, et certaines sont répétées. '
+            'Sources : <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noreferrer">Ouyang et al., 2022</a> (ajustement et renforcement par retours humains) ; '
+            '<a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noreferrer">Bai et al., 2022</a> (retours d’une IA guidée par des principes) ; '
+            '<a href="https://arxiv.org/abs/2407.21783" target="_blank" rel="noreferrer">Meta, « The Llama 3 Herd of Models », 2024</a> (ordres de grandeur).')
+    return figure("fig-entrainement", 0, "Schéma", "De la masse de textes au modèle déployé : cinq étapes.", body, note)
+
+
+# ---------------------------------------------------------------------------
+# Two indicators that jumped within a year (GDPval, ARC-AGI-3)
+# ---------------------------------------------------------------------------
+GDPVAL = [  # win-or-tie rate vs experts, reported by OpenAI
+    ("Claude Opus 4.1", "2025-09", 47.6, True),
+    ("GPT-5.2 Thinking", "2025-12", 70.9, True),
+    ("GPT-5.4", "2026-03", 83.0, True),
+    ("GPT-5.5", "2026-04", 84.9, True),
+]
+ARC3 = [  # verified by ARC Prize, standard harness
+    ("Meilleur système au lancement", "2026-03", 0.51, True),
+    ("GPT-5.6", "2026-07", 7.8, False),
+    ("Claude Opus 5", "2026-07", 30.2, True),
+    ("Gemini 3.8 Flash", "2026-09", 10.4, False),
+    ("GPT-6 Astra", "2026-09", 62.7, True),
+]
+
+
+def _panel(title, sub, data, ref_value, ref_label, label_names, aria):
+    W, H = 380, 262
+    L, R, T, B = 40, 364, 50, 222
+    x0, x1 = 2025.6, 2026.85
+
+    def X(t):
+        return L + (t - x0) / (x1 - x0) * (R - L)
+
+    def Y(v):
+        return B - v / 100 * (B - T)
+
+    o = [f'<svg class="fig-svg" viewBox="0 0 {W} {H}" role="img" aria-label="{a(aria)}">']
+    o.append(txt(0, 16, title, "dg-strong"))
+    o.append(txt(0, 34, sub, "dg-small"))
+    for v in (0, 25, 50, 75, 100):
+        y = Y(v)
+        o.append(f'<line class="fx-grid" x1="{L}" x2="{R}" y1="{y:.1f}" y2="{y:.1f}"/>')
+        o.append(f'<text class="fx-tick" x="{L - 6}" y="{y + 4:.1f}" text-anchor="end">{v} %</text>')
+    ry = Y(ref_value)
+    o.append(f'<line class="fx-threshold" x1="{L}" x2="{R}" y1="{ry:.1f}" y2="{ry:.1f}"/>')
+    o.append(txt(R, ry - 5, ref_label, "fx-note-muted", "end"))
+    for yr, lab in ((2025.7, "sept. 2025"), (2026.2, "mars 2026"), (2026.7, "sept. 2026")):
+        o.append(f'<text class="fx-tick" x="{X(yr):.1f}" y="{B + 18}" text-anchor="middle">{lab}</text>')
+    o.append(f'<line class="fx-axis" x1="{L}" x2="{R}" y1="{B}" y2="{B}"/>')
+    rec = [(X(decimal_year(d)), Y(v)) for _, d, v, r in data if r]
+    o.append('<polyline class="fx-line" points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in rec) + '"/>')
+    for name, d, v, record in data:
+        x, y = X(decimal_year(d)), Y(v)
+        tip = f"{name} · {month_label(d)} · {fr(v)} %"
+        o.append(f'<g class="fx-point" tabindex="0" data-tip="{a(tip)}"><circle class="fx-hit" cx="{x:.1f}" cy="{y:.1f}" r="11"/>'
+                 f'<circle class="{"fx-dot" if record else "fx-dot is-out"}" cx="{x:.1f}" cy="{y:.1f}" r="4.5"/></g>')
+        if name in label_names:
+            dx, dy, anchor, *custom = label_names[name]
+            text = custom[0] if custom else f"{name} · {fr(v)} %"
+            o.append(f'<text class="fx-label" x="{x + dx:.1f}" y="{y + dy:.1f}" text-anchor="{anchor}">{a(text)}</text>')
+    o.append("</svg>")
+    return "".join(o)
+
+
+def fig_jumps() -> str:
+    g = _panel("GDPval · tâches professionnelles", "livrable jugé équivalent ou meilleur que celui d’un expert",
+               GDPVAL, 50, "parité avec l’expert",
+               {"Claude Opus 4.1": (8, 16, "start"), "GPT-5.2 Thinking": (8, 18, "start"), "GPT-5.5": (-4, -12, "end")},
+               "GDPval, taux de livrables jugés au moins équivalents à ceux d’experts : 47,6 % en septembre 2025, 70,9 % en décembre 2025, 83 % en mars 2026, 84,9 % en avril 2026.")
+    r = _panel("ARC-AGI-3 · adaptation à l’inédit", "niveaux résolus, protocole standard (humains : 100 %)",
+               ARC3, 100, "humains",
+               {"Meilleur système au lancement": (-9, 4, "end", "au lancement · 0,5 %"), "Claude Opus 5": (-8, -8, "end"), "GPT-6 Astra": (-8, -10, "end")},
+               "ARC-AGI-3, meilleur score vérifié : 0,51 % au lancement en mars 2026, 30,2 % pour Claude Opus 5 en juillet, 62,7 % pour GPT-6 Astra en septembre 2026.")
+    body = f'<div class="fig-pair"><div>{g}</div><div>{r}</div></div>'
+    note = ('Sources : GDPval, chiffres publiés par <a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noreferrer">OpenAI</a>, '
+            "concepteur du test (septembre 2025 à avril 2026) ; aucun chiffre comparable n’a été publié pour GPT-6 Astra ni Claude Opus 5.5. "
+            '<a href="https://arcprize.org/results" target="_blank" rel="noreferrer">ARC-AGI-3, scores vérifiés par ARC Prize</a>, septembre 2026 ; '
+            "avec un dispositif qui conserve son raisonnement entre les coups, GPT-6 Astra atteint environ 99 % : le score dépend du protocole. "
+            "Trait rouge : meilleur score à date ; points gris : autres modèles.")
+    return figure("fig-bonds", 0, "Données", "Deux tests réputés difficiles, franchis en quelques mois.", body, note)
+
+
+# ---------------------------------------------------------------------------
+# Who leads? It depends on the test (dated snapshot)
+# ---------------------------------------------------------------------------
+LEADERS = [
+    ("Indice de capacités (ECI)", "Epoch AI · agrège plusieurs dizaines de tests", "https://epoch.ai/benchmarks/eci", [
+        ("GPT-6 Astra", "166,6"), ("Claude Fable 5.1", "165,0"), ("Claude Fable 5", "163,6"), ("Claude Opus 5", "162,7"), ("GPT-5.5 Pro", "162,5")],
+     "Claude Opus 5.5 pas encore classé"),
+    ("Tâches professionnelles (GDPval-AA)", "Artificial Analysis · score Elo, comparaisons par paires", "https://artificialanalysis.ai/evaluations/gdpval-aa", [
+        ("Claude Opus 5.5", "1 846"), ("Claude Fable 5.1", "1 735"), ("Claude Opus 5", "1 708"), ("Grok 4.7", "1 695"), ("GPT-6 Astra", "1 542 · 7ᵉ")],
+     ""),
+    ("Raisonnement abstrait (ARC-AGI-2)", "ARC Prize · scores vérifiés", "https://arcprize.org/results", [
+        ("GPT-6 Astra", "95,0 %"), ("Claude Opus 5.5", "93,3 %"), ("GPT-5.6", "92,5 %")],
+     ""),
+]
+ENTITY = {"GPT-6 Astra": "is-a", "Claude Opus 5.5": "is-b"}
+
+
+def fig_leaders() -> str:
+    cols = []
+    for title, sub, url, rows, missing in LEADERS:
+        items = []
+        for i, (name, score) in enumerate(rows, 1):
+            cls = ENTITY.get(name, "")
+            rank = "…" if "7ᵉ" in score else str(i)
+            score = score.replace(" · 7ᵉ", "")
+            items.append(f'<li class="{cls}"><span class="ld-rank">{rank}</span><b class="ld-dot"></b>'
+                         f'<span class="ld-name">{a(name)}</span><span class="ld-score">{score}</span></li>')
+        miss = f'<p class="ld-missing">{a(missing)}</p>' if missing else ""
+        cols.append(f'<div class="ld-col"><h4><a href="{url}" target="_blank" rel="noreferrer">{a(title)} ↗</a></h4>'
+                    f'<p class="ld-sub">{a(sub)}</p><ol>{"".join(items)}</ol>{miss}</div>')
+    legend = ('<div class="fig-legend"><span><b class="db-dot is-a"></b>GPT-6 Astra (OpenAI, 3 sept. 2026)</span>'
+              '<span><b class="db-dot is-b"></b>Claude Opus 5.5 (Anthropic, 22 sept. 2026)</span></div>')
+    body = legend + '<div class="ld">' + "".join(cols) + "</div>"
+    note = ("Instantané au 27 septembre 2026, vite dépassé : suivez les liens pour les résultats du jour. "
+            "Les écarts entre les premiers sont souvent inférieurs à l’incertitude de la mesure. "
+            "Aucun de ces tests ne dit quel modèle convient à votre usage : cela se vérifie sur vos propres tâches.")
+    return figure("fig-classement", 0, "Instantané daté", "Qui est en tête ? Cela dépend du test.", body, note)
+
 FIGURES = {
+    "entrainement": fig_training,
+    "bonds": fig_jumps,
+    "classement": fig_leaders,
     "jeton": fig_token,
     "calcul": fig_compute,
     "systeme": fig_system,
@@ -506,6 +716,9 @@ FIGURES = {
 
 def main() -> None:
     html = PAGE.read_text(encoding="utf-8")
+    order = sorted(FIGURES, key=lambda n: html.index(f"<!-- fig:{n}:start -->"))
+    for i, name in enumerate(order, 1):
+        NUMS[f"fig-{name}"] = i
     for name, build in FIGURES.items():
         pattern = re.compile(rf"(<!-- fig:{name}:start -->)(.*?)(<!-- fig:{name}:end -->)", re.S)
         if not pattern.search(html):
