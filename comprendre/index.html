@@ -14,8 +14,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <title>Comprendre l’IA au travail | LLM, capacités et limites</title>
-  <meta name="description" content="Une introduction claire aux systèmes d’IA, aux grands modèles de langage, à leurs capacités, à leurs limites et à l’interprétation des benchmarks.">
+  <title>Comprendre l’IA au travail | LLM, limites, risques et AGI</title>
+  <meta name="description" content="Une introduction claire aux systèmes d’IA et aux grands modèles de langage : fonctionnement, entraînement, capacités, limites, risques, benchmarks et objectif d’AGI.">
   <link rel="canonical" href="https://www.iasantetravail.com/comprendre/">
   <link rel="stylesheet" href="/assets/css/understand.css?v=2.2">
   <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=4.1">
   <link rel="stylesheet" href="/assets/css/understand-editorial-v3.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/understand-knowledge-v4.css?v=1.1">
   <script defer src="/assets/js/unified-navigation.js?v=6.3"></script>
 
   <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/comprendre/">
@@ -33,12 +34,12 @@
   <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:site_name" content="IA Santé Travail">
 <meta property="og:title" content="Comprendre l’intelligence artificielle au travail — IA & Santé au Travail">
-  <meta property="og:description" content="Une introduction claire aux systèmes d’IA, aux grands modèles de langage, à leurs capacités, à leurs limites et à l’interprétation des benchmarks.">
+  <meta property="og:description" content="Une introduction claire aux systèmes d’IA et aux grands modèles de langage : fonctionnement, entraînement, capacités, limites, risques, benchmarks et objectif d’AGI.">
   <meta property="og:url" content="https://www.iasantetravail.com/comprendre/">
   <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Comprendre l’intelligence artificielle au travail — IA & Santé au Travail">
-  <meta name="twitter:description" content="Une introduction claire aux systèmes d’IA, aux grands modèles de langage, à leurs capacités, à leurs limites et à l’interprétation des benchmarks.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.iasantetravail.com/comprendre/#webpage","name":"Comprendre l’intelligence artificielle au travail — IA & Santé au Travail","description":"Une introduction claire aux systèmes d’IA, aux grands modèles de langage, à leurs capacités, à leurs limites et à l’interprétation des benchmarks.","inLanguage":"fr","datePublished":"2026-08-09","dateModified":"2026-09-12","url":"https://www.iasantetravail.com/comprendre/","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"}}</script>
+  <meta name="twitter:description" content="Une introduction claire aux systèmes d’IA et aux grands modèles de langage : fonctionnement, entraînement, capacités, limites, risques, benchmarks et objectif d’AGI.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.iasantetravail.com/comprendre/#webpage","name":"Comprendre l’intelligence artificielle au travail — IA & Santé au Travail","description":"Une introduction claire aux systèmes d’IA et aux grands modèles de langage : fonctionnement, entraînement, capacités, limites, risques, benchmarks et objectif d’AGI.","inLanguage":"fr","datePublished":"2026-08-09","dateModified":"2026-09-27","url":"https://www.iasantetravail.com/comprendre/","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"}}</script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
 <link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
 <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
@@ -78,8 +79,13 @@
         <div class="page-nav-links">
           <a href="#systemes">Les formes d’IA</a>
           <a href="#llm">Fonctionnement d’un LLM</a>
+          <a href="#entrainement">Entraînement</a>
+          <a href="#systeme">Du modèle au système</a>
           <a href="#capacites">Capacités et limites</a>
           <a href="#benchmarks">Benchmarks</a>
+          <a href="#trajectoire">Trajectoire</a>
+          <a href="#risques-systemes">Risques</a>
+          <a href="#agi">AGI</a>
           <a href="#travail">Travail réel</a>
           <a href="#ressources">Ressources</a>
         </div>
@@ -92,9 +98,9 @@
       <div class="hero-copy">
         <p class="kicker line">Comprendre · Repères essentiels</p>
         <h1>Comprendre l’intelligence artificielle <em>au travail.</em></h1>
-        <p class="hero-lede">Distinguer les systèmes, savoir comment un modèle de langage produit une réponse et lire ses performances sans leur faire dire plus qu’elles ne disent.</p>
+        <p class="hero-lede">Distinguer les systèmes, savoir comment un modèle de langage est fabriqué et produit une réponse, lire ses performances sans leur faire dire plus qu’elles ne disent, puis situer ses risques et l’objectif d’AGI.</p>
         <div class="hero-actions"><a class="button primary" href="#systemes">Commencer la lecture <span>↓</span></a><a class="button secondary" href="#ressources">Choisir une ressource</a></div>
-        <div class="hero-proof"><span>Lecture en 12 minutes</span><span>Sources sélectionnées</span><span>Mis à jour en août 2026</span></div>
+        <div class="hero-proof"><span>Lecture en 25 minutes</span><span>Sources sélectionnées et datées</span><span>Mis à jour en septembre 2026</span></div>
       </div>
 
 
@@ -137,9 +143,43 @@
       </div>
     </section>
 
+    <section class="section training" id="entrainement">
+      <div class="section-head">
+        <div><p class="kicker">03 / Entraînement</p><h2>Comment un modèle est fabriqué, puis ajusté.</h2></div>
+        <p>Les capacités d’un LLM ne sont pas programmées règle par règle. Elles se forment au cours d’un entraînement en plusieurs étapes, et chacune laisse des traces dans le comportement final, y compris dans ses défauts.</p>
+      </div>
+      <div class="pipeline pipeline-4" aria-label="Étapes de l’entraînement d’un LLM">
+        <article class="pipeline-step"><span>01 · Pré-entraîner</span><h3>Apprendre à prévoir le texte</h3><p>Le modèle ajuste des milliards de paramètres en prédisant le jeton suivant sur d’immenses corpus : pages web, livres, code. Il en retire des régularités de langue, des connaissances et des savoir-faire, arrêtés à une date de coupure.</p></article>
+        <article class="pipeline-step"><span>02 · Ajuster</span><h3>Apprendre à répondre</h3><p>Des exemples de dialogues rédigés ou validés par des personnes lui apprennent à suivre une consigne, à adopter un format et à refuser certaines demandes. Le modèle brut devient un assistant.</p></article>
+        <article class="pipeline-step"><span>03 · Renforcer</span><h3>Apprendre ce qui est préféré</h3><p>Des jugements humains ou automatisés sur ses réponses orientent le modèle (apprentissage par renforcement, dont le RLHF). L’utilité augmente, mais ce qui plaît peut être récompensé plus que ce qui est exact.</p></article>
+        <article class="pipeline-step"><span>04 · Raisonner</span><h3>Apprendre à chercher avant de répondre</h3><p>Les modèles dits « de raisonnement » sont entraînés sur des problèmes dont la solution est vérifiable, en mathématiques ou en code. Ils produisent des étapes intermédiaires et consomment plus de calcul à chaque réponse.</p></article>
+      </div>
+      <div class="capability-note"><div><strong>L’échelle a longtemps été le principal moteur des progrès.</strong><p>Les performances s’améliorent de façon assez prévisible avec la quantité de calcul, de données et de paramètres : ce sont les « lois d’échelle ». Selon Epoch AI, le calcul consacré à l’entraînement des modèles d’IA marquants est multiplié par environ 4,5 chaque année depuis 2010, et par environ 5 pour les grands modèles de langage de pointe depuis 2020.</p></div><div><strong>Un second levier : le calcul au moment de la réponse.</strong><p>Laisser le modèle travailler plus longtemps avant de répondre améliore les résultats en mathématiques, en programmation et en sciences. Le Rapport international sur la sûreté de l’IA 2026 en fait l’une des principales sources des progrès récents.</p></div></div>
+      <div class="reading-links" aria-label="Ressources sur l’entraînement des LLM">
+        <a class="reading-link" href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>Scaling Laws for Neural Language Models — Kaplan et al., 2020 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>Training language models to follow instructions with human feedback — Ouyang et al., 2022 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://epoch.ai/trends" target="_blank" rel="noreferrer"><small>EN · Données · Tableau de bord</small><strong>Trends in AI — Epoch AI <b>↗</b></strong></a>
+      </div>
+    </section>
+
+    <section class="section system" id="systeme">
+      <div class="section-head">
+        <div><p class="kicker">04 / Du modèle au système</p><h2>L’outil que vous utilisez n’est jamais le modèle seul.</h2></div>
+        <p>Un assistant professionnel assemble un modèle, des consignes, des documents, des outils et parfois une mémoire. Chaque couche modifie le résultat, et donc ce qu’il faut vérifier avant de lui confier une tâche.</p>
+      </div>
+      <div class="card-grid cols-2">
+        <article class="knowledge-card"><span>01 · Consignes</span><h3>Une consigne système invisible</h3><p>Avant votre première question, le fournisseur ou l’organisation a fixé un rôle, un ton, des interdits et des règles de format. Deux outils fondés sur le même modèle peuvent donc répondre très différemment.</p><div class="family-meta"><div><small>Apporte</small><strong>Un cadrage adapté au métier</strong></div><div><small>À vérifier</small><strong>Qui rédige ces consignes et qui peut les modifier</strong></div></div></article>
+        <article class="knowledge-card"><span>02 · Contexte</span><h3>Une mémoire de travail limitée</h3><p>Le modèle ne « voit » que sa fenêtre de contexte : la conversation, les documents fournis et les extraits retrouvés dans une base documentaire (RAG). Ce qui n’y figure pas n’existe pas pour lui, et un document très long peut être exploité de façon inégale.</p><div class="family-meta"><div><small>Apporte</small><strong>Des réponses ancrées dans vos sources</strong></div><div><small>À vérifier</small><strong>Les extraits réellement retrouvés et cités</strong></div></div></article>
+        <article class="knowledge-card"><span>03 · Outils</span><h3>Des actions dans d’autres logiciels</h3><p>Recherche web, exécution de code, messagerie, agenda ou dossier : le modèle peut appeler des outils par des connecteurs, par exemple ceux du protocole MCP. Il ne se contente plus de proposer, il agit.</p><div class="family-meta"><div><small>Apporte</small><strong>Des tâches menées de bout en bout</strong></div><div><small>À vérifier</small><strong>Les droits accordés, action par action</strong></div></div></article>
+        <article class="knowledge-card"><span>04 · Agents</span><h3>Une boucle qui poursuit un objectif</h3><p>Un agent planifie, agit, observe le résultat et recommence, parfois pendant des heures, avec une supervision humaine intermittente. Une erreur commise au début peut se propager à toute la chaîne d’actions.</p><div class="family-meta"><div><small>Apporte</small><strong>L’automatisation de séquences entières</strong></div><div><small>À vérifier</small><strong>Points d’arrêt, journal des actions, retour arrière</strong></div></div></article>
+        <article class="knowledge-card"><span>05 · Hébergement</span><h3>Modèle fermé ou modèle ouvert</h3><p>Les modèles fermés, comme GPT, Claude ou Gemini, ne s’utilisent qu’à distance, sur l’infrastructure du fournisseur. Les modèles à poids ouverts, comme Llama, Qwen, DeepSeek ou certains modèles de Mistral, peuvent être installés sur des serveurs maîtrisés, avec en général un léger retard sur les meilleurs modèles fermés.</p><div class="family-meta"><div><small>Apporte</small><strong>La maîtrise du trajet des données</strong></div><div><small>À vérifier</small><strong>Localisation, certification HDS pour les données de santé, réutilisation pour l’entraînement</strong></div></div></article>
+        <article class="knowledge-card"><span>06 · Multimodalité</span><h3>Lire, voir, écouter, transcrire</h3><p>Les modèles récents traitent aussi des images, des documents scannés, de l’audio et de la vidéo. La transcription et la synthèse automatiques d’entretiens, parfois appelées « scribes » médicaux, en sont l’usage le plus visible en santé.</p><div class="family-meta"><div><small>Apporte</small><strong>Moins de saisie, des documents non textuels exploitables</strong></div><div><small>À vérifier</small><strong>Erreurs de transcription, information des personnes enregistrées</strong></div></div></article>
+      </div>
+    </section>
+
     <section class="section capabilities" id="capacites">
       <div class="section-head">
-        <div><p class="kicker">03 / Capacités et limites</p><h2>Ce que les modèles de langage savent faire — et ce qu’il reste à vérifier.</h2></div>
+        <div><p class="kicker">05 / Capacités et limites</p><h2>Ce que les modèles de langage savent faire — et ce qu’il reste à vérifier.</h2></div>
         <p>Les capacités dépendent du modèle, de sa version, de la langue, des documents fournis, des outils auxquels il a accès et de la façon dont la tâche est formulée.</p>
       </div>
       <div class="capability-table">
@@ -155,11 +195,20 @@
         </table>
       </div>
       <div class="capability-note"><div><strong>Une capacité démontrée n’est pas une fiabilité garantie.</strong><p>Réussir souvent une catégorie de tâches ne permet pas de prévoir chaque réponse. Il faut tester les erreurs qui comptent dans votre usage.</p></div><div><strong>Une version de modèle est un objet daté.</strong><p>Le fournisseur peut modifier le modèle, ses réglages, ses filtres ou ses outils. Une évaluation utile mentionne la version et la date.</p></div></div>
+      <div class="subsection-head"><h3>Pourquoi certaines erreurs persistent.</h3><p>Ces limites ne sont pas de simples défauts de réglage. Elles découlent de la manière dont les modèles sont entraînés, évalués et intégrés aux outils. Les connaître aide à placer les contrôles au bon endroit.</p></div>
+      <div class="card-grid cols-3">
+        <article class="knowledge-card"><span>01 · Fabulation</span><h3>Une réponse plausible plutôt qu’un « je ne sais pas »</h3><p>Le pré-entraînement n’apprend pas à distinguer un fait rare d’une invention vraisemblable. Les évaluations qui ne notent que l’exactitude récompensent ensuite la réponse au hasard plutôt que l’abstention.</p><p class="card-work"><strong>Au travail</strong>Références, articles de loi ou chiffres inventés, présentés avec assurance.</p><a class="card-source" href="https://openai.com/index/why-language-models-hallucinate/" target="_blank" rel="noreferrer">Kalai et al., OpenAI, 2025 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>02 · Complaisance</span><h3>Donner raison à la personne qui interroge</h3><p>L’ajustement sur les préférences humaines peut favoriser l’approbation au détriment de l’exactitude. En avril 2025, OpenAI a retiré une mise à jour de GPT-4o jugée excessivement flatteuse.</p><p class="card-work"><strong>Au travail</strong>L’outil tend à confirmer l’hypothèse contenue dans la question posée.</p><a class="card-source" href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noreferrer">OpenAI, 2025 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>03 · Frontière irrégulière</span><h3>Excellent ici, défaillant juste à côté</h3><p>Les capacités ne suivent pas la difficulté perçue par un humain. Auprès de 758 consultants, l’IA améliorait vitesse et qualité sur les tâches à sa portée, mais réduisait la justesse des réponses sur une tâche située juste au-delà.</p><p class="card-work"><strong>Au travail</strong>La confiance acquise sur une tâche ne se transfère pas à la tâche voisine.</p><a class="card-source" href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noreferrer">Dell’Acqua et al., Harvard Business School, 2023 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>04 · Raisonnement affiché</span><h3>L’explication n’est pas le calcul réel</h3><p>Le raisonnement qu’affiche un modèle ne reflète pas fidèlement ce qui a déterminé sa réponse. Dans une étude d’Anthropic, les modèles testés ne signalaient un indice qu’ils avaient utilisé que dans 25 à 39 % des cas.</p><p class="card-work"><strong>Au travail</strong>Une justification convaincante ne prouve pas que la réponse est fondée.</p><a class="card-source" href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noreferrer">Chen et al., Anthropic, 2025 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>05 · Injection de consignes</span><h3>Un document peut donner des ordres</h3><p>Le modèle ne sépare pas de façon fiable les instructions de l’utilisateur et le texte qu’il lit : une page web, un courriel ou un PDF peuvent contenir des consignes cachées. C’est le premier risque du classement OWASP des applications fondées sur des LLM.</p><p class="card-work"><strong>Au travail</strong>Le risque augmente dès que l’outil peut envoyer, modifier ou supprimer.</p><a class="card-source" href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noreferrer">OWASP, LLM01:2025 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>06 · Variabilité</span><h3>La même question, une autre réponse</h3><p>La génération est probabiliste et sensible à la formulation, à l’ordre des documents et à la version du modèle. Ses connaissances s’arrêtent à une date de coupure, sauf s’il peut consulter des sources en direct.</p><p class="card-work"><strong>Au travail</strong>Tester plusieurs fois, dater les essais et consigner la version utilisée.</p></article>
+      </div>
     </section>
 
     <section class="section benchmarks" id="benchmarks">
       <div class="section-head">
-        <div><p class="kicker">04 / Lire les benchmarks</p><h2>Il n’existe pas de classement universel du « meilleur modèle ».</h2></div>
+        <div><p class="kicker">06 / Lire les benchmarks</p><h2>Il n’existe pas de classement universel du « meilleur modèle ».</h2></div>
         <p>Un benchmark mesure une performance sur un jeu de tâches, avec une consigne, une métrique et des conditions précises. Changez l’un de ces éléments et le classement peut changer.</p>
       </div>
       <div class="benchmark-intro"><strong>Des liens vivants plutôt que des chiffres déjà périmés.</strong><p>Les pages ci-dessous sont maintenues par leurs auteurs. Elles permettent de consulter les derniers résultats disponibles sans figer ici un palmarès qui serait rapidement dépassé.</p></div>
@@ -178,9 +227,65 @@
       </div>
     </section>
 
+    <section class="section trajectory" id="trajectoire">
+      <div class="section-head">
+        <div><p class="kicker">07 / Suivre la trajectoire</p><h2>Mesurer le rythme des progrès plutôt que photographier un classement.</h2></div>
+        <p>Pour anticiper les effets sur le travail, la question utile n’est pas « quel modèle est le meilleur&nbsp;? » mais « qu’est-ce qui devient faisable, à quel rythme et à quelles conditions&nbsp;? ». Quatre repères datés, avec leurs limites.</p>
+      </div>
+      <div class="benchmark-list">
+        <a class="benchmark-row" href="https://metr.org/time-horizons/" target="_blank" rel="noreferrer"><span>01</span><span class="benchmark-type"><strong>Autonomie des agents</strong><small>METR · Horizon temporel</small></span><span class="benchmark-copy"><strong>La durée des tâches confiées aux agents s’allonge vite</strong><small>METR mesure la durée, en temps de travail d’un expert humain, des tâches qu’un agent réussit une fois sur deux. Elle a doublé environ tous les sept mois de 2019 à 2025, et environ tous les trois mois depuis 2024. Tâches surtout informatiques ; mesures peu fiables au-delà de 16 heures.</small></span><span class="benchmark-action">Suivre la courbe <b>↗</b></span></a>
+        <a class="benchmark-row" href="https://openai.com/index/gdpval/" target="_blank" rel="noreferrer"><span>02</span><span class="benchmark-type"><strong>Tâches professionnelles</strong><small>OpenAI · GDPval</small></span><span class="benchmark-copy"><strong>Des livrables comparés à ceux d’experts, à l’aveugle</strong><small>1 320 tâches issues de 44 professions, jugées par des professionnels expérimentés. En septembre 2025, le meilleur modèle testé était jugé équivalent ou supérieur à l’expert dans un peu moins de la moitié des cas. Tâches ponctuelles, sans échanges ni ambiguïtés du travail réel ; évaluation conçue par un fournisseur.</small></span><span class="benchmark-action">Voir l’évaluation <b>↗</b></span></a>
+        <a class="benchmark-row" href="https://arcprize.org/blog/arc-agi-3-launch" target="_blank" rel="noreferrer"><span>03</span><span class="benchmark-type"><strong>Adaptation</strong><small>ARC Prize · ARC-AGI-3</small></span><span class="benchmark-copy"><strong>Face à l’inédit, l’écart avec l’humain reste massif</strong><small>Lancé en mars 2026, ce test place le système dans des environnements interactifs nouveaux, sans consigne : il doit explorer, comprendre les règles et atteindre le but. Tous les environnements avaient été résolus par des personnes ; les meilleurs systèmes obtenaient moins de 1 % au lancement.</small></span><span class="benchmark-action">Voir le benchmark <b>↗</b></span></a>
+        <a class="benchmark-row" href="https://metr.org/blog/2026-02-24-uplift-update/" target="_blank" rel="noreferrer"><span>04</span><span class="benchmark-type"><strong>Travail réel</strong><small>METR · Essai randomisé</small></span><span class="benchmark-copy"><strong>Le gain ressenti n’est pas le gain mesuré</strong><small>Début 2025, des développeurs expérimentés se pensaient 20 % plus rapides avec l’IA ; ils étaient mesurés 19 % plus lents. Une nouvelle mesure fin 2025 suggère plutôt une accélération, mais METR la juge peu probante en raison de biais de sélection et prévoit de revoir son protocole.</small></span><span class="benchmark-action">Lire la mise à jour <b>↗</b></span></a>
+      </div>
+      <div class="capability-note"><div><strong>Des progrès rapides, mais inégaux.</strong><p>Des systèmes capables de résoudre des problèmes de niveau expert échouent sur des tâches simples de perception ou d’adaptation. Le Rapport international sur la sûreté de l’IA (février 2026) juge plausibles, d’ici 2030, aussi bien un plafonnement qu’une forte accélération.</p></div><div><strong>Une tâche réussie n’est pas un métier automatisé.</strong><p>Un métier combine des tâches, des relations, des responsabilités et des imprévus. Ces repères indiquent quelles portions du travail deviennent automatisables, pas ce que deviendra le travail : cela dépend aussi des choix d’organisation.</p></div></div>
+      <div class="reading-links" aria-label="Ressources sur la trajectoire des capacités">
+        <a class="reading-link" href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" target="_blank" rel="noreferrer"><small>EN · Rapport technique · Avancé</small><strong>Time Horizon 1.1 — METR, janvier 2026 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://arxiv.org/abs/2510.04374" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks — OpenAI, 2025 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://arxiv.org/abs/2507.09089" target="_blank" rel="noreferrer"><small>EN · Essai randomisé · Avancé</small><strong>Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity — METR <b>↗</b></strong></a>
+      </div>
+    </section>
+
+    <section class="section system-risks" id="risques-systemes">
+      <div class="section-head">
+        <div><p class="kicker">08 / Risques des systèmes</p><h2>Au-delà de l’erreur ponctuelle, trois familles de risques.</h2></div>
+        <p>Le Rapport international sur la sûreté de l’IA, rédigé par plus de 100 experts sous la présidence de Yoshua Bengio, distingue les usages malveillants, les dysfonctionnements et les risques systémiques. Les effets sur le travail et la santé sont détaillés dans le <a href="/risques-prevention/">parcours Risques</a>.</p>
+      </div>
+      <div class="card-grid cols-3">
+        <article class="knowledge-card"><span>01 · Usages malveillants</span><h3>Quand l’outil sert à nuire</h3><p>Fraudes et escroqueries, hypertrucages, manipulation, aide à des cyberattaques. Les laboratoires évaluent aussi l’aide que leurs modèles pourraient apporter à la conception d’armes biologiques ou chimiques.</p><p class="card-work"><strong>Au travail</strong>Hameçonnage ciblé, usurpation de l’identité d’un dirigeant, atteintes à la réputation.</p></article>
+        <article class="knowledge-card"><span>02 · Dysfonctionnements</span><h3>Quand le système fait autre chose que prévu</h3><p>Contenus fabriqués, code défectueux, agents qui échouent ou détournent l’objectif fixé. En conditions de test, certains modèles ont exploité les failles de leur système de notation ou adopté des stratégies trompeuses pour atteindre un but.</p><p class="card-work"><strong>Au travail</strong>Actions non souhaitées d’un agent, contrôle humain réduit à une validation de façade.</p></article>
+        <article class="knowledge-card"><span>03 · Risques systémiques</span><h3>Quand l’effet naît de la diffusion à grande échelle</h3><p>Automatisation de tâches intellectuelles, affaiblissement de l’esprit critique par excès de confiance dans la machine, dépendance affective à des compagnons conversationnels utilisés par des dizaines de millions de personnes.</p><p class="card-work"><strong>Au travail</strong>Déqualification, intensification, perte d’autonomie et de sens du métier.</p></article>
+      </div>
+      <div class="workplace-callout"><span>Un point aveugle</span><p>Les tests réalisés avant la mise sur le marché prédisent mal l’utilité et les risques en conditions réelles, et certains modèles détectent désormais qu’ils sont évalués. Le suivi après déploiement, y compris dans les organisations de travail, devient indispensable.</p></div>
+      <div class="capability-note"><div><strong>Des protections qui progressent, sans garantie.</strong><p>Les principaux laboratoires publient des cadres de sécurité, comme la Responsible Scaling Policy d’Anthropic, le Preparedness Framework d’OpenAI ou le Frontier Safety Framework de Google DeepMind, qui associent des seuils de capacités à des mesures renforcées. La recherche en interprétabilité tente de lire les mécanismes internes des modèles plutôt que leurs seules réponses. Ces engagements restent largement volontaires et évalués par les entreprises elles-mêmes.</p></div><div><strong>Un premier cadre contraignant en Europe.</strong><p>Depuis le 2 août 2025, l’AI Act impose aux fournisseurs de modèles d’IA à usage général une documentation technique et une politique de respect du droit d’auteur. Les modèles présentant un risque systémique doivent en outre être évalués, faire l’objet d’une gestion des risques et d’un signalement des incidents graves. <a href="/droit-gouvernance/">Voir le parcours Gouvernance →</a></p></div></div>
+      <div class="reading-links" aria-label="Ressources sur les risques des systèmes d’IA">
+        <a class="reading-link" href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026" target="_blank" rel="noreferrer"><small>EN · Rapport · Synthèse disponible</small><strong>International AI Safety Report 2026 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://arxiv.org/abs/2412.04984" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>Frontier Models are Capable of In-context Scheming — Apollo Research, 2024 <b>↗</b></strong></a>
+        <a class="reading-link" href="https://arxiv.org/abs/2412.14093" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>Alignment Faking in Large Language Models — Anthropic et Redwood Research, 2024 <b>↗</b></strong></a>
+      </div>
+    </section>
+
+    <section class="section agi" id="agi">
+      <div class="section-head">
+        <div><p class="kicker">09 / L’objectif d’AGI</p><h2>L’AGI, un objectif affiché par les laboratoires et une notion encore disputée.</h2></div>
+        <p>Plusieurs entreprises déclarent chercher à construire une intelligence artificielle générale, ou AGI. Il n’en existe ni définition partagée, ni test qui permettrait de constater son arrivée. Trois manières de la définir éclairent ce qui est en jeu pour le travail.</p>
+      </div>
+      <div class="card-grid cols-3">
+        <article class="knowledge-card"><span>01 · Par le travail</span><h3>Surpasser les humains dans la plupart des emplois</h3><p>La charte d’OpenAI (2018) vise des « systèmes hautement autonomes » qui surpassent les humains dans la plupart des travaux économiquement utiles. La définition est explicitement économique : elle se mesure à la substitution du travail humain.</p><a class="card-source" href="https://openai.com/charter/" target="_blank" rel="noreferrer">Charte d’OpenAI, 2018 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>02 · Par niveaux</span><h3>Une progression plutôt qu’un seuil</h3><p>Google DeepMind croise le niveau de performance, d’« émergent » à « surhumain », et l’étendue des tâches couvertes. Le degré d’autonomie laissé au système est traité à part : il relève d’un choix de déploiement, pas seulement d’une capacité.</p><a class="card-source" href="https://arxiv.org/abs/2311.02462" target="_blank" rel="noreferrer">Morris et al., Levels of AGI, 2023 <b>↗</b></a></article>
+        <article class="knowledge-card"><span>03 · Par la cognition</span><h3>Comparer aux aptitudes d’un adulte instruit</h3><p>Un collectif de chercheurs mesure les modèles sur dix grandes aptitudes de la cognition humaine (modèle CHC). GPT-4 obtenait 27 % et GPT-5 57 %, avec un profil très irrégulier : connaissances étendues, mémoire à long terme quasi nulle.</p><a class="card-source" href="https://www.agidefinition.ai/" target="_blank" rel="noreferrer">Hendrycks, Bengio et al., 2025 <b>↗</b></a></article>
+      </div>
+      <div class="capability-note"><div><strong>Un terme aussi contractuel que scientifique.</strong><p>Dans le contrat entre Microsoft et OpenAI, la déclaration d’AGI avait des conséquences financières ; sa vérification a été confiée en octobre 2025 à un panel d’experts indépendants, avant qu’un avenant d’avril 2026 ne vide largement la clause de sa portée en dissociant les paiements des progrès technologiques.</p></div><div><strong>Les annonces ne sont pas des mesures.</strong><p>Plusieurs dirigeants de laboratoires évoquent publiquement une échéance de quelques années. Ces déclarations émanent d’acteurs engagés dans une course au financement ; les indicateurs mesurés et datés sont plus informatifs que les dates annoncées.</p></div></div>
+      <div class="comparison">
+        <div class="comparison-column"><span>Arguments pour une arrivée rapide</span><h3>Pourquoi certains anticipent une accélération</h3><ul><li>Les capacités mesurées progressent de façon régulière depuis plusieurs années</li><li>Le calcul et les investissements consacrés à l’entraînement augmentent encore fortement</li><li>Le calcul au moment de la réponse ouvre un nouveau levier de progrès</li><li>Les modèles contribuent déjà à la programmation et à la recherche en IA, ce qui pourrait accélérer la suite</li></ul></div>
+        <div class="comparison-column"><span>Arguments de prudence</span><h3>Pourquoi d’autres restent sceptiques</h3><ul><li>L’apprentissage continu et la mémoire durable restent très limités</li><li>L’adaptation à des situations inédites demeure faible, comme le montre ARC-AGI-3</li><li>La fiabilité sur de longues tâches progresse moins vite que les démonstrations</li><li>Énergie, données et capitaux pourraient freiner la poursuite de l’échelle</li><li>Réussir des tests ne garantit pas de tenir un poste dans un environnement réel</li></ul></div>
+      </div>
+      <div class="workplace-callout"><span>Pour la santé au travail</span><p>L’enjeu n’est pas de parier sur une date. Il s’agit de suivre, tâche par tâche, ce qui devient automatisable, à quel rythme et sous quel contrôle, et d’anticiper les effets sur la charge, l’autonomie, les compétences et l’emploi avant qu’ils ne s’imposent. <a href="/risques-prevention/economique-social/">Voir les enjeux économiques et sociaux →</a></p></div>
+    </section>
+
     <section class="section workplace" id="travail">
       <div class="section-head">
-        <div><p class="kicker">05 / Revenir au travail réel</p><h2>Un bon score technique ne prédit pas, à lui seul, un bon usage professionnel.</h2></div>
+        <div><p class="kicker">10 / Revenir au travail réel</p><h2>Un bon score technique ne prédit pas, à lui seul, un bon usage professionnel.</h2></div>
         <p>Le benchmark décrit le comportement d’un modèle dans un test. Le déploiement doit aussi être évalué dans la tâche réelle, avec ses contraintes, ses responsabilités et ses effets sur les personnes.</p>
       </div>
       <div class="comparison">
@@ -192,7 +297,7 @@
 
     <section class="section questions" id="questions">
       <div class="section-head">
-        <div><p class="kicker">06 / Avant un usage professionnel</p><h2>Cinq questions pour passer de la démonstration à une décision éclairée.</h2></div>
+        <div><p class="kicker">11 / Avant un usage professionnel</p><h2>Cinq questions pour passer de la démonstration à une décision éclairée.</h2></div>
         <p>Ces questions évitent de partir du produit ou de sa réputation. Elles obligent à décrire l’usage concret et les moyens nécessaires pour le maîtriser.</p>
       </div>
       <div class="question-list">
@@ -215,6 +320,7 @@
         <a class="resource-card" href="https://developers.google.com/machine-learning/crash-course/llm" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Cours</span><span>EN · 45 min</span></span><h3>Introduction to Large Language Models</h3><p>Jetons, contexte, paramètres, attention, limites et adaptation des modèles.</p><b>Google for Developers ↗</b></a>
         <a class="resource-card" href="https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Usage professionnel</span><span>FR · Pratique</span></span><h3>Questions-réponses sur l’IA générative</h3><p>Bénéfices, résultats inexacts, données personnelles et premières précautions de déploiement.</p><b>CNIL ↗</b></a>
         <a class="resource-card" href="https://airc.nist.gov/" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Gestion des risques</span><span>EN · Approfondir</span></span><h3>AI Risk Management Framework</h3><p>Cadre, ressources et profil consacré aux risques propres à l’IA générative.</p><b>NIST ↗</b></a>
+        <a class="resource-card" href="https://internationalaisafetyreport.org/publication/2026-report-executive-summary" target="_blank" rel="noreferrer"><span class="resource-meta"><span>État des connaissances</span><span>EN · 3 pages</span></span><h3>International AI Safety Report 2026</h3><p>La synthèse de plus de 100 experts sur les capacités, les risques et les protections des systèmes d’IA généralistes.</p><b>Rapport international ↗</b></a>
         <a class="resource-card" href="https://www.iasantetravail.com/evaluer/" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Méthode</span><span>FR · Travail</span></span><h3>Évaluer les modèles dans un contexte professionnel</h3><p>Relier un protocole d’évaluation aux connaissances du métier et aux erreurs réellement importantes.</p><b>IA &amp; Santé au Travail ↗</b></a>
         <a class="resource-card" href="/#parcours"><span class="resource-meta"><span>Parcours du site</span><span>FR · 6 étapes</span></span><h3>Explorer l’IA en santé au travail</h3><p>Relier la compréhension des modèles, les risques, les usages en SPSTI, l’évaluation, la prévention et le droit.</p><b>IA &amp; Santé au Travail →</b></a>
       </div>

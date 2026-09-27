@@ -1,0 +1,158 @@
+/* Comprendre / Understand — knowledge extension (training, systems, limits, trajectory, risks, AGI).
+   Reuses the understand-editorial-v3 tokens; loaded after understand-editorial-v3.css. */
+
+/* Four-step pipeline (training) */
+.understand-editorial-v3 .pipeline.pipeline-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.understand-editorial-v3 .pipeline.pipeline-4 .pipeline-step { min-height: 0; }
+
+/* Sub-heading inside a section */
+.understand-editorial-v3 .subsection-head {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .65fr);
+  gap: 64px;
+  align-items: end;
+}
+
+.understand-editorial-v3 .subsection-head h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2.8vw, 36px);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1.06;
+}
+
+.understand-editorial-v3 .subsection-head p {
+  margin: 0;
+  color: var(--understand-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Generic card grid: 1px gaps draw the rules, so any card count stays tidy */
+.understand-editorial-v3 .card-grid {
+  margin-top: 37px;
+  border: 1px solid var(--understand-line-strong);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--understand-line);
+}
+
+.understand-editorial-v3 .subsection-head + .card-grid { margin-top: 24px; }
+.understand-editorial-v3 .card-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.understand-editorial-v3 .knowledge-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  background: var(--understand-panel);
+}
+
+.understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(even),
+.understand-editorial-v3 .card-grid.cols-2 .knowledge-card:nth-child(4n + 2),
+.understand-editorial-v3 .card-grid.cols-2 .knowledge-card:nth-child(4n + 3) { background: var(--understand-deep); }
+
+.understand-editorial-v3 .knowledge-card > span {
+  color: var(--understand-brick);
+  font: 700 9px/1.45 var(--mono);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.understand-editorial-v3 .knowledge-card h3 {
+  margin: 26px 0 11px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 450;
+  letter-spacing: -.028em;
+  line-height: 1.08;
+}
+
+.understand-editorial-v3 .knowledge-card > p {
+  margin: 0 0 18px;
+  color: var(--understand-muted);
+  font-size: 13px;
+  line-height: 1.57;
+}
+
+.understand-editorial-v3 .knowledge-card .card-work {
+  margin: auto 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--understand-line);
+  color: var(--understand-ink);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.understand-editorial-v3 .knowledge-card .card-work strong {
+  margin-bottom: 5px;
+  display: block;
+  color: var(--understand-brick);
+  font: 700 8px/1.45 var(--mono);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.understand-editorial-v3 .knowledge-card .family-meta { margin-top: auto; }
+
+.understand-editorial-v3 .card-source {
+  margin-top: 14px;
+  color: var(--understand-ink);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.understand-editorial-v3 .card-source b { color: var(--understand-brick); }
+.understand-editorial-v3 .card-source:hover { color: var(--understand-brick); }
+
+/* Spacing between stacked shared components inside the new sections */
+.understand-editorial-v3 .benchmark-list + .capability-note,
+.understand-editorial-v3 .card-grid + .capability-note,
+.understand-editorial-v3 .card-grid + .workplace-callout,
+.understand-editorial-v3 .capability-note + .comparison,
+.understand-editorial-v3 .workplace-callout + .capability-note { margin-top: 20px; }
+
+/* Notes that stand on their own (not directly under a table) need their top rule back */
+.understand-editorial-v3 .benchmark-list + .capability-note,
+.understand-editorial-v3 .card-grid + .capability-note,
+.understand-editorial-v3 .workplace-callout + .capability-note,
+.understand-editorial-v3 .pipeline + .capability-note { border-top: 1px solid var(--understand-line-strong); }
+.understand-editorial-v3 .pipeline + .capability-note { margin-top: 20px; }
+.understand-editorial-v3 .capability-note a { color: var(--understand-ink); font-weight: 600; }
+
+@media (max-width: 1040px) {
+  .understand-editorial-v3 .pipeline.pipeline-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .understand-editorial-v3 .pipeline.pipeline-4 .pipeline-step:last-child {
+    grid-column: auto;
+    border-bottom: 0;
+  }
+  .understand-editorial-v3 .pipeline.pipeline-4 .pipeline-step:nth-last-child(2) { border-bottom: 0; }
+  .understand-editorial-v3 .card-grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(even) { background: var(--understand-panel); }
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(4n + 2),
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(4n + 3) { background: var(--understand-deep); }
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+@media (max-width: 820px) {
+  .understand-editorial-v3 .subsection-head { grid-template-columns: 1fr; gap: 14px; }
+  .understand-editorial-v3 .card-grid,
+  .understand-editorial-v3 .card-grid.cols-2,
+  .understand-editorial-v3 .card-grid.cols-3 { grid-template-columns: 1fr; }
+  .understand-editorial-v3 .card-grid .knowledge-card,
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(n) { background: var(--understand-panel); }
+  .understand-editorial-v3 .card-grid .knowledge-card:nth-child(even),
+  .understand-editorial-v3 .card-grid.cols-3 .knowledge-card:nth-child(even) { background: var(--understand-deep); }
+}
+
+@media (max-width: 600px) {
+  .understand-editorial-v3 .pipeline.pipeline-4 { grid-template-columns: 1fr; }
+  .understand-editorial-v3 .pipeline.pipeline-4 .pipeline-step:nth-last-child(2) { border-bottom: 1px solid var(--understand-line); }
+  .understand-editorial-v3 .knowledge-card { padding: 21px; }
+  .understand-editorial-v3 .knowledge-card h3 { margin-top: 20px; font-size: 22px; }
+  .understand-editorial-v3 .subsection-head { margin-top: 44px; }
+}
