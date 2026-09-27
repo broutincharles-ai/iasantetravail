@@ -26,7 +26,8 @@ export const INDEXABLE_PAIRS = [
 ];
 
 export const INDEXABLE_SINGLETONS = [
-  { file: "outils/index.html", lang: "fr", lastmod: "2026-09-25" },
+  { file: "outils/index.html", lang: "fr", lastmod: "2026-09-27" },
+  { file: "outils/fiches-prevention/index.html", lang: "fr", lastmod: "2026-09-27" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];

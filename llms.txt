@@ -18,6 +18,7 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels.
 - https://www.iasantetravail.com/outils/ — Outils pour la santé au travail : Préconisations, évaluation du déploiement de l’IA et Claude Skills.
 - https://www.iasantetravail.com/outils/claude-skills/ — Deux Claude Skills pour la santé au travail à télécharger : analyse des tableaux de maladies professionnelles et maintien en emploi. Instructions réutilisables, sources à vérifier et décision professionnelle conservée.
+- https://www.iasantetravail.com/outils/fiches-prevention/ — Fiches de prévention des risques psychosociaux liés à l’IA : six axes de Gollac, signaux d’alerte et actions aux trois niveaux de prévention.
 - https://www.iasantetravail.com/outils/preconisations/ — Application Préconisations, fonctionnement de Jev et banc d’essai sur 540 préconisations fictives. Textes fictifs uniquement.
 - https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.
 - https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.

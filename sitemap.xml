@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/outils/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/"/>
   </url>
@@ -353,5 +353,11 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/reading/occupational-health-ai-safety/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/lecture/sante-travail-securite-ia/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/outils/fiches-prevention/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/fiches-prevention/"/>
   </url>
 </urlset>
