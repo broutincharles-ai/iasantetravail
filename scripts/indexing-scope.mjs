@@ -1,6 +1,6 @@
 export const INDEXABLE_PAIRS = [
   { fr: "index.html", en: "en/index.html", lastmod: "2026-09-21" },
-  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-09-21" },
+  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-09-21" },

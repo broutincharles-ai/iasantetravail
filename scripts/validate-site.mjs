@@ -267,7 +267,7 @@ for (const file of htmlFiles) {
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
   // These editorial pages discuss AI safety; Comprendre also cites the international report.
   const allowsAiSafetyPositioning = [
-    "comprendre/index.html",
+    "comprendre/index.html", "en/understand/index.html",
     "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
     "lecture/index.html", "en/reading/index.html",
     "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html"
