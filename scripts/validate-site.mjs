@@ -265,8 +265,9 @@ for (const file of htmlFiles) {
   }
   const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
-  // This reading and its collection listings discuss AI safety through working conditions.
+  // These editorial pages discuss AI safety; Comprendre also cites the international report.
   const allowsAiSafetyPositioning = [
+    "comprendre/index.html",
     "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
     "lecture/index.html", "en/reading/index.html",
     "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html"
