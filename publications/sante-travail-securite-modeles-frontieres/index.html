@@ -64,16 +64,11 @@
 .preprint-banner .article-source-inner > span { white-space: nowrap; }
 .preprint-banner .article-source-inner a { white-space: nowrap; text-underline-offset: 3px; }
 
-/* Wide reading column: the article uses all the width left by the contents rail */
-.preprint-page .article-body { grid-template-columns: minmax(180px, 230px) minmax(0, 1fr); gap: clamp(40px, 5vw, 88px); justify-content: stretch; }
-@media (max-width: 760px) { .preprint-page .article-body { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+/* One wide reading column; contents live in the header bar */
+.preprint-page .article-body { display: block; max-width: 1180px; }
 
 /* Justified running text, with hyphenation to avoid wide gaps */
 .pp-text > p, .pp-text > section > p, .pp-text > ul > li, .pp-abs p:not(.kw), .pp-text .decl dd { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: wrap; }
-
-/* Contents rail: section numbers in the site's rail style */
-.preprint-page .pp-toc li::before { content: attr(data-n); display: inline-block; min-width: 18px; }
-.preprint-page .pp-toc a { display: inline; }
 
 /* Abstracts */
 .pp-abstracts { display: grid; gap: 22px; margin: 0; }
@@ -318,7 +313,7 @@
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
         <div class="system-mobile-group"><span class="system-mobile-label">Principal</span><details class="system-nav-group"><summary aria-controls="mobile-knowledge">Connaissances</summary><div class="system-nav-dropdown" id="mobile-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Rechercher dans le site<span aria-hidden="true">⌕</span></button><a href="/comprendre/">Comprendre</a><a href="/risques-prevention/">Risques</a><a href="/ia-en-spst/">IA en SPST</a><a href="/droit-gouvernance/">Gouvernance</a><a href="/cse/">CSE</a></div></details><details class="system-nav-group"><summary aria-controls="mobile-tools">Outils</summary><div class="system-nav-dropdown" id="mobile-tools"><a href="/outils/">Tous les outils</a><a href="/outils/claude-skills/">Claude Skills</a><a href="/outils/preconisations/">Préconisations</a><a href="/evaluer/">Évaluer le déploiement</a><a href="/outils/fiches-prevention/">Fiches de prévention</a></div></details><a href="/publications/" aria-current="page">Publications</a><a href="/actions/">Actions</a><a href="/lecture/">Lectures</a><a href="/a-propos/">À propos</a></div>
       </div>
-    </nav></header><main id="contenu">
+    </nav><nav class="page-nav" aria-label="Sommaire de la page"><div class="page-nav-inner"><span class="page-nav-label">Sur cette page</span><div class="page-nav-links"><a href="#resume">Résumé</a><a href="#introduction">Introduction</a><a href="#methode">Méthode</a><a href="#resultats">Résultats</a><a href="#discussion">Discussion</a><a href="#conclusion">Conclusion</a><a href="#declarations">Déclarations</a><a href="#references">Références</a><a href="#annexes">Annexes</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header><main id="contenu">
     <header class="article-masthead">
       <div>
         <p class="article-kicker">Publication · Preprint · Santé au travail · Sécurité de l’IA</p>
@@ -338,7 +333,6 @@
     </aside>
 
     <div class="article-body">
-      <aside class="article-aside pp-toc" aria-label="Dans cet article"><p class="article-aside-label">Dans cet article</p><ol><li data-n=""><a href="#resume">Résumé</a></li><li data-n="01"><a href="#introduction">Introduction et contexte</a></li><li data-n="02"><a href="#methode">Méthode</a></li><li data-n="03"><a href="#resultats">Résultats</a></li><li data-n="04"><a href="#discussion">Discussion</a></li><li data-n="05"><a href="#conclusion">Conclusion</a></li><li data-n=""><a href="#declarations">Déclarations</a></li><li data-n=""><a href="#references">Références</a></li><li data-n=""><a href="#annexes">Annexes</a></li></ol></aside>
       <article class="pp-text">
 <div class="pp-abstracts"><section class="pp-abs" id="resume" lang="fr" aria-labelledby="resume-title"><h2 id="resume-title">Résumé</h2>
     <p><b>Contexte.</b> Les modèles d’IA frontières font peser des risques potentiellement catastrophiques, qu’il s’agisse de cyberattaques, d’armes biologiques ou de perte de contrôle de systèmes non alignés. La maîtrise de ces risques repose sur le travail des chercheurs et des ingénieurs qui évaluent, testent et supervisent ces modèles. Les incidents survenus récemment chez OpenAI et Anthropic montrent que ce travail peut faillir. Pourtant, les politiques de sécurité publiées par ces entreprises encadrent l’évaluation des modèles sans presque rien dire des conditions de travail de ceux qui la mènent : temps disponible, charge, possibilité d’exprimer un désaccord.</p>

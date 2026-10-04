@@ -64,16 +64,11 @@
 .preprint-banner .article-source-inner > span { white-space: nowrap; }
 .preprint-banner .article-source-inner a { white-space: nowrap; text-underline-offset: 3px; }
 
-/* Wide reading column: the article uses all the width left by the contents rail */
-.preprint-page .article-body { grid-template-columns: minmax(180px, 230px) minmax(0, 1fr); gap: clamp(40px, 5vw, 88px); justify-content: stretch; }
-@media (max-width: 760px) { .preprint-page .article-body { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+/* One wide reading column; contents live in the header bar */
+.preprint-page .article-body { display: block; max-width: 1180px; }
 
 /* Justified running text, with hyphenation to avoid wide gaps */
 .pp-text > p, .pp-text > section > p, .pp-text > ul > li, .pp-abs p:not(.kw), .pp-text .decl dd { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: wrap; }
-
-/* Contents rail: section numbers in the site's rail style */
-.preprint-page .pp-toc li::before { content: attr(data-n); display: inline-block; min-width: 18px; }
-.preprint-page .pp-toc a { display: inline; }
 
 /* Abstracts */
 .pp-abstracts { display: grid; gap: 22px; margin: 0; }
@@ -318,7 +313,7 @@
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
         <div class="system-mobile-group"><span class="system-mobile-label">Main</span><details class="system-nav-group"><summary aria-controls="mobile-knowledge">Knowledge</summary><div class="system-nav-dropdown" id="mobile-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Search the site<span aria-hidden="true">⌕</span></button><a href="/en/understand/">Understand</a><a href="/en/risks/">Occupational risks</a><a href="/en/uses-and-field/occupational-health-example/">AI in OHS services</a><a href="/en/legal-governance/">Governance</a><a href="/en/cse/">CSE</a></div></details><details class="system-nav-group"><summary aria-controls="mobile-tools">Tools</summary><div class="system-nav-dropdown" id="mobile-tools"><a href="/en/evaluate/">Assess & deploy</a><a href="/en/tools/prevention-fact-sheets/">Prevention fact sheets</a></div></details><a href="/en/publications/" aria-current="page">Publications</a><a href="/en/actions/">Activities</a><a href="/en/reading/">Reading</a><a href="/en/about/">About</a></div>
       </div>
-    </nav></header><main id="contenu">
+    </nav><nav class="page-nav" aria-label="Page contents"><div class="page-nav-inner"><span class="page-nav-label">On this page</span><div class="page-nav-links"><a href="#abstract">Abstract</a><a href="#introduction">Introduction</a><a href="#methode">Methods</a><a href="#resultats">Results</a><a href="#discussion">Discussion</a><a href="#conclusion">Conclusion</a><a href="#declarations">Declarations</a><a href="#references">References</a><a href="#annexes">Appendix</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header><main id="contenu">
     <header class="article-masthead">
       <div>
         <p class="article-kicker">Publication · Preprint · Occupational health · AI safety</p>
@@ -338,7 +333,6 @@
     </aside>
 
     <div class="article-body">
-      <aside class="article-aside pp-toc" aria-label="In this article"><p class="article-aside-label">In this article</p><ol><li data-n=""><a href="#abstract">Abstract</a></li><li data-n="01"><a href="#introduction">Introduction and background</a></li><li data-n="02"><a href="#methode">Methods</a></li><li data-n="03"><a href="#resultats">Results</a></li><li data-n="04"><a href="#discussion">Discussion</a></li><li data-n="05"><a href="#conclusion">Conclusion</a></li><li data-n=""><a href="#declarations">Declarations</a></li><li data-n=""><a href="#references">References</a></li><li data-n=""><a href="#annexes">Appendix</a></li></ol></aside>
       <article class="pp-text">
 <div class="pp-abstracts"><section class="pp-abs" id="abstract" lang="en" aria-labelledby="abstract-title"><h2 id="abstract-title">Abstract</h2>
     <p class="en-title">Occupational health as a condition for frontier AI safety: an analysis of 39 testimonies using the Gollac framework and of ten recent incidents at OpenAI and Anthropic</p>
