@@ -64,6 +64,10 @@
 .preprint-banner .article-source-inner > span { white-space: nowrap; }
 .preprint-banner .article-source-inner a { white-space: nowrap; text-underline-offset: 3px; }
 
+/* Wide reading column: the article uses all the width left by the contents rail */
+.preprint-page .article-body { grid-template-columns: minmax(180px, 230px) minmax(0, 1fr); gap: clamp(40px, 5vw, 88px); justify-content: stretch; }
+@media (max-width: 760px) { .preprint-page .article-body { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+
 /* Contents rail: section numbers in the site's rail style */
 .preprint-page .pp-toc li::before { content: attr(data-n); display: inline-block; min-width: 18px; }
 .preprint-page .pp-toc a { display: inline; }
@@ -859,11 +863,6 @@
 
 
       </article>
-      <aside class="article-side-note" aria-label="Key point">
-        <p class="article-aside-label">Key point</p>
-        <strong>Deploying frontier models safely also requires protecting the work of those who test them, align them and raise the alarm.</strong>
-        <p>Six of the ten incidents reviewed involve a work-related factor. Value conflicts appear in 31 of 39 testimonies.</p>
-      </aside>
     </div>
 
     <section class="article-publication" aria-label="Publication details">

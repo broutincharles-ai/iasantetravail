@@ -64,6 +64,10 @@
 .preprint-banner .article-source-inner > span { white-space: nowrap; }
 .preprint-banner .article-source-inner a { white-space: nowrap; text-underline-offset: 3px; }
 
+/* Wide reading column: the article uses all the width left by the contents rail */
+.preprint-page .article-body { grid-template-columns: minmax(180px, 230px) minmax(0, 1fr); gap: clamp(40px, 5vw, 88px); justify-content: stretch; }
+@media (max-width: 760px) { .preprint-page .article-body { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+
 /* Contents rail: section numbers in the site's rail style */
 .preprint-page .pp-toc li::before { content: attr(data-n); display: inline-block; min-width: 18px; }
 .preprint-page .pp-toc a { display: inline; }
@@ -859,11 +863,6 @@
 
 
       </article>
-      <aside class="article-side-note" aria-label="À retenir">
-        <p class="article-aside-label">À retenir</p>
-        <strong>Sécuriser les modèles suppose aussi de sécuriser le travail de ceux qui les testent, les alignent et donnent l’alerte.</strong>
-        <p>Six des dix incidents recensés comportent un facteur lié au travail. Les conflits de valeurs ressortent dans 31 témoignages sur 39.</p>
-      </aside>
     </div>
 
     <section class="article-publication" aria-label="Informations de publication">
