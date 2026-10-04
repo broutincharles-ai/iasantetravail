@@ -29,7 +29,7 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/publications/ — Trois publications du Dr Charles Broutin : deux articles publiés, présentés par des résumés détaillés, et un preprint en texte intégral.
 - https://www.iasantetravail.com/actions/ — Séminaires et interventions : Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP.
 
-- https://www.iasantetravail.com/en/publications/ — English pages for three publications: summaries of two published articles and the full text of a preprint; the INRS study appears first.
+- https://www.iasantetravail.com/en/publications/ — English pages for three publications: the full text of a preprint, which appears first, and summaries of two published articles.
 - https://www.iasantetravail.com/en/actions/ — Seminars and presentations in Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference.
 
 ## Detailed research summaries / Résumés détaillés
