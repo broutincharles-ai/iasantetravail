@@ -67,6 +67,19 @@
 /* One wide reading column; contents live in the header bar */
 .preprint-page .article-body { display: block; max-width: 1180px; }
 
+/* PDF download, in the space between the preprint banner and the abstracts */
+.preprint-page .article-body { padding-top: clamp(36px, 4.2vw, 60px); }
+.pp-download { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin: 0 0 clamp(36px, 4.2vw, 56px); }
+.pp-download-button { display: inline-flex; align-items: center; gap: 18px; min-height: 78px; padding: 16px 34px 16px 26px; border: 1px solid var(--green-dark); color: var(--paper); background: var(--green-dark); text-decoration: none; transition: background-color .15s ease, border-color .15s ease; }
+.pp-download-button:hover { border-color: var(--terra-interactive); background: var(--terra-interactive); }
+.pp-download-button:focus-visible { outline: 3px solid var(--terra-interactive); outline-offset: 3px; }
+.pp-download-icon { width: 30px; height: 30px; flex: none; }
+.pp-download-text { display: grid; gap: 5px; text-align: left; }
+.pp-download-label { font: 700 20px/1.15 var(--pp-sans); letter-spacing: -.01em; }
+.pp-download-meta { font: 700 11px/1.3 var(--pp-mono); letter-spacing: .03em; opacity: .85; }
+.pp-download-note { max-width: 44ch; margin: 0; color: var(--reading-muted); font-size: 14px; line-height: 1.6; }
+.pp-download-note a { color: var(--reading-ink); font-weight: 700; white-space: nowrap; text-underline-offset: 3px; }
+
 /* Justified running text, with hyphenation to avoid wide gaps */
 .pp-text > p, .pp-text > section > p, .pp-text > ul > li, .pp-abs p:not(.kw), .pp-text .decl dd { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: wrap; }
 
@@ -151,6 +164,10 @@
   .pp-text .decl dt { padding: 16px 0 4px; border-bottom: 0; }
   .pp-text .decl dd { padding-top: 0; }
   .preprint-banner .article-source-inner a { white-space: normal; }
+}
+
+@media (max-width: 640px) {
+  .pp-download-button { width: 100%; }
 }
 
 /* Figures: original design, scoped */
@@ -334,6 +351,7 @@
 
     <div class="article-body">
       <article class="pp-text">
+<div class="pp-download"><a class="pp-download-button" href="/assets/downloads/preprint-sante-travail-securite-ia/Broutin-2026-preprint-sante-travail-securite-IA-frontieres-FR.pdf" target="_blank" rel="noopener" type="application/pdf"><svg class="pp-download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5v11.5M6.5 9.5 12 15l5.5-5.5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span class="pp-download-text"><span class="pp-download-label">Télécharger le preprint</span><span class="pp-download-meta">PDF · 24 pages · 0,4 Mo</span></span></a><p class="pp-download-note">Mise en page d’article de revue, avec les figures, les tableaux et les annexes. <a href="/assets/downloads/preprint-sante-travail-securite-ia/Broutin-2026-preprint-occupational-health-frontier-AI-safety-EN.pdf" target="_blank" rel="noopener" type="application/pdf" hreflang="en" lang="en">English version (PDF)</a></p></div>
 <div class="pp-abstracts"><section class="pp-abs" id="resume" lang="fr" aria-labelledby="resume-title"><h2 id="resume-title">Résumé</h2>
     <p><b>Contexte.</b> Les modèles d’IA frontières font peser des risques potentiellement catastrophiques, qu’il s’agisse de cyberattaques, d’armes biologiques ou de perte de contrôle de systèmes non alignés. La maîtrise de ces risques repose sur le travail des chercheurs et des ingénieurs qui évaluent, testent et supervisent ces modèles. Les incidents survenus récemment chez OpenAI et Anthropic montrent que ce travail peut faillir. Pourtant, les politiques de sécurité publiées par ces entreprises encadrent l’évaluation des modèles sans presque rien dire des conditions de travail de ceux qui la mènent : temps disponible, charge, possibilité d’exprimer un désaccord.</p>
     <p><b>Objectif.</b> Déterminer si la santé au travail aurait pu contribuer à atténuer ces risques.</p>
