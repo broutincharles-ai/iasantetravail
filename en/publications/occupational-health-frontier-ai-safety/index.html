@@ -68,6 +68,9 @@
 .preprint-page .article-body { grid-template-columns: minmax(180px, 230px) minmax(0, 1fr); gap: clamp(40px, 5vw, 88px); justify-content: stretch; }
 @media (max-width: 760px) { .preprint-page .article-body { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
 
+/* Justified running text, with hyphenation to avoid wide gaps */
+.pp-text > p, .pp-text > section > p, .pp-text > ul > li, .pp-abs p:not(.kw), .pp-text .decl dd { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: wrap; }
+
 /* Contents rail: section numbers in the site's rail style */
 .preprint-page .pp-toc li::before { content: attr(data-n); display: inline-block; min-width: 18px; }
 .preprint-page .pp-toc a { display: inline; }
