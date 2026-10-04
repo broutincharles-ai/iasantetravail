@@ -26,10 +26,10 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
 - https://www.iasantetravail.com/a-propos/ — Auteur, parcours, formations et newsletters du site.
 
-- https://www.iasantetravail.com/publications/ — Deux publications du Dr Charles Broutin, avec résumés, méthodes, résultats et limites.
+- https://www.iasantetravail.com/publications/ — Trois publications du Dr Charles Broutin : deux articles publiés, présentés par des résumés détaillés, et un preprint en texte intégral.
 - https://www.iasantetravail.com/actions/ — Séminaires et interventions : Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP.
 
-- https://www.iasantetravail.com/en/publications/ — English summaries of both publications, with methods, findings and limitations; the INRS study appears first.
+- https://www.iasantetravail.com/en/publications/ — English pages for three publications: the full text of a preprint, which appears first, and summaries of two published articles.
 - https://www.iasantetravail.com/en/actions/ — Seminars and presentations in Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference.
 
 ## Detailed research summaries / Résumés détaillés
@@ -40,6 +40,8 @@ These pages distinguish the original journal article from its author-written web
 - https://www.iasantetravail.com/en/publications/ai-medical-recommendations/ — English summary of the INRS study on AI-assisted review of medical recommendations.
 - https://www.iasantetravail.com/publications/llm-risques-psychosociaux/ — Revue générale (août 2025) sur les LLM, les risques psychosociaux au travail et les pistes de prévention. DOI : 10.1016/j.admp.2025.102877.
 - https://www.iasantetravail.com/en/publications/llm-psychosocial-risks/ — English summary of the narrative review on LLMs and psychosocial risks at work.
+- https://www.iasantetravail.com/publications/sante-travail-securite-modeles-frontieres/ — Preprint (4 octobre 2026, non évalué par les pairs), texte intégral : « La santé au travail, condition de la sécurité des modèles d’IA frontières ». 39 témoignages de chercheurs et d’ingénieurs codés selon la grille Gollac et dix incidents de sécurité chez OpenAI et Anthropic.
+- https://www.iasantetravail.com/en/publications/occupational-health-frontier-ai-safety/ — English full text of the same preprint, “Occupational health as a condition for frontier AI safety” (4 October 2026, not peer reviewed).
 
 - https://www.iasantetravail.com/lecture/humain-dans-la-boucle/ — Analyse du Dr Charles Broutin sur la supervision des agents IA, la fatigue d’approbation, la déqualification et les risques psychosociaux. Publiée le 26 septembre 2026 à partir du position paper « AI Agents Push Humans Out of the Loop ».
 - https://www.iasantetravail.com/en/reading/human-in-the-loop/ — English translation of Dr Charles Broutin’s analysis of AI agent oversight, approval fatigue, deskilling and psychosocial risks, published on 26 September 2026.

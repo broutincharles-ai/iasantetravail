@@ -12,6 +12,8 @@ cards = {
  'inrs-en': ('AI & Occupational Health', 'PUBLICATIONS · INRS STUDY', ['AI and medical', 'recommendations'], 'Methods, findings and limitations · June 2026'),
  'llm-fr': ('IA & Santé au Travail', 'PUBLICATIONS · REVUE GÉNÉRALE', ['LLM et risques', 'psychosociaux au travail'], 'Cadre d’analyse et prévention · Août 2025'),
  'llm-en': ('AI & Occupational Health', 'PUBLICATIONS · NARRATIVE REVIEW', ['LLMs and psychosocial', 'risks at work'], 'Analytical framework and prevention · August 2025'),
+ 'preprint-fr': ('IA & Santé au Travail', 'PUBLICATIONS · PREPRINT', ['Santé au travail et', 'sécurité de l’IA frontière'], '39 témoignages, grille Gollac, 10 incidents · Octobre 2026'),
+ 'preprint-en': ('AI & Occupational Health', 'PUBLICATIONS · PREPRINT', ['Occupational health and', 'frontier AI safety'], '39 testimonies, Gollac framework, 10 incidents · October 2026'),
 }
 output = ROOT / 'assets/images/social'
 output.mkdir(parents=True, exist_ok=True)
