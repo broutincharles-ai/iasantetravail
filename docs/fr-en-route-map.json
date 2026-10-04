@@ -28,5 +28,6 @@
   "/publications/": "/en/publications/",
   "/actions/": "/en/actions/",
   "/publications/ia-preconisations-medicales/": "/en/publications/ai-medical-recommendations/",
-  "/publications/llm-risques-psychosociaux/": "/en/publications/llm-psychosocial-risks/"
+  "/publications/llm-risques-psychosociaux/": "/en/publications/llm-psychosocial-risks/",
+  "/publications/sante-travail-securite-modeles-frontieres/": "/en/publications/occupational-health-frontier-ai-safety/"
 }

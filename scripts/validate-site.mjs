@@ -270,7 +270,9 @@ for (const file of htmlFiles) {
     "comprendre/index.html", "en/understand/index.html",
     "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
     "lecture/index.html", "en/reading/index.html",
-    "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html"
+    "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html",
+    "publications/index.html", "en/publications/index.html",
+    "publications/sante-travail-securite-modeles-frontieres/index.html", "en/publications/occupational-health-frontier-ai-safety/index.html"
   ].includes(relative);
   if (!allowsAiSafetyPositioning && /(?:ai[ -]?safety|sécurité (?:de l[’']ia|ia)|agi safety|frontier ai)/i.test(html)) {
     errors.push(`${path.relative(root, file)}: legacy AI-safety positioning remains in indexable content`);

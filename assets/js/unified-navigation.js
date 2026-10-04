@@ -30,6 +30,7 @@
     "/publications/": "/en/publications/",
     "/publications/ia-preconisations-medicales/": "/en/publications/ai-medical-recommendations/",
     "/publications/llm-risques-psychosociaux/": "/en/publications/llm-psychosocial-risks/",
+    "/publications/sante-travail-securite-modeles-frontieres/": "/en/publications/occupational-health-frontier-ai-safety/",
     "/actions/": "/en/actions/",
     "/ressources/modeles/": "/en/resources/models/",
     "/mentions-legales/": "/en/legal-notice/",

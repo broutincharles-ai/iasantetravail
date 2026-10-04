@@ -20,9 +20,10 @@ export const INDEXABLE_PAIRS = [
   { fr: "lecture/travailleurs-ia-risques-psychosociaux/index.html", en: "en/reading/ai-workers-psychosocial-risks/index.html", lastmod: "2026-09-21" },
   { fr: "cse/index.html", en: "en/cse/index.html", lastmod: "2026-09-21" },
   { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-21" },
-  { fr: "publications/index.html", en: "en/publications/index.html", lastmod: "2026-09-21" },
+  { fr: "publications/index.html", en: "en/publications/index.html", lastmod: "2026-10-04" },
   { fr: "publications/ia-preconisations-medicales/index.html", en: "en/publications/ai-medical-recommendations/index.html", lastmod: "2026-09-21" },
   { fr: "publications/llm-risques-psychosociaux/index.html", en: "en/publications/llm-psychosocial-risks/index.html", lastmod: "2026-09-21" },
+  { fr: "publications/sante-travail-securite-modeles-frontieres/index.html", en: "en/publications/occupational-health-frontier-ai-safety/index.html", lastmod: "2026-10-04" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" }
 ];
 
