@@ -1691,6 +1691,23 @@ body.ux-search-active { overflow: hidden; }
 .skills-back:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 1020px) { .tools-page .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .tools-page .tools-grid { grid-template-columns: 1fr; } }
+
+/* The main tool opens the list across the whole width; the six others follow in rows of three (two on tablets). */
+.tools-page .tool-card.is-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  gap: 0 clamp(32px, 5vw, 72px);
+  align-items: end;
+}
+.tools-page .tool-card.is-featured h2 { font-size: clamp(32px, 3.4vw, 46px); }
+.tools-page .tool-card-main > p:not(.tools-kicker) { max-width: 40em; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
+.tools-page .tool-card-side { display: flex; flex-direction: column; align-items: flex-start; }
+.tools-page .tool-card-side .tool-meta { margin-top: 0; }
+@media (max-width: 760px) {
+  .tools-page .tool-card.is-featured { display: flex; flex-direction: column; align-items: stretch; }
+  .tools-page .tool-card-side { margin-top: 18px; align-items: stretch; }
+}
   </style>
   <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
@@ -1729,12 +1746,16 @@ body.ux-search-active { overflow: hidden; }
     <p class="tools-lede">Évaluer un projet d’IA, préparer l’avis du CSE ou un pilote, situer un usage en SPST, prévenir les risques psychosociaux et relire ses préconisations. Les réponses restent dans votre navigateur ; seule la relecture par Jev envoie le texte saisi pour l’analyser.</p>
   </section>
   <section class="tools-grid" aria-label="Choisir un outil">
-    <article class="tool-card">
-      <p class="tools-kicker">Employeurs, CSE, services de santé au travail</p>
-      <h2>Évaluer un projet d’IA</h2>
-      <p>Documenter un usage d’IA avant le pilote, confronter les effets observés après le déploiement et suivre neuf dimensions du travail dans la durée.</p>
-      <p class="tool-meta">18 questions · environ 10 minutes · traitement local</p>
-      <a class="tool-button" href="/evaluer/">Commencer l’évaluation <span aria-hidden="true">→</span></a>
+    <article class="tool-card is-featured">
+      <div class="tool-card-main">
+        <p class="tools-kicker">Employeurs, CSE, services de santé au travail</p>
+        <h2>Évaluer un projet d’IA</h2>
+        <p>Documenter un usage d’IA avant le pilote, confronter les effets observés après le déploiement et suivre neuf dimensions du travail dans la durée.</p>
+      </div>
+      <div class="tool-card-side">
+        <p class="tool-meta">18 questions · environ 10 minutes · traitement local</p>
+        <a class="tool-button" href="/evaluer/">Commencer l’évaluation <span aria-hidden="true">→</span></a>
+      </div>
     </article>
     <article class="tool-card">
       <p class="tools-kicker">Élus du CSE</p>
