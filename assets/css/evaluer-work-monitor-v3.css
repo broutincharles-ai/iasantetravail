@@ -423,6 +423,15 @@
 .decision-rationale label { display: block; margin-bottom: 8px; color: var(--eval-ink); font-size: 13px; font-weight: 720; }
 .field legend span,
 .dimension-note label span { color: var(--eval-muted); font-size: 11px; font-weight: 500; }
+/* Say which context fields the tool needs before the questions, instead of one error at a time. */
+#contextForm .field:has(> input[required], > select[required], > textarea[required]) > label::after,
+#contextForm #usageField > legend::after {
+  content: "required";
+  margin-left: 7px;
+  color: var(--eval-brick, #963723);
+  font-size: 12px;
+  font-weight: 600;
+}
 .field select,
 .field input,
 .field textarea,
