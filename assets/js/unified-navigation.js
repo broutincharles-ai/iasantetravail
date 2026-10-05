@@ -354,6 +354,14 @@
       group.querySelector("summary").focus();
     }
   });
+  // Escape also works after a click on a panel's blank area, which leaves the focus on the page.
+  document.addEventListener("keydown", event => {
+    if (event.key !== "Escape") return;
+    const group = dropdowns.find(item => item.open);
+    if (!group || group.contains(document.activeElement)) return;
+    group.open = false;
+    group.querySelector("summary").focus();
+  });
 
   const menuButton = header.querySelector(".system-menu-button");
   const mobilePanel = header.querySelector(".system-mobile-panel");
@@ -461,6 +469,7 @@
     updateLinksOverflow();
     // A mouse wheel over the bar scrolls its links sideways, then the page once an end is reached.
     pageNavLinksBox.addEventListener("wheel", event => {
+      if (event.ctrlKey || event.metaKey) return; // browser zoom, trackpad pinch
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
       const max = pageNavLinksBox.scrollWidth - pageNavLinksBox.clientWidth;
       if (max <= 0 || getComputedStyle(pageNavLinksBox).overflowX === "visible") return;
@@ -510,7 +519,9 @@
     // At the very end of the page, the last sections can no longer reach the top: the last one in view is current.
     if (sections.length && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
       const inView = sections.filter(section => section.getClientRects().length && section.getBoundingClientRect().top < window.innerHeight);
-      if (inView.length) currentSection = inView[inView.length - 1].id;
+      // The one starting lowest on screen (sections can be nested).
+      const last = inView.reduce((best, section) => !best || section.getBoundingClientRect().top >= best.getBoundingClientRect().top ? section : best, null);
+      if (last) currentSection = last.id;
     }
     setActiveSection(currentSection);
     if (pageProgress) {
@@ -547,8 +558,9 @@
   // Opened at an address ending in #section: fonts and figures can still change the layout after the
   // browser has jumped there. Jump again once they are in place, unless the reader has already moved.
   const initialTarget = targetOf(window.location.hash);
-  if (initialTarget) {
-    openDetailsAround(initialTarget);
+  const navigationType = performance.getEntriesByType?.("navigation")?.[0]?.type || "navigate";
+  if (initialTarget) openDetailsAround(initialTarget);
+  if (initialTarget && navigationType === "navigate") {
     let readerMoved = false;
     const markMoved = () => { readerMoved = true; };
     ["wheel", "touchstart", "keydown", "mousedown"].forEach(type => window.addEventListener(type, markMoved, { once: true, passive: true }));

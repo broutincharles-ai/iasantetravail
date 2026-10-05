@@ -2495,12 +2495,12 @@ body.ux-search-active { overflow: hidden; }
 </style>
   <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
-  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=7.1">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=7.2">
   <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
-  <script defer src="/assets/js/unified-navigation.js?v=7.1"></script>
-  <script defer src="/assets/js/ux-improvements.js?v=1.2"></script>
-  <script defer src="/assets/js/consent.js?v=1.0"></script>
-  <script src="/assets/js/language-routing.js?v=2.0"></script>
+  <script defer src="/assets/js/unified-navigation.js?v=7.2"></script>
+  <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
+  <script defer src="/assets/js/consent.js?v=1.1"></script>
+  <script src="/assets/js/language-routing.js?v=2.1"></script>
 </head>
 <body class="page-headings page-shell-v2 hero-editorial resource-page risk-resource-page">
   <a class="skip-link" href="#contenu">Skip to main content</a>
@@ -3112,7 +3112,8 @@ body.ux-search-active { overflow: hidden; }
         panels[i].hidden = !active;
       });
       if (focusTab) tabs[index].focus();
-      tabs[index].scrollIntoView({ block: "nearest", inline: "nearest" });
+      // Only when the reader moves between tabs: on load this would scroll the whole page down to the tabs.
+      if (focusTab || scroll) tabs[index].scrollIntoView({ block: "nearest", inline: "nearest" });
       if (scroll) explorer.scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "start" });
     };
 

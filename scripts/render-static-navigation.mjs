@@ -31,13 +31,13 @@ const ASSETS = {
   fontsCss: "/assets/css/fonts.css?v=1.0",
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
   readabilityCss: "/assets/css/readability.css?v=1.0",
-  shellCss: "/assets/css/unified-navigation.css?v=7.1",
+  shellCss: "/assets/css/unified-navigation.css?v=7.2",
   nojsCss: "/assets/css/navigation-nojs.css?v=2.1",
   appShellCss: "/assets/css/preconisations-shell.css?v=1.2",
-  navJs: "/assets/js/unified-navigation.js?v=7.1",
-  uxJs: "/assets/js/ux-improvements.js?v=1.2",
-  consentJs: "/assets/js/consent.js?v=1.0",
-  languageJs: "/assets/js/language-routing.js?v=2.0"
+  navJs: "/assets/js/unified-navigation.js?v=7.2",
+  uxJs: "/assets/js/ux-improvements.js?v=1.3",
+  consentJs: "/assets/js/consent.js?v=1.1",
+  languageJs: "/assets/js/language-routing.js?v=2.1"
 };
 
 const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -112,7 +112,9 @@ function renderShell(html, file) {
     html = existingShell.test(html) ? html.replace(existingShell, () => `${header}\n`) : html.replace(/(<body\b[^>]*>)/i, (match, body) => `${body}\n${header}\n`);
     // The app's own skip link sits inside #root, after the site header: give the page one before it.
     const skipLink = '<a class="skip-link" href="#main-content">Aller à la relecture</a>';
-    if (!html.includes(`${skipLink}\n<header`)) html = html.replace(/<header\b[^>]*\bid=["']site-header["']/i, match => `${skipLink}\n${match}`);
+    if (!/<a class="skip-link" href="#main-content">[^<]*<\/a>\s*<header\b[^>]*\bid=["']site-header["']/i.test(html)) {
+      html = html.replace(/<header\b[^>]*\bid=["']site-header["']/i, match => `${skipLink}\n${match}`);
+    }
     const existingFooter = /<footer\b[^>]*\bid=["']site-footer["'][^>]*>[\s\S]*?<\/footer>\s*/i;
     html = existingFooter.test(html)
       ? html.replace(existingFooter, () => `${footer}\n`)

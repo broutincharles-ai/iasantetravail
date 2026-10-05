@@ -61,8 +61,9 @@
   let arrivedFromThisSite = false;
   try { arrivedFromThisSite = Boolean(document.referrer) && new URL(document.referrer).origin === window.location.origin; } catch { /* ignore */ }
 
-  // The language-neutral homepage is the only address that switches by itself.
-  if (window.location.pathname === "/" && preferred === "en" && !arrivedFromThisSite) {
+  // The language-neutral homepage is the only address that switches by itself. A link to one of its
+  // fragments (such as an old /#legislation) is a deep link: it stays, and is redirected to its page.
+  if (window.location.pathname === "/" && preferred === "en" && !arrivedFromThisSite && !window.location.hash) {
     destination.search = currentUrl.search;
     window.location.replace(destination.href);
     return;
