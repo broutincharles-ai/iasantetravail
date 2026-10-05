@@ -316,14 +316,15 @@
   background: #efe3d3;
 }
 #site-header .system-language-suggestion-inner {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 16px;
+  gap: 2px 16px;
   width: var(--sh-wrap);
   min-height: 44px;
   margin: 0 auto;
-  padding: 6px 0;
+  padding: 6px 44px 6px 0;
 }
 #site-header .system-language-suggestion p { display: block; color: var(--sh-ink-soft); font: 500 14px/1.4 var(--sh-sans); }
 #site-header .system-language-suggestion a {
@@ -336,14 +337,17 @@
   text-underline-offset: 3px;
 }
 #site-header .system-language-suggestion button {
+  position: absolute;
+  top: 50%;
+  right: -6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-left: auto;
+  width: 40px;
+  height: 40px;
   color: var(--sh-ink-soft);
   font: 400 22px/1 var(--sh-sans);
+  transform: translateY(-50%);
 }
 #site-header .system-language-suggestion button:hover { color: var(--sh-accent); }
 

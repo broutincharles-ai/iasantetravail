@@ -52,8 +52,9 @@
 
   const alternate = document.querySelector(`link[rel="alternate"][hreflang="${preferred}"]`);
   if (!alternate) return;
-  const destination = new URL(alternate.getAttribute("href"), window.location.href);
-  if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname) return;
+  // hreflang links carry the production address; only their path matters here.
+  const destination = new URL(new URL(alternate.getAttribute("href"), window.location.href).pathname, window.location.origin);
+  if (destination.pathname === window.location.pathname) return;
 
   let arrivedFromThisSite = false;
   try { arrivedFromThisSite = Boolean(document.referrer) && new URL(document.referrer).origin === window.location.origin; } catch { /* ignore */ }
