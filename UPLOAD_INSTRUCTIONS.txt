@@ -1,2 +1,0 @@
-Remplace uniquement le fichier evaluer/index.html de ton dépôt par celui fourni ici.
-Les pages benchmark et questionnaires restent inchangées.
