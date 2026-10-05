@@ -415,17 +415,7 @@ for (const [frPage, enPage] of bilingualPages) {
   }
 }
 
-for (const [frPage, enPage] of [["evaluer/impact/suivi.html", "en/evaluate/impact/follow-up.html"]]) {
-  const expected = { fr: publicUrl(frPage), en: publicUrl(enPage) };
-  for (const [relative, lang] of [[frPage, "fr"], [enPage, "en"]]) {
-    const html = await cachedHtml(path.join(root, relative));
-    const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
-    if (alternateHref(head, "fr") !== expected.fr) errors.push(`${relative}: T1 French hreflang must point to ${expected.fr}`);
-    if (alternateHref(head, "en") !== expected.en) errors.push(`${relative}: T1 English hreflang must point to ${expected.en}`);
-    if (!alternateHref(head, "x-default")) errors.push(`${relative}: T1 x-default hreflang missing`);
-    if (!new RegExp(`<html[^>]+lang=["']${lang}["']`, "i").test(html)) errors.push(`${relative}: html lang must be ${lang}`);
-  }
-}
+// The former T1 questionnaires (evaluer/impact/) now redirect to the single assessment tool (/evaluer/).
 
 if (errors.length) {
   console.error(errors.join("\n"));
