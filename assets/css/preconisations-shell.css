@@ -7,6 +7,9 @@
 
 #root .site-header .site-brand,
 #root .site-header .site-nav nav a[href$="/outils/"] { display: none; }
+/* The page's skip link now comes before the site header (scripts/render-static-navigation.mjs). */
+#root .skip-link { display: none; }
+body > .skip-link { z-index: 1300; }
 #root .site-header { border-bottom: 0; background: transparent; }
 #root .site-header .site-nav {
   min-height: 0;
@@ -99,6 +102,12 @@
 #root .context-section textarea { font-size: 15px; }
 @media (max-width: 850px) {
   #root .criterion-title { font-size: 14px; }
+}
+@media (max-width: 420px) {
+  /* On a small phone the confusion matrices no longer fit two by two: one per row. */
+  #root .bench-matrices { grid-template-columns: minmax(0, 1fr); }
+  #root .bench-matrices .bench-matrix { border-right: 0 !important; }
+  #root .bench-matrices .bench-matrix:nth-child(n+2) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 700px) {
   #root .hero-meta { font-size: 11px; }

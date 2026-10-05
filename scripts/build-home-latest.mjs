@@ -45,6 +45,7 @@ for (const { home, collection, prefix, locale, count } of SETS) {
   const page = await readFile(home, "utf8");
   const block = /(<!-- latest-readings:start -->)[\s\S]*?(<!-- latest-readings:end -->)/;
   if (!block.test(page)) throw new Error(`${home}: latest-readings markers missing`);
-  await writeFile(home, page.replace(block, `$1${items}\n          $2`));
+  // A function, so that "$" in a title or summary is inserted as is.
+  await writeFile(home, page.replace(block, (match, start, end) => `${start}${items}\n          ${end}`));
   console.log(`${home}: ${selected.map(entry => entry.href).join(", ")}`);
 }

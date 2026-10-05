@@ -4,6 +4,8 @@
   // Audience measurement only with consent (CNIL rules for Google Analytics).
   // Nothing from Google is loaded until the visitor accepts. The choice is kept six months
   // in this browser and can be changed at any time with "Gérer les cookies" in the footer.
+  // Pages with <meta name="iast-analytics" content="off"> (the assessment and Préconisations
+  // tools) never load it and do not ask; the footer button still lets visitors set their choice.
 
   const MEASUREMENT_ID = "G-RKEJVY4XVC";
   const STORAGE_KEY = "iast-consent";
@@ -36,9 +38,11 @@
     try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, analytics, at: Date.now() })); } catch { /* not stored */ }
   };
 
+  const pageOptedOut = document.querySelector('meta[name="iast-analytics"]')?.getAttribute("content") === "off";
   let analyticsLoaded = false;
   const loadAnalytics = () => {
-    if (analyticsLoaded) return;
+    if (analyticsLoaded || pageOptedOut) return;
+    window[`ga-disable-${MEASUREMENT_ID}`] = false;
     analyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function gtag() { window.dataLayer.push(arguments); };
@@ -73,6 +77,8 @@
     closeBanner();
     if (analytics) loadAnalytics();
     else {
+      // Stop a tag already running on this page before removing its cookies.
+      window[`ga-disable-${MEASUREMENT_ID}`] = true;
       deleteAnalyticsCookies();
       if (wasLoaded) window.location.reload();
     }
@@ -88,7 +94,10 @@
       if (button) decide(button.dataset.consentChoice === "accept");
     });
     banner.addEventListener("keydown", event => { if (event.key === "Escape" && readChoice()) closeBanner(); });
-    document.body.appendChild(banner);
+    // Early in the reading order (right after the skip link) although it is shown at the bottom.
+    const skipLink = document.querySelector("body > .skip-link, body > a[href^='#']:first-child");
+    if (skipLink) skipLink.after(banner);
+    else document.body.prepend(banner);
     if (focus) banner.querySelector("button")?.focus();
   };
 
@@ -103,7 +112,8 @@
   const isCrawler = navigator.webdriver || /bot|crawl|spider|slurp|archiver|preview|lighthouse|headless|inspectiontool|google-|mediapartners/i.test(navigator.userAgent || "");
   const choice = readChoice();
   if (choice?.analytics) loadAnalytics();
-  else if (!choice && !isCrawler) {
+  else if (choice) deleteAnalyticsCookies(); // refused: remove any cookie set before the refusal
+  else if (!isCrawler && !pageOptedOut) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => showBanner(false), { once: true });
     else showBanner(false);
   }

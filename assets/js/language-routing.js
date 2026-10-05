@@ -30,10 +30,12 @@
     window.history?.replaceState?.(null, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
   }
 
-  // Remember a manual choice made with any FR/EN link (header switch, footer, suggestion bar).
+  // Remember a manual choice made with the language switches (header, footer, suggestion bar).
+  // Other links that merely carry hreflang, such as a PDF in the other language, are not a choice.
   document.addEventListener("click", event => {
     const link = event.target?.closest?.('a[hreflang="fr"], a[hreflang="en"]');
-    const language = link && normalise(link.getAttribute("hreflang"));
+    if (!link || !link.closest("#site-header, #site-footer, #site-language-suggestion")) return;
+    const language = normalise(link.getAttribute("hreflang"));
     if (language) write("localStorage", preferenceKey, language);
   }, true);
 
@@ -47,7 +49,7 @@
   const english = browserLanguages.indexOf("en");
   // English only for browsers that do not list French; French when it comes before English.
   const browserChoice = french === -1 ? "en" : (english === -1 || french < english) ? "fr" : "";
-  const preferred = saved || browserChoice;
+  const preferred = explicit || saved || browserChoice;
   if (!preferred || preferred === pageLanguage) return;
 
   const alternate = document.querySelector(`link[rel="alternate"][hreflang="${preferred}"]`);
@@ -71,10 +73,13 @@
     ? { message: "This page is also available in English.", action: "Read in English", close: "Keep the French version" }
     : { message: "Cette page existe aussi en français.", action: "Lire en français", close: "Garder la version anglaise" };
 
+  // The bar sits just under the header, in the page flow: it scrolls away instead of
+  // making the sticky header taller.
   const showSuggestion = () => {
     const header = document.querySelector("#site-header, body > header");
-    if (!header || header.querySelector(".system-language-suggestion")) return;
+    if (!header || document.getElementById("site-language-suggestion")) return;
     const bar = document.createElement("div");
+    bar.id = "site-language-suggestion";
     bar.className = "system-language-suggestion";
     bar.lang = preferred;
     bar.setAttribute("role", "region");
@@ -95,12 +100,16 @@
     close.addEventListener("click", () => {
       write("localStorage", dismissedKey, "1");
       bar.remove();
+      // Keep keyboard users where they were: on the content that follows.
+      const next = document.querySelector("#main-content, main, [role='main']");
+      if (next) {
+        if (!next.hasAttribute("tabindex")) next.setAttribute("tabindex", "-1");
+        next.focus({ preventScroll: true });
+      }
     });
     inner.append(message, link, close);
     bar.append(inner);
-    const pageNav = header.querySelector(".page-nav");
-    if (pageNav) header.insertBefore(bar, pageNav);
-    else header.append(bar);
+    header.after(bar);
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", showSuggestion, { once: true });
   else showSuggestion();

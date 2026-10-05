@@ -21,4 +21,8 @@
 
 @media (max-width: 760px) {
   #site-header .page-nav-links { display: flex; flex-wrap: wrap; gap: 0 16px; }
+  /* Open menus span the screen width under the header, whichever item they belong to. */
+  #site-header .system-nav-group { position: static; }
+  #site-header .system-nav-dropdown,
+  #site-header .system-nav-dropdown.is-wide { top: 100%; right: var(--sh-gutter); left: var(--sh-gutter); width: auto; }
 }

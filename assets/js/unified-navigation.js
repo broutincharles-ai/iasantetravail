@@ -46,7 +46,7 @@
       searchShort: "Rechercher",
       searchLong: "Rechercher dans le site",
       menu: "Menu",
-      language: { code: "EN", lang: "en", label: "View this page in English", footer: "English version" },
+      language: { code: "EN", lang: "en", label: "View this page in English", footer: "English version", homeLabel: "English homepage (this page is in French only)", homeFooter: "English homepage" },
       items: [
         { key: "understand", label: "Comprendre", href: "/comprendre/" },
         { key: "risks", label: "Risques", href: "/risques-prevention/" },
@@ -101,7 +101,7 @@
       searchShort: "Search",
       searchLong: "Search the site",
       menu: "Menu",
-      language: { code: "FR", lang: "fr", label: "Voir cette page en français", footer: "Version française" },
+      language: { code: "FR", lang: "fr", label: "Voir cette page en français", footer: "Version française", homeLabel: "Accueil en français (cette page n’existe qu’en anglais)", homeFooter: "Accueil en français" },
       items: [
         { key: "understand", label: "Understand", href: "/en/understand/" },
         { key: "risks", label: "Risks", href: "/en/risks/" },
@@ -180,17 +180,21 @@
     return match ? match[1] : "";
   }
 
+  // The equivalent page in the other language, or that language's homepage when there is none.
   function translationFor(path, isEnglish) {
-    if (!isEnglish) return PAIRS[path] || "/en/";
+    if (!isEnglish) return PAIRS[path] ? { url: PAIRS[path], exact: true } : { url: "/en/", exact: false };
     const reverse = Object.fromEntries(Object.entries(PAIRS).map(([fr, en]) => [en, fr]));
-    return reverse[path] || "/";
+    return reverse[path] ? { url: reverse[path], exact: true } : { url: "/", exact: false };
   }
 
   function renderNavigationShell(pathname, isEnglish, pageNavMarkup = "") {
     const path = pathname.replace(/\/index\.html$/, "/");
     const site = isEnglish ? SITE.en : SITE.fr;
     const activeKey = activeKeyFor(path);
-    const translationUrl = translationFor(path, isEnglish);
+    const translation = translationFor(path, isEnglish);
+    const translationUrl = translation.url;
+    const languageLabel = translation.exact ? site.language.label : site.language.homeLabel;
+    const languageFooter = translation.exact ? site.language.footer : site.language.homeFooter;
     const isHome = path === site.home;
     // A link to a section of another page (#…) is never the current page.
     const current = (key, href) => key === activeKey && !href.includes("#") ? ' aria-current="page"' : "";
@@ -222,7 +226,7 @@
       <div class="system-desktop-navigation"><div class="system-primary-links">${desktopItems}</div></div>
       <div class="system-nav-actions">
         ${searchButton}
-        <a class="system-language-switch" href="${translationUrl}" lang="${site.language.lang}" hreflang="${site.language.lang}" aria-label="${escapeHtml(site.language.label)}">${site.language.code}</a>
+        <a class="system-language-switch" href="${translationUrl}" lang="${site.language.lang}" hreflang="${site.language.lang}" aria-label="${escapeHtml(languageLabel)}" title="${escapeHtml(languageLabel)}">${site.language.code}</a>
         <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">${escapeHtml(site.menu)}</button>
       </div>
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
@@ -244,7 +248,7 @@
     </div>
     <div class="system-footer-bottom">
       <span>${escapeHtml(site.footer.copyright)}</span>
-      <span class="system-footer-legal"><a href="${translationUrl}" lang="${site.language.lang}" hreflang="${site.language.lang}">${escapeHtml(site.language.footer)}</a><a href="${site.footer.privacy[1]}">${escapeHtml(site.footer.privacy[0])}</a><a href="${site.footer.legal[1]}">${escapeHtml(site.footer.legal[0])}</a><button type="button" data-consent-open>${escapeHtml(site.footer.cookies)}</button></span>
+      <span class="system-footer-legal"><a href="${translationUrl}" lang="${site.language.lang}" hreflang="${site.language.lang}">${escapeHtml(languageFooter)}</a><a href="${site.footer.privacy[1]}">${escapeHtml(site.footer.privacy[0])}</a><a href="${site.footer.legal[1]}">${escapeHtml(site.footer.legal[0])}</a><button type="button" data-consent-open>${escapeHtml(site.footer.cookies)}</button></span>
     </div>`;
 
     return {
@@ -276,6 +280,21 @@
   if (path === "/en/about/" && ["#publications", "#actions-menees", "#activities"].includes(window.location.hash)) {
     window.location.replace(window.location.hash === "#publications" ? "/en/publications/" : "/en/actions/");
     return;
+  }
+  // Sections of the former homepage (/#comprendre, /#legislation…) now have their own pages.
+  if (path === "/" && window.location.hash) {
+    const formerSections = {
+      comprendre: "/comprendre/", pratique: "/evaluer/", terrain: "/evaluer/", evaluer: "/evaluer/",
+      modeles: "/comprendre/#benchmarks", risques: "/risques-prevention/", legislation: "/droit-gouvernance/",
+      apropos: "/a-propos/", mentions: "/mentions-legales/", confidentialite: "/confidentialite/"
+    };
+    let fragment = "";
+    try { fragment = decodeURIComponent(window.location.hash.slice(1)); } catch { /* malformed */ }
+    const owner = Object.keys(formerSections).find(key => fragment === key || fragment.startsWith(`${key}-`));
+    if (owner && !document.getElementById(fragment)) {
+      window.location.replace(formerSections[owner]);
+      return;
+    }
   }
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en") || path.startsWith("/en/");
 
@@ -316,7 +335,11 @@
     group.addEventListener("toggle", () => {
       if (group.open) dropdowns.forEach(other => { if (other !== group) other.open = false; });
     });
-    group.addEventListener("focusout", () => {
+    group.addEventListener("focusout", event => {
+      const next = event.relatedTarget;
+      if (next && group.contains(next)) return;
+      // Focus going nowhere while the pointer is over the panel: a click on its padding.
+      if (!next && group.matches(":hover")) return;
       requestAnimationFrame(() => {
         if (!group.contains(document.activeElement)) group.open = false;
       });
@@ -348,8 +371,11 @@
     if (restoreFocus) menuButton.focus();
   };
   const openMenu = () => {
-    document.querySelectorAll("body > main, body > footer, body > #root").forEach(element => {
-      if (!element.inert) { element.inert = true; inertedByMenu.add(element); }
+    // Everything outside the header (page, skip link, banners, dialogs) is out of reach while the menu is open.
+    [...document.body.children].forEach(element => {
+      if (element === header || element.matches("script, style, link, template, noscript") || element.inert) return;
+      element.inert = true;
+      inertedByMenu.add(element);
     });
     menuButton.textContent = isEnglish ? "Close" : "Fermer";
     header.classList.add("is-open");
@@ -433,7 +459,18 @@
     pageNavLinksBox.addEventListener("scroll", updateLinksOverflow, { passive: true });
     window.addEventListener("resize", updateLinksOverflow);
     updateLinksOverflow();
+    // A mouse wheel over the bar scrolls its links sideways, then the page once an end is reached.
+    pageNavLinksBox.addEventListener("wheel", event => {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      const max = pageNavLinksBox.scrollWidth - pageNavLinksBox.clientWidth;
+      if (max <= 0 || getComputedStyle(pageNavLinksBox).overflowX === "visible") return;
+      const next = Math.max(0, Math.min(max, pageNavLinksBox.scrollLeft + event.deltaY));
+      if (Math.abs(next - pageNavLinksBox.scrollLeft) < 1) return;
+      event.preventDefault();
+      pageNavLinksBox.scrollLeft = next;
+    }, { passive: false });
   }
+  const FADE = 56; // width of the faded edges (unified-navigation.css)
   let activeSectionId = null;
   const setActiveSection = id => {
     if (id === activeSectionId) return;
@@ -447,9 +484,10 @@
     if (activeLink && pageNavLinksBox && pageNavLinksBox.scrollWidth > pageNavLinksBox.clientWidth) {
       const box = pageNavLinksBox.getBoundingClientRect();
       const link = activeLink.getBoundingClientRect();
-      if (link.left < box.left || link.right > box.right) {
+      // Keep the current link clear of the faded edges.
+      if (link.left < box.left + FADE || link.right > box.right - FADE) {
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        pageNavLinksBox.scrollTo({ left: pageNavLinksBox.scrollLeft + link.left - box.left - 24, behavior: reduceMotion ? "auto" : "smooth" });
+        pageNavLinksBox.scrollTo({ left: pageNavLinksBox.scrollLeft + link.left - box.left - FADE - 16, behavior: reduceMotion ? "auto" : "smooth" });
       }
     }
   };
@@ -461,9 +499,18 @@
     framePending = false;
     // A little more than the anchor offset, so a section reached from a link counts as current.
     const threshold = header.getBoundingClientRect().height + 40;
+    // The section that started last above the threshold (sections can be nested, as on /evaluer/).
     let currentSection = "";
+    let currentTop = -Infinity;
     for (const section of sections) {
-      if (section.getBoundingClientRect().top <= threshold) currentSection = section.id;
+      if (!section.getClientRects().length) continue; // hidden, e.g. inside a closed <details>
+      const top = section.getBoundingClientRect().top;
+      if (top <= threshold && top >= currentTop) { currentSection = section.id; currentTop = top; }
+    }
+    // At the very end of the page, the last sections can no longer reach the top: the last one in view is current.
+    if (sections.length && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      const inView = sections.filter(section => section.getClientRects().length && section.getBoundingClientRect().top < window.innerHeight);
+      if (inView.length) currentSection = inView[inView.length - 1].id;
     }
     setActiveSection(currentSection);
     if (pageProgress) {
@@ -479,6 +526,39 @@
     window.addEventListener("resize", scheduleReadingPosition);
     window.addEventListener("load", scheduleReadingPosition);
     scheduleReadingPosition();
+  }
+
+  // Links to a section hidden in a closed <details> open it first.
+  const targetOf = hash => {
+    if (!hash || hash.length < 2) return null;
+    try { return document.getElementById(decodeURIComponent(hash.slice(1))); } catch { return null; }
+  };
+  const openDetailsAround = target => {
+    for (let node = target; node; node = node.parentElement) {
+      if (node.tagName === "DETAILS" && !node.open) node.open = true;
+    }
+  };
+  document.addEventListener("click", event => {
+    const link = event.target?.closest?.('a[href^="#"]');
+    if (link) openDetailsAround(targetOf(link.getAttribute("href")));
+  }, true);
+  window.addEventListener("hashchange", () => openDetailsAround(targetOf(window.location.hash)));
+
+  // Opened at an address ending in #section: fonts and figures can still change the layout after the
+  // browser has jumped there. Jump again once they are in place, unless the reader has already moved.
+  const initialTarget = targetOf(window.location.hash);
+  if (initialTarget) {
+    openDetailsAround(initialTarget);
+    let readerMoved = false;
+    const markMoved = () => { readerMoved = true; };
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(type => window.addEventListener(type, markMoved, { once: true, passive: true }));
+    const settle = () => {
+      if (readerMoved || !initialTarget.isConnected) return;
+      const offset = parseFloat(getComputedStyle(initialTarget).scrollMarginTop) || 0;
+      if (Math.abs(initialTarget.getBoundingClientRect().top - offset) > 4) initialTarget.scrollIntoView({ block: "start", behavior: "instant" });
+    };
+    document.fonts?.ready?.then(() => requestAnimationFrame(settle));
+    window.addEventListener("load", () => requestAnimationFrame(settle), { once: true });
   }
 
   const existingFooter = document.querySelector("body > footer.site-system-footer, body > footer.site-footer, body > footer:last-of-type");

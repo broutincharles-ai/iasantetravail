@@ -32,8 +32,8 @@ const ASSETS = {
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
   readabilityCss: "/assets/css/readability.css?v=1.0",
   shellCss: "/assets/css/unified-navigation.css?v=7.1",
-  nojsCss: "/assets/css/navigation-nojs.css?v=2.0",
-  appShellCss: "/assets/css/preconisations-shell.css?v=1.1",
+  nojsCss: "/assets/css/navigation-nojs.css?v=2.1",
+  appShellCss: "/assets/css/preconisations-shell.css?v=1.2",
   navJs: "/assets/js/unified-navigation.js?v=7.1",
   uxJs: "/assets/js/ux-improvements.js?v=1.2",
   consentJs: "/assets/js/consent.js?v=1.0",
@@ -65,8 +65,8 @@ function normaliseHead(html, { app }) {
   // Fonts first, so text is laid out with the right metrics.
   const fonts = `<link rel="stylesheet" href="${ASSETS.fontsCss}">`;
   head = /<meta\b[^>]*name=["']viewport["'][^>]*>/i.test(head)
-    ? head.replace(/(<meta\b[^>]*name=["']viewport["'][^>]*>)/i, `$1\n  ${fonts}`)
-    : head.replace(/(<head\b[^>]*>)/i, `$1\n  ${fonts}`);
+    ? head.replace(/(<meta\b[^>]*name=["']viewport["'][^>]*>)/i, match => `${match}\n  ${fonts}`)
+    : head.replace(/(<head\b[^>]*>)/i, match => `${match}\n  ${fonts}`);
 
   // After the page styles: the minimum text sizes (readability.css), then the shell styles
   // (ID-scoped anyway), then the scripts. The language script stays synchronous and comes after
@@ -109,11 +109,14 @@ function renderShell(html, file) {
     const header = `${headerOpen}${headerMarkup}</header>`;
     const footer = `${footerOpen}${footerMarkup}</footer>`;
     const existingShell = /<header\b[^>]*\bid=["']site-header["'][^>]*>[\s\S]*?<\/header>\s*/i;
-    html = existingShell.test(html) ? html.replace(existingShell, `${header}\n`) : html.replace(/(<body\b[^>]*>)/i, `$1\n${header}\n`);
+    html = existingShell.test(html) ? html.replace(existingShell, () => `${header}\n`) : html.replace(/(<body\b[^>]*>)/i, (match, body) => `${body}\n${header}\n`);
+    // The app's own skip link sits inside #root, after the site header: give the page one before it.
+    const skipLink = '<a class="skip-link" href="#main-content">Aller à la relecture</a>';
+    if (!html.includes(`${skipLink}\n<header`)) html = html.replace(/<header\b[^>]*\bid=["']site-header["']/i, match => `${skipLink}\n${match}`);
     const existingFooter = /<footer\b[^>]*\bid=["']site-footer["'][^>]*>[\s\S]*?<\/footer>\s*/i;
     html = existingFooter.test(html)
-      ? html.replace(existingFooter, `${footer}\n`)
-      : html.replace(/(\s*<script>window\.__PRECONISATIONS_API_ORIGIN__)/, `\n${footer}$1`);
+      ? html.replace(existingFooter, () => `${footer}\n`)
+      : html.replace(/(\s*<script>window\.__PRECONISATIONS_API_ORIGIN__)/, match => `\n${footer}${match}`);
     return html;
   }
 
@@ -122,17 +125,20 @@ function renderShell(html, file) {
   const pageNav = headerMatch?.[0].match(/<nav\b[^>]*class="page-nav"[^>]*>[\s\S]*?<\/nav>/)?.[0] || "";
   const { headerMarkup, footerMarkup, headerOpen, footerOpen } = renderNavigationShell(route, english, pageNav);
   const header = `${headerOpen}${headerMarkup}</header>`;
-  if (headerMatch) html = html.replace(headerMatch[0], header);
-  else if (/<a\b[^>]*class="skip-link"[^>]*>[\s\S]*?<\/a>/.test(html)) html = html.replace(/(<a\b[^>]*class="skip-link"[^>]*>[\s\S]*?<\/a>)/, `$1\n  ${header}`);
-  else html = html.replace(/(<body\b[^>]*>)/i, `$1\n  ${header}`);
+  // Replacements are functions so that "$" in labels or links is never read as a pattern.
+  if (headerMatch) html = html.replace(headerMatch[0], () => header);
+  else if (/<a\b[^>]*class="skip-link"[^>]*>[\s\S]*?<\/a>/.test(html)) html = html.replace(/(<a\b[^>]*class="skip-link"[^>]*>[\s\S]*?<\/a>)/, match => `${match}\n  ${header}`);
+  else html = html.replace(/(<body\b[^>]*>)/i, match => `${match}\n  ${header}`);
 
   const footer = `${footerOpen}${footerMarkup}</footer>`;
   const footerPattern = /<footer\b[^>]*class="[^"]*\b(?:site-footer|site-system-footer)\b[^"]*"[^>]*>[\s\S]*?<\/footer>/;
-  if (footerPattern.test(html)) html = html.replace(footerPattern, footer);
+  if (footerPattern.test(html)) html = html.replace(footerPattern, () => footer);
   else {
     // Legal pages and the 404 page end with a bare <footer> after <main>, or none at all.
     const bareFooter = /(<\/main>\s*)<footer>[\s\S]*?<\/footer>/i;
-    html = bareFooter.test(html) ? html.replace(bareFooter, `$1${footer}`) : html.replace(/(<\/main>)/i, `$1\n  ${footer}`);
+    html = bareFooter.test(html)
+      ? html.replace(bareFooter, (match, end) => `${end}${footer}`)
+      : html.replace(/(<\/main>)/i, match => `${match}\n  ${footer}`);
   }
   return html;
 }

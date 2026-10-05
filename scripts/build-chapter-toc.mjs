@@ -90,7 +90,7 @@ for (const page of PAGES) {
     <!-- chapter-toc:end -->`;
 
   const markers = /<!-- chapter-toc:start -->[\s\S]*?<!-- chapter-toc:end -->/;
-  if (markers.test(html)) html = html.replace(markers, block);
+  if (markers.test(html)) html = html.replace(markers, () => block);
   else {
     // First run: after the key points, before the first chapter.
     const quickReadEnd = html.search(/<section class="quick-read"[\s\S]*?<\/section>/);
@@ -98,7 +98,7 @@ for (const page of PAGES) {
     const end = html.indexOf("</section>", quickReadEnd) + "</section>".length;
     html = `${html.slice(0, end)}\n\n    ${block}${html.slice(end)}`;
   }
-  if (!html.includes("/assets/css/chapter-toc.css")) html = html.replace(/(\s*<link rel="stylesheet" href="\/assets\/css\/ux-improvements\.css)/, `\n  ${STYLESHEET}$1`);
+  if (!html.includes("/assets/css/chapter-toc.css")) html = html.replace(/(\s*<link rel="stylesheet" href="\/assets\/css\/ux-improvements\.css)/, match => `\n  ${STYLESHEET}${match}`);
   await writeFile(page.file, html);
   console.log(`${page.file}: ${count} chapters, ${page.parts.flatMap(part => part.ids).map(id => `${found.get(id).number} ${minutes(id)} min`).join(", ")}`);
 }

@@ -2,6 +2,15 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+// The published page (risques-prevention/economique-social/index.html) has since been edited by hand:
+// English version, sharing images, structured data, shared header and fonts. This generator still uses
+// the older template, so it no longer runs by default. Use --overwrite only to rebuild the text from
+// content/risque-economique-social.md, then compare with the published page before committing.
+if (!process.argv.includes("--overwrite")) {
+  console.error("build-economic-risk.mjs would replace the published page with an older template. Run it with --overwrite only to rebuild the page from content/risque-economique-social.md, then review the result.");
+  process.exit(1);
+}
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = await readFile(path.join(root, "content/risque-economique-social.md"), "utf8");
 const lines = source.replaceAll("\r\n", "\n").split("\n");

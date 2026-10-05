@@ -4,7 +4,8 @@
    the logo, the menu and the footer sit in the same place on every page. */
 
 #site-header,
-#site-footer {
+#site-footer,
+#site-language-suggestion {
   --sh-ink: #171a18;
   --sh-ink-soft: #3f443f;
   --sh-muted: #5b615b;
@@ -314,13 +315,22 @@
 #site-footer .system-footer-legal a,
 #site-footer .system-footer-legal button { display: inline-flex; align-items: center; min-height: 32px; color: rgba(247, 243, 234, 0.86); }
 
-/* ---------- Language suggestion (shown by language-routing.js) ---------- */
-#site-header .system-language-suggestion {
-  display: block;
-  border-top: 1px solid var(--sh-line);
-  background: #efe3d3;
+/* ---------- Language suggestion (shown by language-routing.js) ----------
+   Placed right after the header, in the page flow, so it scrolls away with the page. */
+#site-language-suggestion,
+#site-language-suggestion :where(*) {
+  all: unset;
+  box-sizing: border-box;
 }
-#site-header .system-language-suggestion-inner {
+#site-language-suggestion {
+  display: block;
+  border-bottom: 1px solid var(--sh-line);
+  background: #efe3d3;
+  font: 500 14px/1.4 var(--sh-sans);
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+#site-language-suggestion .system-language-suggestion-inner {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -331,17 +341,18 @@
   margin: 0 auto;
   padding: 6px 44px 6px 0;
 }
-#site-header .system-language-suggestion p { display: block; color: var(--sh-ink-soft); font: 500 14px/1.4 var(--sh-sans); }
-#site-header .system-language-suggestion a {
+#site-language-suggestion p { display: block; color: var(--sh-ink-soft); }
+#site-language-suggestion a {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
   color: var(--sh-accent);
-  font: 650 14px/1 var(--sh-sans);
+  font-weight: 650;
   text-decoration: underline;
   text-underline-offset: 3px;
+  cursor: pointer;
 }
-#site-header .system-language-suggestion button {
+#site-language-suggestion button {
   position: absolute;
   top: 50%;
   right: -6px;
@@ -352,9 +363,13 @@
   height: 40px;
   color: var(--sh-ink-soft);
   font: 400 22px/1 var(--sh-sans);
+  cursor: pointer;
   transform: translateY(-50%);
 }
-#site-header .system-language-suggestion button:hover { color: var(--sh-accent); }
+#site-language-suggestion a:hover,
+#site-language-suggestion button:hover { color: var(--sh-accent); }
+#site-language-suggestion :focus-visible { outline: 2px solid var(--sh-accent); outline-offset: 3px; }
+@media print { #site-language-suggestion { display: none !important; } }
 
 /* ---------- Consent banner (shown by consent.js) ---------- */
 #consent-banner,
@@ -468,6 +483,7 @@
   #site-header .system-mobile-all { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; color: var(--sh-accent); font: 600 15px/1 var(--sh-sans); }
   #site-header.is-open .page-nav { display: none; }
   body.system-menu-open { overflow: hidden; }
+  body.system-menu-open #consent-banner { display: none; }
 
   #site-footer .system-footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   #site-footer .system-footer-intro { grid-column: 1 / -1; }
@@ -497,6 +513,7 @@
     min-width: 0;
     margin: 0 auto 0 8px;
     overflow: hidden;
+    line-height: 1.6; /* room for accents on capitals (É, À) */
     color: var(--sh-ink);
     font-weight: 500;
     text-overflow: ellipsis;
@@ -517,7 +534,16 @@
 }
 
 @media (max-width: 420px) {
-  #site-header .system-brand-copy strong { font-size: 15px; }
+  #site-header .system-nav { gap: 10px; }
+  #site-header .system-brand { flex: 0 1 auto; min-width: 0; gap: 9px; }
+  #site-header .system-brand-copy { min-width: 0; }
+  #site-header .system-brand-copy strong { font-size: 15px; line-height: 1.12; white-space: normal; text-wrap: balance; }
+  #site-header .system-nav-actions { gap: 5px; }
+  #site-header .system-menu-button { padding: 0 10px; }
+}
+@media (max-width: 350px) {
+  /* The logo alone links home; the link keeps the site name as its accessible name. */
+  #site-header .system-brand-copy { display: none; }
 }
 @media (max-width: 340px) {
   #site-footer .system-footer-grid { grid-template-columns: 1fr; }
