@@ -231,6 +231,11 @@
   white-space: nowrap;
 }
 #site-header .page-nav-links::-webkit-scrollbar { display: none; }
+/* When the links do not fit, fade the cut-off edge so the bar reads as scrollable. */
+#site-header .page-nav-links.has-more-after { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+#site-header .page-nav-links.has-more-before { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); }
+#site-header .page-nav-links.has-more-before.has-more-after { -webkit-mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); }
+#site-header .page-nav-current { display: none; }
 #site-header .page-nav-links a {
   display: inline-flex;
   align-items: center;
@@ -486,7 +491,21 @@
     min-height: 42px;
     cursor: pointer;
   }
-  #site-header .page-nav-label::after { content: "+"; font: 500 18px/1 var(--sh-sans); }
+  #site-header .page-nav-label::after { content: "+"; flex: 0 0 auto; margin-left: 12px; font: 500 18px/1 var(--sh-sans); }
+  #site-header .page-nav-current:not(:empty) {
+    display: block;
+    min-width: 0;
+    margin: 0 auto 0 8px;
+    overflow: hidden;
+    color: var(--sh-ink);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #site-header .page-nav-current:not(:empty)::before { margin-right: 8px; color: var(--sh-muted); content: "·"; }
+  #site-header .page-nav.is-open .page-nav-current { display: none; }
+  #site-header .page-nav-links.has-more-before,
+  #site-header .page-nav-links.has-more-after { -webkit-mask-image: none; mask-image: none; }
   #site-header .page-nav.is-open .page-nav-label::after { content: "−"; }
   #site-header .page-nav-links { display: none; padding-bottom: 10px; white-space: normal; }
   #site-header .page-nav.is-open .page-nav-links { display: grid; gap: 0; }

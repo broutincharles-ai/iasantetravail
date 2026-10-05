@@ -415,17 +415,52 @@
     }));
   }
 
-  const setActiveSection = id => pageNavLinks.forEach(link => {
-    if (link.getAttribute("href") === `#${id}`) link.setAttribute("aria-current", "location");
-    else link.removeAttribute("aria-current");
-  });
+  // Where am I? Phones show the current section next to the collapsed "On this page" label;
+  // wider screens keep the current link in view when the bar scrolls sideways.
+  const pageNavLinksBox = pageNav?.querySelector(".page-nav-links");
+  const pageNavCurrent = pageNavLabel && pageNavLinks.length ? document.createElement("span") : null;
+  if (pageNavCurrent) {
+    pageNavCurrent.className = "page-nav-current";
+    pageNavLabel.append(pageNavCurrent);
+  }
+  const updateLinksOverflow = () => {
+    if (!pageNavLinksBox) return;
+    const { scrollLeft, scrollWidth, clientWidth } = pageNavLinksBox;
+    pageNavLinksBox.classList.toggle("has-more-before", scrollLeft > 2);
+    pageNavLinksBox.classList.toggle("has-more-after", scrollLeft + clientWidth < scrollWidth - 2);
+  };
+  if (pageNavLinksBox) {
+    pageNavLinksBox.addEventListener("scroll", updateLinksOverflow, { passive: true });
+    window.addEventListener("resize", updateLinksOverflow);
+    updateLinksOverflow();
+  }
+  let activeSectionId = null;
+  const setActiveSection = id => {
+    if (id === activeSectionId) return;
+    activeSectionId = id;
+    let activeLink = null;
+    pageNavLinks.forEach(link => {
+      if (link.getAttribute("href") === `#${id}`) { link.setAttribute("aria-current", "location"); activeLink = link; }
+      else link.removeAttribute("aria-current");
+    });
+    if (pageNavCurrent) pageNavCurrent.textContent = activeLink ? activeLink.textContent.trim() : "";
+    if (activeLink && pageNavLinksBox && pageNavLinksBox.scrollWidth > pageNavLinksBox.clientWidth) {
+      const box = pageNavLinksBox.getBoundingClientRect();
+      const link = activeLink.getBoundingClientRect();
+      if (link.left < box.left || link.right > box.right) {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        pageNavLinksBox.scrollTo({ left: pageNavLinksBox.scrollLeft + link.left - box.left - 24, behavior: reduceMotion ? "auto" : "smooth" });
+      }
+    }
+  };
   const sections = pageNavLinks.map(link => {
     try { return document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return null; }
   }).filter(Boolean);
   let framePending = false;
   const updateReadingPosition = () => {
     framePending = false;
-    const threshold = header.getBoundingClientRect().height + 24;
+    // A little more than the anchor offset, so a section reached from a link counts as current.
+    const threshold = header.getBoundingClientRect().height + 40;
     let currentSection = "";
     for (const section of sections) {
       if (section.getBoundingClientRect().top <= threshold) currentSection = section.id;

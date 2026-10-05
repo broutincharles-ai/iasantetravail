@@ -31,10 +31,10 @@ const ASSETS = {
   fontsCss: "/assets/css/fonts.css?v=1.0",
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
   readabilityCss: "/assets/css/readability.css?v=1.0",
-  shellCss: "/assets/css/unified-navigation.css?v=7.0",
+  shellCss: "/assets/css/unified-navigation.css?v=7.1",
   nojsCss: "/assets/css/navigation-nojs.css?v=2.0",
   appShellCss: "/assets/css/preconisations-shell.css?v=1.1",
-  navJs: "/assets/js/unified-navigation.js?v=7.0",
+  navJs: "/assets/js/unified-navigation.js?v=7.1",
   uxJs: "/assets/js/ux-improvements.js?v=1.2",
   consentJs: "/assets/js/consent.js?v=1.0",
   languageJs: "/assets/js/language-routing.js?v=2.0"
@@ -83,7 +83,12 @@ function normaliseHead(html, { app }) {
     `<script src="${ASSETS.languageJs}"></script>`
   ];
   head = `${head.replace(/\s*$/, "")}\n  ${tail.join("\n  ")}\n`;
-  return head + rest;
+  // Older copies of the shared scripts left at the end of <body> would load them a second time.
+  let body = rest;
+  for (const file of ["assets/js/unified-navigation.js", "assets/js/ux-improvements.js", "assets/js/consent.js", "assets/js/language-routing.js", "assets/js/site-shell.js"]) {
+    body = body.replace(assetTag(file, file), "");
+  }
+  return head + body;
 }
 
 function renderShell(html, file) {
