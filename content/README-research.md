@@ -1,4 +1,11 @@
-# Ajouter une Research Note
+# Archive : Research Notes
+
+> Octobre 2026 : la section Research a été retirée du site. Ses adresses redirigent vers les Lectures
+> (`scripts/create-redirects.mjs`) et son générateur, `scripts/build-research.mjs`, a été supprimé.
+> `research-notes.json` est conservé comme archive des textes. Pour publier une analyse, ajouter une
+> lecture dans `lecture/` (et `en/reading/`), puis lancer `node scripts/build-home-latest.mjs`.
+
+Procédure d’origine, pour mémoire :
 
 La source unique de la section Research est `content/research-notes.json`.
 
