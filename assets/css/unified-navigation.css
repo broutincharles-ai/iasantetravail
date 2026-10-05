@@ -499,6 +499,8 @@
 
 @media (max-width: 420px) {
   #site-header .system-brand-copy strong { font-size: 15px; }
+}
+@media (max-width: 340px) {
   #site-footer .system-footer-grid { grid-template-columns: 1fr; }
 }
 
