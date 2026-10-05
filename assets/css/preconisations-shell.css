@@ -1,0 +1,28 @@
+/* Préconisations: fit the React app into the site shell without changing its markup
+   (the app hydrates #root, so only CSS can adjust it).
+   - The site header replaces the app's own brand bar; the app keeps its two dialogs
+     ("Les cinq critères", "La méthode") as a slim toolbar.
+   - The section bar sticks under the site header.
+   - The data-protection notice moves just above the review tool, after the introduction. */
+
+#root .site-header .site-brand,
+#root .site-header .site-nav nav a[href$="/outils/"] { display: none; }
+#root .site-header { border-bottom: 0; background: transparent; }
+#root .site-header .site-nav {
+  min-height: 0;
+  padding: 12px 0 0;
+  justify-content: flex-end;
+}
+#root .site-header .site-nav nav { width: auto; margin-left: auto; gap: 22px; }
+#root .site-header .site-nav nav button { padding: 6px 0; font-size: 13px; }
+
+#root .chapter-nav { top: 73px; }
+@media (max-width: 1120px) {
+  #root .chapter-nav { top: 65px; }
+}
+
+#main-content { display: flex; flex-direction: column; }
+#main-content > * { order: 3; }
+#main-content > .topbar { order: 0; }
+#main-content > .hero { order: 1; }
+#main-content > .usage-notice { order: 2; margin-top: 0; margin-bottom: 28px; }
