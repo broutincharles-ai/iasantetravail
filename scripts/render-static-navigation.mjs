@@ -21,15 +21,19 @@ export const SHELL_EXTRA_FILES = [
   "en/legal-notice/index.html",
   "404.html"
 ];
+// Legal pages share one layout; their body classes used to be added by script after the first paint.
+const LEGAL_FILES = new Set(["confidentialite/index.html", "mentions-legales/index.html", "en/privacy/index.html", "en/legal-notice/index.html"]);
+const LEGAL_BODY_CLASSES = ["page-shell-v2", "legal-refresh"];
 // Built by the Préconisations app (React): the site shell goes around its root, never inside it.
 const APP_FILE = "outils/preconisations/index.html";
 
 const ASSETS = {
   fontsCss: "/assets/css/fonts.css?v=1.0",
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
+  readabilityCss: "/assets/css/readability.css?v=1.0",
   shellCss: "/assets/css/unified-navigation.css?v=7.0",
   nojsCss: "/assets/css/navigation-nojs.css?v=2.0",
-  appShellCss: "/assets/css/preconisations-shell.css?v=1.0",
+  appShellCss: "/assets/css/preconisations-shell.css?v=1.1",
   navJs: "/assets/js/unified-navigation.js?v=7.0",
   uxJs: "/assets/js/ux-improvements.js?v=1.2",
   consentJs: "/assets/js/consent.js?v=1.0",
@@ -52,8 +56,8 @@ function normaliseHead(html, { app }) {
     .replace(/[ \t]*<noscript>\s*<link\b[^>]*navigation-nojs\.css[^>]*>\s*<\/noscript>[ \t]*\n?/gi, "");
 
   for (const file of [
-    "assets/css/fonts.css", "assets/css/ux-improvements.css", "assets/css/unified-navigation.css",
-    "assets/css/navigation-nojs.css", "assets/css/preconisations-shell.css",
+    "assets/css/fonts.css", "assets/css/ux-improvements.css", "assets/css/readability.css",
+    "assets/css/unified-navigation.css", "assets/css/navigation-nojs.css", "assets/css/preconisations-shell.css",
     "assets/js/unified-navigation.js", "assets/js/ux-improvements.js", "assets/js/consent.js",
     "assets/js/language-routing.js", "assets/js/site-shell.js"
   ]) head = head.replace(assetTag(file, file), "");
@@ -64,10 +68,12 @@ function normaliseHead(html, { app }) {
     ? head.replace(/(<meta\b[^>]*name=["']viewport["'][^>]*>)/i, `$1\n  ${fonts}`)
     : head.replace(/(<head\b[^>]*>)/i, `$1\n  ${fonts}`);
 
-  // Shell styles last (they are ID-scoped anyway), then the scripts. The language script stays
-  // synchronous and comes after the hreflang links so it can read them before the first paint.
+  // After the page styles: the minimum text sizes (readability.css), then the shell styles
+  // (ID-scoped anyway), then the scripts. The language script stays synchronous and comes after
+  // the hreflang links so it can read them before the first paint.
   const tail = [
     `<link rel="stylesheet" href="${ASSETS.uxCss}">`,
+    ...(app ? [] : [`<link rel="stylesheet" href="${ASSETS.readabilityCss}">`]),
     `<link rel="stylesheet" href="${ASSETS.shellCss}">`,
     ...(app ? [`<link rel="stylesheet" href="${ASSETS.appShellCss}">`] : []),
     `<noscript><link rel="stylesheet" href="${ASSETS.nojsCss}"></noscript>`,
@@ -85,6 +91,13 @@ function renderShell(html, file) {
   const route = "/" + file.replace(/index\.html$/, "");
   const app = file === APP_FILE;
   html = normaliseHead(html, { app });
+  if (LEGAL_FILES.has(file)) {
+    html = html.replace(/<body\b([^>]*)\bclass="([^"]*)"/i, (match, before, classes) => {
+      const list = classes.split(/\s+/).filter(Boolean);
+      for (const name of LEGAL_BODY_CLASSES) if (!list.includes(name)) list.push(name);
+      return `<body${before}class="${list.join(" ")}"`;
+    });
+  }
 
   if (app) {
     const { headerMarkup, footerMarkup, headerOpen, footerOpen } = renderNavigationShell(route, english, "");

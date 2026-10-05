@@ -1,0 +1,515 @@
+/* Reading comfort: a floor for text sizes.
+
+   Readers found the site hard to read. The readings are set in 17 px, but over successive
+   restylings the hub pages had shrunk to 12–14 px, with labels down to 8 px.
+   This sheet sets a floor without touching layouts, colours or typefaces:
+
+     introductions 17 px · running text 16 px · cards, tables, lists 15 px
+     notes and captions 14 px · meta lines 13 px · small capital labels 11 px (10 px inside figures)
+
+   Each selector repeats the page's own selector, prefixed with `html`: it wins over the page rule
+   without !important, yet still yields to more specific variants (a :first-child, a state class).
+   Loaded after the page styles on every page by scripts/render-static-navigation.mjs.
+   To make the whole site larger or smaller, change the variables below. */
+
+:root {
+  --read-lede: 17px;
+  --read-prose: 16px;
+  --read-card: 15px;
+  --read-note: 14px;
+  --read-meta: 13px;
+  --read-label: 11px;
+  --read-label-figure: 10px;
+}
+
+/* ───────── Comprendre · Understand ───────── */
+
+html .understand-editorial-v3 .section-head > p { font-size: var(--read-lede); }
+html .understand-editorial-v3 .subsection-head p,
+html .understand-editorial-v3 .benchmark-intro p,
+html .understand-editorial-v3 .question-list p { font-size: var(--read-prose); }
+html .understand-editorial-v3 .knowledge-card > p,
+html .understand-editorial-v3 .family-card > p,
+html .understand-editorial-v3 .capability-table td,
+html .understand-editorial-v3 .comparison-column li,
+html .understand-editorial-v3 .resource-card p,
+html .understand-editorial-v3 .quick-read p,
+html .understand-editorial-v3 .newsletter-copy p { font-size: var(--read-card); }
+html .understand-editorial-v3 .pipeline-step p,
+html .understand-editorial-v3 .tok-steps p,
+html .understand-editorial-v3 .knowledge-card .card-work,
+html .understand-editorial-v3 .fig figcaption,
+html .understand-editorial-v3 .capability-note p,
+html .understand-editorial-v3 .capability-note strong,
+html .understand-editorial-v3 .benchmark-copy small,
+html .understand-editorial-v3 .benchmark-action,
+html .understand-editorial-v3 .resource-card b,
+html .understand-editorial-v3 .reading-link strong,
+html .understand-editorial-v3 .family-meta strong { font-size: var(--read-note); }
+html .understand-editorial-v3 .hero-proof,
+html .understand-editorial-v3 .artwork figcaption p,
+html .understand-editorial-v3 .card-source,
+html .understand-editorial-v3 .fig-swipe { font-size: var(--read-meta); }
+html .understand-editorial-v3 .tr-in,
+html .understand-editorial-v3 .tr-do,
+html .understand-editorial-v3 .tr-out,
+html .understand-editorial-v3 .tr-return,
+html .understand-editorial-v3 .tr-scale > div { font-size: 13.5px; }
+html .understand-editorial-v3 .kicker,
+html .understand-editorial-v3 .artwork-label,
+html .understand-editorial-v3 .artwork figcaption span,
+html .understand-editorial-v3 .quick-read span,
+html .understand-editorial-v3 .family-card > span,
+html .understand-editorial-v3 .family-meta small,
+html .understand-editorial-v3 .pipeline-step > span,
+html .understand-editorial-v3 .reading-link small,
+html .understand-editorial-v3 .capability-table th,
+html .understand-editorial-v3 .table-index,
+html .understand-editorial-v3 .benchmark-row > span:first-child,
+html .understand-editorial-v3 .benchmark-type strong,
+html .understand-editorial-v3 .benchmark-type small,
+html .understand-editorial-v3 .benchmark-checks span,
+html .understand-editorial-v3 .comparison-column > span,
+html .understand-editorial-v3 .workplace-callout span,
+html .understand-editorial-v3 .question-list summary span,
+html .understand-editorial-v3 .resource-meta,
+html .understand-editorial-v3 .newsletter-copy small,
+html .understand-editorial-v3 .knowledge-card > span,
+html .understand-editorial-v3 .knowledge-card .card-work strong,
+html .understand-editorial-v3 .fig-head span { font-size: var(--read-label); }
+html .understand-editorial-v3 .tok-context small,
+html .understand-editorial-v3 .tok-steps small,
+html .understand-editorial-v3 .fig-tile-group > small,
+html .understand-editorial-v3 .lv-head > div,
+html .understand-editorial-v3 .tr-lanes span,
+html .understand-editorial-v3 .tr-step b,
+html .understand-editorial-v3 .tr-scale small,
+html .understand-editorial-v3 .fig-data th { font-size: var(--read-label-figure); }
+@media (max-width: 820px) {
+  html .understand-editorial-v3 .tr-lane-m,
+  html .understand-editorial-v3 .lv-mobile { font-size: var(--read-label-figure); }
+}
+@media (max-width: 760px) {
+  html .understand-editorial-v3 .capability-table td { font-size: var(--read-card); }
+  html .understand-editorial-v3 .capability-table td::before { font-size: var(--read-label); }
+}
+
+/* ───────── À propos, Interventions, Publications · About, Talks, Publications ───────── */
+
+html .about-editorial-v2 .section-head > p { font-size: var(--read-lede); }
+html .about-editorial-v2 .action-prose p { font-size: 17px; }
+html .about-editorial-v2 .action-agenda p,
+html .about-editorial-v2 .action-points p,
+html .about-editorial-v2 .action-closing p,
+html .about-editorial-v2 .action-thanks p,
+html .about-editorial-v2 .publication-bridge p,
+html .about-editorial-v2 .collaboration-copy p { font-size: var(--read-prose); }
+html .about-editorial-v2 .action-subhead p,
+html .about-editorial-v2 .journey-step p,
+html .about-editorial-v2 .agi-course-quote p,
+html .about-editorial-v2 .publication-card > p:not(.publication-ref),
+html .about-editorial-v2 .activity-card p { font-size: var(--read-card); }
+html .about-editorial-v2 .identity-proof-card p,
+html .about-editorial-v2 .identity-policy p,
+html .about-editorial-v2 .newsletter-card p,
+html .about-editorial-v2 .agi-risk-strip p,
+html .about-editorial-v2 .intervention-detail p,
+html .about-editorial-v2 .collaboration-topics li,
+html .about-editorial-v2 .facts strong { font-size: var(--read-note); }
+html .about-editorial-v2 .action-figure figcaption p,
+html .about-editorial-v2 .profile-caption > p,
+html .about-editorial-v2 .identity-proof-card a,
+html .about-editorial-v2 .publication-link,
+html .about-editorial-v2 .hero-proof,
+html .about-editorial-v2 .profile-lines strong { font-size: var(--read-meta); }
+html .about-editorial-v2 .facts small { font-size: 12.5px; }
+html .about-editorial-v2 .publication-ref { font-size: 12.5px !important; }
+html .about-editorial-v2 .kicker,
+html .about-editorial-v2 .profile-top,
+html .about-editorial-v2 .profile-lines span,
+html .about-editorial-v2 .action-story-number,
+html .about-editorial-v2 .action-meta,
+html .about-editorial-v2 .action-subhead > span,
+html .about-editorial-v2 .action-closing span,
+html .about-editorial-v2 .action-thanks span,
+html .about-editorial-v2 .agi-course-mark > span,
+html .about-editorial-v2 .agi-course-mark > small,
+html .about-editorial-v2 .agi-course-quote > span,
+html .about-editorial-v2 .agi-risk-strip span,
+html .about-editorial-v2 .action-figure figcaption span,
+html .about-editorial-v2 .action-agenda li > span,
+html .about-editorial-v2 .action-points li > span,
+html .about-editorial-v2 .journey-step time,
+html .about-editorial-v2 .publication-meta,
+html .about-editorial-v2 .publication-bridge span,
+html .about-editorial-v2 .identity-proof-card > span,
+html .about-editorial-v2 .identity-policy > div > span,
+html .about-editorial-v2 .activity-card > span,
+html .about-editorial-v2 .intervention-detail > span,
+html .about-editorial-v2 .collaboration-copy > span,
+html .about-editorial-v2 .collaboration-topics > strong,
+html .about-editorial-v2 .newsletter-card > span { font-size: var(--read-label); }
+@media (max-width: 760px) {
+  html .about-editorial-v2 .section-head > p { font-size: var(--read-prose); }
+  html .about-editorial-v2 .action-prose p { font-size: var(--read-prose); }
+  html .about-editorial-v2 .action-agenda p,
+  html .about-editorial-v2 .action-points p { font-size: var(--read-card); }
+}
+/* Study pages under Publications */
+html .about-editorial-v2 .study-reference { font-size: var(--read-card); }
+html .about-editorial-v2 .study-reference .publication-link { font-size: var(--read-note); }
+html .about-editorial-v2 .study-reference .source-note,
+html .about-editorial-v2 .study-source,
+html .about-editorial-v2 .study-table caption { font-size: var(--read-meta); }
+html .about-editorial-v2 .study-table { font-size: var(--read-note); }
+html .about-editorial-v2 .study-label { font-size: var(--read-label); }
+@media (max-width: 480px) {
+  html .about-editorial-v2 .study-table { font-size: var(--read-meta); }
+}
+
+/* ───────── CSE · Works council ───────── */
+
+html .cse-editorial-v2 .faq-list p { font-size: var(--read-prose); }
+html .cse-editorial-v2 .why-grid p,
+html .cse-editorial-v2 .method-grid p,
+html .cse-editorial-v2 .question-copy p,
+html .cse-editorial-v2 .physician-card p,
+html .cse-editorial-v2 .case-note > p,
+html .cse-editorial-v2 .control-test p,
+html .cse-editorial-v2 .rps-card li { font-size: var(--read-card); }
+html .cse-editorial-v2 .source-list p,
+html .cse-editorial-v2 .legal-note,
+html .cse-editorial-v2 .summary-spst { font-size: var(--read-note); }
+html .cse-editorial-v2 .cse-meta,
+html .cse-editorial-v2 .cse-proof,
+html .cse-editorial-v2 .autonomy-scale small,
+html .cse-editorial-v2 .case-note a,
+html .cse-editorial-v2 .physician-card a { font-size: var(--read-meta); }
+html .cse-editorial-v2 .direct-answer > span,
+html .cse-editorial-v2 .rps-card > span,
+html .cse-editorial-v2 .physician-card > span,
+html .cse-editorial-v2 .case-note > span,
+html .cse-editorial-v2 .control-test span,
+html .cse-editorial-v2 .work-impact-check > div > span,
+html .cse-editorial-v2 .spst-recommendation > span,
+html .cse-editorial-v2 .faq-important > strong,
+html .cse-editorial-v2 .source-list a > span,
+html .cse-editorial-v2 .source-list a > b,
+html .cse-editorial-v2 .sources-reviewed,
+html .cse-editorial-v2 .question-number span { font-size: var(--read-label); }
+/* The checklist answers are the tool's controls: plain words, readable size. */
+html .cse-editorial-v2 .answer-options button,
+html .cse-editorial-v2 .impact-options button {
+  font: 600 13px/1.25 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ───────── Droit & gouvernance · Law & governance ───────── */
+
+html .governance-editorial-v3 .answer-lede { font-size: var(--read-lede); }
+html .governance-editorial-v3 .faq-answer p,
+html .governance-editorial-v3 .role-body p,
+html .governance-editorial-v3 .decision-row p,
+html .governance-editorial-v3 .legal-update-callout > p,
+html .governance-editorial-v3 .reference-intro p,
+html .governance-editorial-v3 .author-card p { font-size: var(--read-prose); }
+html .governance-editorial-v3 .framework-title p,
+html .governance-editorial-v3 .framework-question p,
+html .governance-editorial-v3 .framework-question ul,
+html .governance-editorial-v3 .use-table td,
+html .governance-editorial-v3 .use-table tbody th[scope="row"],
+html .governance-editorial-v3 .legal-timeline p,
+html .governance-editorial-v3 .brief-card p,
+html .governance-editorial-v3 .brief-card strong,
+html .governance-editorial-v3 .consult-card li,
+html .governance-editorial-v3 .role-controls p,
+html .governance-editorial-v3 .checklist-summary p,
+html .governance-editorial-v3 .legal-note,
+html .governance-editorial-v3 .matrix-note,
+html .governance-editorial-v3 .hero-note,
+html .governance-editorial-v3 .source-row strong { font-size: var(--read-card); }
+html .governance-editorial-v3 .role-body li,
+html .governance-editorial-v3 .legal-timeline b,
+html .governance-editorial-v3 .check-item small,
+html .governance-editorial-v3 .gate-list small,
+html .governance-editorial-v3 .source-row small,
+html .governance-editorial-v3 .source-row a,
+html .governance-editorial-v3 .framework-link { font-size: var(--read-note); }
+html .governance-editorial-v3 .article-meta,
+html .governance-editorial-v3 .hero-proof,
+html .governance-editorial-v3 .artwork figcaption p,
+html .governance-editorial-v3 .checklist-summary button { font-size: var(--read-meta); }
+html .governance-editorial-v3 .governance-breadcrumb ol,
+html .governance-editorial-v3 .artwork figcaption span,
+html .governance-editorial-v3 .brief-card span,
+html .governance-editorial-v3 .decision-row > span,
+html .governance-editorial-v3 .legal-update-callout > span,
+html .governance-editorial-v3 .framework-number,
+html .governance-editorial-v3 .framework-title span,
+html .governance-editorial-v3 .framework-question small,
+html .governance-editorial-v3 .cumulative-note span,
+html .governance-editorial-v3 .use-table th,
+html .governance-editorial-v3 .use-index,
+html .governance-editorial-v3 .use-tag,
+html .governance-editorial-v3 .role-controls label,
+html .governance-editorial-v3 .role-deck summary b,
+html .governance-editorial-v3 .actor-card span,
+html .governance-editorial-v3 .gate-list span,
+html .governance-editorial-v3 .consult-card > span,
+html .governance-editorial-v3 .checklist-summary span,
+html .governance-editorial-v3 .reference-date,
+html .governance-editorial-v3 .source-row > span { font-size: var(--read-label); }
+@media (max-width: 430px) {
+  html .governance-editorial-v3 .article-meta { font-size: var(--read-meta); }
+}
+
+/* ───────── Évaluer · Evaluate ───────── */
+
+html .evaluer-work-monitor-v3 .phase-card p,
+html .evaluer-work-monitor-v3 .dim-list li { font-size: var(--read-card); }
+html .evaluer-work-monitor-v3 .phase-card a,
+html .evaluer-work-monitor-v3 .eval-privacy,
+html .evaluer-work-monitor-v3 .full-response-details summary { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .eval-hero-card-foot span,
+html .evaluer-work-monitor-v3 .eval-facts small,
+html .evaluer-work-monitor-v3 .example-banner,
+html .evaluer-work-monitor-v3 .example-banner .text-button,
+html .evaluer-work-monitor-v3 .sticky-actions .sticky-note,
+html .evaluer-work-monitor-v3 .orientation-facts { font-size: var(--read-meta); }
+/* The questionnaire */
+html .evaluer-work-monitor-v3 .field label,
+html .evaluer-work-monitor-v3 .field legend,
+html .evaluer-work-monitor-v3 .dimension-note label,
+html .evaluer-work-monitor-v3 .decision-rationale label { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .field > small,
+html .evaluer-work-monitor-v3 .field legend span,
+html .evaluer-work-monitor-v3 .dimension-note label span,
+html .evaluer-work-monitor-v3 .field-error,
+html .evaluer-work-monitor-v3 .ux-field-error { font-size: var(--read-meta); }
+html .evaluer-work-monitor-v3 .campaign-options strong,
+html .evaluer-work-monitor-v3 .usage-grid strong { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .campaign-options small,
+html .evaluer-work-monitor-v3 .usage-grid small,
+html .evaluer-work-monitor-v3 .assessment-stages button small,
+html .evaluer-work-monitor-v3 .draft-status small { font-size: 12.5px; }
+html .evaluer-work-monitor-v3 .scale-help span,
+html .evaluer-work-monitor-v3 .qualitative-scale label,
+html .evaluer-work-monitor-v3 .guard-options label { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .numeric-scale span { font-size: 12.5px; }
+html .evaluer-work-monitor-v3 .dimension-rail button { font-size: 12.5px; }
+html .evaluer-work-monitor-v3 .local-notice p,
+html .evaluer-work-monitor-v3 .campaign-selector > p,
+html .evaluer-work-monitor-v3 .followup-context > p,
+html .evaluer-work-monitor-v3 .context-change-warning p,
+html .evaluer-work-monitor-v3 .context-change-warning label { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .followup-import p,
+html .evaluer-work-monitor-v3 .followup-period > div label { font-size: var(--read-meta); }
+/* Results, decision and follow-up */
+html .evaluer-work-monitor-v3 .signal-item p,
+html .evaluer-work-monitor-v3 .empty-signal,
+html .evaluer-work-monitor-v3 .full-response-item p,
+html .evaluer-work-monitor-v3 .decision-grid p,
+html .evaluer-work-monitor-v3 .long-term-manager-grid li,
+html .evaluer-work-monitor-v3 .long-term-callout p,
+html .evaluer-work-monitor-v3 .export-card > p,
+html .evaluer-work-monitor-v3 .attention-measure,
+html .evaluer-work-monitor-v3 .action-plan-alert,
+html .evaluer-work-monitor-v3 .context-result-item strong,
+html .evaluer-work-monitor-v3 .decision-options legend,
+html .evaluer-work-monitor-v3 .decision-options strong,
+html .evaluer-work-monitor-v3 .longitudinal-method strong,
+html .evaluer-work-monitor-v3 .longitudinal-timeline strong,
+html .evaluer-work-monitor-v3 .file-drop { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .result-block-head > p,
+html .evaluer-work-monitor-v3 .radar-reading-rule p,
+html .evaluer-work-monitor-v3 .longitudinal-method p,
+html .evaluer-work-monitor-v3 .longitudinal-timeline p,
+html .evaluer-work-monitor-v3 .timeline-method,
+html .evaluer-work-monitor-v3 .timeline-empty,
+html .evaluer-work-monitor-v3 .timeline-card p,
+html .evaluer-work-monitor-v3 .timeline-card small,
+html .evaluer-work-monitor-v3 .dimension-result-summary,
+html .evaluer-work-monitor-v3 .full-response-item strong,
+html .evaluer-work-monitor-v3 .cadence-timeline small,
+html .evaluer-work-monitor-v3 .radar-accessible-details summary,
+html .evaluer-work-monitor-v3 .radar-table-wrap td,
+html .evaluer-work-monitor-v3 .radar-table-wrap tbody th,
+html .evaluer-work-monitor-v3 .timeline-comparison tbody th,
+html .evaluer-work-monitor-v3 .attention-card-foot .in-plan,
+html .evaluer-work-monitor-v3 .attention-card-foot .text-button,
+html .evaluer-work-monitor-v3 .copy-status { font-size: var(--read-meta); }
+html .evaluer-work-monitor-v3 .decision-options small,
+html .evaluer-work-monitor-v3 .review-card small,
+html .evaluer-work-monitor-v3 .result-reference small,
+html .evaluer-work-monitor-v3 .review-stat span,
+html .evaluer-work-monitor-v3 .radar-legend > span,
+html .evaluer-work-monitor-v3 .radar-coverage,
+html .evaluer-work-monitor-v3 .radar-axis-key li,
+html .evaluer-work-monitor-v3 .profile-track .none,
+html .evaluer-work-monitor-v3 .profile-legend,
+html .evaluer-work-monitor-v3 .attention-card-head small { font-size: 12.5px; }
+html .evaluer-work-monitor-v3 .export-preview { font-size: 12px; }
+html .evaluer-work-monitor-v3 .eval-button.is-small,
+html .evaluer-work-monitor-v3 .followup-import .eval-button,
+html .evaluer-work-monitor-v3 .long-term-callout .eval-button,
+html .evaluer-work-monitor-v3 .signal-item .text-button { font-size: var(--read-meta); }
+html .evaluer-work-monitor-v3 .rail-clear,
+html .evaluer-work-monitor-v3 .rail-export,
+html .evaluer-work-monitor-v3 .draft-status strong,
+html .evaluer-work-monitor-v3 .workspace-progress > div:first-child,
+html .evaluer-work-monitor-v3 .review-card-head button,
+html .evaluer-work-monitor-v3 .action-plan-alert button,
+html .evaluer-work-monitor-v3 .action-cell-remove button { font-size: 12.5px; }
+html .evaluer-work-monitor-v3 .action-table-wrap input,
+html .evaluer-work-monitor-v3 .action-table-wrap textarea,
+html .evaluer-work-monitor-v3 .action-table-wrap select { font-size: var(--read-note); }
+html .evaluer-work-monitor-v3 .fold-list summary span,
+html .evaluer-work-monitor-v3 .intro-output > span,
+html .evaluer-work-monitor-v3 .method-sources span,
+html .evaluer-work-monitor-v3 .method-sources a { font-size: var(--read-label); }
+html .evaluer-work-monitor-v3 .action-table-wrap th,
+html .evaluer-work-monitor-v3 .context-result-item span,
+html .evaluer-work-monitor-v3 .result-reference span,
+html .evaluer-work-monitor-v3 .review-card-head span,
+html .evaluer-work-monitor-v3 .attention-card-head span,
+html .evaluer-work-monitor-v3 .full-response-item > span,
+html .evaluer-work-monitor-v3 .decision-grid span,
+html .evaluer-work-monitor-v3 .pilot-rule > div > span,
+html .evaluer-work-monitor-v3 .method-dimensions span,
+html .evaluer-work-monitor-v3 .action-source,
+html .evaluer-work-monitor-v3 .profile-label small,
+html .evaluer-work-monitor-v3 .local-notice > span,
+html .evaluer-work-monitor-v3 .eval-privacy > span,
+html .evaluer-work-monitor-v3 .tool-section-trust span { font-size: var(--read-label-figure); }
+@media (max-width: 760px) {
+  /* 16 px keeps phones from zooming in when a field gets focus. */
+  html .evaluer-work-monitor-v3 .action-table-wrap input,
+  html .evaluer-work-monitor-v3 .action-table-wrap textarea,
+  html .evaluer-work-monitor-v3 .action-table-wrap select { font-size: 16px; }
+}
+@media (max-width: 620px) {
+  html .evaluer-work-monitor-v3 .qualitative-scale label { font-size: var(--read-note); }
+  html .evaluer-work-monitor-v3 .sticky-actions .eval-button { font-size: var(--read-meta); }
+  /* Five answers share the width of a phone: keep the scale labels on one line. */
+  html .evaluer-work-monitor-v3 .numeric-scale span { font-size: 12px; }
+}
+
+/* ───────── Lectures · Reading ───────── */
+
+html .reading-editorial-v3 .entry-summary { font-size: var(--read-prose); }
+html .reading-editorial-v3 .entry-title p,
+html .reading-editorial-v3 .lead-byline,
+html .reading-editorial-v3 .lead-actions a,
+html .reading-editorial-v3 .entry-meta a { font-size: var(--read-meta); }
+/* Source, reading time and angles are sentences: set them in the text face. */
+html .reading-editorial-v3 .entry-meta span {
+  color: var(--reading-muted, var(--muted));
+  font: 500 13px/1.45 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+html .reading-editorial-v3 .collection-control { font-size: 12.5px; }
+html .reading-editorial-v3 .collection-control select { font-size: var(--read-note); }
+html .reading-editorial-v3 .reading-eyebrow,
+html .reading-editorial-v3 .lead-kind,
+html .reading-editorial-v3 .entry-kind { font-size: var(--read-label); }
+html .reading-editorial-v3 .reading-hero-stats span { font-size: var(--read-label-figure); }
+@media (max-width: 760px) {
+  html .reading-editorial-v3 .reading-hero-stats span { font-size: var(--read-label-figure); }
+  html .reading-editorial-v3 .collection-control select { font-size: 16px; }
+}
+/* Reading pages */
+html .reading-redesign .article-byline,
+html .reading-redesign .article-end a { font-size: var(--read-note); }
+html .reading-redesign .article-side-note p,
+html .reading-redesign .article-source-inner p { font-size: var(--read-note); }
+html .reading-redesign .article-metadata dd,
+html .reading-redesign .article-source-inner a,
+html .reading-redesign .article-aside li { font-size: var(--read-meta); }
+html .reading-redesign .article-kicker,
+html .reading-redesign .prose-kicker,
+html .reading-redesign .article-aside-label,
+html .reading-redesign .article-publication dt { font-size: var(--read-label); }
+html .reading-redesign .article-metadata dt,
+html .reading-redesign .article-source-inner > span,
+html .reading-redesign .article-aside li::before { font-size: var(--read-label-figure); }
+
+/* ───────── IA en SPST · AI in occupational health services ───────── */
+
+html .spsti-editorial-v3 .pst-context-conclusion { font-size: var(--read-prose); }
+html .spsti-editorial-v3 .hub-family p,
+html .spsti-editorial-v3 .pst-context-grid p,
+html .spsti-editorial-v3 .usage-table td,
+html .spsti-editorial-v3 .usage-table td:first-child,
+html .spsti-editorial-v3 .hero-note,
+html .spsti-editorial-v3 .terrain-card .measure { font-size: var(--read-card); }
+html .spsti-editorial-v3 .matrix-caveat { font-size: var(--read-card) !important; }
+html body.spsti-hub .article-meta,
+html body.spsti-hub .pst-context-source,
+html .spsti-editorial-v3 .usage-table .table-source { font-size: var(--read-meta); }
+html .spsti-editorial-v3 .usage-table th,
+html .spsti-editorial-v3 .usage-table .status { font-size: var(--read-label); }
+@media (max-width: 640px) {
+  /* Labels placed inside the value / risk matrix: as large as the plot allows. */
+  html .spsti-editorial-v3 .quadrant { font-size: var(--read-label-figure); }
+}
+@media (max-width: 430px) {
+  html body.spsti-hub .article-meta { font-size: var(--read-meta); }
+}
+
+/* ───────── Risques psychosociaux · Psychosocial risks ───────── */
+
+html .risk-resource-page .quick-read p,
+html .risk-resource-page .prev-col li,
+html .risk-resource-page .law-col dd,
+html .risk-resource-page .axis-changes dd,
+html .risk-resource-page .level li { font-size: 15.5px; }
+html .risk-resource-page .source-links a,
+html .risk-resource-page .axis-link-sum { font-size: var(--read-card); }
+html .risk-resource-page .cause-card small,
+html .risk-resource-page .ai-factor b,
+html .risk-resource-page .factor-card b,
+html .risk-resource-page .axis-refs,
+html .risk-resource-page .axis-fig-note,
+html .risk-resource-page .button { font-size: var(--read-note); }
+html .risk-resource-page .article-meta,
+html .risk-resource-page .kicker,
+html .risk-resource-page .hero-proof,
+html .risk-resource-page .psychosocial-breadcrumb ol,
+html .risk-resource-page .axis-fig-label { font-size: var(--read-label); }
+@media (max-width: 640px) {
+  html .risk-resource-page .article-meta { font-size: var(--read-label); }
+}
+
+/* ───────── Risques économiques et sociaux · Economic and social risks ───────── */
+
+html .economic-risk-page .economic-aside p,
+html .economic-risk-page .economic-scenario-note p { font-size: var(--read-card); }
+html .economic-risk-page .economic-source-link { font-size: var(--read-note); }
+html .economic-risk-page .risk-path-kicker,
+html .economic-risk-page .economic-kicker,
+html .economic-risk-page .economic-section-number,
+html .economic-risk-page .economic-aside > span,
+html .economic-risk-page .economic-progression span { font-size: var(--read-label); }
+@media (max-width: 430px) {
+  html .economic-risk-page .economic-kicker,
+  html .economic-risk-page .economic-progression span { font-size: var(--read-label); }
+}
+
+/* ───────── Risques (accueil de la rubrique) · Risks hub ───────── */
+
+html .risk-intro-page .risk-card-index { font-size: var(--read-label); }
+
+/* ───────── Outils · Tools ───────── */
+
+html .skills-detail-page .skills-pratique li { font-size: 15.5px; }
+html .skills-detail-page .skills-caution,
+html .skills-detail-page .skills-entry-rail p { font-size: var(--read-note); }
+html .skills-detail-page .skills-entry-bottom p { font-size: var(--read-meta); }
+
+/* ───────── Confidentialité, mentions légales · Privacy, legal notice ───────── */
+
+html .legal-refresh .legal-card p,
+html .legal-refresh .legal-card li { font-size: var(--read-prose); }
+html .legal-refresh .legal-hero .kicker { font-size: var(--read-label); }
