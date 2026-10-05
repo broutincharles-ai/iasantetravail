@@ -1,18 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <script src="/assets/js/language-routing.js?v=1.1"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKEJVY4XVC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RKEJVY4XVC');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/fonts.css?v=1.0">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <title>Comprendre l’IA au travail | LLM, limites, risques et AGI</title>
   <meta name="description" content="Une introduction claire aux systèmes d’IA et aux grands modèles de langage : fonctionnement, entraînement, capacités, limites, risques, benchmarks et objectif d’AGI.">
@@ -3359,7 +3350,6 @@ html body.page-headings.collection-page .section-head h2 {
 }
 
 </style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
 <style data-source="/assets/css/ux-improvements.css">
 /* Functional states only: no changes to the site's resting layout, type or palette. */
 .ux-search-open {
@@ -3434,23 +3424,36 @@ body.ux-search-active { overflow: hidden; }
   <meta property="og:image:alt" content="IA &amp; Santé au Travail — Dr Charles Broutin">
   <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/social/site-fr.png">
   <meta name="twitter:image:alt" content="IA &amp; Santé au Travail — Dr Charles Broutin">
+  <link rel="stylesheet" href="/assets/css/chapter-toc.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=7.2">
+  <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
+  <script defer src="/assets/js/unified-navigation.js?v=7.2"></script>
+  <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
+  <script defer src="/assets/js/consent.js?v=1.1"></script>
+  <script src="/assets/js/language-routing.js?v=2.1"></script>
 </head>
 <body class="page-headings page-shell-v2 hero-editorial understand-editorial-v3">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-  <header class="site-system-header" data-navigation-version="6.1">
+  <header class="site-system-header" id="site-header" data-navigation-version="7.0">
     <nav class="system-nav" aria-label="Navigation principale">
       <a class="system-brand" href="/" aria-label="IA et Santé au Travail, accueil">
         <span class="system-brand-mark" aria-hidden="true"></span>
-        <span class="system-brand-copy"><strong>IA & Santé au Travail</strong><small>Publication indépendante</small></span>
+        <span class="system-brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Publication indépendante</small></span>
       </a>
-      <div class="system-desktop-navigation">
-        <div class="system-primary-links"><details class="system-nav-group is-current"><summary aria-controls="desktop-knowledge">Connaissances</summary><div class="system-nav-dropdown" id="desktop-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Rechercher dans le site<span aria-hidden="true">⌕</span></button><a href="/comprendre/" aria-current="page">Comprendre</a><a href="/risques-prevention/">Risques</a><a href="/ia-en-spst/">IA en SPST</a><a href="/droit-gouvernance/">Gouvernance</a><a href="/cse/">CSE</a></div></details><details class="system-nav-group"><summary aria-controls="desktop-tools">Outils</summary><div class="system-nav-dropdown" id="desktop-tools"><a href="/outils/">Tous les outils</a><a href="/outils/claude-skills/">Claude Skills</a><a href="/outils/preconisations/">Préconisations</a><a href="/evaluer/">Évaluer le déploiement</a><a href="/outils/fiches-prevention/">Fiches de prévention</a></div></details><a href="/publications/">Publications</a><a href="/actions/">Actions</a><a href="/lecture/">Lectures</a><a href="/a-propos/">À propos</a></div>
+      <div class="system-desktop-navigation"><div class="system-primary-links"><a class="system-nav-link" href="/comprendre/" aria-current="page">Comprendre</a><a class="system-nav-link" href="/risques-prevention/">Risques</a><details class="system-nav-group"><summary>Guides<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown"><ul class="system-nav-list"><li><a href="/ia-en-spst/"><span class="system-nav-title">IA en SPST</span><span class="system-nav-desc">Usages et méthode pour les services de prévention et de santé au travail</span></a></li><li><a href="/cse/"><span class="system-nav-title">CSE</span><span class="system-nav-desc">Préparer la consultation et l’avis sur un projet d’IA</span></a></li><li><a href="/droit-gouvernance/"><span class="system-nav-title">Droit &amp; gouvernance</span><span class="system-nav-desc">Obligations de l’employeur : AI Act, RGPD, DUERP</span></a></li></ul></div></details><details class="system-nav-group"><summary>Outils<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown is-wide"><ul class="system-nav-list"><li><a href="/evaluer/"><span class="system-nav-title">Évaluer un projet d’IA</span><span class="system-nav-desc">18 questions, avant puis après le déploiement</span></a></li><li><a href="/outils/preconisations/"><span class="system-nav-title">Relire une préconisation</span><span class="system-nav-desc">Cinq critères de qualité, analysés par Jev</span></a></li><li><a href="/cse/#questions"><span class="system-nav-title">Checklist CSE</span><span class="system-nav-desc">Les 10 questions à poser avant l’avis</span></a></li><li><a href="/droit-gouvernance/#dossier"><span class="system-nav-title">Dossier d’un pilote</span><span class="system-nav-desc">Les 8 pièces à réunir avant de tester une IA</span></a></li><li><a href="/ia-en-spst/#prioriser"><span class="system-nav-title">Matrice valeur / risque</span><span class="system-nav-desc">Situer un usage en SPST avant de le tester</span></a></li><li><a href="/outils/fiches-prevention/"><span class="system-nav-title">Fiches de prévention</span><span class="system-nav-desc">7 fiches RPS et IA à télécharger</span></a></li><li><a href="/outils/claude-skills/"><span class="system-nav-title">Skills pour Claude</span><span class="system-nav-desc">Maladies professionnelles, maintien en emploi</span></a></li></ul><a class="system-nav-all" href="/outils/">Tous les outils <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></details><a class="system-nav-link" href="/lecture/">Lectures</a><details class="system-nav-group"><summary>À propos<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown"><ul class="system-nav-list"><li><a href="/a-propos/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Médecin du travail, auteur du site</span></a></li><li><a href="/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Articles publiés et preprint</span></a></li><li><a href="/actions/"><span class="system-nav-title">Interventions</span><span class="system-nav-desc">Séminaires, journées et colloques</span></a></li></ul></div></details></div></div>
+      <div class="system-nav-actions">
+        <button type="button" class="system-search-button" data-site-search aria-label="Rechercher dans le site" title="Rechercher dans le site (Ctrl K)"><svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="system-search-text">Rechercher</span></button>
+        <a class="system-language-switch" href="/en/understand/" lang="en" hreflang="en" aria-label="View this page in English" title="View this page in English">EN</a>
+        <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
       </div>
-      <a class="system-language-switch" href="/en/understand/" lang="en" hreflang="en" aria-label="View this page in English">EN</a>
-      <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
       <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
-        <div class="system-mobile-group"><span class="system-mobile-label">Principal</span><details class="system-nav-group is-current"><summary aria-controls="mobile-knowledge">Connaissances</summary><div class="system-nav-dropdown" id="mobile-knowledge"><button type="button" class="ux-search-open" data-site-search hidden>Rechercher dans le site<span aria-hidden="true">⌕</span></button><a href="/comprendre/" aria-current="page">Comprendre</a><a href="/risques-prevention/">Risques</a><a href="/ia-en-spst/">IA en SPST</a><a href="/droit-gouvernance/">Gouvernance</a><a href="/cse/">CSE</a></div></details><details class="system-nav-group"><summary aria-controls="mobile-tools">Outils</summary><div class="system-nav-dropdown" id="mobile-tools"><a href="/outils/">Tous les outils</a><a href="/outils/claude-skills/">Claude Skills</a><a href="/outils/preconisations/">Préconisations</a><a href="/evaluer/">Évaluer le déploiement</a><a href="/outils/fiches-prevention/">Fiches de prévention</a></div></details><a href="/publications/">Publications</a><a href="/actions/">Actions</a><a href="/lecture/">Lectures</a><a href="/a-propos/">À propos</a></div>
+        <div class="system-mobile-inner">
+          <button type="button" class="system-mobile-search" data-site-search>Rechercher dans le site <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <a class="system-mobile-link" href="/comprendre/" aria-current="page">Comprendre</a><a class="system-mobile-link" href="/risques-prevention/">Risques</a><section class="system-mobile-group" aria-labelledby="systemMobile-guides"><h2 id="systemMobile-guides">Guides</h2><ul class="system-nav-list"><li><a href="/ia-en-spst/"><span class="system-nav-title">IA en SPST</span><span class="system-nav-desc">Usages et méthode pour les services de prévention et de santé au travail</span></a></li><li><a href="/cse/"><span class="system-nav-title">CSE</span><span class="system-nav-desc">Préparer la consultation et l’avis sur un projet d’IA</span></a></li><li><a href="/droit-gouvernance/"><span class="system-nav-title">Droit &amp; gouvernance</span><span class="system-nav-desc">Obligations de l’employeur : AI Act, RGPD, DUERP</span></a></li></ul></section><section class="system-mobile-group" aria-labelledby="systemMobile-toolbox"><h2 id="systemMobile-toolbox">Outils</h2><ul class="system-nav-list"><li><a href="/evaluer/"><span class="system-nav-title">Évaluer un projet d’IA</span><span class="system-nav-desc">18 questions, avant puis après le déploiement</span></a></li><li><a href="/outils/preconisations/"><span class="system-nav-title">Relire une préconisation</span><span class="system-nav-desc">Cinq critères de qualité, analysés par Jev</span></a></li><li><a href="/cse/#questions"><span class="system-nav-title">Checklist CSE</span><span class="system-nav-desc">Les 10 questions à poser avant l’avis</span></a></li><li><a href="/droit-gouvernance/#dossier"><span class="system-nav-title">Dossier d’un pilote</span><span class="system-nav-desc">Les 8 pièces à réunir avant de tester une IA</span></a></li><li><a href="/ia-en-spst/#prioriser"><span class="system-nav-title">Matrice valeur / risque</span><span class="system-nav-desc">Situer un usage en SPST avant de le tester</span></a></li><li><a href="/outils/fiches-prevention/"><span class="system-nav-title">Fiches de prévention</span><span class="system-nav-desc">7 fiches RPS et IA à télécharger</span></a></li><li><a href="/outils/claude-skills/"><span class="system-nav-title">Skills pour Claude</span><span class="system-nav-desc">Maladies professionnelles, maintien en emploi</span></a></li></ul><a class="system-mobile-all" href="/outils/">Tous les outils <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></section><a class="system-mobile-link" href="/lecture/">Lectures</a><section class="system-mobile-group" aria-labelledby="systemMobile-about-group"><h2 id="systemMobile-about-group">À propos</h2><ul class="system-nav-list"><li><a href="/a-propos/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Médecin du travail, auteur du site</span></a></li><li><a href="/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Articles publiés et preprint</span></a></li><li><a href="/actions/"><span class="system-nav-title">Interventions</span><span class="system-nav-desc">Séminaires, journées et colloques</span></a></li></ul></section>
+        </div>
       </div>
     </nav><nav class="page-nav" aria-label="Sommaire de la page">
       <div class="page-nav-inner">
@@ -3466,6 +3469,7 @@ body.ux-search-active { overflow: hidden; }
           <a href="#risques-systemes">Risques</a>
           <a href="#agi">AGI</a>
           <a href="#travail">Travail réel</a>
+          <a href="#questions">Avant l’usage</a>
           <a href="#ressources">Ressources</a>
         </div>
         <span class="page-progress" aria-hidden="true"><i></i></span>
@@ -3490,6 +3494,44 @@ body.ux-search-active { overflow: hidden; }
       <article><span>02</span><h2>Un LLM produit une suite plausible.</h2><p>Il calcule des probabilités à partir du contexte ; il ne vérifie pas spontanément la vérité ni la conformité de sa réponse.</p></article>
       <article><span>03</span><h2>Le bon niveau d’analyse est le travail réel.</h2><p>Le modèle compte, mais aussi la tâche, les données, les personnes, les règles de décision et l’organisation.</p></article>
     </section>
+
+    <!-- chapter-toc:start -->
+    <nav class="chapter-toc" id="sommaire" aria-labelledby="sommaire-title">
+      <div class="chapter-toc-head">
+        <h2 id="sommaire-title">Sommaire</h2>
+        <p>11 chapitres, à lire dans l’ordre ou séparément.</p>
+      </div>
+      <div class="chapter-toc-parts">
+        <section class="chapter-toc-part" aria-labelledby="sommaire-1">
+          <h3 id="sommaire-1">Comment fonctionnent les modèles</h3>
+          <ol>
+            <li><a class="chapter-toc-link" href="#systemes"><span class="chapter-toc-num">01</span><span class="chapter-toc-title">Nommer le système</span><span class="chapter-toc-time">1 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#llm"><span class="chapter-toc-num">02</span><span class="chapter-toc-title">À l’intérieur d’un LLM</span><span class="chapter-toc-time">2 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#entrainement"><span class="chapter-toc-num">03</span><span class="chapter-toc-title">Entraînement</span><span class="chapter-toc-time">3 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#systeme"><span class="chapter-toc-num">04</span><span class="chapter-toc-title">Du modèle au système</span><span class="chapter-toc-time">2 min</span></a></li>
+          </ol>
+        </section>
+        <section class="chapter-toc-part" aria-labelledby="sommaire-2">
+          <h3 id="sommaire-2">Ce qu’ils savent faire</h3>
+          <ol>
+            <li><a class="chapter-toc-link" href="#capacites"><span class="chapter-toc-num">05</span><span class="chapter-toc-title">Capacités et limites</span><span class="chapter-toc-time">3 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#benchmarks"><span class="chapter-toc-num">06</span><span class="chapter-toc-title">Lire les benchmarks</span><span class="chapter-toc-time">2 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#trajectoire"><span class="chapter-toc-num">07</span><span class="chapter-toc-title">Suivre la trajectoire</span><span class="chapter-toc-time">4 min</span></a></li>
+          </ol>
+        </section>
+        <section class="chapter-toc-part" aria-labelledby="sommaire-3">
+          <h3 id="sommaire-3">Risques et usage au travail</h3>
+          <ol>
+            <li><a class="chapter-toc-link" href="#risques-systemes"><span class="chapter-toc-num">08</span><span class="chapter-toc-title">Risques des systèmes</span><span class="chapter-toc-time">2 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#agi"><span class="chapter-toc-num">09</span><span class="chapter-toc-title">L’objectif d’AGI</span><span class="chapter-toc-time">4 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#travail"><span class="chapter-toc-num">10</span><span class="chapter-toc-title">Revenir au travail réel</span><span class="chapter-toc-time">1 min</span></a></li>
+            <li><a class="chapter-toc-link" href="#questions"><span class="chapter-toc-num">11</span><span class="chapter-toc-title">Avant un usage professionnel</span><span class="chapter-toc-time">1 min</span></a></li>
+          </ol>
+        </section>
+      </div>
+      <p class="chapter-toc-more"><a href="#ressources">Pour aller plus loin</a>&nbsp;: des ressources choisies selon la question que vous vous posez.</p>
+    </nav>
+    <!-- chapter-toc:end -->
 
     <section class="section families" id="systemes">
       <div class="section-head">
@@ -3687,7 +3729,7 @@ body.ux-search-active { overflow: hidden; }
     <section class="section system-risks" id="risques-systemes">
       <div class="section-head">
         <div><p class="kicker">08 / Risques des systèmes</p><h2>Au-delà de l’erreur ponctuelle, trois familles de risques.</h2></div>
-        <p>Le Rapport international sur la sûreté de l’IA, rédigé par plus de 100 experts sous la présidence de Yoshua Bengio, distingue les usages malveillants, les dysfonctionnements et les risques systémiques. Les effets sur le travail et la santé sont détaillés dans le <a href="https://www.iasantetravail.com/risques-prevention/">parcours Risques</a>.</p>
+        <p>Le Rapport international sur la sûreté de l’IA, rédigé par plus de 100 experts sous la présidence de Yoshua Bengio, distingue les usages malveillants, les dysfonctionnements et les risques systémiques. Les effets sur le travail et la santé sont détaillés dans le <a href="/risques-prevention/">parcours Risques</a>.</p>
       </div>
       <div class="card-grid cols-3">
         <article class="knowledge-card"><span>01 · Usages malveillants</span><h3>Quand l’outil sert à nuire</h3><p>Fraudes et escroqueries, hypertrucages, manipulation, aide à des cyberattaques. Les laboratoires évaluent aussi l’aide que leurs modèles pourraient apporter à la conception d’armes biologiques ou chimiques.</p><p class="card-work"><strong>Au travail</strong>Hameçonnage ciblé, usurpation de l’identité d’un dirigeant, atteintes à la réputation.</p></article>
@@ -3695,7 +3737,7 @@ body.ux-search-active { overflow: hidden; }
         <article class="knowledge-card"><span>03 · Risques systémiques</span><h3>Quand l’effet naît de la diffusion à grande échelle</h3><p>Automatisation de tâches intellectuelles, affaiblissement de l’esprit critique par excès de confiance dans la machine, dépendance affective à des compagnons conversationnels utilisés par des dizaines de millions de personnes.</p><p class="card-work"><strong>Au travail</strong>Déqualification, intensification, perte d’autonomie et de sens du métier.</p></article>
       </div>
       <div class="workplace-callout"><span>Un point aveugle</span><p>Les tests réalisés avant la mise sur le marché prédisent mal l’utilité et les risques en conditions réelles, et certains modèles détectent désormais qu’ils sont évalués. Le suivi après déploiement, y compris dans les organisations de travail, devient indispensable.</p></div>
-      <div class="capability-note"><div><strong>Des protections qui progressent, sans garantie.</strong><p>Les principaux laboratoires publient des cadres de sécurité, comme la Responsible Scaling Policy d’Anthropic, le Preparedness Framework d’OpenAI ou le Frontier Safety Framework de Google DeepMind, qui associent des seuils de capacités à des mesures renforcées. La recherche en interprétabilité tente de lire les mécanismes internes des modèles plutôt que leurs seules réponses. Ces engagements restent largement volontaires et évalués par les entreprises elles-mêmes.</p></div><div><strong>Un premier cadre contraignant en Europe.</strong><p>Depuis le 2 août 2025, l’AI Act impose aux fournisseurs de modèles d’IA à usage général une documentation technique et une politique de respect du droit d’auteur. Les modèles présentant un risque systémique doivent en outre être évalués, faire l’objet d’une gestion des risques et d’un signalement des incidents graves. <a href="https://www.iasantetravail.com/droit-gouvernance/">Voir le parcours Gouvernance →</a></p></div></div>
+      <div class="capability-note"><div><strong>Des protections qui progressent, sans garantie.</strong><p>Les principaux laboratoires publient des cadres de sécurité, comme la Responsible Scaling Policy d’Anthropic, le Preparedness Framework d’OpenAI ou le Frontier Safety Framework de Google DeepMind, qui associent des seuils de capacités à des mesures renforcées. La recherche en interprétabilité tente de lire les mécanismes internes des modèles plutôt que leurs seules réponses. Ces engagements restent largement volontaires et évalués par les entreprises elles-mêmes.</p></div><div><strong>Un premier cadre contraignant en Europe.</strong><p>Depuis le 2 août 2025, l’AI Act impose aux fournisseurs de modèles d’IA à usage général une documentation technique et une politique de respect du droit d’auteur. Les modèles présentant un risque systémique doivent en outre être évalués, faire l’objet d’une gestion des risques et d’un signalement des incidents graves. <a href="/droit-gouvernance/">Voir le parcours Gouvernance →</a></p></div></div>
       <div class="reading-links" aria-label="Ressources sur les risques des systèmes d’IA">
         <a class="reading-link" href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026" target="_blank" rel="noreferrer"><small>EN · Rapport · Synthèse disponible</small><strong>International AI Safety Report 2026 <b>↗</b></strong></a>
         <a class="reading-link" href="https://arxiv.org/abs/2412.04984" target="_blank" rel="noreferrer"><small>EN · Article scientifique · Avancé</small><strong>Frontier Models are Capable of In-context Scheming — Apollo Research, 2024 <b>↗</b></strong></a>
@@ -3732,7 +3774,7 @@ body.ux-search-active { overflow: hidden; }
         <div class="comparison-column"><span>Arguments pour une arrivée rapide</span><h3>Pourquoi certains anticipent une accélération</h3><ul><li>Les capacités mesurées progressent de façon régulière depuis plusieurs années</li><li>Des tests conçus pour résister aux modèles tombent vite : ARC-AGI-3 est passé de moins de 1 % à 63 % en six mois</li><li>Le calcul et les investissements consacrés à l’entraînement augmentent encore fortement</li><li>Le calcul au moment de la réponse ouvre un nouveau levier de progrès</li><li>Les modèles contribuent déjà à la programmation et à la recherche en IA, ce qui pourrait accélérer la suite</li></ul></div>
         <div class="comparison-column"><span>Arguments de prudence</span><h3>Pourquoi d’autres restent sceptiques</h3><ul><li>L’apprentissage continu et la mémoire durable restent très limités</li><li>Les scores dépendent du protocole : sur ARC-AGI-3, le même modèle obtient 63 % ou 99 % selon le dispositif de test</li><li>La fiabilité sur de longues tâches progresse moins vite que les démonstrations</li><li>Énergie, données et capitaux pourraient freiner la poursuite de l’échelle</li><li>Réussir des tests ne garantit pas de tenir un poste dans un environnement réel</li></ul></div>
       </div>
-      <div class="workplace-callout"><span>Pour la santé au travail</span><p>L’enjeu n’est pas de parier sur une date. Il s’agit de suivre, tâche par tâche, ce qui devient automatisable, à quel rythme et sous quel contrôle, et d’anticiper les effets sur la charge, l’autonomie, les compétences et l’emploi avant qu’ils ne s’imposent. <a href="https://www.iasantetravail.com/risques-prevention/economique-social/">Voir les enjeux économiques et sociaux →</a></p></div>
+      <div class="workplace-callout"><span>Pour la santé au travail</span><p>L’enjeu n’est pas de parier sur une date. Il s’agit de suivre, tâche par tâche, ce qui devient automatisable, à quel rythme et sous quel contrôle, et d’anticiper les effets sur la charge, l’autonomie, les compétences et l’emploi avant qu’ils ne s’imposent. <a href="/risques-prevention/economique-social/">Voir les enjeux économiques et sociaux →</a></p></div>
     </section>
 
     <section class="section workplace" id="travail">
@@ -3773,25 +3815,28 @@ body.ux-search-active { overflow: hidden; }
         <a class="resource-card" href="https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Usage professionnel</span><span>FR · Pratique</span></span><h3>Questions-réponses sur l’IA générative</h3><p>Bénéfices, résultats inexacts, données personnelles et premières précautions de déploiement.</p><b>CNIL ↗</b></a>
         <a class="resource-card" href="https://airc.nist.gov/" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Gestion des risques</span><span>EN · Approfondir</span></span><h3>AI Risk Management Framework</h3><p>Cadre, ressources et profil consacré aux risques propres à l’IA générative.</p><b>NIST ↗</b></a>
         <a class="resource-card" href="https://internationalaisafetyreport.org/publication/2026-report-executive-summary" target="_blank" rel="noreferrer"><span class="resource-meta"><span>État des connaissances</span><span>EN · 3 pages</span></span><h3>International AI Safety Report 2026</h3><p>La synthèse de plus de 100 experts sur les capacités, les risques et les protections des systèmes d’IA généralistes.</p><b>Rapport international ↗</b></a>
-        <a class="resource-card" href="https://www.iasantetravail.com/evaluer/" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Méthode</span><span>FR · Travail</span></span><h3>Évaluer les modèles dans un contexte professionnel</h3><p>Relier un protocole d’évaluation aux connaissances du métier et aux erreurs réellement importantes.</p><b>IA &amp; Santé au Travail ↗</b></a>
-        <a class="resource-card" href="https://www.iasantetravail.com/#parcours"><span class="resource-meta"><span>Parcours du site</span><span>FR · 6 étapes</span></span><h3>Explorer l’IA en santé au travail</h3><p>Relier la compréhension des modèles, les risques, les usages en SPSTI, l’évaluation, la prévention et le droit.</p><b>IA &amp; Santé au Travail →</b></a>
+        <a class="resource-card" href="/evaluer/" target="_blank" rel="noreferrer"><span class="resource-meta"><span>Méthode</span><span>FR · Travail</span></span><h3>Évaluer les modèles dans un contexte professionnel</h3><p>Relier un protocole d’évaluation aux connaissances du métier et aux erreurs réellement importantes.</p><b>IA &amp; Santé au Travail ↗</b></a>
+        <a class="resource-card" href="/#parcours"><span class="resource-meta"><span>Parcours du site</span><span>FR · 6 étapes</span></span><h3>Explorer l’IA en santé au travail</h3><p>Relier la compréhension des modèles, les risques, les usages en SPSTI, l’évaluation, la prévention et le droit.</p><b>IA &amp; Santé au Travail →</b></a>
       </div>
     </section>
 
     <section class="section newsletter" id="newsletter">
       <div><p class="kicker">Newsletter indépendante</p><h2>Suivre les usages, les évaluations et leurs effets sur le travail.</h2></div>
-      <div class="newsletter-copy"><p>Une veille pour prendre du recul sur les annonces, comprendre les résultats de recherche et repérer ce qui change réellement dans les métiers.</p><div class="newsletter-actions"><a class="button primary" href="https://substack.com/@charlesbroutin" target="_blank" rel="noreferrer">Découvrir la newsletter <span>↗</span></a><a class="button secondary" href="https://www.iasantetravail.com/a-propos/">À propos du projet</a></div><small>Abonnement sur Substack · désinscription à tout moment</small></div>
+      <div class="newsletter-copy"><p>Une veille pour prendre du recul sur les annonces, comprendre les résultats de recherche et repérer ce qui change réellement dans les métiers.</p><div class="newsletter-actions"><a class="button primary" href="https://substack.com/@charlesbroutin" target="_blank" rel="noreferrer">Découvrir la newsletter <span>↗</span></a><a class="button secondary" href="/a-propos/">À propos du projet</a></div><small>Abonnement sur Substack · désinscription à tout moment</small></div>
     </section>
   </main>
 
-  <footer class="site-system-footer" data-navigation-version="6.1">
+  <footer class="site-system-footer" id="site-footer" data-navigation-version="7.0">
     <div class="system-footer-grid">
-      <div class="system-footer-intro"><a class="system-brand" href="/"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>IA & Santé au Travail</strong></span></a><p>Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.</p></div>
-      <nav class="system-footer-group system-footer-pathways" aria-labelledby="systemFooterPathways"><h2 id="systemFooterPathways">Parcours</h2><ul><li><a href="/comprendre/" aria-current="page">Comprendre</a></li><li><a href="/risques-prevention/">Risques</a></li><li><a href="/ia-en-spst/">IA en SPST</a></li><li><a href="/droit-gouvernance/">Gouvernance</a></li><li><a href="/cse/">CSE</a></li><li><a href="/outils/">Outils</a></li><li><a href="/outils/preconisations/">Préconisations</a></li><li><a href="/evaluer/">Évaluer le déploiement</a></li><li><a href="/outils/fiches-prevention/">Fiches de prévention</a></li></ul></nav>
-      <nav class="system-footer-group system-footer-publication" aria-labelledby="systemFooterPublication"><h2 id="systemFooterPublication">Publication</h2><ul><li><a href="/publications/">Publications</a></li><li><a href="/actions/">Actions</a></li><li><a href="/lecture/">Lectures</a></li><li><a href="/a-propos/">À propos</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (ouvre dans un nouvel onglet)">Newsletter <span aria-hidden="true">↗</span></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (ouvre dans un nouvel onglet)">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></nav>
-      <nav class="system-footer-group system-footer-information" aria-labelledby="systemFooterInformation"><h2 id="systemFooterInformation">Informations</h2><ul><li><a href="/en/understand/" lang="en" hreflang="en">English version</a></li><li><a href="/confidentialite/">Confidentialité</a></li><li><a href="/mentions-legales/">Mentions légales</a></li></ul></nav>
+      <div class="system-footer-intro"><a class="system-brand" href="/" aria-label="IA et Santé au Travail, accueil"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>IA &amp; Santé au Travail</strong></span></a><p>Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.</p></div>
+      <nav class="system-footer-group" aria-labelledby="systemFooterUnderstand"><h2 id="systemFooterUnderstand">Comprendre</h2><ul><li><a href="/comprendre/" aria-current="page">Comprendre l’IA</a></li><li><a href="/risques-prevention/">Risques</a></li><li><a href="/ia-en-spst/">IA en SPST</a></li><li><a href="/cse/">CSE</a></li><li><a href="/droit-gouvernance/">Droit &amp; gouvernance</a></li><li><a href="/lecture/">Lectures</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterTools"><h2 id="systemFooterTools">Outils</h2><ul><li><a href="/evaluer/">Évaluer un projet d’IA</a></li><li><a href="/outils/preconisations/">Relire une préconisation</a></li><li><a href="/outils/fiches-prevention/">Fiches de prévention</a></li><li><a href="/outils/claude-skills/">Skills pour Claude</a></li><li><a href="/outils/">Tous les outils</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterSite"><h2 id="systemFooterSite">Le site</h2><ul><li><a href="/a-propos/">À propos</a></li><li><a href="/publications/">Publications</a></li><li><a href="/actions/">Interventions</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (ouvre dans un nouvel onglet)">Newsletter <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (ouvre dans un nouvel onglet)">LinkedIn <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></nav>
     </div>
-    <div class="system-footer-bottom"><span>© 2026 IA & Santé au Travail — Initiative éditoriale indépendante.</span></div></footer>
+    <div class="system-footer-bottom">
+      <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span>
+      <span class="system-footer-legal"><a href="/en/understand/" lang="en" hreflang="en">English version</a><a href="/confidentialite/">Confidentialité</a><a href="/mentions-legales/">Mentions légales</a><button type="button" data-consent-open>Gérer les cookies</button></span>
+    </div></footer>
 <script data-source="/assets/js/understand-figures.js">
 /* Tooltips for the figures of /comprendre/ (elements carrying data-tip).
    Figures stay fully readable without this script: every value is also in a label or a data table. */
@@ -3831,6 +3876,8 @@ body.ux-search-active { overflow: hidden; }
   function hide() { tip.hidden = true; }
 
   Array.prototype.forEach.call(targets, function (el) {
+    // Points reachable with the keyboard carry their value as a name, not only in the tooltip.
+    if (el.hasAttribute("tabindex") && !el.hasAttribute("aria-label")) el.setAttribute("aria-label", el.getAttribute("data-tip"));
     el.addEventListener("pointerenter", function (e) { show(el, e.clientX, e.clientY); });
     el.addEventListener("pointermove", function (e) { if (!tip.hidden) place(e.clientX, e.clientY); });
     el.addEventListener("pointerleave", hide);
@@ -3842,7 +3889,5 @@ body.ux-search-active { overflow: hidden; }
 })();
 
 </script>
-<script src="/assets/js/unified-navigation.js?v=6.4"></script>
-<script src="/assets/js/ux-improvements.js?v=1.1"></script>
 </body>
 </html>

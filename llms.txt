@@ -15,15 +15,22 @@ This resource is intentionally absent from the human navigation, public sitemap 
 ## Core website resources
 
 - https://www.iasantetravail.com/ — Parcours principal pour comprendre les systèmes d’IA, identifier les risques, évaluer les usages, prévenir leurs effets et gouverner les déploiements en santé au travail.
-- https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels.
-- https://www.iasantetravail.com/outils/ — Outils pour la santé au travail : Préconisations, évaluation du déploiement de l’IA et Claude Skills.
+- https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels, en onze chapitres.
+- https://www.iasantetravail.com/risques-prevention/ — Deux analyses complémentaires des risques liés à l’IA : le travail réel et la santé, puis l’économie et la société.
+- https://www.iasantetravail.com/ia-en-spst/ — Guide sur l’IA dans les services de prévention et de santé au travail (SPST) : cas d’usage, données de santé, AI Act, risques et méthode pour lancer un pilote.
+- https://www.iasantetravail.com/cse/ — Rôle du CSE face à l’IA : consultation, risques psychosociaux, médecin du travail et checklist de 10 questions avant l’avis.
+- https://www.iasantetravail.com/lecture/ — Lectures commentées d’articles, d’études et de retours de terrain sur l’IA, les métiers et les conditions de travail.
+- https://www.iasantetravail.com/outils/ — Les outils du site : évaluer un projet d’IA, checklist CSE, dossier d’un pilote, matrice valeur / risque, fiches de prévention RPS, relecture des préconisations et Skills pour Claude.
 - https://www.iasantetravail.com/outils/claude-skills/ — Deux Claude Skills pour la santé au travail à télécharger : analyse des tableaux de maladies professionnelles et maintien en emploi. Instructions réutilisables, sources à vérifier et décision professionnelle conservée.
 - https://www.iasantetravail.com/outils/fiches-prevention/ — Sept fiches RPS et IA à télécharger en PDF : couverture, six axes de Gollac, signaux d’alerte et prévention.
 - https://www.iasantetravail.com/en/tools/prevention-fact-sheets/ — Seven downloadable prevention fact sheets in English: cover, six Gollac dimensions, warning signs and prevention measures.
 - https://www.iasantetravail.com/outils/preconisations/ — Application Préconisations, fonctionnement de Jev et banc d’essai sur 540 préconisations fictives. Textes fictifs uniquement.
-- https://www.iasantetravail.com/evaluer/ — Méthode pour évaluer un projet d’IA avant et après son déploiement.
+- https://www.iasantetravail.com/evaluer/ — Outil pour évaluer un projet d’IA au travail : 18 questions sur neuf axes du travail, avant le pilote puis au suivi. Les réponses restent dans le navigateur.
+- https://www.iasantetravail.com/en/evaluate/ — English version of the assessment tool: 18 questions on nine work-related axes, before the pilot and at follow-up.
 - https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.
 - https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
+- https://www.iasantetravail.com/risques-prevention/economique-social/ — Comment l’IA pourrait réduire la place économique du travail humain, et les signaux que la santé au travail peut observer dès aujourd’hui.
+- https://www.iasantetravail.com/en/ — English edition of the website: understand how AI affects work, assess its uses and prevent risks to health.
 - https://www.iasantetravail.com/a-propos/ — Auteur, parcours, formations et newsletters du site.
 
 - https://www.iasantetravail.com/publications/ — Trois publications du Dr Charles Broutin : deux articles publiés, présentés par des résumés détaillés, et un preprint en texte intégral.

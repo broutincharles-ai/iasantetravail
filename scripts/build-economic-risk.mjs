@@ -2,6 +2,15 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+// The published page (risques-prevention/economique-social/index.html) has since been edited by hand:
+// English version, sharing images, structured data, shared header and fonts. This generator still uses
+// the older template, so it no longer runs by default. Use --overwrite only to rebuild the text from
+// content/risque-economique-social.md, then compare with the published page before committing.
+if (!process.argv.includes("--overwrite")) {
+  console.error("build-economic-risk.mjs would replace the published page with an older template. Run it with --overwrite only to rebuild the page from content/risque-economique-social.md, then review the result.");
+  process.exit(1);
+}
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = await readFile(path.join(root, "content/risque-economique-social.md"), "utf8");
 const lines = source.replaceAll("\r\n", "\n").split("\n");
@@ -158,7 +167,7 @@ const html = `<!doctype html>
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${description}">
   <meta property="og:url" content="${url}">
-  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/og-risques.jpg">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/social/site-fr.png">
   <meta property="article:published_time" content="2026-08-16">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">${JSON.stringify(structuredData).replaceAll("<", "\\u003c")}</script>
@@ -203,18 +212,6 @@ const outputDirectory = path.join(root, "risques-prevention/economique-social");
 await mkdir(outputDirectory, { recursive: true });
 await writeFile(path.join(outputDirectory, "index.html"), html, "utf8");
 
-const sitemapPath = path.join(root, "sitemap.xml");
-const sitemap = await readFile(sitemapPath, "utf8");
-const sitemapBlock = `<!-- risk-pathways:start -->
-<url><loc>https://www.iasantetravail.com/risques-prevention/psychosociaux/</loc><lastmod>2026-08-16</lastmod></url>
-<url><loc>https://www.iasantetravail.com/risques-prevention/economique-social/</loc><lastmod>2026-08-16</lastmod></url>
-<!-- risk-pathways:end -->`;
-const withUpdatedHub = sitemap.replace(
-  /<url><loc>https:\/\/www\.iasantetravail\.com\/risques-prevention\/<\/loc><lastmod>[^<]+<\/lastmod><\/url>/,
-  "<url><loc>https://www.iasantetravail.com/risques-prevention/</loc><lastmod>2026-08-16</lastmod></url>"
-);
-const nextSitemap = withUpdatedHub.includes("<!-- risk-pathways:start -->")
-  ? withUpdatedHub.replace(/<!-- risk-pathways:start -->[\s\S]*?<!-- risk-pathways:end -->/, sitemapBlock)
-  : withUpdatedHub.replace("</urlset>", `${sitemapBlock}\n</urlset>`);
-await writeFile(sitemapPath, nextSitemap, "utf8");
+// The sitemap is generated from scripts/indexing-scope.mjs: run node scripts/enforce-indexing-scope.mjs.
+// Then run node scripts/render-static-navigation.mjs to add the shared header, footer and head assets.
 console.log(`Economic risk pathway generated with ${sections.length} sections.`);

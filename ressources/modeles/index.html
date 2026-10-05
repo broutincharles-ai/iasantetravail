@@ -1,72 +1,13 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <script src="/assets/js/language-routing.js?v=1.1"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKEJVY4XVC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RKEJVY4XVC');
-  </script>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,follow">
-  <title>Panorama des modèles d’IA — IA &amp; Santé au Travail</title>
-  <meta name="description" content="Un panorama daté pour comparer les familles de modèles d’IA, lire les benchmarks et choisir selon une tâche, des données et des conditions d’usage précises.">
-  <link rel="canonical" href="https://www.iasantetravail.com/ressources/modeles/"><link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/ressources/modeles/"><link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/resources/models/"><link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/ressources/modeles/">
-  <meta property="og:type" content="article"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="IA Santé Travail">
-<meta property="og:title" content="Panorama des modèles d’IA"><meta property="og:description" content="Familles de modèles, critères de choix et lecture prudente des benchmarks."><meta property="og:url" content="https://www.iasantetravail.com/ressources/modeles/"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Panorama des modèles d’IA">
-  <meta name="twitter:description" content="Familles de modèles, critères de choix et lecture prudente des benchmarks.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Panorama des modèles d’IA", "url": "https://www.iasantetravail.com/ressources/modeles/", "inLanguage": "fr-FR", "dateModified": "2026-08-09", "author": {"@type": "Person", "name": "Dr Charles Broutin"}}</script>
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1"><link rel="stylesheet" href="/assets/css/layout.css?v=3.0"><link rel="stylesheet" href="/assets/css/components.css?v=3.1"><link rel="stylesheet" href="/assets/css/editorial-resource-pages.css?v=1.0"><link rel="stylesheet" href="/assets/css/unified-navigation.css?v=4.1"><script defer src="/assets/js/unified-navigation.js?v=6.2"></script>
-<link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
-<link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.0">
-<script defer src="/assets/js/ux-improvements.js?v=1.1"></script>
+  <meta http-equiv="refresh" content="0; url=/comprendre/#benchmarks">
+  <link rel="canonical" href="https://www.iasantetravail.com/comprendre/">
+  <title>Contenu déplacé — IA & Santé au Travail</title>
+  <script>window.location.replace("/comprendre/#benchmarks");</script>
 </head>
-<body class="page-headings page-shell-v2 hero-editorial resource-page models-resource-page">
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <header class="site-header"><nav class="nav" aria-label="Navigation principale"><a class="brand" href="/"><span class="brand-mark"><img src="/assets/images/logo.png" alt=""></span><span class="brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Prévention · Travail réel</small></span></a><div class="nav-links"><a href="/comprendre/">Comprendre l’IA</a><a href="/risques-prevention/">Risques &amp; prévention</a><a href="/evaluer/">Évaluer &amp; déployer</a><a href="/droit-gouvernance/">Droit &amp; gouvernance</a></div><a class="language-switch" href="/en/resources/models/" lang="en" hreflang="en">EN</a></nav><nav class="page-nav" aria-label="Sommaire de la page"><div class="page-nav-inner"><span class="page-nav-label">Sur cette page</span><div class="page-nav-links"><a href="#familles">Familles</a><a href="#criteres">Choisir</a><a href="#benchmarks">Benchmarks</a><a href="#protocole">Comparer</a><a href="#sources">Sources</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header>
-
-  <main id="contenu">
-    <section class="artwork-free-hero hero" id="panorama"><div class="hero-copy"><p class="kicker">Modèles · Benchmarks · Choix d’usage</p><h1>Un panorama utile, <em>pas un podium.</em></h1><p class="hero-lede">Les classements vieillissent vite. Pour choisir un modèle, il faut partir de la tâche, des erreurs inacceptables, des données, du niveau de contrôle et du coût total de l’usage.</p><div class="hero-actions"><a class="button primary" href="#criteres">Comparer utilement <span>↓</span></a><a class="button" href="#benchmarks">Lire les benchmarks</a></div><div class="hero-proof"><span>Vue datée</span><span>Aucun modèle universel</span><span>Test local indispensable</span></div></div>
-
-    </section>
-    <section class="quick-read" aria-label="À retenir"><article><span>DATE</span><h2>Un classement est un instantané.</h2><p>Version du modèle, harnais, outils et budget de calcul doivent accompagner chaque résultat.</p></article><article><span>TÂCHE</span><h2>Le meilleur modèle est situé.</h2><p>Une bonne performance générale ne garantit pas la qualité en santé au travail ou en droit français.</p></article><article><span>CYCLE</span><h2>Une mise à jour impose un nouveau test.</h2><p>Changement de version, de prompt, de corpus ou d’outil : le résultat antérieur ne suffit plus.</p></article></section>
-
-    <section class="resource-section white" id="familles"><div class="resource-heading"><div><p class="kicker">01 / Trois familles pratiques</p><h2>Commencer par l’architecture d’usage.</h2></div><p>Le nom commercial compte moins que la manière dont le système est hébergé, relié à des données et autorisé à agir.</p></div><div class="model-family-grid">
-      <article class="model-family"><span>01 · HÉBERGÉ</span><h3>Modèle généraliste propriétaire.</h3><p>Accès simple, capacités larges et outils intégrés. En contrepartie : dépendance au fournisseur, évolution imposée des versions et conditions contractuelles à vérifier.</p><b>À examiner : données, conservation, localisation, sous-traitants, stabilité et réversibilité.</b></article>
-      <article class="model-family"><span>02 · POIDS OUVERTS</span><h3>Modèle exploité sous contrôle propre.</h3><p>Davantage de maîtrise sur l’hébergement et le cycle de mise à jour, mais l’organisation assume l’infrastructure, la sécurité, l’évaluation et la maintenance.</p><b>À examiner : licence, compétence interne, coût d’exploitation, correctifs et surveillance.</b></article>
-      <article class="model-family"><span>03 · COMPOSÉ</span><h3>Système spécialisé, RAG ou agent.</h3><p>Le modèle est relié à un corpus, des règles ou des outils. La performance dépend alors autant de cette chaîne que du modèle de base.</p><b>À examiner : sources, permissions, journalisation, erreurs d’outil et conditions d’arrêt.</b></article>
-    </div></section>
-
-    <section class="resource-section alt" id="criteres"><div class="resource-heading"><div><p class="kicker">02 / Critères de choix</p><h2>Six questions avant de regarder le score global.</h2></div><p>Le comparatif utile porte sur le système exact qui sera utilisé, dans les conditions réelles prévues.</p></div><div class="criteria-grid">
-      <article class="criterion"><span>01</span><h3>Tâche exacte.</h3><p>Résumer, extraire, rédiger, classer, chercher ou agir : les exigences et les erreurs critiques diffèrent.</p></article>
-      <article class="criterion"><span>02</span><h3>Erreurs inacceptables.</h3><p>Omissions, fausses références, discrimination, divulgation ou action non autorisée doivent être testées séparément.</p></article>
-      <article class="criterion"><span>03</span><h3>Données.</h3><p>Nature des informations, base légale, conservation, réutilisation, transferts et contrôle des accès.</p></article>
-      <article class="criterion"><span>04</span><h3>Contrôle.</h3><p>Version figée, droit d’écart, traçabilité, permissions d’outils, recours humain et arrêt immédiat.</p></article>
-      <article class="criterion"><span>05</span><h3>Coût total.</h3><p>Prix du service, intégration, latence, contrôle humain, incidents, maintenance et maintien des compétences.</p></article>
-      <article class="criterion"><span>06</span><h3>Effets sur le travail.</h3><p>Temps réellement gagné, charge de vérification, autonomie, coopération et répartition des responsabilités.</p></article>
-    </div></section>
-
-    <section class="resource-section white" id="benchmarks"><div class="resource-heading"><div><p class="kicker">03 / Benchmarks</p><h2>Ce qu’ils mesurent — et ce qu’ils ne mesurent pas.</h2></div><p>Les résultats ne sont comparables que si les versions, outils, prompts, budgets et nombres de tentatives sont proches.</p></div><div class="benchmark-table"><table><thead><tr><th>Repère</th><th>Ce qu’il teste</th><th>Limite pour un usage professionnel</th></tr></thead><tbody>
-      <tr><td><a href="https://www.swebench.com/verified.html" target="_blank" rel="noreferrer">SWE-bench Verified ↗</a></td><td>Résolution de problèmes réels de développement logiciel dans un environnement outillé.</td><td>Ne mesure ni la qualité clinique, ni le droit, ni l’effet du système sur le travail.</td></tr>
-      <tr><td><a href="https://arxiv.org/abs/2311.12022" target="_blank" rel="noreferrer">GPQA Diamond ↗</a></td><td>Questions scientifiques difficiles conçues pour résister à une recherche simple.</td><td>Un bon score de connaissance n’établit pas la fiabilité sur des documents internes.</td></tr>
-      <tr><td><a href="https://arxiv.org/abs/2311.16502" target="_blank" rel="noreferrer">MMMU ↗</a></td><td>Raisonnement multimodal sur textes, tableaux, schémas et images.</td><td>Ne garantit pas la lecture correcte de vos formulaires, scans ou procédures.</td></tr>
-      <tr><td><a href="https://lmarena.ai/" target="_blank" rel="noreferrer">LM Arena ↗</a></td><td>Préférences humaines entre réponses à des requêtes variées.</td><td>La préférence ne mesure pas directement l’exactitude, la confidentialité ou la conformité.</td></tr>
-      <tr><td><a href="https://metr.org/" target="_blank" rel="noreferrer">METR ↗</a></td><td>Capacité d’agents à accomplir des tâches logicielles de différentes durées.</td><td>Une autonomie technique plus longue ne démontre pas qu’un usage est sûr ou souhaitable au travail.</td></tr>
-    </tbody></table></div></section>
-
-    <section class="resource-section dark" id="protocole"><div class="resource-heading"><div><p class="kicker">04 / Protocole minimal</p><h2>Cinq éléments à conserver avec chaque résultat.</h2></div><p>Sans cette trace, un score ne peut pas être relu ni comparé sérieusement après une mise à jour.</p></div><div class="protocol-line"><div><span>01</span><strong>Date du test</strong></div><div><span>02</span><strong>Fournisseur et version exacte</strong></div><div><span>03</span><strong>Prompt, corpus et outils</strong></div><div><span>04</span><strong>Budget et nombre de tentatives</strong></div><div><span>05</span><strong>Erreurs et cas exclus</strong></div></div></section>
-
-    <section class="resource-section white" id="sources"><div class="resource-heading"><div><p class="kicker">05 / Suivre le paysage</p><h2>Sources à consulter avec une date.</h2></div><p>Ces sources aident à repérer les évolutions. Elles ne remplacent pas une évaluation locale sur la tâche et les données prévues.</p></div><div class="source-panel"><h3>Panoramas et méthodes</h3><div class="source-links"><a href="https://artificialanalysis.ai/" target="_blank" rel="noreferrer">Artificial Analysis — performances, prix et latence ↗</a><a href="https://lmarena.ai/" target="_blank" rel="noreferrer">LM Arena — préférences comparées ↗</a><a href="https://metr.org/" target="_blank" rel="noreferrer">METR — évaluations d’agents et horizons de tâches ↗</a><a href="https://epoch.ai/" target="_blank" rel="noreferrer">Epoch AI — données et analyses sur les modèles et le calcul ↗</a></div></div>
-      <div class="hero-actions"><a class="button primary" href="/evaluer/">Lire la méthode d’évaluation <span>→</span></a></div>
-    </section>
-  </main>
-  <footer class="site-footer"><p>© 2026 IA &amp; Santé au Travail</p></footer>
-</body>
+<body><p>Ce contenu a été déplacé. <a href="/comprendre/#benchmarks">Continuer vers la nouvelle adresse</a>.</p></body>
 </html>

@@ -1,0 +1,120 @@
+/* Préconisations: fit the React app into the site shell without changing its markup
+   (the app hydrates #root, so only CSS can adjust it).
+   - The site header replaces the app's own brand bar; the app keeps its two dialogs
+     ("Les cinq critères", "La méthode") as a slim toolbar.
+   - The section bar sticks under the site header.
+   - The data-protection notice moves just above the review tool, after the introduction. */
+
+#root .site-header .site-brand,
+#root .site-header .site-nav nav a[href$="/outils/"] { display: none; }
+/* The page's skip link now comes before the site header (scripts/render-static-navigation.mjs). */
+#root .skip-link { display: none; }
+body > .skip-link { z-index: 1300; }
+#root .site-header { border-bottom: 0; background: transparent; }
+#root .site-header .site-nav {
+  min-height: 0;
+  padding: 12px 0 0;
+  justify-content: flex-end;
+}
+#root .site-header .site-nav nav { width: auto; margin-left: auto; gap: 22px; }
+#root .site-header .site-nav nav button { padding: 6px 0; font-size: 13px; }
+
+#root .chapter-nav { top: 73px; }
+@media (max-width: 1120px) {
+  #root .chapter-nav { top: 65px; }
+}
+
+#main-content { display: flex; flex-direction: column; }
+#main-content > * { order: 3; }
+#main-content > .topbar { order: 0; }
+#main-content > .hero { order: 1; }
+#main-content > .usage-notice { order: 2; margin-top: 0; margin-bottom: 28px; }
+
+/* Reading comfort: the same floor as assets/css/readability.css (introductions 16 px,
+   running text 15 px, notes 13–14 px, labels 10.5–11.5 px). The app set much of its text
+   in 10–13 px, its labels down to 8 px. */
+#root .usage-notice p,
+#root .criterion-detail,
+#root .enjeux-cells p,
+#root .enjeux-law p,
+#root .bench-why-cells p,
+#root .how-steps p,
+#root .modal p,
+#root .setup-list,
+#root .rubric-rules,
+#root .rubric-rules h4,
+#root .hero-benefits strong,
+#root .criterion-title { font-size: 15px; }
+#root .bench-why-lead p,
+#root .bench-why-questions p,
+#root .bench-why-close,
+#root .result-summary h3,
+#root .modal h3 { font-size: 16px; }
+#root .hero-benefits span,
+#root .result-summary p,
+#root .research-note p,
+#root .bench-compare-caption,
+#root .bench-kpis span,
+#root .bench-table,
+#root .rubric-list .example-note,
+#root .privacy-confirm,
+#root .primary-button { font-size: 14px; }
+#root .tabs button,
+#root .bench-row-label,
+#root .bench-matrix,
+#root .bench-matrix caption,
+#root .context-section p { font-size: 13.5px; }
+#root .toolbar-hint,
+#root .text-button,
+#root .editor-actions > p,
+#root .fine,
+#root .export-actions button,
+#root .empty-footer p,
+#root .status-announcer,
+#root .research-note button,
+#root .bench-legend,
+#root .chapter-nav a { font-size: 13px; }
+#root .textarea-foot,
+#root .context-toggle small,
+#root .context-count,
+#root .fixture-note span,
+#root .page-footer,
+#root .page-footer button { font-size: 12px; }
+#root .hero-meta,
+#root .step,
+#root .result-tag,
+#root .result-footer > p,
+#root .enjeux-refs,
+#root .enjeux-source,
+#root .bench-kpis em,
+#root .bench-table thead small,
+#root .bench-table td small,
+#root .bench-axis,
+#root .bench-row-num { font-size: 11.5px; }
+#root .field-caption,
+#root .five-label,
+#root .criterion-symbol,
+#root .advice-label,
+#root .connect-label,
+#root .bench-table thead th,
+#root .bench-matrix thead th,
+#root .bench-matrix tbody th { font-size: 10.5px; }
+#root .context-section textarea { font-size: 15px; }
+@media (max-width: 850px) {
+  #root .criterion-title { font-size: 14px; }
+}
+@media (max-width: 420px) {
+  /* On a small phone the confusion matrices no longer fit two by two: one per row. */
+  #root .bench-matrices { grid-template-columns: minmax(0, 1fr); }
+  #root .bench-matrices .bench-matrix { border-right: 0 !important; }
+  #root .bench-matrices .bench-matrix:nth-child(n+2) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 700px) {
+  #root .hero-meta { font-size: 11px; }
+  #root .bench-table { font-size: 13px; }
+  #root .chapter-nav a { font-size: 12.5px; }
+  #root .modal-head .eyebrow { font-size: 10.5px; }
+  /* 16 px keeps phones from zooming in when a field gets focus. */
+  #root .context-section textarea,
+  #root .main-textarea { font-size: 16px; }
+}

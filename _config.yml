@@ -1,0 +1,17 @@
+# GitHub Pages builds this repository with Jekyll. The site itself is plain HTML:
+# Jekyll only copies files, and the working files below stay out of the published site.
+
+# Markdown files are published as they are (the agent resources declared in llms.txt),
+# not converted to HTML pages.
+markdown_ext: "markdown,mkdown,mkdn,mkd"
+
+exclude:
+  - README.md
+  - docs/
+  - content/
+  - scripts/
+  - newsletter-backend/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock

@@ -95,7 +95,8 @@ for (const file of htmlFiles) {
   const markup = html
     .replace(/<script\b[\s\S]*?<\/script>/gi, "")
     .replace(/<style\b[\s\S]*?<\/style>/gi, "");
-  const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map(match => match[1]);
+  // Ids written inside scripts (templates, regular expressions) are not part of the page.
+  const ids = [...markup.matchAll(/\bid=["']([^"']+)["']/gi)].map(match => match[1]);
   const duplicates = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicates.length) errors.push(`${path.relative(root, file)}: duplicate id(s): ${duplicates.join(", ")}`);
 
@@ -103,12 +104,19 @@ for (const file of htmlFiles) {
   const shouldIndex = INDEXABLE_FILES.has(relative);
   if (shouldIndex && hasNoindex) errors.push(`${relative}: allowlisted page must be indexable`);
   if (!shouldIndex && !hasNoindex) errors.push(`${relative}: page outside the indexable allowlist must be noindex`);
-  if (shouldIndex && relative !== "outils/preconisations/index.html") {
-    const googleTagLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=G-RKEJVY4XVC/g)].length;
-    const googleTagConfigs = [...html.matchAll(/gtag\(['"]config['"],\s*['"]G-RKEJVY4XVC['"]\)/g)].length;
-    if (googleTagLoaders !== 1 || googleTagConfigs !== 1) {
-      errors.push(`${path.relative(root, file)}: expected exactly one Google tag, found ${googleTagLoaders} loader(s) and ${googleTagConfigs} config(s)`);
+  if (shouldIndex) {
+    // Audience measurement is loaded only after consent, by the shared consent script.
+    const consentLoaders = [...html.matchAll(/<script\b[^>]*src=["']\/assets\/js\/consent\.js(?:\?[^"']*)?["'][^>]*><\/script>/g)].length;
+    const directGoogleTag = /googletagmanager\.com\/gtag\/js|gtag\(['"]config['"]/.test(html);
+    if (consentLoaders !== 1 || directGoogleTag) {
+      errors.push(`${relative}: audience measurement must load only through assets/js/consent.js (found ${consentLoaders} consent loader(s)${directGoogleTag ? " and a direct Google tag" : ""})`);
     }
+    // The language script reads the hreflang links, so it must come after them.
+    const headHtml = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
+    const languageScript = headHtml.search(/<script\b[^>]*src=["']\/assets\/js\/language-routing\.js/i);
+    const lastAlternate = [...headHtml.matchAll(/<link\b[^>]*rel=["']alternate["'][^>]*>/gi)].pop()?.index ?? -1;
+    if (languageScript === -1) errors.push(`${relative}: language detection script missing`);
+    else if (languageScript < lastAlternate) errors.push(`${relative}: language detection script must follow the hreflang links`);
   }
 
   for (const match of markup.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
@@ -198,10 +206,10 @@ for (const file of htmlFiles) {
   const staticHeader = html.match(/<header\b[^>]*class=["'][^"']*\bsite-system-header\b[^>]*>[\s\S]*?<\/header>/i)?.[0] || "";
   const hasStaticFooter = /<footer\b[^>]*class=["'][^"']*\bsite-system-footer\b/i.test(html);
   const isPreconisationsApp = relative === "outils/preconisations/index.html";
-  if (!isPreconisationsApp && (!staticHeader || !hasStaticFooter)) errors.push(`${relative}: indexable pages require static navigation and footer`);
+  if (!staticHeader || !hasStaticFooter) errors.push(`${relative}: indexable pages require static navigation and footer`);
   const english = relative.startsWith("en/");
   if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
-  const requiredNavigation = isPreconisationsApp ? [] : english
+  const requiredNavigation = english
     ? ["/en/understand/", "/en/risks/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
     : ["/comprendre/", "/risques-prevention/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
   for (const href of requiredNavigation) {
@@ -359,9 +367,12 @@ for (const [, url] of agentMachineResources) {
 }
 
 const languageRouting = await readFile(path.join(root, "assets/js/language-routing.js"), "utf8");
-if (/\blocation\.(?:replace|assign)\s*\(|\blocation\.href\s*=/.test(languageRouting)) {
-  errors.push("assets/js/language-routing.js: explicit language URLs must not redirect automatically");
+const languageRedirects = [...languageRouting.matchAll(/\blocation\.(?:replace|assign)\s*\(|\blocation\.href\s*=/g)].length;
+if (languageRedirects > 1 || (languageRedirects === 1 && !languageRouting.includes('window.location.pathname === "/" && preferred === "en"'))) {
+  errors.push("assets/js/language-routing.js: only the language-neutral homepage may switch language automatically; other language URLs must stay where they are");
 }
+const consentScript = await readFile(path.join(root, "assets/js/consent.js"), "utf8");
+if (!consentScript.includes('MEASUREMENT_ID = "G-RKEJVY4XVC"')) errors.push("assets/js/consent.js: Google Analytics measurement ID missing");
 
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const expectedSitemapUrls = new Set([...INDEXABLE_FILES].map(publicUrl));
@@ -404,17 +415,7 @@ for (const [frPage, enPage] of bilingualPages) {
   }
 }
 
-for (const [frPage, enPage] of [["evaluer/impact/suivi.html", "en/evaluate/impact/follow-up.html"]]) {
-  const expected = { fr: publicUrl(frPage), en: publicUrl(enPage) };
-  for (const [relative, lang] of [[frPage, "fr"], [enPage, "en"]]) {
-    const html = await cachedHtml(path.join(root, relative));
-    const head = html.match(/<head>[\s\S]*?<\/head>/i)?.[0] || "";
-    if (alternateHref(head, "fr") !== expected.fr) errors.push(`${relative}: T1 French hreflang must point to ${expected.fr}`);
-    if (alternateHref(head, "en") !== expected.en) errors.push(`${relative}: T1 English hreflang must point to ${expected.en}`);
-    if (!alternateHref(head, "x-default")) errors.push(`${relative}: T1 x-default hreflang missing`);
-    if (!new RegExp(`<html[^>]+lang=["']${lang}["']`, "i").test(html)) errors.push(`${relative}: html lang must be ${lang}`);
-  }
-}
+// The former T1 questionnaires (evaluer/impact/) now redirect to the single assessment tool (/evaluer/).
 
 if (errors.length) {
   console.error(errors.join("\n"));

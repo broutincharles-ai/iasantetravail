@@ -69,7 +69,13 @@
     if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); dialog.close(); }
   });
   dialog.querySelector('.ux-search-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => { document.body.classList.remove('ux-search-active'); if (restoreFocus?.getClientRects().length) restoreFocus.focus({preventScroll: true}); });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('ux-search-active');
+    // A trigger inside the mobile menu is hidden once the menu has closed: fall back to the menu button.
+    const fallback = matchMedia('(max-width: 1120px)').matches ? header.querySelector('.system-menu-button') : header.querySelector('[data-site-search]');
+    const target = restoreFocus?.getClientRects().length ? restoreFocus : fallback;
+    target?.focus({preventScroll: true});
+  });
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const r = dialog.getBoundingClientRect();

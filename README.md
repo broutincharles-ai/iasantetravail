@@ -29,16 +29,19 @@ IA & Santé au Travail examine l’intelligence artificielle sous deux angles in
 
 L’objectif n’est donc ni de promouvoir ni de rejeter l’IA par principe, mais d’aider à déterminer **dans quelles conditions un usage peut être utile, soutenable et compatible avec un travail de qualité**.
 
-## Les parcours éditoriaux
+## Organisation du site
 
-Le site est organisé autour de six parcours complémentaires :
+Le menu principal suit la même structure sur toutes les pages :
 
 - [**Comprendre**](https://www.iasantetravail.com/comprendre/) présente le fonctionnement des modèles actuels, leurs capacités, leurs limites et les concepts nécessaires pour analyser leurs usages professionnels.
 - [**Risques**](https://www.iasantetravail.com/risques-prevention/) examine deux échelles d’une même transformation : les effets sur le travail et la santé, notamment psychosociaux, et les conséquences économiques et sociales plus larges sur l’emploi et la place du travail humain.
-- [**Évaluer**](https://www.iasantetravail.com/evaluer/) propose des méthodes pour examiner un projet avant son déploiement puis confronter les effets anticipés au travail réellement observé, sans réduire l’analyse à un score global.
-- [**IA en SPST**](https://www.iasantetravail.com/ia-en-spst/) explore les usages possibles dans les services de prévention et de santé au travail, en partant du besoin réel, de la confidentialité, de la vérification et de la responsabilité professionnelle.
-- [**Gouverner**](https://www.iasantetravail.com/droit-gouvernance/) rassemble les repères utiles sur l’AI Act, le RGPD, le CSE, le DUERP, la responsabilité et l’organisation de la gouvernance.
-- [**Lecture**](https://www.iasantetravail.com/lecture/) suit les recherches, expérimentations et témoignages qui éclairent les transformations en cours : management agentique, frontières entre métiers, sens du travail, attentes managériales, autonomie et risques psychosociaux.
+- **Guides**, par public :
+  - [IA en SPST](https://www.iasantetravail.com/ia-en-spst/) explore les usages possibles dans les services de prévention et de santé au travail, en partant du besoin réel, de la confidentialité, de la vérification et de la responsabilité professionnelle ;
+  - [CSE](https://www.iasantetravail.com/cse/) prépare la consultation et l’avis des représentants du personnel ;
+  - [Droit & gouvernance](https://www.iasantetravail.com/droit-gouvernance/) rassemble les repères utiles sur l’AI Act, le RGPD, le CSE, le DUERP, la responsabilité et l’organisation de la gouvernance.
+- [**Outils**](https://www.iasantetravail.com/outils/) réunit les outils interactifs : évaluer un projet d’IA avant puis après son déploiement, checklist CSE, dossier d’un pilote, matrice valeur / risque, fiches de prévention, relecture des préconisations et Skills pour Claude.
+- [**Lectures**](https://www.iasantetravail.com/lecture/) suit les recherches, expérimentations et témoignages qui éclairent les transformations en cours : management agentique, frontières entre métiers, sens du travail, attentes managériales, autonomie et risques psychosociaux.
+- **À propos** : l’auteur, ses [publications](https://www.iasantetravail.com/publications/) et ses [interventions](https://www.iasantetravail.com/actions/).
 
 La **prévention** constitue le fil transversal de ces parcours : comprendre le système, identifier les effets possibles, évaluer le travail réel, discuter collectivement les conditions d’usage et suivre les conséquences après le déploiement.
 
@@ -66,3 +69,20 @@ Les analyses sont datées, sourcées et mises à jour lorsque les connaissances,
 IA & Santé au Travail est une initiative éditoriale du **Dr Charles Broutin**, médecin du travail et référent intelligence artificielle de la Société Française de Santé au Travail.
 
 Le site est une ressource d’information, de formation et de prévention. Son contenu ne constitue ni un avis médical individuel, ni un conseil juridique, ni une recommandation applicable indépendamment du contexte de travail concerné.
+
+## Maintenance du site
+
+Le site est publié par GitHub Pages à partir de la branche `main`. `_config.yml` laisse hors du site les fichiers de travail (`docs/`, `content/`, `scripts/`, `newsletter-backend/`, ce README).
+
+Après une modification, depuis la racine du dépôt :
+
+1. `node scripts/render-static-navigation.mjs` : réécrit l’en-tête, le pied de page et les ressources communes du `<head>` de chaque page à partir de `assets/js/unified-navigation.js` (menu, libellés, liens) ;
+2. `node scripts/build-home-latest.mjs` : après une nouvelle lecture, met à jour le bloc « Dernières lectures » des deux accueils ; `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ;
+3. `node scripts/create-redirects.mjs` : après le retrait ou le déplacement d’une page, écrit une page de redirection à l’ancienne adresse ;
+4. `node scripts/enforce-indexing-scope.mjs` puis `node scripts/build-search-index.mjs` : indexation, sitemap et index de recherche, à partir de `scripts/indexing-scope.mjs` ;
+5. `node scripts/validate-site.mjs` : contrôle des liens, métadonnées, hreflang et règles du site. Il doit se terminer sans erreur avant publication.
+
+Une nouvelle page doit être ajoutée à `scripts/indexing-scope.mjs` (avec sa traduction s’il y en a une) pour recevoir l’en-tête commun et figurer dans le sitemap.
+
+Tailles de texte : `assets/css/readability.css`, chargé après les styles de chaque page, fixe un minimum de lisibilité (introductions 17 px, texte courant 16 px, cartes et tableaux 15 px, notes 14 px, étiquettes 11 px). Pour agrandir ou réduire le texte de tout le site, modifier les variables en tête de ce fichier ; l’outil Préconisations a son équivalent dans `assets/css/preconisations-shell.css`.
+
