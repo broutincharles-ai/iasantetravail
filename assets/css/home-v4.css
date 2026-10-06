@@ -106,29 +106,32 @@
   .home-audience summary:hover::after { opacity: 1; }
 }
 
-.home-audience-body { padding: 0 22px 20px; }
-.home-audience-text {
+/* The text and, while it types, an aria-hidden copy in the same grid cell. The copy is cut into
+   the paragraph's own lines (one block per line, no wrapping), so it sits exactly over the
+   transparent paragraph and the panel keeps its final height. */
+.home-audience-body { display: grid; padding: 0 22px 20px; }
+.home-audience-text,
+.home-audience-copy {
+  grid-area: 1 / 1;
   margin: 0;
   color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 17px;
   line-height: 1.55;
 }
-.home-audience-body.is-flowing { -webkit-user-select: none; user-select: none; }
-
-/* While a text flows in, these highlights paint the part still to come transparent and shade
-   its soft leading edge: --ink-soft (#3f443f) at increasing opacity. Only the painting changes,
-   never the text or its layout. */
-::highlight(home-flow-0) { color: transparent; }
-::highlight(home-flow-1) { color: rgb(63 68 63 / 0.1); }
-::highlight(home-flow-2) { color: rgb(63 68 63 / 0.2); }
-::highlight(home-flow-3) { color: rgb(63 68 63 / 0.3); }
-::highlight(home-flow-4) { color: rgb(63 68 63 / 0.4); }
-::highlight(home-flow-5) { color: rgb(63 68 63 / 0.5); }
-::highlight(home-flow-6) { color: rgb(63 68 63 / 0.6); }
-::highlight(home-flow-7) { color: rgb(63 68 63 / 0.7); }
-::highlight(home-flow-8) { color: rgb(63 68 63 / 0.8); }
-::highlight(home-flow-9) { color: rgb(63 68 63 / 0.9); }
+.home-audience-body.is-typing { -webkit-user-select: none; user-select: none; }
+.home-audience-body.is-typing .home-audience-text { color: transparent; }
+.home-audience-line { display: block; white-space: nowrap; }
+.home-audience-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 1px;
+  vertical-align: -0.17em;
+  background: var(--terra-interactive);
+}
+.home-audience-body.is-typed .home-audience-caret { animation: home-audience-caret 0.7s steps(1) 3 forwards; }
+@keyframes home-audience-caret { 50%, 100% { opacity: 0; } }
 
 /* Sections */
 .home-section { padding: clamp(44px, 5vw, 72px) 0; border-top: 1px solid var(--home-line); }
@@ -252,7 +255,8 @@
   .home-audience summary { padding: 13px 44px 13px 16px; }
   .home-audience summary::after { right: 18px; }
   .home-audience-body { padding: 0 16px 18px; }
-  .home-audience-text { font-size: 16px; }
+  .home-audience-text,
+  .home-audience-copy { font-size: 16px; }
   .home-tools,
   .home-path { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .home-tool { padding: 18px 16px 16px; }
