@@ -273,8 +273,10 @@ for (const file of htmlFiles) {
   }
   const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
-  // These editorial pages discuss AI safety; Comprendre also cites the international report.
+  // These editorial pages discuss AI safety; Comprendre also cites the international report;
+  // on the homepages, the researcher profile in « Vous êtes » / « You are » mentions it.
   const allowsAiSafetyPositioning = [
+    "index.html", "en/index.html",
     "comprendre/index.html", "en/understand/index.html",
     "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
     "lecture/index.html", "en/reading/index.html",

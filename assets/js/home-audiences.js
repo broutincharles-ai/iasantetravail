@@ -1,100 +1,114 @@
 /* Homepage, "Vous êtes" / "You are": each profile opens a short text on why AI at work
-   concerns that reader, typed out as it appears.
+   concerns that reader. The text flows in at a steady pace, each character fading in behind
+   a soft leading edge.
 
-   The full text is in the HTML, so it reads without JavaScript, for screen readers and for
-   search engines. The typing is drawn on an aria-hidden copy laid exactly over it (see
-   home-v4.css): the panel opens at its final height and nothing on the page moves while it types.
-   Reduced motion or forced colours: the text simply appears. A tap on the text shows it at once. */
+   The animation only changes how the paragraph is painted (CSS Custom Highlight API: ranges of
+   its text get transparent or partly transparent colours, see home-v4.css). The text itself never
+   changes: it reads the same without JavaScript, for screen readers and for search engines, the
+   panel opens at its final height and no word moves. Browsers without the API, reduced motion and
+   forced colours show the text at once. A tap on the text shows the rest at once. */
 (() => {
   "use strict";
 
-  // Pace, in milliseconds. `char` is the mean delay per character (± jitter / 2); the others are
-  // extra pauses after a space, a comma or colon, and the end of a sentence. About 8 s per text.
-  const PACE = { start: 250, char: 13, jitter: 10, space: 8, clause: 80, sentence: 200 };
-  const BLINKS_MS = 2400; // once complete, the caret blinks three times (0.8 s each, home-v4.css)
+  // A steady flow, with no pauses. `charsPerSecond` is the speed; `edgeMs` is how long each
+  // character takes to fade in, which sets the length of the soft edge. About 7 to 8 s per text.
+  const PACE = { startMs: 120, charsPerSecond: 90, edgeMs: 300 };
+  const SHADES = 10; // ::highlight(home-flow-0) … (home-flow-9) in home-v4.css; 0 is transparent
 
   const panels = [...document.querySelectorAll(".home-audience")];
   if (!panels.length) return;
 
+  const supported = typeof Highlight === "function" && typeof CSS !== "undefined" && "highlights" in CSS;
   const motionOff = () =>
     matchMedia("(prefers-reduced-motion: reduce)").matches || matchMedia("(forced-colors: active)").matches;
-  const runs = new Map();
 
-  // When each character appears, counted from the first frame.
-  function timeline(text) {
-    const times = new Float64Array(text.length);
-    let t = PACE.start;
-    for (let i = 0; i < text.length; i += 1) {
-      t += PACE.char - PACE.jitter / 2 + Math.random() * PACE.jitter;
-      times[i] = t;
-      const c = text[i];
-      if (c === "." || c === "!" || c === "?") t += PACE.sentence;
-      else if (c === "," || c === ";" || c === ":") t += PACE.clause;
-      else if (c === " ") t += PACE.space;
+  const shades = [];
+  if (supported) {
+    for (let level = 0; level < SHADES; level += 1) {
+      shades.push(new Highlight());
+      CSS.highlights.set(`home-flow-${level}`, shades[level]);
     }
-    return times;
   }
+  let run = null; // the one text currently flowing in
 
-  function stop(panel) {
-    const run = runs.get(panel);
+  const clear = () => shades.forEach(shade => shade.clear());
+
+  function stop() {
     if (!run) return;
     cancelAnimationFrame(run.frame);
-    clearTimeout(run.timer);
-    run.layer.remove();
-    run.body.classList.remove("is-typing", "is-typed");
-    runs.delete(panel);
+    run.body.classList.remove("is-flowing");
+    clear();
+    run = null;
   }
 
-  function complete(panel) {
-    const run = runs.get(panel);
-    if (!run || run.complete) return;
-    run.complete = true;
-    cancelAnimationFrame(run.frame);
-    run.typed.textContent = run.text;
-    run.rest.textContent = "";
-    run.body.classList.add("is-typed");
-    // The copy and the real paragraph are laid out identically: swapping them is invisible.
-    run.timer = setTimeout(() => stop(panel), BLINKS_MS);
+  // The paragraph's text nodes and where each starts, so a character index maps to a DOM position.
+  function textMap(paragraph) {
+    const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    let length = 0;
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      nodes.push({ node, start: length });
+      length += node.data.length;
+    }
+    return { nodes, length };
   }
 
-  function type(panel) {
-    stop(panel);
-    const body = panel.querySelector(".home-audience-body");
-    const source = body && body.querySelector(".home-audience-text");
-    if (!source) return;
-    const text = source.textContent.replace(/\s+/g, " ").trim();
+  function point(map, index) {
+    for (let k = map.nodes.length - 1; k >= 0; k -= 1) {
+      const { node, start } = map.nodes[k];
+      if (index >= start) return [node, Math.min(index - start, node.data.length)];
+    }
+    return [map.nodes[0].node, 0];
+  }
 
-    // Typed part (with the caret) + the rest, still transparent: lines break exactly where they
-    // will in the finished paragraph, so a word never jumps to the next line while it is typed.
-    const layer = document.createElement("p");
-    const typed = document.createElement("span");
-    const rest = document.createElement("span");
-    layer.className = "home-audience-copy";
-    layer.setAttribute("aria-hidden", "true");
-    typed.className = "home-audience-typed";
-    rest.className = "home-audience-rest";
-    rest.textContent = text;
-    layer.append(typed, rest);
-    body.append(layer);
-    body.classList.add("is-typing");
+  function rangeOf(map, from, to) {
+    const range = new Range();
+    range.setStart(...point(map, from));
+    range.setEnd(...point(map, to));
+    return range;
+  }
 
-    const times = timeline(text);
-    const run = { body, layer, typed, rest, text, shown: 0, frame: 0, timer: 0, complete: false };
-    runs.set(panel, run);
-    let start = 0;
-    const tick = now => {
-      if (!start) start = now;
-      let shown = run.shown;
-      while (shown < text.length && times[shown] <= now - start) shown += 1;
-      if (shown !== run.shown) {
-        run.shown = shown;
-        typed.textContent = text.slice(0, shown);
-        rest.textContent = text.slice(shown);
-      }
-      if (shown < text.length) run.frame = requestAnimationFrame(tick);
-      else complete(panel);
+  // `shown` characters have started to appear (fractional). Character i stands at
+  // (shown - i) / edge of its fade, eased out; everything beyond `shown` is transparent.
+  function paint(shown) {
+    clear();
+    const { map, edge } = run;
+    const end = Math.min(map.length, Math.ceil(shown));
+    if (end < map.length) shades[0].add(rangeOf(map, end, map.length));
+    const shadeOf = i => {
+      const t = Math.min(1, (shown - i) / edge);
+      return Math.floor((1 - (1 - t) * (1 - t)) * SHADES); // SHADES means fully visible
     };
-    run.frame = requestAnimationFrame(tick);
+    let i = Math.max(0, Math.floor(shown - edge));
+    while (i < end) {
+      const level = shadeOf(i);
+      let j = i + 1;
+      while (j < end && shadeOf(j) === level) j += 1;
+      if (level < SHADES) shades[level].add(rangeOf(map, i, j));
+      i = j;
+    }
+  }
+
+  function flow(panel) {
+    stop();
+    const body = panel.querySelector(".home-audience-body");
+    const paragraph = body && body.querySelector(".home-audience-text");
+    if (!paragraph) return;
+    const map = textMap(paragraph);
+    if (!map.length) return;
+    run = { panel, body, map, edge: (PACE.edgeMs / 1000) * PACE.charsPerSecond, frame: 0, start: 0 };
+    body.classList.add("is-flowing");
+    paint(0); // all transparent before the panel is first painted, so the text never flashes
+    const current = run;
+    const tick = now => {
+      if (run !== current) return;
+      if (!current.start) current.start = now;
+      const shown = Math.max(0, ((now - current.start - PACE.startMs) / 1000) * PACE.charsPerSecond);
+      if (shown - current.edge >= map.length) { stop(); return; }
+      paint(shown);
+      current.frame = requestAnimationFrame(tick);
+    };
+    current.frame = requestAnimationFrame(tick);
   }
 
   function scrollInstantly(top) {
@@ -130,15 +144,14 @@
       const before = summary.getBoundingClientRect().top;
       // One profile at a time (the name attribute already does it in recent browsers).
       panels.forEach(other => { if (other !== panel && other.open) other.open = false; });
-      // Prepared before the panel is first painted, so the finished text never flashes.
-      if (!motionOff()) type(panel);
+      if (supported && !motionOff()) flow(panel);
       settle(panel, summary, before);
     });
 
     // Closed by the reader, by another profile or by the browser: drop the animation.
-    panel.addEventListener("toggle", () => { if (!panel.open) stop(panel); });
+    panel.addEventListener("toggle", () => { if (!panel.open && run && run.panel === panel) stop(); });
 
     // A tap on the text shows the rest at once.
-    body.addEventListener("click", () => complete(panel));
+    body.addEventListener("click", () => { if (run && run.panel === panel) stop(); });
   });
 })();
