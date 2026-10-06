@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "7.0";
+  const NAVIGATION_VERSION = "7.1";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -200,19 +200,20 @@
     const current = (key, href) => key === activeKey && !href.includes("#") ? ' aria-current="page"' : "";
 
     const describedLink = item => `<a href="${item.href}"${current(item.key, item.href)}><span class="system-nav-title">${escapeHtml(item.label)}</span><span class="system-nav-desc">${escapeHtml(item.desc)}</span></a>`;
+    // A group is current when the page is one of its entries (a link to a section of a page does not count).
+    const groupIsCurrent = item => item.children.some(child => child.key === activeKey && !child.href.includes("#")) || Boolean(item.all && item.all.key === activeKey);
 
     const desktopItems = site.items.map(item => {
       if (!item.children) return `<a class="system-nav-link" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
-      const isCurrent = item.children.some(child => child.key === activeKey && !child.href.includes("#")) || (item.all && item.all.key === activeKey);
       const all = item.all ? `<a class="system-nav-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
-      return `<details class="system-nav-group${isCurrent ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-nav-dropdown${item.wide ? " is-wide" : ""}"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
+      return `<details class="system-nav-group${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-nav-dropdown${item.wide ? " is-wide" : ""}"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");
 
+    // On phones the groups are closed when the menu opens: one line each, like the plain links.
     const mobileItems = site.items.map(item => {
       if (!item.children) return `<a class="system-mobile-link" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
-      const headingId = `systemMobile-${item.key}`;
       const all = item.all ? `<a class="system-mobile-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
-      return `<section class="system-mobile-group" aria-labelledby="${headingId}"><h2 id="${headingId}">${escapeHtml(item.label)}</h2><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</section>`;
+      return `<details class="system-mobile-group${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-mobile-sublist"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");
 
     const searchButton = `<button type="button" class="system-search-button" data-site-search aria-label="${escapeHtml(site.searchLong)}" title="${escapeHtml(site.searchLong)} (Ctrl K)">${ICONS.search}<span class="system-search-text">${escapeHtml(site.searchShort)}</span></button>`;
@@ -365,9 +366,20 @@
 
   const menuButton = header.querySelector(".system-menu-button");
   const mobilePanel = header.querySelector(".system-mobile-panel");
+  // Phone menu groups: one open at a time, all closed again whenever the menu closes.
+  const mobileGroups = [...header.querySelectorAll(".system-mobile-group")];
+  mobileGroups.forEach(group => {
+    group.addEventListener("toggle", () => {
+      if (!group.open) return;
+      mobileGroups.forEach(other => { if (other !== group) other.open = false; });
+      // Closing a longer group above can leave this one's title out of view.
+      requestAnimationFrame(() => group.querySelector("summary")?.scrollIntoView({ block: "nearest" }));
+    });
+  });
   const inertedByMenu = new Set();
   const closeMenu = (restoreFocus = false) => {
     closeDropdowns();
+    mobileGroups.forEach(group => { group.open = false; });
     if (!menuButton || !mobilePanel) return;
     inertedByMenu.forEach(element => { element.inert = false; });
     inertedByMenu.clear();
@@ -403,7 +415,9 @@
 
   header.addEventListener("keydown", event => {
     if (event.key !== "Tab" || !header.classList.contains("is-open")) return;
-    const focusable = [...header.querySelectorAll("a[href], button")].filter(element => element.getClientRects().length && !element.disabled);
+    // Links in a closed group are out of reach, even where the browser still reports boxes for them.
+    const focusable = [...header.querySelectorAll("a[href], button, summary")]
+      .filter(element => element.getClientRects().length && !element.disabled && !element.closest("details:not([open]) > :not(summary)"));
     const first = focusable[0], last = focusable[focusable.length - 1];
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
     if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }

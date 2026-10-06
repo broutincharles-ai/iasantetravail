@@ -1,4 +1,4 @@
-/* Site shell 7.0 — header, menus and footer shared by every page.
+/* Site shell 7.1 — header, menus and footer shared by every page.
    Everything is scoped to #site-header and #site-footer and reset with `all: unset`,
    so the stylesheets of older page generations can no longer move or restyle it:
    the logo, the menu and the footer sit in the same place on every page. */
@@ -459,28 +459,31 @@
     color: var(--sh-ink);
     font: 500 16px/1 var(--sh-sans);
   }
-  #site-header .system-mobile-link {
+  /* Six rows of the same weight; Guides, Outils and À propos open in place (one at a time). */
+  #site-header .system-mobile-link,
+  #site-header .system-mobile-group > summary {
     display: flex;
     align-items: center;
     min-height: 56px;
-    border-bottom: 1px solid var(--sh-line);
     color: var(--sh-ink);
     font: 500 23px/1.15 var(--sh-serif);
   }
-  #site-header .system-mobile-link[aria-current="page"] { color: var(--sh-accent); }
-  #site-header .system-mobile-group { display: block; margin-top: 26px; }
-  #site-header .system-mobile-group h2 {
-    display: block;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--sh-line-strong);
-    color: var(--sh-accent);
-    font: 650 13px/1.2 var(--sh-sans);
-  }
-  #site-header .system-mobile-group .system-nav-list a { padding: 12px 0; border-bottom: 1px solid var(--sh-line); }
+  #site-header .system-mobile-link,
+  #site-header .system-mobile-group { border-bottom: 1px solid var(--sh-line); }
+  #site-header .system-mobile-link[aria-current="page"],
+  #site-header .system-mobile-group.is-current > summary { color: var(--sh-accent); }
+  #site-header .system-mobile-group { display: block; }
+  #site-header .system-mobile-group > summary { justify-content: space-between; gap: 16px; list-style: none; }
+  #site-header .system-mobile-group > summary::-webkit-details-marker { display: none; }
+  #site-header .system-mobile-group .system-nav-chevron { width: 15px; height: 15px; margin-right: 2px; color: var(--sh-muted); }
+  #site-header .system-mobile-group[open] .system-nav-chevron { transform: rotate(180deg); }
+  #site-header .system-mobile-sublist { display: block; padding: 0 0 16px 16px; }
+  #site-header .system-mobile-group .system-nav-list { gap: 0; }
+  #site-header .system-mobile-group .system-nav-list a { padding: 10px 0; }
   #site-header .system-mobile-group .system-nav-list a:hover { background: transparent; }
   #site-header .system-mobile-group .system-nav-title { font-size: 16.5px; }
   #site-header .system-mobile-group .system-nav-desc { font-size: 13.5px; }
-  #site-header .system-mobile-all { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; color: var(--sh-accent); font: 600 15px/1 var(--sh-sans); }
+  #site-header .system-mobile-all { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 2px; color: var(--sh-accent); font: 600 15px/1 var(--sh-sans); }
   #site-header.is-open .page-nav { display: none; }
   body.system-menu-open { overflow: hidden; }
   body.system-menu-open #consent-banner { display: none; }
