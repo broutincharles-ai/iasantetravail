@@ -1,5 +1,5 @@
 export const INDEXABLE_PAIRS = [
-  { fr: "index.html", en: "en/index.html", lastmod: "2026-10-05" },
+  { fr: "index.html", en: "en/index.html", lastmod: "2026-10-06" },
   { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-10-05" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-09-27" },
