@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "7.1";
+  const NAVIGATION_VERSION = "7.2";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -13,6 +13,7 @@
     "/risques-prevention/": "/en/risks/",
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
     "/risques-prevention/economique-social/": "/en/risks/economic-social/",
+    "/recommandations/": "/en/recommendations/",
     "/ia-en-spst/": "/en/uses-and-field/occupational-health-example/",
     "/evaluer/": "/en/evaluate/",
     "/outils/fiches-prevention/": "/en/tools/prevention-fact-sheets/",
@@ -50,6 +51,7 @@
       items: [
         { key: "understand", label: "Comprendre", href: "/comprendre/" },
         { key: "risks", label: "Risques", href: "/risques-prevention/" },
+        { key: "recommendations", label: "Recommandations", href: "/recommandations/" },
         { key: "guides", label: "Guides", children: [
           { key: "spst", label: "IA en SPST", href: "/ia-en-spst/", desc: "Usages et méthode pour les services de prévention et de santé au travail" },
           { key: "cse", label: "CSE", href: "/cse/", desc: "Préparer la consultation et l’avis sur un projet d’IA" },
@@ -75,7 +77,7 @@
         tagline: "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.",
         groups: [
           { id: "systemFooterUnderstand", title: "Comprendre", links: [
-            ["Comprendre l’IA", "/comprendre/"], ["Risques", "/risques-prevention/"], ["IA en SPST", "/ia-en-spst/"],
+            ["Comprendre l’IA", "/comprendre/"], ["Risques", "/risques-prevention/"], ["Recommandations", "/recommandations/"], ["IA en SPST", "/ia-en-spst/"],
             ["CSE", "/cse/"], ["Droit & gouvernance", "/droit-gouvernance/"], ["Lectures", "/lecture/"]
           ] },
           { id: "systemFooterTools", title: "Outils", links: [
@@ -105,6 +107,7 @@
       items: [
         { key: "understand", label: "Understand", href: "/en/understand/" },
         { key: "risks", label: "Risks", href: "/en/risks/" },
+        { key: "recommendations", label: "Recommendations", href: "/en/recommendations/" },
         { key: "guides", label: "Guides", children: [
           { key: "spst", label: "AI in OHS services", href: "/en/uses-and-field/occupational-health-example/", desc: "Uses and method for occupational health services" },
           { key: "cse", label: "Works council (CSE)", href: "/en/cse/", desc: "Prepare the consultation and the opinion on an AI project" },
@@ -128,7 +131,7 @@
         tagline: "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.",
         groups: [
           { id: "systemFooterUnderstand", title: "Understand", links: [
-            ["Understand AI", "/en/understand/"], ["Risks", "/en/risks/"], ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
+            ["Understand AI", "/en/understand/"], ["Risks", "/en/risks/"], ["Recommendations", "/en/recommendations/"], ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
             ["Works council (CSE)", "/en/cse/"], ["Law & governance", "/en/legal-governance/"], ["Reading", "/en/reading/"]
           ] },
           { id: "systemFooterTools", title: "Tools", links: [
@@ -169,6 +172,7 @@
       [/^\/(?:en\/)?actions\//, "actions"],
       [/^\/(?:en\/understand|comprendre)\//, "understand"],
       [/^\/(?:en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
+      [/^\/(?:en\/recommendations|recommandations)\//, "recommendations"],
       [/^\/(?:en\/evaluate|evaluer)\//, "evaluate"],
       [/^\/(?:en\/legal-governance|droit-gouvernance)\//, "governance"],
       [/^\/(?:en\/)?cse\//, "cse"],

@@ -199,6 +199,15 @@
 #site-header .system-menu-button:hover { color: var(--sh-accent); border-color: var(--sh-accent); }
 #site-header .system-menu-button { display: none; padding: 0 14px; }
 #site-header .system-mobile-panel { display: none; }
+/* The last menu (À propos / About) opens towards the left, so that it stays inside the window. */
+@media (min-width: 1121px) {
+  #site-header .system-primary-links > .system-nav-group:last-child .system-nav-dropdown:not(.is-wide) { right: 0; left: auto; }
+}
+/* Narrow desktops: the search button keeps only its icon so that the seven entries fit on one line. */
+@media (min-width: 1121px) and (max-width: 1279px) {
+  #site-header .system-search-button { width: 42px; padding: 0; }
+  #site-header .system-search-text { display: none; }
+}
 
 /* ---------- Page contents bar ("Sur cette page") ---------- */
 #site-header .page-nav {
@@ -459,7 +468,7 @@
     color: var(--sh-ink);
     font: 500 16px/1 var(--sh-sans);
   }
-  /* Six rows of the same weight; Guides, Outils and À propos open in place (one at a time). */
+  /* Seven rows of the same weight; Guides, Outils and À propos open in place (one at a time). */
   #site-header .system-mobile-link,
   #site-header .system-mobile-group > summary {
     display: flex;

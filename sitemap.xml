@@ -71,6 +71,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/recommandations/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/recommendations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/recommandations/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/recommendations/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/recommendations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/recommandations/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/evaluer/</loc>
     <lastmod>2026-10-05</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/evaluer/"/>
@@ -381,11 +395,5 @@
     <lastmod>2026-09-25</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/preconisations/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/preconisations/"/>
-  </url>
-  <url>
-    <loc>https://www.iasantetravail.com/recommandations/</loc>
-    <lastmod>2026-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/recommandations/"/>
   </url>
 </urlset>

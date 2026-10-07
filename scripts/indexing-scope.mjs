@@ -4,6 +4,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-09-21" },
+  { fr: "recommandations/index.html", en: "en/recommendations/index.html", lastmod: "2026-10-07" },
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-10-05" },
   { fr: "outils/fiches-prevention/index.html", en: "en/tools/prevention-fact-sheets/index.html", lastmod: "2026-09-27" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-09-21" },
@@ -30,8 +31,7 @@ export const INDEXABLE_PAIRS = [
 export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-10-05" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
-  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" },
-  { file: "recommandations/index.html", lang: "fr", lastmod: "2026-10-07" }
+  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
 
 export const INDEXABLE_FR_FILES = [

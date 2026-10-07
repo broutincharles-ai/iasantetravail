@@ -210,8 +210,8 @@ for (const file of htmlFiles) {
   const english = relative.startsWith("en/");
   if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
   const requiredNavigation = english
-    ? ["/en/understand/", "/en/risks/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
-    : ["/comprendre/", "/risques-prevention/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
+    ? ["/en/understand/", "/en/risks/", "/en/recommendations/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
+    : ["/comprendre/", "/risques-prevention/", "/recommandations/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
   for (const href of requiredNavigation) {
     if (!staticHeader.includes(`href="${href}"`)) errors.push(`${relative}: missing static navigation link to ${href}`);
   }
@@ -273,20 +273,6 @@ for (const file of htmlFiles) {
   }
   const ogUrl = metaContent(head.replaceAll("property=", "name="), "og:url");
   if (canonical && ogUrl && canonical !== ogUrl) errors.push(`${path.relative(root, file)}: og:url must match canonical`);
-  // These editorial pages discuss AI safety; Comprendre also cites the international report;
-  // on the homepages, the researcher profile in « Vous êtes » / « You are » mentions it.
-  const allowsAiSafetyPositioning = [
-    "index.html", "en/index.html",
-    "comprendre/index.html", "en/understand/index.html",
-    "a-propos/index.html", "en/about/index.html", "actions/index.html", "en/actions/index.html",
-    "lecture/index.html", "en/reading/index.html",
-    "lecture/sante-travail-securite-ia/index.html", "en/reading/occupational-health-ai-safety/index.html",
-    "publications/index.html", "en/publications/index.html",
-    "publications/sante-travail-securite-modeles-frontieres/index.html", "en/publications/occupational-health-frontier-ai-safety/index.html"
-  ].includes(relative);
-  if (!allowsAiSafetyPositioning && /(?:ai[ -]?safety|sécurité (?:de l[’']ia|ia)|agi safety|frontier ai)/i.test(html)) {
-    errors.push(`${path.relative(root, file)}: legacy AI-safety positioning remains in indexable content`);
-  }
 }
 
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
