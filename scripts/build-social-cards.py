@@ -17,12 +17,16 @@ cards = {
 }
 output = ROOT / 'assets/images/social'
 output.mkdir(parents=True, exist_ok=True)
+# Site logo (favicon artwork cropped to its disc, faint drop shadow removed), left of the brand name.
+logo = Image.open(ROOT / 'assets/images/favicon-512.png').convert('RGBA')
+logo.putalpha(logo.getchannel('A').point(lambda a: a if a > 24 else 0))
+logo = logo.crop(logo.getchannel('A').getbbox()).resize((48*SCALE,48*SCALE),Image.Resampling.LANCZOS)
 for name, (brand, label, lines, subtitle) in cards.items():
  im = Image.new('RGB', (1200*SCALE,630*SCALE), '#f3efe6'); d=ImageDraw.Draw(im)
  def text(x,y,value,size=24,color='#171a18',family='instrument-sans-500.ttf'):
   d.text((x*SCALE,y*SCALE),value,font=font(family,size),fill=color)
- d.rectangle((64*SCALE,65*SCALE,68*SCALE,111*SCALE),fill='#a83e27')
- text(86,65,brand,32,family='newsreader-500.ttf')
+ im.paste(logo,(64*SCALE,54*SCALE),logo)
+ text(128,65,brand,32,family='newsreader-500.ttf')
  d.line((64*SCALE,140*SCALE,1136*SCALE,140*SCALE),fill='#c4bfb5',width=SCALE)
  text(64,179,label,17,'#87301f')
  for i,line in enumerate(lines):text(62,230+i*77,line,60)
