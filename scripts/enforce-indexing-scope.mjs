@@ -42,6 +42,8 @@ let excludedCount = 0;
 for (const file of await htmlFiles()) {
   const relative = path.relative(root, file).split(path.sep).join("/");
   const html = await readFile(file, "utf8");
+  // Preserve Search Console ownership tokens byte-for-byte.
+  if (/^google[a-f0-9]+\.html$/.test(relative) && html.trim() === `google-site-verification: ${relative}`) continue;
   const indexable = INDEXABLE_FILES.has(relative);
   const robotsContent = indexable
     ? "index,follow,max-image-preview:large"

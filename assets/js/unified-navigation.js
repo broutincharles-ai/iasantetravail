@@ -4,11 +4,15 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "7.2";
+  const NAVIGATION_VERSION = "8.0";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
     "/": "/en/",
+    "/parcours/comprendre/": "/en/pathways/understand/",
+    "/parcours/risques-collectifs/": "/en/pathways/collective-risks/",
+    "/parcours/prevenir/": "/en/pathways/prevent/",
+    "/parcours/ia-sante-travail/": "/en/pathways/ai-in-occupational-health/",
     "/comprendre/": "/en/understand/",
     "/risques-prevention/": "/en/risks/",
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
@@ -49,36 +53,21 @@
       menu: "Menu",
       language: { code: "EN", lang: "en", label: "View this page in English", footer: "English version", homeLabel: "English homepage (this page is in French only)", homeFooter: "English homepage" },
       items: [
-        { key: "understand", label: "Comprendre", href: "/comprendre/" },
-        { key: "risks", label: "Risques", href: "/risques-prevention/" },
-        { key: "recommendations", label: "Recommandations", href: "/recommandations/" },
-        { key: "guides", label: "Guides", children: [
-          { key: "spst", label: "IA en SPST", href: "/ia-en-spst/", desc: "Usages et méthode pour les services de prévention et de santé au travail" },
-          { key: "cse", label: "CSE", href: "/cse/", desc: "Préparer la consultation et l’avis sur un projet d’IA" },
-          { key: "governance", label: "Droit & gouvernance", href: "/droit-gouvernance/", desc: "Obligations de l’employeur : AI Act, RGPD, DUERP" }
-        ] },
-        { key: "toolbox", label: "Outils", wide: true, children: [
-          { key: "evaluate", label: "Évaluer un projet d’IA", href: "/evaluer/", desc: "18 questions, avant puis après le déploiement" },
-          { key: "preconisations", label: "Relire une préconisation", href: "/outils/preconisations/", desc: "Cinq critères de qualité, analysés par Jev" },
-          { key: "cse-checklist", label: "Checklist CSE", href: "/cse/#questions", desc: "Les 10 questions à poser avant l’avis" },
-          { key: "pilot-file", label: "Dossier d’un pilote", href: "/droit-gouvernance/#dossier", desc: "Les 8 pièces à réunir avant de tester une IA" },
-          { key: "matrix", label: "Matrice valeur / risque", href: "/ia-en-spst/#prioriser", desc: "Situer un usage en SPST avant de le tester" },
-          { key: "fiches-prevention", label: "Fiches de prévention", href: "/outils/fiches-prevention/", desc: "7 fiches RPS et IA à télécharger" },
-          { key: "claude-skills", label: "Skills pour Claude", href: "/outils/claude-skills/", desc: "Maladies professionnelles, maintien en emploi" }
-        ], all: { key: "tools", label: "Tous les outils", href: "/outils/" } },
+        { key: "understand", label: "Comprendre", href: "/parcours/comprendre/" },
+        { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
+        { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
+        { key: "spst", label: "IA en santé au travail", href: "/parcours/ia-sante-travail/" },
+        { key: "publications", label: "Recherche", href: "/publications/" },
         { key: "reading", label: "Lectures", href: "/lecture/" },
-        { key: "about-group", label: "À propos", children: [
-          { key: "about", label: "Charles Broutin", href: "/a-propos/", desc: "Médecin du travail, auteur du site" },
-          { key: "publications", label: "Publications", href: "/publications/", desc: "Articles publiés et preprint" },
-          { key: "actions", label: "Interventions", href: "/actions/", desc: "Séminaires, journées et colloques" }
-        ] }
+        { key: "about", label: "À propos", href: "/a-propos/" }
       ],
       footer: {
         tagline: "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.",
         groups: [
-          { id: "systemFooterUnderstand", title: "Comprendre", links: [
-            ["Comprendre l’IA", "/comprendre/"], ["Risques", "/risques-prevention/"], ["Recommandations", "/recommandations/"], ["IA en SPST", "/ia-en-spst/"],
-            ["CSE", "/cse/"], ["Droit & gouvernance", "/droit-gouvernance/"], ["Lectures", "/lecture/"]
+          { id: "systemFooterUnderstand", title: "Les parcours", links: [
+            ["Qu’est-ce que l’AI Safety ?", "/#ai-safety"], ["Comprendre", "/parcours/comprendre/"],
+            ["Risques collectifs", "/parcours/risques-collectifs/"], ["Détecter et prévenir", "/parcours/prevenir/"],
+            ["IA en santé au travail", "/parcours/ia-sante-travail/"], ["Recherche", "/publications/"]
           ] },
           { id: "systemFooterTools", title: "Outils", links: [
             ["Évaluer un projet d’IA", "/evaluer/"], ["Relire une préconisation", "/outils/preconisations/"],
@@ -105,34 +94,21 @@
       menu: "Menu",
       language: { code: "FR", lang: "fr", label: "Voir cette page en français", footer: "Version française", homeLabel: "Accueil en français (cette page n’existe qu’en anglais)", homeFooter: "Accueil en français" },
       items: [
-        { key: "understand", label: "Understand", href: "/en/understand/" },
-        { key: "risks", label: "Risks", href: "/en/risks/" },
-        { key: "recommendations", label: "Recommendations", href: "/en/recommendations/" },
-        { key: "guides", label: "Guides", children: [
-          { key: "spst", label: "AI in OHS services", href: "/en/uses-and-field/occupational-health-example/", desc: "Uses and method for occupational health services" },
-          { key: "cse", label: "Works council (CSE)", href: "/en/cse/", desc: "Prepare the consultation and the opinion on an AI project" },
-          { key: "governance", label: "Law & governance", href: "/en/legal-governance/", desc: "Employer duties: AI Act, GDPR, risk assessment" }
-        ] },
-        { key: "toolbox", label: "Tools", wide: true, children: [
-          { key: "evaluate", label: "Assess an AI project", href: "/en/evaluate/", desc: "18 questions, before and after deployment" },
-          { key: "cse-checklist", label: "Works council checklist", href: "/en/cse/#questions", desc: "Ten questions to ask before the opinion" },
-          { key: "pilot-file", label: "Pilot file", href: "/en/legal-governance/#dossier", desc: "Eight documents to prepare before testing an AI" },
-          { key: "matrix", label: "Value / risk matrix", href: "/en/uses-and-field/occupational-health-example/#prioriser", desc: "Place an AI use before testing it" },
-          { key: "fiches-prevention", label: "Prevention fact sheets", href: "/en/tools/prevention-fact-sheets/", desc: "Seven downloadable sheets on psychosocial risks and AI" }
-        ] },
+        { key: "understand", label: "Understand", href: "/en/pathways/understand/" },
+        { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
+        { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
+        { key: "spst", label: "AI in occupational health", href: "/en/pathways/ai-in-occupational-health/" },
+        { key: "publications", label: "Research", href: "/en/publications/" },
         { key: "reading", label: "Reading", href: "/en/reading/" },
-        { key: "about-group", label: "About", children: [
-          { key: "about", label: "Charles Broutin", href: "/en/about/", desc: "Occupational physician, author of the site" },
-          { key: "publications", label: "Publications", href: "/en/publications/", desc: "Published articles and preprint" },
-          { key: "actions", label: "Talks", href: "/en/actions/", desc: "Seminars, study days and conferences" }
-        ] }
+        { key: "about", label: "About", href: "/en/about/" }
       ],
       footer: {
         tagline: "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.",
         groups: [
-          { id: "systemFooterUnderstand", title: "Understand", links: [
-            ["Understand AI", "/en/understand/"], ["Risks", "/en/risks/"], ["Recommendations", "/en/recommendations/"], ["AI in OHS services", "/en/uses-and-field/occupational-health-example/"],
-            ["Works council (CSE)", "/en/cse/"], ["Law & governance", "/en/legal-governance/"], ["Reading", "/en/reading/"]
+          { id: "systemFooterUnderstand", title: "The pathways", links: [
+            ["What is AI Safety?", "/en/#ai-safety"], ["Understand", "/en/pathways/understand/"],
+            ["Collective risks", "/en/pathways/collective-risks/"], ["Detect and prevent", "/en/pathways/prevent/"],
+            ["AI in occupational health", "/en/pathways/ai-in-occupational-health/"], ["Research", "/en/publications/"]
           ] },
           { id: "systemFooterTools", title: "Tools", links: [
             ["Assess an AI project", "/en/evaluate/"], ["Works council checklist", "/en/cse/#questions"],
@@ -164,21 +140,13 @@
 
   function activeKeyFor(path) {
     const rules = [
-      [/^\/outils\/preconisations\//, "preconisations"],
-      [/^\/outils\/claude-skills\//, "claude-skills"],
-      [/^\/(?:outils\/fiches-prevention|en\/tools\/prevention-fact-sheets)\//, "fiches-prevention"],
-      [/^\/outils\//, "tools"],
+      [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "understand"],
+      [/^\/(?:parcours\/risques-collectifs|en\/pathways\/collective-risks|en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
+      [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
+      [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "spst"],
       [/^\/(?:en\/)?publications\//, "publications"],
-      [/^\/(?:en\/)?actions\//, "actions"],
-      [/^\/(?:en\/understand|comprendre)\//, "understand"],
-      [/^\/(?:en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
-      [/^\/(?:en\/recommendations|recommandations)\//, "recommendations"],
-      [/^\/(?:en\/evaluate|evaluer)\//, "evaluate"],
-      [/^\/(?:en\/legal-governance|droit-gouvernance)\//, "governance"],
-      [/^\/(?:en\/)?cse\//, "cse"],
-      [/^\/(?:en\/uses-and-field\/occupational-health-example|ia-en-spst)\//, "spst"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
-      [/^\/(?:en\/about|a-propos)\//, "about"]
+      [/^\/(?:en\/about|a-propos|(?:en\/)?actions)\//, "about"]
     ];
     const match = rules.find(([pattern]) => pattern.test(path));
     return match ? match[1] : "";
@@ -194,6 +162,21 @@
   function renderNavigationShell(pathname, isEnglish, pageNavMarkup = "") {
     const path = pathname.replace(/\/index\.html$/, "/");
     const site = isEnglish ? SITE.en : SITE.fr;
+    // The publications index has four works in the same order in both languages.
+    if (path === "/publications/" || path === "/en/publications/") {
+      const publicationSections = isEnglish ? [
+        ["llm-risques-psychosociaux", "Archives · LLMs and psychosocial risks"],
+        ["ia-preconisations-medicales", "INRS · Medical recommendations"],
+        ["occupational-health-ai-safety-joem", "JOEM · Occupational health and AI safety"],
+        ["sante-travail-securite-modeles-frontieres", "Preprint · Frontier AI researchers"]
+      ] : [
+        ["llm-risques-psychosociaux", "Archives · LLM et risques psychosociaux"],
+        ["ia-preconisations-medicales", "INRS · Préconisations médicales"],
+        ["occupational-health-ai-safety-joem", "JOEM · Santé au travail et AI Safety"],
+        ["sante-travail-securite-modeles-frontieres", "Preprint · Chercheurs en IA"]
+      ];
+      pageNavMarkup = `<nav class="page-nav" aria-label="${isEnglish ? "Page contents" : "Sommaire de la page"}"><div class="page-nav-inner"><span class="page-nav-label">${isEnglish ? "On this page" : "Sur cette page"}</span><div class="page-nav-links">${publicationSections.map(([id, label]) => `<a href="#${id}">${escapeHtml(label)}</a>`).join("")}</div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>`;
+    }
     const activeKey = activeKeyFor(path);
     const translation = translationFor(path, isEnglish);
     const translationUrl = translation.url;
@@ -201,7 +184,7 @@
     const languageFooter = translation.exact ? site.language.footer : site.language.homeFooter;
     const isHome = path === site.home;
     // A link to a section of another page (#…) is never the current page.
-    const current = (key, href) => key === activeKey && !href.includes("#") ? ' aria-current="page"' : "";
+    const current = (key, href) => key === activeKey && !href.includes("#") ? (path === href ? ' aria-current="page"' : ' aria-current="true"') : "";
 
     const describedLink = item => `<a href="${item.href}"${current(item.key, item.href)}><span class="system-nav-title">${escapeHtml(item.label)}</span><span class="system-nav-desc">${escapeHtml(item.desc)}</span></a>`;
     // A group is current when the page is one of its entries (a link to a section of a page does not count).
@@ -244,7 +227,7 @@
 
     const footerLink = ([label, href, external]) => external
       ? `<li><a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)} (${escapeHtml(site.footer.external)})">${escapeHtml(label)} ${ICONS.external}</a></li>`
-      : `<li><a href="${href}"${current(activeKeyFor(href), href)}>${escapeHtml(label)}</a></li>`;
+      : `<li><a href="${href}"${path === href ? ' aria-current="page"' : ""}>${escapeHtml(label)}</a></li>`;
 
     const footerMarkup = `
     <div class="system-footer-grid">

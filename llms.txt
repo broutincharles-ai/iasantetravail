@@ -1,6 +1,6 @@
 # IA & Santé au Travail
 
-Repères indépendants, sourcés et datés pour comprendre, évaluer et gouverner l’intelligence artificielle à partir du travail réel et de la santé.
+Publication indépendante sur l’AI Safety, les transformations du travail, le pouvoir économique et social, et la santé. Guides, outils, lectures et recherche en français et en anglais.
 
 ## AI-agent resource
 
@@ -13,6 +13,19 @@ Repères indépendants, sourcés et datés pour comprendre, évaluer et gouverne
 This resource is intentionally absent from the human navigation, public sitemap and internal search index. It is discoverable here for AI agents and remains technically accessible to anyone who knows its URL.
 
 ## Core website resources
+
+### AI Safety pathways / Parcours AI Safety
+
+- https://www.iasantetravail.com/parcours/comprendre/ — Comprendre les systèmes d’IA et les transformations du travail.
+- https://www.iasantetravail.com/en/pathways/understand/ — Understand AI systems and changes in work.
+- https://www.iasantetravail.com/parcours/risques-collectifs/ — Examiner le disempowerment et les risques pour la santé.
+- https://www.iasantetravail.com/en/pathways/collective-risks/ — Examine human disempowerment and health risks.
+- https://www.iasantetravail.com/parcours/prevenir/ — Détecter, évaluer et prévenir les risques de l’IA au travail.
+- https://www.iasantetravail.com/en/pathways/prevent/ — Detect, assess and prevent risks from AI at work.
+- https://www.iasantetravail.com/parcours/ia-sante-travail/ — Épauler les professionnels de santé au travail.
+- https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/ — Support occupational health professionals.
+
+### Guides, tools and collections
 
 - https://www.iasantetravail.com/ — Parcours principal pour comprendre les systèmes d’IA, identifier les risques, évaluer les usages, prévenir leurs effets et gouverner les déploiements en santé au travail.
 - https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels, en onze chapitres.
@@ -35,10 +48,10 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/en/ — English edition of the website: understand how AI affects work, assess its uses and prevent risks to health.
 - https://www.iasantetravail.com/a-propos/ — Auteur, parcours, formations et newsletters du site.
 
-- https://www.iasantetravail.com/publications/ — Trois publications du Dr Charles Broutin : deux articles publiés, présentés par des résumés détaillés, et un preprint en texte intégral.
+- https://www.iasantetravail.com/publications/ — Quatre travaux du Dr Charles Broutin : Archives des Maladies Professionnelles et de l’Environnement, INRS, JOEM et preprint sur les conditions de travail des chercheurs en IA.
 - https://www.iasantetravail.com/actions/ — Séminaires et interventions : Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP.
 
-- https://www.iasantetravail.com/en/publications/ — English pages for three publications: the full text of a preprint, which appears first, and summaries of two published articles.
+- https://www.iasantetravail.com/en/publications/ — Research collection with four works: the occupational-health narrative review, the INRS study, the JOEM article and the preprint on working conditions in frontier AI laboratories.
 - https://www.iasantetravail.com/en/actions/ — Seminars and presentations in Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference.
 
 ## Detailed research summaries / Résumés détaillés

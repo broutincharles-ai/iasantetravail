@@ -1,0 +1,24 @@
+/* Publication catalogue, matching the approved AI Safety interface. */
+.ai-safety-publications{margin:0;background:#f3efe6;color:#171a18;font-family:"Instrument Sans",Arial,sans-serif}
+.ai-safety-publications .research-wrap{max-width:1320px;width:calc(100% - 104px);margin:0 auto}
+.ai-safety-publications .research-page{padding-bottom:52px}
+.ai-safety-publications .research-crumbs{display:flex;flex-wrap:wrap;gap:9px;padding:22px 0;font-size:12px;color:#5b615b}
+.ai-safety-publications .research-crumbs a{color:#171a18;text-decoration:none}
+.ai-safety-publications .research-heading{display:grid;grid-template-columns:200px 1fr;gap:50px;padding:30px 0 44px}
+.ai-safety-publications .research-heading h1{font-family:Newsreader,Georgia,serif;font-size:64px;line-height:1.05;letter-spacing:-.035em;font-style:normal;font-weight:400;color:#171a18;margin:0;max-width:24ch}
+.ai-safety-publications .research-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#87301f;padding-top:8px;margin:0}
+.ai-safety-publications .research-list{list-style:none;padding:0;margin:0 0 0 250px}
+.ai-safety-publications .research-item{display:grid;grid-template-columns:37px minmax(0,1fr) auto;gap:17px;padding:24px 0;border-top:1px solid rgba(23,26,24,.2);align-items:start;scroll-margin-top:120px}
+.ai-safety-publications .research-item:last-child{border-bottom:1px solid rgba(23,26,24,.2)}
+.ai-safety-publications .research-number{font:23px/1.35 Newsreader,Georgia,serif;color:#87301f}
+.ai-safety-publications .research-reference{font-size:11px;font-weight:600;letter-spacing:.08em;line-height:1.6;text-transform:uppercase;color:#5b615b;margin:0}
+.ai-safety-publications .research-item h2{font:400 27px/1.16 Newsreader,Georgia,serif;letter-spacing:-.025em;font-style:normal;color:#171a18;max-width:48ch;margin:7px 0 13px}
+.ai-safety-publications .research-item h2 a{color:#171a18;text-decoration:none;font:inherit}
+.ai-safety-publications .research-item h2 a:hover,.ai-safety-publications .research-item h2 a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.ai-safety-publications .research-authors,.ai-safety-publications .research-description{font-size:15px;line-height:1.6;max-width:72ch;color:#5b615b;margin:0}
+.ai-safety-publications .research-description{margin-top:10px}
+.ai-safety-publications .research-arrow{padding:21px 0 12px 12px;line-height:1;color:#171a18}
+.ai-safety-publications .research-updated{margin:22px 0 0 250px;font-size:14px;color:#5b615b}
+@media(max-width:1050px){.ai-safety-publications .research-heading{grid-template-columns:150px 1fr;gap:28px}.ai-safety-publications .research-heading h1{font-size:54px}.ai-safety-publications .research-list,.ai-safety-publications .research-updated{margin-left:178px}}
+@media(max-width:800px){.ai-safety-publications .research-wrap{width:calc(100% - 40px)}.ai-safety-publications .research-heading{grid-template-columns:1fr;gap:15px;padding:18px 0 27px}.ai-safety-publications .research-heading h1{font-size:41px}.ai-safety-publications .research-list,.ai-safety-publications .research-updated{margin-left:0}.ai-safety-publications .research-item{grid-template-columns:24px minmax(0,1fr);gap:12px;padding:20px 0}.ai-safety-publications .research-item h2{font-size:25px}.ai-safety-publications .research-arrow{display:none}.ai-safety-publications .research-page{padding-bottom:35px}}
+@media print{.ai-safety-publications .research-wrap{width:100%}.ai-safety-publications .research-crumbs{display:none}.ai-safety-publications .research-heading{display:block}.ai-safety-publications .research-heading h1{font-size:32pt}.ai-safety-publications .research-list,.ai-safety-publications .research-updated{margin-left:0}.ai-safety-publications .research-item{break-inside:avoid}.ai-safety-publications .research-item h2{font-size:20pt}.ai-safety-publications .research-arrow{display:none}}

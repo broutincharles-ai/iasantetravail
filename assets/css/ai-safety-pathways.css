@@ -1,0 +1,47 @@
+/* Static reading pathways. Scope their layout to these pages, preserving the shared shell. */
+body.ai-safety-pathway{margin:0;background:var(--paper,#f3efe6);color:var(--ink,#171a18);font-family:var(--sans,'Instrument Sans',sans-serif);line-height:1.6}
+.ai-safety-pathway main,.ai-safety-pathway main *{box-sizing:border-box}
+.ai-safety-pathway main h1,.ai-safety-pathway main h2,.ai-safety-pathway main h3{color:var(--ink,#171a18);font-family:var(--serif,'Newsreader',Georgia,serif);font-weight:400;font-style:normal;letter-spacing:-.025em;margin:0}
+.ai-safety-pathway main p{margin:0}
+.ai-safety-pathway main a{color:inherit;text-underline-offset:4px}
+.ai-safety-pathway main a:hover{text-decoration-thickness:2px}
+.ai-safety-pathway main a:focus-visible{outline:3px solid var(--terra-interactive,#87301f);outline-offset:4px}
+.ai-safety-pathway .pathway-wrap{width:min(1320px,calc(100% - 104px));margin:0 auto;padding-bottom:30px}
+.ai-safety-pathway .route-crumbs{display:flex;flex-wrap:wrap;gap:9px;font-size:12px;color:var(--muted);padding:22px 0}
+.ai-safety-pathway .route-crumbs a{color:var(--ink)}
+.ai-safety-pathway .eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-interactive,#87301f)}
+.ai-safety-pathway .chapter-hero{display:grid;grid-template-columns:200px 1fr;gap:50px;padding:30px 0 44px}
+.ai-safety-pathway .chapter-hero h1{font-size:64px;line-height:1.05;max-width:22ch}
+.ai-safety-pathway .chapter-hero p:not(.eyebrow){max-width:65ch;font-size:18px;margin-top:22px;color:var(--ink-soft,#3f443f)}
+.ai-safety-pathway .chapter-hero .eyebrow{padding-top:8px}
+.ai-safety-pathway .chapter-stepbar{display:flex;gap:24px;border-block:1px solid var(--line);padding:17px 0;overflow:auto;margin-bottom:42px}
+.ai-safety-pathway .chapter-stepbar a{font-size:12px;white-space:nowrap;text-decoration:none}
+.ai-safety-pathway .chapter-stepbar a[aria-current]{font-weight:650;color:var(--terra-interactive,#87301f)}
+.ai-safety-pathway .chapter-grid{display:grid;grid-template-columns:200px 1fr;gap:50px;margin:35px 0 50px}
+.ai-safety-pathway .chapter-grid h2{font-size:30px;line-height:1.15;max-width:10ch}
+.ai-safety-pathway .page-list{padding:0;margin:0;list-style:none}
+.ai-safety-pathway .page-item{display:grid;grid-template-columns:37px 1fr auto;gap:17px;padding:22px 0;border-top:1px solid var(--line);align-items:start}
+.ai-safety-pathway .page-item:last-child{border-bottom:1px solid var(--line)}
+.ai-safety-pathway .page-num{font:23px var(--serif);color:var(--terra-interactive,#87301f)}
+.ai-safety-pathway .page-item h3{font-size:27px;line-height:1.16;max-width:45ch;margin:7px 0 11px}
+.ai-safety-pathway .page-item h3 a{color:var(--ink);text-decoration:none}
+.ai-safety-pathway .page-item h3 a:hover{text-decoration:underline}
+.ai-safety-pathway .page-item p{font-size:15px;max-width:72ch;color:var(--muted)}
+.ai-safety-pathway .page-type{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ai-safety-pathway .page-arrow{font-size:22px;padding:20px 4px 4px;min-width:24px;min-height:24px}
+.ai-safety-pathway .chapter-side-note{font-size:14px;color:var(--muted);max-width:23ch;margin-top:16px}
+.ai-safety-pathway .chapter-footer{margin-top:35px;margin-bottom:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ai-safety-pathway .chapter-footer p{font-size:14px;color:var(--muted);max-width:50ch}
+.ai-safety-pathway .button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:14px 20px;text-decoration:none;font-size:13px;font-weight:600}
+.ai-safety-pathway .button.primary{background:var(--terra-interactive,#87301f);color:#fff}
+.ai-safety-pathway .button:hover{background:#6d2619}
+.ai-safety-pathway .risk-branches{display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:40px}
+.ai-safety-pathway .risk-branches h2{font-size:34px;line-height:1.12;margin:10px 0 14px}
+.ai-safety-pathway .risk-branches p{font-size:16px;color:var(--muted);margin-bottom:18px}
+.ai-safety-pathway .text-link{font-size:14px;font-weight:550}
+.ai-safety-pathway .quick-practice{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;border-block:1px solid var(--line);padding:18px 0;margin:26px 0}
+.ai-safety-pathway .quick-practice strong{font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+.ai-safety-pathway .pathway-date{font-size:14px;color:var(--muted);margin-top:25px}
+@media(max-width:1050px){.ai-safety-pathway .chapter-hero,.ai-safety-pathway .chapter-grid{grid-template-columns:150px 1fr;gap:28px}.ai-safety-pathway .chapter-hero h1{font-size:54px}.ai-safety-pathway .pathway-wrap{width:calc(100% - 64px)}}
+@media(max-width:800px){.ai-safety-pathway .pathway-wrap{width:calc(100% - 36px)}.ai-safety-pathway .chapter-hero{grid-template-columns:1fr;gap:15px;padding:18px 0 27px}.ai-safety-pathway .chapter-hero h1{font-size:41px}.ai-safety-pathway .chapter-hero p:not(.eyebrow){font-size:17px;margin-top:18px}.ai-safety-pathway .chapter-stepbar{margin-bottom:25px;gap:20px}.ai-safety-pathway .chapter-grid{grid-template-columns:1fr;gap:15px;margin:28px 0 37px}.ai-safety-pathway .chapter-grid h2{max-width:100%;font-size:29px}.ai-safety-pathway .chapter-side-note{max-width:100%;margin-top:8px}.ai-safety-pathway .page-item{grid-template-columns:24px 1fr;gap:12px;padding:18px 0}.ai-safety-pathway .page-item h3{font-size:25px}.ai-safety-pathway .page-arrow{display:none}.ai-safety-pathway .chapter-footer{flex-direction:column;align-items:flex-start;margin-bottom:25px}.ai-safety-pathway .risk-branches{grid-template-columns:1fr;gap:30px}.ai-safety-pathway .risk-branches h2{font-size:30px}.ai-safety-pathway .quick-practice{gap:12px 20px}.ai-safety-pathway .quick-practice strong{width:100%}}
+@media print{.ai-safety-pathway{background:#fff}.ai-safety-pathway .pathway-wrap{width:100%;max-width:none}.ai-safety-pathway .chapter-stepbar,.ai-safety-pathway .chapter-footer,.ai-safety-pathway .route-crumbs{display:none}.ai-safety-pathway .page-item,.ai-safety-pathway .risk-branches article{break-inside:avoid}.ai-safety-pathway .chapter-hero h1{font-size:38px}.ai-safety-pathway .chapter-grid{grid-template-columns:150px 1fr;gap:25px}.ai-safety-pathway .page-item h3{font-size:21px}}

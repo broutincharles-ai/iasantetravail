@@ -16,6 +16,13 @@ const decode = value => value
 const escapeHtml = value => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 for (const { home, collection, prefix, locale, count } of SETS) {
+  const page = await readFile(home, "utf8");
+  // The AI Safety homepage links to Reading from its main navigation.
+  // Do not reintroduce the removed latest-reading block on that layout.
+  if (/<body\b[^>]*class="[^"]*\bai-safety-home\b/.test(page)) {
+    console.log(`${home}: AI Safety layout; readings remain in their collection.`);
+    continue;
+  }
   const source = await readFile(collection, "utf8");
   const entries = [...source.matchAll(/<article\b[^>]*data-date="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)].map(([, date, body]) => ({
     date,
@@ -41,7 +48,6 @@ for (const { home, collection, prefix, locale, count } of SETS) {
             <p>${escapeHtml(entry.summary)}</p>
           </li>`).join("");
 
-  const page = await readFile(home, "utf8");
   const block = /(<!-- latest-readings:start -->)[\s\S]*?(<!-- latest-readings:end -->)/;
   if (!block.test(page)) throw new Error(`${home}: latest-readings markers missing`);
   // A function, so that "$" in a title or summary is inserted as is.

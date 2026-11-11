@@ -92,6 +92,8 @@ function topLevelSchemaNodes(value) {
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   const relative = path.relative(root, file).split(path.sep).join("/");
+  // Search Console ownership tokens are verification responses, not HTML pages.
+  if (/^google[a-f0-9]+\.html$/.test(relative) && html.trim() === `google-site-verification: ${relative}`) continue;
   const markup = html
     .replace(/<script\b[\s\S]*?<\/script>/gi, "")
     .replace(/<style\b[\s\S]*?<\/style>/gi, "");
@@ -210,8 +212,8 @@ for (const file of htmlFiles) {
   const english = relative.startsWith("en/");
   if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
   const requiredNavigation = english
-    ? ["/en/understand/", "/en/risks/", "/en/recommendations/", "/en/uses-and-field/occupational-health-example/", "/en/legal-governance/", "/en/cse/", "/en/evaluate/", "/en/publications/", "/en/actions/", "/en/reading/", "/en/about/"]
-    : ["/comprendre/", "/risques-prevention/", "/recommandations/", "/ia-en-spst/", "/droit-gouvernance/", "/cse/", "/evaluer/", "/publications/", "/actions/", "/lecture/", "/a-propos/"];
+    ? ["/en/pathways/understand/", "/en/pathways/collective-risks/", "/en/pathways/prevent/", "/en/pathways/ai-in-occupational-health/", "/en/publications/", "/en/reading/", "/en/about/"]
+    : ["/parcours/comprendre/", "/parcours/risques-collectifs/", "/parcours/prevenir/", "/parcours/ia-sante-travail/", "/publications/", "/lecture/", "/a-propos/"];
   for (const href of requiredNavigation) {
     if (!staticHeader.includes(`href="${href}"`)) errors.push(`${relative}: missing static navigation link to ${href}`);
   }

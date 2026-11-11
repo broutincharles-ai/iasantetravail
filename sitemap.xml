@@ -2,17 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.iasantetravail.com/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/parcours/comprendre/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/comprendre/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/understand/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/comprendre/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/pathways/understand/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/comprendre/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/understand/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/comprendre/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/parcours/risques-collectifs/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/risques-collectifs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/collective-risks/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/risques-collectifs/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/pathways/collective-risks/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/risques-collectifs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/collective-risks/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/risques-collectifs/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/parcours/prevenir/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/prevenir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/prevent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/prevenir/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/pathways/prevent/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/prevenir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/prevent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/prevenir/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/parcours/ia-sante-travail/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/ia-sante-travail/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/ia-sante-travail/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/parcours/ia-sante-travail/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/parcours/ia-sante-travail/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/comprendre/</loc>
@@ -310,14 +366,14 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/publications/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/publications/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/publications/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/publications/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/publications/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/publications/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/publications/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/publications/"/>

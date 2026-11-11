@@ -31,19 +31,19 @@ L’objectif n’est donc ni de promouvoir ni de rejeter l’IA par principe, ma
 
 ## Organisation du site
 
-Le menu principal suit la même structure sur toutes les pages :
+L’accueil présente le lien entre **AI Safety, transformations du travail, pouvoir économique et social, et santé publique**. Les pages existantes conservent leurs adresses ; des parcours bilingues les regroupent dans un ordre de lecture.
 
-- [**Comprendre**](https://www.iasantetravail.com/comprendre/) présente le fonctionnement des modèles actuels, leurs capacités, leurs limites et les concepts nécessaires pour analyser leurs usages professionnels.
-- [**Risques**](https://www.iasantetravail.com/risques-prevention/) examine deux échelles d’une même transformation : les effets sur le travail et la santé, notamment psychosociaux, et les conséquences économiques et sociales plus larges sur l’emploi et la place du travail humain.
-- **Guides**, par public :
-  - [IA en SPST](https://www.iasantetravail.com/ia-en-spst/) explore les usages possibles dans les services de prévention et de santé au travail, en partant du besoin réel, de la confidentialité, de la vérification et de la responsabilité professionnelle ;
-  - [CSE](https://www.iasantetravail.com/cse/) prépare la consultation et l’avis des représentants du personnel ;
-  - [Droit & gouvernance](https://www.iasantetravail.com/droit-gouvernance/) rassemble les repères utiles sur l’AI Act, le RGPD, le CSE, le DUERP, la responsabilité et l’organisation de la gouvernance.
-- [**Outils**](https://www.iasantetravail.com/outils/) réunit les outils interactifs : évaluer un projet d’IA avant puis après son déploiement, checklist CSE, dossier d’un pilote, matrice valeur / risque, fiches de prévention, relecture des préconisations et Skills pour Claude.
-- [**Lectures**](https://www.iasantetravail.com/lecture/) suit les recherches, expérimentations et témoignages qui éclairent les transformations en cours : management agentique, frontières entre métiers, sens du travail, attentes managériales, autonomie et risques psychosociaux.
-- **À propos** : l’auteur, ses [publications](https://www.iasantetravail.com/publications/) et ses [interventions](https://www.iasantetravail.com/actions/).
+Le menu principal suit la même structure en français et en anglais :
 
-La **prévention** constitue le fil transversal de ces parcours : comprendre le système, identifier les effets possibles, évaluer le travail réel, discuter collectivement les conditions d’usage et suivre les conséquences après le déploiement.
+- **Comprendre** : systèmes d’IA, transformations des tâches, métiers et supervision humaine.
+- **Risques collectifs** : perte de pouvoir économique et social, risques psychosociaux et santé.
+- **Prévenir** : recommandations, évaluation, dialogue social et gouvernance.
+- **IA en santé au travail** : usages professionnels, étude INRS, outils et conditions d’utilisation.
+- **Recherche** : quatre travaux du Dr Charles Broutin — Archives des Maladies Professionnelles et de l’Environnement, INRS, JOEM et preprint sur les chercheurs en IA.
+- **Lectures** : la collection des analyses et lectures commentées.
+- **À propos** : l’auteur et son parcours.
+
+Les outils, interventions et informations légales restent accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
 
 ## À qui s’adresse le projet ?
 
@@ -77,7 +77,7 @@ Le site est publié par GitHub Pages à partir de la branche `main`. `_config.ym
 Après une modification, depuis la racine du dépôt :
 
 1. `node scripts/render-static-navigation.mjs` : réécrit l’en-tête, le pied de page et les ressources communes du `<head>` de chaque page à partir de `assets/js/unified-navigation.js` (menu, libellés, liens) ;
-2. `node scripts/build-home-latest.mjs` : après une nouvelle lecture, met à jour le bloc « Dernières lectures » des deux accueils ; `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ;
+2. `node scripts/build-home-latest.mjs` : conservé pour les anciens gabarits ; il laisse inchangé le nouvel accueil AI Safety, où les lectures sont accessibles par le menu. `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ;
 3. `node scripts/create-redirects.mjs` : après le retrait ou le déplacement d’une page, écrit une page de redirection à l’ancienne adresse ;
 4. `node scripts/enforce-indexing-scope.mjs` puis `node scripts/build-search-index.mjs` : indexation, sitemap et index de recherche, à partir de `scripts/indexing-scope.mjs` ;
 5. `node scripts/validate-site.mjs` : contrôle des liens, métadonnées, hreflang et règles du site. Il doit se terminer sans erreur avant publication.
