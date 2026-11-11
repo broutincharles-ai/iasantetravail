@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.0";
+  const NAVIGATION_VERSION = "8.1";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -59,7 +59,11 @@
         { key: "spst", label: "IA en santé au travail", href: "/parcours/ia-sante-travail/" },
         { key: "publications", label: "Recherche", href: "/publications/" },
         { key: "reading", label: "Lectures", href: "/lecture/" },
-        { key: "about", label: "À propos", href: "/a-propos/" }
+        { key: "about-group", label: "À propos", children: [
+          { key: "about", label: "Charles Broutin", href: "/a-propos/", desc: "Médecin du travail, auteur du site" },
+          { key: "publications", label: "Publications", href: "/publications/", desc: "Articles publiés et preprint" },
+          { key: "actions", label: "Interventions", href: "/actions/", desc: "Séminaires, journées et colloques" }
+        ] }
       ],
       footer: {
         tagline: "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.",
@@ -100,7 +104,11 @@
         { key: "spst", label: "AI in occupational health", href: "/en/pathways/ai-in-occupational-health/" },
         { key: "publications", label: "Research", href: "/en/publications/" },
         { key: "reading", label: "Reading", href: "/en/reading/" },
-        { key: "about", label: "About", href: "/en/about/" }
+        { key: "about-group", label: "About", children: [
+          { key: "about", label: "Charles Broutin", href: "/en/about/", desc: "Occupational physician, author of the site" },
+          { key: "publications", label: "Publications", href: "/en/publications/", desc: "Published articles and preprint" },
+          { key: "actions", label: "Talks", href: "/en/actions/", desc: "Seminars, study days and conferences" }
+        ] }
       ],
       footer: {
         tagline: "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.",
@@ -146,7 +154,8 @@
       [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "spst"],
       [/^\/(?:en\/)?publications\//, "publications"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
-      [/^\/(?:en\/about|a-propos|(?:en\/)?actions)\//, "about"]
+      [/^\/(?:en\/)?actions\//, "actions"],
+      [/^\/(?:en\/about|a-propos)\//, "about"]
     ];
     const match = rules.find(([pattern]) => pattern.test(path));
     return match ? match[1] : "";

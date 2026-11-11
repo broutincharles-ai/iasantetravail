@@ -212,8 +212,8 @@ for (const file of htmlFiles) {
   const english = relative.startsWith("en/");
   if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
   const requiredNavigation = english
-    ? ["/en/pathways/understand/", "/en/pathways/collective-risks/", "/en/pathways/prevent/", "/en/pathways/ai-in-occupational-health/", "/en/publications/", "/en/reading/", "/en/about/"]
-    : ["/parcours/comprendre/", "/parcours/risques-collectifs/", "/parcours/prevenir/", "/parcours/ia-sante-travail/", "/publications/", "/lecture/", "/a-propos/"];
+    ? ["/en/pathways/understand/", "/en/pathways/collective-risks/", "/en/pathways/prevent/", "/en/pathways/ai-in-occupational-health/", "/en/publications/", "/en/reading/", "/en/about/", "/en/actions/"]
+    : ["/parcours/comprendre/", "/parcours/risques-collectifs/", "/parcours/prevenir/", "/parcours/ia-sante-travail/", "/publications/", "/lecture/", "/a-propos/", "/actions/"];
   for (const href of requiredNavigation) {
     if (!staticHeader.includes(`href="${href}"`)) errors.push(`${relative}: missing static navigation link to ${href}`);
   }
