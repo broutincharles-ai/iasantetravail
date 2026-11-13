@@ -28,3 +28,17 @@ Mettre à jour les dates de contenu uniquement après une révision réelle. Con
 Le dossier CSE regroupe `/cse/` (référentiel), `/cse/jurisprudence/` et sa traduction `/en/cse/case-law/` (chronologie des décisions), `/cse/courrier-medecin-du-travail/` et `/risques-prevention/duerp/` (en français uniquement). Leurs blocs communs (encadré « En bref », cartes, tableau des décisions, journal des mises à jour) sont stylés par `assets/css/cse-reference.css`. Une décision de justice figure à quatre endroits : la liste courte de `/cse/` et de `/en/cse/`, et le tableau des deux pages de chronologie. Pour en ajouter une, compléter les quatre, indiquer la source réellement consultée, dater le journal des mises à jour de chaque page et mettre à jour `dateModified` ainsi que `lastmod` dans `scripts/indexing-scope.mjs`. La FAQ balisée (`FAQPage`) doit reprendre toutes les questions visibles.
 
 Avant publication, vérifier les interactions dans les deux langues et les mises en page mobiles. La validation doit porter sur les fichiers de la version à publier, sans y inclure les brouillons locaux non suivis par Git.
+
+## IndexNow (Bing, Yandex and the engines that read it)
+
+The verification file `bbb34a9b3771d2722ca1bef46bccf955.txt` at the site root holds the IndexNow key. The key is public by design: search engines read that file to check that a submission comes from this site. After a publication, once GitHub Pages has deployed, send the canonical addresses that changed:
+
+```
+INDEXNOW_KEY=bbb34a9b3771d2722ca1bef46bccf955 node scripts/submit-indexnow.mjs https://www.iasantetravail.com/evaluer/ https://www.iasantetravail.com/comprendre/
+```
+
+Google does not read IndexNow: for Google, use the URL inspection tool in Search Console, or wait for the sitemap to be read again.
+
+## Short answers and FAQ blocks
+
+`assets/css/page-answers.css` styles the short-answer panel (`.page-brief`), the FAQ (`.page-faq`), the table of axes (`.page-axes`) and the step lists of the audience pages (`.pa-steps`). It carries fallbacks for every colour and font, so it also works on guides that inline their tokens. When a visible FAQ changes, update the `FAQPage` node of the page's structured data so that both list the same questions.
