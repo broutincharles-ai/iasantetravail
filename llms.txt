@@ -63,7 +63,7 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/a-propos/ — Auteur, parcours, formations et newsletters du site.
 
 - https://www.iasantetravail.com/publications/ — Quatre travaux du Dr Charles Broutin : Archives des Maladies Professionnelles et de l’Environnement, INRS, JOEM et preprint sur les conditions de travail des chercheurs en IA.
-- https://www.iasantetravail.com/publications/sante-au-travail-enjeu-securite-ia/ — Présentation de l’article « Occupational Health Is an AI Safety Issue » (Broutin et Faghri, JOEM) : référence, thèse et cadre en six exigences. English: https://www.iasantetravail.com/en/publications/occupational-health-ai-safety-issue/
+- https://www.iasantetravail.com/publications/sante-au-travail-enjeu-securite-ia/ — Présentation de l’éditorial « Occupational Health Is an AI Safety Issue » (Broutin et Faghri, JOEM, publication anticipée du 10 novembre 2026) : référence, thèse et cadre en six exigences. English: https://www.iasantetravail.com/en/publications/occupational-health-ai-safety-issue/
 - https://www.iasantetravail.com/actions/ — Séminaires et interventions : Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP.
 
 - https://www.iasantetravail.com/en/publications/ — Research collection with four works: the occupational-health narrative review, the INRS study, the JOEM article and the preprint on working conditions in frontier AI laboratories.
