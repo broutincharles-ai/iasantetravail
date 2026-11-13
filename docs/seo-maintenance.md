@@ -37,6 +37,8 @@ The verification file `771b506613ae4c649b15e86f9ea26044.txt` at the site root ho
 INDEXNOW_KEY=771b506613ae4c649b15e86f9ea26044 node scripts/submit-indexnow.mjs https://www.iasantetravail.com/evaluer/ https://www.iasantetravail.com/comprendre/
 ```
 
+The workflow `.github/workflows/indexnow.yml` does this automatically: after each successful GitHub Pages deployment it compares the deployed commit with the previous deployment, keeps the changed pages that are listed in `sitemap.xml` (`scripts/indexnow-changed-urls.mjs`) and submits them. To resend a range by hand, run the workflow from the Actions tab with the commit to compare from. If the key changes, update the key file at the root and `INDEXNOW_KEY` in the workflow.
+
 Google does not read IndexNow: for Google, use the URL inspection tool in Search Console, or wait for the sitemap to be read again.
 
 ## Short answers and FAQ blocks

@@ -1,0 +1,69 @@
+name: IndexNow
+
+# Sends the addresses that changed to IndexNow once GitHub Pages has deployed them.
+# The key is public by design: it must match the key file at the site root.
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "Commit to compare from (addresses changed since this commit are sent)"
+        required: true
+
+permissions:
+  contents: read
+  deployments: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: 771b506613ae4c649b15e86f9ea26044
+      GH_TOKEN: ${{ github.token }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+      INPUT_BASE: ${{ inputs.base }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.HEAD_SHA }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Find the previous deployment
+        id: base
+        run: |
+          if [ -n "$INPUT_BASE" ]; then
+            base="$INPUT_BASE"
+          else
+            base=$(gh api "repos/$GITHUB_REPOSITORY/deployments?environment=github-pages&per_page=20" \
+              --jq "[.[] | select(.sha != \"$HEAD_SHA\")][0].sha // empty")
+            if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+              base=$(git rev-parse "$HEAD_SHA~1")
+            fi
+          fi
+          echo "sha=$base" >> "$GITHUB_OUTPUT"
+          echo "Comparing $base with $HEAD_SHA"
+
+      - name: Submit the changed addresses
+        env:
+          BASE_SHA: ${{ steps.base.outputs.sha }}
+        run: |
+          node scripts/indexnow-changed-urls.mjs "$BASE_SHA" "$HEAD_SHA" > urls.txt
+          count=$(grep -c . urls.txt || true)
+          if [ "$count" -eq 0 ]; then
+            echo "No indexable page changed: nothing to send."
+            exit 0
+          fi
+          cat urls.txt
+          xargs node scripts/submit-indexnow.mjs < urls.txt
