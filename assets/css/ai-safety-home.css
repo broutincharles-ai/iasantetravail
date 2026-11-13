@@ -261,7 +261,7 @@ body.ai-safety-home main .language-note{font:500 11px/1.3 var(--sans);color:var(
   body.ai-safety-home main .phase{min-height:0}
 }
 
-/* Accueil FR : bloc de titre sobre (surtitre en bas de casse, titre d'une seule encre, signature) */
+/* Accueil FR et EN : bloc de titre sobre (surtitre en bas de casse, titre d'une seule encre, signature) */
 body.ai-safety-home main .hero-copy--plain>.eyebrow{display:block;font:600 15px/1.5 var(--sans);text-transform:none;letter-spacing:0;margin-bottom:22px}
 body.ai-safety-home main .hero-copy--plain>.eyebrow::before{display:none}
 body.ai-safety-home main .hero-copy--plain .hero-actions .button{border-radius:4px;justify-content:center}
