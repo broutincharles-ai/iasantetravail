@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/fonts.css?v=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>What is an LLM? How a large language model works</title>
+  <meta name="description" content="An LLM is a neural network trained to predict what comes next in a text. How it produces an answer, how it is trained, and what to check before using it at work.">
+  <link rel="canonical" href="https://www.iasantetravail.com/en/understand/llm/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/comprendre/llm/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/understand/llm/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/comprendre/llm/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="AI &amp; Occupational Health">
+  <meta property="og:title" content="What is an LLM? How a large language model works">
+  <meta property="og:description" content="An LLM is a neural network trained to predict what comes next in a text. How it produces an answer, how it is trained, and what to check before using it at work.">
+  <meta property="og:url" content="https://www.iasantetravail.com/en/understand/llm/">
+  <meta property="article:published_time" content="2026-11-13">
+  <meta property="article:modified_time" content="2026-11-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What is an LLM? How a large language model works">
+  <meta name="twitter:description" content="An LLM is a neural network trained to predict what comes next in a text. How it produces an answer, how it is trained, and what to check before using it at work.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/understand/llm/#webpage","url":"https://www.iasantetravail.com/en/understand/llm/","name":"What is an LLM? How a large language model works","description":"An LLM is a neural network trained to predict what comes next in a text. How it produces an answer, how it is trained, and what to check before using it at work.","inLanguage":"en-GB","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"mainEntity":{"@id":"https://www.iasantetravail.com/en/understand/llm/#article"}},{"@type":"Article","@id":"https://www.iasantetravail.com/en/understand/llm/#article","headline":"What is an LLM?","description":"An LLM is a neural network trained to predict what comes next in a text. How it produces an answer, how it is trained, and what to check before using it at work.","mainEntityOfPage":{"@id":"https://www.iasantetravail.com/en/understand/llm/#webpage"},"datePublished":"2026-11-13","dateModified":"2026-11-13","inLanguage":"en-GB","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"image":"https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2","citation":["https://www.cnil.fr/fr/definition/modele-de-langage","https://arxiv.org/abs/1706.03762","https://arxiv.org/abs/2203.02155","https://arxiv.org/abs/2212.08073"]},{"@type":"FAQPage","@id":"https://www.iasantetravail.com/en/understand/llm/#faq-schema","mainEntity":[{"@type":"Question","name":"Does an LLM fetch its answers from a database?","acceptedAnswer":{"@type":"Answer","text":"Not by itself: it composes its answer from what it has learned and from what is in its context window. A tool can, however, supply it with extracts retrieved from a document base (RAG) or from the web. What does not enter that window does not exist for it."}},{"@type":"Question","name":"Why does the same question give different answers?","acceptedAnswer":{"@type":"Answer","text":"Generation is probabilistic and sensitive to wording, to the order of documents and to the model version. At a low temperature, answers are stable, sometimes repetitive; at a high temperature, they vary more. Hence the value of testing several times, dating the trials and recording the version used."}},{"@type":"Question","name":"What is the difference between a closed model and an open-weight model?","acceptedAnswer":{"@type":"Answer","text":"A closed model can only be used remotely, on the provider’s infrastructure. An open-weight model can be installed on servers you control, which gives you control over where the data travels. The largest ones nevertheless require data-centre infrastructure."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Understanding AI at work","item":"https://www.iasantetravail.com/en/understand/"},{"@type":"ListItem","position":3,"name":"What is an LLM?","item":"https://www.iasantetravail.com/en/understand/llm/"}]}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/home-resources-v3.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/cse.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/cse-editorial-v2.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/cse-reference.css?v=1.0">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+<link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
+<link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
+
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2">
+  <meta name="twitter:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <link rel="stylesheet" href="/assets/css/page-answers.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.0">
+  <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
+  <script defer src="/assets/js/unified-navigation.js?v=8.1"></script>
+  <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
+  <script defer src="/assets/js/consent.js?v=1.1"></script>
+  <script src="/assets/js/language-routing.js?v=2.1"></script>
+</head>
+<body class="page-headings page-shell-v2 home-resources-v3 cse-page cse-editorial-v2">
+  <a class="skip-link" href="#contenu">Skip to main content</a>
+
+  <header class="site-system-header" id="site-header" data-navigation-version="8.1">
+    <nav class="system-nav" aria-label="Main navigation">
+      <a class="system-brand" href="/en/" aria-label="AI &amp; Occupational Health, home">
+        <span class="system-brand-mark" aria-hidden="true"></span>
+        <span class="system-brand-copy"><strong>AI &amp; Occupational Health</strong><small>Independent publication</small></span>
+      </a>
+      <div class="system-desktop-navigation"><div class="system-primary-links"><a class="system-nav-link" href="/en/pathways/understand/" aria-current="true">Understand</a><a class="system-nav-link" href="/en/pathways/collective-risks/">Collective risks</a><a class="system-nav-link" href="/en/pathways/prevent/">Prevent</a><a class="system-nav-link" href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a><a class="system-nav-link" href="/en/publications/">Research</a><a class="system-nav-link" href="/en/reading/">Reading</a><details class="system-nav-group"><summary>About<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown"><ul class="system-nav-list"><li><a href="/en/about/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Occupational physician, author of the site</span></a></li><li><a href="/en/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Published articles and preprint</span></a></li><li><a href="/en/actions/"><span class="system-nav-title">Talks</span><span class="system-nav-desc">Seminars, study days and conferences</span></a></li></ul></div></details></div></div>
+      <div class="system-nav-actions">
+        <button type="button" class="system-search-button" data-site-search aria-label="Search the site" title="Search the site (Ctrl K)"><svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="system-search-text">Search</span></button>
+        <a class="system-language-switch" href="/comprendre/llm/" lang="fr" hreflang="fr" aria-label="Voir cette page en français" title="Voir cette page en français">FR</a>
+        <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
+      </div>
+      <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
+        <div class="system-mobile-inner">
+          <button type="button" class="system-mobile-search" data-site-search>Search the site <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <a class="system-mobile-link" href="/en/pathways/understand/" aria-current="true">Understand</a><a class="system-mobile-link" href="/en/pathways/collective-risks/">Collective risks</a><a class="system-mobile-link" href="/en/pathways/prevent/">Prevent</a><a class="system-mobile-link" href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a><a class="system-mobile-link" href="/en/publications/">Research</a><a class="system-mobile-link" href="/en/reading/">Reading</a><details class="system-mobile-group"><summary>About<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-mobile-sublist"><ul class="system-nav-list"><li><a href="/en/about/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Occupational physician, author of the site</span></a></li><li><a href="/en/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Published articles and preprint</span></a></li><li><a href="/en/actions/"><span class="system-nav-title">Talks</span><span class="system-nav-desc">Seminars, study days and conferences</span></a></li></ul></div></details>
+        </div>
+      </div>
+    </nav><nav class="page-nav" aria-label="Page summary">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">On this page</span>
+        <div class="page-nav-links">
+<a href="#pourquoi">Why</a><a href="#sante-travail">Occupational health</a><a href="#questions">10 questions</a><a href="#autonomie">Autonomy</a><a href="#methode">Method</a><a href="#summary">Summary</a><a href="#faq">FAQ</a><a href="#cadre">Legal framework</a>
+</div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
+      </div>
+    </nav></header>
+
+  <main id="contenu">
+    <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
+      <div class="cse-hero-copy">
+        <p class="ref-crumb"><a href="/en/understand/">Understanding AI at work</a> / Short page</p>
+        <p class="cse-kicker cse-kicker-line">Understand · Short page</p>
+        <h1 id="hero-title">What is an LLM?</h1>
+        <p class="cse-lede">A large language model composes its answer by predicting, step by step, the most probable continuation of a text. This page summarises how it works, how it is built and what that changes for professional use.</p>
+        <p class="cse-meta">By <a href="/en/about/">Dr Charles Broutin</a>, occupational physician · Updated on <time datetime="2026-11-13">13 November 2026</time></p>
+        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#llm">Read the guide chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
+      </div>
+    </section>
+
+    <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">An LLM predicts what comes next in a text.</h2></div><p>The definition, then what follows from it.</p></div>
+      <div class="ref-prose"><div class="ref-answer"><span>Direct answer</span>
+        <p>A large language model, or LLM, is a neural network trained to predict what comes next in a text. It does not look up a ready-made answer in a database: it composes one, unit by unit.</p>
+        <p>It computes probabilities from the context; it does not spontaneously check whether its answer is true or compliant.</p>
+      </div>
+      <p class="ref-cite"><a href="https://www.cnil.fr/fr/definition/modele-de-langage" target="_blank" rel="noreferrer">CNIL, definition of a language model (in French) ↗</a> · <a href="/en/understand/#llm">Guide, chapter 02</a></p></div>
+    </section>
+
+    <section class="cse-section ref-section-alt" id="how-it-works" aria-labelledby="how-it-works-title">
+      <div class="cse-heading"><div><p class="cse-kicker">01 / How it works</p><h2 id="how-it-works-title">Five steps between your question and the answer.</h2></div><p>The same computation starts again for every unit of text produced.</p></div>
+      <ol class="ref-points">
+        <li><div><h3>Split: the text becomes tokens.</h3><p>The prompt and the documents supplied are cut into small units: words, pieces of words or signs.</p></div></li>
+        <li><div><h3>Represent: tokens become numbers.</h3><p>Each token is converted into a numerical representation that encodes the regularities learned during training.</p></div></li>
+        <li><div><h3>Relate: attention weighs the context.</h3><p>The Transformer examines the relations between tokens to determine which parts of the context matter most at that moment. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al., 2017 ↗</a></p></div></li>
+        <li><div><h3>Predict: the next token is chosen.</h3><p>The model computes a probability distribution. Generation settings influence the choice and how much it varies.</p></div></li>
+        <li><div><h3>Repeat: the answer is built step by step.</h3><p>The chosen token joins the context, then the computation starts again until the answer ends.</p></div></li>
+      </ol>
+      <div class="ref-note"><strong>Illustrative example</strong><p>After “The employee describes persistent pain in the…”, the model assigns a probability to each possible continuation: “back”, “wrist”, “knee”. It chooses what is probable in that context, not what is true for that employee. In the guide, the probabilities in this example are fictitious.</p></div>
+    </section>
+
+    <section class="cse-section" id="training" aria-labelledby="training-title">
+      <div class="cse-heading"><div><p class="cse-kicker">02 / How it is built</p><h2 id="training-title">Five training stages, and the flaw each can leave behind.</h2></div><p>An LLM’s capabilities are not programmed rule by rule.</p></div>
+      <table class="ref-table"><thead><tr><th scope="col">Stage</th><th scope="col">What comes out</th><th scope="col">Inherited flaw</th></tr></thead><tbody>
+        <tr><td><strong>Pre-train</strong> on web text, books and code</td><td data-label="What comes out">A base model, which completes text without following instructions.</td><td data-label="Inherited flaw">Confabulation, biases and errors from the source texts; knowledge frozen at a cut-off date.</td></tr>
+        <tr><td><strong>Fine-tune</strong> on exemplary dialogues</td><td data-label="What comes out">An assistant, which answers requests and refuses some of them.</td><td data-label="Inherited flaw">It takes on the preferences of those who write and validate the examples.</td></tr>
+        <tr><td><strong>Reinforce</strong> from compared answers</td><td data-label="What comes out">An assistant that is more useful and more cautious in its answers.</td><td data-label="Inherited flaw">Sycophancy: what pleases can win over what is accurate.</td></tr>
+        <tr><td><strong>Train to reason</strong> on problems with a verifiable solution</td><td data-label="What comes out">A reasoning model, which computes for longer before answering.</td><td data-label="Inherited flaw">It may game the test rather than solve the problem; the reasoning it displays is not always faithful.</td></tr>
+        <tr><td><strong>Evaluate, then deploy</strong></td><td data-label="What comes out">A model that is updated and monitored: each version is a dated object.</td><td data-label="Inherited flaw">It may detect that it is being evaluated; tests predict real use poorly.</td></tr>
+      </tbody></table>
+      <p class="ref-caveat">Simplified diagram: the order and weight of the stages vary from one laboratory to another, and some are repeated.</p>
+      <p class="ref-cite"><a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noreferrer">Ouyang et al., 2022 ↗</a> · <a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noreferrer">Bai et al., 2022 ↗</a> · <a href="/en/understand/#entrainement">Guide, chapter 03</a></p>
+    </section>
+
+    <section class="cse-section ref-section-alt" id="at-work" aria-labelledby="at-work-title">
+      <div class="cse-heading"><div><p class="cse-kicker">03 / At work</p><h2 id="at-work-title">What this changes before you rely on it.</h2></div><p>Four practical consequences.</p></div>
+      <div class="ref-prose"><ul><li><strong>The tool is never the model alone.</strong> A professional assistant combines a model, instructions, documents, tools and sometimes a memory. Two tools built on the same model can answer very differently.</li><li><strong>A demonstrated capability is not guaranteed reliability.</strong> Often succeeding at a category of tasks does not let you predict each answer. You need to test the errors that matter in your use.</li><li><strong>A model version is a dated object.</strong> The provider can change the model, its settings, its filters or its tools. A useful evaluation states the version and the date.</li><li><strong>The data you enter goes somewhere.</strong> Check where it is processed, how long it is kept and what uses the provider allows itself; in France, health data requires certified hosting (HDS).</li></ul><p>The guide details these points in the chapters <a href="/en/understand/#systeme">From model to system</a> and <a href="/en/understand/#capacites">Capabilities and limits</a>.</p></div>
+    </section>
+
+    <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Three frequent questions.</h2></div><p>Short answers, drawn from the guide.</p></div>
+      <div class="faq-list">
+        <details open><summary>Does an LLM fetch its answers from a database?</summary><div><p>Not by itself: it composes its answer from what it has learned and from what is in its context window. A tool can, however, supply it with extracts retrieved from a document base (RAG) or from the web. What does not enter that window does not exist for it.</p></div></details><details><summary>Why does the same question give different answers?</summary><div><p>Generation is probabilistic and sensitive to wording, to the order of documents and to the model version. At a low temperature, answers are stable, sometimes repetitive; at a high temperature, they vary more. Hence the value of testing several times, dating the trials and recording the version used.</p></div></details><details><summary>What is the difference between a closed model and an open-weight model?</summary><div><p>A closed model can only be used remotely, on the provider’s infrastructure. An open-weight model can be installed on servers you control, which gives you control over where the data travels. The largest ones nevertheless require data-centre infrastructure.</p></div></details>
+      </div>
+      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The figures dated November 2026 will go out of date: the guide is the version kept current.</p></div>
+      <div class="update-log" id="updates"><h3>Update log</h3><ol>
+        <li><time datetime="2026-11-13">13 November 2026</time><span>First version, drawn from the guide “Understanding AI at work” updated on 13 November 2026.</span></li>
+      </ol></div>
+    </section>
+
+    <section class="cse-section cse-related" id="related" aria-labelledby="related-title">
+      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div><p>The other short pages and the guides they summarise.</p></div>
+      <div class="ref-links">
+        <a href="/en/understand/agentic-ai/"><strong>Agentic AI</strong><span>What sets an agent apart, what is measured and which controls to plan.</span></a>
+        <a href="/en/understand/ai-hallucinations/"><strong>AI hallucinations</strong><span>Six persistent model errors and where to place the checks.</span></a>
+        <a href="/en/understand/ai-benchmarks/"><strong>AI benchmarks</strong><span>Reading a model leaderboard without making it say more than it does.</span></a>
+        <a href="/en/understand/agi/"><strong>AGI</strong><span>Definitions, measurements and what is at stake for work.</span></a>
+        <a href="/en/understand/"><strong>The full guide</strong><span>Eleven chapters, from AI systems to professional use, with their sources.</span></a>
+        <a href="/en/evaluate/"><strong>Assess an AI project</strong><span>The eighteen-question grid, before the pilot and during follow-up.</span></a>
+        <a href="/en/risks-prevention/"><strong>AI and psychosocial risks</strong><span>What AI changes in work organisation and health.</span></a>
+        <a href="/en/recommendations/"><strong>Recommendations by audience</strong><span>Pointers for action, according to your role.</span></a>
+        <a href="/en/reading/"><strong>Annotated readings</strong><span>Articles, studies and field reports read through psychosocial risk factors.</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-system-footer" id="site-footer" data-navigation-version="8.1">
+    <div class="system-footer-grid">
+      <div class="system-footer-intro"><a class="system-brand" href="/en/" aria-label="AI &amp; Occupational Health, home"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>AI &amp; Occupational Health</strong></span></a><p>Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.</p></div>
+      <nav class="system-footer-group" aria-labelledby="systemFooterUnderstand"><h2 id="systemFooterUnderstand">The pathways</h2><ul><li><a href="/en/#ai-safety">What is AI Safety?</a></li><li><a href="/en/pathways/understand/">Understand</a></li><li><a href="/en/pathways/collective-risks/">Collective risks</a></li><li><a href="/en/pathways/prevent/">Detect and prevent</a></li><li><a href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a></li><li><a href="/en/publications/">Research</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterTools"><h2 id="systemFooterTools">Tools</h2><ul><li><a href="/en/evaluate/">Assess an AI project</a></li><li><a href="/en/cse/#questions">Works council checklist</a></li><li><a href="/en/legal-governance/#dossier">Pilot file</a></li><li><a href="/en/tools/prevention-fact-sheets/">Prevention fact sheets</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterSite"><h2 id="systemFooterSite">The site</h2><ul><li><a href="/en/about/">About</a></li><li><a href="/en/publications/">Publications</a></li><li><a href="/en/actions/">Talks</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (opens in a new tab)">Newsletter <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></nav>
+    </div>
+    <div class="system-footer-bottom">
+      <span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span>
+      <span class="system-footer-legal"><a href="/comprendre/llm/" lang="fr" hreflang="fr">Version française</a><a href="/en/privacy/">Privacy</a><a href="/en/legal-notice/">Legal notice</a><button type="button" data-consent-open>Cookie settings</button></span>
+    </div></footer>
+</body>
+</html>

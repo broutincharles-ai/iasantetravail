@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/fonts.css?v=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>AI benchmarks: how to read a model leaderboard</title>
+  <meta name="description" content="There is no universal ranking of the best AI model. Five families of tests, their limits and four questions to ask before drawing a conclusion for professional use.">
+  <link rel="canonical" href="https://www.iasantetravail.com/en/understand/ai-benchmarks/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/comprendre/benchmarks-ia/">
+  <link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/understand/ai-benchmarks/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/comprendre/benchmarks-ia/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="AI &amp; Occupational Health">
+  <meta property="og:title" content="AI benchmarks: how to read a model leaderboard">
+  <meta property="og:description" content="There is no universal ranking of the best AI model. Five families of tests, their limits and four questions to ask before drawing a conclusion for professional use.">
+  <meta property="og:url" content="https://www.iasantetravail.com/en/understand/ai-benchmarks/">
+  <meta property="article:published_time" content="2026-11-13">
+  <meta property="article:modified_time" content="2026-11-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI benchmarks: how to read a model leaderboard">
+  <meta name="twitter:description" content="There is no universal ranking of the best AI model. Five families of tests, their limits and four questions to ask before drawing a conclusion for professional use.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/understand/ai-benchmarks/#webpage","url":"https://www.iasantetravail.com/en/understand/ai-benchmarks/","name":"AI benchmarks: how to read a model leaderboard","description":"There is no universal ranking of the best AI model. Five families of tests, their limits and four questions to ask before drawing a conclusion for professional use.","inLanguage":"en-GB","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"mainEntity":{"@id":"https://www.iasantetravail.com/en/understand/ai-benchmarks/#article"}},{"@type":"Article","@id":"https://www.iasantetravail.com/en/understand/ai-benchmarks/#article","headline":"AI benchmarks: how to read a model leaderboard","description":"There is no universal ranking of the best AI model. Five families of tests, their limits and four questions to ask before drawing a conclusion for professional use.","mainEntityOfPage":{"@id":"https://www.iasantetravail.com/en/understand/ai-benchmarks/#webpage"},"datePublished":"2026-11-13","dateModified":"2026-11-13","inLanguage":"en-GB","author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"image":"https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2","citation":["https://epoch.ai/benchmarks/eci","https://artificialanalysis.ai/evaluations/gdpval-aa","https://arcprize.org/leaderboard","https://arxiv.org/abs/2507.09089"]},{"@type":"FAQPage","@id":"https://www.iasantetravail.com/en/understand/ai-benchmarks/#faq-schema","mainEntity":[{"@type":"Question","name":"Which is the best AI model?","acceptedAnswer":{"@type":"Answer","text":"There is no single answer: the leader changes with the test, and the gaps between the leaders are often smaller than the measurement uncertainty. The useful question is which model succeeds at your own tasks."}},{"@type":"Question","name":"What is benchmark contamination?","acceptedAnswer":{"@type":"Answer","text":"It is when a test’s questions end up in the models’ training data. Multiple-choice knowledge tests are highly exposed to it: before drawing a conclusion, ask whether the data could have been seen during training."}},{"@type":"Question","name":"Are there benchmarks for occupational health?","acceptedAnswer":{"@type":"Answer","text":"Tests built by professionals in the field are the closest to the job: MedHELM in medicine, or BenchMedTrav in occupational health, designed by the author of this site. Even closest to the job, real deployment still has to be assessed."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.iasantetravail.com/en/"},{"@type":"ListItem","position":2,"name":"Understanding AI at work","item":"https://www.iasantetravail.com/en/understand/"},{"@type":"ListItem","position":3,"name":"AI benchmarks","item":"https://www.iasantetravail.com/en/understand/ai-benchmarks/"}]}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/home-resources-v3.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/cse.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/cse-editorial-v2.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/cse-reference.css?v=1.0">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+<link rel="stylesheet" href="/assets/css/artwork-free.css?v=1.0">
+<link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
+
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/social/site-en.png?v=f3cd4bd2">
+  <meta name="twitter:image:alt" content="AI &amp; Occupational Health — Dr Charles Broutin">
+  <link rel="stylesheet" href="/assets/css/page-answers.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.0">
+  <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
+  <script defer src="/assets/js/unified-navigation.js?v=8.1"></script>
+  <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
+  <script defer src="/assets/js/consent.js?v=1.1"></script>
+  <script src="/assets/js/language-routing.js?v=2.1"></script>
+</head>
+<body class="page-headings page-shell-v2 home-resources-v3 cse-page cse-editorial-v2">
+  <a class="skip-link" href="#contenu">Skip to main content</a>
+
+  <header class="site-system-header" id="site-header" data-navigation-version="8.1">
+    <nav class="system-nav" aria-label="Main navigation">
+      <a class="system-brand" href="/en/" aria-label="AI &amp; Occupational Health, home">
+        <span class="system-brand-mark" aria-hidden="true"></span>
+        <span class="system-brand-copy"><strong>AI &amp; Occupational Health</strong><small>Independent publication</small></span>
+      </a>
+      <div class="system-desktop-navigation"><div class="system-primary-links"><a class="system-nav-link" href="/en/pathways/understand/" aria-current="true">Understand</a><a class="system-nav-link" href="/en/pathways/collective-risks/">Collective risks</a><a class="system-nav-link" href="/en/pathways/prevent/">Prevent</a><a class="system-nav-link" href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a><a class="system-nav-link" href="/en/publications/">Research</a><a class="system-nav-link" href="/en/reading/">Reading</a><details class="system-nav-group"><summary>About<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown"><ul class="system-nav-list"><li><a href="/en/about/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Occupational physician, author of the site</span></a></li><li><a href="/en/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Published articles and preprint</span></a></li><li><a href="/en/actions/"><span class="system-nav-title">Talks</span><span class="system-nav-desc">Seminars, study days and conferences</span></a></li></ul></div></details></div></div>
+      <div class="system-nav-actions">
+        <button type="button" class="system-search-button" data-site-search aria-label="Search the site" title="Search the site (Ctrl K)"><svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="system-search-text">Search</span></button>
+        <a class="system-language-switch" href="/comprendre/benchmarks-ia/" lang="fr" hreflang="fr" aria-label="Voir cette page en français" title="Voir cette page en français">FR</a>
+        <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
+      </div>
+      <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
+        <div class="system-mobile-inner">
+          <button type="button" class="system-mobile-search" data-site-search>Search the site <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <a class="system-mobile-link" href="/en/pathways/understand/" aria-current="true">Understand</a><a class="system-mobile-link" href="/en/pathways/collective-risks/">Collective risks</a><a class="system-mobile-link" href="/en/pathways/prevent/">Prevent</a><a class="system-mobile-link" href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a><a class="system-mobile-link" href="/en/publications/">Research</a><a class="system-mobile-link" href="/en/reading/">Reading</a><details class="system-mobile-group"><summary>About<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-mobile-sublist"><ul class="system-nav-list"><li><a href="/en/about/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Occupational physician, author of the site</span></a></li><li><a href="/en/publications/"><span class="system-nav-title">Publications</span><span class="system-nav-desc">Published articles and preprint</span></a></li><li><a href="/en/actions/"><span class="system-nav-title">Talks</span><span class="system-nav-desc">Seminars, study days and conferences</span></a></li></ul></div></details>
+        </div>
+      </div>
+    </nav><nav class="page-nav" aria-label="Page summary">
+      <div class="page-nav-inner">
+        <span class="page-nav-label">On this page</span>
+        <div class="page-nav-links">
+<a href="#pourquoi">Why</a><a href="#sante-travail">Occupational health</a><a href="#questions">10 questions</a><a href="#autonomie">Autonomy</a><a href="#methode">Method</a><a href="#summary">Summary</a><a href="#faq">FAQ</a><a href="#cadre">Legal framework</a>
+</div>
+        <span class="page-progress" aria-hidden="true"><i></i></span>
+      </div>
+    </nav></header>
+
+  <main id="contenu">
+    <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
+      <div class="cse-hero-copy">
+        <p class="ref-crumb"><a href="/en/understand/">Understanding AI at work</a> / Short page</p>
+        <p class="cse-kicker cse-kicker-line">Understand · Short page</p>
+        <h1 id="hero-title">AI benchmarks: how to read a model leaderboard</h1>
+        <p class="cse-lede">A leaderboard says which model succeeds at a given test, not which one suits your work. This page summarises the families of tests, what each leaves out and the questions to ask before drawing a conclusion.</p>
+        <p class="cse-meta">By <a href="/en/about/">Dr Charles Broutin</a>, occupational physician · Updated on <time datetime="2026-11-13">13 November 2026</time></p>
+        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#benchmarks">Read the guide chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
+      </div>
+    </section>
+
+    <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">There is no universal leaderboard.</h2></div><p>A score describes a test, not your work.</p></div>
+      <div class="ref-prose"><div class="ref-answer"><span>Direct answer</span>
+        <p>There is no universal ranking of the “best model”. A benchmark measures performance on a set of tasks, with a given prompt, metric and conditions. Change one of these and the ranking can change.</p>
+        <p>None of these tests says which model suits your use: that is checked on your own tasks.</p>
+      </div>
+      <p class="ref-cite"><a href="/en/understand/#benchmarks">Guide, chapter 06</a></p></div>
+    </section>
+
+    <section class="cse-section ref-section-alt" id="families" aria-labelledby="families-title">
+      <div class="cse-heading"><div><p class="cse-kicker">01 / Families of tests</p><h2 id="families-title">Five families of tests, five limits.</h2></div><p>Knowing what a test measures also means knowing what it leaves out.</p></div>
+      <table class="ref-table"><thead><tr><th scope="col">Family</th><th scope="col">Principle and examples</th><th scope="col">Main limit</th></tr></thead><tbody>
+        <tr><td>Knowledge</td><td data-label="Principle and examples">Multiple-choice questions, marked automatically. Examples: MMLU, GPQA.</td><td data-label="Main limit">Highly exposed to contamination: the questions end up in the training data.</td></tr>
+        <tr><td>Real tasks</td><td data-label="Principle and examples">The model must produce a verifiable result: fix a program, deliver a project. Examples: SWE-bench, Remote Labor Index.</td><td data-label="Main limit">Costly to build and to score; they cover only part of a job.</td></tr>
+        <tr><td>Human preference</td><td data-label="Principle and examples">Two anonymous answers, one person votes. Example: LMArena.</td><td data-label="Main limit">Measures appeal as much as accuracy.</td></tr>
+        <tr><td>Autonomous behaviour</td><td data-label="Principle and examples">The model acts over time, with no expected answer at each step. Examples: METR’s time horizon, Vending-Bench.</td><td data-label="Main limit">No single “right answer”; the result depends heavily on the test set-up.</td></tr>
+        <tr><td>Occupation</td><td data-label="Principle and examples">A test built by professionals in the field. Examples: MedHELM in medicine; BenchMedTrav in occupational health, designed by the author of this site.</td><td data-label="Main limit">Closest to the job, but real deployment still has to be assessed.</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="cse-section" id="snapshot" aria-labelledby="snapshot-title">
+      <div class="cse-heading"><div><p class="cse-kicker">02 / Dated snapshot</p><h2 id="snapshot-title">The leader changes with the test.</h2></div><p>As of 13 November 2026, and soon out of date: follow the links for current results.</p></div>
+      <table class="ref-table"><thead><tr><th scope="col">Test</th><th scope="col">What it measures</th><th scope="col">Leader</th></tr></thead><tbody>
+        <tr><td><a href="https://epoch.ai/benchmarks/eci" target="_blank" rel="noreferrer">Capabilities Index (ECI) ↗</a> · Epoch AI</td><td data-label="What it measures">An aggregate of several dozen tests.</td><td data-label="Leader">Claude Fable 5.2</td></tr>
+        <tr><td><a href="https://artificialanalysis.ai/evaluations/gdpval-aa" target="_blank" rel="noreferrer">GDPval-AA ↗</a> · Artificial Analysis</td><td data-label="What it measures">Professional tasks, compared in pairs.</td><td data-label="Leader">Claude Opus 5.5</td></tr>
+        <tr><td><a href="https://arcprize.org/leaderboard" target="_blank" rel="noreferrer">ARC-AGI-3 ↗</a> · ARC Prize</td><td data-label="What it measures">Adaptation to novel environments, under the standard protocol.</td><td data-label="Leader">Claude Fable 5.2, with 81.2%</td></tr>
+      </tbody></table>
+      <div class="ref-note"><strong>Two precautions</strong><p>The gaps between the leaders are often smaller than the measurement uncertainty. And the score depends on the protocol: on ARC-AGI-3, with each provider’s own set-up, four models exceed 97%.</p></div>
+    </section>
+
+    <section class="cse-section ref-section-alt" id="questions" aria-labelledby="questions-title">
+      <div class="cse-heading"><div><p class="cse-kicker">03 / Method</p><h2 id="questions-title">Four questions before drawing a conclusion.</h2></div><p>To ask of any score, whatever the test.</p></div>
+      <div class="ref-grid">
+        <article><span>01 · Task</span><h3>Does the test resemble the intended work?</h3><p>Does the test really resemble the work the tool will have to do?</p></article>
+        <article><span>02 · Protocol</span><h3>Under what conditions?</h3><p>Which prompt, which tools, how many attempts and which model version?</p></article>
+        <article><span>03 · Measure</span><h3>What does the score capture?</h3><p>Does the score measure accuracy, preference, cost, speed or something else?</p></article>
+        <article><span>04 · Fragility</span><h3>What does the average hide?</h3><p>Could the data have been seen during training, and which errors are masked by the average?</p></article>
+      </div>
+    </section>
+
+    <section class="cse-section" id="at-work" aria-labelledby="at-work-title">
+      <div class="cse-heading"><div><p class="cse-kicker">04 / At work</p><h2 id="at-work-title">From score to use: two different assessments.</h2></div><p>A good technical score does not, by itself, predict good professional use.</p></div>
+      <div class="ref-grid">
+        <article><span>Assessing the model</span><h3>Does the system answer correctly?</h3><p>Accuracy on representative cases, frequent errors and serious errors, stability from one answer to the next, cost and delay, resistance to misleading inputs.</p></article>
+        <article><span>Assessing the deployment</span><h3>Is the work done better without creating new risks?</h3><p>Time actually saved, review included; final quality and handling of exceptions; responsibilities and means of appeal; workload, autonomy, skills and cooperation; effects observed before and after.</p><div><a href="/en/evaluate/">Assess an AI project →</a></div></article>
+      </div>
+      <div class="ref-note"><strong>Perceived gain, measured gain</strong><p>In a randomised trial run by METR in early 2025 with 16 experienced developers, they believed they were 20% faster with AI; they were measured 19% slower. A new measurement in late 2025 suggests a speed-up instead, which METR considers weak evidence. <a href="https://arxiv.org/abs/2507.09089" target="_blank" rel="noreferrer">Becker, Rush, Barnes et al., METR, 2025 ↗</a></p></div>
+    </section>
+
+    <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Three frequent questions.</h2></div><p>Short answers, drawn from the guide.</p></div>
+      <div class="faq-list">
+        <details open><summary>Which is the best AI model?</summary><div><p>There is no single answer: the leader changes with the test, and the gaps between the leaders are often smaller than the measurement uncertainty. The useful question is which model succeeds at your own tasks.</p></div></details><details><summary>What is benchmark contamination?</summary><div><p>It is when a test’s questions end up in the models’ training data. Multiple-choice knowledge tests are highly exposed to it: before drawing a conclusion, ask whether the data could have been seen during training.</p></div></details><details><summary>Are there benchmarks for occupational health?</summary><div><p>Tests built by professionals in the field are the closest to the job: MedHELM in medicine, or BenchMedTrav in occupational health, designed by the author of this site. Even closest to the job, real deployment still has to be assessed.</p></div></details>
+      </div>
+      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The figures dated November 2026 will go out of date: the guide is the version kept current.</p></div>
+      <div class="update-log" id="updates"><h3>Update log</h3><ol>
+        <li><time datetime="2026-11-13">13 November 2026</time><span>First version, drawn from the guide “Understanding AI at work” updated on 13 November 2026.</span></li>
+      </ol></div>
+    </section>
+
+    <section class="cse-section cse-related" id="related" aria-labelledby="related-title">
+      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div><p>The other short pages and the guides they summarise.</p></div>
+      <div class="ref-links">
+        <a href="/en/understand/llm/"><strong>What is an LLM?</strong><span>Definition, how a language model works and how it is built.</span></a>
+        <a href="/en/understand/agentic-ai/"><strong>Agentic AI</strong><span>What sets an agent apart, what is measured and which controls to plan.</span></a>
+        <a href="/en/understand/ai-hallucinations/"><strong>AI hallucinations</strong><span>Six persistent model errors and where to place the checks.</span></a>
+        <a href="/en/understand/agi/"><strong>AGI</strong><span>Definitions, measurements and what is at stake for work.</span></a>
+        <a href="/en/understand/"><strong>The full guide</strong><span>Eleven chapters, from AI systems to professional use, with their sources.</span></a>
+        <a href="/en/evaluate/"><strong>Assess an AI project</strong><span>The eighteen-question grid, before the pilot and during follow-up.</span></a>
+        <a href="/en/risks-prevention/"><strong>AI and psychosocial risks</strong><span>What AI changes in work organisation and health.</span></a>
+        <a href="/en/recommendations/"><strong>Recommendations by audience</strong><span>Pointers for action, according to your role.</span></a>
+        <a href="/en/reading/"><strong>Annotated readings</strong><span>Articles, studies and field reports read through psychosocial risk factors.</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-system-footer" id="site-footer" data-navigation-version="8.1">
+    <div class="system-footer-grid">
+      <div class="system-footer-intro"><a class="system-brand" href="/en/" aria-label="AI &amp; Occupational Health, home"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>AI &amp; Occupational Health</strong></span></a><p>Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.</p></div>
+      <nav class="system-footer-group" aria-labelledby="systemFooterUnderstand"><h2 id="systemFooterUnderstand">The pathways</h2><ul><li><a href="/en/#ai-safety">What is AI Safety?</a></li><li><a href="/en/pathways/understand/">Understand</a></li><li><a href="/en/pathways/collective-risks/">Collective risks</a></li><li><a href="/en/pathways/prevent/">Detect and prevent</a></li><li><a href="/en/pathways/ai-in-occupational-health/">AI in occupational health</a></li><li><a href="/en/publications/">Research</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterTools"><h2 id="systemFooterTools">Tools</h2><ul><li><a href="/en/evaluate/">Assess an AI project</a></li><li><a href="/en/cse/#questions">Works council checklist</a></li><li><a href="/en/legal-governance/#dossier">Pilot file</a></li><li><a href="/en/tools/prevention-fact-sheets/">Prevention fact sheets</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterSite"><h2 id="systemFooterSite">The site</h2><ul><li><a href="/en/about/">About</a></li><li><a href="/en/publications/">Publications</a></li><li><a href="/en/actions/">Talks</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (opens in a new tab)">Newsletter <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></nav>
+    </div>
+    <div class="system-footer-bottom">
+      <span>© 2026 AI &amp; Occupational Health — Independent editorial initiative.</span>
+      <span class="system-footer-legal"><a href="/comprendre/benchmarks-ia/" lang="fr" hreflang="fr">Version française</a><a href="/en/privacy/">Privacy</a><a href="/en/legal-notice/">Legal notice</a><button type="button" data-consent-open>Cookie settings</button></span>
+    </div></footer>
+</body>
+</html>

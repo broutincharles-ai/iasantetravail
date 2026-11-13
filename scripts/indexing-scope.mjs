@@ -31,6 +31,17 @@ export const INDEXABLE_PAIRS = [
   { fr: "publications/llm-risques-psychosociaux/index.html", en: "en/publications/llm-psychosocial-risks/index.html", lastmod: "2026-09-21" },
   { fr: "publications/sante-travail-securite-modeles-frontieres/index.html", en: "en/publications/occupational-health-frontier-ai-safety/index.html", lastmod: "2026-10-04" },
   { fr: "publications/sante-au-travail-enjeu-securite-ia/index.html", en: "en/publications/occupational-health-ai-safety-issue/index.html", lastmod: "2026-11-13" },
+  { fr: "comprendre/llm/index.html", en: "en/understand/llm/index.html", lastmod: "2026-11-13" },
+  { fr: "comprendre/ia-agentique/index.html", en: "en/understand/agentic-ai/index.html", lastmod: "2026-11-13" },
+  { fr: "comprendre/hallucinations-ia/index.html", en: "en/understand/ai-hallucinations/index.html", lastmod: "2026-11-13" },
+  { fr: "comprendre/benchmarks-ia/index.html", en: "en/understand/ai-benchmarks/index.html", lastmod: "2026-11-13" },
+  { fr: "comprendre/agi/index.html", en: "en/understand/agi/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/medecin-du-travail/index.html", en: "en/recommendations/occupational-physician/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/employeur/index.html", en: "en/recommendations/employer/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/preventeur/index.html", en: "en/recommendations/prevention-specialist/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/salarie/index.html", en: "en/recommendations/employee/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-13" },
+  { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-13" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" }
 ];
 
@@ -38,17 +49,6 @@ export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-10-05" },
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-13" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "comprendre/llm/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "comprendre/ia-agentique/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "comprendre/hallucinations-ia/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "comprendre/benchmarks-ia/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "comprendre/agi/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/employeur/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/preventeur/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/salarie/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/chercheur/index.html", lang: "fr", lastmod: "2026-11-13" },
-  { file: "recommandations/charte-ia/index.html", lang: "fr", lastmod: "2026-11-13" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
