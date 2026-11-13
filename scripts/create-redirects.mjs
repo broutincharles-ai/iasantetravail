@@ -35,7 +35,8 @@ const redirects = {
   "macroeconomie/index.html": "/risques-prevention/economique-social/",
   "accompagner-en-amont/index.html": "/ia-en-spst/",
   "en-pratique/index.html": "/ia-en-spst/",
-  "ia-préconisations/index.html": "/ia-en-spst/",
+  // Address printed in the INRS article (TF 335): it lands on the page about that study.
+  "ia-préconisations/index.html": "/publications/ia-preconisations-medicales/",
   "ia-rps/index.html": "/risques-prevention/psychosociaux/",
   "les-llms/index.html": "/comprendre/",
   "intelligence-artificielle/index.html": "/comprendre/",

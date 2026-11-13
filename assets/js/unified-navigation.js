@@ -24,6 +24,7 @@
     "/droit-gouvernance/": "/en/legal-governance/",
     "/cse/": "/en/cse/",
     "/cse/jurisprudence/": "/en/cse/case-law/",
+    "/publications/sante-au-travail-enjeu-securite-ia/": "/en/publications/occupational-health-ai-safety-issue/",
     "/lecture/": "/en/reading/",
     "/lecture/sante-travail-securite-ia/": "/en/reading/occupational-health-ai-safety/",
     "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
