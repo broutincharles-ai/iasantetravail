@@ -77,7 +77,7 @@ Le site est publié par GitHub Pages à partir de la branche `main`. `_config.ym
 Après une modification, depuis la racine du dépôt :
 
 1. `node scripts/render-static-navigation.mjs` : réécrit l’en-tête, le pied de page et les ressources communes du `<head>` de chaque page à partir de `assets/js/unified-navigation.js` (menu, libellés, liens) ;
-2. `node scripts/build-home-latest.mjs` : conservé pour les anciens gabarits ; il laisse inchangé le nouvel accueil AI Safety, où les lectures sont accessibles par le menu. `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ;
+2. `node scripts/build-home-latest.mjs` : conservé pour les anciens gabarits ; il laisse inchangé le nouvel accueil AI Safety, où les lectures sont accessibles par le menu. `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ; `node scripts/build-network-figure.mjs` : après une modification du script de la figure « réseau de neurones » de Comprendre, régénère l’image statique affichée sans JavaScript ;
 3. `node scripts/create-redirects.mjs` : après le retrait ou le déplacement d’une page, écrit une page de redirection à l’ancienne adresse ;
 4. `node scripts/enforce-indexing-scope.mjs` puis `node scripts/build-search-index.mjs` : indexation, sitemap et index de recherche, à partir de `scripts/indexing-scope.mjs` ;
 5. `node scripts/validate-site.mjs` : contrôle des liens, métadonnées, hreflang et règles du site. Il doit se terminer sans erreur avant publication.

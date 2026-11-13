@@ -8,6 +8,7 @@ Après une modification de page ou l’ajout d’une paire, suivre l’ordre dé
 node scripts/render-static-navigation.mjs
 node scripts/build-home-latest.mjs        # après une nouvelle lecture
 node scripts/build-chapter-toc.mjs        # après la réécriture d’un chapitre de Comprendre
+node scripts/build-network-figure.mjs     # après une modification du script de la figure « réseau de neurones »
 node scripts/create-redirects.mjs         # après le retrait ou le déplacement d’une page
 node scripts/enforce-indexing-scope.mjs
 node scripts/build-search-index.mjs
