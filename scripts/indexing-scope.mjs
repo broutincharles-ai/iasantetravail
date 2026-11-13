@@ -4,7 +4,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "parcours/risques-collectifs/index.html", en: "en/pathways/collective-risks/index.html", lastmod: "2026-11-11" },
   { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-11" },
   { fr: "parcours/ia-sante-travail/index.html", en: "en/pathways/ai-in-occupational-health/index.html", lastmod: "2026-11-11" },
-  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-10-05" },
+  { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-11-13" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-09-27" },
   { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-09-21" },
