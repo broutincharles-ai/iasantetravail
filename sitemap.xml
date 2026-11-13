@@ -338,28 +338,42 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/cse/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/cse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/cse/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/cse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/cse/jurisprudence/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/jurisprudence/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/cse/case-law/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/jurisprudence/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/cse/case-law/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/jurisprudence/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/cse/case-law/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/jurisprudence/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/a-propos/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/a-propos/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/a-propos/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/about/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/a-propos/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/a-propos/"/>
@@ -439,6 +453,18 @@
     <lastmod>2026-10-05</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/outils/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/cse/courrier-medecin-du-travail/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/cse/courrier-medecin-du-travail/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/cse/courrier-medecin-du-travail/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/risques-prevention/duerp/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/duerp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/duerp/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/outils/claude-skills/</loc>

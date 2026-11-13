@@ -23,8 +23,9 @@ export const INDEXABLE_PAIRS = [
   { fr: "lecture/ia-sens-metier-mathematiques/index.html", en: "en/reading/ai-meaning-work-mathematics/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/management-agentique/index.html", en: "en/reading/agentic-management/index.html", lastmod: "2026-09-21" },
   { fr: "lecture/travailleurs-ia-risques-psychosociaux/index.html", en: "en/reading/ai-workers-psychosocial-risks/index.html", lastmod: "2026-09-21" },
-  { fr: "cse/index.html", en: "en/cse/index.html", lastmod: "2026-09-21" },
-  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-09-21" },
+  { fr: "cse/index.html", en: "en/cse/index.html", lastmod: "2026-11-13" },
+  { fr: "cse/jurisprudence/index.html", en: "en/cse/case-law/index.html", lastmod: "2026-11-13" },
+  { fr: "a-propos/index.html", en: "en/about/index.html", lastmod: "2026-11-13" },
   { fr: "publications/index.html", en: "en/publications/index.html", lastmod: "2026-11-11" },
   { fr: "publications/ia-preconisations-medicales/index.html", en: "en/publications/ai-medical-recommendations/index.html", lastmod: "2026-09-21" },
   { fr: "publications/llm-risques-psychosociaux/index.html", en: "en/publications/llm-psychosocial-risks/index.html", lastmod: "2026-09-21" },
@@ -34,6 +35,8 @@ export const INDEXABLE_PAIRS = [
 
 export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-10-05" },
+  { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-13" },
+  { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-13" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-09-25" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
