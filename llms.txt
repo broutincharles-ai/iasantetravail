@@ -47,6 +47,17 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/recommandations/salarie/ — Repères pour les salariés : usage d’un outil d’IA, décisions automatisées, supervision, signaux d’alerte et interlocuteurs.
 - https://www.iasantetravail.com/recommandations/chercheur/ — Repères de méthode pour étudier l’IA au travail : référence humaine, benchmarks, niveaux de preuve.
 - https://www.iasantetravail.com/recommandations/charte-ia/ — Shadow IA et charte d’usage : repérer les usages non déclarés, contenu d’une charte IA, ce qu’elle ne remplace pas (CSE, DUERP).
+- https://www.iasantetravail.com/en/understand/llm/ — Short page: what an LLM is, how it produces an answer, how it is trained and what to check at work.
+- https://www.iasantetravail.com/en/understand/agentic-ai/ — Short page: definition of agentic AI, how agents work, measures of their autonomy and controls to plan.
+- https://www.iasantetravail.com/en/understand/ai-hallucinations/ — Short page: six persistent errors of language models, where they come from and the checks to plan at work.
+- https://www.iasantetravail.com/en/understand/ai-benchmarks/ — Short page: five families of benchmarks, their limits and four questions before concluding for professional use.
+- https://www.iasantetravail.com/en/understand/agi/ — Short page: definitions of AGI, measured and dated reference points, arguments on each side and what is at stake for work.
+- https://www.iasantetravail.com/en/recommendations/occupational-physician/ — Pointers for occupational physicians and nurses, as continuous reading.
+- https://www.iasantetravail.com/en/recommendations/employer/ — Five gates before deploying AI in a team: pointers for employers and HR.
+- https://www.iasantetravail.com/en/recommendations/prevention-specialist/ — Pointers for prevention specialists and ergonomists facing an AI project.
+- https://www.iasantetravail.com/en/recommendations/employee/ — Pointers for employees: using an AI tool, automated decisions, supervision, warning signs.
+- https://www.iasantetravail.com/en/recommendations/researcher/ — Methodological pointers for studying AI at work.
+- https://www.iasantetravail.com/en/recommendations/ai-charter/ — Shadow AI and usage charters: spotting undeclared uses, content of a charter, what it does not replace.
 - https://www.iasantetravail.com/en/recommendations/ — English version of the six good-practice flowcharts: occupational physicians and nurses (#physician-nurse), employers (#employer), works council members (#works-council), prevention specialists (#prevention-specialist), employees (#employee) and researchers (#researcher). Each recommendation links to the English page it comes from.
 - https://www.iasantetravail.com/lecture/ — Lectures commentées d’articles, d’études et de retours de terrain sur l’IA, les métiers et les conditions de travail.
 - https://www.iasantetravail.com/outils/ — Les outils du site : évaluer un projet d’IA, checklist CSE, dossier d’un pilote, matrice valeur / risque, fiches de prévention RPS, relecture des préconisations et Skills pour Claude.
