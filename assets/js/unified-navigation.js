@@ -23,6 +23,7 @@
     "/outils/fiches-prevention/": "/en/tools/prevention-fact-sheets/",
     "/droit-gouvernance/": "/en/legal-governance/",
     "/cse/": "/en/cse/",
+    "/cse/jurisprudence/": "/en/cse/case-law/",
     "/lecture/": "/en/reading/",
     "/lecture/sante-travail-securite-ia/": "/en/reading/occupational-health-ai-safety/",
     "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
@@ -74,7 +75,7 @@
             ["IA en santé au travail", "/parcours/ia-sante-travail/"], ["Recherche", "/publications/"]
           ] },
           { id: "systemFooterTools", title: "Outils", links: [
-            ["Évaluer un projet d’IA", "/evaluer/"], ["Relire une préconisation", "/outils/preconisations/"],
+            ["Évaluer un projet d’IA", "/evaluer/"], ["Checklist CSE", "/cse/#questions"], ["Relire une préconisation", "/outils/preconisations/"],
             ["Fiches de prévention", "/outils/fiches-prevention/"], ["Skills pour Claude", "/outils/claude-skills/"], ["Tous les outils", "/outils/"]
           ] },
           { id: "systemFooterSite", title: "Le site", links: [
