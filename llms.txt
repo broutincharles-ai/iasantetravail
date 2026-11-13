@@ -29,6 +29,11 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 - https://www.iasantetravail.com/ — Parcours principal pour comprendre les systèmes d’IA, identifier les risques, évaluer les usages, prévenir leurs effets et gouverner les déploiements en santé au travail.
 - https://www.iasantetravail.com/comprendre/ — Repères essentiels pour comprendre les systèmes d’IA et leurs usages professionnels, en onze chapitres.
+- https://www.iasantetravail.com/comprendre/llm/ — Fiche courte : ce qu’est un LLM, comment il fabrique une réponse, comment il est entraîné et ce qu’il faut vérifier au travail.
+- https://www.iasantetravail.com/comprendre/ia-agentique/ — Fiche courte : définition de l’IA agentique, fonctionnement des agents, mesures de leur autonomie (METR, Remote Labor Index) et contrôles à prévoir.
+- https://www.iasantetravail.com/comprendre/hallucinations-ia/ — Fiche courte : six erreurs persistantes des modèles de langage (fabulation, complaisance, injection de consignes…), leur origine et les vérifications au travail.
+- https://www.iasantetravail.com/comprendre/benchmarks-ia/ — Fiche courte : cinq familles de benchmarks, leurs limites et quatre questions avant de conclure pour un usage professionnel.
+- https://www.iasantetravail.com/comprendre/agi/ — Fiche courte : définitions de l’AGI, repères mesurés et datés, arguments en présence et enjeu pour la santé au travail.
 - https://www.iasantetravail.com/risques-prevention/ — Deux analyses complémentaires des risques liés à l’IA : le travail réel et la santé, puis l’économie et la société.
 - https://www.iasantetravail.com/ia-en-spst/ — Guide sur l’IA dans les services de prévention et de santé au travail (SPST) : cas d’usage, données de santé, AI Act, risques et méthode pour lancer un pilote.
 - https://www.iasantetravail.com/cse/ — Rôle du CSE face à l’IA : consultation, délais, expertise, recours, santé au travail, médecin du travail et checklist de 10 questions avant l’avis.
@@ -36,6 +41,12 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/cse/courrier-medecin-du-travail/ — Modèle de courrier du CSE au médecin du travail sur un projet d’IA, avec sa base légale.
 - https://www.iasantetravail.com/risques-prevention/duerp/ — IA et DUERP : quand mettre à jour le document unique, quels risques inscrire, rôle du CSE et du service de prévention et de santé au travail.
 - https://www.iasantetravail.com/recommandations/ — Six logigrammes de bonnes pratiques pour utiliser l’IA au travail, un par public : médecins et infirmiers en santé au travail (#medecin-infirmier), employeurs (#employeur), élus du CSE (#elu-cse), préventeurs (#preventeur), salariés (#salarie) et chercheurs (#chercheur). Chaque recommandation renvoie à la page du site dont elle est tirée.
+- https://www.iasantetravail.com/recommandations/medecin-du-travail/ — Repères pour médecins et infirmiers en santé au travail : accompagner une entreprise qui déploie une IA, utiliser l’IA dans son service.
+- https://www.iasantetravail.com/recommandations/employeur/ — Cinq portes avant de déployer une IA dans une équipe : besoin, usage, dialogue, pilote réversible, suivi.
+- https://www.iasantetravail.com/recommandations/preventeur/ — Repères pour préventeurs, IPRP et ergonomes : observer le travail réel, lire par les six axes de Gollac, proposer et suivre.
+- https://www.iasantetravail.com/recommandations/salarie/ — Repères pour les salariés : usage d’un outil d’IA, décisions automatisées, supervision, signaux d’alerte et interlocuteurs.
+- https://www.iasantetravail.com/recommandations/chercheur/ — Repères de méthode pour étudier l’IA au travail : référence humaine, benchmarks, niveaux de preuve.
+- https://www.iasantetravail.com/recommandations/charte-ia/ — Shadow IA et charte d’usage : repérer les usages non déclarés, contenu d’une charte IA, ce qu’elle ne remplace pas (CSE, DUERP).
 - https://www.iasantetravail.com/en/recommendations/ — English version of the six good-practice flowcharts: occupational physicians and nurses (#physician-nurse), employers (#employer), works council members (#works-council), prevention specialists (#prevention-specialist), employees (#employee) and researchers (#researcher). Each recommendation links to the English page it comes from.
 - https://www.iasantetravail.com/lecture/ — Lectures commentées d’articles, d’études et de retours de terrain sur l’IA, les métiers et les conditions de travail.
 - https://www.iasantetravail.com/outils/ — Les outils du site : évaluer un projet d’IA, checklist CSE, dossier d’un pilote, matrice valeur / risque, fiches de prévention RPS, relecture des préconisations et Skills pour Claude.

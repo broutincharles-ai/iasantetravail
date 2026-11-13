@@ -42,3 +42,15 @@ Google does not read IndexNow: for Google, use the URL inspection tool in Search
 ## Short answers and FAQ blocks
 
 `assets/css/page-answers.css` styles the short-answer panel (`.page-brief`), the FAQ (`.page-faq`), the table of axes (`.page-axes`) and the step lists of the audience pages (`.pa-steps`). It carries fallbacks for every colour and font, so it also works on guides that inline their tokens. When a visible FAQ changes, update the `FAQPage` node of the page's structured data so that both list the same questions.
+
+## Pages that restate another page
+
+Three groups of pages repeat content that is maintained elsewhere. When the source changes, update them in the same commit.
+
+- **Short pages of the guide** (`/comprendre/llm/`, `/comprendre/ia-agentique/`, `/comprendre/hallucinations-ia/`, `/comprendre/benchmarks-ia/`, `/comprendre/agi/`): each one summarises a chapter of `/comprendre/`. The dated figures (benchmark leaders, METR time horizon, Remote Labor Index, statements about AGI) come from the guide: change them in both places and add a line to the page's update log.
+- **Audience pages** (`/recommandations/medecin-du-travail/`, `/employeur/`, `/preventeur/`, `/salarie/`, `/chercheur/`): each one is the flowchart of `/recommandations/` in continuous reading. The questions, recommendations, legal references and sources must stay word for word those of the flowchart.
+- **Fact-sheet table** on `/outils/fiches-prevention/` and its English page: the changes, warning signs and DUERP questions come from the six axes of the psychosocial-risk page.
+
+`/recommandations/charte-ia/` draws on the SPST guide (Présanse charter, shadow AI), the flowcharts and the court-decision timeline: a new decision about a usage charter belongs there too.
+
+Hub pages (`/parcours/…`) repeat the heading of each page they list, in the link, its `aria-label` and the `ItemList` structured data: change all three when a heading changes.
