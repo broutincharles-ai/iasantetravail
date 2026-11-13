@@ -31,10 +31,10 @@ Avant publication, vérifier les interactions dans les deux langues et les mises
 
 ## IndexNow (Bing, Yandex and the engines that read it)
 
-The verification file `bbb34a9b3771d2722ca1bef46bccf955.txt` at the site root holds the IndexNow key. The key is public by design: search engines read that file to check that a submission comes from this site. After a publication, once GitHub Pages has deployed, send the canonical addresses that changed:
+The verification file `771b506613ae4c649b15e86f9ea26044.txt` at the site root holds the IndexNow key. The key is public by design: search engines read that file to check that a submission comes from this site. After a publication, once GitHub Pages has deployed, send the canonical addresses that changed:
 
 ```
-INDEXNOW_KEY=bbb34a9b3771d2722ca1bef46bccf955 node scripts/submit-indexnow.mjs https://www.iasantetravail.com/evaluer/ https://www.iasantetravail.com/comprendre/
+INDEXNOW_KEY=771b506613ae4c649b15e86f9ea26044 node scripts/submit-indexnow.mjs https://www.iasantetravail.com/evaluer/ https://www.iasantetravail.com/comprendre/
 ```
 
 Google does not read IndexNow: for Google, use the URL inspection tool in Search Console, or wait for the sitemap to be read again.
