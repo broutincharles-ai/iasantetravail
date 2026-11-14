@@ -194,6 +194,24 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
  #contenu.home-simulation .map-detail p{font-size:14px}
  #contenu.home-simulation .map-systemic-risks{grid-template-columns:1fr;gap:18px}
 }
+/* Keep the chart and its explanation together within a desktop viewport. */
+@container(min-width:761px){
+ #contenu.home-simulation .ambition-map{grid-template-columns:minmax(0,1fr) 46px minmax(0,min(900px,calc((100svh - 430px)*1.85))) minmax(0,1fr)}
+ #contenu.home-simulation .map-y{grid-column:2}
+ #contenu.home-simulation .map-canvas{grid-column:3;min-height:340px}
+ #contenu.home-simulation .map-x{grid-column:3}
+ #contenu.home-simulation .map-zone{gap:8px;padding-block:8px}
+ #contenu.home-simulation .zone-name{font-size:clamp(18px,1.65cqw,24px)}
+ #contenu.home-simulation .zone-hidden{top:74%}
+ #contenu.home-simulation .zone-standstill{top:70%}
+ #contenu.home-simulation .map-systemic-risks{margin-top:12px;padding-top:12px}
+ #contenu.home-simulation .map-detail{margin-top:12px;padding-top:12px;min-height:0}
+ #contenu.home-simulation .ambition-map figcaption{margin-top:10px}
+ @media(max-height:850px){
+  #contenu.home-simulation .map-canvas{min-height:280px}
+  #contenu.home-simulation .zone-short{display:none}
+ }
+}
 @media(prefers-reduced-motion:reduce){#contenu.home-simulation *{transition:none!important;scroll-behavior:auto!important}}
 
 /* Preserve the site's reading comfort while retaining the reference layout. */
