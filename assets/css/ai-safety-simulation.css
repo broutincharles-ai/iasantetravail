@@ -114,7 +114,7 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .labs .text-link{margin-top:24px}
 #contenu.home-simulation .update-note{padding:20px var(--gutter);font-size:11px;color:var(--muted);border-bottom:1px solid var(--line)}
 #contenu.home-simulation .safety-map{background:var(--light);color:var(--ink)}
-#contenu.home-simulation .ambition-map{display:grid;grid-template-columns:46px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:14px;margin:0;padding:0}
+#contenu.home-simulation .ambition-map{display:grid;grid-template-columns:46px minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:14px;margin:0;padding:0}
 #contenu.home-simulation .map-y{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);gap:8px;font-size:20px;line-height:1.25}
 #contenu.home-simulation .map-y>span{font-size:11px;color:var(--muted)}
 #contenu.home-simulation .map-canvas{grid-column:2;grid-row:1;position:relative;min-width:0;aspect-ratio:1.85;background:var(--wash);isolation:isolate}
@@ -123,8 +123,6 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .map-zone{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:26%;padding:10px 8px;text-align:left;border:0;background:transparent;color:var(--ink);font-family:"Instrument Sans",Arial,sans-serif;line-height:1.4}
 #contenu.home-simulation .zone-name{font-size:clamp(16px,2.1cqw,27px);font-weight:600;line-height:1.12}
 #contenu.home-simulation .zone-short{font-size:12px;max-width:15em;line-height:1.45}
-#contenu.home-simulation .map-zone[aria-pressed=true] .zone-name{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
-#contenu.home-simulation .map-zone:hover .zone-name{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 #contenu.home-simulation .zone-risk{left:2%;top:4%;color:var(--paper)}
 #contenu.home-simulation .zone-late{left:31%;top:4%}
 #contenu.home-simulation .zone-safe{left:72%;top:4%;color:var(--paper)}
@@ -139,10 +137,6 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .map-systemic-risks a{display:block;font-size:14px;line-height:1.5}
 #contenu.home-simulation .map-systemic-risks strong{display:block;color:var(--terra);font-weight:600}
 #contenu.home-simulation .map-systemic-risks span{display:block;margin-top:5px;font-size:12px;color:var(--muted)}
-#contenu.home-simulation .map-detail{grid-column:1/-1;display:grid;grid-template-columns:.65fr 1.35fr;gap:30px;align-items:start;border-top:1px solid var(--line);margin-top:30px;padding-top:25px;min-height:100px}
-#contenu.home-simulation .map-detail h3{font:400 28px/1.2 Newsreader,Georgia,serif;color:var(--green)}
-#contenu.home-simulation .map-detail p{font-size:15px;color:var(--ink)}
-#contenu.home-simulation .ambition-map figcaption{grid-column:1/-1;font-size:12px;line-height:1.65;color:var(--muted);margin-top:20px}
 @container(max-width:760px){
  #contenu.home-simulation .hero-support{gap:35px}
  #contenu.home-simulation .section-header,#contenu.home-simulation .thesis,#contenu.home-simulation .professional-grid,#contenu.home-simulation .labs{gap:34px}
@@ -189,41 +183,37 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
  #contenu.home-simulation .zone-standstill{left:71%}
  #contenu.home-simulation .map-x>strong{font-size:16px}
  #contenu.home-simulation .map-x>span{font-size:11px}
- #contenu.home-simulation .map-detail{grid-template-columns:1fr;gap:12px;margin-top:24px;min-height:0}
- #contenu.home-simulation .map-detail h3{font-size:25px}
- #contenu.home-simulation .map-detail p{font-size:14px}
  #contenu.home-simulation .map-systemic-risks{grid-template-columns:1fr;gap:18px}
 }
-/* Keep the chart and its explanation together within a desktop viewport. */
+/* A larger chart, with room for its axes and the two risk links on desktop. */
 @container(min-width:761px){
- #contenu.home-simulation .ambition-map{grid-template-columns:minmax(0,1fr) 46px minmax(0,min(900px,calc((100svh - 430px)*1.85))) minmax(0,1fr)}
+ #contenu.home-simulation .ambition-map{grid-template-columns:minmax(0,1fr) 46px minmax(0,min(1120px,calc((100svh - 280px)*1.85))) minmax(0,1fr)}
  #contenu.home-simulation .map-y{grid-column:2}
  #contenu.home-simulation .map-canvas{grid-column:3;min-height:340px}
  #contenu.home-simulation .map-x{grid-column:3}
  #contenu.home-simulation .map-zone{gap:8px;padding-block:8px}
- #contenu.home-simulation .zone-name{font-size:clamp(18px,1.65cqw,24px)}
+ #contenu.home-simulation .zone-name{font-size:clamp(18px,1.9cqw,26px)}
  #contenu.home-simulation .zone-hidden{top:74%}
  #contenu.home-simulation .zone-standstill{top:70%}
  #contenu.home-simulation .map-systemic-risks{margin-top:12px;padding-top:12px}
- #contenu.home-simulation .map-detail{margin-top:12px;padding-top:12px;min-height:0}
- #contenu.home-simulation .ambition-map figcaption{margin-top:10px}
- @media(max-height:850px){
+ @media(max-height:760px){
   #contenu.home-simulation .map-canvas{min-height:280px}
   #contenu.home-simulation .zone-short{display:none}
  }
+}
+@container(min-width:761px) and (max-width:1000px){
+ #contenu.home-simulation .zone-short{display:none}
 }
 @media(prefers-reduced-motion:reduce){#contenu.home-simulation *{transition:none!important;scroll-behavior:auto!important}}
 
 /* Preserve the site's reading comfort while retaining the reference layout. */
 #contenu.home-simulation .intro{font-size:17px}
 #contenu.home-simulation .hero-signature,#contenu.home-simulation .update-note{font-size:13px}
-#contenu.home-simulation .limits,#contenu.home-simulation .thesis-note,#contenu.home-simulation .lab-limits,#contenu.home-simulation .source-inline,#contenu.home-simulation .ambition-map figcaption{font-size:14px!important}
+#contenu.home-simulation .limits,#contenu.home-simulation .thesis-note,#contenu.home-simulation .lab-limits,#contenu.home-simulation .source-inline{font-size:14px!important}
 #contenu.home-simulation .map-zone{min-height:44px}
 #contenu.home-simulation .phase-control{cursor:pointer}
 #contenu.home-simulation .phase-control:hover{text-decoration:none}
 #contenu.home-simulation .phase-control small{color:inherit}
-#contenu.home-simulation .map-fallback{margin-top:24px}
-#contenu.home-simulation .map-fallback h3{margin-top:24px}
 @media print{
  #contenu.home-simulation{container-type:normal}
  #contenu.home-simulation .hero,#contenu.home-simulation #laboratoires{background:white;color:#171a18}
