@@ -36,7 +36,7 @@
 <meta content="IA &amp; Santé au Travail — Dr Charles Broutin" property="og:image:alt"/>
 <meta content="https://www.iasantetravail.com/assets/images/social/site-fr.png?v=fd387918" name="twitter:image"/>
 <meta content="IA &amp; Santé au Travail — Dr Charles Broutin" name="twitter:image:alt"/>
-<link href="/assets/css/ai-safety-simulation.css?v=1.2" rel="stylesheet"/><script defer="" src="/assets/js/ai-safety-home.js?v=1.0"></script>
+<link href="/assets/css/ai-safety-simulation.css?v=1.3" rel="stylesheet"/><script defer="" src="/assets/js/ai-safety-home.js?v=1.0"></script>
   <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.0">
@@ -45,6 +45,7 @@
   <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
   <script defer src="/assets/js/consent.js?v=1.1"></script>
   <script src="/assets/js/language-routing.js?v=2.1"></script>
+  <script defer src="/assets/js/home-map-tooltips.js?v=1.0"></script>
 </head>
 <body class="ai-safety-home simulation-home"><a class="skip-link" href="#contenu">Aller au contenu</a><header class="site-system-header" id="site-header" data-navigation-version="8.1">
     <nav class="system-nav" aria-label="Navigation principale">
@@ -97,12 +98,18 @@
         <path d="M0 287 V0 H268 C266 100 265 180 215 208 C154 241 81 258 0 287Z" fill="#87301f"/>
         <path d="M693 0 H1000 V189 C881 182 811 178 758 197 C695 220 673 202 681 165 C693 113 695 64 693 0Z" fill="#1f3730"/>
       </svg>
-      <div class="map-zone zone-risk"><span class="zone-name">Far West<br>algorith<wbr>mique</span><span class="zone-short">RPS diffusés, pouvoir concentré.</span></div>
-      <div class="map-zone zone-late"><span class="zone-name">Pilotes en<br>roue libre</span><span class="zone-short">Des effets collectifs mal anticipés.</span></div>
-      <div class="map-zone zone-safe"><span class="zone-name">IA<br>capacitante</span><span class="zone-short">Santé et pouvoir d’agir.</span></div>
-      <div class="map-zone zone-tempo"><span class="zone-name">Le bon<br>tempo</span><span class="zone-short">Prévenir avant de généraliser.</span></div>
-      <div class="map-zone zone-hidden"><span class="zone-name">Mode<br>autruche</span><span class="zone-short">Usages cachés, risques invisibles.</span></div>
-      <div class="map-zone zone-standstill"><span class="zone-name">Comité de pilotage<br>perpétuel</span><span class="zone-short">Des principes à éprouver sur le terrain.</span></div>
+      <button type="button" class="map-zone zone-risk" aria-describedby="map-tooltip-risk"><span class="zone-name">Far West<br>algorith<wbr>mique</span><span class="zone-short">RPS diffusés, pouvoir concentré.</span></button>
+      <div class="map-tooltip" id="map-tooltip-risk" role="tooltip" hidden><strong class="map-tooltip-title">Far West algorithmique</strong><p>L’IA se déploie vite, avec peu de prévention. Cadences, surveillance et dépendance aux outils peuvent s’accroître, au détriment de la santé, des compétences et du pouvoir de négociation des travailleurs.</p></div>
+      <button type="button" class="map-zone zone-late" aria-describedby="map-tooltip-late"><span class="zone-name">Pilotes en<br>roue libre</span><span class="zone-short">Des effets collectifs mal anticipés.</span></button>
+      <div class="map-tooltip" id="map-tooltip-late" role="tooltip" hidden><strong class="map-tooltip-title">Pilotes en roue libre</strong><p>Les projets pilotes se multiplient sans assez observer le travail réel. Le temps de vérification, les corrections et les nouvelles responsabilités risquent de passer inaperçus avant la généralisation.</p></div>
+      <button type="button" class="map-zone zone-safe" aria-describedby="map-tooltip-safe"><span class="zone-name">IA<br>capacitante</span><span class="zone-short">Santé et pouvoir d’agir.</span></button>
+      <div class="map-tooltip" id="map-tooltip-safe" role="tooltip" hidden><strong class="map-tooltip-title">IA capacitante</strong><p>L’IA vise à alléger la charge et à renforcer la capacité d’agir. Les travailleurs participent aux choix, conservent leurs compétences et peuvent peser sur le partage des gains.</p></div>
+      <button type="button" class="map-zone zone-tempo" aria-describedby="map-tooltip-tempo"><span class="zone-name">Le bon<br>tempo</span><span class="zone-short">Prévenir avant de généraliser.</span></button>
+      <div class="map-tooltip" id="map-tooltip-tempo" role="tooltip" hidden><strong class="map-tooltip-title">Le bon tempo</strong><p>On expérimente avec les salariés, puis on observe les effets sur la charge, l’autonomie et les compétences. Le déploiement progresse au rythme des ajustements et des garanties de prévention.</p></div>
+      <button type="button" class="map-zone zone-hidden" aria-describedby="map-tooltip-hidden"><span class="zone-name">Mode<br>autruche</span><span class="zone-short">Usages cachés, risques invisibles.</span></button>
+      <div class="map-tooltip" id="map-tooltip-hidden" role="tooltip" hidden><strong class="map-tooltip-title">Mode autruche</strong><p>Peu de projets officiels ne signifie pas absence d’IA. Des usages informels peuvent rester invisibles, avec des effets sur la charge, les compétences et les décisions qui ne sont ni discutés ni suivis.</p></div>
+      <button type="button" class="map-zone zone-standstill" aria-describedby="map-tooltip-standstill"><span class="zone-name">Comité de pilotage<br>perpétuel</span><span class="zone-short">Des principes à éprouver sur le terrain.</span></button>
+      <div class="map-tooltip" id="map-tooltip-standstill" role="tooltip" hidden><strong class="map-tooltip-title">Comité de pilotage perpétuel</strong><p>Les principes et les comités ne suffisent pas à prévenir les risques. Des essais limités, suivis avec les travailleurs, permettent de confronter les règles au terrain et d’ajuster les décisions.</p></div>
     </div>
     <div class="map-x"><div class="map-x-range"><span>Faible</span><span>Forte</span></div><strong>Prévention et santé au travail</strong><span>Évaluation des risques, dialogue social, capacité d’agir et de corriger</span></div>
     <div class="map-systemic-risks" aria-label="Deux risques systémiques à prévenir"><a href="#sante-publique"><strong>Risque de santé publique</strong><span>Diffusion des RPS et de leurs effets sur la santé.</span></a><a href="#disempowerment"><strong>Perte de pouvoir économique et social</strong><span>Dépendance accrue, compétences et pouvoir de négociation fragilisés.</span></a></div>
