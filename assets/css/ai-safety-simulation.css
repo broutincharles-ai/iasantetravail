@@ -19,7 +19,7 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .hero-inner{padding:62px var(--gutter) 28px}
 #contenu.home-simulation .eyebrow,#contenu.home-simulation .label{display:block;font-size:11px;font-weight:500;line-height:1.5;letter-spacing:.11em;text-transform:uppercase}
 #contenu.home-simulation .hero .eyebrow{margin-bottom:38px;color:var(--paper)}
-#contenu.home-simulation h1{font:500 clamp(50px,8.3cqw,120px)/1.02 Newsreader,Georgia,serif;letter-spacing:-.045em;max-width:17em;margin-bottom:39px;text-wrap:balance}
+#contenu.home-simulation h1{font:400 clamp(48px,7.1cqw,104px)/1.06 Newsreader,Georgia,serif;letter-spacing:-.035em;max-width:17em;margin-bottom:39px;text-wrap:balance}
 #contenu.home-simulation h1 em{font-weight:400}
 #contenu.home-simulation .hero-support{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
 #contenu.home-simulation .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
@@ -152,7 +152,7 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 @container(max-width:570px){
  #contenu.home-simulation .hero-inner{padding-top:42px}
  #contenu.home-simulation .hero .eyebrow{font-size:10px;max-width:27em;margin-bottom:30px}
- #contenu.home-simulation h1{font-size:clamp(43px,10cqw,57px);letter-spacing:-.045em;margin-bottom:32px}
+ #contenu.home-simulation h1{font-size:clamp(40px,10cqw,54px);letter-spacing:-.035em;margin-bottom:32px}
  #contenu.home-simulation .hero-support{display:flex;flex-direction:column-reverse;gap:30px}
  #contenu.home-simulation .intro{font-size:15px}
  #contenu.home-simulation .hero-signature{font-size:10px;margin-top:34px}
