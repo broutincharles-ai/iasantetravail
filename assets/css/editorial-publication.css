@@ -1,0 +1,76 @@
+/* A focused publication page: reference, abstract and two onward links. */
+body.editorial-publication {
+  --page-title-size: clamp(35px, 4.7vw, 64px);
+  background: var(--paper-light);
+}
+.editorial-main {
+  width: min(1040px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: clamp(40px, 5vw, 68px) 60px;
+}
+.editorial-intro { text-align: center; }
+.editorial-intro h1 { margin-block: 0 26px; }
+.editorial-authors { margin: 0 0 16px; font-size: 18px; }
+.editorial-authors a { text-underline-offset: .2em; }
+.editorial-reference { color: var(--muted); font-size: 14px; }
+.editorial-reference p { margin: 5px 0; overflow-wrap: anywhere; }
+.editorial-source {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 46px;
+  margin-top: 23px;
+  padding: 10px 18px;
+  border: 1px solid var(--line-strong);
+  color: var(--terra-interactive);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.editorial-source:hover { border-color: currentColor; }
+.editorial-abstract {
+  max-width: 780px;
+  margin: 42px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 125px;
+}
+.editorial-abstract h2 {
+  margin: 0;
+  font-size: clamp(32px, 3vw, 42px);
+  line-height: 1.15;
+  text-align: center;
+}
+.editorial-summary-note { margin: 8px 0 26px; color: var(--muted); font-size: 14px; text-align: center; }
+.editorial-prose p {
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.75;
+  text-align: justify;
+  text-align-last: start;
+  text-wrap: pretty;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.editorial-next {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 32px;
+  max-width: 780px;
+  margin: 34px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.editorial-next a { color: var(--terra-interactive); font-size: 15px; text-underline-offset: .2em; }
+.editorial-next span { display: inline-block; margin-left: 6px; }
+@media (max-width: 600px) {
+  .editorial-main { width: calc(100% - 40px); padding-block: 36px 42px; }
+  .editorial-authors { font-size: 16px; }
+  .editorial-abstract { margin-top: 32px; padding-top: 26px; scroll-margin-top: 84px; }
+  .editorial-prose p { font-size: 16px; line-height: 1.7; }
+  .editorial-next { flex-direction: column; gap: 20px; }
+}
