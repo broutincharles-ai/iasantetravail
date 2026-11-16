@@ -71,7 +71,6 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/en/evaluate/ — English version of the assessment tool: 18 questions on nine work-related axes, before the pilot and at follow-up.
 - https://www.iasantetravail.com/droit-gouvernance/ — Guide sur l’AI Act, le RGPD, le CSE, le DUERP et la gouvernance de l’IA au travail.
 - https://www.iasantetravail.com/risques-prevention/psychosociaux/ — Données et mécanismes reliant l’IA, l’organisation du travail et les risques psychosociaux.
-- https://www.iasantetravail.com/risques-prevention/economique-social/ — Comment l’IA pourrait réduire la place économique du travail humain, et les signaux que la santé au travail peut observer dès aujourd’hui.
 - https://www.iasantetravail.com/en/ — English edition of the website: understand how AI affects work, assess its uses and prevent risks to health.
 - https://www.iasantetravail.com/a-propos/ — Charles Broutin : démarche à l’interface de la santé au travail et de la sécurité de l’IA, travaux et parcours. English: https://www.iasantetravail.com/en/about/
 
