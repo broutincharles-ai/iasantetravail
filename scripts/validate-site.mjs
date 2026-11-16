@@ -102,6 +102,18 @@ for (const file of htmlFiles) {
   const duplicates = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   if (duplicates.length) errors.push(`${path.relative(root, file)}: duplicate id(s): ${duplicates.join(", ")}`);
 
+  // A page-specific table of contents must point to sections on this page.
+  for (const nav of markup.matchAll(/<nav\b[^>]*class=["']page-nav["'][^>]*>([\s\S]*?)<\/nav>/gi)) {
+    if (!/class=["']page-nav-inner["']/.test(nav[1]) || !/class=["']page-nav-links["']/.test(nav[1])) {
+      errors.push(`${relative}: page navigation is missing its shared layout`);
+    }
+    for (const link of nav[1].matchAll(/href=["']#([^"']+)["']/gi)) {
+      if (!ids.includes(decodeURIComponent(link[1]))) {
+        errors.push(`${relative}: page navigation points to missing #${link[1]}`);
+      }
+    }
+  }
+
   const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
   const shouldIndex = INDEXABLE_FILES.has(relative);
   if (shouldIndex && hasNoindex) errors.push(`${relative}: allowlisted page must be indexable`);

@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.2">
+  <link rel="stylesheet" href="/assets/css/editorial-consistency.css?v=1.0">
   <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
   <script defer src="/assets/js/unified-navigation.js?v=8.4"></script>
   <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
@@ -73,13 +74,7 @@
           <a class="system-mobile-link is-primary" href="/securite-ia/">Sécurité de l’IA</a><a class="system-mobile-link is-primary" href="/parcours/risques-collectifs/">Risques collectifs</a><a class="system-mobile-link is-primary" href="/parcours/prevenir/" aria-current="true">Prévenir</a><a class="system-mobile-link is-secondary has-divider" href="/publications/">Recherche</a><a class="system-mobile-link is-secondary" href="/lecture/">Lectures</a><details class="system-mobile-group is-secondary"><summary>À propos<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-mobile-sublist"><ul class="system-nav-list"><li><a href="/a-propos/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Médecin du travail, auteur du site</span></a></li><li><a href="/actions/"><span class="system-nav-title">Interventions</span><span class="system-nav-desc">Séminaires, journées et colloques</span></a></li></ul></div></details>
         </div>
       </div>
-    </nav><nav class="page-nav" aria-label="Sommaire de la page">
-      <div class="page-nav-inner">
-        <span class="page-nav-label">Sur cette page</span>
-        <div class="page-nav-links"><a href="#pourquoi">Pourquoi</a><a href="#sante-travail">Santé au travail</a><a href="#questions">10 questions</a><a href="#autonomie">Autonomie</a><a href="#methode">Méthode</a><a href="#synthese">Synthèse</a><a href="#faq">FAQ</a><a href="#cadre">Cadre juridique</a></div>
-        <span class="page-progress" aria-hidden="true"><i></i></span>
-      </div>
-    </nav></header>
+    </nav><nav class="page-nav" aria-label="Sur cette page"><div class="page-nav-inner"><span class="page-nav-label">Sur cette page</span><div class="page-nav-links"><a href="#essentiel">L’essentiel</a><a href="#fonctionnement">Fonctionnement</a><a href="#fabrication">Entraînement</a><a href="#travail">Au travail</a><a href="#faq">Questions fréquentes</a><a href="#dossier">Ressources</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header>
 
   <main id="contenu">
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
@@ -87,14 +82,14 @@
         <p class="ref-crumb"><a href="/comprendre/">Comprendre l’IA au travail</a> / Fiche courte</p>
         <p class="cse-kicker cse-kicker-line">Comprendre · Fiche courte</p>
         <h1 id="hero-title">Qu’est-ce qu’un LLM&nbsp;?</h1>
-        <p class="cse-lede">Un grand modèle de langage compose sa réponse en prévoyant, pas à pas, la suite la plus probable d’un texte. Cette fiche résume son fonctionnement, sa fabrication et ce que cela change pour un usage professionnel.</p>
+        <p class="cse-lede">Comment un modèle de langage produit une réponse, comment il est entraîné et ce qu’il faut vérifier avant de s’y fier.</p>
         <p class="cse-meta">Par le <a href="/a-propos/">Dr Charles Broutin</a>, médecin du travail · Mis à jour le <time datetime="2026-11-13">13 novembre 2026</time></p>
         <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#llm">Lire le chapitre du guide <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentiel" aria-labelledby="essentiel-title">
-      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Un LLM prévoit la suite d’un texte.</h2></div><p>La définition, puis ce qu’elle implique.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Un LLM prévoit la suite d’un texte.</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>Réponse directe</span>
         <p>Un grand modèle de langage, ou LLM (<span lang="en">large language model</span>), est un réseau de neurones entraîné à prévoir la suite d’un texte. Il ne cherche pas une réponse toute faite dans une base de données&nbsp;: il la compose, unité après unité.</p>
         <p>Il calcule des probabilités à partir du contexte&nbsp;; il ne vérifie pas spontanément la vérité ni la conformité de sa réponse.</p>
@@ -133,7 +128,7 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Trois questions fréquentes.</h2></div><p>Des réponses courtes, tirées du guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div><p>Des réponses courtes, tirées du guide.</p></div>
       <div class="faq-list">
         <details open><summary>Un LLM va-t-il chercher ses réponses dans une base de données&nbsp;?</summary><div><p>Pas par lui-même&nbsp;: il compose sa réponse à partir de ce qu’il a appris et de ce qui figure dans sa fenêtre de contexte. Un outil peut en revanche lui fournir des extraits retrouvés dans une base documentaire (RAG) ou sur le web. Ce qui n’entre pas dans cette fenêtre n’existe pas pour lui.</p></div></details><details><summary>Pourquoi la même question donne-t-elle des réponses différentes&nbsp;?</summary><div><p>La génération est probabiliste et sensible à la formulation, à l’ordre des documents et à la version du modèle. Avec une température basse, les réponses sont stables, parfois répétitives&nbsp;; avec une température élevée, elles varient davantage. D’où l’intérêt de tester plusieurs fois, de dater les essais et de consigner la version utilisée.</p></div></details><details><summary>Quelle différence entre un modèle fermé et un modèle à poids ouverts&nbsp;?</summary><div><p>Un modèle fermé ne s’utilise qu’à distance, sur l’infrastructure du fournisseur. Un modèle à poids ouverts peut être installé sur des serveurs maîtrisés, ce qui donne la maîtrise du trajet des données. Les plus grands exigent toutefois une infrastructure de centre de données.</p></div></details>
       </div>

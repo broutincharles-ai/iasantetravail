@@ -31,6 +31,7 @@ const ASSETS = {
   fontsCss: "/assets/css/fonts.css?v=1.0",
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
   readabilityCss: "/assets/css/readability.css?v=1.0",
+  editorialCss: "/assets/css/editorial-consistency.css?v=1.0",
   shellCss: "/assets/css/unified-navigation.css?v=8.2",
   nojsCss: "/assets/css/navigation-nojs.css?v=2.1",
   appShellCss: "/assets/css/preconisations-shell.css?v=1.2",
@@ -56,7 +57,7 @@ function normaliseHead(html, { app }) {
     .replace(/[ \t]*<noscript>\s*<link\b[^>]*navigation-nojs\.css[^>]*>\s*<\/noscript>[ \t]*\n?/gi, "");
 
   for (const file of [
-    "assets/css/fonts.css", "assets/css/ux-improvements.css", "assets/css/readability.css",
+    "assets/css/fonts.css", "assets/css/ux-improvements.css", "assets/css/readability.css", "assets/css/editorial-consistency.css",
     "assets/css/unified-navigation.css", "assets/css/navigation-nojs.css", "assets/css/preconisations-shell.css",
     "assets/js/unified-navigation.js", "assets/js/ux-improvements.js", "assets/js/consent.js",
     "assets/js/language-routing.js", "assets/js/site-shell.js"
@@ -76,6 +77,7 @@ function normaliseHead(html, { app }) {
     ...(app ? [] : [`<link rel="stylesheet" href="${ASSETS.readabilityCss}">`]),
     `<link rel="stylesheet" href="${ASSETS.shellCss}">`,
     ...(app ? [`<link rel="stylesheet" href="${ASSETS.appShellCss}">`] : []),
+    `<link rel="stylesheet" href="${ASSETS.editorialCss}">`,
     `<noscript><link rel="stylesheet" href="${ASSETS.nojsCss}"></noscript>`,
     `<script defer src="${ASSETS.navJs}"></script>`,
     `<script defer src="${ASSETS.uxJs}"></script>`,

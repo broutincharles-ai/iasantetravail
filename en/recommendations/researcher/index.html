@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
   <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
   <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.2">
+  <link rel="stylesheet" href="/assets/css/editorial-consistency.css?v=1.0">
   <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
   <script defer src="/assets/js/unified-navigation.js?v=8.4"></script>
   <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
@@ -73,15 +74,7 @@
           <a class="system-mobile-link is-primary" href="/en/ai-safety/">AI safety</a><a class="system-mobile-link is-primary" href="/en/pathways/collective-risks/">Collective risks</a><a class="system-mobile-link is-primary" href="/en/pathways/prevent/" aria-current="true">Prevent</a><a class="system-mobile-link is-secondary has-divider" href="/en/publications/">Research</a><a class="system-mobile-link is-secondary" href="/en/reading/">Reading</a><details class="system-mobile-group is-secondary"><summary>About<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-mobile-sublist"><ul class="system-nav-list"><li><a href="/en/about/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Occupational physician, author of the site</span></a></li><li><a href="/en/actions/"><span class="system-nav-title">Talks</span><span class="system-nav-desc">Seminars, study days and conferences</span></a></li></ul></div></details>
         </div>
       </div>
-    </nav><nav class="page-nav" aria-label="Page summary">
-      <div class="page-nav-inner">
-        <span class="page-nav-label">On this page</span>
-        <div class="page-nav-links">
-<a href="#pourquoi">Why</a><a href="#sante-travail">Occupational health</a><a href="#questions">10 questions</a><a href="#autonomie">Autonomy</a><a href="#methode">Method</a><a href="#summary">Summary</a><a href="#faq">FAQ</a><a href="#cadre">Legal framework</a>
-</div>
-        <span class="page-progress" aria-hidden="true"><i></i></span>
-      </div>
-    </nav></header>
+    </nav><nav class="page-nav" aria-label="On this page"><div class="page-nav-inner"><span class="page-nav-label">On this page</span><div class="page-nav-links"><a href="#essentials">Essentials</a><a href="#pathway">Prevention</a><a href="#tools">Tools</a><a href="#faq">Questions</a><a href="#related">Resources</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header>
 
   <main id="contenu">
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
@@ -96,7 +89,7 @@
     </section>
 
     <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
-      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">The principle, and what holds in every case.</h2></div><p>The steps that depend on no answer.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">Essential guidance</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>The principle</span>
         <p>“An AI system’s performance is not enough to understand its effects on work and health.”</p>
       </div></div>
@@ -104,7 +97,7 @@
     </section>
 
     <section class="cse-section ref-section-alt" id="pathway" aria-labelledby="pathway-title">
-      <div class="cse-heading"><div><p class="cse-kicker">The pathway</p><h2 id="pathway-title">Question by question, the recommendation that follows.</h2></div><p>The same content as the flowchart, as continuous reading. Each recommendation points to the page of the site it is drawn from.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">The pathway</p><h2 id="pathway-title">The prevention pathway</h2></div></div>
       <ol class="pa-steps"><li><span class="pa-nid">Start</span><p class="pa-q">Your research is about…</p><p class="pa-hint">Branches A and B lead to C, which is common to all studies.</p><ul class="pa-list"><li><a href="#r-lane-a"><b>A</b> · The usefulness or effects of AI in professional practice</a><small>Evaluating a tool, a use, a deployment</small></li><li><a href="#r-lane-b"><b>B</b> · The teams who develop, evaluate or supervise the models</a><small>Working conditions and AI safety</small></li><li><a href="#r-lane-c"><b>C</b> · For all studies: concluding and publishing</a><small>Levels of evidence, limits, causality</small></li></ul></li></ol>
       <h3 class="pa-lane-title" id="r-lane-a"><span>Branch A</span>Evaluating AI in professional practice</h3>
       <ol class="pa-steps"><li><span class="pa-nid">A1</span><p class="pa-q">Does your corpus contain health data or data that could identify someone?</p><div class="pa-a"><span class="pa-ans">If yes</span><p>De-identify data before anything is sent to a model, and work in an authorised environment (for health data, certified health-data hosting, HDS). To test an online tool, use fictitious texts, like the 540 workplace recommendations in the Préconisations test bench.</p><p class="pa-src">Sources: <a href="/en/publications/ai-medical-recommendations/">Publication · AI and medical recommendations</a> · <a href="/outils/preconisations/" hreflang="fr">Préconisations tool (in French)</a></p></div></li><li><span class="pa-nid">A2</span><p class="pa-q">Are you measuring the model’s performance, or its effects on work?</p><p class="pa-hint">A good technical score does not, on its own, predict good workplace use.</p><div class="pa-a"><h4>Model performance</h4><p>Test on cases representative of the real task: frequent errors and serious errors, stability from one answer to the next, resistance to misleading inputs, cost and turnaround time.</p></div><div class="pa-a"><h4>Effects on work</h4><p>Evaluate the work system: time saved including review, final quality, exceptions, responsibilities, workload, autonomy, skills and cooperation, before and after implementation.</p><p class="pa-src">Source: <a href="/en/understand/#travail">Understanding AI · back to real work</a></p></div></li><li><span class="pa-nid">A3</span><p class="pa-q">Are you relying on a published benchmark?</p><div class="pa-a"><span class="pa-ans">If yes</span><p>Check that it resembles the target work; describe the instructions, tools, number of attempts and version; specify what the measure captures (accuracy, preference, cost); look for data seen during training and for errors hidden by the average.</p><p class="pa-src">Source: <a href="/en/understand/#benchmarks">Understanding AI · reading benchmarks</a></p></div></li><li><span class="pa-nid">A4</span><p class="pa-q">Is the human reference built independently of the instructions being tested?</p><div class="pa-a"><span class="pa-ans">If no</span><p>Build a reference (multidisciplinary consensus, expected rating), tune the instructions on a first sample, then test on a fresh sample. Record the model version, the prompt and the date: each version is a dated object.</p><p class="pa-src">Sources: <a href="/en/publications/ai-medical-recommendations/">Publication · AI and medical recommendations</a> · <a href="/en/understand/#capacites">Understanding AI · capabilities and limits</a></p></div></li><li><span class="pa-nid">A5</span><p class="pa-q">Are disagreements between the model and the reference re-examined one by one?</p><div class="pa-a"><span class="pa-ans">If no</span><p>Classify each discrepancy: justified alert, excessive flagging, missed defect or invention. A disagreement can also reveal a defect the reference had not spotted.</p><p class="pa-src">Source: <a href="/en/publications/ai-medical-recommendations/">Publication · AI and medical recommendations</a></p></div></li><li><span class="pa-nid">A6</span><p class="pa-q">Do your data on effects rely mainly on self-reports?</p><div class="pa-a"><span class="pa-ans">If yes</span><p>Compare them with an observed measure. In a randomised trial by METR, experienced developers believed they were 20% faster with AI; they were measured as 19% slower.</p><p class="pa-src">Source: <a href="/en/understand/#trajectoire">Understanding AI · perceived and measured gains</a></p></div></li><li><span class="pa-nid">A7</span><p class="pa-q">Are the results broken down by task, occupation and population?</p><div class="pa-a"><span class="pa-ans">If no</span><p>Break them down: the capability frontier is jagged, and a positive average can hide negative effects. Also look for the organisational changes that explain a favourable or unfavourable effect.</p><p class="pa-src">Sources: <a href="/en/reading/ai-deployment-real-work/">Reading · AI and real work</a> · <a href="/en/understand/#capacites">Understanding AI · jagged frontier</a></p></div></li></ol>
@@ -118,7 +111,7 @@
     </section>
 
     <section class="cse-section" id="tools" aria-labelledby="tools-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Taking action</p><h2 id="tools-title">The site’s tools for this audience.</h2></div></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Taking action</p><h2 id="tools-title">Tools and resources</h2></div></div>
       <div class="ref-links">
         <a href="/en/publications/"><strong>Publications</strong><span>A preprint, an INRS study and a narrative review, with methods and limits.</span></a>
         <a href="/en/reading/"><strong>Commented readings</strong><span>Articles, studies and field reports read through psychosocial risk factors.</span></a>
@@ -127,7 +120,7 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Three frequent questions.</h2></div><p>Short answers, drawn from the pathway above.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div><p>Short answers, drawn from the pathway above.</p></div>
       <div class="faq-list">
         <details open><summary>Is a benchmark enough to assess AI in a professional practice?</summary><div><p>No. A good technical score does not, by itself, predict good professional use. Check that the test resembles the intended work, describe the prompt, the tools, the number of attempts and the version, then assess the work system: time saved with review included, final quality, workload, autonomy, skills.</p></div></details><details><summary>How do you build a human reference to assess a model?</summary><div><p>Independently of the prompts tested: a multidisciplinary consensus or an expected rating, prompts adjusted on a first sample, then a test on a fresh sample. The model version, the prompt and the date are recorded: each version is a dated object.</p></div></details><details><summary>Can the time saving reported by users be trusted?</summary><div><p>It has to be set against an observed measurement. In a randomised trial by METR, experienced developers believed they were 20% faster with AI; they were measured 19% slower.</p></div></details>
       </div>

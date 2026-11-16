@@ -1,0 +1,201 @@
+/* Shared editorial rhythm. Content-only selectors leave the site shell and tools alone.
+   Keep the homepage sections, diagrams, questionnaires and scientific papers intact. */
+html body main h1,
+html body.page-headings main h1 {
+  max-width: 1040px !important;
+  margin-inline: auto !important;
+  font-family: "Instrument Sans", Arial, sans-serif !important;
+  font-size: clamp(32px, 3.7vw, 52px) !important;
+  font-weight: 600 !important;
+  line-height: 1.17 !important;
+  letter-spacing: -.035em !important;
+  text-align: center !important;
+  text-wrap: balance;
+}
+html body main h1 em,
+html body.page-headings main h1 em { font-family: inherit !important; font-style: normal !important; font-weight: inherit !important; }
+
+/* The centered introduction the user preferred, above the complete homepage. */
+#contenu.home-simulation .hero-inner { padding-top: 54px; padding-bottom: 36px; text-align: center; }
+html body.simulation-home main h1 { max-width: 1120px !important; font-size: clamp(32px, 3.7vw, 54px) !important; margin-bottom: 34px; }
+#contenu.home-simulation .hero-support { max-width: 960px; margin-inline: auto; display: grid; grid-template-columns: 1fr; gap: 18px; }
+#contenu.home-simulation .hero-support .intro { max-width: none; margin: 0; font-size: 17px; line-height: 1.8; }
+#contenu.home-simulation .hero-signature { max-width: 960px; margin: 30px auto 0; font-size: 14px; line-height: 1.65; }
+
+/* Shared chapter and catalogue headings. */
+.ai-safety-pathway .chapter-hero,
+.ai-safety-publications .research-heading { display: block; padding: 36px 0 40px; text-align: center; }
+.ai-safety-pathway .chapter-hero > p,
+.ai-safety-publications .research-eyebrow { margin: 0 auto 18px; padding-top: 0; }
+.ai-safety-pathway .chapter-hero h1 { margin-bottom: 24px; }
+.ai-safety-pathway .chapter-hero .chapter-lede { max-width: 780px; margin-inline: auto; }
+.ai-safety-pathway .chapter-hero > div > p { max-width: 780px; margin-inline: auto; }
+.ai-safety-publications .research-list,
+.ai-safety-publications .research-updated { max-width: 1040px; margin-inline: auto; }
+
+/* Guides: one introduction, a readable measure, then the actual guidance. */
+html body .artwork-free-hero,
+html body .cse-hero.artwork-free-hero { padding-top: 48px; padding-bottom: 40px; }
+html body.page-headings main :is(.artwork-free-hero, .collection-hero) { padding-top: 48px; padding-bottom: 40px; }
+html body .artwork-free-hero .hero-copy,
+html body .artwork-free-hero .cse-hero-copy { text-align: center; }
+html body .artwork-free-hero .hero-lede,
+html body .artwork-free-hero .cse-lede { max-width: 800px; margin: 24px auto 0; font-size: 18px; line-height: 1.7; }
+html body .artwork-free-hero .hero-actions,
+html body .artwork-free-hero .cse-actions { justify-content: center; margin-top: 24px; }
+html body .artwork-free-hero .cse-meta,
+html body .artwork-free-hero .article-meta { max-width: 800px; margin: 20px auto 0; }
+.cse-editorial-v2 .cse-section { padding-block: 52px; }
+.cse-editorial-v2 .cse-hero + .cse-section { padding-top: 28px; }
+.cse-editorial-v2 .cse-heading h2 { font-size: clamp(29px, 3vw, 38px); line-height: 1.18; }
+.cse-editorial-v2 .ref-answer { padding: 22px 0; border: 0; border-block: 1px solid var(--line); background: transparent; }
+.cse-editorial-v2 .ref-answer > p { font-family: var(--sans); font-size: 18px; line-height: 1.7; }
+.cse-editorial-v2 .ref-grid > article { padding: 24px 0; border: 0; border-top: 1px solid var(--line); background: transparent; }
+.cse-editorial-v2 .ref-note { border: 0; border-left: 2px solid var(--line-strong); background: transparent; padding: 8px 0 8px 22px; }
+.cse-editorial-v2 .ref-crumb { font-size: 13px; }
+.understand-editorial-v3 .section,
+.governance-editorial-v3 .section,
+.spsti-editorial-v3 .section,
+.risk-resource-page .section { padding-block: 56px; }
+.understand-editorial-v3 .section-head h2,
+.governance-editorial-v3 .section-head h2,
+.spsti-editorial-v3 .section-head h2,
+.risk-resource-page .section-head h2 { font-size: clamp(30px, 3.2vw, 40px); line-height: 1.16; }
+.risk-resource-page .resource-section { padding-block: 56px; }
+.risk-resource-page .resource-heading h2,
+.risk-resource-page .psychosocial-essential-layout h2,
+.risk-resource-page .risk-thesis h2,
+.governance-editorial-v3 .brief-layout h2,
+.spsti-editorial-v3 .pst-context-heading h2,
+.cse-editorial-v2 .cse-summary h2,
+.understand-editorial-v3 .newsletter h2,
+.evaluer-work-monitor-v3 .eval-section-head h2,
+.evaluer-work-monitor-v3 .view-heading h2,
+.reading-redesign.preprint-page .pp-text h2.sec,
+.demo-reading-article .demo-related h2,
+.actions-page .action-story-head h3,
+.skills-detail-page .skills-entry-body h2,
+.risk-intro-page .risk-analysis-card h3 { font-size: clamp(29px, 3vw, 40px); line-height: 1.18; letter-spacing: -.025em; }
+.evaluer-work-monitor-v3 .eval-hero { display: block; padding-block: 48px 40px; text-align: center; }
+html body.page-headings.evaluer-work-monitor-v3 main .eval-hero h1 { max-width: 1040px !important; margin-inline: auto !important; text-align: center !important; }
+.evaluer-work-monitor-v3 .eval-hero-copy { max-width: 1040px; margin-inline: auto; }
+.evaluer-work-monitor-v3 .eval-hero-copy > p { max-width: 800px; margin-inline: auto; }
+.evaluer-work-monitor-v3 .eval-hero-actions { justify-content: center; }
+.evaluer-work-monitor-v3 .eval-privacy { display: block; margin-top: 18px; }
+.evaluer-work-monitor-v3 .eval-privacy > span { margin-right: 8px; }
+.evaluer-work-monitor-v3 .tool-section-trust { justify-content: center; }
+
+/* Reading articles: compact masthead, one source citation, generous prose column. */
+.reading-redesign .article-masthead { width: min(1040px, calc(100% - 48px)); display: block; padding: 48px 0 32px; text-align: center; }
+.reading-redesign .article-masthead h1 { margin-top: 20px; }
+.reading-redesign .article-deck { max-width: 800px; margin: 24px auto 0; font-size: 18px; line-height: 1.7; }
+.reading-redesign .article-byline { margin-top: 20px; }
+.reading-redesign .article-metadata { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 32px; margin-top: 18px; border: 0; }
+.reading-redesign .article-metadata div { padding: 0; border: 0; }
+.reading-redesign .article-metadata dt { display: inline; margin-right: 7px; }
+.reading-redesign .article-metadata dd { display: inline; font-weight: 400; }
+.reading-redesign .article-source-banner { background: transparent; }
+.reading-redesign .article-source-inner { width: min(1040px, calc(100% - 48px)); padding: 20px 0; min-height: 0; gap: 12px 24px; }
+.reading-redesign .article-source-inner p { line-height: 1.65; }
+.reading-redesign .article-body { width: min(1080px, calc(100% - 48px)); grid-template-columns: 180px minmax(0, 780px); gap: 40px 48px; justify-content: center; padding: 48px 0 56px; }
+.reading-redesign .article-prose { grid-column: 2; }
+.reading-redesign .article-body > .article-side-note { display: block; grid-column: 2; max-width: 780px; padding-top: 20px; }
+.reading-redesign .article-prose > p:first-child { font-size: 18px; line-height: 1.75; }
+.reading-redesign .article-prose p,
+.reading-redesign .article-prose li { font-size: 17px; line-height: 1.75; }
+.reading-redesign .article-prose p { margin-bottom: 20px; }
+.reading-redesign .article-prose h2 { font-size: clamp(29px, 3vw, 38px); line-height: 1.18; margin: 48px 0 22px; }
+.reading-redesign .article-prose h3 { font-size: 27px; line-height: 1.25; margin: 34px 0 18px; }
+.reading-redesign .article-prose blockquote { font-size: clamp(25px, 2.6vw, 32px); line-height: 1.3; margin-block: 32px; padding-block: 22px; }
+.reading-redesign .article-aside li { padding-block: 10px; }
+.reading-redesign .article-end-inner { padding-block: 44px; gap: 36px; }
+.reading-redesign .article-end h2 { max-width: 22ch; font-size: clamp(30px, 3vw, 38px); line-height: 1.15; }
+.publication-details { width: min(1040px, calc(100% - 48px)); margin: 0 auto 40px; border-block: 1px solid rgba(23,26,24,.2); }
+.publication-details > summary { padding: 18px 0; cursor: pointer; font-size: 15px; font-weight: 600; }
+.publication-details .article-publication { padding: 0; border: 0; background: transparent; }
+.publication-details .article-publication-inner { width: 100%; padding: 0 0 22px; }
+
+/* The original essay keeps its five tensions and its evidence caveats. */
+.demo-reading-article .demo-article-hero { display: block; padding-block: 48px 36px; }
+.demo-reading-article .demo-article-heading { max-width: 1040px; margin-inline: auto; text-align: center; }
+.demo-reading-article .demo-article-heading h1 { margin-top: 20px; }
+.demo-reading-article .demo-short-answer { max-width: 800px; margin: 24px auto; padding: 0; border: 0; background: transparent; }
+.demo-reading-article .demo-short-answer p { font: 18px/1.7 "Instrument Sans", Arial, sans-serif; }
+.demo-reading-article .demo-tension-map { max-width: 1040px; margin: 28px auto 0; }
+.demo-reading-article .demo-tension-map ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+.demo-reading-article .demo-tension-map li { display: block; padding: 15px 0; }
+.demo-reading-article .demo-tension-map li > span { display: block; margin-bottom: 8px; }
+.demo-reading-article .demo-tension-map strong { font-size: 20px; }
+.demo-reading-article .demo-tension-map small { display: block; margin-top: 8px; }
+.demo-reading-article .demo-metadata { max-width: 1040px; margin: 24px auto 0; padding-top: 20px; }
+.demo-reading-article .demo-article-section { padding-block: 52px; gap: 32px; }
+.demo-reading-article .demo-section-main > h2 { font-size: clamp(29px, 3vw, 38px); line-height: 1.18; margin-bottom: 24px; }
+.demo-reading-article .demo-section-main > p { font-size: 17px; line-height: 1.75; }
+.demo-reading-article .demo-section-main > p + p { margin-top: 20px; }
+
+/* Downloads and publication summaries use the same introductory hierarchy. */
+.skills-detail-page .skills-heading-grid { display: block; padding-block: 36px; text-align: center; }
+.skills-detail-page .skills-heading-grid h1 { margin-block: 20px 24px; }
+.skills-detail-page .skills-heading-context { display: inline; font: inherit; color: inherit; }
+.skills-detail-page .skills-explain { max-width: 800px; margin-inline: auto; }
+.skills-detail-page .skills-explain p { font-size: 17px; line-height: 1.7; }
+.skills-detail-page .skills-text-link { justify-content: center; }
+.collection-page .collection-hero { padding-block: 48px 40px; text-align: center; }
+.collection-page .collection-hero .hero-lede { max-width: 800px; margin-inline: auto; }
+.collection-page .collection-hero .hero-actions { justify-content: center; }
+.publications-page .section-head h2 { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.2; }
+
+/* Utility pages keep the same paper, rules and reading measure. */
+html body.legal-refresh .legal-hero { padding-block: 48px 36px; text-align: center; }
+html body.legal-refresh .legal-hero .glass,
+html body.error-refresh main .glass { margin-inline: auto; border: 0 !important; background: transparent !important; box-shadow: none !important; }
+html body.legal-refresh .legal-hero .glass::before,
+html body.legal-refresh .legal-hero .glass::after,
+html body.error-refresh main .glass::before,
+html body.error-refresh main .glass::after { display: none; }
+html body.legal-refresh .legal-hero p { margin-inline: auto; }
+html body.legal-refresh main > .page > .section { padding-block: 44px !important; }
+html body.legal-refresh .legal-grid { border: 0; gap: 24px 40px; }
+html body.legal-refresh .legal-card,
+html body.legal-refresh .legal-card.glass { min-height: 0; padding: 24px 0; border: 0; border-top: 1px solid var(--line); background: transparent; }
+html body.legal-refresh .legal-card h2 { margin-bottom: 20px; font-size: 28px; line-height: 1.2; }
+html body.error-refresh main { min-height: 65vh; padding-block: 64px; text-align: center; }
+html body.error-refresh main p { margin: 24px auto !important; }
+
+@media (max-width: 760px) {
+  html body main h1,
+  html body.page-headings main h1 { font-size: clamp(30px, 7.8vw, 38px) !important; letter-spacing: -.025em !important; }
+  #contenu.home-simulation .hero-inner { padding-top: 34px; padding-bottom: 28px; }
+  #contenu.home-simulation .hero-support .intro { font-size: 16px; line-height: 1.75; }
+  .ai-safety-pathway .chapter-hero,
+  .ai-safety-publications .research-heading { padding-block: 28px 32px; }
+  html body .artwork-free-hero,
+  html body .cse-hero.artwork-free-hero { padding-block: 32px; }
+  html body.page-headings main :is(.artwork-free-hero, .collection-hero) { padding-block: 32px; }
+  .cse-editorial-v2 .cse-section { padding-block: 36px; }
+  .risk-resource-page .resource-section { padding-block: 36px; }
+  .reading-redesign .article-masthead { padding-top: 32px; }
+  .reading-redesign .article-body { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 32px 40px; }
+  .reading-redesign .article-prose,
+  .reading-redesign .article-body > .article-side-note { grid-column: 1; }
+  .reading-redesign .article-aside { position: static; }
+  .reading-redesign .article-aside ol { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  .reading-redesign .article-source-inner { grid-template-columns: 1fr; }
+  .reading-redesign .article-deck { font-size: 17px; }
+  .reading-redesign .article-metadata { gap: 8px 20px; }
+  .reading-redesign .article-prose p,
+  .reading-redesign .article-prose li { font-size: 16px; }
+  .demo-reading-article .demo-article-hero { padding-block: 32px; }
+  .demo-reading-article .demo-tension-map ol { grid-template-columns: 1fr; gap: 0; }
+  .demo-reading-article .demo-tension-map li { display: grid; grid-template-columns: 24px 1fr; gap: 4px 12px; }
+  .demo-reading-article .demo-tension-map li > span { grid-row: span 2; margin: 0; }
+  .demo-reading-article .demo-tension-map small { grid-column: 2; margin: 0; }
+  .demo-reading-article .demo-article-section { padding-block: 36px; }
+  .collection-page .collection-hero { padding-block: 32px; }
+}
+@media print {
+  html body main h1,
+  html body.page-headings main h1 { font-size: 26pt !important; }
+  .reading-redesign .article-body { display: block; width: 100%; }
+  .reading-redesign .article-aside { display: none; }
+}
