@@ -1,0 +1,55 @@
+/* Concise biography, research interests and selected background. */
+body.about-focused { --page-title-size: clamp(38px, 4.8vw, 64px); background: var(--paper-light); }
+.about-main { width: min(1040px, calc(100% - 64px)); margin-inline: auto; padding-block: 54px 48px; }
+.about-main a { text-underline-offset: .2em; }
+.about-main a:hover { color: var(--terra-interactive); }
+.about-heading { margin-bottom: 40px; text-align: center; }
+.about-heading h1 { margin-block: 0 14px; }
+.about-heading > p { margin: 0; color: var(--prevention); font-size: clamp(21px, 2.5vw, 28px); line-height: 1.4; }
+.about-profile { display: grid; grid-template-columns: 224px minmax(0, 1fr); align-items: center; gap: 48px; padding-bottom: 48px; }
+.about-profile > img { width: 224px; height: 224px; object-fit: cover; }
+.about-profile p { margin: 0 0 16px; color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
+.about-profile .about-purpose { color: var(--ink); font-size: 19px; line-height: 1.6; }
+.about-actions { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 22px; }
+.about-actions a { color: var(--terra-interactive); font-size: 15px; font-weight: 600; }
+.about-actions span, .about-more span { display: inline-block; margin-left: 5px; }
+.about-section { padding-block: 36px 40px; border-top: 1px solid var(--line); scroll-margin-top: 125px; }
+.about-section h2 { margin: 0 0 26px; font-size: clamp(30px, 3.3vw, 40px); line-height: 1.15; }
+.about-focus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.about-focus article { border-top: 2px solid var(--terra); padding-top: 18px; }
+.about-main h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.35; }
+.about-focus p { margin: 0; color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
+.about-note { margin: 26px 0 0; max-width: 840px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.about-works article { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; padding-block: 22px; border-top: 1px solid var(--line); }
+.about-work-type { padding-top: 2px; color: var(--muted); font-size: 14px; }
+.about-works h3 { margin-bottom: 8px; font-weight: 500; }
+.about-works h3 a { color: var(--terra-interactive); }
+.about-works p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+.about-more { margin: 18px 0 0; font-size: 15px; }
+.about-more a { color: var(--terra-interactive); }
+.about-background { margin: 0; }
+.about-background > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; padding-block: 14px; border-top: 1px solid var(--line); scroll-margin-top: 125px; }
+.about-background dt { color: var(--muted); font-size: 14px; }
+.about-background dd { margin: 0; font-size: 16px; }
+.about-background strong { font-weight: 500; }
+.about-background dd span { display: block; margin-top: 4px; color: var(--muted); font-size: 15px; }
+.about-follow { padding-bottom: 0; }
+.about-follow p { margin: 12px 0; font-size: 16px; }
+.about-follow a { color: var(--terra-interactive); }
+.about-follow-note { color: var(--muted); font-size: 15px; }
+@media (max-width: 800px) {
+  .about-focus { grid-template-columns: 1fr; gap: 24px; }
+  .about-profile { gap: 30px; }
+}
+@media (max-width: 700px) {
+  .about-main { width: calc(100% - 40px); padding-block: 36px 40px; }
+  .about-heading { margin-bottom: 28px; }
+  .about-profile { grid-template-columns: 1fr; gap: 24px; padding-bottom: 34px; }
+  .about-profile > img { width: 180px; height: 180px; margin-inline: auto; }
+  .about-profile .about-purpose { font-size: 18px; }
+  .about-section { padding-block: 30px; scroll-margin-top: 84px; }
+  .about-section h2 { margin-bottom: 24px; }
+  .about-works article { grid-template-columns: 1fr; gap: 10px; }
+  .about-background > div { grid-template-columns: 80px minmax(0, 1fr); gap: 16px; scroll-margin-top: 84px; }
+  .about-follow { padding-bottom: 0; }
+}
