@@ -16,6 +16,8 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 ### AI Safety pathways / Parcours AI Safety
 
+- https://www.iasantetravail.com/securite-ia/ — La sécurité de l’IA, ses risques et la contribution de la santé au travail.
+- https://www.iasantetravail.com/en/ai-safety/ — AI safety, its risks and the contribution of occupational health.
 - https://www.iasantetravail.com/parcours/comprendre/ — Comprendre les systèmes d’IA et les transformations du travail.
 - https://www.iasantetravail.com/en/pathways/understand/ — Understand AI systems and changes in work.
 - https://www.iasantetravail.com/parcours/risques-collectifs/ — Examiner le disempowerment et les risques pour la santé.

@@ -35,6 +35,7 @@ L’accueil présente le lien entre **AI Safety, transformations du travail, pou
 
 Le menu principal suit la même structure en français et en anglais :
 
+- **Sécurité de l’IA** : définition, contribution de la santé au travail, risques et moyens d’action.
 - **Comprendre** : systèmes d’IA, transformations des tâches, métiers et supervision humaine.
 - **Risques collectifs** : perte de pouvoir économique et social, risques psychosociaux et santé.
 - **Prévenir** : recommandations, évaluation, dialogue social et gouvernance.

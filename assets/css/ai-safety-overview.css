@@ -1,0 +1,82 @@
+/* A short introduction to AI safety through the lens of work. */
+body.safety-overview {
+  --page-title-size: clamp(38px, 4.7vw, 68px);
+  background: var(--paper-light);
+}
+.safety-main {
+  width: min(1120px, calc(100% - 64px));
+  margin-inline: auto;
+  padding-bottom: 80px;
+}
+.safety-main a { text-underline-offset: .2em; }
+.safety-main a:hover { color: var(--terra-interactive); }
+.safety-intro {
+  padding-block: clamp(48px, 6vw, 84px) 58px;
+  text-align: center;
+}
+.safety-intro h1 { margin-block: 0 30px; }
+.safety-intro p { max-width: 780px; margin: 20px auto 0; }
+.safety-intro .safety-lede { font-size: clamp(20px, 2vw, 24px); line-height: 1.5; }
+.safety-intro .safety-byline { margin-top: 28px; color: var(--muted); font-size: 14px; }
+.safety-byline a { color: inherit; }
+.safety-section {
+  padding-block: 44px 50px;
+  border-top: 1px solid var(--line-strong);
+  scroll-margin-top: 130px;
+}
+.safety-section h2 {
+  max-width: 900px;
+  margin: 0 0 20px;
+  font-size: clamp(31px, 3.2vw, 44px);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.safety-section-intro { max-width: 840px; margin: 0 0 30px; }
+.safety-section a { color: var(--terra-interactive); }
+.safety-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.safety-grid article { min-width: 0; border-top: 2px solid var(--terra); padding-top: 20px; }
+.safety-main h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.3; }
+.safety-grid p { margin: 0; font-size: 16px; line-height: 1.65; }
+.safety-example { margin-top: 32px; padding: 26px 30px; background: var(--cream); }
+.safety-example p { max-width: 940px; margin: 0; }
+.safety-risk-list article {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 2fr);
+  gap: 30px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+}
+.safety-risk-list h3 { margin: 0; }
+.safety-risk-list p { margin: 0; }
+.safety-risk-list .safety-risk-example { margin-top: 8px; color: var(--muted); font-size: 16px; }
+.safety-note { max-width: 900px; margin: 28px 0 0; color: var(--muted); font-size: 15px; }
+.safety-references { padding-bottom: 38px; }
+.safety-references > p, .safety-references ul { max-width: 900px; }
+.safety-references > p { margin: 0 0 22px; font-size: 16px; }
+.safety-references ul { margin: 0; padding-left: 22px; font-size: 16px; }
+.safety-references li + li { margin-top: 12px; }
+.safety-references .safety-actors { margin: 24px 0 0; color: var(--muted); font-size: 15px; }
+.safety-next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line-strong); }
+.safety-next a { display: flex; flex-direction: column; gap: 10px; padding-block: 26px 0; text-decoration: none; }
+.safety-next strong { font-size: 18px; font-weight: 600; line-height: 1.35; }
+.safety-next span { color: var(--muted); font-size: 15px; }
+.safety-next span[aria-hidden] { margin-top: auto; padding-top: 4px; color: var(--terra-interactive); font-size: 26px; }
+.safety-next a:hover strong { text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 850px) {
+  .safety-grid { grid-template-columns: 1fr; gap: 26px; }
+  .safety-grid article { max-width: 720px; }
+  .safety-next { gap: 24px; }
+}
+@media (max-width: 600px) {
+  .safety-main { width: calc(100% - 40px); padding-bottom: 48px; }
+  .safety-intro { padding-block: 40px 38px; }
+  .safety-intro h1 { margin-bottom: 24px; }
+  .safety-intro p { text-align: left; }
+  .safety-intro .safety-byline { font-size: 14px; }
+  .safety-section { padding-block: 32px 36px; scroll-margin-top: 90px; }
+  .safety-example { padding: 22px; }
+  .safety-risk-list article { grid-template-columns: 1fr; gap: 12px; padding-block: 20px; }
+  .safety-next { grid-template-columns: 1fr; gap: 0; }
+  .safety-next a { position: relative; padding: 22px 32px 22px 0; border-bottom: 1px solid var(--line); }
+  .safety-next span[aria-hidden] { position: absolute; right: 0; top: 22px; padding: 0; }
+}
