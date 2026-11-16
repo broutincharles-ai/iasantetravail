@@ -4,11 +4,13 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.2";
+  const NAVIGATION_VERSION = "8.3";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
     "/": "/en/",
+    "/securite-ia/": "/en/ai-safety/",
+    "/securite-ia/glossaire/": "/en/ai-safety/glossary/",
     "/parcours/comprendre/": "/en/pathways/understand/",
     "/parcours/risques-collectifs/": "/en/pathways/collective-risks/",
     "/parcours/prevenir/": "/en/pathways/prevent/",
@@ -66,6 +68,7 @@
       menu: "Menu",
       language: { code: "EN", lang: "en", label: "View this page in English", footer: "English version", homeLabel: "English homepage (this page is in French only)", homeFooter: "English homepage" },
       items: [
+        { key: "safety", label: "Sécurité de l’IA", href: "/securite-ia/" },
         { key: "understand", label: "Comprendre", href: "/parcours/comprendre/" },
         { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
         { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
@@ -82,7 +85,7 @@
         tagline: "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.",
         groups: [
           { id: "systemFooterUnderstand", title: "Les parcours", links: [
-            ["Qu’est-ce que l’AI Safety ?", "/#ai-safety"], ["Comprendre", "/parcours/comprendre/"],
+            ["Sécurité de l’IA", "/securite-ia/"], ["Glossaire de la sécurité de l’IA", "/securite-ia/glossaire/"], ["Comprendre", "/parcours/comprendre/"],
             ["Risques collectifs", "/parcours/risques-collectifs/"], ["Détecter et prévenir", "/parcours/prevenir/"],
             ["IA en santé au travail", "/parcours/ia-sante-travail/"], ["Recherche", "/publications/"]
           ] },
@@ -111,6 +114,7 @@
       menu: "Menu",
       language: { code: "FR", lang: "fr", label: "Voir cette page en français", footer: "Version française", homeLabel: "Accueil en français (cette page n’existe qu’en anglais)", homeFooter: "Accueil en français" },
       items: [
+        { key: "safety", label: "AI safety", href: "/en/ai-safety/" },
         { key: "understand", label: "Understand", href: "/en/pathways/understand/" },
         { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
         { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
@@ -127,7 +131,7 @@
         tagline: "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.",
         groups: [
           { id: "systemFooterUnderstand", title: "The pathways", links: [
-            ["What is AI Safety?", "/en/#ai-safety"], ["Understand", "/en/pathways/understand/"],
+            ["AI safety", "/en/ai-safety/"], ["AI safety glossary", "/en/ai-safety/glossary/"], ["Understand", "/en/pathways/understand/"],
             ["Collective risks", "/en/pathways/collective-risks/"], ["Detect and prevent", "/en/pathways/prevent/"],
             ["AI in occupational health", "/en/pathways/ai-in-occupational-health/"], ["Research", "/en/publications/"]
           ] },
@@ -161,6 +165,7 @@
 
   function activeKeyFor(path) {
     const rules = [
+      [/^\/(?:securite-ia|en\/ai-safety)\//, "safety"],
       [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "understand"],
       [/^\/(?:parcours\/risques-collectifs|en\/pathways\/collective-risks|en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
       [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],

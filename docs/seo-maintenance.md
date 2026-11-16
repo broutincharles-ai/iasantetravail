@@ -41,6 +41,10 @@ The workflow `.github/workflows/indexnow.yml` does this automatically: after eac
 
 Google does not read IndexNow: for Google, use the URL inspection tool in Search Console, or wait for the sitemap to be read again.
 
+## AI safety reference page and glossary
+
+`/securite-ia/` and `/securite-ia/glossaire/`, with `/en/ai-safety/` and `/en/ai-safety/glossary/`, use the reference-page components (`cse-reference.css`); the glossary tables add `assets/css/glossary.css`. Each glossary term is a table row whose `id` is the anchor used by the other pages (for example `/securite-ia/glossaire/#complaisance`): keep these anchors when rewording a term. After any change to these four pages, run `node scripts/build-safety-structured-data.mjs`: it rebuilds their JSON-LD from the visible content, so the `FAQPage` questions and the `DefinedTermSet` terms always match what readers see. Their sharing images are `safety-*.png` and `glossary-*.png` in `assets/images/social/`.
+
 ## Short answers and FAQ blocks
 
 `assets/css/page-answers.css` styles the short-answer panel (`.page-brief`), the FAQ (`.page-faq`), the table of axes (`.page-axes`) and the step lists of the audience pages (`.pa-steps`). It carries fallbacks for every colour and font, so it also works on guides that inline their tokens. When a visible FAQ changes, update the `FAQPage` node of the page's structured data so that both list the same questions.

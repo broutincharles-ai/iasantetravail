@@ -11,13 +11,17 @@ for (const file of INDEXABLE_FILES) {
   const lang = en ? 'en' : 'fr';
   const card = /publications\/(?:ia-preconisations-medicales|ai-medical-recommendations)\//.test(file) ? 'inrs'
     : /publications\/(?:llm-risques-psychosociaux|llm-psychosocial-risks)\//.test(file) ? 'llm'
-    : /publications\/(?:sante-travail-securite-modeles-frontieres|occupational-health-frontier-ai-safety)\//.test(file) ? 'preprint' : 'site';
+    : /publications\/(?:sante-travail-securite-modeles-frontieres|occupational-health-frontier-ai-safety)\//.test(file) ? 'preprint'
+    : /^(?:securite-ia\/glossaire|en\/ai-safety\/glossary)\//.test(file) ? 'glossary'
+    : /^(?:securite-ia|en\/ai-safety)\//.test(file) ? 'safety' : 'site';
   const png = `assets/images/social/${card}-${lang}.png`;
   versions[png] ??= createHash('sha256').update(await readFile(png)).digest('hex').slice(0, 8);
   const image = `${origin}/${png}?v=${versions[png]}`;
   const alt = card === 'inrs' ? (en ? 'INRS study: AI and medical recommendations — Charles Broutin' : 'Étude INRS : IA et préconisations médicales — Charles Broutin')
     : card === 'llm' ? (en ? 'LLMs and psychosocial risks at work — Charles Broutin' : 'LLM et risques psychosociaux au travail — Charles Broutin')
     : card === 'preprint' ? (en ? 'Preprint: occupational health and frontier AI safety — Charles Broutin' : 'Preprint : santé au travail et sécurité des modèles d’IA frontières — Charles Broutin')
+    : card === 'safety' ? (en ? 'AI safety, seen from the workplace — Dr Charles Broutin' : 'La sécurité de l’IA, vue depuis le travail — Dr Charles Broutin')
+    : card === 'glossary' ? (en ? 'AI safety glossary for occupational health — Dr Charles Broutin' : 'Glossaire de la sécurité de l’IA pour la santé au travail — Dr Charles Broutin')
     : (en ? 'AI & Occupational Health — Dr Charles Broutin' : 'IA & Santé au Travail — Dr Charles Broutin');
   const end = html.indexOf('</head>');
   let head = html.slice(0, end);

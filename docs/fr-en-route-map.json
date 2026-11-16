@@ -1,5 +1,7 @@
 {
   "/": "/en/",
+  "/securite-ia/": "/en/ai-safety/",
+  "/securite-ia/glossaire/": "/en/ai-safety/glossary/",
   "/comprendre/": "/en/understand/",
   "/risques-prevention/": "/en/risks/",
   "/risques-prevention/psychosociaux/": "/en/risks-prevention/",

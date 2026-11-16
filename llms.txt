@@ -16,6 +16,10 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 ### AI Safety pathways / Parcours AI Safety
 
+- https://www.iasantetravail.com/securite-ia/ — Page de référence sur la sécurité de l’IA (AI safety) : définition, trois familles de risques du rapport international 2026, méthodes, acteurs (INESIA, Bureau européen de l’IA, AI Security Institute, OCDE, CeSIA) et apport de la santé au travail.
+- https://www.iasantetravail.com/en/ai-safety/ — Reference page on AI safety: definition, the three risk families of the 2026 international report, methods, key actors and what occupational health brings to the field.
+- https://www.iasantetravail.com/securite-ia/glossaire/ — Glossaire de 29 termes de la sécurité de l’IA (alignement, complaisance, contrôle humain, désempouvoirement graduel…), chacun défini, sourcé et relié à une notion de santé au travail. Données structurées DefinedTermSet.
+- https://www.iasantetravail.com/en/ai-safety/glossary/ — Glossary of 29 AI safety terms (alignment, sycophancy, human oversight, gradual disempowerment…), each defined, sourced and bridged to an occupational health concept, with its French equivalent.
 - https://www.iasantetravail.com/parcours/comprendre/ — Comprendre les systèmes d’IA et les transformations du travail.
 - https://www.iasantetravail.com/en/pathways/understand/ — Understand AI systems and changes in work.
 - https://www.iasantetravail.com/parcours/risques-collectifs/ — Examiner le disempowerment et les risques pour la santé.
