@@ -316,3 +316,48 @@
   .risk-pathway-copy h2,
   .risk-pathway-action i { transition: none; }
 }
+
+/* Restored article: use the current editorial rhythm without changing its text. */
+.economic-risk-page .economic-hero { display: block; min-height: 0; padding: 36px 0 40px; text-align: center; }
+.economic-risk-page .economic-back { display: block; text-align: left; }
+.economic-risk-page .economic-kicker { margin: 32px 0 0; }
+.economic-risk-page .economic-hero h1 { margin-block: 24px; }
+.economic-risk-page .economic-hero-bottom { display: block; max-width: 800px; margin-inline: auto; }
+.economic-risk-page .economic-hero-bottom > p { font-family: var(--sans); font-size: 18px; line-height: 1.7; }
+.economic-risk-page .economic-scenario-note { margin-top: 24px; padding: 18px 22px; text-align: left; }
+.economic-risk-page .economic-opening,
+.economic-risk-page .economic-content-section,
+.economic-risk-page .economic-conclusion { width: min(1200px, calc(100% - 48px)); padding-block: 56px; grid-template-columns: 64px minmax(0, 780px) minmax(160px, 220px); gap: 32px; }
+.economic-risk-page .economic-content-section h2,
+.economic-risk-page .economic-conclusion h2 { margin-bottom: 24px; font-size: clamp(29px, 3vw, 40px); line-height: 1.18; letter-spacing: -.025em; }
+.economic-risk-page .economic-content-section h3 { margin: 32px 0 18px; font-size: 27px; line-height: 1.25; }
+.economic-risk-page .economic-opening p,
+.economic-risk-page .economic-content-section p,
+.economic-risk-page .economic-conclusion p { font-family: var(--sans); font-size: 17px; line-height: 1.75; }
+.economic-risk-page .economic-content-section p + p,
+.economic-risk-page .economic-opening p + p { margin-top: 20px; }
+.economic-risk-page .economic-content-section blockquote { margin-block: 28px; padding-block: 20px; }
+.economic-risk-page .economic-content-section blockquote p { font-family: var(--serif); font-size: clamp(25px, 2.4vw, 32px); line-height: 1.3; }
+.economic-risk-page .economic-aside { padding: 18px; }
+.economic-risk-page .economic-aside p { font-size: 14px; line-height: 1.65; }
+@media (max-width: 900px) {
+  .economic-risk-page .economic-opening,
+  .economic-risk-page .economic-content-section,
+  .economic-risk-page .economic-conclusion { grid-template-columns: 40px minmax(0, 1fr); gap: 20px; }
+  .economic-risk-page .economic-aside { display: block; grid-column: 2; }
+}
+@media (max-width: 600px) {
+  .economic-risk-page .economic-hero { padding-block: 24px 32px; }
+  .economic-risk-page .economic-hero-bottom > p { font-size: 17px; }
+  .economic-risk-page .economic-opening,
+  .economic-risk-page .economic-content-section,
+  .economic-risk-page .economic-conclusion { grid-template-columns: minmax(0, 1fr); padding-block: 36px; gap: 16px; }
+  .economic-risk-page .economic-opening > div,
+  .economic-risk-page .economic-content-section > div,
+  .economic-risk-page .economic-conclusion > div,
+  .economic-risk-page .economic-aside { grid-column: 1; }
+  .economic-risk-page .economic-opening p,
+  .economic-risk-page .economic-content-section p,
+  .economic-risk-page .economic-conclusion p { font-size: 16px; }
+  .economic-risk-page .economic-content-section blockquote p { font-size: 25px; }
+}

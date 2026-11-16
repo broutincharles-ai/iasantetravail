@@ -9,7 +9,7 @@ Périmètre : 98 pages de contenu (français et anglais, pages légales et 404 c
 - Lectures : titre, court résumé, auteur, date et nature éditoriale ; source citée dans un seul bloc. Le texte gagne une colonne plus large, avec un sommaire latéral. Citation et historique restent accessibles dans un volet natif.
 - Guides : moins de badges et de phrases de présentation répétées, titres de section plus courts et encadrés allégés. Les sources, limites et consignes restent dans le contenu.
 - 26 sommaires locaux corrigés : chaque lien vise une section réelle de sa page, avec le composant partagé et son comportement mobile. Le validateur contrôle maintenant les destinations et la structure.
-- La page économique et sociale précédemment supprimée reste absente, en français et en anglais.
+- La page économique et sociale, absente lors de cette revue, a ensuite été rétablie le 16 novembre à la demande de l’auteur : contenu complet français/anglais, accès « Comprendre le human disempowerment », indexation et liens entrants restaurés. Sa présentation reprend les règles de cette revue.
 
 ## Contrôles
 

@@ -8,6 +8,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-11-16" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-11-16" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-11-16" },
+  { fr: "risques-prevention/economique-social/index.html", en: "en/risks/economic-social/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/index.html", en: "en/recommendations/index.html", lastmod: "2026-11-16" },
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-11-16" },
   { fr: "outils/fiches-prevention/index.html", en: "en/tools/prevention-fact-sheets/index.html", lastmod: "2026-11-13" },

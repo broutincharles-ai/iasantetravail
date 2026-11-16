@@ -127,6 +127,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/psychosociaux/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/risques-prevention/economique-social/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/risks/economic-social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/risks/economic-social/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/risks/economic-social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/economique-social/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/recommandations/</loc>
     <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/"/>

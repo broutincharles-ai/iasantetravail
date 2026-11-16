@@ -32,7 +32,7 @@ const redirects = {
   "usages-terrain/exemple-sante-travail/index.html": "/ia-en-spst/",
   "pratique/index.html": "/ia-en-spst/",
   "terrain/index.html": "/ia-en-spst/",
-  "macroeconomie/index.html": "/parcours/risques-collectifs/",
+  "macroeconomie/index.html": "/risques-prevention/economique-social/",
   "accompagner-en-amont/index.html": "/ia-en-spst/",
   "en-pratique/index.html": "/ia-en-spst/",
   // Address printed in the INRS article (TF 335): it lands on the page about that study.

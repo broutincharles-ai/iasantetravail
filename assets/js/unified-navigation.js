@@ -17,6 +17,7 @@
     "/comprendre/": "/en/understand/",
     "/risques-prevention/": "/en/risks/",
     "/risques-prevention/psychosociaux/": "/en/risks-prevention/",
+    "/risques-prevention/economique-social/": "/en/risks/economic-social/",
     "/recommandations/": "/en/recommendations/",
     "/ia-en-spst/": "/en/uses-and-field/occupational-health-example/",
     "/evaluer/": "/en/evaluate/",
