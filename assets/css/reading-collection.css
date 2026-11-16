@@ -1,0 +1,64 @@
+/* A compact collection: title, byline, source and a short summary. */
+body.reading-simple {
+  --page-title-size: clamp(38px, 4.5vw, 60px);
+  background: var(--paper-light, #f7f3ea);
+  color: var(--ink, #171a18);
+}
+.reading-simple .reading-main {
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 54px 72px;
+}
+.reading-simple .reading-header { margin-bottom: 42px; }
+.reading-simple .reading-header h1 { margin-block: 0; }
+.reading-simple .reading-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 56px;
+}
+.reading-simple .reading-item {
+  min-width: 0;
+  padding-block: 30px 38px;
+  border-top: 1px solid var(--line, #c9c5ba);
+}
+.reading-simple .reading-item h2 {
+  margin: 0;
+  color: inherit;
+  font: 500 clamp(25px, 2.4vw, 31px)/1.18 var(--serif, Georgia, serif);
+  letter-spacing: -.02em;
+  text-wrap: pretty;
+}
+.reading-simple .reading-item h2 a,
+.reading-simple .reading-author a {
+  color: inherit;
+  text-decoration: none;
+}
+.reading-simple .reading-author,
+.reading-simple .reading-source {
+  margin: 12px 0 0;
+  color: var(--muted, #5b615b);
+  font: 400 14px/1.55 var(--sans, Arial, sans-serif);
+}
+.reading-simple .reading-source { margin-top: 6px; }
+.reading-simple .reading-source a {
+  color: var(--terra-interactive, #87301f);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.reading-simple .reading-summary {
+  margin: 16px 0 0;
+  font: 400 17px/1.65 var(--sans, Arial, sans-serif);
+  text-wrap: pretty;
+}
+.reading-simple .reading-item a { text-underline-offset: 3px; }
+.reading-simple .reading-item a:hover { text-decoration: underline; }
+.reading-simple .reading-item a:focus-visible {
+  outline: 2px solid var(--terra-interactive, #87301f);
+  outline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .reading-simple .reading-main { width: calc(100% - 40px); padding-block: 36px 48px; }
+  .reading-simple .reading-header { margin-bottom: 30px; }
+  .reading-simple .reading-list { grid-template-columns: 1fr; }
+  .reading-simple .reading-item { padding-block: 26px 30px; }
+}
