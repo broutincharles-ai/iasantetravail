@@ -1,5 +1,7 @@
 export const INDEXABLE_PAIRS = [
   { fr: "index.html", en: "en/index.html", lastmod: "2026-11-14" },
+  { fr: "securite-ia/index.html", en: "en/ai-safety/index.html", lastmod: "2026-11-16" },
+  { fr: "securite-ia/glossaire/index.html", en: "en/ai-safety/glossary/index.html", lastmod: "2026-11-16" },
   { fr: "parcours/comprendre/index.html", en: "en/pathways/understand/index.html", lastmod: "2026-11-11" },
   { fr: "parcours/risques-collectifs/index.html", en: "en/pathways/collective-risks/index.html", lastmod: "2026-11-11" },
   { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-11" },

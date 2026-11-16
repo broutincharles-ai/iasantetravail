@@ -1,0 +1,31 @@
+/* AI safety glossary (/securite-ia/glossaire/, /en/ai-safety/glossary/).
+   Loaded after cse-reference.css and page-answers.css; reuses their tokens and the .ref-table layout,
+   which turns each row into a card under 900 px. */
+
+.cse-editorial-v2 .glossary-brief { margin-top: 35px; }
+
+.cse-editorial-v2 .glossary-table td:first-child { width: 24%; }
+.cse-editorial-v2 .glossary-table td:nth-child(2) { width: 40%; }
+.cse-editorial-v2 .glossary-table dfn { display: block; color: var(--ink); font-family: var(--serif); font-size: 21px; font-style: normal; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; }
+.cse-editorial-v2 .glossary-table .term-alt { display: block; margin-top: 8px; color: var(--muted); font: 500 12px/1.45 var(--mono); letter-spacing: 0.02em; }
+.cse-editorial-v2 .glossary-table .term-src,
+.cse-editorial-v2 .glossary-table .term-see { display: block; margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.cse-editorial-v2 .glossary-table a { color: var(--brick); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cse-editorial-v2 .glossary-table tr:target td { background: var(--paper-soft); }
+
+/* Alphabetical index */
+.cse-editorial-v2 .glossary-index { max-width: 1100px; margin-top: 36px; }
+.cse-editorial-v2 .glossary-index > p { margin: 0 0 12px; color: var(--muted); font: 600 11px/1.5 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.cse-editorial-v2 .glossary-index ul { margin: 0; padding: 0; border-top: 1px solid var(--line-strong); list-style: none; columns: 3 240px; column-gap: 32px; }
+.cse-editorial-v2 .glossary-index li { padding: 8px 0; border-bottom: 1px solid var(--line); break-inside: avoid; font-size: 15px; line-height: 1.45; }
+.cse-editorial-v2 .glossary-index a { color: var(--ink); text-decoration: none; }
+.cse-editorial-v2 .glossary-index a:hover,
+.cse-editorial-v2 .glossary-index a:focus-visible { color: var(--brick); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .cse-editorial-v2 .glossary-table td:first-child { padding-bottom: 12px; }
+}
+@media (max-width: 600px) {
+  .cse-editorial-v2 .glossary-index ul { columns: 2; column-gap: 18px; }
+  .cse-editorial-v2 .glossary-index li { font-size: 14px; }
+}

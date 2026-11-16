@@ -47,6 +47,8 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .safety-families p,#contenu.home-simulation .work-grid p{font-size:15px;color:var(--muted)}
 #contenu.home-simulation .safety-bridge{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;padding:28px 0;margin-top:32px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 #contenu.home-simulation .safety-continue{margin-top:4px}
+#contenu.home-simulation .safety-links{display:flex;flex-wrap:wrap;gap:6px 40px;margin-top:4px}
+#contenu.home-simulation .safety-links .safety-continue{margin-top:0}
 #contenu.home-simulation .section-bottom{display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:32px}
 #contenu.home-simulation #travail{background:var(--light)}
 #contenu.home-simulation #risques{background:var(--wash)}

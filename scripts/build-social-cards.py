@@ -14,6 +14,10 @@ cards = {
  'llm-en': ('AI & Occupational Health', 'PUBLICATIONS · NARRATIVE REVIEW', ['LLMs and psychosocial', 'risks at work'], 'Analytical framework and prevention · August 2025'),
  'preprint-fr': ('IA & Santé au Travail', 'PUBLICATIONS · PREPRINT', ['Santé au travail et', 'sécurité de l’IA frontière'], '39 témoignages, grille Gollac, 10 incidents · Octobre 2026'),
  'preprint-en': ('AI & Occupational Health', 'PUBLICATIONS · PREPRINT', ['Occupational health and', 'frontier AI safety'], '39 testimonies, Gollac framework, 10 incidents · October 2026'),
+ 'safety-fr': ('IA & Santé au Travail', 'SÉCURITÉ DE L’IA · PAGE DE RÉFÉRENCE', ['La sécurité de l’IA,', 'vue depuis le travail'], 'Définition, risques, méthodes et acteurs · Novembre 2026'),
+ 'safety-en': ('AI & Occupational Health', 'AI SAFETY · REFERENCE PAGE', ['AI safety,', 'seen from the workplace'], 'Definition, risks, methods and actors · November 2026'),
+ 'glossary-fr': ('IA & Santé au Travail', 'SÉCURITÉ DE L’IA · GLOSSAIRE', ['29 termes de l’AI safety,', 'traduits pour le travail'], 'Définitions, sources et ponts avec la santé au travail'),
+ 'glossary-en': ('AI & Occupational Health', 'AI SAFETY · GLOSSARY', ['29 AI safety terms,', 'bridged to occupational health'], 'Definitions, sources and links to work and health'),
 }
 output = ROOT / 'assets/images/social'
 output.mkdir(parents=True, exist_ok=True)

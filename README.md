@@ -35,6 +35,7 @@ L’accueil présente le lien entre **AI Safety, transformations du travail, pou
 
 Le menu principal suit la même structure en français et en anglais :
 
+- **Sécurité de l’IA** : page de référence (définition, familles de risques, méthodes, acteurs) et glossaire de 29 termes reliés à la santé au travail.
 - **Comprendre** : systèmes d’IA, transformations des tâches, métiers et supervision humaine.
 - **Risques collectifs** : perte de pouvoir économique et social, risques psychosociaux et santé.
 - **Prévenir** : recommandations, évaluation, dialogue social et gouvernance.
@@ -76,6 +77,7 @@ Le site est publié par GitHub Pages à partir de la branche `main`. `_config.ym
 
 Après une modification, depuis la racine du dépôt :
 
+0. `node scripts/build-safety-structured-data.mjs` : après une modification de `/securite-ia/`, `/securite-ia/glossaire/` ou de leurs pages anglaises, régénère leurs données structurées (FAQ, termes définis) à partir du contenu visible ;
 1. `node scripts/render-static-navigation.mjs` : réécrit l’en-tête, le pied de page et les ressources communes du `<head>` de chaque page à partir de `assets/js/unified-navigation.js` (menu, libellés, liens) ;
 2. `node scripts/build-home-latest.mjs` : conservé pour les anciens gabarits ; il laisse inchangé le nouvel accueil AI Safety, où les lectures sont accessibles par le menu. `node scripts/build-chapter-toc.mjs` : après l’ajout ou la réécriture d’un chapitre de Comprendre, met à jour son sommaire (titres et temps de lecture) ; `node scripts/build-network-figure.mjs` : après une modification du script de la figure « réseau de neurones » de Comprendre, régénère l’image statique affichée sans JavaScript ;
 3. `node scripts/create-redirects.mjs` : après le retrait ou le déplacement d’une page, écrit une page de redirection à l’ancienne adresse ;
