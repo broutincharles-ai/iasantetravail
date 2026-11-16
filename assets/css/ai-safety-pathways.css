@@ -42,6 +42,39 @@ body.ai-safety-pathway{margin:0;background:var(--paper,#f3efe6);color:var(--ink,
 .ai-safety-pathway .quick-practice{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;border-block:1px solid var(--line);padding:18px 0;margin:26px 0}
 .ai-safety-pathway .quick-practice strong{font-size:11px;text-transform:uppercase;letter-spacing:.07em}
 .ai-safety-pathway .pathway-date{font-size:14px;color:var(--muted);margin-top:25px}
+/* The main hubs organise the content; detailed collections keep their editorial lists. */
+.ai-safety-pathway .pathway-hub .pathway-wrap{max-width:1180px}
+.ai-safety-pathway .pathway-hub .chapter-hero{display:block;text-align:center;padding:24px 0 42px}
+.ai-safety-pathway .pathway-hub .chapter-hero h1{font-family:var(--sans);font-size:clamp(32px,3.6vw,50px);font-weight:600;max-width:25ch;margin:14px auto 0}
+.ai-safety-pathway .pathway-hub .chapter-hero p:not(.eyebrow){max-width:70ch;margin:22px auto 0}
+.ai-safety-pathway .journey-nav{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-block:1px solid var(--line);padding:19px 0;margin-bottom:44px}
+.ai-safety-pathway .journey-nav a{font-size:14px;text-decoration:none}
+.ai-safety-pathway .journey-nav a:hover{text-decoration:underline}
+.ai-safety-pathway .journey-nav span{color:var(--terra-interactive);font-size:12px;margin-right:6px}
+.ai-safety-pathway .journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 64px}
+.ai-safety-pathway .journey-stage{border-top:1px solid var(--line);padding-top:22px;scroll-margin-top:var(--ux-anchor-offset,140px)}
+.ai-safety-pathway .journey-stage h2{font-size:34px;margin:10px 0 16px;line-height:1.15}
+.ai-safety-pathway .journey-stage>p:not(.eyebrow){font-size:16px;color:var(--ink-soft);max-width:58ch}
+.ai-safety-pathway .journey-links{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px;font-size:15px}
+.ai-safety-pathway .journey-links a{display:inline-block;line-height:1.55}
+.ai-safety-pathway .professional-space{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;margin-top:48px;padding:30px 34px;background:#eae3d6}
+.ai-safety-pathway .professional-space h2{font-size:32px;line-height:1.2;margin:10px 0 14px}
+.ai-safety-pathway .professional-space p:not(.eyebrow){font-size:16px;max-width:65ch}
+.ai-safety-pathway .professional-space>a{font-size:15px;font-weight:600;max-width:30ch}
+.ai-safety-pathway .journey-audience{padding:32px 0;border-bottom:1px solid var(--line)}
+.ai-safety-pathway .journey-audience h2{font:600 16px var(--sans);letter-spacing:0}
+.ai-safety-pathway .journey-audience .journey-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:16px}
+.ai-safety-pathway .pathway-hub .risk-branches{gap:64px;padding-bottom:38px}
+.ai-safety-pathway .pathway-hub .risk-branches article{border-top:1px solid var(--terra-interactive);padding-top:20px}
+.ai-safety-pathway .pathway-hub .risk-branches h2{max-width:18ch}
+.ai-safety-pathway .risk-examples>h2{font-size:32px;line-height:1.2;margin-bottom:26px}
+.ai-safety-pathway .risk-example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.ai-safety-pathway .risk-example-grid article{border-top:1px solid var(--line);padding-top:20px}
+.ai-safety-pathway .risk-example-grid h3{font-size:26px;line-height:1.2;margin-bottom:14px}
+.ai-safety-pathway .risk-example-grid p{font-size:15px;color:var(--muted)}
+.ai-safety-pathway .risk-evidence{font-size:14px;color:var(--muted);margin-top:32px}
+@media(max-width:800px){.ai-safety-pathway .journey-nav{display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;margin-bottom:30px}.ai-safety-pathway .journey-grid,.ai-safety-pathway .risk-example-grid{grid-template-columns:1fr;gap:30px}.ai-safety-pathway .professional-space{grid-template-columns:1fr;gap:22px;padding:25px 22px;margin-top:35px}.ai-safety-pathway .professional-space>a{max-width:none}.ai-safety-pathway .pathway-hub .risk-branches{gap:30px}.ai-safety-pathway .journey-stage h2{font-size:30px}.ai-safety-pathway .risk-examples>h2{font-size:29px}}
+@media print{.ai-safety-pathway .journey-nav{display:none}.ai-safety-pathway .journey-stage,.ai-safety-pathway .professional-space{break-inside:avoid}.ai-safety-pathway .journey-grid{gap:25px}.ai-safety-pathway .journey-stage h2{font-size:25px}}
 @media(max-width:1050px){.ai-safety-pathway .chapter-hero,.ai-safety-pathway .chapter-grid{grid-template-columns:150px 1fr;gap:28px}.ai-safety-pathway .chapter-hero h1{font-size:54px}.ai-safety-pathway .pathway-wrap{width:calc(100% - 64px)}}
 @media(max-width:800px){.ai-safety-pathway .pathway-wrap{width:calc(100% - 36px)}.ai-safety-pathway .chapter-hero{grid-template-columns:1fr;gap:15px;padding:18px 0 27px}.ai-safety-pathway .chapter-hero h1{font-size:41px}.ai-safety-pathway .chapter-hero p:not(.eyebrow){font-size:17px;margin-top:18px}.ai-safety-pathway .chapter-stepbar{margin-bottom:25px;gap:20px}.ai-safety-pathway .chapter-grid{grid-template-columns:1fr;gap:15px;margin:28px 0 37px}.ai-safety-pathway .chapter-grid h2{max-width:100%;font-size:29px}.ai-safety-pathway .chapter-side-note{max-width:100%;margin-top:8px}.ai-safety-pathway .page-item{grid-template-columns:24px 1fr;gap:12px;padding:18px 0}.ai-safety-pathway .page-item h3{font-size:25px}.ai-safety-pathway .page-arrow{display:none}.ai-safety-pathway .chapter-footer{flex-direction:column;align-items:flex-start;margin-bottom:25px}.ai-safety-pathway .risk-branches{grid-template-columns:1fr;gap:30px}.ai-safety-pathway .risk-branches h2{font-size:30px}.ai-safety-pathway .quick-practice{gap:12px 20px}.ai-safety-pathway .quick-practice strong{width:100%}}
 @media print{.ai-safety-pathway{background:#fff}.ai-safety-pathway .pathway-wrap{width:100%;max-width:none}.ai-safety-pathway .chapter-stepbar,.ai-safety-pathway .chapter-footer,.ai-safety-pathway .route-crumbs{display:none}.ai-safety-pathway .page-item,.ai-safety-pathway .risk-branches article{break-inside:avoid}.ai-safety-pathway .chapter-hero h1{font-size:38px}.ai-safety-pathway .chapter-grid{grid-template-columns:150px 1fr;gap:25px}.ai-safety-pathway .page-item h3{font-size:21px}}

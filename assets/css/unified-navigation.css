@@ -143,6 +143,16 @@
 #site-header .system-nav-chevron { transition: transform 160ms ease; }
 #site-header .system-nav-group[open] .system-nav-chevron { transform: rotate(180deg); }
 
+/* Three main destinations, then the supporting collections and author information. */
+#site-header .system-nav-link.is-primary { font-weight: 650; }
+#site-header .system-nav-link.is-secondary,
+#site-header .system-nav-group.is-secondary > summary { color: var(--sh-muted); font-weight: 400; }
+#site-header .system-nav-link.has-divider { border-left: 1px solid var(--sh-line-strong); margin-left: 12px; padding-left: 20px; }
+#site-header .system-nav-link.is-secondary:hover,
+#site-header .system-nav-link.is-secondary[aria-current],
+#site-header .system-nav-group.is-secondary.is-current > summary,
+#site-header .system-nav-group.is-secondary > summary:hover { color: var(--sh-accent); }
+
 #site-header .system-nav-group { position: relative; display: block; }
 #site-header .system-nav-dropdown {
   position: absolute;
@@ -472,7 +482,7 @@
     color: var(--sh-ink);
     font: 500 16px/1 var(--sh-sans);
   }
-  /* Seven direct links, in the same order as the desktop navigation. */
+  /* Main destinations precede the supporting links, as on desktop. */
   #site-header .system-mobile-link,
   #site-header .system-mobile-group > summary {
     display: flex;
@@ -483,6 +493,9 @@
   }
   #site-header .system-mobile-link,
   #site-header .system-mobile-group { border-bottom: 1px solid var(--sh-line); }
+  #site-header .system-mobile-link.has-divider { margin-top: 18px; border-top: 1px solid var(--sh-line-strong); }
+  #site-header .system-mobile-link.is-secondary,
+  #site-header .system-mobile-group.is-secondary > summary { min-height: 48px; font: 400 17px/1.35 var(--sh-sans); }
   #site-header .system-mobile-link[aria-current],
   #site-header .system-mobile-group.is-current > summary { color: var(--sh-accent); }
   #site-header .system-mobile-group { display: block; }

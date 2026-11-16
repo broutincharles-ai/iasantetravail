@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.3";
+  const NAVIGATION_VERSION = "8.4";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -68,15 +68,12 @@
       language: { code: "EN", lang: "en", label: "View this page in English", footer: "English version", homeLabel: "English homepage (this page is in French only)", homeFooter: "English homepage" },
       items: [
         { key: "safety", label: "Sécurité de l’IA", href: "/securite-ia/" },
-        { key: "understand", label: "Comprendre", href: "/parcours/comprendre/" },
         { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
         { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
-        { key: "spst", label: "IA en santé au travail", href: "/parcours/ia-sante-travail/" },
-        { key: "publications", label: "Recherche", href: "/publications/" },
-        { key: "reading", label: "Lectures", href: "/lecture/" },
-        { key: "about-group", label: "À propos", children: [
+        { key: "publications", label: "Recherche", href: "/publications/", secondary: true, divider: true },
+        { key: "reading", label: "Lectures", href: "/lecture/", secondary: true },
+        { key: "about-group", label: "À propos", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/a-propos/", desc: "Médecin du travail, auteur du site" },
-          { key: "publications", label: "Publications", href: "/publications/", desc: "Articles publiés et preprint" },
           { key: "actions", label: "Interventions", href: "/actions/", desc: "Séminaires, journées et colloques" }
         ] }
       ],
@@ -84,16 +81,14 @@
         tagline: "Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.",
         groups: [
           { id: "systemFooterUnderstand", title: "Les parcours", links: [
-            ["Sécurité de l’IA", "/securite-ia/"], ["Comprendre", "/parcours/comprendre/"],
-            ["Risques collectifs", "/parcours/risques-collectifs/"], ["Détecter et prévenir", "/parcours/prevenir/"],
-            ["IA en santé au travail", "/parcours/ia-sante-travail/"], ["Recherche", "/publications/"]
+            ["Sécurité de l’IA", "/securite-ia/"], ["Risques collectifs", "/parcours/risques-collectifs/"], ["Prévenir", "/parcours/prevenir/"]
           ] },
-          { id: "systemFooterTools", title: "Outils", links: [
-            ["Évaluer un projet d’IA", "/evaluer/"], ["Checklist CSE", "/cse/#questions"], ["Relire une préconisation", "/outils/preconisations/"],
-            ["Fiches de prévention", "/outils/fiches-prevention/"], ["Skills pour Claude", "/outils/claude-skills/"], ["Tous les outils", "/outils/"]
+          { id: "systemFooterTools", title: "Pour agir", links: [
+            ["Comprendre l’IA", "/parcours/comprendre/"], ["Évaluer un projet", "/evaluer/"], ["Agir et gouverner", "/parcours/prevenir/#agir"],
+            ["Suivre et ajuster", "/parcours/prevenir/#suivre"], ["Espace santé au travail", "/parcours/ia-sante-travail/"], ["Tous les outils", "/outils/"]
           ] },
           { id: "systemFooterSite", title: "Le site", links: [
-            ["À propos", "/a-propos/"], ["Publications", "/publications/"], ["Interventions", "/actions/"],
+            ["Recherche", "/publications/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -114,15 +109,12 @@
       language: { code: "FR", lang: "fr", label: "Voir cette page en français", footer: "Version française", homeLabel: "Accueil en français (cette page n’existe qu’en anglais)", homeFooter: "Accueil en français" },
       items: [
         { key: "safety", label: "AI safety", href: "/en/ai-safety/" },
-        { key: "understand", label: "Understand", href: "/en/pathways/understand/" },
         { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
         { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
-        { key: "spst", label: "AI in occupational health", href: "/en/pathways/ai-in-occupational-health/" },
-        { key: "publications", label: "Research", href: "/en/publications/" },
-        { key: "reading", label: "Reading", href: "/en/reading/" },
-        { key: "about-group", label: "About", children: [
+        { key: "publications", label: "Research", href: "/en/publications/", secondary: true, divider: true },
+        { key: "reading", label: "Reading", href: "/en/reading/", secondary: true },
+        { key: "about-group", label: "About", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/en/about/", desc: "Occupational physician, author of the site" },
-          { key: "publications", label: "Publications", href: "/en/publications/", desc: "Published articles and preprint" },
           { key: "actions", label: "Talks", href: "/en/actions/", desc: "Seminars, study days and conferences" }
         ] }
       ],
@@ -130,16 +122,14 @@
         tagline: "Independent, sourced and dated perspectives for understanding how AI transforms real work and worker health.",
         groups: [
           { id: "systemFooterUnderstand", title: "The pathways", links: [
-            ["AI safety", "/en/ai-safety/"], ["Understand", "/en/pathways/understand/"],
-            ["Collective risks", "/en/pathways/collective-risks/"], ["Detect and prevent", "/en/pathways/prevent/"],
-            ["AI in occupational health", "/en/pathways/ai-in-occupational-health/"], ["Research", "/en/publications/"]
+            ["AI safety", "/en/ai-safety/"], ["Collective risks", "/en/pathways/collective-risks/"], ["Prevent", "/en/pathways/prevent/"]
           ] },
-          { id: "systemFooterTools", title: "Tools", links: [
-            ["Assess an AI project", "/en/evaluate/"], ["Works council checklist", "/en/cse/#questions"],
-            ["Pilot file", "/en/legal-governance/#dossier"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/"]
+          { id: "systemFooterTools", title: "Take action", links: [
+            ["Understand AI", "/en/pathways/understand/"], ["Assess a project", "/en/evaluate/"], ["Act and govern", "/en/pathways/prevent/#agir"],
+            ["Monitor and adjust", "/en/pathways/prevent/#suivre"], ["Occupational health space", "/en/pathways/ai-in-occupational-health/"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/"]
           ] },
           { id: "systemFooterSite", title: "The site", links: [
-            ["About", "/en/about/"], ["Publications", "/en/publications/"], ["Talks", "/en/actions/"],
+            ["Research", "/en/publications/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -165,10 +155,11 @@
   function activeKeyFor(path) {
     const rules = [
       [/^\/(?:securite-ia|en\/ai-safety)\//, "safety"],
-      [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "understand"],
+      [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "prevent"],
+      [/^\/risques-prevention\/duerp\//, "prevent"],
       [/^\/(?:parcours\/risques-collectifs|en\/pathways\/collective-risks|en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
       [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
-      [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "spst"],
+      [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "prevent"],
       [/^\/(?:en\/)?publications\//, "publications"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
       [/^\/(?:en\/)?actions\//, "actions"],
@@ -216,17 +207,18 @@
     // A group is current when the page is one of its entries (a link to a section of a page does not count).
     const groupIsCurrent = item => item.children.some(child => child.key === activeKey && !child.href.includes("#")) || Boolean(item.all && item.all.key === activeKey);
 
+    const itemClasses = item => `${item.secondary ? " is-secondary" : " is-primary"}${item.divider ? " has-divider" : ""}`;
     const desktopItems = site.items.map(item => {
-      if (!item.children) return `<a class="system-nav-link" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
+      if (!item.children) return `<a class="system-nav-link${itemClasses(item)}" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
       const all = item.all ? `<a class="system-nav-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
-      return `<details class="system-nav-group${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-nav-dropdown${item.wide ? " is-wide" : ""}"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
+      return `<details class="system-nav-group${itemClasses(item)}${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-nav-dropdown${item.wide ? " is-wide" : ""}"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");
 
     // On phones the groups are closed when the menu opens: one line each, like the plain links.
     const mobileItems = site.items.map(item => {
-      if (!item.children) return `<a class="system-mobile-link" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
+      if (!item.children) return `<a class="system-mobile-link${itemClasses(item)}" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
       const all = item.all ? `<a class="system-mobile-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
-      return `<details class="system-mobile-group${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-mobile-sublist"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
+      return `<details class="system-mobile-group${itemClasses(item)}${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-mobile-sublist"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");
 
     const searchButton = `<button type="button" class="system-search-button" data-site-search aria-label="${escapeHtml(site.searchLong)}" title="${escapeHtml(site.searchLong)} (Ctrl K)">${ICONS.search}<span class="system-search-text">${escapeHtml(site.searchShort)}</span></button>`;

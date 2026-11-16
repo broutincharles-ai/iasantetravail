@@ -18,14 +18,14 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 - https://www.iasantetravail.com/securite-ia/ — La sécurité de l’IA, ses risques et la contribution de la santé au travail.
 - https://www.iasantetravail.com/en/ai-safety/ — AI safety, its risks and the contribution of occupational health.
-- https://www.iasantetravail.com/parcours/comprendre/ — Comprendre les systèmes d’IA et les transformations du travail.
-- https://www.iasantetravail.com/en/pathways/understand/ — Understand AI systems and changes in work.
+- https://www.iasantetravail.com/parcours/comprendre/ — Prévenir, étape 1 : comprendre les systèmes d’IA et les transformations du travail.
+- https://www.iasantetravail.com/en/pathways/understand/ — Prevention, step 1: understand AI systems and changes in work.
 - https://www.iasantetravail.com/parcours/risques-collectifs/ — Examiner le disempowerment et les risques pour la santé.
 - https://www.iasantetravail.com/en/pathways/collective-risks/ — Examine human disempowerment and health risks.
-- https://www.iasantetravail.com/parcours/prevenir/ — Détecter, évaluer et prévenir les risques de l’IA au travail.
-- https://www.iasantetravail.com/en/pathways/prevent/ — Detect, assess and prevent risks from AI at work.
-- https://www.iasantetravail.com/parcours/ia-sante-travail/ — Épauler les professionnels de santé au travail.
-- https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/ — Support occupational health professionals.
+- https://www.iasantetravail.com/parcours/prevenir/ — Comprendre l’IA, évaluer un projet, agir et gouverner, suivre et ajuster.
+- https://www.iasantetravail.com/en/pathways/prevent/ — Understand AI, assess a project, act and govern, monitor and adjust.
+- https://www.iasantetravail.com/parcours/ia-sante-travail/ — Espace professionnel de la rubrique Prévenir : usages en SPST, preuves et outils.
+- https://www.iasantetravail.com/en/pathways/ai-in-occupational-health/ — Professional space within Prevent: occupational health uses, evidence and tools.
 
 ### Guides, tools and collections
 

@@ -31,20 +31,15 @@ L’objectif n’est donc ni de promouvoir ni de rejeter l’IA par principe, ma
 
 ## Organisation du site
 
-L’accueil présente le lien entre **AI Safety, transformations du travail, pouvoir économique et social, et santé publique**. Les pages existantes conservent leurs adresses ; des parcours bilingues les regroupent dans un ordre de lecture.
+L’accueil présente l’initiative et trois portes d’entrée. Les adresses existantes restent inchangées, en français comme en anglais.
 
-Le menu principal suit la même structure en français et en anglais :
+Le parcours principal est **Sécurité de l’IA → Risques collectifs → Prévenir**.
 
-- **Sécurité de l’IA** : définition, contribution de la santé au travail, risques et moyens d’action.
-- **Comprendre** : systèmes d’IA, transformations des tâches, métiers et supervision humaine.
-- **Risques collectifs** : perte de pouvoir économique et social, risques psychosociaux et santé.
-- **Prévenir** : recommandations, évaluation, dialogue social et gouvernance.
-- **IA en santé au travail** : usages professionnels, étude INRS, outils et conditions d’utilisation.
-- **Recherche** : quatre travaux du Dr Charles Broutin — Archives des Maladies Professionnelles et de l’Environnement, INRS, JOEM et preprint sur les chercheurs en IA.
-- **Lectures** : la collection des analyses et lectures commentées.
-- **À propos** : l’auteur et son parcours.
+- **Sécurité de l’IA** : définition, contribution de la santé au travail et cadre de la démarche.
+- **Risques collectifs** : santé et conditions de travail, pouvoir économique et social ; chaque situation conduit vers des moyens de prévention.
+- **Prévenir** : comprendre l’IA, évaluer un projet, agir et gouverner, suivre et ajuster. L’espace professionnel « IA en santé au travail » est accessible depuis cette rubrique.
 
-Les outils, interventions et informations légales restent accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
+**Recherche, Lectures et À propos** forment la navigation secondaire. Comprendre l’IA et l’espace professionnel restent aussi accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
 
 ## À qui s’adresse le projet ?
 
