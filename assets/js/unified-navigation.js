@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.1";
+  const NAVIGATION_VERSION = "8.2";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -59,7 +59,7 @@
   const SITE = {
     fr: {
       home: "/",
-      brand: { name: "IA & Santé au Travail", tagline: "Publication indépendante", label: "IA et Santé au Travail, accueil" },
+      brand: { name: "IA & Santé au Travail", tagline: "Initiative indépendante de sécurité de l’IA", label: "IA et Santé au Travail, accueil" },
       mainLabel: "Navigation principale",
       searchShort: "Rechercher",
       searchLong: "Rechercher dans le site",
@@ -104,7 +104,7 @@
     },
     en: {
       home: "/en/",
-      brand: { name: "AI & Occupational Health", tagline: "Independent publication", label: "AI & Occupational Health, home" },
+      brand: { name: "AI & Occupational Health", tagline: "Independent AI safety initiative", label: "AI & Occupational Health, home" },
       mainLabel: "Main navigation",
       searchShort: "Search",
       searchLong: "Search the site",

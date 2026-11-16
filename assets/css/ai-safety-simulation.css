@@ -21,14 +21,15 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .hero .eyebrow{margin-bottom:38px;color:var(--paper)}
 #contenu.home-simulation h1{font:400 clamp(48px,7.1cqw,104px)/1.06 Newsreader,Georgia,serif;letter-spacing:-.035em;max-width:17em;margin-bottom:39px;text-wrap:balance}
 #contenu.home-simulation h1 em{font-weight:400}
-#contenu.home-simulation .hero-support{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+#contenu.home-simulation .hero-support{display:block}
 #contenu.home-simulation .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 #contenu.home-simulation .button{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:54px;border:1px solid currentColor;padding:13px 23px;font-size:15px;font-weight:500;line-height:1.4;transition:background .18s,color .18s}
 #contenu.home-simulation .button>span{font-size:25px;font-weight:400;line-height:1}
 #contenu.home-simulation .hero .button:hover{background:var(--paper);color:var(--green);text-decoration:none}
 #contenu.home-simulation .text-link{display:inline-flex;align-items:baseline;gap:12px;font-size:14px;font-weight:500;line-height:1.6}
 #contenu.home-simulation .text-link .link-arrow{font-size:17px;white-space:nowrap}
-#contenu.home-simulation .intro{font-size:16px;line-height:1.8;max-width:37em}
+#contenu.home-simulation .intro{font-size:16px;line-height:1.8;max-width:65em}
+#contenu.home-simulation .hero-signature a{text-decoration:underline;text-decoration-thickness:1px}
 #contenu.home-simulation .hero-signature{border-top:1px solid #ffffff35;margin-top:43px;padding-top:22px;font-size:11px;letter-spacing:.015em}
 #contenu.home-simulation .section,#contenu.home-simulation .prevention{padding:86px var(--gutter);border-bottom:1px solid var(--line)}
 #contenu.home-simulation .section-header,#contenu.home-simulation .thesis{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-bottom:44px}
@@ -99,18 +100,18 @@ body.simulation-home{margin:0;--paper:#f3efe6;--light:#faf7f0;--green:#1f3730;--
 #contenu.home-simulation .tool-list h3 a{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
 #contenu.home-simulation .tool-list p{font-size:14px;color:var(--muted)}
 #contenu.home-simulation .tag{display:block;color:var(--terra);font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-top:12px}
-#contenu.home-simulation #laboratoires{background:var(--green);color:var(--paper)}
-#contenu.home-simulation #laboratoires :is(h2,h3,h4,p,li){color:var(--paper)}
-#contenu.home-simulation #laboratoires .eyebrow{color:var(--paper)}
+#contenu.home-simulation #laboratoires{background:var(--wash);color:var(--ink)}
+#contenu.home-simulation #laboratoires :is(h2,h3,h4,p,li){color:var(--ink)}
+#contenu.home-simulation #laboratoires .eyebrow{color:var(--terra)}
 #contenu.home-simulation .labs{display:grid;grid-template-columns:1fr 1fr;gap:70px}
 #contenu.home-simulation .labs .label{font-size:10px;margin-bottom:22px;opacity:.8}
 #contenu.home-simulation .labs h3{font-size:34px;margin-bottom:21px}
 #contenu.home-simulation .labs p{font-size:15px;margin-top:18px}
 #contenu.home-simulation .labs .lab-limits{font-size:12px;line-height:1.8;opacity:.8}
-#contenu.home-simulation .labs .source-inline{font-size:12px;border-top:1px solid #f3efe640;padding-top:20px;margin-top:24px}
+#contenu.home-simulation .labs .source-inline{font-size:12px;border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
 #contenu.home-simulation .labs .source-inline a{text-decoration:underline}
 #contenu.home-simulation .lab-questions{padding:0;list-style:none}
-#contenu.home-simulation .lab-questions li{font:400 26px/1.25 Newsreader,Georgia,serif;border-top:1px solid #f3efe650;padding:20px 0}
+#contenu.home-simulation .lab-questions li{font:400 26px/1.25 Newsreader,Georgia,serif;border-top:1px solid var(--line);padding:20px 0}
 #contenu.home-simulation .labs .text-link{margin-top:24px}
 #contenu.home-simulation .update-note{padding:20px var(--gutter);font-size:11px;color:var(--muted);border-bottom:1px solid var(--line)}
 #contenu.home-simulation .safety-map{background:var(--light);color:var(--ink)}
