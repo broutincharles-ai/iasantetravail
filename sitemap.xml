@@ -631,6 +631,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/actions/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/observatoire/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/observatory/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/outils/</loc>
     <lastmod>2026-10-05</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
@@ -647,12 +661,6 @@
     <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/risques-prevention/duerp/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/risques-prevention/duerp/"/>
-  </url>
-  <url>
-    <loc>https://www.iasantetravail.com/observatoire/</loc>
-    <lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/outils/claude-skills/</loc>

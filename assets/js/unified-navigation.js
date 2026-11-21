@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.5";
+  const NAVIGATION_VERSION = "8.6";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -38,6 +38,7 @@
     "/recommandations/charte-ia/": "/en/recommendations/ai-charter/",
     "/publications/sante-au-travail-enjeu-securite-ia/": "/en/publications/occupational-health-ai-safety-issue/",
     "/lecture/": "/en/reading/",
+    "/observatoire/": "/en/observatory/",
     "/lecture/sante-travail-securite-ia/": "/en/reading/occupational-health-ai-safety/",
     "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
     "/lecture/ingenierie-code-ia/": "/en/reading/engineering-ai-code/",
@@ -113,6 +114,7 @@
         { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
         { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
         { key: "publications", label: "Research", href: "/en/publications/", secondary: true, divider: true },
+        { key: "observatory", label: "Observatory", href: "/en/observatory/", secondary: true },
         { key: "reading", label: "Reading", href: "/en/reading/", secondary: true },
         { key: "about-group", label: "About", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/en/about/", desc: "Occupational physician, author of the site" },
@@ -130,7 +132,7 @@
             ["Monitor and adjust", "/en/pathways/prevent/#suivre"], ["Occupational health space", "/en/pathways/ai-in-occupational-health/"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/"]
           ] },
           { id: "systemFooterSite", title: "The site", links: [
-            ["Research", "/en/publications/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
+            ["Research", "/en/publications/"], ["Observatory", "/en/observatory/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -162,7 +164,7 @@
       [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
       [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "prevent"],
       [/^\/(?:en\/)?publications\//, "publications"],
-      [/^\/observatoire\//, "observatory"],
+      [/^\/(?:observatoire|en\/observatory)\//, "observatory"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
       [/^\/(?:en\/)?actions\//, "actions"],
       [/^\/(?:en\/about|a-propos)\//, "about"]
