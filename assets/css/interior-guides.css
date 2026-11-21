@@ -1,0 +1,182 @@
+/* Reading guides, reference sheets and decision tools in French and English. */
+@media screen {
+  body:is(.understand-editorial-v3, .governance-editorial-v3, .spsti-editorial-v3,
+    .cse-editorial-v2, .risk-intro-page, .risk-resource-page, .economic-risk-page, .reco-page) {
+    --paper: var(--interior-paper);
+    --paper-soft: var(--interior-light);
+    --paper-light: var(--interior-light);
+    --paper-deep: var(--interior-wash);
+    --cream: var(--interior-wash);
+    --white: var(--interior-light);
+    --ink: var(--interior-ink);
+    --muted: var(--interior-muted);
+    --brick: var(--interior-brick);
+    --terra-interactive: var(--interior-brick);
+    --prevention: var(--interior-forest);
+    --line: var(--interior-line);
+    background-color: var(--interior-paper);
+  }
+
+  body.understand-editorial-v3 {
+    --understand-paper: var(--interior-paper);
+    --understand-panel: var(--interior-light);
+    --understand-deep: var(--interior-wash);
+    --understand-ink: var(--interior-ink);
+    --understand-muted: var(--interior-muted);
+    --understand-brick: var(--interior-brick);
+    --understand-line: var(--interior-line);
+  }
+
+  body.economic-risk-page {
+    --risk-paper: var(--interior-paper);
+    --risk-paper-light: var(--interior-light);
+    --risk-ink: var(--interior-ink);
+    --risk-muted: var(--interior-muted);
+    --risk-terra-deep: var(--interior-brick);
+    --risk-line: var(--interior-line);
+  }
+
+  /* Keep the same centered introduction even on templates with a narrow main column. */
+  main:is(#content, #contenu) :is(.artwork-free-hero, .economic-hero, .rc-hero) {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0 auto;
+    padding: clamp(32px, 4vw, 54px) max(18px, calc((100% - 1120px) / 2)) clamp(30px, 3.3vw, 46px);
+    border: 0;
+    color: var(--interior-paper);
+    background: var(--interior-forest);
+    text-align: center;
+  }
+
+  /* The recommendations flowcharts use a constrained parent; extend the masthead paint only. */
+  .reco-page main.rc .rc-hero {
+    box-shadow: 0 0 0 100vmax var(--interior-forest);
+    clip-path: inset(0 -100vmax);
+  }
+
+  main:is(#content, #contenu) .artwork-free-hero > :is(.hero-copy, .formation-hero-copy, .cse-hero-copy) {
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  main:is(#content, #contenu) :is(.artwork-free-hero, .economic-hero, .rc-hero)
+  :is(h1, .hero-lede, .cse-lede, .formation-hero-lede, .rc-lede, .economic-hero-bottom > p,
+      .kicker, .formation-kicker, .cse-kicker, .economic-kicker, .rc-kicker, .economic-back,
+      .rc-byline, .rc-legend, .article-meta, .ref-crumb, .cse-meta) {
+    color: var(--interior-paper);
+  }
+
+  main:is(#content, #contenu) :is(.artwork-free-hero, .economic-hero, .rc-hero)
+  :is(.article-meta, .cse-meta, .ref-crumb, .rc-byline, .hero-lede, .cse-lede) a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: .18em;
+  }
+
+  main:is(#content, #contenu) .artwork-free-hero :is(.article-meta, .cse-meta, .ref-crumb, .hero-lede, .cse-lede) :is(time, strong, em) { color: inherit; }
+  main:is(#content, #contenu) .artwork-free-hero :is(.hero-actions, .cse-actions) { justify-content: center; }
+  main:is(#content, #contenu) .artwork-free-hero :is(.button, .cse-button) {
+    color: var(--interior-paper);
+    border: 1px solid var(--interior-paper);
+    background: transparent;
+  }
+
+  main:is(#content, #contenu) .artwork-free-hero :is(.button, .cse-button).primary,
+  main:is(#content, #contenu) .artwork-free-hero :is(.button, .cse-button):hover {
+    color: var(--interior-forest);
+    background: var(--interior-light);
+  }
+
+  main:is(#content, #contenu) .artwork-free-hero :is(.button, .cse-button).primary:hover {
+    color: var(--interior-paper);
+    background: transparent;
+  }
+
+  main:is(#content, #contenu) :is(.artwork-free-hero, .economic-hero, .rc-hero) a:focus-visible {
+    outline: 2px solid var(--interior-light);
+    outline-offset: 3px;
+  }
+
+  /* Follow the homepage's chapter spacing and fine rules within the original reading widths. */
+  :is(.governance-editorial-v3, .spsti-editorial-v3, .understand-editorial-v3) main > .section,
+  .cse-editorial-v2 main > .cse-section,
+  .risk-resource-page main > .resource-section {
+    padding-block: clamp(36px, 4.7vw, 68px);
+    border-top-color: var(--interior-line);
+  }
+
+  .understand-editorial-v3 .chapter-toc,
+  .governance-editorial-v3 .brief-layout,
+  .spsti-editorial-v3 .pst-context-copy,
+  .cse-editorial-v2 .cse-brief {
+    background: var(--interior-light);
+    border-color: var(--interior-line);
+    border-top: 2px solid var(--interior-brick);
+  }
+
+  .understand-editorial-v3 :is(.family-card, .knowledge-card),
+  .governance-editorial-v3 .consult-card,
+  .spsti-editorial-v3 :is(.hub-family, .terrain-card) {
+    border-top: 1px solid var(--interior-brick);
+  }
+
+  .cse-editorial-v2 .ref-answer,
+  .cse-editorial-v2 .direct-answer {
+    margin-block: 20px;
+    padding: clamp(16px, 2vw, 26px);
+    border: 0;
+    border-left: 3px solid var(--interior-brick);
+    background: var(--interior-light);
+  }
+
+  .cse-editorial-v2 .ref-grid > article,
+  .risk-intro-page .risk-analysis-card {
+    border-top: 1px solid var(--interior-brick);
+  }
+
+  .risk-intro-page .risk-analysis-card.is-recommended {
+    border-top: 3px solid var(--interior-brick);
+  }
+
+  .risk-resource-page .psychosocial-essential {
+    background: var(--interior-light);
+    border-color: var(--interior-line);
+  }
+
+  .risk-resource-page .resource-section.alt,
+  .risk-intro-page .risk-tool-band {
+    background: var(--interior-wash);
+  }
+
+  .economic-risk-page .economic-progression { background: var(--interior-light); }
+  .economic-risk-page .economic-aside {
+    border-left: 2px solid var(--interior-brick);
+    background: var(--interior-wash);
+  }
+
+  .economic-risk-page .economic-scenario-note {
+    background: var(--interior-light);
+    color: var(--interior-ink);
+    border-left: 3px solid var(--interior-brick);
+  }
+
+  .economic-risk-page .economic-hero .economic-scenario-note a:focus-visible {
+    outline-color: var(--interior-brick);
+  }
+
+  .reco-page .rc-hero .rc-legend { row-gap: 12px; }
+  .reco-page .rc-hero .rc-legend :is(.is-question, .is-end) { border-color: var(--interior-light); }
+  .reco-page .rc-audiences {
+    margin-top: 0;
+    background: var(--interior-light);
+    border-color: var(--interior-line);
+  }
+
+  .reco-page .rc .rc-tab[aria-selected="true"] { border-bottom-color: var(--interior-brick); }
+  .reco-page .rc-panel-head { border-top: 1px solid var(--interior-brick); padding-top: 22px; }
+}

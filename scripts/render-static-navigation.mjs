@@ -44,7 +44,22 @@ const ASSETS = {
 const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const assetTag = (name, file) => new RegExp(`[ \\t]*<(?:link|script)\\b[^>]*(?:href|src)=["'][^"']*/${escapeRegExp(file)}(?:\\?[^"']*)?["'][^>]*>(?:</script>)?[ \\t]*\\n?`, "gi");
 
-function normaliseHead(html, { app }) {
+const INTERIOR_FAMILIES = {
+  guides: ["understand-editorial-v3", "governance-editorial-v3", "spsti-editorial-v3", "cse-editorial-v2", "risk-intro-page", "risk-resource-page", "economic-risk-page", "reco-page"],
+  reading: ["reading-simple", "reading-redesign", "demo-reading-article", "editorial-publication", "collection-page", "about-focused", "ai-safety-publications"],
+  tools: ["tools-page", "evaluer-work-monitor-v3"]
+};
+
+function interiorStyles(html, file) {
+  if (file === "index.html" || file === "en/index.html") return [];
+  const classes = new Set((html.match(/<body\b[^>]*\bclass=["']([^"']*)/i)?.[1] || "").split(/\s+/));
+  const family = file === APP_FILE ? "tools" : Object.keys(INTERIOR_FAMILIES)
+    .find(key => INTERIOR_FAMILIES[key].some(name => classes.has(name)));
+  const sheets = ["interior", ...(family ? [`interior-${family}`] : [])];
+  return sheets.map(name => `<link rel="stylesheet" media="screen" href="/assets/css/${name}.css">`);
+}
+
+function normaliseHead(html, { app, file }) {
   let head = html.slice(0, html.search(/<\/head>/i));
   const rest = html.slice(head.length);
 
@@ -58,6 +73,7 @@ function normaliseHead(html, { app }) {
 
   for (const file of [
     "assets/css/fonts.css", "assets/css/ux-improvements.css", "assets/css/readability.css", "assets/css/editorial-consistency.css",
+    "assets/css/interior.css", ...Object.keys(INTERIOR_FAMILIES).map(key => `assets/css/interior-${key}.css`),
     "assets/css/unified-navigation.css", "assets/css/navigation-nojs.css", "assets/css/preconisations-shell.css",
     "assets/js/unified-navigation.js", "assets/js/ux-improvements.js", "assets/js/consent.js",
     "assets/js/language-routing.js", "assets/js/site-shell.js"
@@ -78,6 +94,7 @@ function normaliseHead(html, { app }) {
     `<link rel="stylesheet" href="${ASSETS.shellCss}">`,
     ...(app ? [`<link rel="stylesheet" href="${ASSETS.appShellCss}">`] : []),
     `<link rel="stylesheet" href="${ASSETS.editorialCss}">`,
+    ...interiorStyles(html, file),
     `<noscript><link rel="stylesheet" href="${ASSETS.nojsCss}"></noscript>`,
     `<script defer src="${ASSETS.navJs}"></script>`,
     `<script defer src="${ASSETS.uxJs}"></script>`,
@@ -97,7 +114,7 @@ function renderShell(html, file) {
   const english = file.startsWith("en/");
   const route = "/" + file.replace(/index\.html$/, "");
   const app = file === APP_FILE;
-  html = normaliseHead(html, { app });
+  html = normaliseHead(html, { app, file });
   if (LEGAL_FILES.has(file)) {
     html = html.replace(/<body\b([^>]*)\bclass="([^"]*)"/i, (match, before, classes) => {
       const list = classes.split(/\s+/).filter(Boolean);

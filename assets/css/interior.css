@@ -1,0 +1,139 @@
+/* Screen styles shared by interior pages. The palette and type scale follow the homepage. */
+:root {
+  --interior-paper: #f3efe6;
+  --interior-light: #faf7f0;
+  --interior-wash: #eae3d6;
+  --interior-ink: #171a18;
+  --interior-muted: #5b615b;
+  --interior-forest: #1f3730;
+  --interior-brick: #87301f;
+  --interior-line: #c9c5ba;
+  --interior-sans: "Instrument Sans", Arial, sans-serif;
+  --interior-serif: Newsreader, Georgia, serif;
+  --interior-gutter: clamp(24px, 6vw, 88px);
+  --interior-hero-top: 54px;
+  --interior-hero-bottom: 36px;
+}
+
+html body {
+  background-color: var(--interior-paper);
+  color: var(--interior-ink);
+  font-family: var(--interior-sans);
+}
+
+html body main h1,
+html body.page-headings main h1 {
+  font: 600 clamp(32px, 3.7vw, 54px)/1.17 var(--interior-sans) !important;
+  letter-spacing: -.035em !important;
+  text-align: center;
+  text-wrap: balance;
+}
+
+main :where(h2, h3) { font-family: var(--interior-serif); }
+main :where(a, summary) { text-underline-offset: .23em; }
+main :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+/* These pages put their masthead inside the reading column. Extend just its paint
+   to the screen edges, keeping the column and the native document scroll width. */
+.ai-safety-pathway main .chapter-hero,
+.safety-overview .safety-intro,
+.agent-resource #overview {
+  background: var(--interior-forest);
+  box-shadow: 0 0 0 100vmax var(--interior-forest);
+  clip-path: inset(0 -100vmax);
+}
+.ai-safety-pathway main .chapter-hero,
+.ai-safety-pathway .pathway-hub .chapter-hero,
+.safety-overview .safety-intro,
+.agent-resource #overview,
+html body.legal-refresh .legal-hero {
+  padding-block: var(--interior-hero-top) var(--interior-hero-bottom);
+  background-color: var(--interior-forest);
+  color: var(--interior-paper);
+  text-align: center;
+}
+html body :is(.chapter-hero, .safety-intro, .legal-hero, #overview.hero) h1,
+.ai-safety-pathway main .chapter-hero p,
+.ai-safety-pathway main .chapter-hero .eyebrow,
+.safety-overview .safety-intro p,
+.safety-overview .safety-byline a:hover,
+html body.legal-refresh .legal-hero :is(.kicker, p) { color: var(--interior-paper); }
+
+.ai-safety-pathway main .chapter-hero p:not(.eyebrow),
+.safety-overview .safety-intro p:not(.safety-byline) {
+  max-width: 82ch;
+  margin-inline: auto;
+  font: 400 17px/1.8 var(--interior-sans);
+  text-align: center;
+}
+.ai-safety-pathway .chapter-hero .eyebrow {
+  font: 500 11px/1.5 var(--interior-sans);
+  letter-spacing: .11em;
+}
+.ai-safety-pathway .journey-stage h2,
+.ai-safety-pathway .chapter-grid h2,
+.safety-overview .safety-section h2 {
+  font: 400 clamp(32px, 3.3vw, 48px)/1.13 var(--interior-serif);
+  letter-spacing: -.025em;
+}
+.safety-overview .safety-grid h3,
+.safety-overview .safety-risk-list h3 {
+  font: 400 clamp(25px, 2.2vw, 32px)/1.15 var(--interior-serif);
+}
+.safety-overview .safety-example { background-color: var(--interior-wash); }
+.safety-overview .safety-grid article { border-top: 1px solid var(--interior-line); }
+.ai-safety-pathway main .chapter-footer .button {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--interior-forest);
+}
+.ai-safety-pathway main .chapter-footer .button:hover {
+  background: var(--interior-forest);
+  color: var(--interior-paper);
+}
+html body.legal-refresh .legal-card.glass {
+  border-radius: 0;
+  border-top: 1px solid var(--interior-line);
+  box-shadow: none;
+  background: transparent;
+}
+html body.legal-refresh .legal-card p { color: var(--interior-ink); font-size: 16px; }
+html body.error-refresh main.legal-hero {
+  color: var(--interior-paper);
+  background: var(--interior-forest);
+}
+html body.error-refresh main.legal-hero p { color: var(--interior-paper) !important; }
+html body.error-refresh main.legal-hero .btn,
+.agent-resource #overview .button {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--interior-paper);
+}
+html body.error-refresh main.legal-hero .btn:hover,
+.agent-resource #overview .button:hover {
+  background: var(--interior-paper);
+  color: var(--interior-forest);
+}
+
+/* The bilingual agent guide has its own language switch and reading controls. */
+.agent-resource #overview .hero-grid { display: block; }
+.agent-resource #overview :is(.eyebrow, .hero-actions) { justify-content: center; }
+.agent-resource #overview .eyebrow::before { display: none; }
+.agent-resource #overview :is(.eyebrow, .lede, .welcome-label, .welcome small, .version-line) { color: var(--interior-paper); }
+.agent-resource #overview .lede { max-width: 80ch; margin-inline: auto; line-height: 1.8; }
+.agent-resource #overview .welcome {
+  max-width: 78ch;
+  margin: 30px auto 0;
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 1px solid rgb(243 239 230 / .35);
+}
+.agent-resource .index-nav { border-color: var(--interior-line); }
+.agent-resource .answer-body { background: var(--interior-light); }
+.agent-resource .section-head h2 { font-family: var(--interior-serif); }
+
+@media (max-width: 760px) {
+  :root { --interior-hero-top: 34px; --interior-hero-bottom: 28px; }
+  .ai-safety-pathway main .chapter-hero p:not(.eyebrow),
+  .safety-overview .safety-intro p:not(.safety-byline) { font-size: 16px; line-height: 1.75; }
+}

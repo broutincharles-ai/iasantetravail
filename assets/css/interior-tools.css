@@ -1,0 +1,142 @@
+/* The directory, assessment workspace and embedded re-reading tool use distinct templates. */
+@media screen {
+  .tools-page main,
+  #root {
+    --paper: var(--interior-paper);
+    --white: var(--interior-light);
+    --ink: var(--interior-ink);
+    --muted: var(--interior-muted);
+    --line: var(--interior-line);
+    --accent: var(--interior-brick);
+    --terra-interactive: var(--interior-brick);
+  }
+
+  .evaluer-work-monitor-v3 {
+    --eval-panel: var(--interior-light);
+    --eval-paper: var(--interior-paper);
+    --eval-paper-deep: var(--interior-wash);
+    --eval-ink: var(--interior-ink);
+    --eval-muted: var(--interior-muted);
+    --eval-line: var(--interior-line);
+    --eval-brick: var(--interior-brick);
+    --eval-focus: var(--interior-forest);
+  }
+
+  /* Extend the band beyond the reading column while keeping its content aligned. */
+  .tools-page .tools-hero,
+  .skills-detail-page .skills-heading-grid,
+  .evaluer-work-monitor-v3 main .eval-hero,
+  #root .hero {
+    display: block;
+    padding: 54px 0 36px;
+    background: var(--interior-forest);
+    color: var(--interior-paper);
+    box-shadow: 0 0 0 100vmax var(--interior-forest);
+    clip-path: inset(0 -100vmax);
+    text-align: center;
+  }
+
+  .tools-page main .tool-breadcrumb,
+  .evaluer-work-monitor-v3 main .tool-breadcrumb { padding-block: 16px; }
+  .skills-detail-page .skills-atelier { padding-top: 0; }
+
+  .tools-page main :is(.tools-hero, .skills-heading-grid) h1,
+  .evaluer-work-monitor-v3 main .eval-hero h1,
+  #root .hero h1 {
+    margin-block: 16px 24px;
+    color: var(--interior-paper);
+  }
+
+  .tools-page main :is(.tools-hero, .skills-heading-grid) .tools-kicker,
+  .evaluer-work-monitor-v3 .eval-hero .eval-kicker,
+  #root .hero .eyebrow {
+    margin-bottom: 16px;
+    color: var(--interior-wash);
+    font: 650 11px/1.5 "Instrument Sans", Arial, sans-serif;
+    letter-spacing: .12em;
+  }
+
+  .tools-page .tools-hero .tools-lede,
+  .evaluer-work-monitor-v3 .eval-hero .eval-hero-lede,
+  #root .hero > p,
+  .skills-detail-page .skills-explain .skills-definition {
+    max-width: 960px;
+    margin: 0 auto;
+    color: var(--interior-paper);
+    font: 400 17px/1.8 "Instrument Sans", Arial, sans-serif;
+    letter-spacing: normal;
+    text-wrap: pretty;
+  }
+
+  .skills-detail-page .skills-explain { max-width: 960px; margin-inline: auto; padding: 0; }
+  .skills-detail-page .skills-explain p + p { max-width: 80ch; margin: 14px auto 0; color: var(--interior-wash); }
+  .skills-detail-page .skills-explain .skills-text-link { color: var(--interior-paper); margin-top: 18px; }
+  .skills-detail-page .skills-explain .skills-text-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  .tools-page .tools-grid { margin-top: clamp(32px, 5vw, 64px); }
+  .tools-page .tool-card {
+    border: 0;
+    border-top: 1px solid var(--interior-line);
+    background: transparent;
+    padding: 24px 0;
+  }
+  .tools-page .tool-card.is-featured {
+    border-color: var(--interior-forest);
+    background: var(--interior-light);
+    padding: clamp(24px, 3.5vw, 48px);
+  }
+  .tools-page .tool-card h2 { font-family: "Newsreader", Georgia, serif; font-weight: 400; }
+  .fiches-page .fiche-series { border-top: 0; margin-top: 0; }
+  .skills-detail-page .skills-entries { margin-top: clamp(32px, 5vw, 64px); }
+
+  .evaluer-work-monitor-v3 .eval-audience,
+  .evaluer-work-monitor-v3 .eval-facts { margin-top: clamp(32px, 5vw, 64px); }
+  .evaluer-work-monitor-v3 .eval-hero .eval-privacy,
+  .evaluer-work-monitor-v3 .eval-privacy :is(span, strong) { color: var(--interior-wash); }
+  .evaluer-work-monitor-v3 .eval-tool-section { background: var(--interior-wash); }
+  .evaluer-work-monitor-v3 :is(.question-card, .radar-axis-key, .local-notice, .action-table-wrap) { background: var(--interior-light); }
+  .evaluer-work-monitor-v3 .eval-section-head h2,
+  .evaluer-work-monitor-v3 .eval-audience-head h2,
+  .evaluer-work-monitor-v3 .tool-section-head h2 { font-family: "Newsreader", Georgia, serif; font-weight: 400; }
+
+  #root .hero { border-bottom: 0; }
+  #root .hero-benefits { color: var(--interior-ink); background: var(--interior-light); }
+  #root .hero .hero-meta { color: var(--interior-wash); }
+  #root .hero .hero-meta span + span { border-color: currentColor; }
+  .evaluer-work-monitor-v3 .eval-hero .eval-button-primary,
+  #root .hero .primary-link {
+    border-color: var(--interior-paper);
+    background: var(--interior-paper);
+    color: var(--interior-forest);
+  }
+  .evaluer-work-monitor-v3 .eval-hero .eval-button-secondary,
+  #root .hero .secondary-link {
+    color: var(--interior-paper);
+    background: transparent;
+    border-color: var(--interior-line);
+  }
+  .evaluer-work-monitor-v3 .eval-hero .eval-button:hover,
+  #root .hero :is(.primary-link, .secondary-link):hover {
+    color: var(--interior-forest);
+    background: var(--interior-wash);
+    border-color: var(--interior-wash);
+  }
+  .evaluer-work-monitor-v3 .eval-hero .eval-button:focus-visible,
+  #root .hero a:focus-visible { outline: 2px solid var(--interior-paper); outline-offset: 4px; }
+
+  #root .panel-heading { background: var(--interior-light); border-color: var(--interior-line); }
+  #root .chapter-nav { background: var(--interior-paper); }
+  #root .chapter-nav a.active { border-bottom-color: var(--interior-brick); }
+}
+
+@media screen and (max-width: 570px) {
+  .tools-page .tools-hero,
+  .skills-detail-page .skills-heading-grid,
+  .evaluer-work-monitor-v3 main .eval-hero,
+  #root .hero { padding-block: 34px 28px; }
+
+  .tools-page .tools-hero .tools-lede,
+  .evaluer-work-monitor-v3 .eval-hero .eval-hero-lede,
+  #root .hero > p,
+  .skills-detail-page .skills-explain .skills-definition { font-size: 16px; line-height: 1.75; }
+}
