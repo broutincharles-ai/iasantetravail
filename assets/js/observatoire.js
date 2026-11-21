@@ -1,14 +1,16 @@
-/* Observatoire de l’IA au travail (/observatoire/) : carte, classement et comparaison entre sources.
+/* Observatoire de l’IA au travail (/observatoire/ et /en/observatory/) : carte, classement et
+   comparaison entre sources.
    - Les chiffres sont lus dans les trois tableaux de la page, écrits par scripts/build-observatoire.mjs.
    - Les contours viennent de /assets/data/observatoire-monde.json : Natural Earth 1:50m, projection
-     Equal Earth, déjà projetés dans un cadre de 1000 × 459 unités.
-   - Le zoom utilise window.ObservatoireZoom (observatoire-zoom.js) ; sans lui, la carte reste lisible. */
+     Equal Earth, déjà projetés dans un cadre de 1000 × 459 unités ; « n » et « e » : nom français et anglais.
+   - Le zoom utilise window.ObservatoireZoom (observatoire-zoom.js) ; sans lui, la carte reste lisible.
+   - La langue suit l’attribut lang de la page ; les textes des deux langues sont dans TEXT. */
 (() => {
   'use strict';
   const app = document.getElementById('obs-app');
   if (!app || !document.createElementNS || !window.fetch) return;
 
-  const OUTLINES = '/assets/data/observatoire-monde.json?v=1.0';
+  const OUTLINES = '/assets/data/observatoire-monde.json?v=1.1';
   const W = 1000, H = 459, EUROPE = [429.8, 22.2, 569.4, 127.3];   // cadre de la carte et vue « Europe », en unités de carte
   const BREAKS = [10, 20, 30, 40, 50, 65];
   const RAMP = ['#e3c9bf', '#d8a796', '#d18168', '#c65939', '#a83e27', '#822e1e', '#5d2015'];   // terracotta du site, du clair au foncé
@@ -16,6 +18,61 @@
   const DOT_BELOW = 16;       // unités de carte² : en dessous, le pays reçoit aussi un point
   const DOT_PX = 3.4, DOT_HIDE_PX = 9;
   const NBSP = ' ';
+  const ENGLISH = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+
+  const TEXT = ENGLISH ? {
+    locale: 'en',
+    percent: (v, digits) => v.toFixed(digits) + '%',
+    layers: {
+      employees: { title: 'Worker survey', noun: 'countries',
+        def: 'Share of people in work who say they use AI tools at work at least every few months. Online survey by the University of Melbourne and KPMG, November 2024 to January 2025.',
+        who: 'of workers use AI at work', cap: 'Workers, any AI tool, at least every few months',
+        foot: '* Read from the report’s ranked chart: see the sources.' },
+      workers: { title: 'Official statistics', noun: 'countries',
+        def: 'Share of people in work, aged 16 to 74, who used generative AI for their job in the previous three months. Surveys by national statistical offices, published by Eurostat.',
+        who: 'of people in work used generative AI for their job', cap: 'People in work, generative AI for the job, last three months', foot: '' },
+      adults: { title: 'Usage estimates', noun: 'economies',
+        def: 'Share of people aged 15 to 64 who used a generative AI product, for any purpose, at work or not. Estimated by Microsoft from its own usage data, June 2026.',
+        who: 'of people aged 15 to 64 used generative AI', cap: 'Ages 15 to 64, generative AI, any purpose',
+        foot: '† Same series as neighbouring economies in the source.' }
+    },
+    from: 'From ', to: ' to ',
+    median: (count, noun, value) => 'Median of the ' + count + ' ' + noun + ': ' + value + '.',
+    total: (label, value) => label + ': ' + value + '.',
+    rank: (rank, count) => { const s = ['th', 'st', 'nd', 'rd'], v = rank % 100; return rank + (s[(v - 20) % 10] || s[v] || s[0]) + ' of ' + count; },
+    early: value => 'First half of 2025: ' + value,
+    noData: 'No data', noDataHere: 'No data in this source',
+    noteChart: 'Read from the report’s ranked chart: see the sources.',
+    notePooled: count => 'The source gives the same series to ' + count + ' economies in this region, which suggests a regional estimate.',
+    empty: typed => 'No country in this source matches “' + typed + '”.',
+    loadError: 'The map outlines could not be loaded. The ranking and the comparison still work.'
+  } : {
+    locale: 'fr',
+    percent: (v, digits) => v.toFixed(digits).replace('.', ',') + NBSP + '%',
+    layers: {
+      employees: { title: 'Enquête auprès des travailleurs', noun: 'pays',
+        def: 'Part des personnes en emploi qui déclarent utiliser des outils d’IA au travail au moins tous les quelques mois. Enquête en ligne de l’Université de Melbourne et de KPMG, de novembre 2024 à janvier 2025.',
+        who: 'des travailleurs utilisent l’IA au travail', cap: 'Travailleurs, tout outil d’IA, au moins tous les quelques mois',
+        foot: '* Valeur lue sur le graphique du rapport' + NBSP + ': voir les sources.' },
+      workers: { title: 'Statistique publique', noun: 'pays',
+        def: 'Part des personnes en emploi de 16 à 74 ans ayant utilisé une IA générative pour leur travail au cours des trois derniers mois. Enquêtes des instituts statistiques nationaux, publiées par Eurostat.',
+        who: 'des personnes en emploi ont utilisé une IA générative pour leur travail', cap: 'Personnes en emploi, IA générative pour le travail, trois derniers mois', foot: '' },
+      adults: { title: 'Estimations d’usage', noun: 'économies',
+        def: 'Part des 15-64 ans ayant utilisé un produit d’IA générative, quel que soit l’usage, professionnel ou non. Estimation de Microsoft à partir de ses propres données d’utilisation, juin 2026.',
+        who: 'des 15-64 ans ont utilisé une IA générative', cap: '15-64 ans, IA générative, tous usages',
+        foot: '† Même série que des économies voisines dans la source.' }
+    },
+    from: 'De ', to: ' à ',
+    median: (count, noun, value) => 'Médiane des ' + count + ' ' + noun + NBSP + ': ' + value + '.',
+    total: (label, value) => label + NBSP + ': ' + value + '.',
+    rank: (rank, count) => (rank === 1 ? '1er' : rank + 'e') + ' sur ' + count,
+    early: value => '1er semestre 2025' + NBSP + ': ' + value,
+    noData: 'Pas de donnée', noDataHere: 'Pas de donnée dans cette source',
+    noteChart: 'Valeur lue sur le graphique classé du rapport' + NBSP + ': voir les sources.',
+    notePooled: count => 'La source donne la même série à ' + count + ' économies de cette région, ce qui suggère une estimation régionale.',
+    empty: typed => 'Aucun pays de cette source ne correspond à «' + NBSP + typed + NBSP + '».',
+    loadError: 'Les contours de la carte n’ont pas pu être chargés. Le classement et la comparaison restent utilisables.'
+  };
 
   const $ = id => document.getElementById('obs-' + id);
   const svgEl = (name, attrs) => { const e = document.createElementNS('http://www.w3.org/2000/svg', name); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
@@ -23,23 +80,14 @@
   const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const LAYERS = {
-    employees: { title: 'Enquête auprès des travailleurs', digits: 0, noun: 'pays',
-      def: 'Part des personnes en emploi qui déclarent utiliser des outils d’IA au travail au moins tous les quelques mois. Enquête en ligne de l’Université de Melbourne et de KPMG, de novembre 2024 à janvier 2025.',
-      who: 'des travailleurs utilisent l’IA au travail', cap: 'Travailleurs, tout outil d’IA, au moins tous les quelques mois',
-      foot: '* Valeur lue sur le graphique du rapport' + NBSP + ': voir les sources.' },
-    workers: { title: 'Statistique publique', digits: 1, noun: 'pays',
-      def: 'Part des personnes en emploi de 16 à 74 ans ayant utilisé une IA générative pour leur travail au cours des trois derniers mois. Enquêtes des instituts statistiques nationaux, publiées par Eurostat.',
-      who: 'des personnes en emploi ont utilisé une IA générative pour leur travail', cap: 'Personnes en emploi, IA générative pour le travail, trois derniers mois', foot: '' },
-    adults: { title: 'Estimations d’usage', digits: 1, noun: 'économies',
-      def: 'Part des 15-64 ans ayant utilisé un produit d’IA générative, quel que soit l’usage, professionnel ou non. Estimation de Microsoft à partir de ses propres données d’utilisation, juin 2026.',
-      who: 'des 15-64 ans ont utilisé une IA générative', cap: '15-64 ans, IA générative, tous usages',
-      foot: '† Même série que des économies voisines dans la source.' }
+    employees: Object.assign({ digits: 0 }, TEXT.layers.employees),
+    workers: Object.assign({ digits: 1 }, TEXT.layers.workers),
+    adults: Object.assign({ digits: 1 }, TEXT.layers.adults)
   };
   const ORDER = ['employees', 'workers', 'adults'];
   const classOf = v => { let i = 0; while (i < BREAKS.length && v >= BREAKS[i]) i++; return i; };
   const colorOf = v => v == null ? NODATA : RAMP[classOf(v)];
-  const fmt = (v, digits) => v.toFixed(digits).replace('.', ',') + NBSP + '%';
-  const rankText = (rank, n) => (rank === 1 ? '1er' : rank + 'e') + ' sur ' + n;
+  const fmt = TEXT.percent;
   const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
 
   /* ---------- les chiffres, lus dans les tableaux de la page ---------- */
@@ -54,7 +102,7 @@
         pooled: tr.dataset.pooled ? parseInt(tr.dataset.pooled, 10) : 0, chart: tr.dataset.flag === 'chart' });
     }
     if (!rows.length) return;   // tableaux absents : la page reste lisible sans la carte
-    rows.sort((a, b) => b.v - a.v || a.name.localeCompare(b.name, 'fr'));
+    rows.sort((a, b) => b.v - a.v || a.name.localeCompare(b.name, TEXT.locale));
     rows.forEach((r, i) => { r.rank = i && rows[i - 1].v === r.v ? rows[i - 1].rank : i + 1; if (!nameOf.has(r.id)) nameOf.set(r.id, r.name); });
     const n = rows.length, sorted = rows.map(r => r.v).sort((a, b) => a - b);
     L.rows = rows; L.byId = new Map(rows.map(r => [r.id, r]));
@@ -63,8 +111,7 @@
     L.total = total && totalName && isFinite(parseFloat(total.dataset.v)) ? { label: totalName.textContent.trim(), v: parseFloat(total.dataset.v) } : null;
   }
   const mark = r => r.chart ? '*' : r.pooled ? '†' : '';
-  const noteOf = r => r.chart ? 'Valeur lue sur le graphique classé du rapport' + NBSP + ': voir les sources.'
-    : r.pooled ? 'La source donne la même série à ' + r.pooled + ' économies de cette région, ce qui suggère une estimation régionale.' : '';
+  const noteOf = r => r.chart ? TEXT.noteChart : r.pooled ? TEXT.notePooled(r.pooled) : '';
 
   const state = { layer: 'employees', sel: 'FRA', hover: null, k: 1 };
   const feats = [], featById = new Map();
@@ -88,8 +135,8 @@
     $('def').textContent = L.def;
     const say = $('say'); say.textContent = '';
     const b = t => el('b', '', t);
-    say.append('De ', b(fmt(bottom.v, L.digits)), ' (' + bottom.name + ') à ', b(fmt(top.v, L.digits)), ' (' + top.name + '). Médiane des ' + L.rows.length + ' ' + L.noun + NBSP + ': ' + fmt(L.median, L.digits) + '.'
-      + (L.total ? ' ' + L.total.label + NBSP + ': ' + fmt(L.total.v, L.digits) + '.' : ''));
+    say.append(TEXT.from, b(fmt(bottom.v, L.digits)), ' (' + bottom.name + ')' + TEXT.to, b(fmt(top.v, L.digits)), ' (' + top.name + '). '
+      + TEXT.median(L.rows.length, L.noun, fmt(L.median, L.digits)) + (L.total ? ' ' + TEXT.total(L.total.label, fmt(L.total.v, L.digits)) : ''));
     for (const key of ORDER) { const button = $('seg-' + key), on = key === state.layer; button.setAttribute('aria-checked', String(on)); button.tabIndex = on ? 0 : -1; }
     $('rank-count').textContent = L.rows.length + ' ' + L.noun;
     $('foot').textContent = L.foot; $('foot').hidden = !L.foot;
@@ -103,11 +150,11 @@
       const L = LAYERS[key], r = L.byId.get(id);
       const row = el('div', 'obs-cmp' + (key === state.layer ? ' is-active' : ''));
       const top = el('div', 'obs-cmp-top');
-      top.append(el('span', 'obs-cmp-label', L.title), r ? el('span', 'obs-cmp-val', fmt(r.v, L.digits) + mark(r)) : el('span', 'obs-cmp-val is-none', 'Pas de donnée'));
+      top.append(el('span', 'obs-cmp-label', L.title), r ? el('span', 'obs-cmp-val', fmt(r.v, L.digits) + mark(r)) : el('span', 'obs-cmp-val is-none', TEXT.noData));
       const bar = el('div', 'obs-cmp-bar'), fill = document.createElement('i');
       fill.style.width = (r ? r.v : 0) + '%'; fill.style.background = r ? colorOf(r.v) : 'transparent'; bar.appendChild(fill);
       let cap = L.cap;
-      if (r && r.early != null) cap += '. 1er semestre 2025' + NBSP + ': ' + fmt(r.early, 1);
+      if (r && r.early != null) cap += '. ' + TEXT.early(fmt(r.early, 1));
       row.append(top, bar, el('span', 'obs-cmp-cap', cap));
       box.appendChild(row);
       if (r && mark(r)) notes.push(mark(r) + ' ' + noteOf(r));
@@ -126,7 +173,7 @@
       button.append(el('span', 'obs-row-rank', String(r.rank)), swatch, el('span', 'obs-row-name', r.name), el('span', 'obs-row-val', fmt(r.v, L.digits) + mark(r)));
       list.appendChild(button);
     }
-    if (!rows.length) list.appendChild(el('p', 'obs-empty', 'Aucun pays de cette source ne correspond à «' + NBSP + typed + NBSP + '».'));
+    if (!rows.length) list.appendChild(el('p', 'obs-empty', TEXT.empty(typed)));
   }
   function markRow(scroll) {
     const list = $('list');
@@ -177,8 +224,8 @@
     const L = LAYERS[state.layer], id = resolve(fid, state.layer), r = L.byId.get(id), tip = $('tip');
     $('tip-name').textContent = nameOf.get(id) || id;
     $('tip-val').textContent = r ? fmt(r.v, L.digits) : ''; $('tip-val').hidden = !r;
-    $('tip-who').textContent = r ? L.who : 'Pas de donnée dans cette source';
-    $('tip-rank').textContent = r ? rankText(r.rank, L.rows.length) : ''; $('tip-rank').hidden = !r;
+    $('tip-who').textContent = r ? L.who : TEXT.noDataHere;
+    $('tip-rank').textContent = r ? TEXT.rank(r.rank, L.rows.length) : ''; $('tip-rank').hidden = !r;
     const n = r ? noteOf(r) : ''; $('tip-note').textContent = n; $('tip-note').hidden = !n;
     tip.hidden = false;
     const box = $('map').getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
@@ -276,11 +323,11 @@
       f.el = svgEl('path', { d: g.d, fill: NODATA }); f.el.dataset.id = g.id; land.appendChild(f.el);
       if (g.a < DOT_BELOW) { f.dot = svgEl('circle', { cx: g.c[0], cy: g.c[1], r: 0 }); f.dot.dataset.id = g.id; f.dot.style.display = 'none'; dots.appendChild(f.dot); }
       feats.push(f); featById.set(g.id, f);
-      if (!nameOf.has(g.id)) nameOf.set(g.id, g.n);
+      if (!nameOf.has(g.id)) nameOf.set(g.id, (ENGLISH && g.e) || g.n);
     }
     landG.appendChild(land); dotsG.appendChild(dots);
     $('map-msg').hidden = true;
     setupZoom();
     setLayer(state.layer, { initial: true });
-  }).catch(() => { $('map-msg').textContent = 'Les contours de la carte n’ont pas pu être chargés. Le classement et la comparaison restent utilisables.'; });
+  }).catch(() => { $('map-msg').textContent = TEXT.loadError; });
 })();

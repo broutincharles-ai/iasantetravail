@@ -39,7 +39,7 @@ Le parcours principal est **Sécurité de l’IA → Risques collectifs → Pré
 - **Risques collectifs** : santé et conditions de travail, pouvoir économique et social ; chaque situation conduit vers des moyens de prévention.
 - **Prévenir** : comprendre l’IA, évaluer un projet, agir et gouverner, suivre et ajuster. L’espace professionnel « IA en santé au travail » est accessible depuis cette rubrique.
 
-**Recherche, Observatoire, Lectures et À propos** forment la navigation secondaire. L’Observatoire (`/observatoire/`, en français uniquement) présente une carte de l’usage de l’IA au travail par pays et la relie à la thèse du site. Comprendre l’IA et l’espace professionnel restent aussi accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
+**Recherche, Observatoire, Lectures et À propos** forment la navigation secondaire. L’Observatoire (`/observatoire/` et `/en/observatory/`) présente une carte de l’usage de l’IA au travail par pays et la relie à la thèse du site. Comprendre l’IA et l’espace professionnel restent aussi accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
 
 ## À qui s’adresse le projet ?
 
@@ -80,7 +80,7 @@ Après une modification, depuis la racine du dépôt :
 
 Une nouvelle page doit être ajoutée à `scripts/indexing-scope.mjs` (avec sa traduction s’il y en a une) pour recevoir l’en-tête commun et figurer dans le sitemap.
 
-Observatoire : les chiffres de la carte sont dans `content/observatoire/usage-ia.json`. Après une mise à jour, `node scripts/build-observatoire.mjs` réécrit les trois tableaux de `observatoire/index.html` ; le script de la page (`assets/js/observatoire.js`) les lit pour dessiner la carte, le classement et la comparaison. Les contours des pays (`assets/data/observatoire-monde.json`, Natural Earth) et le zoom (`assets/js/observatoire-zoom.js`, modules d3 regroupés, licences dans le fichier voisin) sont hébergés sur le site : la page n’appelle aucun service tiers.
+Observatoire : les chiffres de la carte sont dans `content/observatoire/usage-ia.json`. Après une mise à jour, `node scripts/build-observatoire.mjs` réécrit les trois tableaux de la page française (`observatoire/index.html`) et de la page anglaise (`en/observatory/index.html`) ; le script commun aux deux pages (`assets/js/observatoire.js`, textes dans les deux langues) les lit pour dessiner la carte, le classement et la comparaison. Les contours des pays (`assets/data/observatoire-monde.json`, Natural Earth) et le zoom (`assets/js/observatoire-zoom.js`, modules d3 regroupés, licences dans le fichier voisin) sont hébergés sur le site : la page n’appelle aucun service tiers.
 
 Tailles de texte : `assets/css/readability.css`, chargé après les styles de chaque page, fixe un minimum de lisibilité (introductions 17 px, texte courant 16 px, cartes et tableaux 15 px, notes 14 px, étiquettes 11 px). Pour agrandir ou réduire le texte de tout le site, modifier les variables en tête de ce fichier ; l’outil Préconisations a son équivalent dans `assets/css/preconisations-shell.css`.
 

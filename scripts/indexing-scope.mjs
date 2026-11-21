@@ -43,14 +43,14 @@ export const INDEXABLE_PAIRS = [
   { fr: "recommandations/salarie/index.html", en: "en/recommendations/employee/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-16" },
-  { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" }
+  { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" },
+  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-21" }
 ];
 
 export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-10-05" },
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-16" },
-  { file: "observatoire/index.html", lang: "fr", lastmod: "2026-11-21" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
