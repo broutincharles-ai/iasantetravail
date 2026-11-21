@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.4";
+  const NAVIGATION_VERSION = "8.5";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -71,6 +71,7 @@
         { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
         { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
         { key: "publications", label: "Recherche", href: "/publications/", secondary: true, divider: true },
+        { key: "observatory", label: "Observatoire", href: "/observatoire/", secondary: true },
         { key: "reading", label: "Lectures", href: "/lecture/", secondary: true },
         { key: "about-group", label: "À propos", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/a-propos/", desc: "Médecin du travail, auteur du site" },
@@ -88,7 +89,7 @@
             ["Suivre et ajuster", "/parcours/prevenir/#suivre"], ["Espace santé au travail", "/parcours/ia-sante-travail/"], ["Tous les outils", "/outils/"]
           ] },
           { id: "systemFooterSite", title: "Le site", links: [
-            ["Recherche", "/publications/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
+            ["Recherche", "/publications/"], ["Observatoire", "/observatoire/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -161,6 +162,7 @@
       [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
       [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "prevent"],
       [/^\/(?:en\/)?publications\//, "publications"],
+      [/^\/observatoire\//, "observatory"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
       [/^\/(?:en\/)?actions\//, "actions"],
       [/^\/(?:en\/about|a-propos)\//, "about"]
