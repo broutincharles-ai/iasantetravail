@@ -44,7 +44,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-16" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" },
-  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-21" }
+  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-22" }
 ];
 
 export const INDEXABLE_SINGLETONS = [
