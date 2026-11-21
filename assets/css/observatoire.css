@@ -116,6 +116,31 @@ circle.obs-mark-sel { stroke-width: 1.5px; }
 .obs-table :is(td, th):last-child { padding-right: 0; }
 .obs-table tfoot :is(th, td) { border-bottom: 0; color: var(--ink); font-weight: 600; }
 
+/* Autres mesures : un tableau sobre, une ligne par source */
+.obs-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.obs-measures { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 15px; line-height: 1.55; }
+.obs-measures :is(th, td) { padding: 13px 28px 14px 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.obs-measures thead th { padding-block: 0 10px; border-top: 0; color: var(--terra-interactive, #87301f); font: 600 11px/1.4 var(--sans); letter-spacing: .11em; text-transform: uppercase; }
+.obs-measures tbody tr:first-child :is(th, td) { border-top-color: var(--line-strong); }
+.obs-measures tbody tr:last-child :is(th, td) { border-bottom: 1px solid var(--line); }
+.obs-measures tbody th { width: 21%; font-size: 16px; font-weight: 600; line-height: 1.4; }
+.obs-measures td { color: var(--ink-soft, #3f443f); text-wrap: pretty; }
+.obs-measures :is(th, td):last-child { width: 23%; padding-right: 0; }
+.obs-measure-scope { display: block; margin-top: 3px; color: var(--muted, #5b615b); font-size: 13px; font-weight: 400; line-height: 1.45; }
+.obs-measure-source { font-size: 14px; line-height: 1.5; }
+.obs-measures cite { font-style: italic; }
+@media (max-width: 760px) {
+  .obs-measures, .obs-measures tbody, .obs-measures tr, .obs-measures :is(th, td) { display: block; width: auto; }
+  .obs-measures thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .obs-measures tr { padding-block: 16px 17px; border-top: 1px solid var(--line); }
+  .obs-measures tbody tr:first-child { border-top-color: var(--line-strong); }
+  .obs-measures tbody tr:last-child { border-bottom: 1px solid var(--line); }
+  .obs-measures :is(th, td), .obs-measures tbody tr:first-child :is(th, td), .obs-measures tbody tr:last-child :is(th, td) { padding: 0; border: 0; }
+  .obs-measures tr { padding-block: 13px 14px; }
+  .obs-measures tbody th { width: auto; margin-bottom: 6px; }
+  .obs-measures :is(th, td):last-child { width: auto; margin-top: 6px; }
+}
+
 /* Sources */
 .obs-sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 34px; }
 .obs-sources article { min-width: 0; padding-top: 18px; border-top: 1px solid var(--interior-line, var(--line-strong)); }
