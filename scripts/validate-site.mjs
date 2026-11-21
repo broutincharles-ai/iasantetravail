@@ -225,7 +225,7 @@ for (const file of htmlFiles) {
   if (isPreconisationsApp && (!html.includes('class="site-header"') || !html.includes('class="page-footer"') || !html.includes('href="https://www.iasantetravail.com/outils/"'))) errors.push(`${relative}: application navigation and return to Tools are required`);
   const requiredNavigation = english
     ? ["/en/ai-safety/", "/en/pathways/collective-risks/", "/en/pathways/prevent/", "/en/publications/", "/en/reading/", "/en/about/", "/en/actions/"]
-    : ["/securite-ia/", "/parcours/risques-collectifs/", "/parcours/prevenir/", "/publications/", "/lecture/", "/a-propos/", "/actions/"];
+    : ["/securite-ia/", "/parcours/risques-collectifs/", "/parcours/prevenir/", "/publications/", "/observatoire/", "/lecture/", "/a-propos/", "/actions/"];
   for (const href of requiredNavigation) {
     if (!staticHeader.includes(`href="${href}"`)) errors.push(`${relative}: missing static navigation link to ${href}`);
   }

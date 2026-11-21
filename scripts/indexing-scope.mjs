@@ -50,6 +50,7 @@ export const INDEXABLE_SINGLETONS = [
   { file: "outils/index.html", lang: "fr", lastmod: "2026-10-05" },
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-16" },
+  { file: "observatoire/index.html", lang: "fr", lastmod: "2026-11-21" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
 ];
