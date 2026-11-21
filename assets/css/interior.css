@@ -63,6 +63,7 @@ html body.legal-refresh .legal-hero :is(.kicker, p) { color: var(--interior-pape
 .safety-overview .safety-intro p:not(.safety-byline) {
   max-width: 82ch;
   margin-inline: auto;
+  color: var(--interior-paper);
   font: 400 17px/1.8 var(--interior-sans);
   text-align: center;
 }

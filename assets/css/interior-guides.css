@@ -134,6 +134,10 @@
     background: var(--interior-light);
   }
 
+  .cse-editorial-v2 .method-grid > article:last-child > span {
+    color: var(--interior-paper);
+  }
+
   .cse-editorial-v2 .ref-grid > article,
   .risk-intro-page .risk-analysis-card {
     border-top: 1px solid var(--interior-brick);

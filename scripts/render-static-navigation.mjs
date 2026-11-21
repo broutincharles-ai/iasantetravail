@@ -56,7 +56,7 @@ function interiorStyles(html, file) {
   const family = file === APP_FILE ? "tools" : Object.keys(INTERIOR_FAMILIES)
     .find(key => INTERIOR_FAMILIES[key].some(name => classes.has(name)));
   const sheets = ["interior", ...(family ? [`interior-${family}`] : [])];
-  return sheets.map(name => `<link rel="stylesheet" media="screen" href="/assets/css/${name}.css">`);
+  return sheets.map(name => `<link rel="stylesheet" media="screen" href="/assets/css/${name}.css?v=1.1">`);
 }
 
 function normaliseHead(html, { app, file }) {
