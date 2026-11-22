@@ -331,3 +331,54 @@
     setLayer(state.layer, { initial: true });
   }).catch(() => { $('map-msg').textContent = TEXT.loadError; });
 })();
+
+/* Capacités des modèles : infobulle du point le plus proche, au survol ou au toucher du graphique. Les textes sont
+   écrits par scripts/build-observatoire.mjs dans les attributs data- de chaque point ; sans script,
+   le tableau replié sous le graphique donne les mêmes valeurs. */
+(() => {
+  'use strict';
+  const plot = document.getElementById('obs-cap-plot');
+  const tip = plot && plot.querySelector('.obs-cap-tip');
+  if (!tip) return;
+  let current = null;
+  const hide = () => { if (current) current.classList.remove('is-on'); current = null; tip.hidden = true; };
+  const show = point => {
+    if (current === point) return;
+    hide(); current = point; point.classList.add('is-on');
+    tip.textContent = '';
+    for (const [name, key] of [['name', 'n'], ['val', 'v'], ['more', 'd'], ['more', 'i']]) {
+      const line = document.createElement('span');
+      line.className = 'obs-cap-tip-' + name; line.textContent = point.dataset[key] || ''; tip.appendChild(line);
+    }
+    tip.hidden = false;
+    const box = plot.getBoundingClientRect(), mark = point.getBoundingClientRect();
+    const x = mark.left + mark.width / 2 - box.left, y = mark.top + mark.height / 2 - box.top;
+    const width = tip.offsetWidth, height = tip.offsetHeight;
+    let left = x + 14;
+    if (left + width > box.width) left = x - 14 - width;
+    if (left < 0) left = Math.max(0, Math.min(box.width - width, x - width / 2));
+    let top = y - height - 12;
+    if (top < 0) top = y + 14;
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+  };
+  // Les points récents sont serrés : on retient le plus proche du pointeur plutôt que celui qui est survolé.
+  const points = [...plot.querySelectorAll('.obs-cap-pt')];
+  const nearest = (event, reach) => {
+    let found = null, distance = reach;
+    for (const point of points) {
+      const mark = point.getBoundingClientRect();
+      const d = Math.hypot(event.clientX - (mark.left + mark.width / 2), event.clientY - (mark.top + mark.height / 2));
+      if (d < distance) { found = point; distance = d; }
+    }
+    return found;
+  };
+  plot.addEventListener('pointermove', event => {
+    if (event.pointerType === 'touch') return;
+    const point = nearest(event, 24);
+    if (point) show(point); else hide();
+  });
+  plot.addEventListener('pointerleave', event => { if (event.pointerType !== 'touch') hide(); });
+  plot.addEventListener('click', event => { const point = nearest(event, 30); if (point) show(point); else hide(); });
+  document.addEventListener('pointerdown', event => { if (!plot.contains(event.target)) hide(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
+})();
