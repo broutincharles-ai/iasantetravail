@@ -1,7 +1,8 @@
-// Rebuilds the generated parts of the Observatory, in French (/observatoire/) and in English
-// (/en/observatory/):
-// - the three data tables of the map, from content/observatoire/usage-ia.json;
-// - the trend plot and the table of model capabilities, from content/observatoire/capacites-modeles.json.
+// Rebuilds the generated parts of the Observatory, in French and in English:
+// - the three data tables of the map (/observatoire/ and /en/observatory/), from
+//   content/observatoire/usage-ia.json;
+// - the trend plot and the table of model capabilities (/observatoire/capacites-modeles/ and
+//   /en/observatory/model-capabilities/), from content/observatoire/capacites-modeles.json.
 //
 //   node scripts/build-observatoire.mjs
 //
@@ -19,6 +20,10 @@ const dataFile = path.join(root, "content/observatoire/usage-ia.json");
 const PAGES = [
   { file: "observatoire/index.html", locale: "fr-FR", index: 0 },
   { file: "en/observatory/index.html", locale: "en-GB", index: 1 }
+];
+const CAPABILITY_PAGES = [
+  { file: "observatoire/capacites-modeles/index.html", locale: "fr-FR", index: 0 },
+  { file: "en/observatory/model-capabilities/index.html", locale: "en-GB", index: 1 }
 ];
 
 const data = JSON.parse(await readFile(dataFile, "utf8"));
@@ -158,6 +163,12 @@ for (const page of PAGES) {
     const body = `<tbody>\n        ${table.rows.join("\n        ")}\n        </tbody>\n        <tfoot>${table.total}</tfoot>`;
     html = html.replace(block, (match, start, end) => `${start}\n        ${body}\n        ${end}`);
   }
+  await writeFile(pageFile, html, "utf8");
+  console.log(`${page.file}: ${tables.employees.rows.length} + ${tables.workers.rows.length} + ${tables.adults.rows.length} rows written.`);
+}
+for (const page of CAPABILITY_PAGES) {
+  const pageFile = path.join(root, page.file);
+  let html = await readFile(pageFile, "utf8");
   const capability = capabilitiesFor(page);
   for (const [key, content] of [["capacites-plot", `          ${capability.plot}`], ["capacites-rows", `        <tbody>\n        ${capability.rows.join("\n        ")}\n        </tbody>`]]) {
     const block = new RegExp(`([ ]*<!-- obs:${key}:start -->)[\\s\\S]*?\\n([ ]*<!-- obs:${key}:end -->)`);
@@ -165,6 +176,6 @@ for (const page of PAGES) {
     html = html.replace(block, (match, begin, finish) => `${begin}\n${content}\n${finish}`);
   }
   await writeFile(pageFile, html, "utf8");
-  console.log(`${page.file}: ${tables.employees.rows.length} + ${tables.workers.rows.length} + ${tables.adults.rows.length} rows written, ${capability.rows.length} models plotted.`);
+  console.log(`${page.file}: ${capability.rows.length} models plotted.`);
 }
 console.log(`${Object.keys(pooledSize).length} pooled estimates flagged.`);

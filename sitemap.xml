@@ -645,6 +645,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/observatoire/capacites-modeles/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/capacites-modeles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/model-capabilities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/capacites-modeles/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/observatory/model-capabilities/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/capacites-modeles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/model-capabilities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/capacites-modeles/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/observatoire/indicateurs-macroeconomiques/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/indicateurs-macroeconomiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/macroeconomic-indicators/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/indicateurs-macroeconomiques/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/en/observatory/macroeconomic-indicators/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/indicateurs-macroeconomiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/observatory/macroeconomic-indicators/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/indicateurs-macroeconomiques/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/outils/</loc>
     <lastmod>2026-10-05</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
