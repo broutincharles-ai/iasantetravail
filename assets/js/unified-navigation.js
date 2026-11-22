@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.6";
+  const NAVIGATION_VERSION = "8.7";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -39,6 +39,8 @@
     "/publications/sante-au-travail-enjeu-securite-ia/": "/en/publications/occupational-health-ai-safety-issue/",
     "/lecture/": "/en/reading/",
     "/observatoire/": "/en/observatory/",
+    "/observatoire/capacites-modeles/": "/en/observatory/model-capabilities/",
+    "/observatoire/indicateurs-macroeconomiques/": "/en/observatory/macroeconomic-indicators/",
     "/lecture/sante-travail-securite-ia/": "/en/reading/occupational-health-ai-safety/",
     "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
     "/lecture/ingenierie-code-ia/": "/en/reading/engineering-ai-code/",
