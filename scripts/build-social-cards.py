@@ -26,9 +26,9 @@ disc.putalpha(disc.getchannel('A').point(lambda a: a if a > 24 else 0))
 disc = disc.crop(disc.getchannel('A').getbbox())
 def logo(size): return disc.resize((size*SCALE,size*SCALE),Image.Resampling.LANCZOS)
 
-# Site card: the logo, the name and the tagline, stacked and centred. The name is set with a tight
-# letter-spacing, as in the header, at the largest size that leaves 80 px on each side (the
-# English name is longer than the French one).
+# Site card: the logo, the name and the tagline, stacked and centred, in cream on the green of the
+# page banners. The name is set with a tight letter-spacing, as in the header, at the largest size
+# that leaves 80 px on each side (the English name is longer than the French one).
 def spaced(value, face, spacing=-0.012):
  """Pen position of each character, and the total width, with kerning and letter-spacing (in em)."""
  pens, x = [], 0
@@ -36,7 +36,7 @@ def spaced(value, face, spacing=-0.012):
   pens.append(x); x += face.getlength(value[i:i+2]) - face.getlength(value[i+1:i+2]) + spacing*face.size
  return pens, x - spacing*face.size
 for name, (brand, tagline) in site.items():
- im = Image.new('RGB', (1200*SCALE,630*SCALE), '#f3efe6'); d=ImageDraw.Draw(im)
+ im = Image.new('RGB', (1200*SCALE,630*SCALE), '#1f3730'); d=ImageDraw.Draw(im)
  size = 100
  while spaced(brand, font('newsreader-500.ttf',size))[1] > 1040*SCALE: size -= 2
  title, line, mark = font('newsreader-500.ttf',size), font('instrument-sans-400.ttf',42), logo(150)
@@ -46,9 +46,9 @@ for name, (brand, tagline) in site.items():
  top, base, (_,line_top,_,line_bottom) = title.getbbox(brand)[1], title.getmetrics()[0], line.getbbox(tagline)
  y = (630*SCALE - (150+40+32)*SCALE - (base-top) - (line_bottom-line_top)) // 2
  im.paste(mark,((1200-150)*SCALE//2,y),mark); y += (150+40)*SCALE - top
- for char, pen in zip(brand, pens): d.text(((1200*SCALE-width)/2+pen,y),char,font=title,fill='#171a18')
+ for char, pen in zip(brand, pens): d.text(((1200*SCALE-width)/2+pen,y),char,font=title,fill='#f3efe6')
  y += base + 32*SCALE - line_top
- d.text((600*SCALE,y),tagline,font=line,fill='#3f443f',anchor='ma')
+ d.text((600*SCALE,y),tagline,font=line,fill='#d3d3cb',anchor='ma')
  im.resize((1200,630),Image.Resampling.LANCZOS).save(output/(name+'.png'),optimize=True)
 
 # Publication cards: the logo left of the brand name, then a label, a title and a subtitle.
