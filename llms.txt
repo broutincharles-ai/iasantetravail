@@ -80,10 +80,10 @@ This resource is intentionally absent from the human navigation, public sitemap 
 
 - https://www.iasantetravail.com/publications/ — Quatre travaux du Dr Charles Broutin : Archives des Maladies Professionnelles et de l’Environnement, INRS, JOEM et preprint sur les conditions de travail des chercheurs en IA.
 - https://www.iasantetravail.com/publications/sante-au-travail-enjeu-securite-ia/ — Présentation de l’éditorial « Occupational Health Is an AI Safety Issue » (Broutin et Faghri, JOEM, publication anticipée du 10 novembre 2026) : référence, thèse et cadre en six exigences. English: https://www.iasantetravail.com/en/publications/occupational-health-ai-safety-issue/
-- https://www.iasantetravail.com/actions/ — Séminaires et interventions : Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP.
+- https://www.iasantetravail.com/actions/ — Séminaires et interventions : Journée de la SFST et cours aux internes de Lille (octobre 2026), Montpellier (septembre 2026), Journée Marcel Marchand et colloque DGAFP ; presse et revues : Bulletin Joly Travail (novembre 2026) et Les Echos (octobre 2026).
 
 - https://www.iasantetravail.com/en/publications/ — Research collection with four works: the occupational-health narrative review, the INRS study, the JOEM article and the preprint on working conditions in frontier AI laboratories.
-- https://www.iasantetravail.com/en/actions/ — Seminars and presentations in Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference.
+- https://www.iasantetravail.com/en/actions/ — Seminars and presentations: SFST Scientific Day and course for Lille residents (October 2026), Montpellier (September 2026), Marcel Marchand Day and the DGAFP conference; press and journals: Bulletin Joly Travail (November 2026) and Les Echos (October 2026).
 
 ## Detailed research summaries / Résumés détaillés
 
