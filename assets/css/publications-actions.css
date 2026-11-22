@@ -69,3 +69,43 @@
   height: auto;
   object-fit: contain;
 }
+
+/* Index of every entry of the Actions page, in its banner: one link per entry, grouped as on the page. */
+.actions-page .hero-index {
+  width: min(100%, 860px);
+  margin: 34px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 44px;
+  align-items: start;
+  text-align: left;
+}
+.actions-page .hero-index p {
+  margin: 0;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(243, 239, 230, .3);
+  color: rgba(243, 239, 230, .76);
+  font: 600 11px/1.5 "Instrument Sans", Arial, sans-serif;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.actions-page .hero-index ol { margin: 0; padding: 0; list-style: none; }
+.actions-page .hero-index a {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  border-bottom: 1px solid rgba(243, 239, 230, .3);
+  color: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+.actions-page .hero-index time { flex: none; color: rgba(243, 239, 230, .76); font-size: 12px; font-weight: 400; }
+.actions-page .hero-index a:hover span,
+.actions-page .hero-index a:focus-visible span { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .actions-page .hero-index { grid-template-columns: minmax(0, 1fr); gap: 26px 0; }
+}
