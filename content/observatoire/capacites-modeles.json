@@ -1,0 +1,36 @@
+{
+  "source": {
+    "publisher": "METR",
+    "title": "AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure",
+    "date": "2026-11-20",
+    "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+    "figure": "Figure 10: 50% time horizon by model release date, pooled TH1.1 and TH2 task suites",
+    "data": "https://metr.org/assets/images/q4-2026-capability-update/cad6b5d98261f80c.json",
+    "readOn": "2026-11-22"
+  },
+  "unit": "minutes of expert human time",
+  "longestTaskMinutes": 12000,
+  "trend": {
+    "doublingMonths": 3.61275,
+    "doublingMonths95": [2.08267, 4.93514],
+    "from": ["2024-05-13", 8.08965],
+    "to": ["2026-09-03", 1643.2]
+  },
+  "models": [
+    { "name": "GPT-4o", "released": "2024-05-13", "p50": 7.11244, "ci80": [4.62173, 10.7242], "ci95": [3.81807, 13.529], "frontier": true },
+    { "name": "o1", "released": "2024-12-05", "p50": 35.2501, "ci80": [21.082, 53.8532], "ci95": [15.6642, 66.0704], "frontier": true },
+    { "name": "GPT-5", "released": "2025-08-07", "p50": 180.559, "ci80": [119.961, 266.347], "ci95": [97.8775, 334.456], "frontier": true },
+    { "name": "Claude Opus 4.5", "released": "2025-11-24", "p50": 275.373, "ci80": [179.143, 412.968], "ci95": [144.68, 510.983], "frontier": true },
+    { "name": "Claude Opus 4.6", "released": "2026-02-05", "p50": 384.048, "ci80": [245.221, 579.817], "ci95": [193.378, 729.588], "frontier": true },
+    { "name": "GPT-5.4", "released": "2026-03-05", "p50": 356.668, "ci80": [246.711, 502.137], "ci95": [199.457, 592.046], "frontier": false },
+    { "name": "Claude Opus 4.7", "released": "2026-04-16", "p50": 502.97, "ci80": [328.035, 750.485], "ci95": [257.936, 937.606], "frontier": true },
+    { "name": "GPT-5.5", "released": "2026-04-23", "p50": 664.343, "ci80": [464.167, 935.812], "ci95": [365.901, 1116.4], "frontier": true },
+    { "name": "Claude Opus 4.8", "released": "2026-05-28", "p50": 710.613, "ci80": [467.109, 1027.66], "ci95": [366.906, 1268.14], "frontier": true },
+    { "name": "Claude Fable 5", "released": "2026-06-09", "p50": 934.74, "ci80": [657.13, 1393.64], "ci95": [534.843, 1939.3], "frontier": true },
+    { "name": "GPT-5.6 Sol", "released": "2026-07-09", "p50": 716.592, "ci80": [485.701, 1015.8], "ci95": [393.39, 1239.23], "frontier": false },
+    { "name": "Claude Opus 5", "released": "2026-07-24", "p50": 1194.81, "ci80": [698.591, 2386.5], "ci95": [566.788, 5174.83], "frontier": true },
+    { "name": "Claude Fable 5.1", "released": "2026-09-01", "p50": 1812.89, "ci80": [872.55, 5226.63], "ci95": [718.743, 18464.1], "frontier": true },
+    { "name": "GPT-6 Astra", "released": "2026-09-03", "p50": 2416.33, "ci80": [1000.24, 11319.2], "ci95": [791.513, 158701.0], "frontier": true },
+    { "name": "Claude Opus 5.5", "released": "2026-09-22", "p50": 2337.38, "ci80": [932.42, 10428.2], "ci95": [714.87, 75176.6], "frontier": false }
+  ]
+}
