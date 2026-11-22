@@ -51,16 +51,19 @@
   .study-takeaway { padding: 18px; }
 }
 
-/* Show the Montpellier photograph in full, in the same format as the seminar images. */
-.about-editorial-v2 .action-figure-montpellier {
+/* Show the Montpellier and Lille photographs in full, in the same format as the seminar images. */
+.about-editorial-v2 .action-figure-montpellier,
+.about-editorial-v2 .action-figure-lille {
   width: min(100%, 860px);
   margin-inline: auto;
 }
-.about-editorial-v2 .action-figure-montpellier .action-image-window {
+.about-editorial-v2 .action-figure-montpellier .action-image-window,
+.about-editorial-v2 .action-figure-lille .action-image-window {
   height: auto;
   aspect-ratio: 4 / 3;
 }
-.about-editorial-v2 .action-figure-montpellier img {
+.about-editorial-v2 .action-figure-montpellier img,
+.about-editorial-v2 .action-figure-lille img {
   display: block;
   width: 100%;
   height: auto;
