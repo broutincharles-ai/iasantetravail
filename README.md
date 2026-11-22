@@ -39,7 +39,7 @@ Le parcours principal est **Sécurité de l’IA → Risques collectifs → Pré
 - **Risques collectifs** : santé et conditions de travail, pouvoir économique et social ; chaque situation conduit vers des moyens de prévention.
 - **Prévenir** : comprendre l’IA, évaluer un projet, agir et gouverner, suivre et ajuster. L’espace professionnel « IA en santé au travail » est accessible depuis cette rubrique.
 
-**Recherche, Observatoire, Lectures et À propos** forment la navigation secondaire. L’Observatoire (`/observatoire/` et `/en/observatory/`) présente une carte de l’usage de l’IA au travail par pays et la relie à la thèse du site. Comprendre l’IA et l’espace professionnel restent aussi accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
+**Recherche, Observatoire, Lectures et À propos** forment la navigation secondaire. L’Observatoire (`/observatoire/` et `/en/observatory/`) présente une carte de l’usage de l’IA au travail par pays, puis d’autres mesures sourcées (employeurs, emploi, effets perçus, prévention), et les relie à la thèse du site. Les sources et limites de la carte sont dans un bloc replié juste sous elle. Comprendre l’IA et l’espace professionnel restent aussi accessibles dans le pied de page. Les outils disponibles uniquement en français sont signalés dans les parcours anglais.
 
 ## À qui s’adresse le projet ?
 
