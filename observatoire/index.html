@@ -444,24 +444,26 @@
     <h2 id="capacites-title">Ce que savent faire les modèles.</h2>
     <p class="safety-section-intro">L’organisme d’évaluation METR mesure la durée, pour un expert humain, des tâches qu’un modèle réussit seul une fois sur deux. Sa mise à jour du 20&nbsp;novembre 2026 porte sur quinze modèles publics d’OpenAI et d’Anthropic.</p>
     <div class="obs-cap">
-      <div class="obs-cap-col">
-        <p class="obs-cap-tag">Hier</p>
-        <div class="obs-cap-card obs-cap-past">
-          <p class="obs-cap-when">Modèle de mai 2024</p>
-          <p class="obs-cap-big">7 minutes</p>
+      <div class="obs-cap-keys">
+        <div class="obs-cap-key">
+          <p class="obs-label">Hier · modèle de mai 2024</p>
+          <p class="obs-cap-val">7 minutes</p>
           <p class="obs-cap-text">GPT-4o, le plus ancien des modèles testés, réussissait une fois sur deux des tâches de cette durée.</p>
         </div>
-        <p class="obs-cap-tag">Aujourd’hui</p>
-        <div class="obs-cap-card obs-cap-now">
-          <p class="obs-cap-when">Modèles de septembre 2026</p>
-          <p class="obs-cap-big">≈&nbsp;40 heures</p>
+        <div class="obs-cap-key">
+          <p class="obs-label">Aujourd’hui · modèles de septembre 2026</p>
+          <p class="obs-cap-val">≈&nbsp;40 heures</p>
           <p class="obs-cap-text">Durée mesurée pour GPT-6 Astra et Claude Opus&nbsp;5.5&nbsp;: environ 340&nbsp;fois plus qu’en mai 2024. L’incertitude est forte&nbsp;: de 13 à 2&nbsp;645&nbsp;heures pour GPT-6 Astra.</p>
         </div>
+        <div class="obs-cap-key">
+          <p class="obs-label">Tendance</p>
+          <p class="obs-cap-val">×2 en 3,6&nbsp;mois</p>
+          <p class="obs-cap-text">Rythme de doublement mesuré de mai 2024 à septembre 2026. Les modèles sortis depuis et les modèles internes des laboratoires ne sont pas mesurés.</p>
+        </div>
       </div>
-      <div class="obs-cap-col">
-        <p class="obs-cap-tag">Tendance</p>
-        <figure class="obs-cap-card obs-cap-trend">
-          <figcaption><span class="obs-cap-title">Durée des tâches réussies une fois sur deux, par date de sortie du modèle</span><span class="obs-cap-sub">Échelle logarithmique. Traits verticaux&nbsp;: intervalle de confiance à 80&nbsp;%.</span></figcaption>
+      <figure class="obs-cap-fig" aria-labelledby="obs-cap-title">
+        <div class="obs-cap-box">
+          <p class="obs-cap-title" id="obs-cap-title">Durée des tâches réussies une fois sur deux, par date de sortie du modèle</p>
           <!-- obs:capacites-plot:start -->
           <div class="obs-cap-plot" id="obs-cap-plot" role="img" aria-label="Graphique : durée des tâches réussies une fois sur deux par 15 modèles, de 7 min pour GPT-4o (mai 2024) à 40 h pour GPT-6 Astra (septembre 2026), en échelle logarithmique. Les valeurs figurent dans le tableau replié sous le graphique.">
             <span class="obs-cap-y" style="top:88.36%"><b>10 min</b></span>
@@ -511,19 +513,19 @@
             <span class="obs-cap-tip" hidden></span>
           </div>
           <!-- obs:capacites-plot:end -->
-          <p class="obs-cap-text">L’horizon double tous les 3,6&nbsp;mois. Les modèles sortis depuis et les modèles internes des laboratoires ne sont pas mesurés.</p>
-        </figure>
-      </div>
-      <div class="obs-cap-row">
-        <p class="obs-cap-tag">Forces et faiblesses des modèles actuels</p>
-        <ul class="obs-cap-card obs-cap-now obs-cap-traits">
-            <li><strong>Fort en code</strong><span>Sur les tâches de programmation et d’optimisation, les modèles égalent ou dépassent le plus souvent des humains qualifiés.</span></li>
-            <li class="is-minus"><strong>Moins bon sur les tâches coûteuses</strong><span>Un horizon 2,9&nbsp;fois plus court sur les tâches les plus coûteuses à transformer en environnements d’entraînement.</span></li>
-            <li class="is-minus"><strong>Moins bon en jugement</strong><span>Sans retour concret sur le résultat, leur jugement reste moins bon que celui des humains.</span></li>
-        </ul>
+        </div>
+        <div class="obs-under"><span class="obs-cap-scale">Échelle logarithmique. Traits verticaux&nbsp;: intervalle de confiance à 80&nbsp;%.</span><span class="obs-hint" id="obs-cap-hint" hidden>Survolez ou touchez un point pour lire sa valeur.</span></div>
+      </figure>
+      <div class="obs-cap-traits">
+        <p class="obs-label">Forces et faiblesses des modèles actuels</p>
+        <div class="obs-sources">
+          <article><h3>Fort en code</h3><p>Sur les tâches de programmation et d’optimisation, les modèles égalent ou dépassent le plus souvent des humains qualifiés.</p></article>
+          <article><h3>Moins bon sur les tâches coûteuses</h3><p>Un horizon 2,9&nbsp;fois plus court sur les tâches les plus coûteuses à transformer en environnements d’entraînement.</p></article>
+          <article><h3>Moins bon en jugement</h3><p>Sans retour concret sur le résultat, leur jugement reste moins bon que celui des humains.</p></article>
+        </div>
       </div>
     </div>
-    <p class="obs-cap-credit">D’après <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" target="_blank" rel="noopener noreferrer">METR, mise à jour de novembre 2026</a> (CC&nbsp;BY)&nbsp;: données et constats de METR, adaptés et traduits. Chiffres relevés le 22&nbsp;novembre 2026.</p>
+    <p class="obs-synth-foot">D’après <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" target="_blank" rel="noopener noreferrer">METR, mise à jour de novembre 2026</a> (CC&nbsp;BY)&nbsp;: données et constats de METR, adaptés et traduits. Chiffres relevés le 22&nbsp;novembre 2026.</p>
     <details class="obs-tables obs-cap-details">
       <summary>Voir les valeurs par modèle et les limites</summary>
       <p>L’horizon temporel à 50&nbsp;% est la durée, pour un expert humain, des tâches qu’un modèle réussit une fois sur deux&nbsp;: ce n’est pas le temps pendant lequel il travaille seul. Les tâches sont surtout logicielles. La durée humaine de la plupart des nouvelles tâches est estimée, pas mesurée, et les intervalles de confiance des derniers modèles sont très larges&nbsp;: METR juge ces capacités de plus en plus difficiles à mesurer.</p>
