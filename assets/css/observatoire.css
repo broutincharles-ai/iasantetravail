@@ -143,6 +143,18 @@ circle.obs-mark-sel { stroke-width: 1.5px; }
   .obs-bars li { grid-template-columns: minmax(0, 1fr) 4.2em; }
   .obs-bar-label { grid-column: 1 / -1; }
 }
+/* Série chronologique (capacités des modèles) : une ligne par modèle, date à la suite du nom, légende au-dessus */
+.obs-bars-caption { margin: 5px 0 14px; color: var(--muted, #5b615b); font: 400 13px/1.45 var(--sans); text-wrap: pretty; }
+.obs-bars-compact { gap: 8px; margin-top: 0; }
+.obs-bars-compact li { grid-template-columns: minmax(0, 42%) minmax(0, 1fr) 3.6em; }
+.obs-bars-compact .obs-bar-label small { display: inline; margin: 0 0 0 8px; white-space: nowrap; }
+.obs-bars-compact .obs-bar-track i { min-width: 2px; }
+@media (max-width: 560px) {
+  .obs-bars-compact { gap: 9px; }
+  .obs-bars-compact li { grid-template-columns: minmax(0, 46%) minmax(0, 1fr) 3.4em; gap: 3px 10px; }
+  .obs-bars-compact .obs-bar-label { grid-column: auto; font-size: 14px; }
+  .obs-bars-compact .obs-bar-label small { display: block; margin: 0; }
+}
 @media print { .obs-bar-track, .obs-bar-track i { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
 
 /* Le détail : un tableau sobre, une ligne par source */
