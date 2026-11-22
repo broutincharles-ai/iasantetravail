@@ -46,7 +46,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-09-21" },
   { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-22" },
   { fr: "observatoire/capacites-modeles/index.html", en: "en/observatory/model-capabilities/index.html", lastmod: "2026-11-22" },
-  { fr: "observatoire/indicateurs-macroeconomiques/index.html", en: "en/observatory/macroeconomic-indicators/index.html", lastmod: "2026-11-22" }
+  { fr: "observatoire/metriques-macroeconomiques/index.html", en: "en/observatory/macroeconomic-metrics/index.html", lastmod: "2026-11-22" }
 ];
 
 export const INDEXABLE_SINGLETONS = [

@@ -384,3 +384,15 @@
   document.addEventListener('pointerdown', event => { if (!plot.contains(event.target)) hide(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
 })();
+
+// Un lien qui vise un bloc replié (valeurs par modèle, sources, données de la carte) l’ouvre à l’arrivée.
+(() => {
+  const open = () => {
+    let target = null;
+    try { target = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null; } catch (error) { return; }
+    const block = target && target.closest('details');
+    if (block && !block.open) { block.open = true; target.scrollIntoView(); }
+  };
+  open();
+  window.addEventListener('hashchange', open);
+})();
