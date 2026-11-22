@@ -444,24 +444,26 @@
     <h2 id="capacites-title">What the models can do.</h2>
     <p class="safety-section-intro">The evaluation organisation METR measures the time an expert human needs for the tasks a model completes on its own half the time. Its update of 20&nbsp;November 2026 covers fifteen public models from OpenAI and Anthropic.</p>
     <div class="obs-cap">
-      <div class="obs-cap-col">
-        <p class="obs-cap-tag">Yesterday</p>
-        <div class="obs-cap-card obs-cap-past">
-          <p class="obs-cap-when">May 2024 model</p>
-          <p class="obs-cap-big">7 minutes</p>
+      <div class="obs-cap-keys">
+        <div class="obs-cap-key">
+          <p class="obs-label">Yesterday · May 2024 model</p>
+          <p class="obs-cap-val">7 minutes</p>
           <p class="obs-cap-text">GPT-4o, the oldest of the models tested, completed tasks of this length half the time.</p>
         </div>
-        <p class="obs-cap-tag">Today</p>
-        <div class="obs-cap-card obs-cap-now">
-          <p class="obs-cap-when">September 2026 models</p>
-          <p class="obs-cap-big">≈&nbsp;40 hours</p>
+        <div class="obs-cap-key">
+          <p class="obs-label">Today · September 2026 models</p>
+          <p class="obs-cap-val">≈&nbsp;40 hours</p>
           <p class="obs-cap-text">The length measured for GPT-6 Astra and Claude Opus&nbsp;5.5: about 340&nbsp;times that of May 2024. The uncertainty is great: from 13 to 2,645&nbsp;hours for GPT-6 Astra.</p>
         </div>
+        <div class="obs-cap-key">
+          <p class="obs-label">Trend</p>
+          <p class="obs-cap-val">×2 in 3.6&nbsp;months</p>
+          <p class="obs-cap-text">Doubling rate measured from May 2024 to September 2026. Models released since then and the laboratories’ internal models are not measured.</p>
+        </div>
       </div>
-      <div class="obs-cap-col">
-        <p class="obs-cap-tag">Trend</p>
-        <figure class="obs-cap-card obs-cap-trend">
-          <figcaption><span class="obs-cap-title">Length of the tasks completed half the time, by model release date</span><span class="obs-cap-sub">Logarithmic scale. Vertical lines: 80% confidence interval.</span></figcaption>
+      <figure class="obs-cap-fig" aria-labelledby="obs-cap-title">
+        <div class="obs-cap-box">
+          <p class="obs-cap-title" id="obs-cap-title">Length of the tasks completed half the time, by model release date</p>
           <!-- obs:capacites-plot:start -->
           <div class="obs-cap-plot" id="obs-cap-plot" role="img" aria-label="Chart: length of the tasks completed half the time by 15 models, from 7 min for GPT-4o (May 2024) to 40 h for GPT-6 Astra (September 2026), on a logarithmic scale. The values are in the folded table under the chart.">
             <span class="obs-cap-y" style="top:88.36%"><b>10 min</b></span>
@@ -511,19 +513,19 @@
             <span class="obs-cap-tip" hidden></span>
           </div>
           <!-- obs:capacites-plot:end -->
-          <p class="obs-cap-text">The time horizon doubles every 3.6&nbsp;months. Models released since then and the laboratories’ internal models are not measured.</p>
-        </figure>
-      </div>
-      <div class="obs-cap-row">
-        <p class="obs-cap-tag">Strengths and weaknesses of current models</p>
-        <ul class="obs-cap-card obs-cap-now obs-cap-traits">
-            <li><strong>Strong at coding</strong><span>On programming and optimisation tasks, models usually match or outperform skilled humans.</span></li>
-            <li class="is-minus"><strong>Weaker on costlier tasks</strong><span>A time horizon 2.9&nbsp;times shorter on the tasks that would cost most to turn into training environments.</span></li>
-            <li class="is-minus"><strong>Weaker at judging</strong><span>Without concrete feedback on the result, their judgement remains worse than that of humans.</span></li>
-        </ul>
+        </div>
+        <div class="obs-under"><span class="obs-cap-scale">Logarithmic scale. Vertical lines: 80% confidence interval.</span><span class="obs-hint" id="obs-cap-hint" hidden>Hover over or tap a point to read its value.</span></div>
+      </figure>
+      <div class="obs-cap-traits">
+        <p class="obs-label">Strengths and weaknesses of current models</p>
+        <div class="obs-sources">
+          <article><h3>Strong at coding</h3><p>On programming and optimisation tasks, models usually match or outperform skilled humans.</p></article>
+          <article><h3>Weaker on costlier tasks</h3><p>A time horizon 2.9&nbsp;times shorter on the tasks that would cost most to turn into training environments.</p></article>
+          <article><h3>Weaker at judging</h3><p>Without concrete feedback on the result, their judgement remains worse than that of humans.</p></article>
+        </div>
       </div>
     </div>
-    <p class="obs-cap-credit">After <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" target="_blank" rel="noopener noreferrer">METR, November 2026 update</a> (CC&nbsp;BY): data and findings from METR, adapted and translated. Figures taken on 22&nbsp;November 2026.</p>
+    <p class="obs-synth-foot">After <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" target="_blank" rel="noopener noreferrer">METR, November 2026 update</a> (CC&nbsp;BY): data and findings from METR, adapted and translated. Figures taken on 22&nbsp;November 2026.</p>
     <details class="obs-tables obs-cap-details">
       <summary>See the values by model and the limits</summary>
       <p>The 50% time horizon is the time an expert human needs for the tasks a model completes half the time: it is not the time the model works on its own. The tasks are mostly software tasks. The human time for most of the new tasks is estimated, not measured, and the confidence intervals of the latest models are very wide: METR considers these capabilities increasingly hard to measure.</p>

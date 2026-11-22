@@ -340,6 +340,8 @@
   const plot = document.getElementById('obs-cap-plot');
   const tip = plot && plot.querySelector('.obs-cap-tip');
   if (!tip) return;
+  const hint = document.getElementById('obs-cap-hint');
+  if (hint) hint.hidden = false;
   let current = null;
   const hide = () => { if (current) current.classList.remove('is-on'); current = null; tip.hidden = true; };
   const show = point => {
