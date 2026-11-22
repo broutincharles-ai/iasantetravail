@@ -40,7 +40,7 @@
     "/lecture/": "/en/reading/",
     "/observatoire/": "/en/observatory/",
     "/observatoire/capacites-modeles/": "/en/observatory/model-capabilities/",
-    "/observatoire/indicateurs-macroeconomiques/": "/en/observatory/macroeconomic-indicators/",
+    "/observatoire/metriques-macroeconomiques/": "/en/observatory/macroeconomic-metrics/",
     "/lecture/sante-travail-securite-ia/": "/en/reading/occupational-health-ai-safety/",
     "/lecture/humain-dans-la-boucle/": "/en/reading/human-in-the-loop/",
     "/lecture/ingenierie-code-ia/": "/en/reading/engineering-ai-code/",

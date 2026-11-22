@@ -1,6 +1,6 @@
 // Rebuilds the generated parts of the Observatory, in French and in English:
-// - the three data tables of the map (/observatoire/ and /en/observatory/), from
-//   content/observatoire/usage-ia.json;
+// - the three data tables of the map (/observatoire/metriques-macroeconomiques/ and
+//   /en/observatory/macroeconomic-metrics/), from content/observatoire/usage-ia.json;
 // - the trend plot and the table of model capabilities (/observatoire/capacites-modeles/ and
 //   /en/observatory/model-capabilities/), from content/observatoire/capacites-modeles.json.
 //
@@ -18,8 +18,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataFile = path.join(root, "content/observatoire/usage-ia.json");
 // `index`: position of the language in the [French, English] pairs of the data file.
 const PAGES = [
-  { file: "observatoire/index.html", locale: "fr-FR", index: 0 },
-  { file: "en/observatory/index.html", locale: "en-GB", index: 1 }
+  { file: "observatoire/metriques-macroeconomiques/index.html", locale: "fr-FR", index: 0 },
+  { file: "en/observatory/macroeconomic-metrics/index.html", locale: "en-GB", index: 1 }
 ];
 const CAPABILITY_PAGES = [
   { file: "observatoire/capacites-modeles/index.html", locale: "fr-FR", index: 0 },
