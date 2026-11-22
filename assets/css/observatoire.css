@@ -4,6 +4,8 @@
    dans assets/js/observatoire.js. */
 
 .observatory-page .safety-section-intro { margin-bottom: 26px; }
+/* Bandeau : texte centré, lignes de longueur voisine */
+.observatory-page .safety-intro p:not(.safety-byline) { text-wrap: balance; }
 .obs-nojs { max-width: 840px; margin: 0 0 24px; padding: 14px 18px; background: var(--cream, #eee8dc); font-size: 16px; }
 .obs-app { display: grid; gap: 28px; font-family: var(--sans); }
 .obs-app[hidden], .obs-app [hidden] { display: none !important; }
@@ -106,6 +108,8 @@ circle.obs-mark-sel { stroke-width: 1.5px; }
 .obs-tables { margin-top: 30px; border-block: 1px solid var(--line); }
 .obs-tables > summary { padding: 16px 0; color: var(--terra-interactive, #87301f); font-size: 16px; font-weight: 600; cursor: pointer; }
 .obs-tables[open] > summary { border-bottom: 1px solid var(--line); }
+/* Deux blocs repliés à la suite, sous la carte : un seul filet entre eux */
+.obs-tables + .obs-tables { margin-top: 0; border-top: 0; }
 .obs-table { width: 100%; max-width: 760px; margin: 26px 0 34px; border-collapse: collapse; font-size: 15px; line-height: 1.45; font-variant-numeric: tabular-nums; }
 .obs-table caption { padding-bottom: 12px; color: var(--ink-soft, #3f443f); font-size: 15px; text-align: left; text-wrap: pretty; }
 .obs-table :is(th, td) { padding: 7px 14px 7px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: baseline; }
@@ -166,7 +170,9 @@ circle.obs-mark-sel { stroke-width: 1.5px; }
   .obs-measures :is(th, td):last-child { width: auto; margin-top: 6px; }
 }
 
-/* Sources */
+/* Sources et limites de la carte : bloc replié sous la carte */
+.obs-sources-details > p { max-width: 900px; margin: 24px 0 22px; font-size: 16px; line-height: 1.6; }
+.obs-sources-details > .obs-sources-note { margin: 24px 0 28px; color: var(--muted, #5b615b); font-size: 15px; }
 .obs-sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 34px; }
 .obs-sources article { min-width: 0; padding-top: 18px; border-top: 1px solid var(--interior-line, var(--line-strong)); }
 .safety-main .obs-sources h3 { margin: 0 0 12px; font: 400 clamp(22px, 2vw, 26px)/1.2 var(--serif); letter-spacing: -.015em; }
