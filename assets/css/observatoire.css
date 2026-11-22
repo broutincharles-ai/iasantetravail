@@ -116,7 +116,32 @@ circle.obs-mark-sel { stroke-width: 1.5px; }
 .obs-table :is(td, th):last-child { padding-right: 0; }
 .obs-table tfoot :is(th, td) { border-bottom: 0; color: var(--ink); font-weight: 600; }
 
-/* Autres mesures : un tableau sobre, une ligne par source */
+/* Autres mesures : trois constats, chacun avec une phrase et quelques barres (une seule teinte, valeurs écrites) */
+.obs-synth { border-top: 1px solid var(--line-strong); font-family: var(--sans); }
+.obs-synth-block { display: grid; grid-template-columns: minmax(0, 32%) minmax(0, 1fr); gap: 14px 56px; padding-block: 26px 28px; border-bottom: 1px solid var(--line); }
+.safety-main .obs-synth-h { margin: 0 0 10px; font: 400 clamp(22px, 2vw, 26px)/1.2 var(--serif); letter-spacing: -.015em; }
+.obs-synth-text { margin: 0; color: var(--ink-soft, #3f443f); font-size: 16px; line-height: 1.6; text-wrap: pretty; }
+.obs-bars { display: grid; gap: 13px; align-content: start; margin: 5px 0 0; padding: 0; list-style: none; }
+.obs-bars li { display: grid; grid-template-columns: minmax(0, 47%) minmax(0, 1fr) 4.2em; gap: 3px 16px; align-items: center; margin: 0; padding: 0; }
+.obs-bar-label { color: var(--ink); font-size: 15px; line-height: 1.4; text-wrap: pretty; }
+.obs-bar-label small { display: block; margin-top: 1px; color: var(--muted, #5b615b); font-size: 13px; line-height: 1.4; }
+.obs-bar-track { height: 10px; background: rgba(23, 26, 24, .08); }
+.obs-bar-track i { display: block; height: 100%; border-radius: 0 2px 2px 0; background: var(--terra, #a83e27); }
+.obs-bar-val { color: var(--ink); font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.obs-synth-foot { max-width: 900px; margin: 18px 0 0; color: var(--muted, #5b615b); font: 400 14px/1.6 var(--sans); text-wrap: pretty; }
+.obs-measures-details { margin-top: 22px; }
+.obs-measures-details .obs-measures { margin-block: 22px 26px; }
+@media (max-width: 900px) {
+  .obs-synth-block { grid-template-columns: minmax(0, 1fr); padding-block: 22px 24px; }
+}
+@media (max-width: 560px) {
+  .obs-bars { gap: 15px; }
+  .obs-bars li { grid-template-columns: minmax(0, 1fr) 4.2em; }
+  .obs-bar-label { grid-column: 1 / -1; }
+}
+@media print { .obs-bar-track, .obs-bar-track i { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+
+/* Le détail : un tableau sobre, une ligne par source */
 .obs-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .obs-measures { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 15px; line-height: 1.55; }
 .obs-measures :is(th, td) { padding: 13px 28px 14px 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
