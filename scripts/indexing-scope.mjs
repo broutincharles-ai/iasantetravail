@@ -44,7 +44,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-16" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-11-22" },
-  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-22" },
+  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-23" },
   { fr: "observatoire/capacites-modeles/index.html", en: "en/observatory/model-capabilities/index.html", lastmod: "2026-11-22" },
   { fr: "observatoire/metriques-macroeconomiques/index.html", en: "en/observatory/macroeconomic-metrics/index.html", lastmod: "2026-11-22" }
 ];
@@ -54,7 +54,8 @@ export const INDEXABLE_SINGLETONS = [
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-11-16" },
-  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" }
+  { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" },
+  { file: "observatoire/remontees-du-terrain/index.html", lang: "fr", lastmod: "2026-11-23" }
 ];
 
 export const INDEXABLE_FR_FILES = [
