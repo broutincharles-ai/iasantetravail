@@ -302,7 +302,7 @@ body.observatory-page .safety-intro p.obs-crumb { margin: 0 auto 16px; font: 600
   .obs-table { font-size: 14px; }
   .obs-table :is(th, td) { padding-right: 10px; }
 }
-/* Remontées du terrain : un encadré crème (questionnaire, puis synthèse à venir), trois règles en grille,
+/* Remontées du terrain : un encadré crème (questionnaire, puis synthèse à venir),,
    la notice en blocs .obs-synth (question à gauche, réponse à droite) et trois précautions de lecture. */
 .obs-field-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 22px 48px; padding: 28px 30px 30px; border: 1px solid var(--line-strong); background: var(--white, #faf7f0); font-family: var(--sans); }
 .obs-field-card p { margin: 0; }
@@ -323,7 +323,6 @@ body.observatory-page .safety-intro p.obs-crumb { margin: 0 auto 16px; font: 600
 .obs-field-planned strong { color: var(--ink); font-size: 16px; font-weight: 600; }
 .obs-field-planned span { color: var(--ink-soft, #3f443f); font-size: 15px; line-height: 1.55; text-wrap: pretty; }
 .obs-field-card.is-empty { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-.obs-field-rules { margin-top: 44px; }
 .obs-field-notice { margin-top: 64px; scroll-margin-top: 130px; }
 .safety-main .obs-field-subtitle { margin: 0 0 10px; font: 400 clamp(28px, 2.8vw, 38px)/1.12 var(--serif); letter-spacing: -.02em; }
 .obs-field-notice-intro { max-width: 840px; margin: 0 0 24px; color: var(--ink-soft, #3f443f); font: 400 16px/1.6 var(--sans); }
