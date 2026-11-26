@@ -3,7 +3,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "securite-ia/index.html", en: "en/ai-safety/index.html", lastmod: "2026-11-16" },
   { fr: "parcours/comprendre/index.html", en: "en/pathways/understand/index.html", lastmod: "2026-11-16" },
   { fr: "parcours/risques-collectifs/index.html", en: "en/pathways/collective-risks/index.html", lastmod: "2026-11-16" },
-  { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-16" },
+  { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-26" },
   { fr: "parcours/ia-sante-travail/index.html", en: "en/pathways/ai-in-occupational-health/index.html", lastmod: "2026-11-16" },
   { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-11-16" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-11-16" },
