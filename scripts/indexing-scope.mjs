@@ -13,7 +13,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "evaluer/index.html", en: "en/evaluate/index.html", lastmod: "2026-11-16" },
   { fr: "outils/fiches-prevention/index.html", en: "en/tools/prevention-fact-sheets/index.html", lastmod: "2026-11-13" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-11-16" },
-  { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-11-16" },
+  { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-11-26" },
   { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-09-26" },
   { fr: "lecture/sante-travail-securite-ia/index.html", en: "en/reading/occupational-health-ai-safety/index.html", lastmod: "2026-11-16" },
   { fr: "lecture/humain-dans-la-boucle/index.html", en: "en/reading/human-in-the-loop/index.html", lastmod: "2026-11-16" },
@@ -42,7 +42,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "recommandations/preventeur/index.html", en: "en/recommendations/prevention-specialist/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/salarie/index.html", en: "en/recommendations/employee/index.html", lastmod: "2026-11-16" },
   { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-16" },
-  { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-16" },
+  { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-26" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-11-22" },
   { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-23" },
   { fr: "observatoire/capacites-modeles/index.html", en: "en/observatory/model-capabilities/index.html", lastmod: "2026-11-22" },
@@ -55,7 +55,9 @@ export const INDEXABLE_SINGLETONS = [
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-11-16" },
   { file: "outils/preconisations/index.html", lang: "fr", lastmod: "2026-09-25" },
-  { file: "observatoire/remontees-du-terrain/index.html", lang: "fr", lastmod: "2026-11-23" }
+  { file: "observatoire/remontees-du-terrain/index.html", lang: "fr", lastmod: "2026-11-23" },
+  { file: "ia-en-spst/strategie/index.html", lang: "fr", lastmod: "2026-11-26" },
+  { file: "ia-en-spst/formation/index.html", lang: "fr", lastmod: "2026-11-26" }
 ];
 
 export const INDEXABLE_FR_FILES = [

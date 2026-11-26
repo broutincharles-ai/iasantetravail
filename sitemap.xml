@@ -198,14 +198,14 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/ia-en-spst/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/ia-en-spst/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/ia-en-spst/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/ia-en-spst/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/uses-and-field/occupational-health-example/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/ia-en-spst/"/>
@@ -604,14 +604,14 @@
   </url>
   <url>
     <loc>https://www.iasantetravail.com/recommandations/charte-ia/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/charte-ia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/recommendations/ai-charter/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/recommandations/charte-ia/"/>
   </url>
   <url>
     <loc>https://www.iasantetravail.com/en/recommendations/ai-charter/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/recommandations/charte-ia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iasantetravail.com/en/recommendations/ai-charter/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/recommandations/charte-ia/"/>
@@ -707,5 +707,17 @@
     <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/observatoire/remontees-du-terrain/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/remontees-du-terrain/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/ia-en-spst/strategie/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/ia-en-spst/strategie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/ia-en-spst/strategie/"/>
+  </url>
+  <url>
+    <loc>https://www.iasantetravail.com/ia-en-spst/formation/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/ia-en-spst/formation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/ia-en-spst/formation/"/>
   </url>
 </urlset>
