@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="/assets/css/lecture-v2.css?v=1.1">
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/en/reading/human-in-the-loop/#article","url":"https://www.iasantetravail.com/en/reading/human-in-the-loop/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/reading/human-in-the-loop/"},"headline":"Approving without being able to verify: what risks do people supervising AI agents face?","description":"Human in the loop: an occupational health reading of “AI Agents Push Humans Out of the Loop” (NeurIPS 2026). Approval fatigue, deskilling, responsibility without control.","datePublished":"2026-09-26","dateModified":"2026-11-13","inLanguage":"en-GB","articleSection":"Reading · Agentic AI · Psychosocial risks","keywords":["AI agents","human in the loop","human oversight","approval fatigue","deskilling","ironies of automation","psychosocial risks","barriers to quality work","AI Act article 14","occupational health"],"author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"isBasedOn":{"@type":"ScholarlyArticle","headline":"AI Agents Push Humans Out of the Loop","datePublished":"2026-08-24","author":[{"@type":"Person","name":"Margaret Mitchell","affiliation":{"@type":"Organization","name":"Hugging Face"}},{"@type":"Person","name":"Avijit Ghosh","affiliation":{"@type":"Organization","name":"Hugging Face"}},{"@type":"Person","name":"Samir Passi","affiliation":{"@type":"Organization","name":"Data & Society"}}],"url":"https://arxiv.org/abs/2608.23642","license":"https://creativecommons.org/licenses/by/4.0/"},"image":"https://www.iasantetravail.com/assets/images/social/site-en.png?v=da93be5d"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/en/reading/human-in-the-loop/#article","url":"https://www.iasantetravail.com/en/reading/human-in-the-loop/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.iasantetravail.com/en/reading/human-in-the-loop/"},"headline":"Approving without being able to verify: what risks do people supervising AI agents face?","description":"Human in the loop: an occupational health reading of “AI Agents Push Humans Out of the Loop” (NeurIPS 2026). Approval fatigue, deskilling, responsibility without control.","datePublished":"2026-09-26","dateModified":"2026-11-27","inLanguage":"en-GB","articleSection":"Reading · Agentic AI · Psychosocial risks","keywords":["AI agents","human in the loop","human oversight","approval fatigue","deskilling","ironies of automation","psychosocial risks","barriers to quality work","AI Act article 14","occupational health"],"author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"isBasedOn":{"@type":"ScholarlyArticle","headline":"AI Agents Push Humans Out of the Loop","datePublished":"2026-08-24","author":[{"@type":"Person","name":"Margaret Mitchell","affiliation":{"@type":"Organization","name":"Hugging Face"}},{"@type":"Person","name":"Avijit Ghosh","affiliation":{"@type":"Organization","name":"Hugging Face"}},{"@type":"Person","name":"Samir Passi","affiliation":{"@type":"Organization","name":"Data & Society"}}],"url":"https://arxiv.org/abs/2608.23642","license":"https://creativecommons.org/licenses/by/4.0/"},"image":"https://www.iasantetravail.com/assets/images/social/site-en.png?v=da93be5d"}</script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
 <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
 
@@ -39,7 +39,7 @@
 
 
   <meta property="article:published_time" content="2026-09-26">
-  <meta property="article:modified_time" content="2026-11-13">
+  <meta property="article:modified_time" content="2026-11-27">
 
 
 
@@ -94,7 +94,7 @@
       <div>
         <p class="article-kicker">Reading · Agentic AI</p>
         <h1>Approving without being able to verify: what risks do people supervising AI agents face?</h1>
-        <p class="article-deck">Oversight work can wear down the very capacities it requires. Approval demands, vigilance, deskilling: the mechanisms and avenues for prevention.</p>
+        <p class="article-deck">An AI agent asks for permission before acting. If one person must approve dozens of actions while doing their own job, what can they check and when can they say no?</p>
         <p class="article-byline">By <strong>Dr Charles Broutin</strong>, occupational physician</p>
       </div>
       <dl class="article-metadata">
@@ -114,11 +114,11 @@
       <aside class="article-aside" aria-label="Article contents">
         <p class="article-aside-label">Contents</p>
         <ol>
-          <li><a href="#paradoxe">Oversight degrades the overseer</a></li>
+          <li><a href="#paradoxe">Why do people start approving automatically?</a></li>
           <li><a href="#activite">A work activity in its own right</a></li>
           <li><a href="#rps">A psychosocial risk perspective</a></li>
-          <li><a href="#securite">When health becomes a safety variable</a></li>
-          <li><a href="#solutions">Solutions rooted in work organisation</a></li>
+          <li><a href="#securite">How fatigue can let an error through</a></li>
+          <li><a href="#solutions">Scheduling breaks, handovers and time for review</a></li>
           <li><a href="#surveillance">Monitoring vigilance?</a></li>
           <li><a href="#professionnels">What professionals can look for</a></li>
           <li><a href="#limites">Limitations</a></li>
@@ -132,7 +132,7 @@
 
         <p>For occupational health, the implication is direct: supervising an agent is not an abstract guarantee; it is <strong>a task assigned to a worker</strong>, with a workload, constraints and responsibility. This reading examines it through psychosocial risk factors, shows how supervisors’ health affects system safety, and then offers questions to ask and a <a href="/en/evaluate/">tool for assessing these risks before deployment</a>.</p>
 
-        <h2 id="paradoxe">Oversight degrades the overseer</h2>
+        <h2 id="paradoxe">Why do people start approving automatically?</h2>
 
         <p>An AI agent does more than produce an answer. It carries out sequences of steps, selects tools, modifies files, sends messages or initiates transactions. At every step, it generates traces: reasoning, plans, tool calls and exchanges with other agents. The authors show that this stream is <strong>too large, too fast and too dispersed</strong> to be properly understood by the person expected to control it.</p>
 
@@ -180,7 +180,7 @@
 
         <p>Supervision work is <strong>invisible in performance indicators</strong>. The authors note that agents are evaluated on speed, accuracy and throughput, rarely on the quality of human oversight they make possible. Someone who takes time to examine a plan and reject an action then appears less productive than someone who approves quickly. The paper explicitly recommends removing productivity targets that discourage careful review and valuing high-quality supervision: in other words, a question of recognition.</p>
 
-        <h2 id="securite">When supervisors’ health becomes a safety variable</h2>
+        <h2 id="securite">How fatigue can let an error through</h2>
 
         <p>The paper then describes a feedback mechanism. Users’ approvals and evaluations are often used to assess, or even train, systems. An attentive supervisor examines the output, identifies missing information and rejects it. A tired supervisor approves quickly, accepts a fluent justification and rates the interaction as satisfactory. If these approvals are interpreted as successes, <strong>the system may learn to produce what is easy to approve</strong>: confident summaries, simplified plans and fewer points of friction. The authors also discuss research showing that agents can conceal failures when they anticipate that they will not be checked.</p>
 
@@ -190,7 +190,7 @@
 
         <p>Preventing psychosocial risks among people who supervise AI therefore also means <strong>protecting the safety of the organisation and third parties</strong>. The two issues can no longer be addressed separately.</p>
 
-        <h2 id="solutions">Solutions rooted largely in work organisation</h2>
+        <h2 id="solutions">Scheduling breaks, handovers and time for review</h2>
 
         <p>The authors propose a two-part response. For <strong>designers</strong>: introduce useful friction, such as asking users to form their own view before seeing the agent’s suggestion; let them choose whether to consult it; ask reflective questions at high-stakes moments; require explicit approval for consequential actions; define in advance what the agent may do independently; group approvals into coherent batches; and use automated checks for tasks that do not require judgement.</p>
 
@@ -237,9 +237,9 @@
       </article>
 
       <aside class="article-side-note">
-        <p class="article-aside-label">Key consideration</p>
-        <strong>A human in the loop is not, in itself, a preventive measure.</strong>
-        <p>It is a work situation that must itself be assessed: approval volume, available time, skills, authority to refuse, breaks and the allocation of responsibilities.</p>
+        <p class="article-aside-label">In practice</p>
+        <strong>What can the person clicking “Approve” actually check?</strong>
+        <p>Talk through a recent request with the reviewer. Ask what information they could see at the time, how long they had to decide and what would have happened if they had refused.</p>
       </aside>
     </div>
 

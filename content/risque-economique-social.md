@@ -153,11 +153,11 @@ Plutôt que de demander uniquement :
 
 on peut commencer à suivre :
 
-**Le travail humain reste-t-il nécessaire ?**
+**Quelles étapes exigent encore qu’un professionnel décide, corrige ou tranche un cas difficile ?**
 
-**Les salariés conservent-ils leur autonomie ?**
+**Qui peut modifier un planning ou une priorité proposée par l’IA ? Quand cela s’est-il produit pour la dernière fois ?**
 
-**Les compétences continuent-elles à être développées ?**
+**Quels dossiers un débutant peut-il encore traiter avec un collègue pour apprendre le métier ?**
 
 **Les jeunes travailleurs disposent-ils encore de voies d'entrée dans les métiers ?**
 

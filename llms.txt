@@ -34,7 +34,7 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/comprendre/llm/ — Fiche courte : ce qu’est un LLM, comment il fabrique une réponse, comment il est entraîné et ce qu’il faut vérifier au travail.
 - https://www.iasantetravail.com/comprendre/ia-agentique/ — Fiche courte : définition de l’IA agentique, fonctionnement des agents, mesures de leur autonomie (METR, Remote Labor Index) et contrôles à prévoir.
 - https://www.iasantetravail.com/comprendre/hallucinations-ia/ — Fiche courte : six erreurs persistantes des modèles de langage (fabulation, complaisance, injection de consignes…), leur origine et les vérifications au travail.
-- https://www.iasantetravail.com/comprendre/benchmarks-ia/ — Fiche courte : cinq familles de benchmarks, leurs limites et quatre questions avant de conclure pour un usage professionnel.
+- https://www.iasantetravail.com/comprendre/benchmarks-ia/ — Fiche courte : définition d’un benchmark, trois exemples, cinq familles de tests et méthode pour comparer des modèles sur ses propres tâches.
 - https://www.iasantetravail.com/comprendre/agi/ — Fiche courte : définitions de l’AGI, repères mesurés et datés, arguments en présence et enjeu pour la santé au travail.
 - https://www.iasantetravail.com/risques-prevention/ — Deux analyses complémentaires des risques liés à l’IA : le travail réel et la santé, puis l’économie et la société.
 - https://www.iasantetravail.com/ia-en-spst/ — Guide sur l’IA dans les services de prévention et de santé au travail (SPST) : cas d’usage, données de santé, AI Act, risques et méthode pour lancer un pilote.
@@ -56,7 +56,7 @@ This resource is intentionally absent from the human navigation, public sitemap 
 - https://www.iasantetravail.com/en/understand/llm/ — Short page: what an LLM is, how it produces an answer, how it is trained and what to check at work.
 - https://www.iasantetravail.com/en/understand/agentic-ai/ — Short page: definition of agentic AI, how agents work, measures of their autonomy and controls to plan.
 - https://www.iasantetravail.com/en/understand/ai-hallucinations/ — Short page: six persistent errors of language models, where they come from and the checks to plan at work.
-- https://www.iasantetravail.com/en/understand/ai-benchmarks/ — Short page: five families of benchmarks, their limits and four questions before concluding for professional use.
+- https://www.iasantetravail.com/en/understand/ai-benchmarks/ — Short page: benchmark definition, three worked examples, five test families and how to compare models on your own tasks.
 - https://www.iasantetravail.com/en/understand/agi/ — Short page: definitions of AGI, measured and dated reference points, arguments on each side and what is at stake for work.
 - https://www.iasantetravail.com/en/recommendations/occupational-physician/ — Pointers for occupational physicians and nurses, as continuous reading.
 - https://www.iasantetravail.com/en/recommendations/employer/ — Five gates before deploying AI in a team: pointers for employers and HR.
