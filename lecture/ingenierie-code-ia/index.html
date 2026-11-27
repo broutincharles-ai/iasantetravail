@@ -20,7 +20,7 @@
   <meta property="og:description" content="À partir des travaux de Zhenfeng Cao et d’un retour de terrain de SemiAnalysis : l’IA déplace l’expertise du code vers l’architecture, l’évaluation et la supervision.">
   <meta property="og:url" content="https://www.iasantetravail.com/lecture/ingenierie-code-ia/">
   <meta property="article:published_time" content="2026-08-31">
-  <meta property="article:modified_time" content="2026-08-31">
+  <meta property="article:modified_time" content="2026-11-27">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Que devient le métier d’ingénieur quand l’IA écrit le code ?">
   <meta name="twitter:description" content="À partir des travaux de Zhenfeng Cao et d’un retour de terrain de SemiAnalysis : l’IA déplace l’expertise du code vers l’architecture, l’évaluation et la supervision.">
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="/assets/css/layout.css?v=3.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/lecture-v2.css?v=1.1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/#article","url":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/"},"headline":"Que devient le métier d’ingénieur quand l’IA écrit un code qu’il ne comprend plus ligne par ligne ?","description":"L’IA déplace l’expertise de l’écriture détaillée du code vers l’architecture, l’évaluation et la supervision.","datePublished":"2026-08-31","dateModified":"2026-08-31","inLanguage":"fr-FR","articleSection":"Lecture · Ingénierie · Compétences","keywords":["ingénierie logicielle","code généré par IA","compétences","autonomie","responsabilité","automatisation"],"author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"image":"https://www.iasantetravail.com/assets/images/social/site-fr.png?v=c55b0d5c"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/#article","url":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.iasantetravail.com/lecture/ingenierie-code-ia/"},"headline":"Que devient le métier d’ingénieur quand l’IA écrit un code qu’il ne comprend plus ligne par ligne ?","description":"L’IA déplace l’expertise de l’écriture détaillée du code vers l’architecture, l’évaluation et la supervision.","datePublished":"2026-08-31","dateModified":"2026-11-27","inLanguage":"fr-FR","articleSection":"Lecture · Ingénierie · Compétences","keywords":["ingénierie logicielle","code généré par IA","compétences","autonomie","responsabilité","automatisation"],"author":{"@id":"https://www.iasantetravail.com/a-propos/#person"},"publisher":{"@id":"https://www.iasantetravail.com/#organization"},"image":"https://www.iasantetravail.com/assets/images/social/site-fr.png?v=c55b0d5c"}</script>
   <link rel="describedby" type="text/plain" href="/llms.txt">
 <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
 
@@ -78,7 +78,7 @@
       <div>
         <p class="article-kicker">Lecture · Compétences</p>
         <h1>Que devient le métier d’ingénieur quand l’IA écrit un code qu’il ne comprend plus ligne par ligne&nbsp;?</h1>
-        <p class="article-deck">Le centre de gravité de l’expertise se déplace de la production détaillée du code vers la formulation du problème, l’architecture, l’évaluation et la supervision du résultat.</p>
+        <p class="article-deck">Un programme généré par l’IA peut passer les tests sans que l’équipe sache expliquer chaque ligne. Cette lecture examine le travail qui reste aux ingénieurs pour vérifier le programme, en comprendre les limites et le réparer.</p>
         <p class="article-byline">Par <strong>Dr Charles Broutin</strong>, médecin du travail</p>
       </div>
       <dl class="article-metadata">
@@ -119,12 +119,12 @@
         <div class="mechanism-chain">L’expertise ne disparaît pas nécessairement. <strong>Elle remonte d’un niveau d’abstraction.</strong></div>
 
         <h2 id="scene">Une scène étonnante chez OpenAI</h2>
-        <p>Fin août, SemiAnalysis publie une analyse du nouveau processeur d’inférence Jalapeño développé par OpenAI. Une partie de l’article concerne les kernels, ces programmes extrêmement bas niveau permettant d’exploiter efficacement le matériel.</p>
+        <p>Fin août, SemiAnalysis publie une analyse du nouveau processeur d’inférence Jalapeño développé par OpenAI. Une partie de l’article concerne les kernels, des programmes qui exécutent directement des calculs sur le processeur.</p>
         <p>SemiAnalysis décrit certains kernels atteignant environ 3&nbsp;000 lignes et explique qu’une version interne de Codex est désormais utilisée pour en produire et optimiser une partie. L’équipe rapporte notamment que Codex a généré rapidement une implémentation fonctionnelle et performante d’un kernel MLA pour DeepSeek sans intervention directe de l’équipe spécialisée dans les kernels.</p>
         <p>Dans une intervention diffusée quelques jours plus tard, Jordan Nanos de SemiAnalysis raconte une scène encore plus frappante. Alors que des ingénieurs d’OpenAI parcourent avec eux un de ces kernels générés par l’IA, ils comprennent parfaitement le matériel, l’architecture générale et les principes du système, mais ne semblent plus capables d’expliquer précisément ce que réalise chaque ligne.</p>
         <p>Selon Nanos, lorsqu’on avance ligne après ligne, la réponse ressemble essentiellement à&nbsp;:</p>
         <blockquote lang="en"><p>“Nope, nope, nope.”</p></blockquote>
-        <p>Pourtant, le programme fonctionne et obtient de très bonnes performances. OpenAI rapporte par ailleurs avoir utilisé GPT-5.6 Sol avec Codex pour réécrire et optimiser de manière autonome des kernels de production, avec une réduction annoncée de 20&nbsp;% des coûts de serving de bout en bout. L’entreprise insiste parallèlement sur le développement d’outils de vérification permettant de contrôler la correction de ces programmes.</p>
+        <p>Pourtant, le programme fonctionne et obtient de très bonnes performances. OpenAI rapporte par ailleurs avoir utilisé GPT-5.6 Sol avec Codex pour réécrire et optimiser de manière autonome des kernels de production, avec une réduction annoncée de 20&nbsp;% des coûts de fonctionnement du service qui produit les réponses du modèle. L’entreprise insiste parallèlement sur le développement d’outils de vérification permettant de contrôler la correction de ces programmes.</p>
         <p>L’ingénieur n’a pas disparu. Mais son rapport à l’objet technique commence peut-être à changer.</p>
 
         <h2 id="dimensions">Ce que ce déplacement change pour le travail</h2>
@@ -187,9 +187,9 @@
       </article>
 
       <aside class="article-side-note">
-        <p class="article-aside-label">Idée directrice</p>
-        <strong>La compétence remonte d’un niveau d’abstraction.</strong>
-        <p>Cette lecture évite de réduire le changement à un simple affaiblissement des compétences et permet d’examiner ensemble autonomie, maintien de l’expertise, supervision et responsabilité.</p>
+        <p class="article-aside-label">En revue de code</p>
+        <strong>Que couvrent les tests ?</strong>
+        <p>Demandez à l’ingénieur de citer un cas que les tests ne couvrent pas et d’expliquer comment l’équipe repérerait une erreur dans ce cas.</p>
       </aside>
     </div>
 
@@ -205,8 +205,8 @@
 </details>
 
     <section class="article-end" aria-labelledby="article-end-title"><div class="article-end-inner">
-      <h2 id="article-end-title">La compétence remonte d’un niveau d’abstraction.</h2>
-      <div><p>Retrouvez cette analyse dans la collection Lecture, aux côtés de travaux scientifiques, d’essais et de retours de terrain.</p><a href="/lecture/">Revenir à toutes les lectures →</a></div>
+      <h2 id="article-end-title">Qui pourra reprendre le programme en cas de panne ?</h2>
+      <div><p>Choisissez avec l’équipe une fonction écrite avec l’IA. Faites expliquer son comportement attendu, les cas que les tests couvrent et la marche à suivre si elle échoue. Le point qui bloque indique ce qu’il faut documenter ou pratiquer.</p><a href="/lecture/">Revenir à toutes les lectures →</a></div>
     </div></section>
   </main>
   <footer class="site-system-footer" id="site-footer" data-navigation-version="8.7">

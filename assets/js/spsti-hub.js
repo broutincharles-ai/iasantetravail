@@ -8,7 +8,7 @@
       description: "Retrouver un protocole ou une fiche de risque dans une base contrôlée, avec les sources affichées dans la réponse.",
       value: 4, complexity: 2, data: 2, error: 2,
       status: "Tester en priorité",
-      verdict: "Bon candidat à un pilote limité sur une base contrôlée, avec citation des sources et vérification humaine."
+      verdict: "Pour l’essai, limitez la recherche aux protocoles approuvés. Demandez à un collègue d’ouvrir la source citée et de vérifier que la réponse reprend la consigne en vigueur."
     },
     callbot: {
       type: "Relation adhérents · accueil",
@@ -24,7 +24,7 @@
       description: "Préparer les préinscriptions, modifications et échanges administratifs autour des sessions de sensibilisation.",
       value: 4, complexity: 2, data: 2, error: 2,
       status: "Tester en priorité",
-      verdict: "Candidat crédible si les exceptions restent visibles et si le temps complet, corrections incluses, est mesuré."
+      verdict: "Chronométrez une inscription jusqu’à sa confirmation, corrections comprises. Vérifiez qui reçoit les changements de dernière minute."
     },
     relecture: {
       type: "Pratique médicale · second lecteur",
@@ -32,7 +32,7 @@
       description: "Repérer des défauts de formulation dans un texte déjà rédigé, sans produire la décision ni la signer.",
       value: 5, complexity: 3, data: 4, error: 4,
       status: "Évaluation formelle",
-      verdict: "Usage prometteur mais sensible : minimisation, environnement autorisé, référence professionnelle et validation médicale obligatoires."
+      verdict: "Testez dans un environnement autorisé avec les seules informations nécessaires. Le médecin compare chaque alerte au texte et valide la formulation finale."
     },
     synthese: {
       type: "Pratique médicale · synthèse",
@@ -40,7 +40,7 @@
       description: "Préparer une synthèse d’éléments cliniques ou professionnels susceptibles d’éclairer une consultation.",
       value: 4, complexity: 4, data: 5, error: 5,
       status: "Vigilance forte",
-      verdict: "Ne pas lancer comme expérimentation informelle. L’analyse des données, de la sécurité, de la finalité et de l’intégration clinique est indispensable."
+      verdict: "Avant tout essai, précisez quelles informations entrent dans la synthèse, qui y aura accès et quel professionnel vérifiera les omissions en relisant les documents d’origine."
     },
     scoring: {
       type: "Décision individuelle · priorisation",
@@ -48,7 +48,7 @@
       description: "Attribuer un score à une personne pour prioriser un suivi, une action ou une décision professionnelle.",
       value: 2, complexity: 5, data: 5, error: 5,
       status: "À écarter en l’état",
-      verdict: "Risque disproportionné au regard de la valeur décrite. Revenir au besoin et rechercher une solution moins intrusive et non individuelle."
+      verdict: "Précisez le problème que le classement devrait résoudre. Si le besoin est de répartir des moyens, examinez d’abord des indicateurs par équipe avant d’envisager une note par personne."
     }
   };
 
@@ -59,7 +59,7 @@
       description: "Find a protocol or risk sheet in a controlled knowledge base, with sources displayed in the answer.",
       value: 4, complexity: 2, data: 2, error: 2,
       status: "Priority candidate",
-      verdict: "A good candidate for a limited pilot on a controlled knowledge base, with source citations and human verification."
+      verdict: "For a trial, restrict the search to approved protocols. Ask a colleague to open the cited source and check that the answer matches the current instruction."
     },
     callbot: {
       type: "Member relations · reception",
@@ -75,7 +75,7 @@
       description: "Prepare pre-registrations, changes and administrative communications concerning awareness sessions.",
       value: 4, complexity: 2, data: 2, error: 2,
       status: "Priority candidate",
-      verdict: "A credible candidate if exceptions remain visible and end-to-end time, including corrections, is measured."
+      verdict: "Time a registration through to confirmation, including corrections. Check who receives last-minute changes."
     },
     relecture: {
       type: "Medical practice · second reader",
@@ -83,7 +83,7 @@
       description: "Identify drafting defects in an existing text without producing the decision or signing it.",
       value: 5, complexity: 3, data: 4, error: 4,
       status: "Formal assessment",
-      verdict: "A promising but sensitive use: data minimisation, an authorised environment, a professional reference and medical validation are required."
+      verdict: "Use an approved environment and only the information the task requires. The physician checks each alert against the original text and approves the final wording."
     },
     synthese: {
       type: "Medical practice · synthesis",
@@ -91,7 +91,7 @@
       description: "Prepare a synthesis of clinical or occupational information that may inform a consultation.",
       value: 4, complexity: 4, data: 5, error: 5,
       status: "High vigilance",
-      verdict: "Do not launch as an informal experiment. Analysis of the data, security, purpose and clinical integration is essential."
+      verdict: "Before any trial, specify which information goes into the summary, who may see it and which professional will check it against the original records for omissions."
     },
     scoring: {
       type: "Individual decision · prioritisation",
@@ -99,7 +99,7 @@
       description: "Assign a score to a person to prioritise follow-up, an intervention or an occupational decision.",
       value: 2, complexity: 5, data: 5, error: 5,
       status: "Reject as currently framed",
-      verdict: "The risk is disproportionate to the stated value. Return to the need and seek a less intrusive, non-individual solution."
+      verdict: "State the problem that ranking people would solve. If the aim is to allocate resources, first consider indicators at team level."
     }
   };
 

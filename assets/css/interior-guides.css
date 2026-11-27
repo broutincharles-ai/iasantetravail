@@ -184,3 +184,28 @@
   .reco-page .rc .rc-tab[aria-selected="true"] { border-bottom-color: var(--interior-brick); }
   .reco-page .rc-panel-head { border-top: 1px solid var(--interior-brick); padding-top: 22px; }
 }
+
+/* The guide displays benchmark rows as labelled cards on small screens. */
+@media (max-width: 760px) {
+  #benchmarks .capability-table td[data-label]::before {
+    content: attr(data-label);
+    font-size: .6875rem;
+  }
+}
+.understand-editorial-v3 .benchmark-examples ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  line-height: 1.6;
+}
+.understand-editorial-v3 .benchmark-examples li + li {
+  margin-top: .75rem;
+}
+.understand-editorial-v3 .benchmark-examples li strong {
+  font: inherit;
+  font-weight: 650;
+  letter-spacing: normal;
+}
+.understand-editorial-v3 .benchmark-examples + h3,
+.understand-editorial-v3 #fig-classement + h3 {
+  margin-top: 2rem;
+}
