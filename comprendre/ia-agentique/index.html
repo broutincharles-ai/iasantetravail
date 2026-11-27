@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/comprendre/">Comprendre l’IA au travail</a> / Fiche courte</p>
-        <p class="cse-kicker cse-kicker-line">Comprendre · Fiche courte</p>
         <h1 id="hero-title">IA agentique&nbsp;: de quoi parle-t-on&nbsp;?</h1>
         <p class="cse-lede">Ce qu’un agent peut faire, comment définir son autonomie et quels contrôles prévoir avant de lui confier une tâche.</p>
         <p class="cse-meta">Par le <a href="/a-propos/">Dr Charles Broutin</a>, médecin du travail · Mis à jour le <time datetime="2026-11-13">13 novembre 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#systeme">Lire le chapitre du guide <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#systeme">Lire ce chapitre en entier <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentiel" aria-labelledby="essentiel-title">
-      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Un agent poursuit un objectif en agissant.</h2></div><p>La définition, puis ce qui change dans la durée.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Une IA qui passe à l’action.</h2></div><p>La définition, puis ce qui change dans la durée.</p></div>
       <div class="ref-prose"><div class="ref-answer"><span>Réponse directe</span>
         <p>L’IA agentique poursuit un objectif en choisissant des étapes, en utilisant des outils et en adaptant ses actions aux résultats obtenus. Elle peut s’appuyer sur un LLM.</p>
         <p>Un agent planifie, agit, observe le résultat et recommence, pendant des heures et, selon les fournisseurs des modèles les plus récents, parfois des jours, avec une supervision humaine intermittente.</p>
@@ -110,17 +109,17 @@
     </section>
 
     <section class="cse-section" id="fonctionnement" aria-labelledby="fonctionnement-title">
-      <div class="cse-heading"><div><p class="cse-kicker">02 / Fonctionnement</p><h2 id="fonctionnement-title">Des outils, une boucle, parfois une équipe d’agents.</h2></div><p>Le modèle ne se contente plus de proposer&nbsp;: il agit.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">02 / Fonctionnement</p><h2 id="fonctionnement-title">Des outils, une boucle, parfois une équipe d’agents.</h2></div></div>
       <div class="ref-grid is-three">
         <article><span>Outils</span><h3>Des actions dans d’autres logiciels.</h3><p>Recherche web, exécution de code, messagerie, agenda ou dossier&nbsp;: le modèle appelle des outils par des connecteurs, par exemple ceux du protocole MCP. Certains pilotent directement un ordinateur, écran, clavier et souris, comme le ferait un utilisateur.</p></article>
-        <article><span>Boucle</span><h3>Agir, observer, recommencer.</h3><p>L’agent planifie, agit, observe le résultat et recommence. Une erreur commise au début peut se propager à toute la chaîne d’actions.</p></article>
+        <article><span>Boucle</span><h3>Agir, observer, recommencer.</h3><p>À chaque tour, le résultat obtenu oriente l’action suivante. Une erreur commise au début peut se propager à toute la chaîne.</p></article>
         <article><span>Multi-agents</span><h3>Un coordinateur et des agents spécialisés.</h3><p>Un agent peut en diriger d’autres&nbsp;: il découpe l’objectif, confie chaque partie à un agent spécialisé, puis assemble les résultats. Des agents fondés sur le même modèle partagent les mêmes angles morts.</p><div><a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noreferrer">Anthropic, 2025 ↗</a></div></article>
       </div>
       <div class="ref-note"><strong>Des chiffres de fournisseurs · novembre 2026</strong><p>Anthropic indique que Claude Fable 5.2 peut coordonner des centaines de sous-agents, Google propose un mode «&nbsp;essaim&nbsp;» avec Gemini 4 Carbon, et OpenAI dit avoir mobilisé environ 10&nbsp;000 agents pendant 88 heures pour une démonstration mathématique qui n’a pas été vérifiée de façon indépendante. Ces chiffres disent ce qui est possible, pas ce qui est fiable.</p></div>
     </section>
 
     <section class="cse-section ref-section-alt" id="mesures" aria-labelledby="mesures-title">
-      <div class="cse-heading"><div><p class="cse-kicker">03 / Mesures</p><h2 id="mesures-title">Ce que l’on mesure de leur autonomie.</h2></div><p>Deux repères datés, avec leurs limites.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">03 / Indicateurs</p><h2 id="mesures-title">Ce que l’on mesure de leur autonomie.</h2></div><p>Deux repères datés, avec leurs limites.</p></div>
       <table class="ref-table"><thead><tr><th scope="col">Repère</th><th scope="col">Ce qu’il mesure</th><th scope="col">Résultat</th><th scope="col">Limite</th></tr></thead><tbody>
         <tr><td>Horizon temporel · METR</td><td data-label="Ce qu’il mesure">La durée, en temps de travail d’un expert humain, des tâches qu’un agent réussit une fois sur deux.</td><td data-label="Résultat">De 3 secondes pour GPT-2 en 2019 à 17&nbsp;h&nbsp;25 pour Claude Mythos Preview en avril 2026&nbsp;; un doublement tous les sept mois environ de 2019 à 2025.</td><td data-label="Limite">Tâches surtout informatiques&nbsp;; mesures peu fiables au-delà de 16 heures&nbsp;; série arrêtée le 8 septembre 2026.</td></tr>
         <tr><td>Remote Labor Index · CAIS et Scale AI</td><td data-label="Ce qu’il mesure">La part de 240 projets réels de travail indépendant dont le livrable vaut celui du professionnel.</td><td data-label="Résultat">2,5&nbsp;% au lancement en octobre 2025, 41&nbsp;% avec Claude Fable 5.2 en novembre 2026.</td><td data-label="Limite">Près de six projets sur dix restent hors de portée&nbsp;; le test exclut la relation avec le client, le travail physique et les projets au long cours.</td></tr>
@@ -130,7 +129,7 @@
     </section>
 
     <section class="cse-section" id="controles" aria-labelledby="controles-title">
-      <div class="cse-heading"><div><p class="cse-kicker">04 / Contrôles</p><h2 id="controles-title">Quatre risques, quatre contrôles.</h2></div><p>Plus les agents sont nombreux, plus le contrôle doit porter sur les droits, le journal et les points d’arrêt.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">04 / Garde-fous</p><h2 id="controles-title">Quatre risques, quatre contrôles.</h2></div></div>
       <table class="ref-table"><thead><tr><th scope="col">Risque</th><th scope="col">Contrôle à prévoir</th></tr></thead><tbody>
         <tr><td>Une erreur initiale se propage à toute la chaîne d’actions.</td><td data-label="Contrôle à prévoir">Des points d’arrêt, un journal des actions et un retour arrière.</td></tr>
         <tr><td>Un document lu par l’agent contient des consignes cachées&nbsp;: c’est l’injection de consignes.</td><td data-label="Contrôle à prévoir">Limiter les droits accordés, action par action&nbsp;: le risque augmente dès que l’outil peut envoyer, modifier ou supprimer.</td></tr>
@@ -143,22 +142,22 @@
 
     <section class="cse-section ref-section-alt" id="travail" aria-labelledby="travail-title">
       <div class="cse-heading"><div><p class="cse-kicker">05 / Au travail</p><h2 id="travail-title">Superviser un agent est une tâche.</h2></div><p>Le contrôle humain a lui aussi des conditions de travail.</p></div>
-      <div class="ref-prose"><p>Superviser un agent n’est pas une garantie abstraite&nbsp;: c’est une tâche confiée à un salarié, avec une charge, des contraintes et une responsabilité. Quand les demandes de validation se succèdent, les utilisateurs finissent par ne plus lire ce qu’ils approuvent&nbsp;: c’est la fatigue d’approbation.</p><p>L’échelle du dossier CSE situe un système de A0 (information) à A4 (délégation), en passant par la recommandation, l’action supervisée et l’action autonome. Plus le niveau monte, plus le contrôle humain doit être outillé.</p><p><a href="/lecture/humain-dans-la-boucle/">Humain dans la boucle&nbsp;: ce que superviser fait au superviseur</a> · <a href="/cse/#autonomie">CSE et IA&nbsp;: qualifier l’autonomie</a></p></div>
+      <div class="ref-prose"><p>Cette tâche revient à un salarié, avec une charge, des contraintes et une responsabilité. Quand les demandes de validation se succèdent, les utilisateurs finissent par ne plus lire ce qu’ils approuvent&nbsp;: c’est la fatigue d’approbation.</p><p>L’échelle du dossier CSE situe un système de A0 (information) à A4 (délégation), en passant par la recommandation, l’action supervisée et l’action autonome. Plus le niveau monte, plus le contrôle humain doit être outillé.</p><p><a href="/lecture/humain-dans-la-boucle/">Humain dans la boucle&nbsp;: ce que superviser fait au superviseur</a> · <a href="/cse/#autonomie">CSE et IA&nbsp;: qualifier l’autonomie</a></p></div>
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div><p>Des réponses courtes, tirées du guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div></div>
       <div class="faq-list">
         <details open><summary>Quelle différence entre un agent IA et un assistant conversationnel&nbsp;?</summary><div><p>L’assistant produit un contenu que vous relisez. L’agent enchaîne lui-même des actions dans des logiciels pour atteindre un objectif&nbsp;: il ne se contente plus de proposer, il agit. La vigilance se déplace de l’exactitude du texte vers les droits d’action, la supervision et la traçabilité.</p></div></details><details><summary>Un agent IA peut-il agir sans validation humaine&nbsp;?</summary><div><p>Cela dépend des droits qu’on lui accorde. Aux niveaux A3 (action autonome) et A4 (délégation) de l’échelle du CSE, il agit sans validation préalable. Il faut alors délimiter à l’avance ce qu’il peut faire seul, exiger une validation explicite pour les actions lourdes de conséquences, tenir un journal des actions et garder un moyen réel de l’arrêter.</p></div></details><details><summary>Qu’est-ce qu’un système multi-agents&nbsp;?</summary><div><p>Une architecture où un agent coordinateur découpe l’objectif, confie chaque partie à un agent spécialisé, puis assemble les résultats. Les principaux fournisseurs la proposent désormais. Les agents reposant souvent sur le même modèle, une même erreur peut se répéter de l’un à l’autre.</p></div></details>
       </div>
-      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères datés de novembre 2026 seront dépassés&nbsp;: le guide est la version tenue à jour.</p></div>
+      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères de novembre 2026 seront dépassés&nbsp;: la version complète est tenue à jour.</p></div>
       <div class="update-log" id="mises-a-jour"><h3>Journal des mises à jour</h3><ol>
-        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version, tirée du guide «&nbsp;Comprendre l’IA au travail&nbsp;» mis à jour le 13 novembre 2026.</span></li>
+        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="dossier" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div><p>Les autres fiches courtes et les guides qu’elles résument.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div></div>
       <div class="ref-links">
         <a href="/comprendre/llm/"><strong>Qu’est-ce qu’un LLM&nbsp;?</strong><span>Définition, fonctionnement et fabrication d’un modèle de langage.</span></a>
         <a href="/comprendre/hallucinations-ia/"><strong>Hallucinations de l’IA</strong><span>Six erreurs persistantes des modèles et où placer les vérifications.</span></a>

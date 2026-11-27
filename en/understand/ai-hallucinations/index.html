@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/en/understand/">Understanding AI at work</a> / Short page</p>
-        <p class="cse-kicker cse-kicker-line">Understand · Short page</p>
         <h1 id="hero-title">AI hallucinations: why models get things wrong</h1>
-        <p class="cse-lede">Why models produce errors, what studies can tell us about them and where to place the checks.</p>
+        <p class="cse-lede">Where these errors come from, what recent studies say about them and how to guard against them at work.</p>
         <p class="cse-meta">By <a href="/en/about/">Dr Charles Broutin</a>, occupational physician · Updated on <time datetime="2026-11-13">13 November 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#capacites">Read the guide chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#capacites">Read the full chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
-      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">A plausible answer is not a true answer.</h2></div><p>What the word refers to, and why the error cannot be fixed with a setting.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">Plausible does not mean true.</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>Direct answer</span>
         <p>A hallucination, or confabulation, is a plausible but false answer: an invented reference, legal article or figure, presented with confidence. The model produces what is probable in the context, not what is true.</p>
         <p>These limits are not simple tuning defects. They follow from the way models are trained, evaluated and built into tools.</p>
@@ -100,7 +99,7 @@
     </section>
 
     <section class="cse-section ref-section-alt" id="errors" aria-labelledby="errors-title">
-      <div class="cse-heading"><div><p class="cse-kicker">01 / Six errors</p><h2 id="errors-title">Six errors that persist.</h2></div><p>Knowing them helps place the checks in the right spot.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">01 / Typology</p><h2 id="errors-title">Six errors that persist.</h2></div><p>Where each comes from, and what it implies at work.</p></div>
       <table class="ref-table"><thead><tr><th scope="col">Error</th><th scope="col">Where it comes from</th><th scope="col">At work</th></tr></thead><tbody>
         <tr><td><strong>Confabulation</strong></td><td data-label="Where it comes from">Pre-training does not teach the model to tell a rare fact from a plausible invention, and evaluations that score only accuracy reward guessing over abstaining. <a href="https://openai.com/index/why-language-models-hallucinate/" target="_blank" rel="noreferrer">Kalai et al., 2025 ↗</a></td><td data-label="At work">Invented references, legal articles or figures, presented with confidence.</td></tr>
         <tr><td><strong>Sycophancy</strong></td><td data-label="Where it comes from">Tuning on human preferences can favour approval at the expense of accuracy. In April 2025, OpenAI withdrew a GPT-4o update judged excessively flattering. <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noreferrer">OpenAI, 2025 ↗</a></td><td data-label="At work">The tool tends to confirm the hypothesis contained in the question asked.</td></tr>
@@ -112,10 +111,10 @@
     </section>
 
     <section class="cse-section" id="studies" aria-labelledby="studies-title">
-      <div class="cse-heading"><div><p class="cse-kicker">02 / Two studies</p><h2 id="studies-title">What two studies show.</h2></div><p>One on consultants, the other in occupational health.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">02 / Findings</p><h2 id="studies-title">What two studies show.</h2></div><p>One on consultants, the other in occupational health.</p></div>
       <div class="ref-grid">
-        <article><span>758 consultants</span><h3>Excellent here, failing right next door.</h3><p>In the trial by Dell’Acqua and colleagues (Harvard Business School, BCG), AI improved speed and quality on tasks within its reach: 12% more tasks completed, 25% faster. On a task just beyond it, consultants helped by AI gave the right answer less often (−19 points).</p><div><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noreferrer">Dell’Acqua et al., 2023 ↗</a></div></article>
-        <article><span>385 recommendations</span><h3>No hallucination observed, with no general guarantee.</h3><p>In the study published by the INRS in June 2026, the o1 model reviewed medical recommendations stripped of identifying details: no hallucination was detected in that setting. The result holds for one model, one prompt and one specific corpus; it does not guarantee their absence in other uses.</p><div><a href="/en/publications/ai-medical-recommendations/">Summary of the INRS study →</a></div></article>
+        <article><span>758 consultants</span><h3>A gain here, a loss just beyond.</h3><p>In the trial by Dell’Acqua and colleagues (Harvard Business School, BCG), AI improved speed and quality on tasks within its reach: 12% more tasks completed, 25% faster. On a task just beyond it, consultants helped by AI gave the right answer less often (−19 points).</p><div><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noreferrer">Dell’Acqua et al., 2023 ↗</a></div></article>
+        <article><span>385 recommendations</span><h3>A reassuring result, in a narrow setting.</h3><p>In the study published by the INRS in June 2026, the o1 model reviewed medical recommendations stripped of identifying details: no hallucination was detected in that setting. The result holds for one model, one prompt and one specific corpus; it does not guarantee their absence in other uses.</p><div><a href="/en/publications/ai-medical-recommendations/">Summary of the INRS study →</a></div></article>
       </div>
     </section>
 
@@ -125,18 +124,18 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div><p>Short answers, drawn from the guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div></div>
       <div class="faq-list">
         <details open><summary>Can hallucinations be eliminated?</summary><div><p>The guide presents no way of doing so: these errors follow from the way models are trained and evaluated. Supplying documents anchors the answers in your sources, but you still have to check the extracts actually retrieved and cited.</p></div></details><details><summary>Is a model that explains its reasoning more reliable?</summary><div><p>Not for that reason. The reasoning it displays does not faithfully reflect what determined its answer, and a convincing explanation can accompany a false answer.</p></div></details><details><summary>Why does AI so often agree with me?</summary><div><p>Because tuning on human preferences can favour approval at the expense of accuracy: this is sycophancy. The tool then tends to confirm the hypothesis contained in the question asked.</p></div></details>
       </div>
-      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The figures dated November 2026 will go out of date: the guide is the version kept current.</p></div>
+      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The November 2026 figures will go out of date: the full version is kept current.</p></div>
       <div class="update-log" id="updates"><h3>Update log</h3><ol>
-        <li><time datetime="2026-11-13">13 November 2026</time><span>First version, drawn from the guide “Understanding AI at work” updated on 13 November 2026.</span></li>
+        <li><time datetime="2026-11-13">13 November 2026</time><span>First version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="related" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div><p>The other short pages and the guides they summarise.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div></div>
       <div class="ref-links">
         <a href="/en/understand/llm/"><strong>What is an LLM?</strong><span>Definition, how a language model works and how it is built.</span></a>
         <a href="/en/understand/agentic-ai/"><strong>Agentic AI</strong><span>What sets an agent apart, what is measured and which controls to plan.</span></a>

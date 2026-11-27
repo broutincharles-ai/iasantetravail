@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/comprendre/">Comprendre l’IA au travail</a> / Fiche courte</p>
-        <p class="cse-kicker cse-kicker-line">Comprendre · Fiche courte</p>
         <h1 id="hero-title">Hallucinations de l’IA&nbsp;: pourquoi les modèles se trompent</h1>
-        <p class="cse-lede">Pourquoi les modèles produisent des erreurs, ce que les études permettent d’en dire et où placer les vérifications.</p>
+        <p class="cse-lede">D’où viennent ces erreurs, ce qu’en disent les études récentes et comment s’en prémunir au travail.</p>
         <p class="cse-meta">Par le <a href="/a-propos/">Dr Charles Broutin</a>, médecin du travail · Mis à jour le <time datetime="2026-11-13">13 novembre 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#capacites">Lire le chapitre du guide <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#capacites">Lire ce chapitre en entier <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentiel" aria-labelledby="essentiel-title">
-      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Une réponse plausible n’est pas une réponse vraie.</h2></div><p>Ce que le mot désigne, et pourquoi l’erreur ne se corrige pas d’un réglage.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Vraisemblable ne veut pas dire vrai.</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>Réponse directe</span>
         <p>Une hallucination, ou fabulation, est une réponse plausible mais fausse&nbsp;: une référence, un article de loi ou un chiffre inventés, présentés avec assurance. Le modèle produit ce qui est probable dans le contexte, pas ce qui est vrai.</p>
         <p>Ces limites ne sont pas de simples défauts de réglage. Elles découlent de la manière dont les modèles sont entraînés, évalués et intégrés aux outils.</p>
@@ -100,7 +99,7 @@
     </section>
 
     <section class="cse-section ref-section-alt" id="erreurs" aria-labelledby="erreurs-title">
-      <div class="cse-heading"><div><p class="cse-kicker">01 / Six erreurs</p><h2 id="erreurs-title">Six erreurs qui persistent.</h2></div><p>Les connaître aide à placer les contrôles au bon endroit.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">01 / Typologie</p><h2 id="erreurs-title">Six erreurs qui persistent.</h2></div><p>Leur origine, et ce qu’elles impliquent au travail.</p></div>
       <table class="ref-table"><thead><tr><th scope="col">Erreur</th><th scope="col">D’où elle vient</th><th scope="col">Au travail</th></tr></thead><tbody>
         <tr><td><strong>Fabulation</strong></td><td data-label="D’où elle vient">Le pré-entraînement n’apprend pas à distinguer un fait rare d’une invention vraisemblable, et les évaluations qui ne notent que l’exactitude récompensent la réponse au hasard plutôt que l’abstention. <a href="https://openai.com/index/why-language-models-hallucinate/" target="_blank" rel="noreferrer">Kalai et al., 2025 ↗</a></td><td data-label="Au travail">Références, articles de loi ou chiffres inventés, présentés avec assurance.</td></tr>
         <tr><td><strong>Complaisance</strong></td><td data-label="D’où elle vient">L’ajustement sur les préférences humaines peut favoriser l’approbation au détriment de l’exactitude. En avril 2025, OpenAI a retiré une mise à jour de GPT-4o jugée excessivement flatteuse. <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noreferrer">OpenAI, 2025 ↗</a></td><td data-label="Au travail">L’outil tend à confirmer l’hypothèse contenue dans la question posée.</td></tr>
@@ -112,10 +111,10 @@
     </section>
 
     <section class="cse-section" id="etudes" aria-labelledby="etudes-title">
-      <div class="cse-heading"><div><p class="cse-kicker">02 / Deux études</p><h2 id="etudes-title">Ce que montrent deux études.</h2></div><p>L’une sur des consultants, l’autre en santé au travail.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">02 / Résultats</p><h2 id="etudes-title">Ce que montrent deux études.</h2></div><p>L’une sur des consultants, l’autre en santé au travail.</p></div>
       <div class="ref-grid">
-        <article><span>758 consultants</span><h3>Excellent ici, défaillant juste à côté.</h3><p>Dans l’essai de Dell’Acqua et ses collègues (Harvard Business School, BCG), l’IA améliorait la vitesse et la qualité sur les tâches à sa portée&nbsp;: 12&nbsp;% de tâches menées à terme en plus, 25&nbsp;% de rapidité en plus. Sur une tâche située juste au-delà, les consultants aidés par l’IA donnaient moins souvent la bonne réponse (−19 points).</p><div><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noreferrer">Dell’Acqua et al., 2023 ↗</a></div></article>
-        <article><span>385 préconisations</span><h3>Aucune hallucination observée, sans garantie générale.</h3><p>Dans l’étude publiée par l’INRS en juin 2026, le modèle o1 relisait des préconisations médicales dépourvues d’éléments identifiants&nbsp;: aucune hallucination n’a été détectée dans ce cadre. Ce résultat vaut pour un modèle, un prompt et un corpus précis&nbsp;; il ne garantit pas leur absence dans d’autres usages.</p><div><a href="/publications/ia-preconisations-medicales/">Résumé de l’étude INRS →</a></div></article>
+        <article><span>758 consultants</span><h3>Un gain ici, une perte juste au-delà.</h3><p>Dans l’essai de Dell’Acqua et ses collègues (Harvard Business School, BCG), l’IA améliorait la vitesse et la qualité sur les tâches à sa portée&nbsp;: 12&nbsp;% de tâches menées à terme en plus, 25&nbsp;% de rapidité en plus. Sur une tâche située juste au-delà, les consultants aidés par l’IA donnaient moins souvent la bonne réponse (−19 points).</p><div><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noreferrer">Dell’Acqua et al., 2023 ↗</a></div></article>
+        <article><span>385 préconisations</span><h3>Un résultat rassurant, dans un cadre précis.</h3><p>Dans l’étude publiée par l’INRS en juin 2026, le modèle o1 relisait des préconisations médicales dépourvues d’éléments identifiants&nbsp;: aucune hallucination n’a été détectée dans ce cadre. Ce résultat vaut pour un modèle, un prompt et un corpus précis&nbsp;; il ne garantit pas leur absence dans d’autres usages.</p><div><a href="/publications/ia-preconisations-medicales/">Résumé de l’étude INRS →</a></div></article>
       </div>
     </section>
 
@@ -125,18 +124,18 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div><p>Des réponses courtes, tirées du guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div></div>
       <div class="faq-list">
         <details open><summary>Peut-on supprimer les hallucinations&nbsp;?</summary><div><p>Le guide n’en présente aucun moyen&nbsp;: ces erreurs découlent de la manière dont les modèles sont entraînés et évalués. Fournir des documents ancre les réponses dans vos sources, mais il reste à vérifier les extraits réellement retrouvés et cités.</p></div></details><details><summary>Un modèle qui explique son raisonnement est-il plus fiable&nbsp;?</summary><div><p>Pas pour cette raison. Le raisonnement qu’il affiche ne reflète pas fidèlement ce qui a déterminé sa réponse, et une explication convaincante peut accompagner une réponse fausse.</p></div></details><details><summary>Pourquoi l’IA me donne-t-elle souvent raison&nbsp;?</summary><div><p>Parce que l’ajustement sur les préférences humaines peut favoriser l’approbation au détriment de l’exactitude&nbsp;: c’est la complaisance. L’outil tend alors à confirmer l’hypothèse contenue dans la question posée.</p></div></details>
       </div>
-      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères datés de novembre 2026 seront dépassés&nbsp;: le guide est la version tenue à jour.</p></div>
+      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères de novembre 2026 seront dépassés&nbsp;: la version complète est tenue à jour.</p></div>
       <div class="update-log" id="mises-a-jour"><h3>Journal des mises à jour</h3><ol>
-        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version, tirée du guide «&nbsp;Comprendre l’IA au travail&nbsp;» mis à jour le 13 novembre 2026.</span></li>
+        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="dossier" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div><p>Les autres fiches courtes et les guides qu’elles résument.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div></div>
       <div class="ref-links">
         <a href="/comprendre/llm/"><strong>Qu’est-ce qu’un LLM&nbsp;?</strong><span>Définition, fonctionnement et fabrication d’un modèle de langage.</span></a>
         <a href="/comprendre/ia-agentique/"><strong>IA agentique</strong><span>Ce qui distingue un agent, ce que l’on mesure et les contrôles à prévoir.</span></a>

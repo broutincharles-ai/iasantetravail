@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/en/understand/">Understanding AI at work</a> / Short page</p>
-        <p class="cse-kicker cse-kicker-line">Understand · Short page</p>
         <h1 id="hero-title">Agentic AI: what are we talking about?</h1>
         <p class="cse-lede">What an agent can do, how to define its autonomy and which controls to put in place before assigning it a task.</p>
         <p class="cse-meta">By <a href="/en/about/">Dr Charles Broutin</a>, occupational physician · Updated on <time datetime="2026-11-13">13 November 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#systeme">Read the guide chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#systeme">Read the full chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
-      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">An agent pursues a goal by acting.</h2></div><p>The definition, then what changes over time.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">AI that takes action.</h2></div><p>The definition, then what changes over time.</p></div>
       <div class="ref-prose"><div class="ref-answer"><span>Direct answer</span>
         <p>Agentic AI pursues a goal by choosing steps, using tools and adapting its actions to the results obtained. It can be built on an LLM.</p>
         <p>An agent plans, acts, observes the result and starts again, for hours and, according to the providers of the most recent models, sometimes days, with intermittent human supervision.</p>
@@ -110,17 +109,17 @@
     </section>
 
     <section class="cse-section" id="how-it-works" aria-labelledby="how-it-works-title">
-      <div class="cse-heading"><div><p class="cse-kicker">02 / How it works</p><h2 id="how-it-works-title">Tools, a loop, sometimes a team of agents.</h2></div><p>The model no longer only proposes: it acts.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">02 / How it works</p><h2 id="how-it-works-title">Tools, a loop, sometimes a team of agents.</h2></div></div>
       <div class="ref-grid is-three">
         <article><span>Tools</span><h3>Actions in other software.</h3><p>Web search, code execution, email, calendar or records: the model calls tools through connectors, for example those of the MCP protocol. Some operate a computer directly, screen, keyboard and mouse, as a user would.</p></article>
-        <article><span>Loop</span><h3>Act, observe, start again.</h3><p>The agent plans, acts, observes the result and starts again. An error made at the start can spread through the whole chain of actions.</p></article>
+        <article><span>Loop</span><h3>Act, observe, start again.</h3><p>At each turn, the result obtained steers the next action. An error made at the start can spread through the whole chain.</p></article>
         <article><span>Multi-agent</span><h3>A coordinator and specialised agents.</h3><p>One agent can direct others: it splits the goal, hands each part to a specialised agent, then assembles the results. Agents built on the same model share the same blind spots.</p><div><a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noreferrer">Anthropic, 2025 ↗</a></div></article>
       </div>
       <div class="ref-note"><strong>Provider figures · November 2026</strong><p>Anthropic states that Claude Fable 5.2 can coordinate hundreds of sub-agents, Google offers a “swarm” mode with Gemini 4 Carbon, and OpenAI says it used about 10,000 agents for 88 hours for a mathematical proof that has not been independently verified. These figures say what is possible, not what is reliable.</p></div>
     </section>
 
     <section class="cse-section ref-section-alt" id="measurements" aria-labelledby="measurements-title">
-      <div class="cse-heading"><div><p class="cse-kicker">03 / Measurements</p><h2 id="measurements-title">What is measured of their autonomy.</h2></div><p>Two dated reference points, with their limits.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">03 / Indicators</p><h2 id="measurements-title">What is measured of their autonomy.</h2></div><p>Two dated reference points, with their limits.</p></div>
       <table class="ref-table"><thead><tr><th scope="col">Reference</th><th scope="col">What it measures</th><th scope="col">Result</th><th scope="col">Limit</th></tr></thead><tbody>
         <tr><td>Time horizon · METR</td><td data-label="What it measures">The length, in working time of a human expert, of the tasks an agent succeeds at half the time.</td><td data-label="Result">From 3 seconds for GPT-2 in 2019 to 17 h 25 for Claude Mythos Preview in April 2026; a doubling roughly every seven months from 2019 to 2025.</td><td data-label="Limit">Mostly software tasks; measurements unreliable beyond 16 hours; series stopped on 8 September 2026.</td></tr>
         <tr><td>Remote Labor Index · CAIS and Scale AI</td><td data-label="What it measures">The share of 240 real freelance projects whose deliverable is as good as the professional’s.</td><td data-label="Result">2.5% at launch in October 2025, 41% with Claude Fable 5.2 in November 2026.</td><td data-label="Limit">Nearly six projects in ten remain out of reach; the test excludes the client relationship, physical work and long-running projects.</td></tr>
@@ -130,7 +129,7 @@
     </section>
 
     <section class="cse-section" id="controls" aria-labelledby="controls-title">
-      <div class="cse-heading"><div><p class="cse-kicker">04 / Controls</p><h2 id="controls-title">Four risks, four controls.</h2></div><p>The more agents there are, the more control must bear on rights, the log and the stopping points.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">04 / Safeguards</p><h2 id="controls-title">Four risks, four controls.</h2></div></div>
       <table class="ref-table"><thead><tr><th scope="col">Risk</th><th scope="col">Control to plan</th></tr></thead><tbody>
         <tr><td>An initial error spreads through the whole chain of actions.</td><td data-label="Control to plan">Stopping points, a log of actions and a way to roll back.</td></tr>
         <tr><td>A document read by the agent contains hidden instructions: this is prompt injection.</td><td data-label="Control to plan">Limit the rights granted, action by action: the risk rises as soon as the tool can send, modify or delete.</td></tr>
@@ -143,22 +142,22 @@
 
     <section class="cse-section ref-section-alt" id="at-work" aria-labelledby="at-work-title">
       <div class="cse-heading"><div><p class="cse-kicker">05 / At work</p><h2 id="at-work-title">Supervising an agent is a task.</h2></div><p>Human control has working conditions too.</p></div>
-      <div class="ref-prose"><p>Supervising an agent is not an abstract safeguard: it is a task given to an employee, with a workload, constraints and a responsibility. When validation requests follow one another, users end up no longer reading what they approve: this is approval fatigue.</p><p>The scale in the works council dossier places a system from A0 (information) to A4 (delegation), through recommendation, supervised action and autonomous action. The higher the level, the more human control needs proper tooling.</p><p><a href="/en/reading/human-in-the-loop/">Human in the loop: what supervising does to the supervisor</a> · <a href="/en/cse/#autonomie">Works councils and AI: qualifying autonomy</a></p></div>
+      <div class="ref-prose"><p>This task falls to an employee, with a workload, constraints and a responsibility. When validation requests follow one another, users end up no longer reading what they approve: this is approval fatigue.</p><p>The scale in the works council dossier places a system from A0 (information) to A4 (delegation), through recommendation, supervised action and autonomous action. The higher the level, the more human control needs proper tooling.</p><p><a href="/en/reading/human-in-the-loop/">Human in the loop: what supervising does to the supervisor</a> · <a href="/en/cse/#autonomie">Works councils and AI: qualifying autonomy</a></p></div>
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div><p>Short answers, drawn from the guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div></div>
       <div class="faq-list">
         <details open><summary>What is the difference between an AI agent and a chat assistant?</summary><div><p>The assistant produces content that you review. The agent itself chains actions in software to reach a goal: it no longer only proposes, it acts. Attention shifts from the accuracy of the text to action rights, supervision and traceability.</p></div></details><details><summary>Can an AI agent act without human validation?</summary><div><p>It depends on the rights it is given. At levels A3 (autonomous action) and A4 (delegation) of the works council scale, it acts without prior validation. You then need to define in advance what it may do alone, require explicit validation for actions with serious consequences, keep a log of actions and keep a real way to stop it.</p></div></details><details><summary>What is a multi-agent system?</summary><div><p>An architecture in which a coordinating agent splits the goal, hands each part to a specialised agent, then assembles the results. The main providers now offer it. Because the agents often rely on the same model, the same error can repeat from one to the next.</p></div></details>
       </div>
-      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The figures dated November 2026 will go out of date: the guide is the version kept current.</p></div>
+      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The November 2026 figures will go out of date: the full version is kept current.</p></div>
       <div class="update-log" id="updates"><h3>Update log</h3><ol>
-        <li><time datetime="2026-11-13">13 November 2026</time><span>First version, drawn from the guide “Understanding AI at work” updated on 13 November 2026.</span></li>
+        <li><time datetime="2026-11-13">13 November 2026</time><span>First version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="related" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div><p>The other short pages and the guides they summarise.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div></div>
       <div class="ref-links">
         <a href="/en/understand/llm/"><strong>What is an LLM?</strong><span>Definition, how a language model works and how it is built.</span></a>
         <a href="/en/understand/ai-hallucinations/"><strong>AI hallucinations</strong><span>Six persistent model errors and where to place the checks.</span></a>

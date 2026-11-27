@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/comprendre/">Comprendre l’IA au travail</a> / Fiche courte</p>
-        <p class="cse-kicker cse-kicker-line">Comprendre · Fiche courte</p>
         <h1 id="hero-title">Qu’est-ce qu’un LLM&nbsp;?</h1>
-        <p class="cse-lede">Comment un modèle de langage produit une réponse, comment il est entraîné et ce qu’il faut vérifier avant de s’y fier.</p>
+        <p class="cse-lede">Comment un modèle de langage compose ses réponses, comment on l’entraîne et ce que cela implique pour un usage professionnel.</p>
         <p class="cse-meta">Par le <a href="/a-propos/">Dr Charles Broutin</a>, médecin du travail · Mis à jour le <time datetime="2026-11-13">13 novembre 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#llm">Lire le chapitre du guide <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/comprendre/#llm">Lire ce chapitre en entier <span>→</span></a><a class="cse-button secondary" href="/comprendre/#sommaire">Sommaire du guide <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentiel" aria-labelledby="essentiel-title">
-      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Un LLM prévoit la suite d’un texte.</h2></div></div>
+      <div class="cse-heading"><div><p class="cse-kicker">L’essentiel</p><h2 id="essentiel-title">Une machine à prédire.</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>Réponse directe</span>
         <p>Un grand modèle de langage, ou LLM (<span lang="en">large language model</span>), est un réseau de neurones entraîné à prévoir la suite d’un texte. Il ne cherche pas une réponse toute faite dans une base de données&nbsp;: il la compose, unité après unité.</p>
         <p>Il calcule des probabilités à partir du contexte&nbsp;; il ne vérifie pas spontanément la vérité ni la conformité de sa réponse.</p>
@@ -100,13 +99,13 @@
     </section>
 
     <section class="cse-section ref-section-alt" id="fonctionnement" aria-labelledby="fonctionnement-title">
-      <div class="cse-heading"><div><p class="cse-kicker">01 / Fonctionnement</p><h2 id="fonctionnement-title">Cinq étapes entre votre question et la réponse.</h2></div><p>Le même calcul recommence pour chaque unité de texte produite.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">01 / Fonctionnement</p><h2 id="fonctionnement-title">Cinq étapes entre votre question et la réponse.</h2></div></div>
       <ol class="ref-points">
-        <li><div><h3>Découper&nbsp;: le texte devient des jetons.</h3><p>La consigne et les documents fournis sont découpés en petites unités&nbsp;: mots, morceaux de mots ou signes.</p></div></li>
-        <li><div><h3>Représenter&nbsp;: les jetons deviennent des nombres.</h3><p>Chaque jeton est converti en une représentation numérique qui encode les régularités apprises pendant l’entraînement.</p></div></li>
-        <li><div><h3>Mettre en relation&nbsp;: l’attention pondère le contexte.</h3><p>Le Transformer examine les relations entre les jetons pour déterminer quels éléments du contexte comptent le plus à cet instant. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al., 2017 ↗</a></p></div></li>
+        <li><div><h3>Découper&nbsp;: le texte devient des jetons.</h3><p>Ces petites unités sont prises dans la consigne et les documents fournis&nbsp;: mots, morceaux de mots ou signes.</p></div></li>
+        <li><div><h3>Représenter&nbsp;: les jetons deviennent des nombres.</h3><p>Ces vecteurs encodent les régularités apprises pendant l’entraînement.</p></div></li>
+        <li><div><h3>Mettre en relation&nbsp;: l’attention pondère le contexte.</h3><p>Le Transformer examine les liens entre les jetons pour déterminer lesquels comptent le plus à cet instant. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al., 2017 ↗</a></p></div></li>
         <li><div><h3>Prédire&nbsp;: le prochain jeton est choisi.</h3><p>Le modèle calcule une distribution de probabilités. Les réglages de génération influencent le choix et sa variabilité.</p></div></li>
-        <li><div><h3>Recommencer&nbsp;: la réponse se construit pas à pas.</h3><p>Le jeton choisi rejoint le contexte, puis le calcul recommence jusqu’à la fin de la réponse.</p></div></li>
+        <li><div><h3>Recommencer&nbsp;: la réponse se construit pas à pas.</h3><p>Le jeton choisi rejoint le contexte, et ainsi de suite jusqu’au dernier.</p></div></li>
       </ol>
       <div class="ref-note"><strong>Exemple illustratif</strong><p>Après «&nbsp;Le salarié décrit des douleurs persistantes au niveau du…&nbsp;», le modèle attribue une probabilité à chaque suite possible&nbsp;: «&nbsp;dos&nbsp;», «&nbsp;poignet&nbsp;», «&nbsp;genou&nbsp;». Il choisit ce qui est probable dans ce contexte, pas ce qui est vrai pour ce salarié. Dans le guide, les probabilités de cet exemple sont fictives.</p></div>
     </section>
@@ -130,18 +129,18 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div><p>Des réponses courtes, tirées du guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Réponses essentielles</p><h2 id="faq-title">Questions fréquentes</h2></div></div>
       <div class="faq-list">
         <details open><summary>Un LLM va-t-il chercher ses réponses dans une base de données&nbsp;?</summary><div><p>Pas par lui-même&nbsp;: il compose sa réponse à partir de ce qu’il a appris et de ce qui figure dans sa fenêtre de contexte. Un outil peut en revanche lui fournir des extraits retrouvés dans une base documentaire (RAG) ou sur le web. Ce qui n’entre pas dans cette fenêtre n’existe pas pour lui.</p></div></details><details><summary>Pourquoi la même question donne-t-elle des réponses différentes&nbsp;?</summary><div><p>La génération est probabiliste et sensible à la formulation, à l’ordre des documents et à la version du modèle. Avec une température basse, les réponses sont stables, parfois répétitives&nbsp;; avec une température élevée, elles varient davantage. D’où l’intérêt de tester plusieurs fois, de dater les essais et de consigner la version utilisée.</p></div></details><details><summary>Quelle différence entre un modèle fermé et un modèle à poids ouverts&nbsp;?</summary><div><p>Un modèle fermé ne s’utilise qu’à distance, sur l’infrastructure du fournisseur. Un modèle à poids ouverts peut être installé sur des serveurs maîtrisés, ce qui donne la maîtrise du trajet des données. Les plus grands exigent toutefois une infrastructure de centre de données.</p></div></details>
       </div>
-      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères datés de novembre 2026 seront dépassés&nbsp;: le guide est la version tenue à jour.</p></div>
+      <div class="ref-note"><strong>D’où vient cette fiche</strong><p>Elle résume un chapitre du guide <a href="/comprendre/">Comprendre l’IA au travail</a>, qui donne pour chaque chiffre sa source, sa date et ses limites. Les repères de novembre 2026 seront dépassés&nbsp;: la version complète est tenue à jour.</p></div>
       <div class="update-log" id="mises-a-jour"><h3>Journal des mises à jour</h3><ol>
-        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version, tirée du guide «&nbsp;Comprendre l’IA au travail&nbsp;» mis à jour le 13 novembre 2026.</span></li>
+        <li><time datetime="2026-11-13">13 novembre 2026</time><span>Première version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="dossier" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div><p>Les autres fiches courtes et les guides qu’elles résument.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Dans le même parcours</p><h2 id="related-title">Pour aller plus loin.</h2></div></div>
       <div class="ref-links">
         <a href="/comprendre/ia-agentique/"><strong>IA agentique</strong><span>Ce qui distingue un agent, ce que l’on mesure et les contrôles à prévoir.</span></a>
         <a href="/comprendre/hallucinations-ia/"><strong>Hallucinations de l’IA</strong><span>Six erreurs persistantes des modèles et où placer les vérifications.</span></a>
