@@ -31,7 +31,7 @@ L’objectif n’est donc ni de promouvoir ni de rejeter l’IA par principe, ma
 
 ## Organisation du site
 
-L’accueil présente l’initiative, le ratio IA / prévention, les transformations du travail, les risques collectifs et les moyens de prévention. Les adresses existantes restent inchangées, en français comme en anglais.
+L’accueil présente un cas de travail, trois entrées par rôle et une matrice qui croise le déploiement de l’IA avec les moyens de prévention. Il mène au cadre d’évaluation, puis aux ressources sur les risques collectifs et leur prévention. Les adresses existantes restent inchangées, en français comme en anglais.
 
 Le parcours principal est **Sécurité de l’IA → Risques collectifs → Prévenir**.
 

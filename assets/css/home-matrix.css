@@ -1,0 +1,152 @@
+/* Columns describe rollout. Rows describe the protection workers have in practice. */
+#contenu .work-matrix {
+  --axis-space: 2rem;
+  --tick-space: 3.25rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+#contenu .matrix-plot {
+  display: grid;
+  grid-template-columns: var(--axis-space) minmax(0, 1fr);
+  column-gap: .35rem;
+}
+
+#contenu .matrix-axis-x,
+#contenu .matrix-axis-y {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+#contenu .matrix-axis-x {
+  grid-column: 2;
+  margin-inline-start: var(--tick-space);
+  text-align: center;
+}
+
+#contenu .matrix-axis-y {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+#contenu .matrix-axis-y span {
+  writing-mode: horizontal-tb;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+#contenu .matrix-table {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#contenu .matrix-row {
+  display: grid;
+  grid-template-columns: var(--tick-space) repeat(2, minmax(0, 1fr));
+}
+
+#contenu .matrix-tick-x,
+#contenu .matrix-tick-y {
+  align-self: center;
+  justify-self: center;
+  padding-block: .55rem;
+  color: var(--muted);
+  font: 600 .85rem/1.3 var(--sans);
+}
+
+#contenu .matrix-cell {
+  min-width: 0;
+  padding: clamp(.85rem, 2.3vw, 2rem);
+  border: 1px solid var(--line);
+  background: #eaf0e8;
+  color: var(--ink);
+}
+
+#contenu .matrix-cell + .matrix-cell {
+  border-inline-start: 0;
+  background: #e0ebe0;
+}
+
+#contenu .matrix-row:last-child .matrix-cell {
+  border-top: 0;
+  background: #f2ede4;
+}
+
+#contenu .matrix-row:last-child .matrix-cell + .matrix-cell {
+  background: #f3e7df;
+}
+
+#contenu .matrix-cell dl,
+#contenu .matrix-cell dd {
+  margin: 0;
+}
+
+#contenu .matrix-cell dt {
+  color: var(--green);
+  font: 500 clamp(1.2rem, 2.15vw, 1.75rem)/1.15 var(--serif);
+}
+
+#contenu .matrix-cell dd {
+  margin-top: .35rem;
+  font: 400 1rem/1.5 var(--sans);
+}
+
+#contenu .matrix-cell dd + dt {
+  border-top: 1px solid var(--line);
+  margin-top: .8rem;
+  padding-top: .8rem;
+}
+
+#contenu .work-matrix figcaption {
+  max-width: 82ch;
+  margin-top: 1rem;
+  margin-inline-start: calc(var(--axis-space) + var(--tick-space) + .35rem);
+  color: var(--muted);
+  font: 400 .94rem/1.5 var(--sans);
+}
+
+@media (max-width: 600px) {
+  #contenu .work-matrix {
+    --axis-space: 1.1rem;
+    --tick-space: 1.35rem;
+  }
+
+  #contenu .matrix-axis-y,
+  #contenu .matrix-tick-y {
+    font-size: .8rem;
+  }
+
+  #contenu .matrix-tick-y {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  #contenu .matrix-cell {
+    padding: .65rem;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  #contenu .matrix-cell dt {
+    font-size: 1.1rem;
+  }
+
+  #contenu .matrix-cell dd {
+    font-size: .94rem;
+  }
+
+  #contenu .matrix-plot {
+    margin-inline: -.5rem;
+  }
+
+  #contenu .work-matrix figcaption {
+    margin-inline-start: 0;
+  }
+}
