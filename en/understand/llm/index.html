@@ -82,16 +82,15 @@
     <section class="artwork-free-hero cse-hero" aria-labelledby="hero-title">
       <div class="cse-hero-copy">
         <p class="ref-crumb"><a href="/en/understand/">Understanding AI at work</a> / Short page</p>
-        <p class="cse-kicker cse-kicker-line">Understand · Short page</p>
         <h1 id="hero-title">What is an LLM?</h1>
-        <p class="cse-lede">How a language model produces an answer, how it is trained and what to check before relying on it.</p>
+        <p class="cse-lede">How a language model composes its answers, how it is trained and what this implies for professional use.</p>
         <p class="cse-meta">By <a href="/en/about/">Dr Charles Broutin</a>, occupational physician · Updated on <time datetime="2026-11-13">13 November 2026</time></p>
-        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#llm">Read the guide chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
+        <div class="cse-actions"><a class="cse-button primary" href="/en/understand/#llm">Read the full chapter <span>→</span></a><a class="cse-button secondary" href="/en/understand/#contents">Guide contents <span>→</span></a></div>
       </div>
     </section>
 
     <section class="cse-section" id="essentials" aria-labelledby="essentials-title">
-      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">An LLM predicts what comes next in a text.</h2></div></div>
+      <div class="cse-heading"><div><p class="cse-kicker">The essentials</p><h2 id="essentials-title">A prediction machine.</h2></div></div>
       <div class="ref-prose"><div class="ref-answer"><span>Direct answer</span>
         <p>A large language model, or LLM, is a neural network trained to predict what comes next in a text. It does not look up a ready-made answer in a database: it composes one, unit by unit.</p>
         <p>It computes probabilities from the context; it does not spontaneously check whether its answer is true or compliant.</p>
@@ -100,13 +99,13 @@
     </section>
 
     <section class="cse-section ref-section-alt" id="how-it-works" aria-labelledby="how-it-works-title">
-      <div class="cse-heading"><div><p class="cse-kicker">01 / How it works</p><h2 id="how-it-works-title">Five steps between your question and the answer.</h2></div><p>The same computation starts again for every unit of text produced.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">01 / How it works</p><h2 id="how-it-works-title">Five steps between your question and the answer.</h2></div></div>
       <ol class="ref-points">
-        <li><div><h3>Split: the text becomes tokens.</h3><p>The prompt and the documents supplied are cut into small units: words, pieces of words or signs.</p></div></li>
-        <li><div><h3>Represent: tokens become numbers.</h3><p>Each token is converted into a numerical representation that encodes the regularities learned during training.</p></div></li>
-        <li><div><h3>Relate: attention weighs the context.</h3><p>The Transformer examines the relations between tokens to determine which parts of the context matter most at that moment. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al., 2017 ↗</a></p></div></li>
+        <li><div><h3>Split: the text becomes tokens.</h3><p>These small units are taken from the prompt and the documents supplied: words, pieces of words or signs.</p></div></li>
+        <li><div><h3>Represent: tokens become numbers.</h3><p>These vectors encode the regularities learned during training.</p></div></li>
+        <li><div><h3>Relate: attention weighs the context.</h3><p>The Transformer examines the links between tokens to determine which matter most at that moment. <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al., 2017 ↗</a></p></div></li>
         <li><div><h3>Predict: the next token is chosen.</h3><p>The model computes a probability distribution. Generation settings influence the choice and how much it varies.</p></div></li>
-        <li><div><h3>Repeat: the answer is built step by step.</h3><p>The chosen token joins the context, then the computation starts again until the answer ends.</p></div></li>
+        <li><div><h3>Repeat: the answer is built step by step.</h3><p>The chosen token joins the context, and so on until the last one.</p></div></li>
       </ol>
       <div class="ref-note"><strong>Illustrative example</strong><p>After “The employee describes persistent pain in the…”, the model assigns a probability to each possible continuation: “back”, “wrist”, “knee”. It chooses what is probable in that context, not what is true for that employee. In the guide, the probabilities in this example are fictitious.</p></div>
     </section>
@@ -130,18 +129,18 @@
     </section>
 
     <section class="cse-section cse-faq" id="faq" aria-labelledby="faq-title">
-      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div><p>Short answers, drawn from the guide.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">Key answers</p><h2 id="faq-title">Frequently asked questions</h2></div></div>
       <div class="faq-list">
         <details open><summary>Does an LLM fetch its answers from a database?</summary><div><p>Not by itself: it composes its answer from what it has learned and from what is in its context window. A tool can, however, supply it with extracts retrieved from a document base (RAG) or from the web. What does not enter that window does not exist for it.</p></div></details><details><summary>Why does the same question give different answers?</summary><div><p>Generation is probabilistic and sensitive to wording, to the order of documents and to the model version. At a low temperature, answers are stable, sometimes repetitive; at a high temperature, they vary more. Hence the value of testing several times, dating the trials and recording the version used.</p></div></details><details><summary>What is the difference between a closed model and an open-weight model?</summary><div><p>A closed model can only be used remotely, on the provider’s infrastructure. An open-weight model can be installed on servers you control, which gives you control over where the data travels. The largest ones nevertheless require data-centre infrastructure.</p></div></details>
       </div>
-      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The figures dated November 2026 will go out of date: the guide is the version kept current.</p></div>
+      <div class="ref-note"><strong>Where this page comes from</strong><p>It summarises one chapter of the guide <a href="/en/understand/">Understanding AI at work</a>, which gives the source, date and limits of every figure. The November 2026 figures will go out of date: the full version is kept current.</p></div>
       <div class="update-log" id="updates"><h3>Update log</h3><ol>
-        <li><time datetime="2026-11-13">13 November 2026</time><span>First version, drawn from the guide “Understanding AI at work” updated on 13 November 2026.</span></li>
+        <li><time datetime="2026-11-13">13 November 2026</time><span>First version.</span></li>
       </ol></div>
     </section>
 
     <section class="cse-section cse-related" id="related" aria-labelledby="related-title">
-      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div><p>The other short pages and the guides they summarise.</p></div>
+      <div class="cse-heading"><div><p class="cse-kicker">On the same pathway</p><h2 id="related-title">Going further.</h2></div></div>
       <div class="ref-links">
         <a href="/en/understand/agentic-ai/"><strong>Agentic AI</strong><span>What sets an agent apart, what is measured and which controls to plan.</span></a>
         <a href="/en/understand/ai-hallucinations/"><strong>AI hallucinations</strong><span>Six persistent model errors and where to place the checks.</span></a>

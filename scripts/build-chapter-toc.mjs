@@ -19,7 +19,7 @@ const PAGES = [
       { title: "Ce qu’ils savent faire", ids: ["capacites", "benchmarks", "trajectoire"] },
       { title: "Risques et usage au travail", ids: ["risques-systemes", "agi", "travail", "questions"] }
     ],
-    more: { id: "ressources", text: "des ressources choisies selon la question que vous vous posez." }
+    more: { id: "ressources", text: "sources, outils et lectures complémentaires." }
   },
   {
     file: "en/understand/index.html",
@@ -33,7 +33,7 @@ const PAGES = [
       { title: "What they can do", ids: ["capacites", "benchmarks", "trajectoire"] },
       { title: "Risks and use at work", ids: ["risques-systemes", "agi", "travail", "questions"] }
     ],
-    more: { id: "ressources", text: "resources chosen according to the question you are asking." }
+    more: { id: "ressources", text: "sources, tools and related pages." }
   }
 ];
 
