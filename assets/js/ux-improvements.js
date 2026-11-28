@@ -87,7 +87,7 @@
 
   // Account for the actual sticky header height, including the mobile contents control.
   const updateAnchorOffset = () => {
-    if (header.classList.contains('is-open')) return;
+    if (header.classList.contains('is-open') || header.querySelector('.page-nav.is-open')) return;
     document.documentElement.style.setProperty('--ux-anchor-offset', `${Math.ceil(header.getBoundingClientRect().height) + 20}px`);
   };
   new ResizeObserver(updateAnchorOffset).observe(header); updateAnchorOffset();
@@ -102,14 +102,15 @@
     if (!target) return;
     event.preventDefault();
     for (let element = target.parentElement; element; element = element.parentElement) if (element.tagName === 'DETAILS') element.open = true;
+    const nav = header.querySelector('.page-nav');
+    nav?.classList.remove('is-open');
+    if (matchMedia('(max-width: 760px)').matches) nav?.querySelector('.page-nav-label')?.setAttribute('aria-expanded', 'false');
     if (location.hash !== url.hash) history.pushState(history.state, '', url.hash);
     requestAnimationFrame(() => {
       updateAnchorOffset();
       if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
       target.focus({preventScroll: true});
-      const nearby = Math.abs(target.getBoundingClientRect().top) < window.innerHeight;
-      const smooth = nearby && !matchMedia('(prefers-reduced-motion: reduce)').matches;
-      target.scrollIntoView({block: 'start', behavior: smooth ? 'smooth' : 'instant'});
+      target.scrollIntoView({block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
     });
   });
 

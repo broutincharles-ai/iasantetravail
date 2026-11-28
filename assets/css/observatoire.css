@@ -181,31 +181,12 @@ body.observatory-page .safety-intro p.obs-crumb { margin: 0 auto 16px; font: 600
 .obs-crumb a { color: inherit; text-decoration: none; }
 .obs-crumb a:hover { text-decoration: underline; text-underline-offset: .25em; }
 .obs-doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); background: var(--white, #faf7f0); font-family: var(--sans); }
-.obs-door { display: grid; gap: 14px; align-content: start; min-width: 0; padding: 24px 26px 16px; }
+.obs-door { display: grid; gap: 14px; align-content: start; min-width: 0; padding: 26px 28px 8px; }
 .obs-door + .obs-door { border-left: 1px solid var(--line); }
 .safety-overview .safety-section .obs-door h2 { max-width: none; margin: 0; font: 400 clamp(26px, 2.5vw, 34px)/1.15 var(--serif); letter-spacing: -.02em; }
 .safety-section .obs-door h2 a { color: var(--ink); text-decoration: none; }
 .safety-section .obs-door h2 a:hover { color: var(--terra-interactive, #87301f); }
 .obs-door-text { margin: 0; color: var(--ink-soft, #3f443f); font-size: 16px; line-height: 1.6; text-wrap: pretty; }
-.obs-door-action {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  min-height: 44px;
-  justify-self: start;
-  color: var(--terra-interactive, #87301f);
-  font-weight: 600;
-  text-underline-offset: .2em;
-}
-.obs-door-more { border-top: 1px solid var(--line); }
-.obs-door-more summary {
-  padding: 12px 0;
-  cursor: pointer;
-  font-size: 15px;
-  line-height: 1.4;
-}
-.obs-door-more summary::marker { color: var(--terra-interactive, #87301f); }
-.obs-door :is(a, summary):focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .obs-door-links { margin: 8px 0 0; padding: 0; list-style: none; }
 .obs-door-links li { margin: 0; border-top: 1px solid var(--line); }
 .obs-door-links a { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; font-size: 16px; font-weight: 600; line-height: 1.4; text-decoration: none; }
@@ -218,7 +199,7 @@ body.observatory-page .safety-intro p.obs-crumb { margin: 0 auto 16px; font: 600
   .obs-door + .obs-door { border-top: 1px solid var(--line-strong); border-left: 0; }
 }
 @media (max-width: 680px) {
-  .obs-door { padding: 20px 18px 14px; }
+  .obs-door { padding: 22px 18px 6px; }
   .observatory-page #suivis { padding-top: 32px; }
 }
 

@@ -32,11 +32,11 @@ const ASSETS = {
   uxCss: "/assets/css/ux-improvements.css?v=1.1",
   readabilityCss: "/assets/css/readability.css?v=1.0",
   editorialCss: "/assets/css/editorial-consistency.css?v=1.0",
-  shellCss: "/assets/css/unified-navigation.css?v=8.3",
-  nojsCss: "/assets/css/navigation-nojs.css?v=2.2",
+  shellCss: "/assets/css/unified-navigation.css?v=8.2",
+  nojsCss: "/assets/css/navigation-nojs.css?v=2.1",
   appShellCss: "/assets/css/preconisations-shell.css?v=1.2",
-  navJs: "/assets/js/unified-navigation.js?v=8.8",
-  uxJs: "/assets/js/ux-improvements.js?v=1.4",
+  navJs: "/assets/js/unified-navigation.js?v=8.7",
+  uxJs: "/assets/js/ux-improvements.js?v=1.3",
   consentJs: "/assets/js/consent.js?v=1.1",
   languageJs: "/assets/js/language-routing.js?v=2.1"
 };
