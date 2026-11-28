@@ -7,7 +7,7 @@
   position: relative;
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr) max-content;
-  padding-block: 4px 32px;
+  padding-block: 4px 26px;
   color: var(--bmt-ink);
   font-family: var(--bmt-sans);
   font-variant-numeric: tabular-nums;
@@ -22,7 +22,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  height: 56px;
+  height: clamp(36px, var(--bmt-row-height, 56px), 56px);
   border: 0;
   border-radius: 4px;
   background: transparent;
@@ -79,7 +79,7 @@
 
 #criteres .score-graduations {
   position: absolute;
-  inset: 4px 0 32px;
+  inset: 4px 0 26px;
   container: graduations / inline-size;
   pointer-events: none;
 }
@@ -107,10 +107,29 @@
 
 @container comparaison (max-width: 496px) {
   #bmt-comparaison { --col-trace: 1; --col-valeur: 2; grid-template-columns: minmax(0, 1fr) max-content; }
-  #criteres .score-modele { height: 72px; align-content: start; padding-top: 5px; grid-template-rows: 22px 18px 18px; }
+  #criteres .score-modele {
+    height: clamp(40px, var(--bmt-row-height, 64px), 64px);
+    align-content: center;
+    grid-template-rows: minmax(14px, .9fr) repeat(2, minmax(12px, 1fr));
+  }
+  #criteres .score-identite, #criteres .score-valeur { line-height: 1; }
+  #criteres .score-valeur { align-self: center; }
   #criteres .score-identite { grid-area: 1 / 1 / 2 / -1; }
   #criteres .score-identite small { display: none; }
 }
 @container graduations (max-width: 258px) {
   #criteres .score-graduations .score-intermediaire { display: none; }
+}
+
+@media (max-width: 480px) {
+  #criteres .bmt-legend {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+  #criteres .bmt-legend li:nth-child(3) { grid-area: 2 / 2; }
+  #criteres .bmt-legend li:last-child { grid-area: 2 / 1; }
+}
+
+@media screen and (orientation: landscape) and (min-width: 540px) and (max-height: 360px) {
+  #criteres .score-modele { min-height: 0; height: clamp(38px, var(--bmt-row-height, 44px), 44px); }
 }

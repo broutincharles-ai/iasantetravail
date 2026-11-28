@@ -1,0 +1,121 @@
+.bmt-results .carte-cadre table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 0;
+  font-size: 13px;
+}
+.bmt-results .carte-cadre :is(th, td) {
+  min-width: 0;
+  padding: clamp(3px, .55vh, 6px) 3px;
+  line-height: 1.2;
+}
+.bmt-results .carte-cadre thead tr:first-child th:first-child {
+  width: 34%;
+  text-align: start;
+}
+.bmt-results .carte-cadre thead th { overflow-wrap: anywhere; }
+.bmt-results .carte-cadre tbody th { padding-inline: 7px; }
+.bmt-results .carte-notes { margin-top: 8px; border-top: 1px solid var(--bmt-rule); }
+.bmt-results .carte-notes summary {
+  padding: 6px 0;
+  font: 550 14px/1.4 var(--bmt-sans);
+  color: var(--bmt-forest);
+  cursor: pointer;
+}
+.bmt-results .carte-notes p { margin: .55em 0; }
+.bmt-results .carte-notes ul { margin: .4em 0 1em; padding-left: 1.4em; }
+.bmt-results :is(#dossiers, #domaines) .bmt-scale {
+  max-width: none;
+  margin: 6px 0 9px;
+  font: 400 13px/1.4 var(--bmt-sans);
+}
+.carte-ordre, .carte-abrege, .carte-cle { display: none; }
+
+@media screen and (max-width: 740px) and (min-height: 641px),
+       screen and (max-width: 539px) {
+  .bmt-results :is(#dossiers, #domaines) .carte-cadre {
+    --colonnes: 2.4em repeat(6, minmax(0, 1fr));
+    font: 500 12px/1.15 var(--bmt-sans);
+  }
+  .bmt-results #domaines .carte-cadre { --colonnes: minmax(5.15em, 25%) repeat(6, minmax(0, 1fr)); }
+  .carte-cadre table, .carte-cadre thead, .carte-cadre tbody { display: block; }
+  .carte-cadre tr { display: grid; grid-template-columns: var(--colonnes); }
+  #dossiers .carte-cadre tbody tr { grid-auto-flow: column; grid-template-rows: repeat(2, auto); }
+  #dossiers .carte-cadre tbody th { grid-row: span 2; }
+  .bmt-results .carte-cadre :is(th, td) {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 2px 1px;
+    border-width: 0 1px 1px 0;
+    font-size: 12px;
+    line-height: 1.15;
+  }
+  .bmt-results .carte-cadre th:first-child { border-left-width: 1px; }
+  .bmt-results .carte-cadre thead tr:first-child th { border-top-width: 1px; min-height: 24px; }
+  .bmt-results .carte-cadre thead tr:first-child th:first-child { width: auto; text-align: center; }
+  .bmt-results .carte-cadre thead th {
+    padding: 2px 0;
+    font-size: clamp(10px, 2.9vw, 12px);
+  }
+  .bmt-results #domaines .carte-cadre tbody th {
+    justify-content: start;
+    padding-left: 3px;
+    font-size: 11.5px;
+    text-align: start;
+  }
+  .bmt-results #domaines .carte-cadre tbody td { min-height: 28px; }
+  .bmt-results .carte-cadre .carte-libelle, #dossiers .carte-cadre thead tr:nth-child(2) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .carte-ordre, .carte-abrege, .carte-cle { display: inline; }
+  .carte-notes div.carte-cle { display: block; }
+  .carte-abrege::before { content: attr(data-nom); }
+  .bmt-results #dossiers .bmt-scale { flex-wrap: wrap; gap: 2px 6px; }
+  .bmt-results #dossiers .bmt-scale i { width: 60px; }
+}
+
+@media screen and (min-width: 540px) and (max-height: 640px) {
+  .bmt-results :is(#dossiers, #domaines) { padding: 5px 8px; }
+  .bmt-results :is(#dossiers, #domaines) h3 { max-width: none; font-size: 20px; }
+  .bmt-results :is(#dossiers, #domaines) .bmt-scale { margin: 2px 0; font-size: 12px; }
+  .bmt-results :is(#dossiers, #domaines) .carte-cadre :is(th, td) {
+    padding: 1px 2px;
+    font-size: 12px;
+    line-height: 1.05;
+  }
+  .bmt-results #dossiers .carte-cadre thead tr:first-child th:first-child { width: 8%; }
+  .bmt-results #domaines .carte-cadre thead tr:first-child th:first-child { width: 20%; }
+  .bmt-results .carte-cadre .carte-libelle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .carte-abrege, .carte-cle { display: inline; }
+  .carte-notes div.carte-cle { display: block; }
+  .carte-abrege::before { content: attr(data-nom); }
+  .bmt-results .carte-notes { margin-top: 2px; }
+  .bmt-results .carte-notes summary { padding: 2px 0; font-size: 12px; }
+}
+@media screen and (min-width: 741px) and (min-height: 641px) and (max-height: 800px) {
+  .bmt-results #dossiers .carte-cadre thead tr:first-child th:first-child { width: 42%; }
+  .bmt-results #dossiers .carte-cadre :is(th, td) { padding-block: 3px; }
+}
+@media screen and (max-width: 420px) and (max-height: 700px) {
+  .bmt-results #dossiers .carte-cadre td { padding-block: 0; line-height: 1.02; }
+  .bmt-results .carte-notes { margin-top: 4px; }
+  .bmt-results .carte-notes summary { padding-block: 4px; }
+  .bmt-results :is(#dossiers, #domaines) .bmt-scale { margin-block: 4px 6px; }
+}
+@media print {
+  .carte-notes::details-content { content-visibility: visible; }
+  .carte-notes > summary { display: none; }
+}

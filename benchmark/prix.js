@@ -111,10 +111,9 @@
     }
   }
 
-  function draw(chart, width) {
+  function draw(chart, width, height) {
     const { svg, models } = chart;
     const narrow = width < 560;
-    const height = Math.round(narrow ? Math.max(420, Math.min(520, width * 1.3)) : Math.max(440, Math.min(580, width * .62)));
     const top = 26, bottom = height - 30, left = Math.ceil(pixelWidth('100', '400 11.5px')) + 12, right = width - 16;
     const lower = Math.log(Math.min(...models.map(m => m.price)) / 1.8);
     const upper = Math.log(Math.max(...models.map(m => m.price)) * 1.7);
@@ -191,18 +190,27 @@
       element(group, 'circle', { class: 'prix-point', cx: p.x, cy: p.y, r: radius + 1 });
       element(group, 'text', { class: 'prix-name', 'text-anchor': p.position.anchor, x: p.position.x, y: p.position.y }, p.label);
     }
+    const focusedModel = svg.contains(document.activeElement) && document.activeElement.closest('[data-model]')?.dataset.model;
     svg.replaceChildren(drawing);
+    if (focusedModel) svg.querySelector('[data-model="' + CSS.escape(focusedModel) + '"]')?.focus({ preventScroll: true });
   }
 
-  let width = 0;
   function resize(force = false) {
-    const next = nuage.clientWidth;
-    if (!next || (next === width && !force)) return;
-    width = next;
-    for (const chart of charts) if (chart.models.length) draw(chart, next);
+    const active = charts.find(chart => chart.svg.clientWidth > 0);
+    if (!active) return;
+    const { width, height } = active.svg.getBoundingClientRect();
+    for (const chart of charts) {
+      if (!chart.models.length) continue;
+      const previous = chart.svg.viewBox.baseVal;
+      if (force || previous.width !== width || previous.height !== height) draw(chart, width, height);
+    }
   }
-  resize();
-  if ('ResizeObserver' in window) new ResizeObserver(() => resize()).observe(nuage);
-  else window.addEventListener('resize', () => resize());
+  resize(true);
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(() => resize());
+    for (const chart of charts) observer.observe(chart.svg);
+  } else {
+    window.addEventListener('resize', () => resize());
+  }
   document.fonts?.ready.then(() => resize(true));
 })();

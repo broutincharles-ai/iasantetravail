@@ -1,7 +1,12 @@
 /* Figures de la planche BenchMedTrav : nuage capacité / prix. */
 #capacite-prix { --fond: #faf7f0; --grille: #e5e1d7; background: var(--fond); }
 #capacite-prix .prix-cle-front { fill: none; stroke: #171a18; stroke-opacity: .5; stroke-width: 1.5; }
-#capacite-prix .prix-svg { display: block; width: 100%; height: auto; overflow: visible; }
+#capacite-prix .prix-svg {
+  display: block;
+  width: 100%;
+  height: var(--bmt-plot-height, clamp(160px, 42vh, 580px));
+  overflow: visible;
+}
 #capacite-prix .prix-grid { stroke: var(--grille); stroke-width: 1; shape-rendering: crispEdges; }
 #capacite-prix .prix-base { stroke: #c9c5ba; stroke-width: 1; shape-rendering: crispEdges; }
 #capacite-prix .prix-tick { font: 400 11.5px var(--bmt-sans); fill: #545b54; font-variant-numeric: tabular-nums; }
