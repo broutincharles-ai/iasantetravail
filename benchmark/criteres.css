@@ -1,0 +1,116 @@
+/* Comparaison des deux épreuves sur une même échelle, de 40 à 100 %. */
+#intervalles { container: comparaison / inline-size; }
+
+#bmt-comparaison {
+  --col-trace: 2;
+  --col-valeur: 3;
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  padding-block: 4px 32px;
+  color: var(--bmt-ink);
+  font-family: var(--bmt-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+#criteres .score-modele {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  grid-template-rows: repeat(2, 18px);
+  align-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 56px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  text-transform: none;
+  cursor: pointer;
+}
+#criteres .score-modele + .score-modele::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  border-top: 1px solid var(--bmt-rule);
+  opacity: .7;
+}
+#criteres .score-modele:hover, #criteres .score-modele:focus-visible { background: rgb(23 26 24 / 4.5%); }
+#criteres .score-modele:focus-visible { outline-offset: 0; }
+
+#criteres .score-identite { grid-area: 1 / 1 / 3; align-self: center; padding: 0 20px 0 2px; font: 600 13.5px/18px var(--bmt-sans); }
+#criteres .score-identite small { display: block; color: var(--bmt-muted); font: 400 11.5px/17px var(--bmt-sans); }
+#criteres .score-valeur { grid-column: var(--col-valeur); align-self: center; padding: 0 2px 0 18px; text-align: end; white-space: nowrap; font: 600 13px/18px var(--bmt-sans); }
+#criteres .score-valeur.bmt-qcm { font-size: 11.5px; font-weight: 400; color: var(--bmt-muted); }
+
+#criteres .score-trace, #criteres .score-graduations { grid-column: var(--col-trace) / span 1; margin-inline: 10px; }
+#criteres .score-trace {
+  --diametre: 12px;
+  --epaisseur: 10px;
+  --opacite: .24;
+  position: relative;
+}
+#criteres .score-trace.bmt-qcm { --diametre: 7px; --epaisseur: 4px; --opacite: .3; }
+#criteres .score-trace::before, #criteres .score-trace::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-radius: 100px;
+  background: var(--point-color);
+}
+#criteres .score-trace::before {
+  left: calc((var(--bas) - 40) * 100% / 60);
+  width: calc((var(--haut) - var(--bas)) * 100% / 60);
+  height: var(--epaisseur);
+  transform: translateY(-50%);
+  opacity: var(--opacite);
+}
+#criteres .score-trace::after {
+  left: calc((var(--valeur) - 40) * 100% / 60);
+  width: var(--diametre);
+  height: var(--diametre);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px var(--bmt-card);
+}
+
+#criteres .score-graduations {
+  position: absolute;
+  inset: 4px 0 32px;
+  container: graduations / inline-size;
+  pointer-events: none;
+}
+#criteres .score-graduations::after {
+  content: '';
+  position: absolute;
+  inset: auto -10px 0;
+  border-bottom: 1px solid var(--bmt-rule);
+}
+#criteres .score-graduations span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc((var(--valeur) - 40) * 100% / 60);
+  border-left: 1px solid var(--bmt-grid);
+}
+#criteres .score-graduations b {
+  position: absolute;
+  top: calc(100% + 6px);
+  transform: translateX(-50%);
+  color: var(--bmt-muted);
+  font: 400 11.5px/18px var(--bmt-sans);
+  white-space: nowrap;
+}
+
+@container comparaison (max-width: 496px) {
+  #bmt-comparaison { --col-trace: 1; --col-valeur: 2; grid-template-columns: minmax(0, 1fr) max-content; }
+  #criteres .score-modele { height: 72px; align-content: start; padding-top: 5px; grid-template-rows: 22px 18px 18px; }
+  #criteres .score-identite { grid-area: 1 / 1 / 2 / -1; }
+  #criteres .score-identite small { display: none; }
+}
+@container graduations (max-width: 258px) {
+  #criteres .score-graduations .score-intermediaire { display: none; }
+}
