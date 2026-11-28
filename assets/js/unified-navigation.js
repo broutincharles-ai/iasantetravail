@@ -185,17 +185,19 @@
   function renderNavigationShell(pathname, isEnglish, pageNavMarkup = "") {
     const path = pathname.replace(/\/index\.html$/, "/");
     const site = isEnglish ? SITE.en : SITE.fr;
-    // The publications index has four works in the same order in both languages.
+    // The publications index has the same works in the same order in both languages.
     if (path === "/publications/" || path === "/en/publications/") {
       const publicationSections = isEnglish ? [
         ["llm-risques-psychosociaux", "Archives · LLMs and psychosocial risks"],
         ["ia-preconisations-medicales", "INRS · Medical recommendations"],
         ["occupational-health-ai-safety-joem", "JOEM · Occupational health and AI safety"],
+        ["bulletin-joly-travail", "Bulletin Joly Travail · AI and psychosocial risks"],
         ["sante-travail-securite-modeles-frontieres", "Preprint · Frontier AI researchers"]
       ] : [
         ["llm-risques-psychosociaux", "Archives · LLM et risques psychosociaux"],
         ["ia-preconisations-medicales", "INRS · Préconisations médicales"],
         ["occupational-health-ai-safety-joem", "JOEM · Santé au travail et AI Safety"],
+        ["bulletin-joly-travail", "Bulletin Joly Travail · IA et risques psychosociaux"],
         ["sante-travail-securite-modeles-frontieres", "Preprint · Chercheurs en IA"]
       ];
       pageNavMarkup = `<nav class="page-nav" aria-label="${isEnglish ? "Page contents" : "Sommaire de la page"}"><div class="page-nav-inner"><span class="page-nav-label">${isEnglish ? "On this page" : "Sur cette page"}</span><div class="page-nav-links">${publicationSections.map(([id, label]) => `<a href="#${id}">${escapeHtml(label)}</a>`).join("")}</div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>`;
