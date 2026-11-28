@@ -53,20 +53,40 @@
   color: var(--paper);
 }
 .bench-chapter {
-  display: grid;
-  grid-template-columns: minmax(170px, .85fr) minmax(0, 2.4fr);
-  gap: clamp(20px, 4vw, 64px);
-  padding: clamp(28px, 4vw, 50px) 0;
   border-top: 1px solid var(--line-strong);
   scroll-margin-top: var(--ux-anchor-offset, 120px);
 }
-.bench-chapter h2 {
-  margin: 0;
+.bench-chapter:last-child { border-bottom: 1px solid var(--line-strong); }
+.bench-chapter > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: clamp(16px, 2vw, 24px) 2px;
   color: var(--prevention);
+  cursor: pointer;
+  list-style: none;
+}
+.bench-chapter > summary::-webkit-details-marker { display: none; }
+.bench-chapter > summary::after {
+  content: "";
+  flex: none;
+  width: 17px;
+  height: 17px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+}
+.bench-chapter[open] > summary::after { background-size: 100% 2px, 0 0; }
+.bench-chapter > summary:is(:hover, :focus-visible) { color: var(--terra-interactive); }
+.bench-chapter > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.bench-chapter > summary h2 {
+  margin: 0;
+  color: inherit;
   font: 400 clamp(1.7rem, 3vw, 2.6rem)/1.13 var(--serif);
   letter-spacing: -.025em;
 }
-.bench-prose { font-size: 1rem; line-height: 1.7; }
+.bench-prose { max-width: 74ch; padding-bottom: clamp(22px, 3vw, 36px); font-size: 1rem; line-height: 1.7; }
 .bench-prose ul { margin: .35em 0 1em; padding-inline-start: 1.35em; }
 .bench-prose li + li { margin-top: .25em; }
 .bench-topics {
@@ -76,15 +96,15 @@
 .bench-topics summary { font-weight: 600; cursor: pointer; padding: .65em 0; }
 .bench-topics summary::marker { color: var(--terra-interactive); }
 .bench-prose abbr { text-decoration-thickness: 1px; text-underline-offset: .18em; }
-@media (max-width: 700px) {
-  .bench-chapter { grid-template-columns: 1fr; gap: 16px; }
+@media (forced-colors: active) {
+  .bench-chapter > summary::after { forced-color-adjust: none; color: ButtonText; }
 }
 @media print {
   .bench-masthead { background: white; }
   .bench-masthead, .benchmark-page main .bench-masthead h1 { color: black; }
   .bench-editorial { width: 100%; }
   .bench-intro-links { display: none; }
-  .bench-chapter { display: block; }
-  .bench-chapter h2 { margin-bottom: .6em; }
+  .bench-chapter > summary::after { display: none; }
+  .bench-chapter::details-content,
   .bench-topics::details-content { content-visibility: visible; }
 }
