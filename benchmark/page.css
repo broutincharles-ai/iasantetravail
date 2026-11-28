@@ -1,0 +1,90 @@
+.bench-masthead {
+  color: var(--paper);
+  background: var(--prevention);
+  text-align: center;
+  padding: clamp(36px, 5vw, 62px) 24px;
+}
+.bench-edition {
+  margin: 0 0 14px;
+  font: 600 .8rem/1.5 var(--sans);
+  letter-spacing: .07em;
+}
+.benchmark-page main .bench-masthead h1 { color: var(--paper); margin-block: 0; }
+.bench-authors { margin: 18px 0 0; font-size: .95rem; }
+.bench-editorial {
+  width: min(1060px, calc(100% - 2 * clamp(20px, 5vw, 56px)));
+  margin-inline: auto;
+  color: var(--ink);
+  font-family: var(--sans);
+}
+.bench-opening {
+  max-width: 72ch;
+  margin-inline: auto;
+  padding: clamp(32px, 4vw, 56px) 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+  line-height: 1.65;
+}
+.bench-opening p, .bench-prose p { margin: 0; }
+.bench-opening p + p, .bench-prose p + p { margin-top: 1em; }
+.bench-intro-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin-top: 22px;
+}
+.bench-intro-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--terra-interactive);
+  font: 600 1rem/1.45 var(--sans);
+  text-underline-offset: .2em;
+}
+.bench-intro-links .bench-result-link {
+  gap: 14px;
+  padding: 9px 16px;
+  border: 1px solid var(--prevention);
+  color: var(--prevention);
+  text-decoration: none;
+}
+.bench-intro-links .bench-result-link:is(:hover, :focus-visible) {
+  background: var(--prevention);
+  color: var(--paper);
+}
+.bench-chapter {
+  display: grid;
+  grid-template-columns: minmax(170px, .85fr) minmax(0, 2.4fr);
+  gap: clamp(20px, 4vw, 64px);
+  padding: clamp(28px, 4vw, 50px) 0;
+  border-top: 1px solid var(--line-strong);
+  scroll-margin-top: var(--ux-anchor-offset, 120px);
+}
+.bench-chapter h2 {
+  margin: 0;
+  color: var(--prevention);
+  font: 400 clamp(1.7rem, 3vw, 2.6rem)/1.13 var(--serif);
+  letter-spacing: -.025em;
+}
+.bench-prose { font-size: 1rem; line-height: 1.7; }
+.bench-prose ul { margin: .35em 0 1em; padding-inline-start: 1.35em; }
+.bench-prose li + li { margin-top: .25em; }
+.bench-topics {
+  border-block: 1px solid var(--line);
+  margin: 1em 0;
+}
+.bench-topics summary { font-weight: 600; cursor: pointer; padding: .65em 0; }
+.bench-topics summary::marker { color: var(--terra-interactive); }
+.bench-prose abbr { text-decoration-thickness: 1px; text-underline-offset: .18em; }
+@media (max-width: 700px) {
+  .bench-chapter { grid-template-columns: 1fr; gap: 16px; }
+}
+@media print {
+  .bench-masthead { background: white; }
+  .bench-masthead, .benchmark-page main .bench-masthead h1 { color: black; }
+  .bench-editorial { width: 100%; }
+  .bench-intro-links { display: none; }
+  .bench-chapter { display: block; }
+  .bench-chapter h2 { margin-bottom: .6em; }
+  .bench-topics::details-content { content-visibility: visible; }
+}

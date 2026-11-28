@@ -50,6 +50,7 @@ export const INDEXABLE_PAIRS = [
 ];
 
 export const INDEXABLE_SINGLETONS = [
+  { file: "benchmark/index.html", lang: "fr", lastmod: "2026-11-28" },
   { file: "outils/index.html", lang: "fr", lastmod: "2026-11-27" },
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-27" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-27" },

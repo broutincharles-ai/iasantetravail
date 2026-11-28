@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.7";
+  const NAVIGATION_VERSION = "8.9";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -73,7 +73,8 @@
         { key: "safety", label: "Sécurité de l’IA", href: "/securite-ia/" },
         { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
         { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
-        { key: "publications", label: "Recherche", href: "/publications/", secondary: true, divider: true },
+        { key: "benchmark", label: "Benchmark", href: "/benchmark/", secondary: true, divider: true },
+        { key: "publications", label: "Recherche", href: "/publications/", secondary: true },
         { key: "observatory", label: "Observatoire", href: "/observatoire/", secondary: true },
         { key: "reading", label: "Lectures", href: "/lecture/", secondary: true },
         { key: "about-group", label: "À propos", secondary: true, children: [
@@ -92,7 +93,7 @@
             ["Suivre et ajuster", "/parcours/prevenir/#suivre"], ["Espace santé au travail", "/parcours/ia-sante-travail/"], ["Tous les outils", "/outils/"]
           ] },
           { id: "systemFooterSite", title: "Le site", links: [
-            ["Recherche", "/publications/"], ["Observatoire", "/observatoire/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
+            ["Benchmark", "/benchmark/"], ["Recherche", "/publications/"], ["Observatoire", "/observatoire/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -115,7 +116,8 @@
         { key: "safety", label: "AI safety", href: "/en/ai-safety/" },
         { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
         { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
-        { key: "publications", label: "Research", href: "/en/publications/", secondary: true, divider: true },
+        { key: "benchmark", label: "Benchmark (FR)", href: "/benchmark/", hreflang: "fr", secondary: true, divider: true },
+        { key: "publications", label: "Research", href: "/en/publications/", secondary: true },
         { key: "observatory", label: "Observatory", href: "/en/observatory/", secondary: true },
         { key: "reading", label: "Reading", href: "/en/reading/", secondary: true },
         { key: "about-group", label: "About", secondary: true, children: [
@@ -134,7 +136,7 @@
             ["Monitor and adjust", "/en/pathways/prevent/#suivre"], ["Occupational health space", "/en/pathways/ai-in-occupational-health/"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/"]
           ] },
           { id: "systemFooterSite", title: "The site", links: [
-            ["Research", "/en/publications/"], ["Observatory", "/en/observatory/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
+            ["Benchmark (FR)", "/benchmark/"], ["Research", "/en/publications/"], ["Observatory", "/en/observatory/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -159,6 +161,7 @@
 
   function activeKeyFor(path) {
     const rules = [
+      [/^\/benchmark\//, "benchmark"],
       [/^\/(?:securite-ia|en\/ai-safety)\//, "safety"],
       [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "prevent"],
       [/^\/risques-prevention\/duerp\//, "prevent"],
@@ -216,15 +219,16 @@
     const groupIsCurrent = item => item.children.some(child => child.key === activeKey && !child.href.includes("#")) || Boolean(item.all && item.all.key === activeKey);
 
     const itemClasses = item => `${item.secondary ? " is-secondary" : " is-primary"}${item.divider ? " has-divider" : ""}`;
+    const linkAttributes = item => `href="${item.href}"${item.hreflang ? ` hreflang="${item.hreflang}"` : ""}${current(item.key, item.href)}`;
     const desktopItems = site.items.map(item => {
-      if (!item.children) return `<a class="system-nav-link${itemClasses(item)}" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
+      if (!item.children) return `<a class="system-nav-link${itemClasses(item)}" ${linkAttributes(item)}>${escapeHtml(item.label)}</a>`;
       const all = item.all ? `<a class="system-nav-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
       return `<details class="system-nav-group${itemClasses(item)}${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-nav-dropdown${item.wide ? " is-wide" : ""}"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");
 
     // On phones the groups are closed when the menu opens: one line each, like the plain links.
     const mobileItems = site.items.map(item => {
-      if (!item.children) return `<a class="system-mobile-link${itemClasses(item)}" href="${item.href}"${current(item.key, item.href)}>${escapeHtml(item.label)}</a>`;
+      if (!item.children) return `<a class="system-mobile-link${itemClasses(item)}" ${linkAttributes(item)}>${escapeHtml(item.label)}</a>`;
       const all = item.all ? `<a class="system-mobile-all" href="${item.all.href}"${current(item.all.key, item.all.href)}>${escapeHtml(item.all.label)} ${ICONS.arrow}</a>` : "";
       return `<details class="system-mobile-group${itemClasses(item)}${groupIsCurrent(item) ? " is-current" : ""}"><summary>${escapeHtml(item.label)}${ICONS.chevron}</summary><div class="system-mobile-sublist"><ul class="system-nav-list">${item.children.map(child => `<li>${describedLink(child)}</li>`).join("")}</ul>${all}</div></details>`;
     }).join("");

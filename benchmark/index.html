@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/fonts.css?v=1.0">
+  <title>BenchMedTrav : évaluer l’IA en santé au travail française</title>
+  <meta name="description" content="BenchMedTrav compare six modèles d’IA sur dix cas de médecine du travail en France. Explorez la méthode du pilote, les scores et les prix d’usage.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#1f3730">
+  <link rel="canonical" href="https://www.iasantetravail.com/benchmark/">
+  <link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/benchmark/">
+  <link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/benchmark/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="IA &amp; Santé au Travail">
+  <meta property="og:url" content="https://www.iasantetravail.com/benchmark/">
+  <meta property="og:title" content="BenchMedTrav : évaluer l’IA en santé au travail française">
+  <meta property="og:description" content="Dix cas cliniques, quarante QCM et dix questions ouvertes pour comparer six modèles d’IA. Méthode, résultats et limites du pilote.">
+  <meta property="og:image" content="https://www.iasantetravail.com/assets/images/social/site-fr.png?v=c55b0d5c">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="IA &amp; Santé au Travail">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BenchMedTrav : évaluer l’IA en santé au travail française">
+  <meta name="twitter:description" content="Dix cas cliniques, quarante QCM et dix questions ouvertes pour comparer six modèles d’IA. Méthode, résultats et limites du pilote.">
+  <meta name="twitter:image" content="https://www.iasantetravail.com/assets/images/social/site-fr.png?v=c55b0d5c">
+  <meta name="twitter:image:alt" content="IA &amp; Santé au Travail">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=3.1">
+  <link rel="stylesheet" href="/assets/css/page-headings.css?v=1.3">
+  <link rel="stylesheet" href="/benchmark/page.css">
+  <link rel="stylesheet" href="/benchmark/resultats.css">
+  <script defer src="/benchmark/resultats.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.iasantetravail.com/benchmark/#webpage","url":"https://www.iasantetravail.com/benchmark/","name":"BenchMedTrav : évaluer l’IA en santé au travail française","inLanguage":"fr-FR","datePublished":"2026-11-28","isPartOf":{"@id":"https://www.iasantetravail.com/#website"},"mainEntity":{"@type":"Dataset","name":"BenchMedTrav","version":"3.4-pilote","description":"Scores de six modèles d’IA sur dix dossiers de médecine du travail en France, par modèle, par dossier et par domaine des QCM.","creator":[{"@type":"Person","name":"Clément Duquesnoy"},{"@type":"Person","name":"Charles Broutin","@id":"https://www.iasantetravail.com/a-propos/#person"}],"inLanguage":"fr-FR"}}</script>
+  <link rel="stylesheet" href="/assets/css/ux-improvements.css?v=1.1">
+  <link rel="stylesheet" href="/assets/css/readability.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/unified-navigation.css?v=8.2">
+  <link rel="stylesheet" href="/assets/css/editorial-consistency.css?v=1.0">
+  <link rel="stylesheet" media="screen" href="/assets/css/interior.css?v=1.1">
+  <noscript><link rel="stylesheet" href="/assets/css/navigation-nojs.css?v=2.1"></noscript>
+  <script defer src="/assets/js/unified-navigation.js?v=8.9"></script>
+  <script defer src="/assets/js/ux-improvements.js?v=1.3"></script>
+  <script defer src="/assets/js/consent.js?v=1.1"></script>
+  <script src="/assets/js/language-routing.js?v=2.2"></script>
+</head>
+<body class="page-headings benchmark-page">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-system-header" id="site-header" data-navigation-version="8.9">
+    <nav class="system-nav" aria-label="Navigation principale">
+      <a class="system-brand" href="/" aria-label="IA et Santé au Travail, accueil">
+        <span class="system-brand-mark" aria-hidden="true"></span>
+        <span class="system-brand-copy"><strong>IA &amp; Santé au Travail</strong><small>Initiative indépendante de sécurité de l’IA</small></span>
+      </a>
+      <div class="system-desktop-navigation"><div class="system-primary-links"><a class="system-nav-link is-primary" href="/securite-ia/">Sécurité de l’IA</a><a class="system-nav-link is-primary" href="/parcours/risques-collectifs/">Risques collectifs</a><a class="system-nav-link is-primary" href="/parcours/prevenir/">Prévenir</a><a class="system-nav-link is-secondary has-divider" href="/benchmark/" aria-current="page">Benchmark</a><a class="system-nav-link is-secondary" href="/publications/">Recherche</a><a class="system-nav-link is-secondary" href="/observatoire/">Observatoire</a><a class="system-nav-link is-secondary" href="/lecture/">Lectures</a><details class="system-nav-group is-secondary"><summary>À propos<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-nav-dropdown"><ul class="system-nav-list"><li><a href="/a-propos/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Médecin du travail, auteur du site</span></a></li><li><a href="/actions/"><span class="system-nav-title">Interventions</span><span class="system-nav-desc">Séminaires, journées et colloques</span></a></li></ul></div></details></div></div>
+      <div class="system-nav-actions">
+        <button type="button" class="system-search-button" data-site-search aria-label="Rechercher dans le site" title="Rechercher dans le site (Ctrl K)"><svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="system-search-text">Rechercher</span></button>
+        <a class="system-language-switch" href="/en/" lang="en" hreflang="en" aria-label="English homepage (this page is in French only)" title="English homepage (this page is in French only)">EN</a>
+        <button class="system-menu-button" type="button" aria-controls="systemMobilePanel" aria-expanded="false">Menu</button>
+      </div>
+      <div class="system-mobile-panel" id="systemMobilePanel" aria-hidden="true">
+        <div class="system-mobile-inner">
+          <button type="button" class="system-mobile-search" data-site-search>Rechercher dans le site <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <a class="system-mobile-link is-primary" href="/securite-ia/">Sécurité de l’IA</a><a class="system-mobile-link is-primary" href="/parcours/risques-collectifs/">Risques collectifs</a><a class="system-mobile-link is-primary" href="/parcours/prevenir/">Prévenir</a><a class="system-mobile-link is-secondary has-divider" href="/benchmark/" aria-current="page">Benchmark</a><a class="system-mobile-link is-secondary" href="/publications/">Recherche</a><a class="system-mobile-link is-secondary" href="/observatoire/">Observatoire</a><a class="system-mobile-link is-secondary" href="/lecture/">Lectures</a><details class="system-mobile-group is-secondary"><summary>À propos<svg class="system-nav-chevron" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="10" height="10"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="system-mobile-sublist"><ul class="system-nav-list"><li><a href="/a-propos/"><span class="system-nav-title">Charles Broutin</span><span class="system-nav-desc">Médecin du travail, auteur du site</span></a></li><li><a href="/actions/"><span class="system-nav-title">Interventions</span><span class="system-nav-desc">Séminaires, journées et colloques</span></a></li></ul></div></details>
+        </div>
+      </div>
+    </nav><nav class="page-nav" aria-label="Sommaire de la page"><div class="page-nav-inner"><span class="page-nav-label">Sur cette page</span><div class="page-nav-links"><a href="#methode">Méthode</a><a href="#limites">Limites</a><a href="#capacite-prix">Score et prix</a><a href="#criteres">Par modèle</a><a href="#dossiers">Par dossier</a><a href="#domaines">Par domaine</a><a href="#tableau">Tableau des valeurs</a></div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav></header>
+  <main id="contenu">
+    <header class="bench-masthead" id="presentation">
+      <p class="bench-edition">BenchMedTrav · Étude pilote 3.4</p>
+      <h1>L'IA sait-elle raisonner en santé au travail française&nbsp;?</h1>
+      <p class="bench-authors">Clément Duquesnoy et le Dr Charles Broutin</p>
+    </header>
+    <div class="bench-editorial">
+      <div class="bench-opening">
+        <p>Nos collègues utilisent déjà ces modèles au quotidien, et les éditeurs de logiciels métier les intègrent peu à peu à leurs outils. Pourtant, personne n'avait encore mesuré ce qu'ils valent face à une situation de médecine du travail.</p>
+        <p>Clément Duquesnoy (interne en médecine du travail) et moi avons donc conçu BenchMedTrav. À notre connaissance, c'est le premier benchmark qui évalue les modèles d'intelligence artificielle sur leurs connaissances et sur leur raisonnement dans le cadre de la prévention et de la santé au travail française.</p>
+        <div class="bench-intro-links">
+          <a class="bench-result-link" href="#resultats">Voir les résultats du pilote <span aria-hidden="true">↓</span></a>
+          <a href="/comprendre/benchmarks-ia/">Qu’est-ce qu’un benchmark&nbsp;?</a>
+        </div>
+      </div>
+      <section class="bench-chapter" id="methode" aria-labelledby="methode-titre">
+        <h2 id="methode-titre">La méthode</h2>
+        <div class="bench-prose">
+          <p><strong>Dix cas cliniques progressifs.</strong> Chaque dossier se déroule en plusieurs étapes&nbsp;: de nouvelles informations arrivent au fil du cas, comme en consultation. Le modèle doit réviser ses hypothèses et ajuster sa conduite à tenir.</p>
+          <p><strong>Deux types d'épreuves.</strong></p>
+          <ul>
+            <li>40 <abbr title="questions à choix multiple">QCM</abbr> à cinq options testent les connaissances et le raisonnement. Une réponse au hasard est juste une fois sur cinq.</li>
+            <li>10 questions ouvertes demandent une conduite à tenir rédigée. Trois modèles de langage, utilisés comme juges, les notent à partir de la grille que Clément et moi avons rédigée. Pour chaque cas, cette grille recense les éléments attendus et les erreurs critiques.</li>
+          </ul>
+          <details class="bench-topics">
+            <summary>Les thèmes couverts</summary>
+            <ul>
+              <li><abbr title="Troubles musculosquelettiques">TMS</abbr> et reconnaissance en maladie professionnelle</li>
+              <li><abbr title="Risques psychosociaux">RPS</abbr> et épuisement professionnel</li>
+              <li>Pneumologie professionnelle</li>
+              <li>Risque biologique et chimique</li>
+              <li>Bruit et coexpositions ototoxiques</li>
+              <li>Grossesse et exposition aux agents reprotoxiques</li>
+              <li>Aptitude, postes de sécurité et troubles de la vigilance</li>
+              <li>Urgence et risque immédiat</li>
+              <li>Cadre légal&nbsp;: suivi réglementaire, secret médical, réparation des <abbr title="accidents du travail et maladies professionnelles">AT/MP</abbr></li>
+              <li>Prévention collective, aménagements de poste et maintien en emploi</li>
+            </ul>
+          </details>
+          <p><strong>Un protocole identique pour tous.</strong> Chaque modèle reçoit les mêmes dossiers, dans les mêmes conditions. Les QCM sont aussi reposés sans le texte des cas, pour vérifier que les modèles répondent à partir du dossier. Chaque score est donné avec son intervalle de confiance à 95&nbsp;%, puis rapporté au prix d'usage du modèle.</p>
+        </div>
+      </section>
+      <section class="bench-chapter" id="limites" aria-labelledby="limites-titre">
+        <h2 id="limites-titre">Les limites de cette première version</h2>
+        <div class="bench-prose">
+          <p>Notre grille est très, peut-être trop, exigeante&nbsp;: les scores aux questions ouvertes sont plutôt conservateurs. Le jury est lui-même composé de modèles de langage, ce qui peut introduire des biais de notation. Une correction humaine d'une partie des réponses permettra de mesurer son accord avec des médecins du travail. Il faudrait aussi tester plus de modèles, sur plus de cas, avec plus de répétitions, pour obtenir des écarts statistiquement significatifs. Les prochaines versions iront dans ce sens.</p>
+          <p>Malgré ces limites, nous considérons ce travail comme une belle avancée pour l'évaluation des modèles de langage en santé au travail.</p>
+        </div>
+      </section>
+    </div>
+<section id="resultats" class="bmt-results" aria-labelledby="titre-resultats">
+<header class="bmt-summary"><h2 id="titre-resultats">Résultats de BenchMedTrav 3.4-pilote</h2>
+<p>Les résultats portent sur 6 modèles, 10 dossiers cliniques, 40 QCM et 10 questions ouvertes. Données relevées le <time datetime="2026-11-28">28 novembre 2026</time>.</p>
+<dl class="bmt-highlights">
+<div><dt>Meilleur score observé aux questions ouvertes</dt><dd><strong>96,0&nbsp;%</strong> Claude Opus 5.5 <small>8,00&nbsp;$ par million de jetons, au prix mixte</small></dd></div>
+<div><dt>Meilleur score aux questions ouvertes parmi les modèles à poids ouverts</dt><dd><strong>84,8&nbsp;%</strong> DeepSeek V4.1 Flash 1017 <small>0,263&nbsp;$ par million de jetons, au prix mixte</small></dd></div>
+</dl></header>
+<section class="bmt-figure" id="capacite-prix" aria-labelledby="titre-capacite-prix">
+<h3 id="titre-capacite-prix">Score obtenu selon le prix par million de jetons</h3>
+<p>Chaque modèle a répondu trois fois aux mêmes 40 QCM. Les dix questions ouvertes sont notées par un jury. Les deux épreuves portent sur les mêmes dossiers cliniques.</p>
+<div class="bmt-switch" role="group" aria-label="Score à afficher" hidden><button type="button" data-mesure="global" aria-controls="nuage" aria-pressed="true">Score global</button><button type="button" data-mesure="ouvertes" aria-controls="nuage" aria-pressed="false">Questions ouvertes</button><button type="button" data-mesure="qcm" aria-controls="nuage" aria-pressed="false">QCM</button></div>
+<ul class="bmt-legend"><li><i class="bmt-swatch bmt-closed"></i>Modèle fermé (API)</li><li><i class="bmt-swatch bmt-open"></i>Modèle à poids ouverts</li><li><i class="bmt-key-interval"></i>Intervalle à 95 %</li><li><i class="bmt-key-front"></i>Frontière d’efficience</li></ul>
+<p class="bmt-pan bmt-chart-pan">Faites défiler le graphique horizontalement pour voir tous les modèles.</p><div id="nuage">
+<div data-bmt-plot="global"><p class="bmt-axis">Score global, moyenne des QCM et des questions ouvertes (%)</p><div class="bmt-overflow" role="region" aria-label="Graphique défilant" tabindex="0"><svg id="nuage-global" class="bmt-svg" role="group" aria-label="Score global selon le prix mixte" viewBox="0 0 810 342"><title>Score global selon le prix mixte</title>
+<line class="bmt-grid" x1="48.0" y1="300.0" x2="745.0" y2="300.0"/>
+<text class="bmt-tick" x="40.0" y="304.0" text-anchor="end">0</text>
+<line class="bmt-grid" x1="48.0" y1="249.6" x2="745.0" y2="249.6"/>
+<text class="bmt-tick" x="40.0" y="253.6" text-anchor="end">20</text>
+<line class="bmt-grid" x1="48.0" y1="199.2" x2="745.0" y2="199.2"/>
+<text class="bmt-tick" x="40.0" y="203.2" text-anchor="end">40</text>
+<line class="bmt-grid" x1="48.0" y1="148.8" x2="745.0" y2="148.8"/>
+<text class="bmt-tick" x="40.0" y="152.8" text-anchor="end">60</text>
+<line class="bmt-grid" x1="48.0" y1="98.4" x2="745.0" y2="98.4"/>
+<text class="bmt-tick" x="40.0" y="102.4" text-anchor="end">80</text>
+<line class="bmt-grid" x1="48.0" y1="48.0" x2="745.0" y2="48.0"/>
+<text class="bmt-tick" x="40.0" y="52.0" text-anchor="end">100</text>
+<line class="bmt-grid" x1="103.8" y1="48.0" x2="103.8" y2="300.0"/>
+<text class="bmt-tick" x="103.8" y="322.0" text-anchor="middle">0,2 $</text>
+<line class="bmt-grid" x1="242.1" y1="48.0" x2="242.1" y2="300.0"/>
+<text class="bmt-tick" x="242.1" y="322.0" text-anchor="middle">0,5 $</text>
+<line class="bmt-grid" x1="346.7" y1="48.0" x2="346.7" y2="300.0"/>
+<text class="bmt-tick" x="346.7" y="322.0" text-anchor="middle">1 $</text>
+<line class="bmt-grid" x1="451.3" y1="48.0" x2="451.3" y2="300.0"/>
+<text class="bmt-tick" x="451.3" y="322.0" text-anchor="middle">2 $</text>
+<line class="bmt-grid" x1="589.6" y1="48.0" x2="589.6" y2="300.0"/>
+<text class="bmt-tick" x="589.6" y="322.0" text-anchor="middle">5 $</text>
+<line class="bmt-grid" x1="694.2" y1="48.0" x2="694.2" y2="300.0"/>
+<text class="bmt-tick" x="694.2" y="322.0" text-anchor="middle">10 $</text>
+<path class="bmt-area" d="M145.2,74.5H555.9V59.6H660.5V53.0H745V300H145.2Z"/>
+<path class="bmt-front" d="M145.2,74.5H555.9V59.6H660.5V53.0H745"/>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-1" aria-label="Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $."><title>Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $.</title><line class="bmt-whisker" x1="660.5" y1="58.1" x2="660.5" y2="48.0"/><line class="bmt-whisker" x1="656.5" y1="58.1" x2="664.5" y2="58.1"/><line class="bmt-whisker" x1="656.5" y1="48.0" x2="664.5" y2="48.0"/><circle class="bmt-mark" cx="660.5" cy="53.0" r="5.5"/><line class="bmt-leader" x1="660.5" y1="47.0" x2="660.5" y2="39.0"/><text class="bmt-label" x="660.5" y="35.0" text-anchor="middle">Opus 5.5</text><circle cx="660.5" cy="53.0" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-2" aria-label="GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><line class="bmt-whisker" x1="549.9" y1="68.2" x2="549.9" y2="51.8"/><line class="bmt-whisker" x1="545.9" y1="68.2" x2="553.9" y2="68.2"/><line class="bmt-whisker" x1="545.9" y1="51.8" x2="553.9" y2="51.8"/><circle class="bmt-mark" cx="549.9" cy="59.6" r="5.5"/><line class="bmt-leader" x1="549.9" y1="53.6" x2="537.9" y2="48.6"/><text class="bmt-label" x="537.9" y="44.6" text-anchor="end">GPT-6.1 Sol</text><circle cx="549.9" cy="59.6" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-3" aria-label="Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><line class="bmt-whisker" x1="561.9" y1="69.4" x2="561.9" y2="53.0"/><line class="bmt-whisker" x1="557.9" y1="69.4" x2="565.9" y2="69.4"/><line class="bmt-whisker" x1="557.9" y1="53.0" x2="565.9" y2="53.0"/><circle class="bmt-mark" cx="561.9" cy="60.3" r="5.5"/><line class="bmt-leader" x1="561.9" y1="66.3" x2="577.9" y2="76.3"/><text class="bmt-label" x="577.9" y="89.3" text-anchor="start">Gemini 4 Carbon</text><circle cx="561.9" cy="60.3" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-4" aria-label="DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $."><title>DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $.</title><line class="bmt-whisker" x1="145.2" y1="92.1" x2="145.2" y2="59.3"/><line class="bmt-whisker" x1="141.2" y1="92.1" x2="149.2" y2="92.1"/><line class="bmt-whisker" x1="141.2" y1="59.3" x2="149.2" y2="59.3"/><circle class="bmt-mark" cx="145.2" cy="74.5" r="5.5"/><line class="bmt-leader" x1="145.2" y1="68.5" x2="145.2" y2="60.5"/><text class="bmt-label" x="145.2" y="56.5" text-anchor="middle">DeepSeek V4.1</text><circle cx="145.2" cy="74.5" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-5" aria-label="Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $."><title>Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $.</title><line class="bmt-whisker" x1="348.1" y1="99.7" x2="348.1" y2="61.9"/><line class="bmt-whisker" x1="344.1" y1="99.7" x2="352.1" y2="99.7"/><line class="bmt-whisker" x1="344.1" y1="61.9" x2="352.1" y2="61.9"/><circle class="bmt-mark" cx="348.1" cy="78.7" r="5.5"/><line class="bmt-leader" x1="348.1" y1="72.7" x2="338.1" y2="68.7"/><text class="bmt-label" x="338.1" y="64.7" text-anchor="end">Large 4</text><circle cx="348.1" cy="78.7" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-6" aria-label="Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $."><title>Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $.</title><line class="bmt-whisker" x1="360.1" y1="128.6" x2="360.1" y2="82.0"/><line class="bmt-whisker" x1="356.1" y1="128.6" x2="364.1" y2="128.6"/><line class="bmt-whisker" x1="356.1" y1="82.0" x2="364.1" y2="82.0"/><circle class="bmt-mark" cx="360.1" cy="103.9" r="5.5"/><line class="bmt-leader" x1="360.1" y1="109.9" x2="371.1" y2="119.9"/><text class="bmt-label" x="371.1" y="132.9" text-anchor="start">Qwen3.8-27B</text><circle cx="360.1" cy="103.9" r="13" class="bmt-hit"/></g>
+</svg></div></div>
+<div data-bmt-plot="ouvertes" hidden><p class="bmt-axis">Score aux questions ouvertes (%)</p><div class="bmt-overflow" role="region" aria-label="Graphique défilant" tabindex="0"><svg id="nuage-ouvertes" class="bmt-svg" role="group" aria-label="Score aux questions ouvertes selon le prix mixte" viewBox="0 0 810 342"><title>Score aux questions ouvertes selon le prix mixte</title>
+<line class="bmt-grid" x1="48.0" y1="300.0" x2="745.0" y2="300.0"/>
+<text class="bmt-tick" x="40.0" y="304.0" text-anchor="end">0</text>
+<line class="bmt-grid" x1="48.0" y1="249.6" x2="745.0" y2="249.6"/>
+<text class="bmt-tick" x="40.0" y="253.6" text-anchor="end">20</text>
+<line class="bmt-grid" x1="48.0" y1="199.2" x2="745.0" y2="199.2"/>
+<text class="bmt-tick" x="40.0" y="203.2" text-anchor="end">40</text>
+<line class="bmt-grid" x1="48.0" y1="148.8" x2="745.0" y2="148.8"/>
+<text class="bmt-tick" x="40.0" y="152.8" text-anchor="end">60</text>
+<line class="bmt-grid" x1="48.0" y1="98.4" x2="745.0" y2="98.4"/>
+<text class="bmt-tick" x="40.0" y="102.4" text-anchor="end">80</text>
+<line class="bmt-grid" x1="48.0" y1="48.0" x2="745.0" y2="48.0"/>
+<text class="bmt-tick" x="40.0" y="52.0" text-anchor="end">100</text>
+<line class="bmt-grid" x1="103.8" y1="48.0" x2="103.8" y2="300.0"/>
+<text class="bmt-tick" x="103.8" y="322.0" text-anchor="middle">0,2 $</text>
+<line class="bmt-grid" x1="242.1" y1="48.0" x2="242.1" y2="300.0"/>
+<text class="bmt-tick" x="242.1" y="322.0" text-anchor="middle">0,5 $</text>
+<line class="bmt-grid" x1="346.7" y1="48.0" x2="346.7" y2="300.0"/>
+<text class="bmt-tick" x="346.7" y="322.0" text-anchor="middle">1 $</text>
+<line class="bmt-grid" x1="451.3" y1="48.0" x2="451.3" y2="300.0"/>
+<text class="bmt-tick" x="451.3" y="322.0" text-anchor="middle">2 $</text>
+<line class="bmt-grid" x1="589.6" y1="48.0" x2="589.6" y2="300.0"/>
+<text class="bmt-tick" x="589.6" y="322.0" text-anchor="middle">5 $</text>
+<line class="bmt-grid" x1="694.2" y1="48.0" x2="694.2" y2="300.0"/>
+<text class="bmt-tick" x="694.2" y="322.0" text-anchor="middle">10 $</text>
+<path class="bmt-area" d="M145.2,86.3H555.9V71.4H660.5V58.1H745V300H145.2Z"/>
+<path class="bmt-front" d="M145.2,86.3H555.9V71.4H660.5V58.1H745"/>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-1" aria-label="Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $."><title>Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $.</title><line class="bmt-whisker" x1="660.5" y1="68.2" x2="660.5" y2="48.0"/><line class="bmt-whisker" x1="656.5" y1="68.2" x2="664.5" y2="68.2"/><line class="bmt-whisker" x1="656.5" y1="48.0" x2="664.5" y2="48.0"/><circle class="bmt-mark" cx="660.5" cy="58.1" r="5.5"/><line class="bmt-leader" x1="660.5" y1="52.1" x2="660.5" y2="44.1"/><text class="bmt-label" x="660.5" y="40.1" text-anchor="middle">Opus 5.5</text><circle cx="660.5" cy="58.1" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-2" aria-label="GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><line class="bmt-whisker" x1="549.9" y1="88.3" x2="549.9" y2="55.6"/><line class="bmt-whisker" x1="545.9" y1="88.3" x2="553.9" y2="88.3"/><line class="bmt-whisker" x1="545.9" y1="55.6" x2="553.9" y2="55.6"/><circle class="bmt-mark" cx="549.9" cy="71.4" r="5.5"/><line class="bmt-leader" x1="549.9" y1="65.4" x2="537.9" y2="60.4"/><text class="bmt-label" x="537.9" y="56.4" text-anchor="end">GPT-6.1 Sol</text><circle cx="549.9" cy="71.4" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-3" aria-label="Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><line class="bmt-whisker" x1="561.9" y1="90.8" x2="561.9" y2="58.1"/><line class="bmt-whisker" x1="557.9" y1="90.8" x2="565.9" y2="90.8"/><line class="bmt-whisker" x1="557.9" y1="58.1" x2="565.9" y2="58.1"/><circle class="bmt-mark" cx="561.9" cy="72.9" r="5.5"/><line class="bmt-leader" x1="561.9" y1="78.9" x2="577.9" y2="88.9"/><text class="bmt-label" x="577.9" y="101.9" text-anchor="start">Gemini 4 Carbon</text><circle cx="561.9" cy="72.9" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-4" aria-label="DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $."><title>DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $.</title><line class="bmt-whisker" x1="145.2" y1="100.9" x2="145.2" y2="70.7"/><line class="bmt-whisker" x1="141.2" y1="100.9" x2="149.2" y2="100.9"/><line class="bmt-whisker" x1="141.2" y1="70.7" x2="149.2" y2="70.7"/><circle class="bmt-mark" cx="145.2" cy="86.3" r="5.5"/><line class="bmt-leader" x1="145.2" y1="80.3" x2="145.2" y2="72.3"/><text class="bmt-label" x="145.2" y="68.3" text-anchor="middle">DeepSeek V4.1</text><circle cx="145.2" cy="86.3" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-5" aria-label="Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $."><title>Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $.</title><line class="bmt-whisker" x1="348.1" y1="111.0" x2="348.1" y2="73.2"/><line class="bmt-whisker" x1="344.1" y1="111.0" x2="352.1" y2="111.0"/><line class="bmt-whisker" x1="344.1" y1="73.2" x2="352.1" y2="73.2"/><circle class="bmt-mark" cx="348.1" cy="92.6" r="5.5"/><line class="bmt-leader" x1="348.1" y1="86.6" x2="338.1" y2="82.6"/><text class="bmt-label" x="338.1" y="78.6" text-anchor="end">Large 4</text><circle cx="348.1" cy="92.6" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-6" aria-label="Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $."><title>Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $.</title><line class="bmt-whisker" x1="360.1" y1="176.5" x2="360.1" y2="111.0"/><line class="bmt-whisker" x1="356.1" y1="176.5" x2="364.1" y2="176.5"/><line class="bmt-whisker" x1="356.1" y1="111.0" x2="364.1" y2="111.0"/><circle class="bmt-mark" cx="360.1" cy="141.2" r="5.5"/><line class="bmt-leader" x1="360.1" y1="147.2" x2="371.1" y2="157.2"/><text class="bmt-label" x="371.1" y="170.2" text-anchor="start">Qwen3.8-27B</text><circle cx="360.1" cy="141.2" r="13" class="bmt-hit"/></g>
+</svg></div></div>
+<div data-bmt-plot="qcm" hidden><p class="bmt-axis">Exactitude aux QCM (%)</p><div class="bmt-overflow" role="region" aria-label="Graphique défilant" tabindex="0"><svg id="nuage-qcm" class="bmt-svg" role="group" aria-label="Exactitude aux QCM selon le prix mixte" viewBox="0 0 810 342"><title>Exactitude aux QCM selon le prix mixte</title>
+<line class="bmt-grid" x1="48.0" y1="300.0" x2="745.0" y2="300.0"/>
+<text class="bmt-tick" x="40.0" y="304.0" text-anchor="end">0</text>
+<line class="bmt-grid" x1="48.0" y1="249.6" x2="745.0" y2="249.6"/>
+<text class="bmt-tick" x="40.0" y="253.6" text-anchor="end">20</text>
+<line class="bmt-grid" x1="48.0" y1="199.2" x2="745.0" y2="199.2"/>
+<text class="bmt-tick" x="40.0" y="203.2" text-anchor="end">40</text>
+<line class="bmt-grid" x1="48.0" y1="148.8" x2="745.0" y2="148.8"/>
+<text class="bmt-tick" x="40.0" y="152.8" text-anchor="end">60</text>
+<line class="bmt-grid" x1="48.0" y1="98.4" x2="745.0" y2="98.4"/>
+<text class="bmt-tick" x="40.0" y="102.4" text-anchor="end">80</text>
+<line class="bmt-grid" x1="48.0" y1="48.0" x2="745.0" y2="48.0"/>
+<text class="bmt-tick" x="40.0" y="52.0" text-anchor="end">100</text>
+<line class="bmt-grid" x1="103.8" y1="48.0" x2="103.8" y2="300.0"/>
+<text class="bmt-tick" x="103.8" y="322.0" text-anchor="middle">0,2 $</text>
+<line class="bmt-grid" x1="242.1" y1="48.0" x2="242.1" y2="300.0"/>
+<text class="bmt-tick" x="242.1" y="322.0" text-anchor="middle">0,5 $</text>
+<line class="bmt-grid" x1="346.7" y1="48.0" x2="346.7" y2="300.0"/>
+<text class="bmt-tick" x="346.7" y="322.0" text-anchor="middle">1 $</text>
+<line class="bmt-grid" x1="451.3" y1="48.0" x2="451.3" y2="300.0"/>
+<text class="bmt-tick" x="451.3" y="322.0" text-anchor="middle">2 $</text>
+<line class="bmt-grid" x1="589.6" y1="48.0" x2="589.6" y2="300.0"/>
+<text class="bmt-tick" x="589.6" y="322.0" text-anchor="middle">5 $</text>
+<line class="bmt-grid" x1="694.2" y1="48.0" x2="694.2" y2="300.0"/>
+<text class="bmt-tick" x="694.2" y="322.0" text-anchor="middle">10 $</text>
+<path class="bmt-area" d="M145.2,62.6H555.9V48.0H745V300H145.2Z"/>
+<path class="bmt-front" d="M145.2,62.6H555.9V48.0H745"/>
+<line class="bmt-chance" x1="48.0" y1="249.6" x2="745.0" y2="249.6"/>
+<text class="bmt-tick" x="736.0" y="243.6" text-anchor="end">Hasard · 20 %</text>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-1" aria-label="Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $."><title>Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $.</title><circle class="bmt-mark" cx="660.5" cy="48.0" r="5.5"/><line class="bmt-leader" x1="660.5" y1="42.0" x2="660.5" y2="34.0"/><text class="bmt-label" x="660.5" y="30.0" text-anchor="middle">Opus 5.5</text><circle cx="660.5" cy="48.0" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-2" aria-label="GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><circle class="bmt-mark" cx="549.9" cy="48.0" r="5.5"/><line class="bmt-leader" x1="549.9" y1="42.0" x2="537.9" y2="37.0"/><text class="bmt-label" x="537.9" y="33.0" text-anchor="end">GPT-6.1 Sol</text><circle cx="549.9" cy="48.0" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-3" aria-label="Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><circle class="bmt-mark" cx="561.9" cy="48.0" r="5.5"/><line class="bmt-leader" x1="561.9" y1="54.0" x2="577.9" y2="64.0"/><text class="bmt-label" x="577.9" y="77.0" text-anchor="start">Gemini 4 Carbon</text><circle cx="561.9" cy="48.0" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-4" aria-label="DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $."><title>DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $.</title><line class="bmt-whisker" x1="145.2" y1="83.3" x2="145.2" y2="48.0"/><line class="bmt-whisker" x1="141.2" y1="83.3" x2="149.2" y2="83.3"/><line class="bmt-whisker" x1="141.2" y1="48.0" x2="149.2" y2="48.0"/><circle class="bmt-mark" cx="145.2" cy="62.6" r="5.5"/><line class="bmt-leader" x1="145.2" y1="56.6" x2="145.2" y2="48.6"/><text class="bmt-label" x="145.2" y="44.6" text-anchor="middle">DeepSeek V4.1</text><circle cx="145.2" cy="62.6" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-5" aria-label="Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $."><title>Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $.</title><line class="bmt-whisker" x1="348.1" y1="88.3" x2="348.1" y2="50.5"/><line class="bmt-whisker" x1="344.1" y1="88.3" x2="352.1" y2="88.3"/><line class="bmt-whisker" x1="344.1" y1="50.5" x2="352.1" y2="50.5"/><circle class="bmt-mark" cx="348.1" cy="64.9" r="5.5"/><line class="bmt-leader" x1="348.1" y1="58.9" x2="338.1" y2="54.9"/><text class="bmt-label" x="338.1" y="50.9" text-anchor="end">Large 4</text><circle cx="348.1" cy="64.9" r="13" class="bmt-hit"/></g>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-6" aria-label="Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $."><title>Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $.</title><line class="bmt-whisker" x1="360.1" y1="80.8" x2="360.1" y2="53.0"/><line class="bmt-whisker" x1="356.1" y1="80.8" x2="364.1" y2="80.8"/><line class="bmt-whisker" x1="356.1" y1="53.0" x2="364.1" y2="53.0"/><circle class="bmt-mark" cx="360.1" cy="66.9" r="5.5"/><line class="bmt-leader" x1="360.1" y1="72.9" x2="371.1" y2="82.9"/><text class="bmt-label" x="371.1" y="95.9" text-anchor="start">Qwen3.8-27B</text><circle cx="360.1" cy="66.9" r="13" class="bmt-hit"/></g>
+</svg></div></div>
+</div><p class="bmt-axis bmt-x">Prix mixte en dollars par million de jetons · échelle logarithmique</p><div class="bmt-inspect" hidden></div>
+<p class="bmt-takeaway">Les trois modèles fermés obtiennent de 95,1 % à 98,0 % au score global. Entre DeepSeek V4.1 Flash 1017, premier modèle à poids ouverts, et Claude Opus 5.5, le prix est multiplié par 30 pour 8,5 points de plus. Mistral Large 4 et Qwen3.8-27B coûtent plus cher que DeepSeek pour un score global moindre.</p>
+</section>
+<section class="bmt-figure" id="criteres" aria-labelledby="titre-criteres">
+<h3 id="titre-criteres">Scores aux QCM et aux questions ouvertes pour chaque modèle</h3>
+<p>Aux QCM, trois modèles sur six font un sans-faute et aucun ne descend sous 92,5 %. Aux questions ouvertes, les scores vont de 63,0 % à 96,0 %.</p>
+<ul class="bmt-legend"><li><i class="bmt-swatch bmt-qcm"></i>Exactitude aux QCM</li><li><i class="bmt-swatch bmt-closed"></i>Questions ouvertes, modèle fermé</li><li><i class="bmt-swatch bmt-open"></i>Questions ouvertes, poids ouverts</li><li><i class="bmt-key-band"></i>Intervalle à 95 %</li></ul>
+<p class="bmt-pan bmt-chart-pan">Faites défiler le graphique horizontalement pour lire toutes les valeurs.</p><div id="intervalles" class="bmt-overflow" role="region" aria-label="Graphique défilant" tabindex="0"><svg id="bmt-comparaison" class="bmt-svg" role="group" aria-label="Scores aux QCM et aux questions ouvertes par modèle, avec leurs intervalles à 95 %." viewBox="0 0 810 320"><title>Scores aux QCM et aux questions ouvertes par modèle, avec leurs intervalles à 95 %.</title>
+<line class="bmt-grid" x1="155.0" y1="22.0" x2="155.0" y2="289.0"/>
+<text class="bmt-tick" x="155.0" y="307.0" text-anchor="middle">40</text>
+<line class="bmt-grid" x1="251.5" y1="22.0" x2="251.5" y2="289.0"/>
+<text class="bmt-tick" x="251.5" y="307.0" text-anchor="middle">50</text>
+<line class="bmt-grid" x1="348.0" y1="22.0" x2="348.0" y2="289.0"/>
+<text class="bmt-tick" x="348.0" y="307.0" text-anchor="middle">60</text>
+<line class="bmt-grid" x1="444.5" y1="22.0" x2="444.5" y2="289.0"/>
+<text class="bmt-tick" x="444.5" y="307.0" text-anchor="middle">70</text>
+<line class="bmt-grid" x1="541.0" y1="22.0" x2="541.0" y2="289.0"/>
+<text class="bmt-tick" x="541.0" y="307.0" text-anchor="middle">80</text>
+<line class="bmt-grid" x1="637.5" y1="22.0" x2="637.5" y2="289.0"/>
+<text class="bmt-tick" x="637.5" y="307.0" text-anchor="middle">90</text>
+<line class="bmt-grid" x1="734.0" y1="22.0" x2="734.0" y2="289.0"/>
+<text class="bmt-tick" x="734.0" y="307.0" text-anchor="middle">100</text>
+<text class="bmt-label" x="8.0" y="41.0" text-anchor="start">Opus 5.5</text>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-1" aria-label="Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $."><title>Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $.</title><circle class="bmt-mark bmt-qcm" cx="734.0" cy="31" r="4.7"/><line class="bmt-band bmt-closed" x1="656.8" y1="44.0" x2="734.0" y2="44.0"/><circle class="bmt-mark bmt-closed" cx="695.4" cy="44" r="4.7"/><text class="bmt-label" x="800.0" y="41.0" text-anchor="end">96,0 %</text><circle cx="695.4" cy="44.0" r="13" class="bmt-hit"/></g>
+<text class="bmt-label" x="8.0" y="87.0" text-anchor="start">GPT-6.1 Sol</text>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-2" aria-label="GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><circle class="bmt-mark bmt-qcm" cx="734.0" cy="77" r="4.7"/><line class="bmt-band bmt-closed" x1="579.6" y1="90.0" x2="705.1" y2="90.0"/><circle class="bmt-mark bmt-closed" cx="644.3" cy="90" r="4.7"/><text class="bmt-label" x="800.0" y="87.0" text-anchor="end">90,7 %</text><circle cx="644.3" cy="90.0" r="13" class="bmt-hit"/></g>
+<text class="bmt-label" x="8.0" y="133.0" text-anchor="start">Gemini 4 Carbon</text>
+<g class="bmt-datum bmt-closed" tabindex="0" role="button" data-model="bmt-modele-3" aria-label="Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><title>Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $.</title><circle class="bmt-mark bmt-qcm" cx="734.0" cy="123" r="4.7"/><line class="bmt-band bmt-closed" x1="570.0" y1="136.0" x2="695.4" y2="136.0"/><circle class="bmt-mark bmt-closed" cx="638.5" cy="136" r="4.7"/><text class="bmt-label" x="800.0" y="133.0" text-anchor="end">90,1 %</text><circle cx="638.5" cy="136.0" r="13" class="bmt-hit"/></g>
+<text class="bmt-label" x="8.0" y="179.0" text-anchor="start">DeepSeek V4.1</text>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-4" aria-label="DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $."><title>DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $.</title><line class="bmt-band bmt-qcm" x1="598.9" y1="169.0" x2="734.0" y2="169.0"/><circle class="bmt-mark bmt-qcm" cx="678.0" cy="169" r="4.7"/><line class="bmt-band bmt-open" x1="531.4" y1="182.0" x2="647.2" y2="182.0"/><circle class="bmt-mark bmt-open" cx="587.3" cy="182" r="4.7"/><text class="bmt-label" x="800.0" y="179.0" text-anchor="end">84,8 %</text><circle cx="587.3" cy="182.0" r="13" class="bmt-hit"/></g>
+<text class="bmt-label" x="8.0" y="225.0" text-anchor="start">Large 4</text>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-5" aria-label="Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $."><title>Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $.</title><line class="bmt-band bmt-qcm" x1="579.6" y1="215.0" x2="724.4" y2="215.0"/><circle class="bmt-mark bmt-qcm" cx="669.3" cy="215" r="4.7"/><line class="bmt-band bmt-open" x1="492.8" y1="228.0" x2="637.5" y2="228.0"/><circle class="bmt-mark bmt-open" cx="563.2" cy="228" r="4.7"/><text class="bmt-label" x="800.0" y="225.0" text-anchor="end">82,3 %</text><circle cx="563.2" cy="228.0" r="13" class="bmt-hit"/></g>
+<text class="bmt-label" x="8.0" y="271.0" text-anchor="start">Qwen3.8-27B</text>
+<g class="bmt-datum bmt-open" tabindex="0" role="button" data-model="bmt-modele-6" aria-label="Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $."><title>Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $.</title><line class="bmt-band bmt-qcm" x1="608.5" y1="261.0" x2="714.7" y2="261.0"/><circle class="bmt-mark bmt-qcm" cx="661.6" cy="261" r="4.7"/><line class="bmt-band bmt-open" x1="241.9" y1="274.0" x2="492.8" y2="274.0"/><circle class="bmt-mark bmt-open" cx="377.0" cy="274" r="4.7"/><text class="bmt-label" x="800.0" y="271.0" text-anchor="end">63,0 %</text><circle cx="377.0" cy="274.0" r="13" class="bmt-hit"/></g>
+</svg></div><p class="bmt-axis bmt-x">Score à chaque épreuve (%)</p><div class="bmt-inspect" hidden></div>
+<p class="bmt-takeaway">Chaque modèle réussit mieux les QCM que les questions ouvertes. L’écart va de 4,0 points pour Claude Opus 5.5 à 29,5 points pour Qwen3.8-27B. Les questions ouvertes départagent davantage les modèles dans ce pilote.</p></section>
+<section class="bmt-figure" id="dossiers" aria-labelledby="titre-dossiers">
+<h3 id="titre-dossiers">Scores de chaque modèle par dossier clinique</h3>
+<p>Aux questions ouvertes, les deux dossiers les moins bien réussis sont « Retour au travail dans l’aide à domicile » (72 % des points en moyenne) et « Épuisement et changement d’organisation en établissement de soins » (76 %). Les erreurs aux QCM se limitent à 4 dossiers sur 10.</p>
+<p class="bmt-scale">Score en % <span>0</span><i aria-hidden="true"></i><span>100</span></p><p class="bmt-pan">Faites défiler le tableau horizontalement pour voir tous les modèles.</p>
+<div class="bmt-overflow" role="region" tabindex="0" aria-label="Dossier clinique par modèle"><table id="carte-dossiers" class="bmt-heat"><caption class="bmt-sr">Résultats par modèle, en pourcentage. Dossier clinique.</caption><thead><tr><th scope="col" rowspan="2">Dossier clinique</th>
+<th scope="colgroup" colspan="2">Opus 5.5</th>
+<th scope="colgroup" colspan="2">GPT-6.1 Sol</th>
+<th scope="colgroup" colspan="2">Gemini 4 Carbon</th>
+<th scope="colgroup" colspan="2">DeepSeek V4.1</th>
+<th scope="colgroup" colspan="2">Large 4</th>
+<th scope="colgroup" colspan="2">Qwen3.8-27B</th>
+</tr>
+<tr><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th><th scope="col">QCM</th><th scope="col"><abbr title="Questions ouvertes">Ouv.</abbr></th></tr>
+</thead><tbody>
+<tr><th scope="row">P01 · Symptômes respiratoires en carrosserie</th>
+<td data-bmt-heat="Claude Opus 5.5 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %">88</td>
+<td data-bmt-heat="Mistral Large 4 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 75 %" class="bmt-heat-10" title="Mistral Large 4 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 75 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 75 %" class="bmt-heat-7" title="Mistral Large 4 · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 75 %">75</td>
+<td data-bmt-heat="Qwen3.8-27B · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-10" title="Qwen3.8-27B · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-8" title="Qwen3.8-27B · P01 · Symptômes respiratoires en carrosserie · QCM 100 %, Questions ouvertes 88 %">88</td>
+</tr>
+<tr><th scope="row">P02 · Retour au travail dans l’aide à domicile</th>
+<td data-bmt-heat="Claude Opus 5.5 · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="Claude Opus 5.5 · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="Claude Opus 5.5 · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="GPT-6.1 Sol · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="GPT-6.1 Sol · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="GPT-6.1 Sol · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 71 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-7" title="Gemini 4 Carbon · medium · P02 · Retour au travail dans l’aide à domicile · QCM 100 %, Questions ouvertes 71 %">71</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P02 · Retour au travail dans l’aide à domicile · QCM 75 %, Questions ouvertes 71 %" class="bmt-heat-7" title="DeepSeek V4.1 Flash 1017 · P02 · Retour au travail dans l’aide à domicile · QCM 75 %, Questions ouvertes 71 %">75</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P02 · Retour au travail dans l’aide à domicile · QCM 75 %, Questions ouvertes 71 %" class="bmt-heat-7" title="DeepSeek V4.1 Flash 1017 · P02 · Retour au travail dans l’aide à domicile · QCM 75 %, Questions ouvertes 71 %">71</td>
+<td data-bmt-heat="Mistral Large 4 · P02 · Retour au travail dans l’aide à domicile · QCM 58 %, Questions ouvertes 86 %" class="bmt-heat-5" title="Mistral Large 4 · P02 · Retour au travail dans l’aide à domicile · QCM 58 %, Questions ouvertes 86 %">58</td>
+<td data-bmt-heat="Mistral Large 4 · P02 · Retour au travail dans l’aide à domicile · QCM 58 %, Questions ouvertes 86 %" class="bmt-heat-8" title="Mistral Large 4 · P02 · Retour au travail dans l’aide à domicile · QCM 58 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Qwen3.8-27B · P02 · Retour au travail dans l’aide à domicile · QCM 83 %, Questions ouvertes 29 %" class="bmt-heat-8" title="Qwen3.8-27B · P02 · Retour au travail dans l’aide à domicile · QCM 83 %, Questions ouvertes 29 %">83</td>
+<td data-bmt-heat="Qwen3.8-27B · P02 · Retour au travail dans l’aide à domicile · QCM 83 %, Questions ouvertes 29 %" class="bmt-heat-2" title="Qwen3.8-27B · P02 · Retour au travail dans l’aide à domicile · QCM 83 %, Questions ouvertes 29 %">29</td>
+</tr>
+<tr><th scope="row">P03 · Épaule douloureuse et tableau de maladie professionnelle</th>
+<td data-bmt-heat="Claude Opus 5.5 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 67 %, Questions ouvertes 83 %" class="bmt-heat-6" title="DeepSeek V4.1 Flash 1017 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 67 %, Questions ouvertes 83 %">67</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 67 %, Questions ouvertes 83 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 67 %, Questions ouvertes 83 %">83</td>
+<td data-bmt-heat="Mistral Large 4 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 92 %, Questions ouvertes 83 %" class="bmt-heat-9" title="Mistral Large 4 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 92 %, Questions ouvertes 83 %">92</td>
+<td data-bmt-heat="Mistral Large 4 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 92 %, Questions ouvertes 83 %" class="bmt-heat-8" title="Mistral Large 4 · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 92 %, Questions ouvertes 83 %">83</td>
+<td data-bmt-heat="Qwen3.8-27B · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 75 %, Questions ouvertes 67 %" class="bmt-heat-7" title="Qwen3.8-27B · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 75 %, Questions ouvertes 67 %">75</td>
+<td data-bmt-heat="Qwen3.8-27B · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 75 %, Questions ouvertes 67 %" class="bmt-heat-6" title="Qwen3.8-27B · P03 · Épaule douloureuse et tableau de maladie professionnelle · QCM 75 %, Questions ouvertes 67 %">67</td>
+</tr>
+<tr><th scope="row">P04 · Résultat biologique rassurant après nettoyage industriel</th>
+<td data-bmt-heat="Claude Opus 5.5 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 71 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-7" title="DeepSeek V4.1 Flash 1017 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 71 %">71</td>
+<td data-bmt-heat="Mistral Large 4 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Mistral Large 4 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Mistral Large 4 · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 43 %" class="bmt-heat-10" title="Qwen3.8-27B · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 43 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 43 %" class="bmt-heat-4" title="Qwen3.8-27B · P04 · Résultat biologique rassurant après nettoyage industriel · QCM 100 %, Questions ouvertes 43 %">43</td>
+</tr>
+<tr><th scope="row">P05 · Piqûre profonde et informations nouvelles sur la personne source</th>
+<td data-bmt-heat="Claude Opus 5.5 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 89 %" class="bmt-heat-8" title="Mistral Large 4 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 89 %">83</td>
+<td data-bmt-heat="Mistral Large 4 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 89 %" class="bmt-heat-8" title="Mistral Large 4 · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 89 %">89</td>
+<td data-bmt-heat="Qwen3.8-27B · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 67 %" class="bmt-heat-8" title="Qwen3.8-27B · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 67 %">83</td>
+<td data-bmt-heat="Qwen3.8-27B · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 67 %" class="bmt-heat-6" title="Qwen3.8-27B · P05 · Piqûre profonde et informations nouvelles sur la personne source · QCM 83 %, Questions ouvertes 67 %">67</td>
+</tr>
+<tr><th scope="row">P06 · Audition et coexposition en fabrication de composites</th>
+<td data-bmt-heat="Claude Opus 5.5 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="GPT-6.1 Sol · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="GPT-6.1 Sol · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-7" title="Gemini 4 Carbon · medium · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">71</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Mistral Large 4 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-10" title="Mistral Large 4 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-7" title="Mistral Large 4 · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">71</td>
+<td data-bmt-heat="Qwen3.8-27B · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-10" title="Qwen3.8-27B · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %" class="bmt-heat-7" title="Qwen3.8-27B · P06 · Audition et coexposition en fabrication de composites · QCM 100 %, Questions ouvertes 71 %">71</td>
+</tr>
+<tr><th scope="row">P07 · Somnolence chez un conducteur d’engins portuaires</th>
+<td data-bmt-heat="Claude Opus 5.5 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %">88</td>
+<td data-bmt-heat="Mistral Large 4 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Mistral Large 4 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Mistral Large 4 · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-10" title="Qwen3.8-27B · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %" class="bmt-heat-8" title="Qwen3.8-27B · P07 · Somnolence chez un conducteur d’engins portuaires · QCM 100 %, Questions ouvertes 88 %">88</td>
+</tr>
+<tr><th scope="row">P08 · Épuisement et changement d’organisation en établissement de soins</th>
+<td data-bmt-heat="Claude Opus 5.5 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %" class="bmt-heat-10" title="Claude Opus 5.5 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %" class="bmt-heat-8" title="Claude Opus 5.5 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %">89</td>
+<td data-bmt-heat="GPT-6.1 Sol · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-10" title="GPT-6.1 Sol · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-6" title="GPT-6.1 Sol · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">67</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %" class="bmt-heat-8" title="Gemini 4 Carbon · medium · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 89 %">89</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 78 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 78 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 78 %" class="bmt-heat-7" title="DeepSeek V4.1 Flash 1017 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 78 %">78</td>
+<td data-bmt-heat="Mistral Large 4 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-10" title="Mistral Large 4 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-6" title="Mistral Large 4 · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">67</td>
+<td data-bmt-heat="Qwen3.8-27B · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-10" title="Qwen3.8-27B · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-6" title="Qwen3.8-27B · P08 · Épuisement et changement d’organisation en établissement de soins · QCM 100 %, Questions ouvertes 67 %">67</td>
+</tr>
+<tr><th scope="row">P09 · Grossesse et exposition à un reprotoxique</th>
+<td data-bmt-heat="Claude Opus 5.5 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="Claude Opus 5.5 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="Claude Opus 5.5 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="GPT-6.1 Sol · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="GPT-6.1 Sol · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="GPT-6.1 Sol · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="Gemini 4 Carbon · medium · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-10" title="Mistral Large 4 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %" class="bmt-heat-8" title="Mistral Large 4 · P09 · Grossesse et exposition à un reprotoxique · QCM 100 %, Questions ouvertes 86 %">86</td>
+<td data-bmt-heat="Qwen3.8-27B · P09 · Grossesse et exposition à un reprotoxique · QCM 83 %, Questions ouvertes 29 %" class="bmt-heat-8" title="Qwen3.8-27B · P09 · Grossesse et exposition à un reprotoxique · QCM 83 %, Questions ouvertes 29 %">83</td>
+<td data-bmt-heat="Qwen3.8-27B · P09 · Grossesse et exposition à un reprotoxique · QCM 83 %, Questions ouvertes 29 %" class="bmt-heat-2" title="Qwen3.8-27B · P09 · Grossesse et exposition à un reprotoxique · QCM 83 %, Questions ouvertes 29 %">29</td>
+</tr>
+<tr><th scope="row">P10 · Malaise dans un regard d’assainissement</th>
+<td data-bmt-heat="Claude Opus 5.5 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="Claude Opus 5.5 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-10" title="GPT-6.1 Sol · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-8" title="GPT-6.1 Sol · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">83</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-8" title="Gemini 4 Carbon · medium · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">83</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">83</td>
+<td data-bmt-heat="Mistral Large 4 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-10" title="Mistral Large 4 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 67 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 67 %" class="bmt-heat-6" title="Mistral Large 4 · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 67 %">67</td>
+<td data-bmt-heat="Qwen3.8-27B · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-10" title="Qwen3.8-27B · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %" class="bmt-heat-8" title="Qwen3.8-27B · P10 · Malaise dans un regard d’assainissement · QCM 100 %, Questions ouvertes 83 %">83</td>
+</tr>
+</tbody></table></div>
+<div class="bmt-inspect" hidden></div>
+</section>
+<section class="bmt-figure" id="domaines" aria-labelledby="titre-domaines">
+<h3 id="titre-domaines">Taux de réussite de chaque modèle aux QCM par domaine</h3>
+<p>Les erreurs se concentrent sur 4 domaines sur 9, d’abord « Réparation des AT/MP » (89 % de réussite en moyenne) et « Aptitude, affectation et suivi réglementaire » (92 %).</p>
+<p class="bmt-scale">Score en % <span>0</span><i aria-hidden="true"></i><span>100</span></p><p class="bmt-pan">Faites défiler le tableau horizontalement pour voir tous les modèles.</p>
+<div class="bmt-overflow" role="region" tabindex="0" aria-label="Domaine des QCM par modèle"><table id="carte-domaines" class="bmt-heat"><caption class="bmt-sr">Résultats par modèle, en pourcentage. Domaine des QCM.</caption><thead><tr><th scope="col" rowspan="1">Domaine des QCM</th>
+<th scope="col" colspan="1">Opus 5.5</th>
+<th scope="col" colspan="1">GPT-6.1 Sol</th>
+<th scope="col" colspan="1">Gemini 4 Carbon</th>
+<th scope="col" colspan="1">DeepSeek V4.1</th>
+<th scope="col" colspan="1">Large 4</th>
+<th scope="col" colspan="1">Qwen3.8-27B</th>
+</tr>
+</thead><tbody>
+<tr><th scope="row">Aptitude, affectation et suivi réglementaire <small>(6 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %" class="bmt-heat-8" title="DeepSeek V4.1 Flash 1017 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %">83</td>
+<td data-bmt-heat="Mistral Large 4 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %" class="bmt-heat-8" title="Mistral Large 4 · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %">83</td>
+<td data-bmt-heat="Qwen3.8-27B · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %" class="bmt-heat-8" title="Qwen3.8-27B · Aptitude, affectation et suivi réglementaire (6 QCM) · QCM 83 %">83</td>
+</tr>
+<tr><th scope="row">Clinique, diagnostic et prophylaxie <small>(6 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 89 %" class="bmt-heat-8" title="Mistral Large 4 · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 89 %">89</td>
+<td data-bmt-heat="Qwen3.8-27B · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 89 %" class="bmt-heat-8" title="Qwen3.8-27B · Clinique, diagnostic et prophylaxie (6 QCM) · QCM 89 %">89</td>
+</tr>
+<tr><th scope="row">Lecture critique et causalité <small>(2 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Mistral Large 4 · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · Lecture critique et causalité (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Qwen3.8-27B · Lecture critique et causalité (2 QCM) · QCM 100 %">100</td>
+</tr>
+<tr><th scope="row">Maintien en emploi <small>(2 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Mistral Large 4 · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · Maintien en emploi (2 QCM) · QCM 100 %" class="bmt-heat-10" title="Qwen3.8-27B · Maintien en emploi (2 QCM) · QCM 100 %">100</td>
+</tr>
+<tr><th scope="row">Prévention collective et organisation <small>(7 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Mistral Large 4 · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · Prévention collective et organisation (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Qwen3.8-27B · Prévention collective et organisation (7 QCM) · QCM 100 %">100</td>
+</tr>
+<tr><th scope="row">Réparation des AT/MP <small>(4 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Réparation des AT/MP (4 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Réparation des AT/MP (4 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Réparation des AT/MP (4 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Réparation des AT/MP (4 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Réparation des AT/MP (4 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Réparation des AT/MP (4 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Réparation des AT/MP (4 QCM) · QCM 67 %" class="bmt-heat-6" title="DeepSeek V4.1 Flash 1017 · Réparation des AT/MP (4 QCM) · QCM 67 %">67</td>
+<td data-bmt-heat="Mistral Large 4 · Réparation des AT/MP (4 QCM) · QCM 92 %" class="bmt-heat-9" title="Mistral Large 4 · Réparation des AT/MP (4 QCM) · QCM 92 %">92</td>
+<td data-bmt-heat="Qwen3.8-27B · Réparation des AT/MP (4 QCM) · QCM 75 %" class="bmt-heat-7" title="Qwen3.8-27B · Réparation des AT/MP (4 QCM) · QCM 75 %">75</td>
+</tr>
+<tr><th scope="row">Secret médical et relation avec l’employeur <small>(3 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Secret médical et relation avec l’employeur (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Secret médical et relation avec l’employeur (3 QCM) · QCM 78 %" class="bmt-heat-7" title="Mistral Large 4 · Secret médical et relation avec l’employeur (3 QCM) · QCM 78 %">78</td>
+<td data-bmt-heat="Qwen3.8-27B · Secret médical et relation avec l’employeur (3 QCM) · QCM 89 %" class="bmt-heat-8" title="Qwen3.8-27B · Secret médical et relation avec l’employeur (3 QCM) · QCM 89 %">89</td>
+</tr>
+<tr><th scope="row">Urgence et risque immédiat <small>(3 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Mistral Large 4 · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · Urgence et risque immédiat (3 QCM) · QCM 100 %" class="bmt-heat-10" title="Qwen3.8-27B · Urgence et risque immédiat (3 QCM) · QCM 100 %">100</td>
+</tr>
+<tr><th scope="row">Évaluation des expositions <small>(7 QCM)</small></th>
+<td data-bmt-heat="Claude Opus 5.5 · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Claude Opus 5.5 · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="GPT-6.1 Sol · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="GPT-6.1 Sol · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Gemini 4 Carbon · medium · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Gemini 4 Carbon · medium · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="DeepSeek V4.1 Flash 1017 · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="DeepSeek V4.1 Flash 1017 · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Mistral Large 4 · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Mistral Large 4 · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+<td data-bmt-heat="Qwen3.8-27B · Évaluation des expositions (7 QCM) · QCM 100 %" class="bmt-heat-10" title="Qwen3.8-27B · Évaluation des expositions (7 QCM) · QCM 100 %">100</td>
+</tr>
+</tbody></table></div>
+<div class="bmt-inspect" hidden></div>
+<p class="bmt-axis">Chaque domaine ne compte que quelques QCM. Les résultats sont descriptifs.</p>
+</section>
+<section class="bmt-figure" id="annexes" aria-labelledby="titre-annexes">
+<h3 id="titre-annexes">Données et méthode</h3>
+<details class="bmt-more" id="valeurs"><summary>Tableau des valeurs</summary><div class="bmt-overflow" role="region" aria-label="Valeurs détaillées par modèle" tabindex="0"><table id="tableau"><caption class="bmt-sr">Scores, bornes des intervalles à 95 % et tarifs des six modèles.</caption><thead><tr><th scope="col" rowspan="2">Modèle</th><th scope="col" rowspan="2">Accès</th><th scope="colgroup" colspan="3">QCM (%)</th><th scope="colgroup" colspan="3">Questions ouvertes (%)</th><th scope="col" rowspan="2">Score global (%)</th><th scope="colgroup" colspan="3">Prix ($ / million de jetons)</th></tr><tr><th scope="col">Score</th><th scope="col">Borne basse</th><th scope="col">Borne haute</th><th scope="col">Score</th><th scope="col">Borne basse</th><th scope="col">Borne haute</th><th scope="col">Entrée</th><th scope="col">Sortie</th><th scope="col">Mixte</th></tr></thead><tbody>
+<tr id="bmt-modele-1" data-description="Claude Opus 5.5 (Anthropic, fermé, raisonnement high). Score global 98,0 % (intervalle approché de 96,0 à 100,0). QCM 100,0 % (100–100). Questions ouvertes 96,0 % (92–100). Prix mixte 8,00 $ par million de jetons. Entrée 4 $, sortie 20 $."><th scope="row">Claude Opus 5.5<small>Anthropic · raisonnement high · protocole conforme</small></th><td>Fermé</td><td>100,0</td><td>100</td><td>100</td><td>96,0</td><td>92</td><td>100</td><td>98,0</td><td>4</td><td>20</td><td>8,00</td></tr>
+<tr id="bmt-modele-2" data-description="GPT-6.1 Sol (OpenAI, fermé, raisonnement high). Score global 95,4 % (intervalle approché de 92,0 à 98,5). QCM 100,0 % (100–100). Questions ouvertes 90,7 % (84–97). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><th scope="row">GPT-6.1 Sol<small>OpenAI · raisonnement high · protocole conforme</small></th><td>Fermé</td><td>100,0</td><td>100</td><td>100</td><td>90,7</td><td>84</td><td>97</td><td>95,4</td><td>2</td><td>10</td><td>4,00</td></tr>
+<tr id="bmt-modele-3" data-description="Gemini 4 Carbon · medium (Google, fermé, raisonnement medium). Score global 95,1 % (intervalle approché de 91,5 à 98,0). QCM 100,0 % (100–100). Questions ouvertes 90,1 % (83–96). Prix mixte 4,00 $ par million de jetons. Entrée 2 $, sortie 10 $."><th scope="row">Gemini 4 Carbon · medium<small>Google · raisonnement medium · protocole conforme</small></th><td>Fermé</td><td>100,0</td><td>100</td><td>100</td><td>90,1</td><td>83</td><td>96</td><td>95,1</td><td>2</td><td>10</td><td>4,00</td></tr>
+<tr id="bmt-modele-4" data-description="DeepSeek V4.1 Flash 1017 (DeepSeek, ouvert, raisonnement high). Score global 89,5 % (intervalle approché de 82,5 à 95,5). QCM 94,2 % (86–100). Questions ouvertes 84,8 % (79–91). Prix mixte 0,263 $ par million de jetons. Entrée 0,15 $, sortie 0,6 $."><th scope="row">DeepSeek V4.1 Flash 1017<small>DeepSeek · raisonnement high · protocole conforme</small></th><td>Ouvert</td><td>94,2</td><td>86</td><td>100</td><td>84,8</td><td>79</td><td>91</td><td>89,5</td><td>0,15</td><td>0,6</td><td>0,263</td></tr>
+<tr id="bmt-modele-5" data-description="Mistral Large 4 (Mistral AI, ouvert, raisonnement high). Score global 87,8 % (intervalle approché de 79,5 à 94,5). QCM 93,3 % (84–99). Questions ouvertes 82,3 % (75–90). Prix mixte 1,05 $ par million de jetons. Entrée 0,7 $, sortie 2,1 $."><th scope="row">Mistral Large 4<small>Mistral AI · raisonnement high · protocole conforme</small></th><td>Ouvert</td><td>93,3</td><td>84</td><td>99</td><td>82,3</td><td>75</td><td>90</td><td>87,8</td><td>0,7</td><td>2,1</td><td>1,05</td></tr>
+<tr id="bmt-modele-6" data-description="Qwen3.8-27B (Alibaba, ouvert, raisonnement high). Score global 77,8 % (intervalle approché de 68,0 à 86,5). QCM 92,5 % (87–98). Questions ouvertes 63,0 % (49–75). Prix mixte 1,05 $ par million de jetons. Entrée 0,4 $, sortie 3 $."><th scope="row">Qwen3.8-27B<small>Alibaba · raisonnement high · protocole conforme</small></th><td>Ouvert</td><td>92,5</td><td>87</td><td>98</td><td>63,0</td><td>49</td><td>75</td><td>77,8</td><td>0,4</td><td>3</td><td>1,05</td></tr>
+</tbody></table></div></details>
+<details class="bmt-more" id="definitions"><summary>Définitions et réserves</summary><dl class="bmt-defs">
+      <dt>Prix d’usage</dt>
+      <dd>C’est un prix mixte&nbsp;: trois quarts du tarif d’entrée et un quart du tarif de sortie, en dollars par million de jetons, d’après les tarifs relevés sur OpenRouter. Deux modèles au même prix sont dessinés côte à côte.</dd>
+      <dt>Score global</dt>
+      <dd>Moyenne de l’exactitude aux QCM et du score aux questions ouvertes. Son intervalle reprend la moyenne des bornes des deux critères&nbsp;; le calcul exact demande les résultats dossier par dossier.</dd>
+      <dt>Frontière d’efficience</dt>
+      <dd>La ligne en escalier relie les modèles qu’aucun autre ne devance pour un prix égal ou inférieur, parmi ceux passés au protocole. Sous la ligne, la zone grisée réunit les scores qu’un modèle moins cher ou de même prix atteint déjà.</dd>
+      <dt>Intervalles à 95&nbsp;%</dt>
+      <dd>Ils sont repris tels quels du classement de la console.</dd>
+      <dt>Hasard aux QCM</dt>
+      <dd>Chaque QCM propose cinq options&nbsp;: une réponse donnée au hasard est juste une fois sur cinq, soit 20&nbsp;%.</dd>
+      <dt>Passations des QCM</dt>
+      <dd>Chaque modèle a effectué trois passations des mêmes 40 QCM, soit 120 réponses par modèle.</dd>
+      <dt>Regroupement des passations</dt>
+      <dd>Les résultats relevés sur la console réunissent toutes les passations d’un même modèle, sans distinguer celles qui se sont arrêtées en route&nbsp;; les modèles concernés sont signalés ci-dessous. GLM-5.3 et une seconde série DeepSeek V4.1, absents de la sélection relevée, ne figurent pas ici.</dd>
+    </dl>
+<ul><li><strong>GPT-6.1 Sol</strong> — Prix au palier flex d’OpenAI ; deux passations réunies par la console</li><li><strong>Gemini 4 Carbon · medium</strong> — Trois passations réunies par la console</li><li><strong>Mistral Large 4</strong> — Deux passations réunies par la console</li><li><strong>Qwen3.8-27B</strong> — Témoin sur un seul GPU ; deux passations réunies par la console</li></ul>
+<p>Valeurs relevées sur la carte par dossier de la console BenchMedTrav 3.4-pilote, le 28 novembre 2026. Mistral Medium 3.5 est écarté : sa seule passation s’est arrêtée avant la fin.</p><p>Valeurs relevées sur la carte par domaine de la console BenchMedTrav 3.4-pilote, le 28 novembre 2026. Mistral Medium 3.5, GLM-5.3 et une seconde série DeepSeek V4.1 ne sont pas repris.</p></details></section></section>
+  </main>
+  <footer class="site-system-footer" id="site-footer" data-navigation-version="8.9">
+    <div class="system-footer-grid">
+      <div class="system-footer-intro"><a class="system-brand" href="/" aria-label="IA et Santé au Travail, accueil"><span class="system-brand-mark" aria-hidden="true"></span><span class="system-brand-copy"><strong>IA &amp; Santé au Travail</strong></span></a><p>Des repères indépendants, sourcés et datés pour comprendre comment l’IA transforme le travail réel et la santé.</p></div>
+      <nav class="system-footer-group" aria-labelledby="systemFooterUnderstand"><h2 id="systemFooterUnderstand">Les parcours</h2><ul><li><a href="/securite-ia/">Sécurité de l’IA</a></li><li><a href="/parcours/risques-collectifs/">Risques collectifs</a></li><li><a href="/parcours/prevenir/">Prévenir</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterTools"><h2 id="systemFooterTools">Pour agir</h2><ul><li><a href="/parcours/comprendre/">Comprendre l’IA</a></li><li><a href="/evaluer/">Évaluer un projet</a></li><li><a href="/parcours/prevenir/#agir">Agir et gouverner</a></li><li><a href="/parcours/prevenir/#suivre">Suivre et ajuster</a></li><li><a href="/parcours/ia-sante-travail/">Espace santé au travail</a></li><li><a href="/outils/">Tous les outils</a></li></ul></nav>
+      <nav class="system-footer-group" aria-labelledby="systemFooterSite"><h2 id="systemFooterSite">Le site</h2><ul><li><a href="/benchmark/" aria-current="page">Benchmark</a></li><li><a href="/publications/">Recherche</a></li><li><a href="/observatoire/">Observatoire</a></li><li><a href="/lecture/">Lectures</a></li><li><a href="/a-propos/">À propos</a></li><li><a href="/actions/">Interventions</a></li><li><a href="https://substack.com/@charlesbroutin" target="_blank" rel="noopener noreferrer" aria-label="Newsletter (ouvre dans un nouvel onglet)">Newsletter <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="https://www.linkedin.com/in/charles-broutin-a03932201" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (ouvre dans un nouvel onglet)">LinkedIn <svg class="system-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></nav>
+    </div>
+    <div class="system-footer-bottom">
+      <span>© 2026 IA &amp; Santé au Travail — Initiative éditoriale indépendante.</span>
+      <span class="system-footer-legal"><a href="/en/" lang="en" hreflang="en">English homepage</a><a href="/confidentialite/">Confidentialité</a><a href="/mentions-legales/">Mentions légales</a><button type="button" data-consent-open>Gérer les cookies</button></span>
+    </div></footer>
+</body>
+</html>
