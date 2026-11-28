@@ -1,0 +1,18 @@
+/* Figures de la planche BenchMedTrav : nuage capacité / prix. */
+#capacite-prix { --fond: #faf7f0; --grille: #e5e1d7; background: var(--fond); }
+#capacite-prix .prix-cle-front { fill: none; stroke: #171a18; stroke-opacity: .5; stroke-width: 1.5; }
+#capacite-prix .prix-svg { display: block; width: 100%; height: auto; overflow: visible; }
+#capacite-prix .prix-grid { stroke: var(--grille); stroke-width: 1; shape-rendering: crispEdges; }
+#capacite-prix .prix-base { stroke: #c9c5ba; stroke-width: 1; shape-rendering: crispEdges; }
+#capacite-prix .prix-tick { font: 400 11.5px var(--bmt-sans); fill: #545b54; font-variant-numeric: tabular-nums; }
+#capacite-prix .prix-name { font: 500 12.5px var(--bmt-sans); fill: #171a18; paint-order: stroke; stroke: var(--fond); stroke-width: 3.5px; stroke-linejoin: round; }
+#capacite-prix .prix-area { fill: #171a18; opacity: .035; }
+#capacite-prix .prix-front { fill: none; stroke: #171a18; stroke-opacity: .42; stroke-width: 1.25; stroke-linejoin: round; }
+#capacite-prix .prix-hasard { stroke: #545b54; stroke-width: 1; stroke-dasharray: 4 4; }
+#capacite-prix .prix-leader { stroke: #545b54; stroke-opacity: .55; stroke-width: 1; }
+#capacite-prix .prix-band { fill: var(--point-color); fill-opacity: .24; }
+#capacite-prix .prix-point { fill: var(--point-color); stroke: var(--fond); stroke-width: 2; }
+#capacite-prix .prix-halo { fill: transparent; stroke: transparent; stroke-width: 2; }
+#capacite-prix .prix-model { cursor: pointer; outline: 0; }
+#capacite-prix .prix-model:is(:focus-visible,:hover) .prix-halo { stroke: var(--point-color); stroke-opacity: .8; }
+#capacite-prix .prix-model:focus-visible .prix-name { text-decoration: underline; }
