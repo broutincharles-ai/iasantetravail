@@ -34,7 +34,7 @@
   // Other links that merely carry hreflang, such as a PDF in the other language, are not a choice.
   document.addEventListener("click", event => {
     const link = event.target?.closest?.('a[hreflang="fr"], a[hreflang="en"]');
-    if (!link || !link.closest("#site-header, #site-footer, #site-language-suggestion")) return;
+    if (!link || !(link.matches(".system-language-switch") || link.closest(".system-footer-legal, #site-language-suggestion"))) return;
     const language = normalise(link.getAttribute("hreflang"));
     if (language) write("localStorage", preferenceKey, language);
   }, true);

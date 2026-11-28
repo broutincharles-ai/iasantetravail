@@ -35,10 +35,10 @@ const ASSETS = {
   shellCss: "/assets/css/unified-navigation.css?v=8.2",
   nojsCss: "/assets/css/navigation-nojs.css?v=2.1",
   appShellCss: "/assets/css/preconisations-shell.css?v=1.2",
-  navJs: "/assets/js/unified-navigation.js?v=8.7",
+  navJs: `/assets/js/unified-navigation.js?v=${NAVIGATION_VERSION}`,
   uxJs: "/assets/js/ux-improvements.js?v=1.3",
   consentJs: "/assets/js/consent.js?v=1.1",
-  languageJs: "/assets/js/language-routing.js?v=2.1"
+  languageJs: "/assets/js/language-routing.js?v=2.2"
 };
 
 const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

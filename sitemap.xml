@@ -673,6 +673,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/observatoire/metriques-macroeconomiques/"/>
   </url>
   <url>
+    <loc>https://www.iasantetravail.com/benchmark/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/benchmark/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iasantetravail.com/benchmark/"/>
+  </url>
+  <url>
     <loc>https://www.iasantetravail.com/outils/</loc>
     <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.iasantetravail.com/outils/"/>
