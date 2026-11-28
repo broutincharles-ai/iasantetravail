@@ -1,10 +1,10 @@
 export const INDEXABLE_PAIRS = [
-  { fr: "index.html", en: "en/index.html", lastmod: "2026-11-27" },
+  { fr: "index.html", en: "en/index.html", lastmod: "2026-11-28" },
   { fr: "securite-ia/index.html", en: "en/ai-safety/index.html", lastmod: "2026-11-27" },
-  { fr: "parcours/comprendre/index.html", en: "en/pathways/understand/index.html", lastmod: "2026-11-27" },
-  { fr: "parcours/risques-collectifs/index.html", en: "en/pathways/collective-risks/index.html", lastmod: "2026-11-27" },
-  { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-27" },
-  { fr: "parcours/ia-sante-travail/index.html", en: "en/pathways/ai-in-occupational-health/index.html", lastmod: "2026-11-27" },
+  { fr: "parcours/comprendre/index.html", en: "en/pathways/understand/index.html", lastmod: "2026-11-28" },
+  { fr: "parcours/risques-collectifs/index.html", en: "en/pathways/collective-risks/index.html", lastmod: "2026-11-28" },
+  { fr: "parcours/prevenir/index.html", en: "en/pathways/prevent/index.html", lastmod: "2026-11-28" },
+  { fr: "parcours/ia-sante-travail/index.html", en: "en/pathways/ai-in-occupational-health/index.html", lastmod: "2026-11-28" },
   { fr: "comprendre/index.html", en: "en/understand/index.html", lastmod: "2026-11-27" },
   { fr: "risques-prevention/index.html", en: "en/risks/index.html", lastmod: "2026-11-27" },
   { fr: "risques-prevention/psychosociaux/index.html", en: "en/risks-prevention/index.html", lastmod: "2026-11-27" },
@@ -14,7 +14,7 @@ export const INDEXABLE_PAIRS = [
   { fr: "outils/fiches-prevention/index.html", en: "en/tools/prevention-fact-sheets/index.html", lastmod: "2026-11-27" },
   { fr: "droit-gouvernance/index.html", en: "en/legal-governance/index.html", lastmod: "2026-11-27" },
   { fr: "ia-en-spst/index.html", en: "en/uses-and-field/occupational-health-example/index.html", lastmod: "2026-11-27" },
-  { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-11-27" },
+  { fr: "lecture/index.html", en: "en/reading/index.html", lastmod: "2026-11-28" },
   { fr: "lecture/sante-travail-securite-ia/index.html", en: "en/reading/occupational-health-ai-safety/index.html", lastmod: "2026-11-27" },
   { fr: "lecture/humain-dans-la-boucle/index.html", en: "en/reading/human-in-the-loop/index.html", lastmod: "2026-11-27" },
   { fr: "lecture/ingenierie-code-ia/index.html", en: "en/reading/engineering-ai-code/index.html", lastmod: "2026-11-27" },
@@ -44,13 +44,13 @@ export const INDEXABLE_PAIRS = [
   { fr: "recommandations/chercheur/index.html", en: "en/recommendations/researcher/index.html", lastmod: "2026-11-27" },
   { fr: "recommandations/charte-ia/index.html", en: "en/recommendations/ai-charter/index.html", lastmod: "2026-11-27" },
   { fr: "actions/index.html", en: "en/actions/index.html", lastmod: "2026-11-27" },
-  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-27" },
+  { fr: "observatoire/index.html", en: "en/observatory/index.html", lastmod: "2026-11-28" },
   { fr: "observatoire/capacites-modeles/index.html", en: "en/observatory/model-capabilities/index.html", lastmod: "2026-11-27" },
   { fr: "observatoire/metriques-macroeconomiques/index.html", en: "en/observatory/macroeconomic-metrics/index.html", lastmod: "2026-11-27" }
 ];
 
 export const INDEXABLE_SINGLETONS = [
-  { file: "outils/index.html", lang: "fr", lastmod: "2026-11-27" },
+  { file: "outils/index.html", lang: "fr", lastmod: "2026-11-28" },
   { file: "cse/courrier-medecin-du-travail/index.html", lang: "fr", lastmod: "2026-11-27" },
   { file: "risques-prevention/duerp/index.html", lang: "fr", lastmod: "2026-11-27" },
   { file: "outils/claude-skills/index.html", lang: "fr", lastmod: "2026-11-27" },

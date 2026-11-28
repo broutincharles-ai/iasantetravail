@@ -85,11 +85,11 @@
   }
   .reading-simple .reading-list,
   .ai-safety-publications .research-list { margin-top: clamp(32px, 4vw, 56px); }
-  .reading-simple .reading-item,
+  .reading-simple .reading-item { border-top: 1px solid var(--interior-line); }
   .ai-safety-publications .research-item { border-top: 1px solid var(--interior-brick); }
-  .reading-simple .reading-item h2,
+  .reading-simple .reading-item h3,
   .ai-safety-publications .research-item h2 { font-weight: 400; }
-  .reading-simple .reading-item h2 a:hover,
+  .reading-simple .reading-item h3 a:hover,
   .ai-safety-publications .research-item h2 a:hover { color: var(--interior-brick); }
 
   .reading-redesign .article-source-banner {

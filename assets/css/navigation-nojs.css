@@ -4,8 +4,6 @@
 #site-header [data-site-search],
 #site-footer [data-consent-open] { display: none !important; }
 .reveal { opacity: 1 !important; transform: none !important; }
-#site-header .page-nav-label { cursor: default; }
-#site-header .page-nav-label::after { content: none; }
 
 @media (max-width: 1120px) {
   #site-header { position: relative; }
@@ -20,10 +18,14 @@
 }
 
 @media (max-width: 760px) {
-  #site-header .page-nav-links { display: flex; flex-wrap: wrap; gap: 0 16px; }
   /* Open menus span the screen width just under the rows of links, whichever item they belong to. */
   #site-header .system-nav { position: relative; }
   #site-header .system-nav-group { position: static; }
   #site-header .system-nav-dropdown,
   #site-header .system-nav-dropdown.is-wide { top: 100%; right: var(--sh-gutter); left: var(--sh-gutter); width: auto; }
 }
+
+/* Following a fragment without script cannot close the native disclosure.
+   Keep it in the page flow so it scrolls away with the header. */
+#site-header:has(.page-nav-disclosure[open]) { position: relative; }
+#site-header .page-nav-links { position: static; max-height: none; box-shadow: none; }

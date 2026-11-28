@@ -4,7 +4,7 @@
   // One source of truth for the site shell (header, menus, footer).
   // Node uses it to write the static markup into every page (scripts/render-static-navigation.mjs);
   // the browser only re-renders a page whose static markup is older than this version.
-  const NAVIGATION_VERSION = "8.7";
+  const NAVIGATION_VERSION = "8.8";
 
   // French page -> English equivalent. Used by the language switch and the footer link.
   const PAIRS = {
@@ -73,9 +73,13 @@
         { key: "safety", label: "Sécurité de l’IA", href: "/securite-ia/" },
         { key: "risks", label: "Risques collectifs", href: "/parcours/risques-collectifs/" },
         { key: "prevent", label: "Prévenir", href: "/parcours/prevenir/" },
-        { key: "publications", label: "Recherche", href: "/publications/", secondary: true, divider: true },
-        { key: "observatory", label: "Observatoire", href: "/observatoire/", secondary: true },
-        { key: "reading", label: "Lectures", href: "/lecture/", secondary: true },
+        { key: "resources", label: "Ressources", secondary: true, divider: true, children: [
+          { key: "evaluate", label: "Évaluer un projet d’IA", href: "/evaluer/", desc: "Examiner les effets d’un outil sur le travail" },
+          { key: "tools", label: "Outils de prévention", href: "/outils/", desc: "Trouver une fiche ou un outil pour le terrain" },
+          { key: "publications", label: "Recherche et publications", href: "/publications/", desc: "Retrouver les travaux de Charles Broutin" },
+          { key: "observatory", label: "Observatoire", href: "/observatoire/", desc: "Consulter les indicateurs sur l’IA" },
+          { key: "reading", label: "Lectures", href: "/lecture/", desc: "Lire les analyses d’articles et d’études" }
+        ] },
         { key: "about-group", label: "À propos", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/a-propos/", desc: "Médecin du travail, auteur du site" },
           { key: "actions", label: "Interventions", href: "/actions/", desc: "Séminaires, journées et colloques" }
@@ -92,7 +96,7 @@
             ["Suivre et ajuster", "/parcours/prevenir/#suivre"], ["Espace santé au travail", "/parcours/ia-sante-travail/"], ["Tous les outils", "/outils/"]
           ] },
           { id: "systemFooterSite", title: "Le site", links: [
-            ["Recherche", "/publications/"], ["Observatoire", "/observatoire/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
+            ["Publications", "/publications/"], ["Observatoire", "/observatoire/"], ["Lectures", "/lecture/"], ["À propos", "/a-propos/"], ["Interventions", "/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -115,9 +119,13 @@
         { key: "safety", label: "AI safety", href: "/en/ai-safety/" },
         { key: "risks", label: "Collective risks", href: "/en/pathways/collective-risks/" },
         { key: "prevent", label: "Prevent", href: "/en/pathways/prevent/" },
-        { key: "publications", label: "Research", href: "/en/publications/", secondary: true, divider: true },
-        { key: "observatory", label: "Observatory", href: "/en/observatory/", secondary: true },
-        { key: "reading", label: "Reading", href: "/en/reading/", secondary: true },
+        { key: "resources", label: "Resources", secondary: true, divider: true, children: [
+          { key: "evaluate", label: "Assess an AI project", href: "/en/evaluate/", desc: "Examine how a tool affects work" },
+          { key: "tools", label: "Prevention fact sheets", href: "/en/tools/prevention-fact-sheets/", desc: "Find measures to use with your team" },
+          { key: "publications", label: "Research and publications", href: "/en/publications/", desc: "Find Charles Broutin’s published work" },
+          { key: "observatory", label: "Observatory", href: "/en/observatory/", desc: "Explore indicators on AI" },
+          { key: "reading", label: "Reading", href: "/en/reading/", desc: "Read analyses of articles and studies" }
+        ] },
         { key: "about-group", label: "About", secondary: true, children: [
           { key: "about", label: "Charles Broutin", href: "/en/about/", desc: "Occupational physician, author of the site" },
           { key: "actions", label: "Talks", href: "/en/actions/", desc: "Seminars, study days and conferences" }
@@ -134,7 +142,7 @@
             ["Monitor and adjust", "/en/pathways/prevent/#suivre"], ["Occupational health space", "/en/pathways/ai-in-occupational-health/"], ["Prevention fact sheets", "/en/tools/prevention-fact-sheets/"]
           ] },
           { id: "systemFooterSite", title: "The site", links: [
-            ["Research", "/en/publications/"], ["Observatory", "/en/observatory/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
+            ["Publications", "/en/publications/"], ["Observatory", "/en/observatory/"], ["Reading", "/en/reading/"], ["About", "/en/about/"], ["Talks", "/en/actions/"],
             ["Newsletter", "https://substack.com/@charlesbroutin", true], ["LinkedIn", "https://www.linkedin.com/in/charles-broutin-a03932201", true]
           ] }
         ],
@@ -159,12 +167,14 @@
 
   function activeKeyFor(path) {
     const rules = [
+      [/^\/(?:evaluer|en\/evaluate)\//, "evaluate"],
       [/^\/(?:securite-ia|en\/ai-safety)\//, "safety"],
       [/^\/(?:parcours\/comprendre|en\/pathways\/understand|en\/understand|comprendre)\//, "prevent"],
       [/^\/risques-prevention\/duerp\//, "prevent"],
       [/^\/(?:parcours\/risques-collectifs|en\/pathways\/collective-risks|en\/risks(?:-prevention)?|risques-prevention)\//, "risks"],
-      [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/evaluate|evaluer|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
-      [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst|outils|en\/tools)\//, "prevent"],
+      [/^\/(?:parcours\/prevenir|en\/pathways\/prevent|en\/recommendations|recommandations|en\/legal-governance|droit-gouvernance|(?:en\/)?cse)\//, "prevent"],
+      [/^\/(?:parcours\/ia-sante-travail|en\/pathways\/ai-in-occupational-health|en\/uses-and-field\/occupational-health-example|ia-en-spst)\//, "prevent"],
+      [/^\/(?:outils|en\/tools)\//, "tools"],
       [/^\/(?:en\/)?publications\//, "publications"],
       [/^\/(?:observatoire|en\/observatory)\//, "observatory"],
       [/^\/(?:en\/reading|lecture)\//, "reading"],
@@ -185,6 +195,8 @@
   function renderNavigationShell(pathname, isEnglish, pageNavMarkup = "") {
     const path = pathname.replace(/\/index\.html$/, "/");
     const site = isEnglish ? SITE.en : SITE.fr;
+    // Reuse the anchors supplied by the page, including older static copies of the shell.
+    let sectionLinks = pageNavMarkup.match(/<div\b[^>]*class="page-nav-links"[^>]*>([\s\S]*?)<\/div>/)?.[1].trim() || "";
     // The publications index has the same works in the same order in both languages.
     if (path === "/publications/" || path === "/en/publications/") {
       const publicationSections = isEnglish ? [
@@ -200,8 +212,10 @@
         ["bulletin-joly-travail", "Bulletin Joly Travail · IA et risques psychosociaux"],
         ["sante-travail-securite-modeles-frontieres", "Preprint · Chercheurs en IA"]
       ];
-      pageNavMarkup = `<nav class="page-nav" aria-label="${isEnglish ? "Page contents" : "Sommaire de la page"}"><div class="page-nav-inner"><span class="page-nav-label">${isEnglish ? "On this page" : "Sur cette page"}</span><div class="page-nav-links">${publicationSections.map(([id, label]) => `<a href="#${id}">${escapeHtml(label)}</a>`).join("")}</div><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>`;
+      sectionLinks = publicationSections.map(([id, label]) => `<a href="#${id}">${escapeHtml(label)}</a>`).join("");
     }
+    const contentsLabel = isEnglish ? "On this page" : "Sommaire de la page";
+    const contents = sectionLinks ? `<nav class="page-nav" aria-label="${contentsLabel}"><div class="page-nav-inner"><details class="page-nav-disclosure"><summary class="page-nav-label">${contentsLabel}${ICONS.chevron}<span class="page-nav-current" aria-hidden="true"></span></summary><div class="page-nav-links">${sectionLinks}</div></details><span class="page-progress" aria-hidden="true"><i></i></span></div></nav>` : "";
     const activeKey = activeKeyFor(path);
     const translation = translationFor(path, isEnglish);
     const translationUrl = translation.url;
@@ -249,7 +263,7 @@
           ${mobileItems}
         </div>
       </div>
-    </nav>${pageNavMarkup}`;
+    </nav>${contents}`;
 
     const footerLink = ([label, href, external]) => external
       ? `<li><a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)} (${escapeHtml(site.footer.external)})">${escapeHtml(label)} ${ICONS.external}</a></li>`
@@ -343,7 +357,7 @@
   }
   header.querySelectorAll("[data-site-search]").forEach(button => { button.hidden = false; });
 
-  const dropdowns = [...header.querySelectorAll(".system-nav-group")];
+  const dropdowns = [...header.querySelectorAll(".system-nav-group, .page-nav-disclosure")];
   const closeDropdowns = () => dropdowns.forEach(group => { group.open = false; });
   dropdowns.forEach(group => {
     group.addEventListener("toggle", () => {
@@ -361,7 +375,7 @@
     group.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { group.open = false; }));
   });
   header.addEventListener("keydown", event => {
-    const group = event.target.closest(".system-nav-group");
+    const group = event.target.closest(".system-nav-group, .page-nav-disclosure");
     if (event.key === "Escape" && group?.open) {
       event.stopPropagation();
       group.open = false;
@@ -396,7 +410,7 @@
     if (!menuButton || !mobilePanel) return;
     inertedByMenu.forEach(element => { element.inert = false; });
     inertedByMenu.clear();
-    menuButton.textContent = isEnglish ? "Menu" : "Menu";
+    menuButton.textContent = "Menu";
     header.classList.remove("is-open");
     document.body.classList.remove("system-menu-open");
     menuButton.setAttribute("aria-expanded", "false");
@@ -404,6 +418,7 @@
     if (restoreFocus) menuButton.focus();
   };
   const openMenu = () => {
+    closeDropdowns();
     // Everything outside the header (page, skip link, banners, dialogs) is out of reach while the menu is open.
     [...document.body.children].forEach(element => {
       if (element === header || element.matches("script, style, link, template, noscript") || element.inert) return;
@@ -438,75 +453,10 @@
   document.addEventListener("iast:close-menu", () => closeMenu());
 
   const pageNav = header.querySelector(".page-nav");
-  const pageNavLabel = pageNav?.querySelector(".page-nav-label");
+  const pageNavCurrent = pageNav?.querySelector(".page-nav-current");
   const pageNavLinks = [...(pageNav?.querySelectorAll('.page-nav-links a[href^="#"]') || [])];
   const pageProgress = pageNav?.querySelector(".page-progress i");
 
-  if (pageNav && pageNavLabel) {
-    const linksId = pageNav.querySelector(".page-nav-links")?.id || "pageNavLinks";
-    pageNav.querySelector(".page-nav-links")?.setAttribute("id", linksId);
-    const tocMedia = window.matchMedia("(max-width: 760px)");
-    const updateTocControl = () => {
-      if (tocMedia.matches) { pageNavLabel.setAttribute("role", "button"); pageNavLabel.tabIndex = 0; pageNavLabel.setAttribute("aria-expanded", String(pageNav.classList.contains("is-open"))); }
-      else { pageNavLabel.removeAttribute("role"); pageNavLabel.removeAttribute("tabindex"); pageNavLabel.removeAttribute("aria-expanded"); pageNav.classList.remove("is-open"); }
-    };
-    tocMedia.addEventListener("change", updateTocControl);
-    pageNavLabel.setAttribute("aria-controls", linksId);
-    updateTocControl();
-    const togglePageNav = () => {
-      if (!tocMedia.matches) return;
-      const open = pageNav.classList.toggle("is-open");
-      pageNavLabel.setAttribute("aria-expanded", String(open));
-    };
-    pageNavLabel.addEventListener("click", togglePageNav);
-    pageNav.addEventListener("keydown", event => {
-      if (event.key === "Escape" && pageNav.classList.contains("is-open")) {
-        event.stopPropagation(); pageNav.classList.remove("is-open"); pageNavLabel.setAttribute("aria-expanded", "false"); pageNavLabel.focus();
-      }
-    });
-    pageNavLabel.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        togglePageNav();
-      }
-    });
-    pageNavLinks.forEach(link => link.addEventListener("click", () => {
-      pageNav.classList.remove("is-open");
-      if (tocMedia.matches) pageNavLabel.setAttribute("aria-expanded", "false");
-    }));
-  }
-
-  // Where am I? Phones show the current section next to the collapsed "On this page" label;
-  // wider screens keep the current link in view when the bar scrolls sideways.
-  const pageNavLinksBox = pageNav?.querySelector(".page-nav-links");
-  const pageNavCurrent = pageNavLabel && pageNavLinks.length ? document.createElement("span") : null;
-  if (pageNavCurrent) {
-    pageNavCurrent.className = "page-nav-current";
-    pageNavLabel.append(pageNavCurrent);
-  }
-  const updateLinksOverflow = () => {
-    if (!pageNavLinksBox) return;
-    const { scrollLeft, scrollWidth, clientWidth } = pageNavLinksBox;
-    pageNavLinksBox.classList.toggle("has-more-before", scrollLeft > 2);
-    pageNavLinksBox.classList.toggle("has-more-after", scrollLeft + clientWidth < scrollWidth - 2);
-  };
-  if (pageNavLinksBox) {
-    pageNavLinksBox.addEventListener("scroll", updateLinksOverflow, { passive: true });
-    window.addEventListener("resize", updateLinksOverflow);
-    updateLinksOverflow();
-    // A mouse wheel over the bar scrolls its links sideways, then the page once an end is reached.
-    pageNavLinksBox.addEventListener("wheel", event => {
-      if (event.ctrlKey || event.metaKey) return; // browser zoom, trackpad pinch
-      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-      const max = pageNavLinksBox.scrollWidth - pageNavLinksBox.clientWidth;
-      if (max <= 0 || getComputedStyle(pageNavLinksBox).overflowX === "visible") return;
-      const next = Math.max(0, Math.min(max, pageNavLinksBox.scrollLeft + event.deltaY));
-      if (Math.abs(next - pageNavLinksBox.scrollLeft) < 1) return;
-      event.preventDefault();
-      pageNavLinksBox.scrollLeft = next;
-    }, { passive: false });
-  }
-  const FADE = 56; // width of the faded edges (unified-navigation.css)
   let activeSectionId = null;
   const setActiveSection = id => {
     if (id === activeSectionId) return;
@@ -517,15 +467,6 @@
       else link.removeAttribute("aria-current");
     });
     if (pageNavCurrent) pageNavCurrent.textContent = activeLink ? activeLink.textContent.trim() : "";
-    if (activeLink && pageNavLinksBox && pageNavLinksBox.scrollWidth > pageNavLinksBox.clientWidth) {
-      const box = pageNavLinksBox.getBoundingClientRect();
-      const link = activeLink.getBoundingClientRect();
-      // Keep the current link clear of the faded edges.
-      if (link.left < box.left + FADE || link.right > box.right - FADE) {
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        pageNavLinksBox.scrollTo({ left: pageNavLinksBox.scrollLeft + link.left - box.left - FADE - 16, behavior: reduceMotion ? "auto" : "smooth" });
-      }
-    }
   };
   const sections = pageNavLinks.map(link => {
     try { return document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return null; }
